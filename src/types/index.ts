@@ -8,4 +8,3 @@ export interface UserHTTPConfig extends ServerOptions {
 }
 export type HTTPConfig = Required<UserHTTPConfig>
 export interface SimpleHTTPServer extends Server {}
-
