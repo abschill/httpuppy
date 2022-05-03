@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "baseUrl": "src",
+        "rootDir": "src",
+        "outDir": "lib",
+        "declaration": true,
+        "moduleResolution": "node"    
+    }
+}
