@@ -1,8 +1,8 @@
-const { spawnWebServer } = require('../lib');
+const { createWebServer } = require('../lib');
 
-spawnWebServer({
-    port: 3000, 
-    throwWarnings: false 
+createWebServer({
+    port: 3000,
+    throwWarnings: false
 }, (req, res) => {
     res.writeHead(200, 'success', [ ['Content-Type', 'text/html']]);
     res.write('<h1>Hello World</h1>');

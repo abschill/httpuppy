@@ -4,8 +4,8 @@ import { emitWarning } from 'process';
 import { cleanConfig } from './internal/config';
 
 
-export function spawnWebServer (
-    conf: UserHTTPConfig, 
+export function createWebServer (
+    conf: UserHTTPConfig,
     reqHandler ?: (IncomingMessage) => void,
     mountCallback ?: () => void | Function
 ): SimpleHTTPServer {
