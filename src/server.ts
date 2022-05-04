@@ -16,13 +16,18 @@ export function createWebServer (
     const config = cleanConfig(conf, diagnostics);
     const server = createServer();
     if(config.mountCallback) server.once('listening', config.mountCallback);
+
+	// cold init would just be for manually setting the listener up on the port
     if(!config.coldInit) {
         server.listen(config.port, config.hostname);
     }
 
-    if(config.throwWarnings) {
+	// thrown warnings if
+    if(config.throwWarnings && diagnostics.length > 0) {
         throw new Error(`
 Server couldnt initialize without issues, if you'd like to suppress these errors, set the config option "throwWarnings": false
+Diagnostic List:\n
+${JSON.stringify(diagnostics)}
 `);
     }
     const ss = <SimpleHTTPServer>server;
