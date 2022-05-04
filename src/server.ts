@@ -1,10 +1,9 @@
 import { createServer, IncomingMessage } from 'http';
 import { UserHTTPConfig, HTTPConfig, SimpleHTTPServer } from './types';
-
 import { cleanConfig } from './internal/config';
 import { readFileSync, readdirSync } from 'fs';
 import { join, resolve } from 'path';
-
+import { hasIndex, contentType } from './internal/util';
 const processArgs = process.argv;
 
 export function createWebServer (
@@ -31,7 +30,7 @@ ${JSON.stringify(diagnostics)}
 `);
     }
     const ss = <SimpleHTTPServer>server;
-
+	ss.diagnostics = diagnostics;
 	if (!config.static && config.handler) {
 		ss.on('request', config.handler);
 	}
@@ -43,8 +42,8 @@ ${JSON.stringify(diagnostics)}
 			const filesMounted = readdirSync(mountedPath);
 			if(config.static.href === '/') {
 				//handle base
-				if(filesMounted.includes('index.html')) {
-					res.writeHead(200, 'success', ['Content-Type', 'text/html']);
+				if(hasIndex(filesMounted)) {
+					res.writeHead(200, 'success', contentType('text/html'));
 					res.write(readFileSync(resolve(mountedPath, 'index.html')).toString('utf-8'));
 					res.end();
 				}
@@ -54,9 +53,10 @@ ${JSON.stringify(diagnostics)}
 				res.write('url matches static href');
 				res.end();
 			}
-
-			res.writeHead(500, 'error: fs path failed to mount');
-			res.end();
+			else {
+				res.writeHead(500, 'error: fs path failed to mount');
+				res.end();
+			}
 		});
 	}
 

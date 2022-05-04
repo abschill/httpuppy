@@ -1,4 +1,3 @@
-import { PathLike } from 'fs';
 import { ServerOptions, Server } from 'http';
 
 export type UserStaticConfig = {
@@ -16,7 +15,14 @@ export interface UserHTTPConfig extends ServerOptions {
 	static ?: UserStaticConfig;
     throwWarnings ?: boolean;
 	handler ?: (IncomingMessage) => void;
+	middleware ?: () => void;
 	mountCallback ?: () => void | Function;
 }
 export type HTTPConfig = Required<UserHTTPConfig>
-export interface SimpleHTTPServer extends Server {}
+export interface SimpleHTTPServer extends Server {
+	diagnostics: string[];
+}
+
+export interface ComposableBodyContent {
+	toString: string;
+}
