@@ -6,14 +6,7 @@ export const proxyCallback = (fn: CallableFunction, ...args) => fn(...args);
 export const startEventChain = (...fns: CallableFunction[]) => Promise.all(fns);
 
 
-// some parsing things
-
-export function fileExtensionMime(filename: string) {
-
-}
-
 // response handler methods
 
-export function applyContentType(res: ServerResponse) {
-	//
-}
+export const applyContentType = (res: ServerResponse, type: string) => res.writeHead(200, 'success', contentType(type));
+

@@ -1,9 +1,10 @@
 import { createServer, IncomingMessage } from 'http';
 import { UserHTTPConfig, HTTPConfig, SimpleHTTPServer } from './types';
 import { cleanConfig } from './internal/config';
-import { readFileSync, readdirSync } from 'fs';
-import { join, resolve } from 'path';
-import { hasIndex, contentType } from './internal/util';
+import { readFileSync } from 'fs';
+import { resolve } from 'path';
+import { hasIndex, applyContentType } from './internal/util';
+import { mountFSPath } from './internal/mount-fs';
 const processArgs = process.argv;
 
 export function createWebServer (
@@ -38,12 +39,11 @@ ${JSON.stringify(diagnostics)}
 	//todo: static handler move out of top level
 	if(config.static) {
 		ss.on('request', (req, res) => {
-			const mountedPath = join(process.cwd(), config.static.path);
-			const filesMounted = readdirSync(mountedPath);
+			const { mountedPath, filesMounted } = mountFSPath(config);
 			if(config.static.href === '/') {
 				//handle base
 				if(hasIndex(filesMounted)) {
-					res.writeHead(200, 'success', contentType('text/html'));
+					applyContentType(res, 'text/html');
 					res.write(readFileSync(resolve(mountedPath, 'index.html')).toString('utf-8'));
 					res.end();
 				}
