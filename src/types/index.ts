@@ -16,7 +16,7 @@ export interface UserHTTPConfig extends ServerOptions {
     throwWarnings ?: boolean;
 	handler ?: (IncomingMessage) => void;
 	middleware ?: () => void;
-	mountCallback ?: () => void | Function;
+	onMount ?: () => void | Function;
 }
 export type HTTPConfig = Required<UserHTTPConfig>
 export interface SimpleHTTPServer extends Server {

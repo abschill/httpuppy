@@ -1,6 +1,6 @@
-const { createWebServer } = require('../lib');
+const { WebServer } = require('../lib');
 
-createWebServer({
+WebServer.create({
     port: 3000,
     throwWarnings: false
 }, (req, res) => {
