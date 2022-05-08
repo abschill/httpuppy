@@ -40,23 +40,32 @@ ${JSON.stringify(diagnostics)}
 	if(config.static) {
 		ss.on('request', (req, res) => {
 			const { mountedPath, filesMounted } = mountFSPath(config);
-			if(config.static.href === '/') {
-				//handle base
-				if(hasIndex(filesMounted)) {
-					applyContentType(res, 'text/html');
-					res.write(readFileSync(resolve(mountedPath, 'index.html')).toString('utf-8'));
-					res.end();
-				}
+			const pathName = req.url.substring(1, req.url.length);
+			let parsableUrl = req.url.includes('.html') ? req.url.split('.html').shift(): req.url;
+
+			if(parsableUrl === 'index') {
+				parsableUrl = '/';
 			}
-			else if(req.url === config.static.href) {
-				res.writeHead(200, 'success');
-				res.write('url matches static href');
+
+			if(parsableUrl === '/') {
+				applyContentType(res, 'text/html');
+				res.write(readFileSync(resolve(mountedPath, 'index.html')).toString('utf-8'));
 				res.end();
 			}
 			else {
-				res.writeHead(500, 'error: fs path failed to mount');
-				res.end();
+				if(filesMounted.includes(pathName)) {
+					// placeholder, assume css
+					const fileContent = readFileSync(resolve(mountedPath, pathName)).toString('utf-8');
+					applyContentType(res, 'text/css');
+					res.write(fileContent);
+					res.end();
+				}
+				else {
+					res.writeHead(404);
+					res.end();
+				}
 			}
+
 		});
 	}
 
