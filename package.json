@@ -1,14 +1,14 @@
 {
-  "name": "httpup",
+  "name": "httpuppy",
   "version": "1.0.0",
-  "description": "",
+  "description": "low bundle footprint webserver",
   "main": "lib/index.js",
   "scripts": {
     "build": "tsc",
     "test": "node examples/static-demo.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "abschill",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^17.0.31",
