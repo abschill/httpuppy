@@ -1,11 +1,13 @@
 const { WebServer } = require('../lib');
 
-WebServer.create({
-    port: 3000,
+const app = WebServer.create({
 	static: {
-		path: './examples/files',
-		headers: [ ['Content-Type', 'text/html']]
+		path: './examples/files'
 	},
 	onMount: () => console.log('server started, open browser to port 3000'),
-    throwWarnings: false
+    throwWarnings: false,
+	coldInit: true
 });
+
+
+app.listen(3000, app.onMount);

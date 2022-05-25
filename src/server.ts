@@ -1,17 +1,17 @@
-import { createServer, IncomingMessage } from 'http';
-import { UserHTTPConfig, HTTPConfig, SimpleHTTPServer } from './types';
+import { createServer } from 'http';
+import { Server } from './types';
 import { cleanConfig } from './internal/config';
-import { readFileSync } from 'fs';
-import { resolve } from 'path';
-import { hasIndex, applyContentType } from './internal/util';
-import { mountFSPath } from './internal/mount-fs';
-const processArgs = process.argv;
+import { useDefaultHandler as useDefaultStaticHandler } from './request';
+import { useProcessArgs } from './internal/argv';
 
 export function create (
-    conf: UserHTTPConfig
-): SimpleHTTPServer {
+    conf: Server.UserHTTPConfig
+): Server.SimpleHTTP {
 	//todo - arg parse for runtime opts
-	// console.log(processArgs);
+	const argv = useProcessArgs();
+	if(argv) {
+		console.log('process args:\n', argv);
+	}
 	const diagnostics = [];
     const config = cleanConfig(conf, diagnostics);
     const server = createServer();
@@ -22,7 +22,6 @@ export function create (
         server.listen(config.port, config.hostname);
     }
 
-	// thrown warnings if
     if(config.throwWarnings && diagnostics.length > 0) {
         throw new Error(`
 Server couldnt initialize without issues, if you'd like to suppress these errors, set the config option "throwWarnings": false
@@ -30,7 +29,7 @@ Diagnostic List:\n
 ${JSON.stringify(diagnostics)}
 `);
     }
-    const ss = <SimpleHTTPServer>server;
+    const ss = <Server.SimpleHTTP>server;
 	ss.diagnostics = diagnostics;
 	if (!config.static && config.handler) {
 		ss.on('request', config.handler);
@@ -38,32 +37,7 @@ ${JSON.stringify(diagnostics)}
 
 	//todo: static handler move out of top level
 	if(config.static) {
-		ss.on('request', (req, res) => {
-			const { mountedPath, filesMounted } = mountFSPath(config);
-			const pathName = req.url.substring(1, req.url.length);
-			let parsableUrl = req.url.includes('.html') ? req.url.split('.html').shift(): req.url;
-			if(parsableUrl === 'index') parsableUrl = '/';
-
-			if(parsableUrl === '/' && hasIndex(filesMounted)) {
-				applyContentType(res, 'text/html');
-				res.write(readFileSync(resolve(mountedPath, 'index.html')).toString('utf-8'));
-				res.end();
-			}
-			else {
-				if(filesMounted.includes(pathName)) {
-					// placeholder, assume css
-					// todo - content type translation based on extension in fs
-					const fileContent = readFileSync(resolve(mountedPath, pathName)).toString('utf-8');
-					applyContentType(res, 'text/css');
-					res.write(fileContent);
-					res.end();
-				}
-				else {
-					res.writeHead(404);
-					res.end();
-				}
-			}
-		});
+		ss.on('request', (req, res) => useDefaultStaticHandler(req, res, config));
 	}
 
     return ss;

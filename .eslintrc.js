@@ -12,10 +12,6 @@ module.exports = {
 		'@typescript-eslint'
 	],
 	'rules': {
-		'space-in-parens': [
-			'warn',
-			'never'
-		],
 		'quotes': [
 			'off',
 			'single'

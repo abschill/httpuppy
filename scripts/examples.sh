@@ -1,1 +1,1 @@
-node examples/simple-demo.js
+node examples/static-demo.js
