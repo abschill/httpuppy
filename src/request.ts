@@ -17,7 +17,6 @@ function write(res, options) {
 export function useDefaultHandler(req, res, config) {
 	const { mountedPath, filesMounted } = mountFSPath(config);
 	let pathName = req.url.substring(1, req.url.length);
-	console.log(pathName);
 
 	if(pathName === '/' || pathName === '' || pathName == null) {
 		pathName = 'index.html';

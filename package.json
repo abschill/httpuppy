@@ -1,8 +1,9 @@
 {
   "name": "httpuppy",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "low bundle footprint webserver",
   "main": "lib/index.js",
+  "bin": "bin/index.js",
   "scripts": {
     "build": "tsc",
     "test": "node examples/static-demo.js"

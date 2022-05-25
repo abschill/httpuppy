@@ -2,3 +2,4 @@ scripts
 .eslintrc.js
 .eslintignore
 .git*
+.assets

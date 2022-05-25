@@ -1,17 +1,15 @@
 import { createServer } from 'http';
 import { Server } from './types';
 import { cleanConfig } from './internal/config';
-import { useDefaultHandler as useDefaultStaticHandler } from './request';
-import { useProcessArgs } from './internal/argv';
-
+import { useDefaultHandler } from './request';
 export function create (
     conf: Server.UserHTTPConfig
 ): Server.SimpleHTTP {
 	//todo - arg parse for runtime opts
-	const argv = useProcessArgs();
-	if(argv) {
-		console.log('process args:\n', argv);
-	}
+	//const argv = useProcessArgs();
+	// if(argv) {
+	// 	console.log('process args:\n', argv);
+	// }
 	const diagnostics = [];
     const config = cleanConfig(conf, diagnostics);
     const server = createServer();
@@ -37,7 +35,7 @@ ${JSON.stringify(diagnostics)}
 
 	//todo: static handler move out of top level
 	if(config.static) {
-		ss.on('request', (req, res) => useDefaultStaticHandler(req, res, config));
+		ss.on('request', (req, res) => useDefaultHandler(req, res, config));
 	}
 
     return ss;
