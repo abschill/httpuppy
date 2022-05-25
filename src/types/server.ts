@@ -22,6 +22,8 @@ export interface SimpleHTTP extends Server {
 }
 
 export type ValidURLPath = {
-	requestUrl: string;
-	transformedUrl: string;
+	href: string;
+	symLink: string;
+	contentType: string;
+	fileName: string;
 }

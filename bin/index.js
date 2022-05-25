@@ -2,7 +2,7 @@
 const { useProcessArgs } = require('../lib/internal/argv');
 const { WebServer } = require('../lib');
 const args = useProcessArgs();
-let pathHref = '';
+let pathHref = process.cwd();
 
 if(args && args.path) {
 	pathHref = args.path;

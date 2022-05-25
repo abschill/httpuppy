@@ -17,7 +17,7 @@ function write (
 	res: HTTP_RES,
 	options
 ): void {
-	res.writeHead(options.status, options.statusText, ['Content-Type', mime.lookup(options.type)]);
+	res.writeHead(options.status, options.statusText, [['Content-Type', mime.lookup(options.type)]]);
 	res.write(options.body);
 	res.end();
 	return;
@@ -30,13 +30,17 @@ export function useFSHandler (
 ): void {
 	const vFS = useMountedFS(config);
 	const pathData = iValidURL(req, config, vFS);
-	if(!vFS.filesMounted.includes(pathData.transformedUrl)) {
-		handle404(res);
+	const fileName = resolve(process.cwd(), pathData.symLink);
+	// todo- set images as inline response content
+	if(vFS.filesMounted.includes(pathData.fileName)) {
+		return write(res, {
+			status: 200,
+			statusText: 'ok',
+			type: pathData.contentType,
+			body: readFileSync(fileName).toString('utf-8')
+		});
 	}
-	write(res, {
-		status: 200,
-		statusText: 'ok',
-		type: mime.lookup(pathData.requestUrl),
-		body: readFileSync(resolve(vFS.mountedPath, pathData.transformedUrl)).toString('utf-8')
-	});
+	else {
+		return handle404(res);
+	}
 }
