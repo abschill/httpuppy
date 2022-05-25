@@ -1,9 +1,13 @@
 {
     "compilerOptions": {
         "baseUrl": "src",
-        "rootDir": "src",
+        "rootDir": ".",
         "outDir": "lib",
         "declaration": true,
-        "moduleResolution": "node"    
-    }
+        "moduleResolution": "node"
+    },
+	"include": [
+		"test/**/*",
+		"src/**/*"
+	]
 }

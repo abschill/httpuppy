@@ -1,7 +1,10 @@
-all: build test-foobar
+all: build test runexample
 
 build:
 	yarn build
 
-test-foobar:
-	yarn test --foo=bar
+test:
+	yarn test
+
+runexample:
+	yarn run-ex

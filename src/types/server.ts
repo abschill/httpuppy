@@ -7,14 +7,12 @@ export type UserStaticConfig = {
 }
 export type StaticConfig = Required<UserStaticConfig>
 
-
 export type HTTPConfig = Required<UserHTTPConfig>
-
 
 export interface UserHTTPConfig extends ServerOptions {
     port ?: number;
     coldInit ?: boolean;
-    hostname: string;
+    hostname ?: string;
 	static ?: UserStaticConfig;
     throwWarnings ?: boolean;
 	handler ?: (IncomingMessage) => void;

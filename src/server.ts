@@ -2,6 +2,7 @@ import { createServer } from 'http';
 import { Server } from './types';
 import { cleanConfig } from './internal/config';
 import { useDefaultHandler } from './request';
+import GracefulShutdown = require('http-graceful-shutdown');
 export function create (
     conf: Server.UserHTTPConfig
 ): Server.SimpleHTTP {
@@ -41,4 +42,6 @@ ${JSON.stringify(diagnostics)}
     return ss;
 }
 
-
+export function shutdown(s: Server.SimpleHTTP) {
+	return GracefulShutdown(s);
+}
