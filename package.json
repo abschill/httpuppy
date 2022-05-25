@@ -1,8 +1,8 @@
 {
-  "name": "http-simple",
+  "name": "httpup",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "build": "tsc",
     "test": "node examples/static-demo.js"

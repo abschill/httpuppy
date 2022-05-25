@@ -1,7 +1,7 @@
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
 import { mountFSPath } from './internal/mount-fs';
-const mime = require('mime-types');
+import mime = require('mime-types');
 
 function handle404(res) {
 	res.writeHead(404);
