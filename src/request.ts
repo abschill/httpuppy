@@ -1,12 +1,11 @@
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
 import { mountFSPath } from './internal/mount-fs';
-import { IncomingMessage, ServerResponse } from 'http';
-import mime = require('mime-types');
-import { Server } from './types';
+import mime from 'mime-types';
+import { iServer, HTTP_INCMSG, HTTP_RES } from './types';
 
 function handle404 (
-	res: ServerResponse
+	res: HTTP_RES
 ): void {
 	res.writeHead(404);
 	res.end();
@@ -14,7 +13,7 @@ function handle404 (
 }
 
 function write (
-	res: ServerResponse,
+	res: HTTP_RES,
 	options
 ): void {
 	res.writeHead(options.status, options.statusText, ['Content-Type', mime.lookup(options.type)]);
@@ -24,9 +23,9 @@ function write (
 }
 
 export function useDefaultHandler (
-	req: IncomingMessage, // incoming message to handle args from
-	res: ServerResponse, // response message to send
-	config: Required<Server.UserHTTPConfig> // config from server
+	req: HTTP_INCMSG, // incoming message to handle args from
+	res: HTTP_RES, // response message to send
+	config: Required<iServer.UserHTTPConfig> // config from server
 ): void {
 	const { mountedPath, filesMounted } = mountFSPath(config);
 	let pathName = req.url.substring(1, req.url.length);

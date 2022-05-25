@@ -1,10 +1,10 @@
-import { Server } from '../types';
+import { iServer } from '../types';
 import { emitWarning } from 'process';
 
 export function cleanConfig (
-    conf: Server.UserHTTPConfig,
+    conf: iServer.UserHTTPConfig,
 	diagnostics: any[]
-): Server.HTTPConfig {
+): iServer.HTTPConfig {
     const config = {...conf};
     if(!config.port) config.port = 80; //default http port
 
@@ -23,6 +23,6 @@ export function cleanConfig (
         diagnostics.push(msg);
     }
 
-    return <Server.HTTPConfig>config;
+    return <iServer.HTTPConfig>config;
 }
 

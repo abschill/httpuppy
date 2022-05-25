@@ -1,3 +1,3 @@
 ![](logo.png)
 
-A simple framework for creating HTTP servers in node
+A simple abstraction layer for node's http module

@@ -1,11 +1,12 @@
 import { createServer } from 'http';
-import { Server } from './types';
+import { iServer } from './types';
 import { cleanConfig } from './internal/config';
 import { useDefaultHandler } from './request';
+import { useStartup } from './internal/hooks/startup';
 import GracefulShutdown = require('http-graceful-shutdown');
 export function create (
-    conf: Server.UserHTTPConfig
-): Server.SimpleHTTP {
+    conf: iServer.UserHTTPConfig
+): iServer.SimpleHTTP {
 	//todo - arg parse for runtime opts
 	//const argv = useProcessArgs();
 	// if(argv) {
@@ -14,22 +15,8 @@ export function create (
 	const diagnostics = [];
     const config = cleanConfig(conf, diagnostics);
     const server = createServer();
-    if(config.onMount) server.once('listening', config.onMount);
+    const ss = useStartup(config, server, diagnostics);
 
-	// cold init would just be for manually setting the listener up on the port
-    if(!config.coldInit) {
-        server.listen(config.port, config.hostname);
-    }
-
-    if(config.throwWarnings && diagnostics.length > 0) {
-        throw new Error(`
-Server couldnt initialize without issues, if you'd like to suppress these errors, set the config option "throwWarnings": false
-Diagnostic List:\n
-${JSON.stringify(diagnostics)}
-`);
-    }
-    const ss = <Server.SimpleHTTP>server;
-	ss.diagnostics = diagnostics;
 	if (!config.static && config.handler) {
 		ss.on('request', config.handler);
 	}
@@ -42,6 +29,6 @@ ${JSON.stringify(diagnostics)}
     return ss;
 }
 
-export function shutdown(s: Server.SimpleHTTP) {
+export function shutdown(s: iServer.SimpleHTTP) {
 	return GracefulShutdown(s);
 }
