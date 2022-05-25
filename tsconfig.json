@@ -4,7 +4,8 @@
         "rootDir": ".",
         "outDir": "lib",
         "declaration": true,
-        "moduleResolution": "node"
+        "moduleResolution": "node",
+		"esModuleInterop": true
     },
 	"include": [
 		"test/**/*",

@@ -9,7 +9,7 @@ export function cleanConfig (
     if(!config.port) config.port = 80; //default http port
 
     if(!config.hostname) config.hostname = '127.0.0.1'; // default lh
-
+	if(!config.throwWarnings || (config.throwWarnings === null)) config.throwWarnings = false;
 	if(config.static)
 		config.static = {
 			href: '/', // base href to access with requests

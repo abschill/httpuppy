@@ -3,7 +3,9 @@ import { iServer } from './types';
 import { cleanConfig } from './internal/config';
 import { useDefaultHandler } from './request';
 import { useStartup } from './internal/hooks/startup';
-import GracefulShutdown = require('http-graceful-shutdown');
+import GracefulShutdown from 'http-graceful-shutdown';
+import { check } from 'tcp-port-used';
+
 export function create (
     conf: iServer.UserHTTPConfig
 ): iServer.SimpleHTTP {
@@ -12,6 +14,8 @@ export function create (
 	// if(argv) {
 	// 	console.log('process args:\n', argv);
 	// }
+
+	check(conf.port ?? 80).then(console.log).catch(err => console.error('Error on check:', err.message));
 	const diagnostics = [];
     const config = cleanConfig(conf, diagnostics);
     const server = createServer();

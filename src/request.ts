@@ -31,7 +31,7 @@ export function useDefaultHandler (
 	let pathName = req.url.substring(1, req.url.length);
 
 	if(pathName === '/' || pathName === '' || pathName == null) {
-		pathName = 'index.html';
+		pathName = config?.static?.indexType ?? 'index.html';
 	}
 	if(!filesMounted.includes(pathName)) {
 		return handle404(res);

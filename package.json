@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "http-graceful-shutdown": "^3.1.7",
-    "mime-types": "^2.1.35"
+    "mime-types": "^2.1.35",
+    "tcp-port-used": "^1.0.2"
   }
 }
