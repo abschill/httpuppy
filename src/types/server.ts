@@ -20,3 +20,8 @@ export interface UserHTTPConfig extends ServerOptions {
 export interface SimpleHTTP extends Server {
 	diagnostics: string[];
 }
+
+export type ValidURLPath = {
+	requestUrl: string;
+	transformedUrl: string;
+}

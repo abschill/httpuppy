@@ -9,9 +9,7 @@ export function useStartup(
 	if(config.onMount) server.once('listening', config.onMount);
 
 	// cold init would just be for manually setting the listener up on the port
-    if(!config.coldInit) {
-        server.listen(config.port, config.hostname);
-    }
+
 
     if(config.throwWarnings && diagnostics.length > 0) {
         throw new Error(`

@@ -1,7 +1,7 @@
 import { iServer } from '../types';
 import { emitWarning } from 'process';
 
-export function cleanConfig (
+export function useConfig (
     conf: iServer.UserHTTPConfig,
 	diagnostics: any[]
 ): iServer.HTTPConfig {

@@ -1,14 +1,16 @@
 {
     "compilerOptions": {
         "baseUrl": "src",
-        "rootDir": ".",
+        "rootDir": "src",
         "outDir": "lib",
         "declaration": true,
         "moduleResolution": "node",
 		"esModuleInterop": true
     },
 	"include": [
-		"test/**/*",
 		"src/**/*"
+	],
+	"exclude": [
+		"test/**/*",
 	]
 }

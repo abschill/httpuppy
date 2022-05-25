@@ -1,10 +1,11 @@
 import { createServer } from 'http';
 import { iServer } from './types';
-import { cleanConfig } from './internal/config';
-import { useDefaultHandler } from './request';
+import { useConfig } from './internal/config';
 import { useStartup } from './internal/hooks/startup';
+import { usePort } from './internal/hooks/port';
 import GracefulShutdown from 'http-graceful-shutdown';
-import { check } from 'tcp-port-used';
+
+import { useStaticMount } from './internal/hooks/static';
 
 export function create (
     conf: iServer.UserHTTPConfig
@@ -15,24 +16,20 @@ export function create (
 	// 	console.log('process args:\n', argv);
 	// }
 
-	check(conf.port ?? 80).then(console.log).catch(err => console.error('Error on check:', err.message));
+	usePort(conf.port ?? 80);
 	const diagnostics = [];
-    const config = cleanConfig(conf, diagnostics);
-    const server = createServer();
+    const config = useConfig(conf, diagnostics);
+    const server = createServer(config.handler ?? (() =>({})));
     const ss = useStartup(config, server, diagnostics);
 
-	if (!config.static && config.handler) {
-		ss.on('request', config.handler);
-	}
-
 	//todo: static handler move out of top level
-	if(config.static) {
-		ss.on('request', (req, res) => useDefaultHandler(req, res, config));
-	}
+	if(config.static) useStaticMount(config, server, diagnostics);
+	return !config.coldInit?<iServer.SimpleHTTP>server.listen(config.port, config.hostname): ss;
 
-    return ss;
 }
 
-export function shutdown(s: iServer.SimpleHTTP) {
+export function shutdown (
+	s: iServer.SimpleHTTP
+) {
 	return GracefulShutdown(s);
 }
