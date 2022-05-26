@@ -1,7 +1,10 @@
 import { Server } from 'http';
 
+export type DiagnosticLog = {
+	msg: string;
+}
 export interface SimpleHTTP extends Server {
-	diagnostics: string[];
+	diagnostics: DiagnosticLog[];
 }
 
 export type MountedFile = {
@@ -13,10 +16,8 @@ export type MountedFile = {
 	hrefs: string[];
 }
 
-
 export type VirtualFS = {
 	mountPath: string;
 }
-
 
 export type HTTPuppySleep = () => Promise<void>;

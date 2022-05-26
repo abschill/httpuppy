@@ -1,11 +1,11 @@
 
 export type Router = {
-	href: string;
+	baseHref: string;
 
 }
 
 export function useRouter(router) {
-	//
+	// todo
 }
 
 

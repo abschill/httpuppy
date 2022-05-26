@@ -3,13 +3,14 @@ import {
 	iPuppy
 } from 'types';
 import { useEtag } from './internal/etag';
+
 export function useHeaders(
 	options: iPuppy.HTTPBodyWriterOptions, config: HTTPuppyOptions.UserHTTPConfig
 ): iPuppy.HTTPHeaders {
 	const applyHeaders: iPuppy.HTTPHeaders = [
 		[
 			'Content-Type',
-			options.type
+			options.type ?? 'text/plain'
 		]
 	];
 

@@ -5,6 +5,7 @@ import { useStartup } from './internal/hooks/startup';
 import { usePort } from './internal/hooks/port';
 import GracefulShutdown from 'http-graceful-shutdown';
 import { useStaticMount } from './internal/hooks/static';
+import { DiagnosticLog } from './types/server';
 
 export function useServer(
 	server: iServer.SimpleHTTP,
@@ -26,14 +27,13 @@ export function create(
 	// }
 
 	usePort(conf.port ?? 80);
-	const diagnostics = [];
+	const diagnostics: DiagnosticLog[] = [];
     const config = useConfig(conf, diagnostics);
     const _server = createServer(config.handler);
     const server = useStartup(config, _server, diagnostics);
 	//todo: static handler move out of top level
 	if(config.static) useStaticMount(config, server, diagnostics);
 	return useServer(server, config);
-
 }
 
 export function shutdown(

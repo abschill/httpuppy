@@ -11,10 +11,6 @@ export function useStartup(
 	diagnostics
 ) {
 	if(config.onMount) server.once('listening', config.onMount);
-
-	// cold init would just be for manually setting the listener up on the port
-
-
     if(config.throwWarnings && diagnostics.length > 0) {
         throw new Error(`
 		Server couldnt initialize without issues, if you'd like to suppress these errors, set the config option "throwWarnings": false

@@ -16,7 +16,7 @@ function use404(
 	return;
 }
 
-function write(
+function useWrite(
 	res: HTTP_RES,
 	config: HTTPuppyOptions.UserHTTPConfig,
 	options: iPuppy.HTTPBodyWriterOptions
@@ -35,7 +35,7 @@ export function useFSHandler(
 	const pathData = useVFSResponse(req, config);
 	// todo- set images as inline response content
 	try {
-		return write(res, config, {
+		return useWrite(res, config, {
 			status: 200,
 			statusText: 'ok',
 			type: pathData.contentType,

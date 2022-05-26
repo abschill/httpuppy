@@ -17,7 +17,7 @@ function pathify(
 	return pathOptions;
 }
 
-export function useMountedFS (
+export function useMountedFS(
 	config: HTTPuppyOptions.UserHTTPConfig
 ) {
 	// mountedPath is the path to retrieve filesMounted from

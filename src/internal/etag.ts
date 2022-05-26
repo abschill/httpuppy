@@ -1,7 +1,5 @@
 import { Stats } from 'fs';
-import {
-	createHash
-} from 'crypto';
+import { createHash } from 'crypto';
 
 export function useEntityTag(entity) {
 	if (entity.length === 0) {

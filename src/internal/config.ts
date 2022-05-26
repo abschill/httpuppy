@@ -1,8 +1,9 @@
-import { HTTPuppyOptions } from '../types';
+import { HTTPuppyOptions, iServer } from '../types';
 import { emitWarning } from 'process';
 
-export function useConfig(    conf: HTTPuppyOptions.UserHTTPConfig,
-	diagnostics: any[]
+export function useConfig(
+	conf: HTTPuppyOptions.UserHTTPConfig,
+	diagnostics: iServer.DiagnosticLog[]
 ): HTTPuppyOptions.UserHTTPConfig {
     const config = {...conf};
     if(!config.port) config.port = 80; //default http port
@@ -20,7 +21,7 @@ export function useConfig(    conf: HTTPuppyOptions.UserHTTPConfig,
 	if(!conf.handler && !conf.static) {
         const msg = 'Request Handler no-op, nothing is handling your requests';
         emitWarning(msg, (new Error().stack.split("at ")[1]));
-        diagnostics.push(msg);
+        diagnostics.push({msg});
     }
 
     return <HTTPuppyOptions.UserHTTPConfig>config;
