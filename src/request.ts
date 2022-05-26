@@ -1,8 +1,7 @@
-import mime from 'mime-types';
 import { iServer, HTTP_INCMSG, HTTP_RES } from './types';
 import { useVFSResponse } from './url';
 import { emitWarning } from 'process';
-
+import { useEtag } from './internal/etag';
 function handle404 (
 	res: HTTP_RES
 ): void {
@@ -13,9 +12,14 @@ function handle404 (
 
 function write (
 	res: HTTP_RES,
-	options
+	options: {
+		status: number
+		statusText: string
+		type: string
+		body: any
+	}
 ): void {
-	res.writeHead(options.status, options.statusText, [['Content-Type', mime.lookup(options.type)]]);
+	res.writeHead(options.status, options.statusText, [['ETag', useEtag(options.body, { weak: true })], ['Content-Type', options.type]]);
 	res.write(options.body);
 	res.end();
 	return;
