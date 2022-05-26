@@ -1,8 +1,8 @@
-import { iServer, Server } from '../../types';
+import { Server, HTTPuppyOptions } from '../../types';
 import { useFSHandler } from '../../request';
 
 export function useStaticMount(
-	config: Required<iServer.UserHTTPConfig>,
+	config: HTTPuppyOptions.UserHTTPConfig,
 	server: Server,
 	diagnostics
 ) {

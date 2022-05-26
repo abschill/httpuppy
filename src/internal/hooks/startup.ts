@@ -1,8 +1,12 @@
-import { iServer, Server } from '../../types';
+import {
+	HTTPuppyOptions,
+	iServer,
+	Server
+} from '../../types';
 
 
 export function useStartup(
-	config: Required<iServer.UserHTTPConfig>,
+	config: HTTPuppyOptions.UserHTTPConfig,
 	server: Server,
 	diagnostics
 ) {

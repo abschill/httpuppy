@@ -1,13 +1,23 @@
 import { createServer } from 'http';
-import { iServer } from './types';
+import { iServer, HTTPuppyOptions } from './types';
 import { useConfig } from './internal/config';
 import { useStartup } from './internal/hooks/startup';
 import { usePort } from './internal/hooks/port';
 import GracefulShutdown from 'http-graceful-shutdown';
 import { useStaticMount } from './internal/hooks/static';
 
-export function create (
-    conf: iServer.UserHTTPConfig
+export function useServer(
+	server: iServer.SimpleHTTP,
+	config: HTTPuppyOptions.UserHTTPConfig
+): iServer.SimpleHTTP {
+	if(!config.coldInit) {
+		server.listen(config.port, config.hostname);
+	}
+	return server;
+}
+
+export function create(
+    conf: HTTPuppyOptions.UserHTTPConfig
 ): iServer.SimpleHTTP {
 	//todo - arg parse for runtime opts
 	//const argv = useProcessArgs();
@@ -18,15 +28,16 @@ export function create (
 	usePort(conf.port ?? 80);
 	const diagnostics = [];
     const config = useConfig(conf, diagnostics);
-    const server = createServer(config.handler);
-    const ss = useStartup(config, server, diagnostics);
+    const _server = createServer(config.handler);
+    const server = useStartup(config, _server, diagnostics);
 	//todo: static handler move out of top level
 	if(config.static) useStaticMount(config, server, diagnostics);
-	return !config.coldInit?<iServer.SimpleHTTP>server.listen(config.port, config.hostname): ss;
+	return useServer(server, config);
+
 }
 
-export function shutdown (
+export function shutdown(
 	s: iServer.SimpleHTTP
-) {
+): iServer.HTTPuppySleep  {
 	return GracefulShutdown(s);
 }

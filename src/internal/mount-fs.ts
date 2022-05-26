@@ -1,11 +1,12 @@
-import { iServer } from '../types';
+
 import { join, resolve } from 'path';
 import { readdirSync, readFileSync } from 'fs';
 import mime from 'mime-types';
+import { HTTPuppyOptions } from '../types';
 
 function pathify(
 	file: string,
-	_static: iServer.UserStaticConfig
+	_static: HTTPuppyOptions.UserStaticConfig
 ): string[] {
 	const pathOptions = [
 		`${_static.href ?? ''}${file}`
@@ -16,7 +17,9 @@ function pathify(
 	return pathOptions;
 }
 
-export function useMountedFS (config: iServer.HTTPConfig) {
+export function useMountedFS (
+	config: HTTPuppyOptions.UserHTTPConfig
+) {
 	// mountedPath is the path to retrieve filesMounted from
 	const mountedPath = join(config.static.path);
 	// filesMounted is the accessible file tree that can be used against the upcoming handlers

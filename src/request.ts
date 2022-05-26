@@ -1,39 +1,41 @@
-import { iServer, HTTP_INCMSG, HTTP_RES } from './types';
+import {
+	HTTP_INCMSG,
+	HTTP_RES,
+	HTTPuppyOptions,
+	iPuppy
+} from './types';
 import { useVFSResponse } from './url';
 import { emitWarning } from 'process';
-import { useEtag } from './internal/etag';
-function handle404 (
+import { useHeaders } from './middleware';
+
+function use404(
 	res: HTTP_RES
 ): void {
-	res.writeHead(404);
-	res.end();
+	res.writeHead(404, '404: page not found');
+	res.end('404: page not found');
 	return;
 }
 
-function write (
+function write(
 	res: HTTP_RES,
-	options: {
-		status: number
-		statusText: string
-		type: string
-		body: any
-	}
+	config: HTTPuppyOptions.UserHTTPConfig,
+	options: iPuppy.HTTPBodyWriterOptions
 ): void {
-	res.writeHead(options.status, options.statusText, [['ETag', useEtag(options.body, { weak: true })], ['Content-Type', options.type]]);
+	res.writeHead(options.status, options.statusText, useHeaders(options, config));
 	res.write(options.body);
 	res.end();
 	return;
 }
 
-export function useFSHandler (
+export function useFSHandler(
 	req: HTTP_INCMSG, // incoming message to handle args from
 	res: HTTP_RES, // response message to send
-	config: Required<iServer.UserHTTPConfig> // config from server
+	config: HTTPuppyOptions.UserHTTPConfig // config from server
 ): void {
 	const pathData = useVFSResponse(req, config);
 	// todo- set images as inline response content
 	try {
-		return write(res, {
+		return write(res, config, {
 			status: 200,
 			statusText: 'ok',
 			type: pathData.contentType,
@@ -42,6 +44,6 @@ export function useFSHandler (
 	}
 	catch(e) {
 		emitWarning(e);
-		return handle404(res);
+		return use404(res);
 	}
 }

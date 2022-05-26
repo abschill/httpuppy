@@ -1,10 +1,10 @@
-import * as iServer from './types/server';
+import * as iTypes from './types';
 import { useMountedFS } from './internal/mount-fs';
 
 export function useVFSResponse (
 	req,
-	config: Required<iServer.UserHTTPConfig>
-): iServer.MountedFile {
+	config: iTypes.HTTPuppyOptions.UserHTTPConfig
+): iTypes.iServer.MountedFile {
 	const iFS = useMountedFS(config);
 	return {
 		reqUrl: req.url,

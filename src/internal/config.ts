@@ -1,10 +1,9 @@
-import { iServer } from '../types';
+import { HTTPuppyOptions } from '../types';
 import { emitWarning } from 'process';
 
-export function useConfig (
-    conf: iServer.UserHTTPConfig,
+export function useConfig(    conf: HTTPuppyOptions.UserHTTPConfig,
 	diagnostics: any[]
-): iServer.HTTPConfig {
+): HTTPuppyOptions.UserHTTPConfig {
     const config = {...conf};
     if(!config.port) config.port = 80; //default http port
 
@@ -24,6 +23,6 @@ export function useConfig (
         diagnostics.push(msg);
     }
 
-    return <iServer.HTTPConfig>config;
+    return <HTTPuppyOptions.UserHTTPConfig>config;
 }
 
