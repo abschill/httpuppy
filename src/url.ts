@@ -1,7 +1,7 @@
 import * as iServer from './types/server';
 import { useMountedFS } from './internal/mount-fs';
 
-export function useMountedFSResponse (
+export function useVFSResponse (
 	req,
 	config: Required<iServer.UserHTTPConfig>
 ): iServer.MountedFile {

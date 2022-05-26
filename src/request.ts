@@ -1,7 +1,6 @@
-import { readFileSync } from 'fs';
 import mime from 'mime-types';
 import { iServer, HTTP_INCMSG, HTTP_RES } from './types';
-import { useMountedFSResponse } from './url';
+import { useVFSResponse } from './url';
 import { emitWarning } from 'process';
 
 function handle404 (
@@ -27,7 +26,7 @@ export function useFSHandler (
 	res: HTTP_RES, // response message to send
 	config: Required<iServer.UserHTTPConfig> // config from server
 ): void {
-	const pathData = useMountedFSResponse(req, config);
+	const pathData = useVFSResponse(req, config);
 	// todo- set images as inline response content
 	try {
 		return write(res, {
