@@ -1,4 +1,7 @@
-all: build test runexample
+all: build test node-example
+
+dev-ts:
+	yarn build:watch
 
 build:
 	yarn build
@@ -6,5 +9,5 @@ build:
 test:
 	yarn test
 
-runexample:
+dev-example:
 	yarn run-ex

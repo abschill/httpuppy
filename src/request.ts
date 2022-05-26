@@ -28,19 +28,18 @@ export function useFSHandler (
 	res: HTTP_RES, // response message to send
 	config: Required<iServer.UserHTTPConfig> // config from server
 ): void {
-	const vFS = useMountedFS(config);
-	const pathData = iValidURL(req, config, vFS);
-	const fileName = resolve(process.cwd(), pathData.symLink);
+	const pathData = iValidURL(req, config);
 	// todo- set images as inline response content
-	if(vFS.filesMounted.includes(pathData.fileName)) {
+	try {
 		return write(res, {
 			status: 200,
 			statusText: 'ok',
 			type: pathData.contentType,
-			body: readFileSync(fileName).toString('utf-8')
+			body: readFileSync(pathData.symLink).toString('utf-8')
 		});
 	}
-	else {
+	catch(e) {
+		console.log(e);
 		return handle404(res);
 	}
 }

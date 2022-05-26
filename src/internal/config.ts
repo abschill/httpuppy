@@ -10,12 +10,13 @@ export function useConfig (
 
     if(!config.hostname) config.hostname = '127.0.0.1'; // default lh
 	if(!config.throwWarnings || (config.throwWarnings === null)) config.throwWarnings = false;
-	if(config.static)
+	if(config.static) {
 		config.static = {
 			href: '/', // base href to access with requests
 			path: '.', // path to map to the href
 			...config.static // go last to just use href and path as defaults to override, config is the user input
 		};
+	}
 
 	if(!conf.handler && !conf.static) {
         const msg = 'Request Handler no-op, nothing is handling your requests';

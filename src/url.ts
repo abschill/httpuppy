@@ -1,30 +1,39 @@
-import { ValidURLPath } from './types/server';
-import { join } from 'path';
+import * as iServer from './types/server';
+import { resolve } from 'path';
 import mime from 'mime-types';
 
-function useBaseHref (
+function interpolateHref(p: string, config: Required<iServer.UserHTTPConfig>): string{
+	if(!p) {
+		p = '/';
+	}
+	if(!config.static) {
+		// no static options, no html base redirect
+		return p;
+	}
+	return p === '/' ?
+	resolve(config.static.path, 'index.html') : resolve(config.static.path, p );
+}
+
+function useVirtualHref (
 	req,
-	config
+	config: Required<iServer.UserHTTPConfig>
 ) {
 	if(req.url !== '/') {
 		return config.static.path + req.url;
 	}
-	let bUrl = req.url;
-	if(!bUrl || bUrl === '') bUrl = '/';
-	const outPath = (config?.indexBase ? (bUrl + config.indexBase) : bUrl + 'index.html');
-	return join(outPath);
+	return interpolateHref(req.url, config);
 }
 
 export function iValidURL(
 	req,
-	config,
-	vFS
-): ValidURLPath {
-	const buf = useBaseHref(req, config);
+	config: Required<iServer.UserHTTPConfig>
+): iServer.ValidURLPath {
+	const symLink = useVirtualHref(req, config);
+	const fileName = symLink.split('/').pop();
 	return {
 		href: req.url,
-		symLink: buf,
-		fileName: buf.split('/').pop(),
-		contentType: mime.lookup(buf)
+		symLink,
+		fileName,
+		contentType: mime.lookup(symLink)
 	};
 }
