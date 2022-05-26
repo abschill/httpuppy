@@ -8,7 +8,6 @@ export function useStaticMount(
 ) {
 	// mount configured FS path to the request handler
 	server.on('request', (req, res) => {
-		console.log(req.url);
 		useFSHandler(req, res, config);
 	});
 }

@@ -1,9 +1,8 @@
 import { readFileSync } from 'fs';
-import { resolve } from 'path';
-import { useMountedFS } from './internal/mount-fs';
 import mime from 'mime-types';
 import { iServer, HTTP_INCMSG, HTTP_RES } from './types';
-import { iValidURL } from './url';
+import { useMountedFSResponse } from './url';
+import { emitWarning } from 'process';
 
 function handle404 (
 	res: HTTP_RES
@@ -28,7 +27,7 @@ export function useFSHandler (
 	res: HTTP_RES, // response message to send
 	config: Required<iServer.UserHTTPConfig> // config from server
 ): void {
-	const pathData = iValidURL(req, config);
+	const pathData = useMountedFSResponse(req, config);
 	// todo- set images as inline response content
 	try {
 		return write(res, {
@@ -39,7 +38,7 @@ export function useFSHandler (
 		});
 	}
 	catch(e) {
-		console.log(e);
+		emitWarning(e);
 		return handle404(res);
 	}
 }
