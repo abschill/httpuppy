@@ -34,7 +34,7 @@ export function useFSHandler (
 			status: 200,
 			statusText: 'ok',
 			type: pathData.contentType,
-			body: readFileSync(pathData.symLink).toString('utf-8')
+			body: pathData.content
 		});
 	}
 	catch(e) {
