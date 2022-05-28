@@ -8,6 +8,11 @@ import { useVFSResponse } from './url';
 import { emitWarning } from 'process';
 import { useHeaders } from './middleware';
 
+/**
+ *
+ * @param res internal response to be written to
+ * @returns nothing
+ */
 function use404(
 	res: HTTP_RES
 ): void {
@@ -15,7 +20,13 @@ function use404(
 	res.end('404: page not found');
 	return;
 }
-
+/**
+ *
+ * @param res the response to write to
+ * @param config the config to base the write on
+ * @param options the writer instance options
+ * @returns
+ */
 function useWrite(
 	res: HTTP_RES,
 	config: HTTPuppyOptions.UserHTTPConfig,
@@ -26,11 +37,17 @@ function useWrite(
 	res.end();
 	return;
 }
-
+/**
+ *
+ * @param req incoming message to handle args from
+ * @param res response message to send
+ * @param config config from server
+ * @returns
+ */
 export function useFSHandler(
-	req: HTTP_INCMSG, // incoming message to handle args from
-	res: HTTP_RES, // response message to send
-	config: HTTPuppyOptions.UserHTTPConfig // config from server
+	req: HTTP_INCMSG, //
+	res: HTTP_RES, //
+	config: HTTPuppyOptions.UserHTTPConfig
 ): void {
 	const pathData = useVFSResponse(req, config);
 	// todo- set images as inline response content

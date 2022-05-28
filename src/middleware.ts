@@ -4,6 +4,12 @@ import {
 } from 'types';
 import { useEtag } from './internal/etag';
 
+/**
+ *
+ * @param options the writer options to apply the headers against
+ * @param config the server config to apply against
+ * @returns
+ */
 export function useHeaders(
 	options: iPuppy.HTTPBodyWriterOptions, config: HTTPuppyOptions.UserHTTPConfig
 ): iPuppy.HTTPHeaders {
@@ -14,6 +20,7 @@ export function useHeaders(
 		]
 	];
 
+	// set weak etag generation if applicable
 	if(config.cache) {
 		applyHeaders.push(['ETag', useEtag(options.body, { weak: true })]);
 	}

@@ -7,6 +7,12 @@ import GracefulShutdown from 'http-graceful-shutdown';
 import { useStaticMount } from './internal/hooks/static';
 import { DiagnosticLog } from './types/server';
 
+/**
+ *
+ * @param server The final hook to run when a server is created, will return and optionally start the server
+ * @param config the configuration for the given server
+ * @returns The HTTP Server
+ */
 export function useServer(
 	server: iServer.SimpleHTTP,
 	config: HTTPuppyOptions.UserHTTPConfig
