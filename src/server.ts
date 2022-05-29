@@ -2,7 +2,7 @@ import { createServer as stlCreateServer } from 'http';
 import { HTTPuppyServer, HTTPuppyOptions } from './types';
 import { useConfig } from './internal/config';
 import { useStartup } from './internal/startup';
-import { usePort } from './internal/hooks/port';
+import { usePort } from './internal/port';
 import GracefulShutdown from 'http-graceful-shutdown';
 import { useStaticMount } from './internal/static';
 import { DiagnosticLog } from './types/server';
