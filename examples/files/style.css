@@ -1,3 +1,14 @@
 * {
 	box-sizing: border-box;
 }
+
+h1 {
+	font-family: system-ui;
+}
+
+main {
+	display: grid;
+	justify-content: center;
+	text-align: center;
+	width: 100%;
+}

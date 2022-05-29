@@ -12,7 +12,7 @@ export type MountedFile = {
 	symLink		: string;
 	contentType	: string;
 	fileName	: string;
-	content		: string;
+	content		: Buffer;
 	hrefs		: string[];
 }
 

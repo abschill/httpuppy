@@ -7,6 +7,30 @@ import {
 import { useVFSResponse } from './url';
 import { emitWarning } from 'process';
 import { useHeaders } from './middleware';
+import { createReadStream } from 'fs';
+
+import useContentType from './internal/hooks/content-type';
+
+const bufferTypes = [
+	'png',
+	'jpg',
+	'jpeg',
+	'apng',
+	'webp',
+	'gif',
+	'avif',
+	'mp4',
+	'mp3',
+	'wav',
+	'webm',
+	'bmp',
+	'ico',
+	'tiff'
+];
+
+function isBufferType(file: string) {
+	return bufferTypes.filter((el) => file.includes(el)).length > 0;
+}
 
 /**
  *
@@ -32,8 +56,9 @@ function useWrite(
 	config: HTTPuppyOptions.UserHTTPConfig,
 	options: iPuppy.HTTPuppyWriterOptions
 ): void {
+	//console.log(isBufferType())
 	res.writeHead(options.status, options.statusText, useHeaders(options, config));
-	res.write(options.body);
+	res.write(options.asString);
 	res.end();
 	return;
 }
@@ -50,17 +75,31 @@ export function useFSHandler(
 	config	: HTTPuppyOptions.UserHTTPConfig
 ): void {
 	const pathData = useVFSResponse(req, config);
-	// todo- set images as inline response content
-	try {
-		return useWrite(res, config, {
-			status: 200,
-			statusText: 'ok',
-			type: pathData.contentType,
-			body: pathData.content
+	if(isBufferType(req.url)) {
+		// handle as stream reader
+		const stream = createReadStream(pathData.symLink);
+		stream.on('data', (chunk) => {
+			// get content type of
+			res.writeHead(200, 'ok', useContentType(pathData.symLink));
+			res.write(chunk);
 		});
+		// end response when data is done streaming from file
+		stream.on('end', _ => res.end());
+		return;
 	}
-	catch(e) {
-		emitWarning(e);
-		return use404(res);
+	else {
+		try {
+			return useWrite(res, config, {
+				status: 200,
+				statusText: 'ok',
+				type: pathData.contentType,
+				asString: pathData.content.toString('utf-8'),
+				asBuffer: pathData.content
+			});
+		}
+		catch(e) {
+			emitWarning(e);
+			return use404(res);
+		}
 	}
 }
