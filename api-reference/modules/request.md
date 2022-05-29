@@ -2,17 +2,19 @@
 
 # Module: request
 
+**`description`** hooks for handling requests for the core module
+
 ## Table of contents
 
 ### Functions
 
-- [useFSHandler](request.md#usefshandler)
+- [useStaticHandler](request.md#usestatichandler)
 
 ## Functions
 
-### useFSHandler
+### useStaticHandler
 
-▸ **useFSHandler**(`req`, `res`, `config`): `void`
+▸ **useStaticHandler**(`req`, `res`, `config`): `void`
 
 #### Parameters
 
@@ -26,6 +28,8 @@
 
 `void`
 
+nothing, it inherits flow control from the requesting branch
+
 #### Defined in
 
-[request.ts:18](https://github.com/abschill/http-simple/blob/472772b/src/request.ts#L18)
+[request.ts:28](https://github.com/abschill/http-simple/blob/762f144/src/request.ts#L28)

@@ -11,7 +11,7 @@ import { DiagnosticLog } from './types/server';
  *
  * @param server The final hook to run when a server is created, will return and optionally start the server
  * @param config the configuration for the given server
- * @returns The HTTP Server
+ * @returns The HTTP Server runtime
  */
 export function useServer(
 	server	: HTTPuppyServer.Runtime,
@@ -43,7 +43,7 @@ export function createServer(
     const _server = stlCreateServer(config.handler);
     const server = useStartup(config, _server, diagnostics);
 	//todo: static handler move out of top level
-	if(config.static) useStaticMount(config, server, diagnostics);
+	if(config.static) useStaticMount(config, server);
 	return useServer(server, config);
 }
 /**

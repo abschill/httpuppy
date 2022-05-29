@@ -2,17 +2,23 @@
 
 # Module: url
 
+**`description`** Hooks for handling url parsing strategies
+
 ## Table of contents
 
 ### Functions
 
-- [useVFSResponse](url.md#usevfsresponse)
+- [useStaticURLParser](url.md#usestaticurlparser)
 
 ## Functions
 
-### useVFSResponse
+### useStaticURLParser
 
-▸ **useVFSResponse**(`req`, `config`): `iTypes.HTTPuppyServer.MountedFile`
+▸ **useStaticURLParser**(`req`, `config`): `iTypes.HTTPuppyServer.MountedFile`
+
+**`function`** useStaticURLParser
+
+**`description`** hook for handling a response with a virtually mounted static filesystem browser
 
 #### Parameters
 
@@ -25,8 +31,8 @@
 
 `iTypes.HTTPuppyServer.MountedFile`
 
-the mounted file to serve for the given request information
+the mounted file to serve based on the given request information
 
 #### Defined in
 
-[url.ts:10](https://github.com/abschill/http-simple/blob/472772b/src/url.ts#L10)
+[url.ts:15](https://github.com/abschill/http-simple/blob/762f144/src/url.ts#L15)

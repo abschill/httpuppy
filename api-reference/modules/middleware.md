@@ -25,6 +25,8 @@
 
 `iPuppy.HTTPHeaders`
 
+default list of http headers based on given config cache settings / content type of the request options
+
 #### Defined in
 
-[middleware.ts:13](https://github.com/abschill/http-simple/blob/472772b/src/middleware.ts#L13)
+[middleware.ts:13](https://github.com/abschill/http-simple/blob/762f144/src/middleware.ts#L13)

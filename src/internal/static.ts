@@ -1,13 +1,18 @@
-import { Server, HTTPuppyOptions } from '../types';
-import { useFSHandler } from '../request';
+import { HTTPuppyServer, HTTPuppyOptions } from '../types';
+import { useStaticHandler } from '../request';
 
 export function useStaticMount(
 	config		: HTTPuppyOptions.UserHTTPConfig,
-	server		: Server,
-	diagnostics
+	server		: HTTPuppyServer.Runtime
 ) {
 	// mount configured FS path to the request handler
 	server.on('request', (req, res) => {
-		useFSHandler(req, res, config);
+		useStaticHandler(req, res, config);
+	});
+
+	server.on('error', (e) => {
+		server.diagnostics.push({
+			msg: e.stack
+		});
 	});
 }

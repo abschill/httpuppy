@@ -1,11 +1,21 @@
+/**
+ * @module request
+ * @description hooks for handling requests for the core module
+ */
 import {
 	HTTP_INCMSG,
 	HTTP_RES,
 	HTTPuppyOptions
 } from './types';
-import { useVFSResponse } from './url';
+import {
+	useStaticURLParser
+} from './url';
 import { emitWarning } from 'process';
-import { isBufferType, useWriter, useStreamReader } from './internal/writer';
+import {
+	isBufferType,
+	useWriter,
+	useStreamReader
+} from './internal/writer';
 import { use404 } from './internal/error';
 
 /**
@@ -13,14 +23,14 @@ import { use404 } from './internal/error';
  * @param req incoming message to handle args from
  * @param res response message to send
  * @param config config from server
- * @returns
+ * @returns nothing, it inherits flow control from the requesting branch
  */
-export function useFSHandler(
+export function useStaticHandler(
 	req		: HTTP_INCMSG,
 	res		: HTTP_RES,
 	config	: HTTPuppyOptions.UserHTTPConfig
 ): void {
-	const pathData = useVFSResponse(req, config);
+	const pathData = useStaticURLParser(req, config);
 	if(isBufferType(req.url)) {
 		// handle as stream reader
 		return useStreamReader(pathData, res);

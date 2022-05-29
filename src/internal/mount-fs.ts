@@ -4,7 +4,13 @@ import { readdirSync, readFileSync } from 'fs';
 import { HTTPuppyOptions } from '../types';
 import useContentType from './content-type';
 
-function pathify(
+/**
+ *
+ * @param file the path of the file to check any aliases for
+ * @param _static the static config options of the calling process
+ * @returns list of possible hrefs to be used for the given virtual path
+ */
+function useCleanPaths(
 	file	: string,
 	_static : HTTPuppyOptions.UserStaticConfig
 ): string[] {
@@ -17,6 +23,11 @@ function pathify(
 	return pathOptions;
 }
 
+/**
+ *
+ * @param config config options for the runtime that wants to mount an FS
+ * @returns
+ */
 export function useMountedFS(
 	config: HTTPuppyOptions.UserHTTPConfig
 ) {
@@ -30,7 +41,7 @@ export function useMountedFS(
 		symLink,
 		contentType: useContentType(symLink),
 		content: readFileSync(symLink),
-		hrefs: pathify(file, config.static)
+		hrefs: useCleanPaths(file, config.static)
 	};
 
 	});

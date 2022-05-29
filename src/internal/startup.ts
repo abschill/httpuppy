@@ -1,14 +1,22 @@
+
 import {
 	HTTPuppyOptions,
 	HTTPuppyServer,
 	Server
 } from '../types';
 
+/**
+ *
+ * @param config config from user for runtime
+ * @param server server generated from node standard http library
+ * @param diagnostics diagnostic list from the prestartup process
+ * @returns the http server object
+ */
 export function useStartup(
 	config: HTTPuppyOptions.UserHTTPConfig,
 	server: Server,
-	diagnostics
-) {
+	diagnostics: HTTPuppyServer.DiagnosticLog[]
+): HTTPuppyServer.Runtime {
 	if(config.onMount) server.once('listening', config.onMount);
     if(config.throwWarnings && diagnostics.length > 0) {
         throw new Error(`

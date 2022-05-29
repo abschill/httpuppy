@@ -8,7 +8,7 @@ import { useEtag } from './internal/etag';
  *
  * @param options the writer options to apply the headers against
  * @param config the server config to apply against
- * @returns
+ * @returns default list of http headers based on given config cache settings / content type of the request options
  */
 export function useHeaders(
 	options : iPuppy.HTTPuppyWriterOptions, config: HTTPuppyOptions.UserHTTPConfig

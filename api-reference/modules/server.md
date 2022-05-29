@@ -30,7 +30,7 @@ httpuppy server
 
 #### Defined in
 
-[server.ts:31](https://github.com/abschill/http-simple/blob/472772b/src/server.ts#L31)
+[server.ts:31](https://github.com/abschill/http-simple/blob/762f144/src/server.ts#L31)
 
 ___
 
@@ -52,7 +52,7 @@ void promise to gracefully shut down
 
 #### Defined in
 
-[server.ts:54](https://github.com/abschill/http-simple/blob/472772b/src/server.ts#L54)
+[server.ts:54](https://github.com/abschill/http-simple/blob/762f144/src/server.ts#L54)
 
 ___
 
@@ -71,8 +71,8 @@ ___
 
 `HTTPuppyServer.Runtime`
 
-The HTTP Server
+The HTTP Server runtime
 
 #### Defined in
 
-[server.ts:16](https://github.com/abschill/http-simple/blob/472772b/src/server.ts#L16)
+[server.ts:16](https://github.com/abschill/http-simple/blob/762f144/src/server.ts#L16)
