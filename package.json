@@ -7,7 +7,7 @@
   "scripts": {
     "build": "tsc",
     "build:watch": "tsc -w",
-	"build:docs": "typedoc",
+    "build:docs": "typedoc",
     "dev": "make -j 2 dev-ts dev-example",
     "test": "ts-mocha test/**/*.test.ts",
     "test:watch": "ts-mocha -w test/**/*test.ts",
@@ -27,6 +27,7 @@
     "mocha": "^10.0.0",
     "nodemon": "^2.0.16",
     "ts-mocha": "^10.0.0",
+    "typedoc-plugin-markdown": "^3.12.1",
     "typescript": "^4.6.3"
   },
   "dependencies": {
