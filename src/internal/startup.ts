@@ -2,7 +2,7 @@ import {
 	HTTPuppyOptions,
 	HTTPuppyServer,
 	Server
-} from '../../types';
+} from '../types';
 
 export function useStartup(
 	config: HTTPuppyOptions.UserHTTPConfig,

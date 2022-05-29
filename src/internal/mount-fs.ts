@@ -2,7 +2,7 @@
 import { join, resolve } from 'path';
 import { readdirSync, readFileSync } from 'fs';
 import { HTTPuppyOptions } from '../types';
-import useContentType from './hooks/content-type';
+import useContentType from './content-type';
 
 function pathify(
 	file	: string,

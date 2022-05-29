@@ -1,5 +1,5 @@
-import { Server, HTTPuppyOptions } from '../../types';
-import { useFSHandler } from '../../request';
+import { Server, HTTPuppyOptions } from '../types';
+import { useFSHandler } from '../request';
 
 export function useStaticMount(
 	config		: HTTPuppyOptions.UserHTTPConfig,
