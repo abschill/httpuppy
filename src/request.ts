@@ -8,8 +8,8 @@ import { useVFSResponse } from './url';
 import { emitWarning } from 'process';
 import { useHeaders } from './middleware';
 import { createReadStream } from 'fs';
-
 import useContentType from './internal/hooks/content-type';
+import { MountedFile } from './types/server';
 
 const bufferTypes = [
 	'png',
@@ -56,10 +56,22 @@ function useWrite(
 	config: HTTPuppyOptions.UserHTTPConfig,
 	options: iPuppy.HTTPuppyWriterOptions
 ): void {
-	//console.log(isBufferType())
 	res.writeHead(options.status, options.statusText, useHeaders(options, config));
-	res.write(options.asString);
-	res.end();
+	return useStreamReader(options.virtualFile, res);
+}
+
+function useStreamReader(
+	pathData: MountedFile,
+	res: HTTP_RES
+): void {
+	const stream = createReadStream(pathData.symLink);
+	stream.on('data', (chunk) => {
+		// get content type of
+		res.writeHead(200, 'ok', useContentType(pathData.symLink));
+		res.write(chunk);
+	});
+	// end response when data is done streaming from file
+	stream.on('end', _ => res.end());
 	return;
 }
 /**
@@ -77,15 +89,7 @@ export function useFSHandler(
 	const pathData = useVFSResponse(req, config);
 	if(isBufferType(req.url)) {
 		// handle as stream reader
-		const stream = createReadStream(pathData.symLink);
-		stream.on('data', (chunk) => {
-			// get content type of
-			res.writeHead(200, 'ok', useContentType(pathData.symLink));
-			res.write(chunk);
-		});
-		// end response when data is done streaming from file
-		stream.on('end', _ => res.end());
-		return;
+		return useStreamReader(pathData, res);
 	}
 	else {
 		try {
@@ -93,8 +97,7 @@ export function useFSHandler(
 				status: 200,
 				statusText: 'ok',
 				type: pathData.contentType,
-				asString: pathData.content.toString('utf-8'),
-				asBuffer: pathData.content
+				virtualFile: pathData
 			});
 		}
 		catch(e) {

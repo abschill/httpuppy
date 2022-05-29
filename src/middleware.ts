@@ -22,7 +22,7 @@ export function useHeaders(
 
 	// set weak etag generation if applicable
 	if(config.cache) {
-		applyHeaders.push(['ETag', useEtag(options.asString, { weak: true })]);
+		applyHeaders.push(['ETag', useEtag(options.virtualFile.fileName, { weak: true })]);
 	}
 
 	return applyHeaders;

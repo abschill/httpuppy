@@ -10,9 +10,8 @@ export interface Runtime extends stlServer  {
 export type MountedFile = {
 	reqUrl		: string;
 	symLink		: string;
-	contentType	: string;
+	contentType	: any | any[];
 	fileName	: string;
-	content		: Buffer;
 	hrefs		: string[];
 }
 
