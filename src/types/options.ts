@@ -1,10 +1,10 @@
-import { ServerOptions, Server } from 'http';
+import { ServerOptions } from 'http';
 export type UserStaticConfig = {
 	href 		?: string; // prefix path to access the directory on router
 	path 		?: string; // path on filesystem to reflect
 	mimeType 	?: string; // default content type
 	indexType 	?: string; // file to use as the index of a directory (default: index.html)
-}
+};
 /**
  * @interface Cache Settings
  * @description All supported cache control options in camelcase
@@ -36,6 +36,22 @@ export type CacheSettings = {
 	public 					?: boolean;
 	staleWhileRevalidate	?: boolean;
 	staleIfError			?: boolean;
+};
+
+export const defaultCacheSettings:
+CacheSettings = {
+	maxAge: 3600,
+	mustRevalidate: true,
+	public: true
+};
+
+export function fromDefaultCacheSettings(
+	settings: CacheSettings
+): CacheSettings {
+	return {
+		...defaultCacheSettings,
+		...settings,
+	};
 }
 
 export type GoodboyCacheSettings = Required<CacheSettings>;
@@ -46,7 +62,7 @@ export type UserMiddlewareOption = {
 	href		: string;
 	handler		: any;
 	// todo - debug optins per middleware
-}
+};
 
 
 /**
@@ -70,4 +86,22 @@ export interface UserHTTPConfig extends ServerOptions {
 	middleware 		?: UserMiddlewareOption[]
 	onMount 		?: () => void | Function; // on mount runs once when the server is started
 	cache 			?: CacheSettings;
+}
+
+export const defaultHTTPConfig:
+UserHTTPConfig = {
+	port: 80,
+	coldInit: false,
+	hostname: '127.0.0.1',
+	throwWarnings: false,
+	cache: defaultCacheSettings
+};
+
+export function fromDefaultHTTPConfig(
+	config: UserHTTPConfig
+): UserHTTPConfig {
+	return {
+		...defaultHTTPConfig,
+		...config
+	};
 }
