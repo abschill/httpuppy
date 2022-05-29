@@ -1,5 +1,5 @@
-import { createServer } from 'http';
-import { iServer, HTTPuppyOptions } from './types';
+import { createServer as stlCreateServer } from 'http';
+import { HTTPuppyServer, HTTPuppyOptions } from './types';
 import { useConfig } from './internal/config';
 import { useStartup } from './internal/hooks/startup';
 import { usePort } from './internal/hooks/port';
@@ -14,18 +14,23 @@ import { DiagnosticLog } from './types/server';
  * @returns The HTTP Server
  */
 export function useServer(
-	server: iServer.SimpleHTTP,
-	config: HTTPuppyOptions.UserHTTPConfig
-): iServer.SimpleHTTP {
+	server	: HTTPuppyServer.Runtime,
+	config	: HTTPuppyOptions.UserHTTPConfig
+): HTTPuppyServer.Runtime {
 	if(!config.coldInit) {
 		server.listen(config.port, config.hostname);
 	}
 	return server;
 }
 
-export function create(
-    conf: HTTPuppyOptions.UserHTTPConfig
-): iServer.SimpleHTTP {
+/**
+ *
+ * @param conf configuration options
+ * @returns httpuppy server
+ */
+export function createServer(
+    conf	: HTTPuppyOptions.UserHTTPConfig
+): HTTPuppyServer.Runtime {
 	//todo - arg parse for runtime opts
 	//const argv = useProcessArgs();
 	// if(argv) {
@@ -35,15 +40,19 @@ export function create(
 	usePort(conf.port ?? 80);
 	const diagnostics: DiagnosticLog[] = [];
     const config = useConfig(conf, diagnostics);
-    const _server = createServer(config.handler);
+    const _server = stlCreateServer(config.handler);
     const server = useStartup(config, _server, diagnostics);
 	//todo: static handler move out of top level
 	if(config.static) useStaticMount(config, server, diagnostics);
 	return useServer(server, config);
 }
-
+/**
+ *
+ * @param s http server to shut down
+ * @returns void promise to gracefully shut down
+ */
 export function shutdown(
-	s: iServer.SimpleHTTP
-): iServer.HTTPuppySleep  {
+	s	: HTTPuppyServer.Runtime
+): HTTPuppyServer.HTTPuppySleep  {
 	return GracefulShutdown(s);
 }

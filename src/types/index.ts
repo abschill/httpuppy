@@ -1,4 +1,4 @@
-export * as iServer from './server';
+export * as HTTPuppyServer from './server';
 export * as HTTPuppyOptions from './options';
 export * as iPuppy from './internal';
 export interface ComposableBodyContent {

@@ -1,0 +1,10 @@
+{
+	"entryPoints": [
+		"./src/server.ts",
+		"./src/url.ts",
+		"./src/request.ts",
+		"./src/middleware.ts"
+	],
+	"out": "api-reference",
+	"includeVersion": true
+}

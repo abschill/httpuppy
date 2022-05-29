@@ -1,9 +1,8 @@
 import {
 	HTTPuppyOptions,
-	iServer,
+	HTTPuppyServer,
 	Server
 } from '../../types';
-
 
 export function useStartup(
 	config: HTTPuppyOptions.UserHTTPConfig,
@@ -18,7 +17,7 @@ export function useStartup(
 		${JSON.stringify(diagnostics)}
 		`);
     }
-	const ss = <iServer.SimpleHTTP>server;
+	const ss = <HTTPuppyServer.Runtime>server;
 	ss.diagnostics = diagnostics;
 	return ss;
 }

@@ -11,7 +11,7 @@ import { useEtag } from './internal/etag';
  * @returns
  */
 export function useHeaders(
-	options: iPuppy.HTTPBodyWriterOptions, config: HTTPuppyOptions.UserHTTPConfig
+	options : iPuppy.HTTPuppyWriterOptions, config: HTTPuppyOptions.UserHTTPConfig
 ): iPuppy.HTTPHeaders {
 	const applyHeaders: iPuppy.HTTPHeaders = [
 		[

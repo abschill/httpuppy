@@ -10,7 +10,7 @@ import { useMountedFS } from './internal/mount-fs';
 export function useVFSResponse (
 	req: iTypes.HTTP_INCMSG,
 	config: iTypes.HTTPuppyOptions.UserHTTPConfig
-): iTypes.iServer.MountedFile {
+): iTypes.HTTPuppyServer.MountedFile {
 	const iFS = useMountedFS(config);
 	return {
 		reqUrl: req.url,

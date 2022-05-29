@@ -5,8 +5,8 @@ import mime from 'mime-types';
 import { HTTPuppyOptions } from '../types';
 
 function pathify(
-	file: string,
-	_static: HTTPuppyOptions.UserStaticConfig
+	file	: string,
+	_static : HTTPuppyOptions.UserStaticConfig
 ): string[] {
 	const pathOptions = [
 		`${_static.href ?? ''}${file}`

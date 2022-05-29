@@ -1,1 +1,1 @@
-export * as WebServer from './server';
+export * as HTTPuppyCore from './server';

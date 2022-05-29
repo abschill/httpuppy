@@ -1,6 +1,11 @@
 import { check } from 'tcp-port-used';
+
+/**
+ *
+ * @param port the port to run on
+ */
 export function usePort (
-	port: number
+	port
 ) {
 	check(port ?? 80).then(taken => {
 		if(taken) {

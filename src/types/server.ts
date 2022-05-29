@@ -1,23 +1,23 @@
-import { Server } from 'http';
+import { Server as stlServer } from 'http';
 
 export type DiagnosticLog = {
-	msg: string;
+	msg			: string;
 }
-export interface SimpleHTTP extends Server {
-	diagnostics: DiagnosticLog[];
+export interface Runtime extends stlServer  {
+	diagnostics	: DiagnosticLog[];
 }
 
 export type MountedFile = {
-	reqUrl: string;
-	symLink: string;
-	contentType: string;
-	fileName: string;
-	content: string;
-	hrefs: string[];
+	reqUrl		: string;
+	symLink		: string;
+	contentType	: string;
+	fileName	: string;
+	content		: string;
+	hrefs		: string[];
 }
 
 export type VirtualFS = {
-	mountPath: string;
+	mountPath	: string;
 }
 
 export type HTTPuppySleep = () => Promise<void>;

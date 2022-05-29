@@ -30,7 +30,7 @@ function use404(
 function useWrite(
 	res: HTTP_RES,
 	config: HTTPuppyOptions.UserHTTPConfig,
-	options: iPuppy.HTTPBodyWriterOptions
+	options: iPuppy.HTTPuppyWriterOptions
 ): void {
 	res.writeHead(options.status, options.statusText, useHeaders(options, config));
 	res.write(options.body);
@@ -45,9 +45,9 @@ function useWrite(
  * @returns
  */
 export function useFSHandler(
-	req: HTTP_INCMSG, //
-	res: HTTP_RES, //
-	config: HTTPuppyOptions.UserHTTPConfig
+	req		: HTTP_INCMSG,
+	res		: HTTP_RES,
+	config	: HTTPuppyOptions.UserHTTPConfig
 ): void {
 	const pathData = useVFSResponse(req, config);
 	// todo- set images as inline response content

@@ -1,7 +1,7 @@
 const { join } = require('path');
-const { WebServer } = require('../lib');
+const { HTTPuppyCore } = require('../lib');
 
-const app = WebServer.create({
+const app = HTTPuppyCore.createServer({
 	static: {
 		path: join(process.cwd(), './examples/files')
 	},
