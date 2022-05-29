@@ -1,10 +1,34 @@
+import { Server as stlServer } from 'http';
 import { ServerOptions } from 'http';
+
+export type DiagnosticLog = {
+	msg			: string;
+}
+export interface Runtime extends stlServer  {
+	diagnostics	: DiagnosticLog[];
+}
+
+export type MountedFile = {
+	reqUrl		: string;
+	symLink		: string;
+	contentType	: any | any[];
+	fileName	: string;
+	hrefs		: string[];
+}
+
+export type VirtualFS = {
+	mountPath	: string;
+}
+
+export type HTTPuppySleep = () => Promise<void>;
+
 export type UserStaticConfig = {
 	href 		?: string; // prefix path to access the directory on router
 	path 		?: string; // path on filesystem to reflect
 	mimeType 	?: string; // default content type
 	indexType 	?: string; // file to use as the index of a directory (default: index.html)
 };
+
 /**
  * @interface Cache Settings
  * @description All supported cache control options in camelcase
@@ -56,7 +80,7 @@ export function fromDefaultCacheSettings(
 
 export type GoodboyCacheSettings = Required<CacheSettings>;
 export type GoodboyStaticConfig = Required<UserStaticConfig>;
-export type GoodboyHTTPConfig = Required<UserHTTPConfig>;
+export type GoodboyHTTPConfig = Required<uOptions>;
 
 export type UserMiddlewareOption = {
 	href		: string;
@@ -64,32 +88,42 @@ export type UserMiddlewareOption = {
 	// todo - debug optins per middleware
 };
 
+export type HTTPHandlerFunction<T> = (IncomingMessage) => T;
 
 /**
- * @interface UserHTTPConfig
- * @member port the port number to run the configuration with
- * @member coldInit whether or not to autostart the server on return or to just return the server for later consumption
- * @member hostname localhost or something else if you set this
+ * @interface uOptions
+ * @member port the port number to run the configuration with (default: 80)
+ * @member coldInit whether or not to return the server or autostart it from config (default: false)
+ * @member hostname hostname for the server itself (default: 127.0.0.1)
  * @member static virtual file system options, static directories basically
- * @member throwWarnings false = print warnings true = throw them as errors
+ * @member throwWarnings false = print warnings true = throw them as errors (default: false)
  * @member handler default handler if you would like to override the request chain and handle each url externally
  * @member middleware list of middleware instances to run along the server
  * @member onMount a function to run once after the server is mounted (doesn't run on return if `coldInit` is set to true)
+ * @member cache options for caching, standard http but camelcase
+ * @member secure boolean for https instead of http, requires follow up options in secureContext
+ * @member secureContext options for resolving the SSL cert / key
  */
-export interface UserHTTPConfig extends ServerOptions {
-    port 			?: number; // port to run server on (default: 80)
-    coldInit 		?: boolean; // whether or not to return the server or autostart it from config (default: false)
-    hostname 		?: string; // hostname for the server itself (default: 127.0.0.1)
-	static 			?: UserStaticConfig; // static config options for any static content
-    throwWarnings 	?: boolean; // whether or not to treat warnings as errors (default: false)
-	handler 		?: (IncomingMessage) => void;
+export interface uOptions extends ServerOptions {
+    port 			?: number;
+    coldInit 		?: boolean;
+    hostname 		?: string;
+	static 			?: UserStaticConfig;
+    throwWarnings 	?: boolean;
+	handler 		?: HTTPHandlerFunction<void>;
 	middleware 		?: UserMiddlewareOption[]
-	onMount 		?: () => void | Function; // on mount runs once when the server is started
+	onMount 		?: () => void | Function;
 	cache 			?: CacheSettings;
+	secure			?: boolean;
+	secureContext	?: {
+		key: string;
+		cert: string;
+		dhparam ?: string;
+	}
 }
 
 export const defaultHTTPConfig:
-UserHTTPConfig = {
+uOptions = {
 	port: 80,
 	coldInit: false,
 	hostname: '127.0.0.1',
@@ -98,8 +132,8 @@ UserHTTPConfig = {
 };
 
 export function fromDefaultHTTPConfig(
-	config: UserHTTPConfig
-): UserHTTPConfig {
+	config: uOptions
+): uOptions {
 	return {
 		...defaultHTTPConfig,
 		...config

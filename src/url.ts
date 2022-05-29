@@ -14,7 +14,7 @@ import { useMountedFS } from './internal/mount-fs';
  */
 export function useStaticURLParser (
 	req: iTypes.HTTP_INCMSG,
-	config: iTypes.HTTPuppyOptions.UserHTTPConfig
+	config: iTypes.HTTPuppyServer.uOptions
 ): iTypes.HTTPuppyServer.MountedFile {
 	// mount the local fs (possibly move this into the initializer, but for now we want to just refresh the fs per request)
 	const iFS = useMountedFS(config);
@@ -23,4 +23,23 @@ export function useStaticURLParser (
 		reqUrl: req.url,
 		...iFS.filesMounted.filter(f => f.hrefs.includes(req.url)).shift()
 	};
+}
+
+
+export function useCustomURLOverride(
+	req: iTypes.HTTP_INCMSG,
+	res: iTypes.HTTP_RES,
+	config: iTypes.HTTPuppyServer.uOptions
+) {
+	try {
+		console.log(config.handler);
+		res.writeHead(200, 'ok');
+		res.write('hello');
+		res.end();
+		//return true;
+	}
+	catch(e) {
+
+		//return false;
+	}
 }

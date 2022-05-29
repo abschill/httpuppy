@@ -1,6 +1,5 @@
 import {
 	HTTP_RES,
-	HTTPuppyOptions,
 	HTTPuppyServer,
 	iPuppy,
 } from '../types';
@@ -54,7 +53,7 @@ export function useStreamReader(
  */
 export function useWriter(
 	res: HTTP_RES,
-	config: HTTPuppyOptions.UserHTTPConfig,
+	config: HTTPuppyServer.uOptions,
 	options: iPuppy.HTTPuppyWriterOptions
 ): void {
 	res.writeHead(options.status, options.statusText, useHeaders(options, config));

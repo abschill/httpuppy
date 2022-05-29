@@ -20,7 +20,7 @@
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `conf` | `UserHTTPConfig` | configuration options |
+| `conf` | `uOptions` | configuration options |
 
 #### Returns
 
@@ -30,7 +30,7 @@ httpuppy server
 
 #### Defined in
 
-[server.ts:31](https://github.com/abschill/http-simple/blob/762f144/src/server.ts#L31)
+[server.ts:32](https://github.com/abschill/http-simple/blob/a9450e2/src/server.ts#L32)
 
 ___
 
@@ -52,7 +52,7 @@ void promise to gracefully shut down
 
 #### Defined in
 
-[server.ts:54](https://github.com/abschill/http-simple/blob/762f144/src/server.ts#L54)
+[server.ts:61](https://github.com/abschill/http-simple/blob/a9450e2/src/server.ts#L61)
 
 ___
 
@@ -65,7 +65,7 @@ ___
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `server` | `Runtime` | The final hook to run when a server is created, will return and optionally start the server |
-| `config` | `UserHTTPConfig` | the configuration for the given server |
+| `config` | `uOptions` | the configuration for the given server |
 
 #### Returns
 
@@ -75,4 +75,4 @@ The HTTP Server runtime
 
 #### Defined in
 
-[server.ts:16](https://github.com/abschill/http-simple/blob/762f144/src/server.ts#L16)
+[server.ts:17](https://github.com/abschill/http-simple/blob/a9450e2/src/server.ts#L17)

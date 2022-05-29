@@ -8,9 +8,32 @@
 
 ### Functions
 
+- [useCustomURLOverride](url.md#usecustomurloverride)
 - [useStaticURLParser](url.md#usestaticurlparser)
 
 ## Functions
+
+### useCustomURLOverride
+
+▸ **useCustomURLOverride**(`req`, `res`, `config`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `req` | `IncomingMessage` |
+| `res` | `ServerResponse` |
+| `config` | `uOptions` |
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[url.ts:29](https://github.com/abschill/http-simple/blob/a9450e2/src/url.ts#L29)
+
+___
 
 ### useStaticURLParser
 
@@ -25,7 +48,7 @@
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `req` | `IncomingMessage` | the request to be replied to with the virtual FS response |
-| `config` | `UserHTTPConfig` | the configuration for the parent server |
+| `config` | `uOptions` | the configuration for the parent server |
 
 #### Returns
 
@@ -35,4 +58,4 @@ the mounted file to serve based on the given request information
 
 #### Defined in
 
-[url.ts:15](https://github.com/abschill/http-simple/blob/762f144/src/url.ts#L15)
+[url.ts:15](https://github.com/abschill/http-simple/blob/a9450e2/src/url.ts#L15)

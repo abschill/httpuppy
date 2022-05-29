@@ -5,7 +5,7 @@
 import {
 	HTTP_INCMSG,
 	HTTP_RES,
-	HTTPuppyOptions
+	HTTPuppyServer
 } from './types';
 import {
 	useStaticURLParser
@@ -28,7 +28,7 @@ import { use404 } from './internal/error';
 export function useStaticHandler(
 	req		: HTTP_INCMSG,
 	res		: HTTP_RES,
-	config	: HTTPuppyOptions.UserHTTPConfig
+	config	: HTTPuppyServer.uOptions
 ): void {
 	const pathData = useStaticURLParser(req, config);
 	if(isBufferType(req.url)) {

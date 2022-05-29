@@ -1,5 +1,7 @@
 {
     "compilerOptions": {
+		"allowJs": true,
+		"checkJs": false,
         "baseUrl": "src",
         "rootDir": "src",
         "outDir": "lib",

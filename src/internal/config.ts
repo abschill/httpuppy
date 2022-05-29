@@ -1,10 +1,10 @@
-import { HTTPuppyOptions, HTTPuppyServer } from '../types';
+import { HTTPuppyServer } from '../types';
 import { emitWarning } from 'process';
 
 export function useConfig(
-	conf		: HTTPuppyOptions.UserHTTPConfig,
+	conf		: HTTPuppyServer.uOptions,
 	diagnostics : HTTPuppyServer.DiagnosticLog[]
-): HTTPuppyOptions.UserHTTPConfig {
+): HTTPuppyServer.uOptions {
     const config = {...conf};
     if(!config.port) config.port = 80; //default http port
 
@@ -24,6 +24,6 @@ export function useConfig(
         diagnostics.push({msg});
     }
 
-    return <HTTPuppyOptions.UserHTTPConfig>config;
+    return <HTTPuppyServer.uOptions>config;
 }
 

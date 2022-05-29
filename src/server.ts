@@ -1,5 +1,6 @@
 import { createServer as stlCreateServer } from 'http';
-import { HTTPuppyServer, HTTPuppyOptions } from './types';
+import { createServer as stdCreateSecureServer } from 'https';
+import { HTTPuppyServer } from './types';
 import { useConfig } from './internal/config';
 import { useStartup } from './internal/startup';
 import { usePort } from './internal/port';
@@ -15,7 +16,7 @@ import { DiagnosticLog } from './types/server';
  */
 export function useServer(
 	server	: HTTPuppyServer.Runtime,
-	config	: HTTPuppyOptions.UserHTTPConfig
+	config	: HTTPuppyServer.uOptions
 ): HTTPuppyServer.Runtime {
 	if(!config.coldInit) {
 		server.listen(config.port, config.hostname);
@@ -29,7 +30,7 @@ export function useServer(
  * @returns httpuppy server
  */
 export function createServer(
-    conf	: HTTPuppyOptions.UserHTTPConfig
+    conf	: HTTPuppyServer.uOptions
 ): HTTPuppyServer.Runtime {
 	//todo - arg parse for runtime opts
 	//const argv = useProcessArgs();
@@ -40,7 +41,13 @@ export function createServer(
 	usePort(conf.port ?? 80);
 	const diagnostics: DiagnosticLog[] = [];
     const config = useConfig(conf, diagnostics);
-    const _server = stlCreateServer(config.handler);
+	let _server;
+	if(!conf.secure) {
+		_server = stlCreateServer(config.handler);
+	}
+	else {
+		_server = stdCreateSecureServer(conf.secureContext, config.handler);
+	}
     const server = useStartup(config, _server, diagnostics);
 	//todo: static handler move out of top level
 	if(config.static) useStaticMount(config, server);

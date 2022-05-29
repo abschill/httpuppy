@@ -1,8 +1,8 @@
-import { HTTPuppyServer, HTTPuppyOptions } from '../types';
+import { HTTPuppyServer } from '../types';
 import { useStaticHandler } from '../request';
 
 export function useStaticMount(
-	config		: HTTPuppyOptions.UserHTTPConfig,
+	config		: HTTPuppyServer.uOptions,
 	server		: HTTPuppyServer.Runtime
 ) {
 	// mount configured FS path to the request handler

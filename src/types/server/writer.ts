@@ -1,4 +1,4 @@
-import { MountedFile } from "./server";
+import { MountedFile } from '.';
 
 export type HTTPuppyWriterOptions = {
 	status		: number;
@@ -6,5 +6,3 @@ export type HTTPuppyWriterOptions = {
 	type		: string;
 	virtualFile : MountedFile;
 }
-export type HTTPHeader = string[];
-export type HTTPHeaders = HTTPHeader[];

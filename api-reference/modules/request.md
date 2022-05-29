@@ -22,7 +22,7 @@
 | :------ | :------ | :------ |
 | `req` | `IncomingMessage` | incoming message to handle args from |
 | `res` | `ServerResponse` | response message to send |
-| `config` | `UserHTTPConfig` | config from server |
+| `config` | `uOptions` | config from server |
 
 #### Returns
 
@@ -32,4 +32,4 @@ nothing, it inherits flow control from the requesting branch
 
 #### Defined in
 
-[request.ts:28](https://github.com/abschill/http-simple/blob/762f144/src/request.ts#L28)
+[request.ts:28](https://github.com/abschill/http-simple/blob/a9450e2/src/request.ts#L28)

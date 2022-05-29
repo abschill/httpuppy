@@ -12,21 +12,21 @@
 
 ### useHeaders
 
-▸ **useHeaders**(`options`, `config`): `iPuppy.HTTPHeaders`
+▸ **useHeaders**(`options`, `config`): `iHTTP.HTTPHeaders`
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `options` | `HTTPuppyWriterOptions` | the writer options to apply the headers against |
-| `config` | `UserHTTPConfig` | the server config to apply against |
+| `config` | `uOptions` | the server config to apply against |
 
 #### Returns
 
-`iPuppy.HTTPHeaders`
+`iHTTP.HTTPHeaders`
 
 default list of http headers based on given config cache settings / content type of the request options
 
 #### Defined in
 
-[middleware.ts:13](https://github.com/abschill/http-simple/blob/762f144/src/middleware.ts#L13)
+[middleware.ts:14](https://github.com/abschill/http-simple/blob/a9450e2/src/middleware.ts#L14)

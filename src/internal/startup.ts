@@ -1,6 +1,5 @@
 
 import {
-	HTTPuppyOptions,
 	HTTPuppyServer,
 	Server
 } from '../types';
@@ -13,7 +12,7 @@ import {
  * @returns the http server object
  */
 export function useStartup(
-	config: HTTPuppyOptions.UserHTTPConfig,
+	config: HTTPuppyServer.uOptions,
 	server: Server,
 	diagnostics: HTTPuppyServer.DiagnosticLog[]
 ): HTTPuppyServer.Runtime {

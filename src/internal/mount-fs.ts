@@ -1,7 +1,7 @@
 
 import { join, resolve } from 'path';
 import { readdirSync, readFileSync } from 'fs';
-import { HTTPuppyOptions } from '../types';
+import { HTTPuppyServer } from '../types';
 import useContentType from './content-type';
 
 /**
@@ -12,7 +12,7 @@ import useContentType from './content-type';
  */
 function useCleanPaths(
 	file	: string,
-	_static : HTTPuppyOptions.UserStaticConfig
+	_static : HTTPuppyServer.UserStaticConfig
 ): string[] {
 	const pathOptions = [
 		`${_static.href ?? ''}${file}`
@@ -29,7 +29,7 @@ function useCleanPaths(
  * @returns
  */
 export function useMountedFS(
-	config: HTTPuppyOptions.UserHTTPConfig
+	config: HTTPuppyServer.uOptions
 ) {
 	// mountedPath is the path to retrieve filesMounted from
 	const mountedPath = join(config.static.path);
