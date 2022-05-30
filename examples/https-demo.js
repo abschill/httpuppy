@@ -1,7 +1,9 @@
 const { join } = require('path');
 const { createServer } = require('../lib');
 const { readFileSync } = require('fs');
-
+/**
+ * local http server setup demo
+ */
 const secureApp = createServer({
 	static: {
 		path: join(process.cwd(), './examples/files')
