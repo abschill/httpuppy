@@ -6,6 +6,7 @@ export type DiagnosticLog = {
 }
 export interface Runtime extends stlServer  {
 	diagnostics	: DiagnosticLog[];
+	onClose: iExitHandler;
 }
 
 export type MountedFile = {
@@ -14,10 +15,6 @@ export type MountedFile = {
 	contentType	: any | any[];
 	fileName	: string;
 	hrefs		: string[];
-}
-
-export type VirtualFS = {
-	mountPath	: string;
 }
 
 export type HTTPuppySleep = () => Promise<void>;
@@ -82,6 +79,7 @@ export type GoodboyCacheSettings = Required<CacheSettings>;
 export type GoodboyStaticConfig = Required<UserStaticConfig>;
 export type GoodboyHTTPConfig = Required<uOptions>;
 
+export type iExitHandler = () => Promise<void> | (() => void);
 export type iHandlerType = (req, res) => Promise<void> | ((req, res) => void);
 export type UserMiddlewareOption = {
 	href		: string;
@@ -112,7 +110,8 @@ export interface uOptions extends ServerOptions {
     throwWarnings 	?: boolean;
 	handler 		?: HTTPHandlerFunction<void>;
 	middleware 		?: UserMiddlewareOption[]
-	onMount 		?: () => void | Function;
+	onMount 		?: iHandlerType;
+	onClose			?: iExitHandler;
 	cache 			?: CacheSettings;
 	secure			?: boolean;
 	secureContext	?: {
