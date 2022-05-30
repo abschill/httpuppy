@@ -60,8 +60,18 @@ export function createServer(
  * @param s http server to shut down
  * @returns void promise to gracefully shut down
  */
-export function shutdown(
+export async function shutdown(
 	s	: HTTPuppyServer.Runtime
-): HTTPuppyServer.HTTPuppySleep  {
-	return GracefulShutdown(s);
+): Promise<HTTPuppyServer.HTTPuppySleep>  {
+	try {
+		s.onClose();
+		s.removeAllListeners();
+		s.close();
+
+		return GracefulShutdown(s);
+	}
+	catch(e) {
+		process.exit(1);
+	}
+
 }

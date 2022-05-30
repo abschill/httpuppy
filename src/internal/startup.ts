@@ -26,5 +26,6 @@ export function useStartup(
     }
 	const ss = <HTTPuppyServer.Runtime>server;
 	ss.diagnostics = diagnostics;
+	ss.onClose = config.onClose;
 	return ss;
 }

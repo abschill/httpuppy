@@ -31,7 +31,7 @@
 
 #### Defined in
 
-[url.ts:29](https://github.com/abschill/httpuppy/blob/907161d/src/url.ts#L29)
+[url.ts:29](https://github.com/abschill/httpuppy/blob/e7a3883/src/url.ts#L29)
 
 ___
 
@@ -58,4 +58,4 @@ the mounted file to serve based on the given request information
 
 #### Defined in
 
-[url.ts:15](https://github.com/abschill/httpuppy/blob/907161d/src/url.ts#L15)
+[url.ts:15](https://github.com/abschill/httpuppy/blob/e7a3883/src/url.ts#L15)
