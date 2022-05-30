@@ -29,4 +29,4 @@ default list of http headers based on given config cache settings / content type
 
 #### Defined in
 
-[middleware.ts:14](https://github.com/abschill/http-simple/blob/a9450e2/src/middleware.ts#L14)
+[middleware.ts:14](https://github.com/abschill/http-simple/blob/05fb0ee/src/middleware.ts#L14)

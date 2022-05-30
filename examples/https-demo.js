@@ -2,7 +2,7 @@ const { join } = require('path');
 const { createServer } = require('../lib');
 const { readFileSync } = require('fs');
 
-const app = createServer({
+const secureApp = createServer({
 	static: {
 		path: join(process.cwd(), './examples/files')
 	},
@@ -11,10 +11,11 @@ const app = createServer({
 	coldInit: true,
 	secure: true,
 	secureContext: {
+		// define these files on your pc
 		key: readFileSync(join(process.cwd(), 'server.key')),
 		cert: readFileSync(join('server.cert'))
 	}
 });
 
 
-app.listen(3000, app.onMount);
+secureApp.listen(3000, secureApp.onMount);
