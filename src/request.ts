@@ -17,6 +17,7 @@ import {
 	useStreamReader
 } from './internal/writer';
 import { use404 } from './internal/error';
+import { useMiddleware } from './middleware';
 
 /**
  *
@@ -31,8 +32,8 @@ export function useStaticHandler(
 	config	: HTTPuppyServer.uOptions
 ): void {
 	const pathData = useStaticURLParser(req, config);
+	if(config.middleware && config.middleware.length > 0) useMiddleware(config, req, res);
 	if(isBufferType(req.url)) {
-		// handle as stream reader
 		return useStreamReader(pathData, res);
 	}
 	else {

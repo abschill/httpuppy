@@ -8,7 +8,7 @@ import GracefulShutdown from 'http-graceful-shutdown';
 import { useStaticMount } from './internal/static';
 import { DiagnosticLog } from './types/server';
 import { useAnyConfig } from './internal/argv';
-
+import { useMiddleware } from './middleware';
 /**
  *
  * @param server The final hook to run when a server is created, will return and optionally start the server
@@ -51,7 +51,7 @@ export function createServer(
 		_server = stdCreateSecureServer(conf.secureContext, config.handler);
 	}
     const server = useStartup(config, _server, diagnostics);
-	//todo: static handler move out of top level
+
 	if(config.static) useStaticMount(config, server);
 	return useServer(server, config);
 }

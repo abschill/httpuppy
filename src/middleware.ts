@@ -1,5 +1,7 @@
 import {
 	HTTPuppyServer,
+	HTTP_INCMSG,
+	HTTP_RES,
 	iHTTP,
 	iPuppy
 } from 'types';
@@ -31,4 +33,13 @@ export function useHeaders(
 	}
 
 	return applyHeaders;
+}
+
+export function useMiddleware(
+	config: HTTPuppyServer.uOptions,
+	req: HTTP_INCMSG,
+	res: HTTP_RES
+) {
+	const match = config.middleware.filter(opt => opt.href === req.url).shift();
+	match?.handler(req, res);
 }

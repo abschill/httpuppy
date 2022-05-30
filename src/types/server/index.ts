@@ -82,10 +82,10 @@ export type GoodboyCacheSettings = Required<CacheSettings>;
 export type GoodboyStaticConfig = Required<UserStaticConfig>;
 export type GoodboyHTTPConfig = Required<uOptions>;
 
+export type iHandlerType = (req, res) => Promise<void> | ((req, res) => void);
 export type UserMiddlewareOption = {
 	href		: string;
-	handler		: any;
-	// todo - debug optins per middleware
+	handler		: iHandlerType;
 };
 
 export type HTTPHandlerFunction<T> = (IncomingMessage) => T;
