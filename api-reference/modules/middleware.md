@@ -7,6 +7,7 @@
 ### Functions
 
 - [useHeaders](middleware.md#useheaders)
+- [useMiddleware](middleware.md#usemiddleware)
 
 ## Functions
 
@@ -29,4 +30,26 @@ default list of http headers based on given config cache settings / content type
 
 #### Defined in
 
-[middleware.ts:14](https://github.com/abschill/http-simple/blob/05fb0ee/src/middleware.ts#L14)
+[middleware.ts:16](https://github.com/abschill/httpuppy/blob/907161d/src/middleware.ts#L16)
+
+___
+
+### useMiddleware
+
+▸ **useMiddleware**(`config`, `req`, `res`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `config` | `uOptions` |
+| `req` | `IncomingMessage` |
+| `res` | `ServerResponse` |
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[middleware.ts:38](https://github.com/abschill/httpuppy/blob/907161d/src/middleware.ts#L38)
