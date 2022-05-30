@@ -7,6 +7,7 @@ import { usePort } from './internal/port';
 import GracefulShutdown from 'http-graceful-shutdown';
 import { useStaticMount } from './internal/static';
 import { DiagnosticLog } from './types/server';
+import { useAnyConfig } from './internal/argv';
 
 /**
  *
@@ -40,6 +41,7 @@ export function createServer(
 
 	usePort(conf.port ?? 80);
 	const diagnostics: DiagnosticLog[] = [];
+	useAnyConfig();
     const config = useConfig(conf, diagnostics);
 	let _server;
 	if(!conf.secure) {
