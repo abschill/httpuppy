@@ -1,7 +1,6 @@
 import {
 	HTTP_RES,
-	HTTPuppyServer,
-	iPuppy,
+	HTTPuppyServer
 } from '../types';
 import { createReadStream } from 'fs';
 import useContentType from './content-type';
@@ -54,7 +53,7 @@ export function useStreamReader(
 export function useWriter(
 	res: HTTP_RES,
 	config: HTTPuppyServer.uOptions,
-	options: iPuppy.HTTPuppyWriterOptions
+	options: HTTPuppyServer.HTTPuppyWriterOptions
 ): void {
 	res.writeHead(options.status, options.statusText, useHeaders(options, config));
 	return useStreamReader(options.virtualFile, res);

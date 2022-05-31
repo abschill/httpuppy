@@ -3,7 +3,6 @@ import {
 	HTTP_INCMSG,
 	HTTP_RES,
 	iHTTP,
-	iPuppy
 } from 'types';
 import { useEtag } from './internal/etag';
 
@@ -14,7 +13,7 @@ import { useEtag } from './internal/etag';
  * @returns default list of http headers based on given config cache settings / content type of the request options
  */
 export function useHeaders(
-	options : iPuppy.HTTPuppyWriterOptions,
+	options : HTTPuppyServer.HTTPuppyWriterOptions,
 	config: HTTPuppyServer.uOptions
 ): iHTTP.HTTPHeaders {
 	const applyHeaders: iHTTP.HTTPHeaders = [

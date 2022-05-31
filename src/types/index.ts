@@ -1,6 +1,5 @@
 export * as HTTPuppyServer from './server';
 export * as iHTTP from './http';
-export * as iPuppy from './server/writer';
 
 export {
 	Server,

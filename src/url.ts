@@ -24,22 +24,3 @@ export function useStaticURLParser (
 		...iFS.filesMounted.filter(f => f.hrefs.includes(req.url)).shift()
 	};
 }
-
-
-export function useCustomURLOverride(
-	req: iTypes.HTTP_INCMSG,
-	res: iTypes.HTTP_RES,
-	config: iTypes.HTTPuppyServer.uOptions
-) {
-	try {
-		console.log(config.handler);
-		res.writeHead(200, 'ok');
-		res.write('hello');
-		res.end();
-		//return true;
-	}
-	catch(e) {
-
-		//return false;
-	}
-}
