@@ -6,33 +6,10 @@
 
 ### Functions
 
-- [createServer](server.md#createserver)
 - [shutdown](server.md#shutdown)
 - [useServer](server.md#useserver)
 
 ## Functions
-
-### createServer
-
-▸ **createServer**(`conf`): `HTTPuppyServer.Runtime`
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `conf` | `uOptions` | configuration options |
-
-#### Returns
-
-`HTTPuppyServer.Runtime`
-
-httpuppy server
-
-#### Defined in
-
-[server.ts:33](https://github.com/abschill/httpuppy/blob/9defe79/src/server.ts#L33)
-
-___
 
 ### shutdown
 
@@ -52,27 +29,26 @@ void promise to gracefully shut down
 
 #### Defined in
 
-[server.ts:63](https://github.com/abschill/httpuppy/blob/9defe79/src/server.ts#L63)
+[server.ts:45](https://github.com/abschill/httpuppy/blob/707d865/src/server.ts#L45)
 
 ___
 
 ### useServer
 
-▸ **useServer**(`server`, `config`): `HTTPuppyServer.Runtime`
+▸ **useServer**(`conf`): `HTTPuppyServer.Runtime`
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `server` | `Runtime` | The final hook to run when a server is created, will return and optionally start the server |
-| `config` | `uOptions` | the configuration for the given server |
+| `conf` | `uOptions` | configuration options |
 
 #### Returns
 
 `HTTPuppyServer.Runtime`
 
-The HTTP Server runtime
+httpuppy server
 
 #### Defined in
 
-[server.ts:18](https://github.com/abschill/httpuppy/blob/9defe79/src/server.ts#L18)
+[server.ts:18](https://github.com/abschill/httpuppy/blob/707d865/src/server.ts#L18)

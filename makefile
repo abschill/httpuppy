@@ -1,4 +1,4 @@
-all: build test node-example
+all: build test dev-example
 
 dev-ts:
 	yarn build:watch

@@ -31,6 +31,9 @@ export function useStaticHandler(
 	res		: HTTP_RES,
 	config	: HTTPuppyServer.uOptions
 ): void {
+	if(!config.static) {
+		throw 'error: static handler invoked without any options';
+	}
 	const pathData = useStaticURLParser(req, config);
 	if(config.middleware && config.middleware.length > 0) useMiddleware(config, req, res);
 	if(isBufferType(req.url)) {

@@ -8,32 +8,9 @@
 
 ### Functions
 
-- [useCustomURLOverride](url.md#usecustomurloverride)
 - [useStaticURLParser](url.md#usestaticurlparser)
 
 ## Functions
-
-### useCustomURLOverride
-
-▸ **useCustomURLOverride**(`req`, `res`, `config`): `void`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `req` | `IncomingMessage` |
-| `res` | `ServerResponse` |
-| `config` | `uOptions` |
-
-#### Returns
-
-`void`
-
-#### Defined in
-
-[url.ts:29](https://github.com/abschill/httpuppy/blob/9defe79/src/url.ts#L29)
-
-___
 
 ### useStaticURLParser
 
@@ -58,4 +35,4 @@ the mounted file to serve based on the given request information
 
 #### Defined in
 
-[url.ts:15](https://github.com/abschill/httpuppy/blob/9defe79/src/url.ts#L15)
+[url.ts:15](https://github.com/abschill/httpuppy/blob/707d865/src/url.ts#L15)

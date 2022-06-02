@@ -31,6 +31,10 @@ export function useStreamReader(
 	pathData: HTTPuppyServer.MountedFile,
 	res: HTTP_RES
 ): void {
+	if(!res.writable) {
+		console.warn('warning: write attempt on an ended stream in useStreamReader');
+		return;
+	}
 	if(pathData && pathData.symLink) {
 		const stream = createReadStream(pathData.symLink);
 		stream.on('data', (chunk) => {
@@ -55,6 +59,10 @@ export function useWriter(
 	config: HTTPuppyServer.uOptions,
 	options: HTTPuppyServer.HTTPuppyWriterOptions
 ): void {
+	if(!res.writable) {
+		console.warn('warning: write attempt on an ended stream in useWriter');
+		return;
+	}
 	res.writeHead(options.status, options.statusText, useHeaders(options, config));
 	return useStreamReader(options.virtualFile, res);
 }

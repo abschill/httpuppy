@@ -1,4 +1,4 @@
-import { Server as stlServer } from 'http';
+import { IncomingMessage, Server as stlServer, ServerResponse } from 'http';
 import { ServerOptions } from 'http';
 import {
 	iExitHandler,
@@ -47,7 +47,7 @@ export type UserStaticConfig = {
 /**
  * @interface uOptions
  * @member port the port number to run the configuration with (default: 80)
- * @member coldInit whether or not to return the server or autostart it from config (default: false)
+ * @member coldInit whether or not to return the server or autostart it from config (default: true)
  * @member hostname hostname for the server itself (default: 127.0.0.1)
  * @member static virtual file system options, static directories basically
  * @member throwWarnings false = print warnings true = throw them as errors (default: false)
@@ -80,7 +80,7 @@ export interface uOptions extends ServerOptions {
 export const defaultHTTPConfig:
 uOptions = {
 	port: 80,
-	coldInit: false,
+	coldInit: true,
 	hostname: '127.0.0.1',
 	throwWarnings: false,
 	cache: defaultCacheSettings
@@ -93,6 +93,15 @@ export function fromDefaultHTTPConfig(
 		...defaultHTTPConfig,
 		...config
 	};
+}
+
+export interface HTTPuppyRequest extends IncomingMessage {}
+export interface HTTPuppyResponse extends ServerResponse {}
+export interface HTTPuppyRouterOptions {
+	href: string;
+	callback: iHandlerType;
+	req: HTTPuppyRequest;
+	res: HTTPuppyResponse;
 }
 
 export * from './middleware';
