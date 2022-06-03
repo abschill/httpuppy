@@ -1,8 +1,18 @@
 import expect from 'expect';
-import { useRouter, useServer } from '../lib';
 import { get } from 'http';
+import {
+	it,
+	describe
+} from 'mocha';
+import {
+	Log_Timeout,
+	Test_String
+} from './setup-tests';
+import {
+	useRouter,
+	useServer
+} from '../lib';
 
-import { it, describe } from 'mocha';
 describe('Retrieve Server with coldInit default', function() {
 	it('should not start until user does', function() {
 		const server = useServer({
@@ -17,20 +27,23 @@ describe('Retrieve Server with coldInit default', function() {
 });
 
 describe('Setup Custom API Endpoints with static config', function() {
-	it('successfully perform HTTP GET against api', function() {
+	it('successfully perform HTTP GET against api', function(done) {
 		const server = useServer({
 			static: {
 				path: './examples/files'
 			}
 		});
 		const router = useRouter(server);
-		router.get('/api/v1', (req, res) => res.end('hello world'));
+		router.get('/api/v1', (req, res) => res.end(Test_String));
 		server.listen(3000);
 		Promise.resolve(get('http://localhost:3000/api/v1', (res) => {
 			res.on('data', (chunk) => {
-				expect(chunk.toString()).toEqual('hello world');
+				const str = chunk.toString();
+				expect(str).toEqual(Test_String);
 			});
-			res.on('end', () => server._shutdown());
-		})).then(() => process.exit(0));
+		})).then(() => {
+			done();
+			setTimeout(()=> process.exit(0), Log_Timeout);
+		});
 	});
 });
