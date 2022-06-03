@@ -37,6 +37,23 @@ const app = useServer({
 app.listen(3000, () => console.log('listening on 3000'))
 ```
 
+## API Configuration on top of static content
+
+```js
+const { useServer } = require('httpuppy');
+
+const app = useServer({
+	static: {
+		path: './path/to/content'
+	}
+});
+
+app.get('/api/v1/content', (req, res) => res.json({msg: "success"}));
+
+app.listen(3000, () => console.log('listening on 3000'))
+
+```
+
 [Examples](/examples/)
 
 [Reference](/docs/modules.md)
