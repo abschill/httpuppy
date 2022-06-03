@@ -26,7 +26,7 @@ describe('Retrieve Server with coldInit default', function() {
 	});
 });
 
-describe('Setup Custom API Endpoints with static config', function() {
+describe('api doesnt conflict with static pages', function() {
 	it('successfully perform HTTP GET against api', function(done) {
 		const server = useServer({
 			static: {

@@ -24,17 +24,17 @@
 
 #### Defined in
 
-[src/types/server/index.ts:108](https://github.com/abschill/httpuppy/blob/0e45f00/src/types/server/index.ts#L108)
+[src/types/server/index.ts:108](https://github.com/abschill/httpuppy/blob/f8e9db0/src/types/server/index.ts#L108)
 
 ___
 
 ### delete
 
-• **delete**: (`url`: `string`, `cb`: (`req`: [`HTTPuppyRequest`](types_server.HTTPuppyRequest.md), `res`: [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)) => `any`) => typeof `HTTPuppyCallback` \| `void`
+• **delete**: (`url`: `string`, `cb`: (`req`: [`HTTPuppyRequest`](types_server.HTTPuppyRequest.md), `res`: [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)) => `any`) => typeof [`HTTPuppyCallback`](../modules/types_server.md#httpuppycallback) \| `void`
 
 #### Type declaration
 
-▸ (`url`, `cb`): typeof `HTTPuppyCallback` \| `void`
+▸ (`url`, `cb`): typeof [`HTTPuppyCallback`](../modules/types_server.md#httpuppycallback) \| `void`
 
 ##### Parameters
 
@@ -45,21 +45,21 @@ ___
 
 ##### Returns
 
-typeof `HTTPuppyCallback` \| `void`
+typeof [`HTTPuppyCallback`](../modules/types_server.md#httpuppycallback) \| `void`
 
 #### Defined in
 
-[src/types/server/index.ts:114](https://github.com/abschill/httpuppy/blob/0e45f00/src/types/server/index.ts#L114)
+[src/types/server/index.ts:114](https://github.com/abschill/httpuppy/blob/f8e9db0/src/types/server/index.ts#L114)
 
 ___
 
 ### get
 
-• **get**: (`url`: `string`, `cb`: (`req`: [`HTTPuppyRequest`](types_server.HTTPuppyRequest.md), `res`: [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)) => `any`) => typeof `HTTPuppyCallback` \| `void`
+• **get**: (`url`: `string`, `cb`: (`req`: [`HTTPuppyRequest`](types_server.HTTPuppyRequest.md), `res`: [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)) => `any`) => typeof [`HTTPuppyCallback`](../modules/types_server.md#httpuppycallback) \| `void`
 
 #### Type declaration
 
-▸ (`url`, `cb`): typeof `HTTPuppyCallback` \| `void`
+▸ (`url`, `cb`): typeof [`HTTPuppyCallback`](../modules/types_server.md#httpuppycallback) \| `void`
 
 ##### Parameters
 
@@ -70,21 +70,21 @@ ___
 
 ##### Returns
 
-typeof `HTTPuppyCallback` \| `void`
+typeof [`HTTPuppyCallback`](../modules/types_server.md#httpuppycallback) \| `void`
 
 #### Defined in
 
-[src/types/server/index.ts:109](https://github.com/abschill/httpuppy/blob/0e45f00/src/types/server/index.ts#L109)
+[src/types/server/index.ts:109](https://github.com/abschill/httpuppy/blob/f8e9db0/src/types/server/index.ts#L109)
 
 ___
 
 ### head
 
-• **head**: (`url`: `string`, `cb`: (`req`: [`HTTPuppyRequest`](types_server.HTTPuppyRequest.md), `res`: [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)) => `any`) => typeof `HTTPuppyCallback` \| `void`
+• **head**: (`url`: `string`, `cb`: (`req`: [`HTTPuppyRequest`](types_server.HTTPuppyRequest.md), `res`: [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)) => `any`) => typeof [`HTTPuppyCallback`](../modules/types_server.md#httpuppycallback) \| `void`
 
 #### Type declaration
 
-▸ (`url`, `cb`): typeof `HTTPuppyCallback` \| `void`
+▸ (`url`, `cb`): typeof [`HTTPuppyCallback`](../modules/types_server.md#httpuppycallback) \| `void`
 
 ##### Parameters
 
@@ -95,21 +95,21 @@ ___
 
 ##### Returns
 
-typeof `HTTPuppyCallback` \| `void`
+typeof [`HTTPuppyCallback`](../modules/types_server.md#httpuppycallback) \| `void`
 
 #### Defined in
 
-[src/types/server/index.ts:110](https://github.com/abschill/httpuppy/blob/0e45f00/src/types/server/index.ts#L110)
+[src/types/server/index.ts:110](https://github.com/abschill/httpuppy/blob/f8e9db0/src/types/server/index.ts#L110)
 
 ___
 
 ### patch
 
-• **patch**: (`url`: `string`, `cb`: (`req`: [`HTTPuppyRequest`](types_server.HTTPuppyRequest.md), `res`: [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)) => `any`) => typeof `HTTPuppyCallback` \| `void`
+• **patch**: (`url`: `string`, `cb`: (`req`: [`HTTPuppyRequest`](types_server.HTTPuppyRequest.md), `res`: [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)) => `any`) => typeof [`HTTPuppyCallback`](../modules/types_server.md#httpuppycallback) \| `void`
 
 #### Type declaration
 
-▸ (`url`, `cb`): typeof `HTTPuppyCallback` \| `void`
+▸ (`url`, `cb`): typeof [`HTTPuppyCallback`](../modules/types_server.md#httpuppycallback) \| `void`
 
 ##### Parameters
 
@@ -120,21 +120,21 @@ ___
 
 ##### Returns
 
-typeof `HTTPuppyCallback` \| `void`
+typeof [`HTTPuppyCallback`](../modules/types_server.md#httpuppycallback) \| `void`
 
 #### Defined in
 
-[src/types/server/index.ts:113](https://github.com/abschill/httpuppy/blob/0e45f00/src/types/server/index.ts#L113)
+[src/types/server/index.ts:113](https://github.com/abschill/httpuppy/blob/f8e9db0/src/types/server/index.ts#L113)
 
 ___
 
 ### post
 
-• **post**: (`url`: `string`, `cb`: (`req`: [`HTTPuppyRequest`](types_server.HTTPuppyRequest.md), `res`: [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)) => `any`) => typeof `HTTPuppyCallback` \| `void`
+• **post**: (`url`: `string`, `cb`: (`req`: [`HTTPuppyRequest`](types_server.HTTPuppyRequest.md), `res`: [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)) => `any`) => typeof [`HTTPuppyCallback`](../modules/types_server.md#httpuppycallback) \| `void`
 
 #### Type declaration
 
-▸ (`url`, `cb`): typeof `HTTPuppyCallback` \| `void`
+▸ (`url`, `cb`): typeof [`HTTPuppyCallback`](../modules/types_server.md#httpuppycallback) \| `void`
 
 ##### Parameters
 
@@ -145,21 +145,21 @@ ___
 
 ##### Returns
 
-typeof `HTTPuppyCallback` \| `void`
+typeof [`HTTPuppyCallback`](../modules/types_server.md#httpuppycallback) \| `void`
 
 #### Defined in
 
-[src/types/server/index.ts:111](https://github.com/abschill/httpuppy/blob/0e45f00/src/types/server/index.ts#L111)
+[src/types/server/index.ts:111](https://github.com/abschill/httpuppy/blob/f8e9db0/src/types/server/index.ts#L111)
 
 ___
 
 ### put
 
-• **put**: (`url`: `string`, `cb`: (`req`: [`HTTPuppyRequest`](types_server.HTTPuppyRequest.md), `res`: [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)) => `any`) => typeof `HTTPuppyCallback` \| `void`
+• **put**: (`url`: `string`, `cb`: (`req`: [`HTTPuppyRequest`](types_server.HTTPuppyRequest.md), `res`: [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)) => `any`) => typeof [`HTTPuppyCallback`](../modules/types_server.md#httpuppycallback) \| `void`
 
 #### Type declaration
 
-▸ (`url`, `cb`): typeof `HTTPuppyCallback` \| `void`
+▸ (`url`, `cb`): typeof [`HTTPuppyCallback`](../modules/types_server.md#httpuppycallback) \| `void`
 
 ##### Parameters
 
@@ -170,8 +170,8 @@ ___
 
 ##### Returns
 
-typeof `HTTPuppyCallback` \| `void`
+typeof [`HTTPuppyCallback`](../modules/types_server.md#httpuppycallback) \| `void`
 
 #### Defined in
 
-[src/types/server/index.ts:112](https://github.com/abschill/httpuppy/blob/0e45f00/src/types/server/index.ts#L112)
+[src/types/server/index.ts:112](https://github.com/abschill/httpuppy/blob/f8e9db0/src/types/server/index.ts#L112)

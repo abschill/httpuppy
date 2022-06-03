@@ -101,9 +101,9 @@ export function fromDefaultHTTPConfig(
 export interface HTTPuppyRequest extends IncomingMessage {}
 export interface HTTPuppyResponse extends ServerResponse {}
 
-declare function HTTPuppyCallback(req: HTTPuppyRequest, res: HTTPuppyResponse): any;
+export declare function HTTPuppyCallback(req: HTTPuppyRequest, res: HTTPuppyResponse): any;
 
-declare function HTTPuppyRouterMethod(url: string, cb: typeof HTTPuppyCallback): typeof HTTPuppyCallback | void;
+export declare function HTTPuppyRouterMethod(url: string, cb: typeof HTTPuppyCallback): typeof HTTPuppyCallback | void;
 export interface HTTPuppyRouter {
 	baseUrl		: string;
 	get			: typeof HTTPuppyRouterMethod;

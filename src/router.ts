@@ -1,13 +1,9 @@
 /**
  * @module router
  * @description for adding custom routing to your server
- * @example
- * ```javascript
- * const router = useRouter(app);
- * router.get('/', (req, res) => res.send('hi'))
- * ```
  */
 import { HTTPuppyServer } from './types';
+import { HTTPuppyRequest, HTTPuppyResponse } from './types/server';
 
 /**
  * @function useRouter
@@ -21,68 +17,80 @@ import { HTTPuppyServer } from './types';
  * @returns
  */
 export function useRouter(
-	attachTo: HTTPuppyServer.Runtime
+	attachTo: HTTPuppyServer.Runtime,
+	routerOptions ?: any // placeholder: planned feature
 ) {
-	function get(url, cb) {
+	// router callback choices
+	// todo: setup glob handler functionality if config option is set
+	function get(
+		url: string,
+		cb: typeof HTTPuppyServer.HTTPuppyCallback
+	): void {
 		attachTo.on('request', (req, res) => {
 			if(req.method === 'GET' && req.url === url) {
-				return cb(req, res);
+				return cb(<HTTPuppyRequest>req, <HTTPuppyResponse>res);
 			}
-			else {
-				return;
-			}
+			return;
 		});
 	}
-	function post(url, cb) {
+
+	function post(
+		url: string,
+		cb: typeof HTTPuppyServer.HTTPuppyCallback
+	): void {
 		attachTo.on('request', (req, res) => {
 			if(req.method === 'POST' && req.url === url) {
-				return cb(req, res);
+				return cb(<HTTPuppyRequest>req, <HTTPuppyResponse>res);
 			}
-			else {
-				return;
-			}
+			return;
 		});
 	}
-	function head(url, cb) {
+
+	function head(
+		url: string,
+		cb: typeof HTTPuppyServer.HTTPuppyCallback
+	): void {
 		attachTo.on('request', (req, res) => {
 			if(req.method === 'HEAD' && req.url === url) {
-				return cb(req, res);
+				return cb(<HTTPuppyRequest>req, <HTTPuppyResponse>res);
 			}
-			else {
-				return;
-			}
+			return;
 		});
 	}
-	function put(url, cb) {
+
+	function put(
+		url: string,
+		cb: typeof HTTPuppyServer.HTTPuppyCallback
+	): void {
 		attachTo.on('request', (req, res) => {
 			if(req.method === 'PUT' && req.url === url) {
-				return cb(req, res);
+				return cb(<HTTPuppyRequest>req, <HTTPuppyResponse>res);
 			}
-			else {
-				return;
-			}
+			return;
 		});
 	}
 
-	function patch(url, cb) {
+	function patch(
+		url: string,
+		cb: typeof HTTPuppyServer.HTTPuppyCallback
+	): void {
 		attachTo.on('request', (req, res) => {
 			if(req.method === 'PATCH' && req.url === url) {
-				return cb(req, res);
+				return cb(<HTTPuppyRequest>req, <HTTPuppyResponse>res);
 			}
-			else {
-				return;
-			}
+			return;
 		});
 	}
 
-	function _delete(url, cb) {
+	function _delete(
+		url: string,
+		cb: typeof HTTPuppyServer.HTTPuppyCallback
+	): void {
 		attachTo.on('request', (req, res) => {
 			if(req.method === 'DELETE' && req.url === url) {
-				return cb(req, res);
+				return cb(<HTTPuppyRequest>req, <HTTPuppyResponse>res);
 			}
-			else {
-				return;
-			}
+			return;
 		});
 	}
 
