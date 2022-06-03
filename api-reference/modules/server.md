@@ -29,7 +29,7 @@ void promise to gracefully shut down
 
 #### Defined in
 
-[server.ts:45](https://github.com/abschill/httpuppy/blob/707d865/src/server.ts#L45)
+[server.ts:46](https://github.com/abschill/httpuppy/blob/1ab4ad0/src/server.ts#L46)
 
 ___
 
@@ -51,4 +51,4 @@ httpuppy server
 
 #### Defined in
 
-[server.ts:18](https://github.com/abschill/httpuppy/blob/707d865/src/server.ts#L18)
+[server.ts:19](https://github.com/abschill/httpuppy/blob/1ab4ad0/src/server.ts#L19)

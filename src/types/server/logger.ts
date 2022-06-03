@@ -1,5 +1,7 @@
+export type LogLevel = 'silent' | 'base' | 'verbose';
+
 export interface LogConfig {
-	logLevel: 'silent' | 'base' | 'verbose';
+	logLevel: LogLevel;
 	logPrefix ?: string;
 }
 

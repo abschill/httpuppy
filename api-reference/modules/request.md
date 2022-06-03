@@ -20,8 +20,8 @@
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `req` | `IncomingMessage` | incoming message to handle args from |
-| `res` | `ServerResponse` | response message to send |
+| `req` | `HTTPuppyRequest` | incoming message to handle args from |
+| `res` | `HTTPuppyResponse` | response message to send |
 | `config` | `uOptions` | config from server |
 
 #### Returns
@@ -32,4 +32,4 @@ nothing, it inherits flow control from the requesting branch
 
 #### Defined in
 
-[request.ts:29](https://github.com/abschill/httpuppy/blob/707d865/src/request.ts#L29)
+[request.ts:32](https://github.com/abschill/httpuppy/blob/1ab4ad0/src/request.ts#L32)

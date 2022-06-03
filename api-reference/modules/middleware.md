@@ -30,7 +30,7 @@ default list of http headers based on given config cache settings / content type
 
 #### Defined in
 
-[middleware.ts:15](https://github.com/abschill/httpuppy/blob/707d865/src/middleware.ts#L15)
+[middleware.ts:15](https://github.com/abschill/httpuppy/blob/1ab4ad0/src/middleware.ts#L15)
 
 ___
 
@@ -52,4 +52,4 @@ ___
 
 #### Defined in
 
-[middleware.ts:37](https://github.com/abschill/httpuppy/blob/707d865/src/middleware.ts#L37)
+[middleware.ts:37](https://github.com/abschill/httpuppy/blob/1ab4ad0/src/middleware.ts#L37)

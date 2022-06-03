@@ -9,6 +9,7 @@ import { useStaticMount } from './internal/static';
 import { DiagnosticLog } from './types/server';
 import { useAnyConfig } from './internal/argv';
 import { useMiddleware } from './middleware';
+import { useLogger } from './internal/logger';
 
 /**
  *
@@ -30,7 +31,7 @@ export function useServer(
 		_server = stdCreateSecureServer(conf.secureContext, config.handler);
 	}
     const server = useStartup(config, _server, diagnostics);
-
+	if(conf.logLevel && conf.logLevel !== 'silent') useLogger(null, server);
 	if(config.static) useStaticMount(config, server);
 	if(!config.coldInit) {
 		server.listen(config.port, config.hostname);

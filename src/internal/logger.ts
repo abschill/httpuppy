@@ -1,3 +1,4 @@
+import { HTTPuppyServer } from 'types';
 import {
 	LogConfig,
 	useDefaultLogConfig
@@ -11,4 +12,13 @@ export function useLogConfig(
 		return def;
 	}
 	return {...def, ...config};
+}
+
+export function useLogger(
+	config: LogConfig,
+	server: HTTPuppyServer.Runtime
+) {
+	server.on('request', (req) => {
+		console.log(`${req.method} ${req.url}`);
+	});
 }
