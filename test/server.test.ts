@@ -26,7 +26,7 @@ describe('Setup Custom API Endpoints with static config', function() {
 		const router = useRouter(server);
 		router.get('/api/v1', (req, res) => res.end('hello world'));
 		server.listen(3000);
-		Promise.resolve(get('http://localhost:3000/test', (res) => {
+		Promise.resolve(get('http://localhost:3000/api/v1', (res) => {
 			res.on('data', (chunk) => {
 				expect(chunk.toString()).toEqual('hello world');
 			});
