@@ -1,9 +1,8 @@
-const { join } = require('path');
 const { useServer, useRouter } = require('../lib');
 
 const app = useServer({
 	static: {
-		path: join(process.cwd(), './examples/files')
+		path: './examples/files'
 	},
     throwWarnings: false,
 	logLevel: 'base'

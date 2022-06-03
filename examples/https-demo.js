@@ -6,7 +6,7 @@ const { readFileSync } = require('fs');
  */
 const secureApp = useServer({
 	static: {
-		path: join(process.cwd(), './examples/files')
+		path: './examples/files'
 	},
 	onMount: () => console.log('server started, open browser to port 3000'),
     throwWarnings: false,

@@ -36,7 +36,7 @@ router.get('/test', (req, res) => res.end('hello'));
 
 #### Defined in
 
-[router.ts:23](https://github.com/abschill/httpuppy/blob/dbba3a8/src/router.ts#L23)
+[router.ts:23](https://github.com/abschill/httpuppy/blob/27df021/src/router.ts#L23)
 
 ___
 
@@ -50,14 +50,8 @@ ___
 ```javascript
 const app = useServer({
 	static: {
-		path: join(process.cwd(), './examples/files')
-	},
-	middleware: [
-		{
-			href: '/',
-			handler: (req, res) => console.log('middleware')
-		}
-	],
+		path: './examples/files'
+	}
 });
 ```
 
@@ -75,4 +69,4 @@ httpuppy server
 
 #### Defined in
 
-[server.ts:35](https://github.com/abschill/httpuppy/blob/dbba3a8/src/server.ts#L35)
+[server.ts:29](https://github.com/abschill/httpuppy/blob/27df021/src/server.ts#L29)

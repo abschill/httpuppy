@@ -19,14 +19,8 @@ import { useLogger } from './internal/logger';
  * ```javascript
 * const app = useServer({
 * 	static: {
-* 		path: join(process.cwd(), './examples/files')
-* 	},
-* 	middleware: [
-* 		{
-*			href: '/',
-*			handler: (req, res) => console.log('middleware')
-*		}
-*	],
+* 		path: './examples/files'
+* 	}
 * });
 * ```
  * @param conf configuration options

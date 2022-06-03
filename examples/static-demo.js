@@ -3,7 +3,7 @@ const { useServer } = require('../lib');
 
 const app = useServer({
 	static: {
-		path: join(process.cwd(), './examples/files')
+		path: './examples/files'
 	},
     throwWarnings: false,
 	log: {
