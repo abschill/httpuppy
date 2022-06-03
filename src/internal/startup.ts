@@ -11,7 +11,7 @@ import {
  * @param diagnostics diagnostic list from the prestartup process
  * @returns the http server object
  */
-export function useStartup(
+export function _useServer(
 	config: HTTPuppyServer.uOptions,
 	server: Server,
 	diagnostics: HTTPuppyServer.DiagnosticLog[]

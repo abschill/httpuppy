@@ -1,3 +1,7 @@
+/**
+ * @module middleware
+ * hooks for setting up middleware for the request chain
+ */
 import {
 	HTTPuppyServer,
 	HTTP_INCMSG,

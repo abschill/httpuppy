@@ -1,13 +1,15 @@
 [httpuppy - v0.1.0](../README.md) / [Modules](../modules.md) / middleware
+hooks for setting up middleware for the request chain
 
 # Module: middleware
+hooks for setting up middleware for the request chain
 
 ## Table of contents
 
 ### Functions
 
-- [useHeaders](middleware.md#useheaders)
-- [useMiddleware](middleware.md#usemiddleware)
+- [useHeaders](middleware_hooks_for_setting_up_middleware_for_the_request_chain.md#useheaders)
+- [useMiddleware](middleware_hooks_for_setting_up_middleware_for_the_request_chain.md#usemiddleware)
 
 ## Functions
 
@@ -30,7 +32,7 @@ default list of http headers based on given config cache settings / content type
 
 #### Defined in
 
-[middleware.ts:15](https://github.com/abschill/httpuppy/blob/1ab4ad0/src/middleware.ts#L15)
+[middleware.ts:19](https://github.com/abschill/httpuppy/blob/7cda2cd/src/middleware.ts#L19)
 
 ___
 
@@ -52,4 +54,4 @@ ___
 
 #### Defined in
 
-[middleware.ts:37](https://github.com/abschill/httpuppy/blob/1ab4ad0/src/middleware.ts#L37)
+[middleware.ts:41](https://github.com/abschill/httpuppy/blob/7cda2cd/src/middleware.ts#L41)

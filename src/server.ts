@@ -1,14 +1,17 @@
+/**
+ * @module server
+ * @description Hooks for spinning up a web server
+ */
 import { createServer as stlCreateServer } from 'http';
 import { createServer as stdCreateSecureServer } from 'https';
 import { HTTPuppyServer } from './types';
 import { useConfig } from './internal/config';
-import { useStartup } from './internal/startup';
+import { _useServer } from './internal/startup';
 import { usePort } from './internal/port';
 import GracefulShutdown from 'http-graceful-shutdown';
-import { useStaticMount } from './internal/static';
+import { useStaticMount } from './static';
 import { DiagnosticLog } from './types/server';
 import { useAnyConfig } from './internal/argv';
-import { useMiddleware } from './middleware';
 import { useLogger } from './internal/logger';
 
 /**
@@ -30,7 +33,7 @@ export function useServer(
 	else {
 		_server = stdCreateSecureServer(conf.secureContext, config.handler);
 	}
-    const server = useStartup(config, _server, diagnostics);
+    const server = _useServer(config, _server, diagnostics);
 	if(conf.logLevel && conf.logLevel !== 'silent') useLogger(null, server);
 	if(config.static) useStaticMount(config, server);
 	if(!config.coldInit) {

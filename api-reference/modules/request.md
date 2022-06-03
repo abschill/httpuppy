@@ -32,4 +32,4 @@ nothing, it inherits flow control from the requesting branch
 
 #### Defined in
 
-[request.ts:32](https://github.com/abschill/httpuppy/blob/1ab4ad0/src/request.ts#L32)
+[request.ts:32](https://github.com/abschill/httpuppy/blob/7cda2cd/src/request.ts#L32)

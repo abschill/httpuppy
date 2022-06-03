@@ -2,6 +2,8 @@
 
 # Module: server
 
+**`description`** Hooks for spinning up a web server
+
 ## Table of contents
 
 ### Functions
@@ -29,7 +31,7 @@ void promise to gracefully shut down
 
 #### Defined in
 
-[server.ts:46](https://github.com/abschill/httpuppy/blob/1ab4ad0/src/server.ts#L46)
+[server.ts:49](https://github.com/abschill/httpuppy/blob/7cda2cd/src/server.ts#L49)
 
 ___
 
@@ -51,4 +53,4 @@ httpuppy server
 
 #### Defined in
 
-[server.ts:19](https://github.com/abschill/httpuppy/blob/1ab4ad0/src/server.ts#L19)
+[server.ts:22](https://github.com/abschill/httpuppy/blob/7cda2cd/src/server.ts#L22)
