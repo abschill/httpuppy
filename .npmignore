@@ -4,3 +4,6 @@ scripts
 .git*
 .assets
 examples
+docs
+test
+chores.md
