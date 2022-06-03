@@ -51,7 +51,7 @@ export function useServer(
 		_server = stdCreateSecureServer(conf.secureContext, config.handler);
 	}
     const server = _useServer(config, _server, diagnostics);
-	if(conf.logLevel && conf.logLevel !== 'silent') useLogger(null, server);
+	if(conf.log && conf.log.logLevel !== 'silent') useLogger(conf.log, server);
 	if(config.static) useStaticMount(config, server);
 	if(!config.coldInit) {
 		server.listen(config.port, config.hostname);

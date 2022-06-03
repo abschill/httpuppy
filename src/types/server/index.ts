@@ -1,6 +1,6 @@
 import { IncomingMessage, Server as stlServer, ServerResponse } from 'http';
 import { ServerOptions } from 'http';
-import { LogLevel } from './logger';
+import { LogConfig } from './logger';
 import {
 	iExitHandler,
 	UserMiddlewareOption,
@@ -66,7 +66,7 @@ export interface uOptions extends ServerOptions {
     hostname 		?: string;
 	static 			?: UserStaticConfig;
     throwWarnings 	?: boolean;
-	logLevel		?: LogLevel;
+	log				?: LogConfig;
 	handler 		?: HTTPHandlerFunction<void>;
 	middleware 		?: UserMiddlewareOption[]
 	onMount 		?: iHandlerType;

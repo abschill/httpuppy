@@ -6,12 +6,9 @@ const app = useServer({
 		path: join(process.cwd(), './examples/files')
 	},
     throwWarnings: false,
-	middleware: [
-		{
-			href: '/',
-			handler: (req, res) => console.log(req.url)
-		}
-	]
+	log: {
+		logLevel: 'base'
+	}
 });
 
 

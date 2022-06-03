@@ -3,6 +3,7 @@ import {
 	LogConfig,
 	useDefaultLogConfig
 } from '../types/server';
+const { log, warn, error } = console;
 
 export function useLogConfig(
 	config ?: LogConfig
@@ -18,7 +19,14 @@ export function useLogger(
 	config	: LogConfig,
 	server	: HTTPuppyServer.Runtime
 ) {
-	server.on('request', (req) => {
-		console.log(`${req.method} ${req.url}`);
-	});
+	const prefix = config.logPrefix || 'httpuppy_log';
+	if(config.logLevel === 'base') {
+		server.on('request', (req) => {
+			log(`${prefix}: ${req.method} ${req.url}`);
+		});
+
+		server.on('error', (err) => {
+			error(`${prefix}: ${err.message}\n\n${err.stack}`);
+		});
+	}
 }
