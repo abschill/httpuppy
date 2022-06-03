@@ -3,16 +3,14 @@
  * hooks for setting up middleware for the request chain
  */
 import {
-	HTTPuppyServer,
 	iHTTP,
 } from 'types';
 import {
 	uOptions,
 	HTTPuppyWriterOptions,
 	HTTPuppyRequest,
-	HTTPuppyResponse,
-	Runtime
-} from 'types/server';
+	HTTPuppyResponse
+} from './types/server';
 import { useEtag } from './internal/etag';
 
 /**
