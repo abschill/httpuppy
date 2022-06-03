@@ -10,11 +10,11 @@
     * 	throwWarnings: false,
 	* 	logLevel: 'base',
 	* 	middleware: [
-	* 	{
-	*		href: '/',
-	*		handler: (req, res) => console.log('middleware')
-	*	}
-	*],
+	* 		{
+	*			href: '/',
+	*			handler: (req, res) => console.log('middleware')
+	*		}
+	*	],
 });
 ```
  */

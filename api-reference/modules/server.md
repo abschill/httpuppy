@@ -13,11 +13,11 @@ const app = useServer({
 	throwWarnings: false,
 	logLevel: 'base',
 	middleware: [
-	{
-		href: '/',
-		handler: (req, res) => console.log('middleware')
-	}
-],
+		{
+			href: '/',
+			handler: (req, res) => console.log('middleware')
+		}
+	],
 });
 ```
 
@@ -48,7 +48,7 @@ void promise to gracefully shut down
 
 #### Defined in
 
-[server.ts:67](https://github.com/abschill/httpuppy/blob/c1981ad/src/server.ts#L67)
+[server.ts:67](https://github.com/abschill/httpuppy/blob/c21baec/src/server.ts#L67)
 
 ___
 
@@ -70,4 +70,4 @@ httpuppy server
 
 #### Defined in
 
-[server.ts:38](https://github.com/abschill/httpuppy/blob/c1981ad/src/server.ts#L38)
+[server.ts:38](https://github.com/abschill/httpuppy/blob/c21baec/src/server.ts#L38)

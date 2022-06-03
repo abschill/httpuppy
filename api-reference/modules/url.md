@@ -35,4 +35,4 @@ the mounted file to serve based on the given request information
 
 #### Defined in
 
-[url.ts:15](https://github.com/abschill/httpuppy/blob/c1981ad/src/url.ts#L15)
+[url.ts:15](https://github.com/abschill/httpuppy/blob/c21baec/src/url.ts#L15)
