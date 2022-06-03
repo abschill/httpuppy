@@ -3,7 +3,7 @@
  * @description Hooks for spinning up a web server
  * @example calling the userServer hook
  * ```javascript
- * const app = useServer({
+ const app = useServer({
 	static: {
 		path: join(process.cwd(), './examples/files')
 	},
