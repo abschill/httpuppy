@@ -4,4 +4,4 @@ A simple abstraction layer for node web servers
 
 [Examples](/examples/)
 
-[Reference](/docs/)
+[Reference](/docs/modules.md)
