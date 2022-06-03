@@ -5,7 +5,7 @@
 import { iHTTP } from './types';
 import { useEtag } from './internal/etag';
 import {
-	uOptions,
+	HTTPuppyServerOptions,
 	HTTPuppyWriterOptions,
 	HTTPuppyRequest,
 	HTTPuppyResponse
@@ -18,7 +18,7 @@ import {
  */
 export function useHeaders(
 	options : HTTPuppyWriterOptions,
-	config	: uOptions
+	config	: HTTPuppyServerOptions
 ): iHTTP.HTTPHeaders {
 	const applyHeaders: iHTTP.HTTPHeaders = [
 		[
@@ -39,7 +39,7 @@ export function useHeaders(
 }
 
 export function useMiddleware(
-	config	: uOptions,
+	config	: HTTPuppyServerOptions,
 	req		: HTTPuppyRequest,
 	res		: HTTPuppyResponse
 ) {

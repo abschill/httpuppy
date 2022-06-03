@@ -1,5 +1,5 @@
 import { IncomingMessage, Server as stlServer, ServerResponse } from 'http';
-import { ServerOptions } from 'http';
+import { ServerOptions as stlServerOptions } from 'http';
 import { LogConfig } from './logger';
 import {
 	iExitHandler,
@@ -47,7 +47,7 @@ export type UserStaticConfig = {
 
 
 /**
- * @interface uOptions
+ * @interface HTTPuppyServerOptions
  * @member port the port number to run the configuration with (default: 80)
  * @member coldInit whether or not to return the server or autostart it from config (default: true)
  * @member hostname hostname for the server itself (default: 127.0.0.1)
@@ -60,7 +60,7 @@ export type UserStaticConfig = {
  * @member secure boolean for https instead of http, requires follow up options in secureContext
  * @member secureContext options for resolving the SSL cert / key
  */
-export interface uOptions extends ServerOptions {
+export interface HTTPuppyServerOptions extends stlServerOptions {
     port 			?: number;
     coldInit 		?: boolean;
     hostname 		?: string;
@@ -81,7 +81,7 @@ export interface uOptions extends ServerOptions {
 }
 
 export const defaultHTTPConfig:
-uOptions = {
+HTTPuppyServerOptions = {
 	port		  : 80,
 	coldInit	  : true,
 	hostname	  : '127.0.0.1',
@@ -90,8 +90,8 @@ uOptions = {
 };
 
 export function fromDefaultHTTPConfig(
-	config: uOptions
-): uOptions {
+	config: HTTPuppyServerOptions
+): HTTPuppyServerOptions {
 	return {
 		...defaultHTTPConfig,
 		...config

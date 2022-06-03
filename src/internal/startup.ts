@@ -13,7 +13,7 @@ import {
  * @returns the http server object
  */
 export function _useServer(
-	config	: HTTPuppyServer.uOptions,
+	config	: HTTPuppyServer.HTTPuppyServerOptions,
 	server	: Server,
 	diagnostics: HTTPuppyServer.DiagnosticLog[]
 ): HTTPuppyServer.Runtime {

@@ -18,7 +18,7 @@ import {
  * @param server Runtime to apply static handler mount point & error diagnostic list
  */
 export function useStaticMount(
-	config		: HTTPuppyServer.uOptions,
+	config		: HTTPuppyServer.HTTPuppyServerOptions,
 	server		: HTTPuppyServer.Runtime
 ) {
 	// mount configured FS path to the request handler

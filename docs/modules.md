@@ -36,7 +36,7 @@ router.get('/test', (req, res) => res.end('hello'));
 
 #### Defined in
 
-[router.ts:23](https://github.com/abschill/httpuppy/blob/27df021/src/router.ts#L23)
+[router.ts:23](https://github.com/abschill/httpuppy/blob/85d98d9/src/router.ts#L23)
 
 ___
 
@@ -59,7 +59,7 @@ const app = useServer({
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `conf` | `uOptions` | configuration options |
+| `conf` | `HTTPuppyServerOptions` | configuration options |
 
 #### Returns
 
@@ -69,4 +69,4 @@ httpuppy server
 
 #### Defined in
 
-[server.ts:29](https://github.com/abschill/httpuppy/blob/27df021/src/server.ts#L29)
+[server.ts:29](https://github.com/abschill/httpuppy/blob/85d98d9/src/server.ts#L29)

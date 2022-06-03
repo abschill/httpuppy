@@ -9,9 +9,9 @@ import { emitWarning } from 'process';
  * @returns cleaned user config
  */
 export function useConfig(
-	conf		: HTTPuppyServer.uOptions,
+	conf		: HTTPuppyServer.HTTPuppyServerOptions,
 	diagnostics : HTTPuppyServer.DiagnosticLog[]
-): HTTPuppyServer.uOptions {
+): HTTPuppyServer.HTTPuppyServerOptions {
     const config = {...conf};
     if(!config.port) config.port = 80; //default http port
 
@@ -31,6 +31,6 @@ export function useConfig(
         diagnostics.push({msg});
     }
 
-    return <HTTPuppyServer.uOptions>config;
+    return <HTTPuppyServer.HTTPuppyServerOptions>config;
 }
 

@@ -54,7 +54,7 @@ export function useVirtualStreamReader(
  */
 export function useWriter(
 	res		: HTTPuppyServer.HTTPuppyResponse,
-	config	: HTTPuppyServer.uOptions,
+	config	: HTTPuppyServer.HTTPuppyServerOptions,
 	options	: HTTPuppyServer.HTTPuppyWriterOptions
 ): void {
 	if(!res.writable) {
