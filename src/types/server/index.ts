@@ -97,12 +97,20 @@ export function fromDefaultHTTPConfig(
 
 export interface HTTPuppyRequest extends IncomingMessage {}
 export interface HTTPuppyResponse extends ServerResponse {}
-export interface HTTPuppyRouterOptions {
-	href: string;
-	callback: iHandlerType;
-	req: HTTPuppyRequest;
-	res: HTTPuppyResponse;
+
+declare function HTTPuppyCallback(req: HTTPuppyRequest, res: HTTPuppyResponse): any;
+
+declare function HTTPuppyRouterMethod(url: string, cb: typeof HTTPuppyCallback): typeof HTTPuppyCallback | void;
+export interface HTTPuppyRouter {
+	baseUrl: string;
+	get: typeof HTTPuppyRouterMethod;
+	head: typeof HTTPuppyRouterMethod;
+	post: typeof HTTPuppyRouterMethod;
+	put: typeof HTTPuppyRouterMethod;
+	patch: typeof HTTPuppyRouterMethod;
+	delete: typeof HTTPuppyRouterMethod;
 }
 
 export * from './middleware';
 export * from './writer';
+export * from './logger';

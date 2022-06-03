@@ -3,11 +3,6 @@
  * @description hooks for handling requests for the core module
  */
 import {
-	HTTP_INCMSG,
-	HTTP_RES,
-	HTTPuppyServer
-} from './types';
-import {
 	useStaticURLParser
 } from './url';
 import { emitWarning } from 'process';
@@ -18,7 +13,15 @@ import {
 } from './internal/writer';
 import { use404 } from './internal/error';
 import { useMiddleware } from './middleware';
+import { _useCloseHandler } from './internal/_middleware';
+import {
+	uOptions,
+	HTTPuppyRequest,
+	HTTPuppyResponse,
+	Runtime
+} from './types/server';
 
+const test = (req) => console.log('closed static req @', req.url);
 /**
  *
  * @param req incoming message to handle args from
@@ -27,10 +30,11 @@ import { useMiddleware } from './middleware';
  * @returns nothing, it inherits flow control from the requesting branch
  */
 export function useStaticHandler(
-	req		: HTTP_INCMSG,
-	res		: HTTP_RES,
-	config	: HTTPuppyServer.uOptions
+	req		: HTTPuppyRequest,
+	res		: HTTPuppyResponse,
+	config	: uOptions
 ): void {
+	//_useCloseHandler<HTTPuppyRequest>(req, test);
 	if(!config.static) {
 		throw 'error: static handler invoked without any options';
 	}
