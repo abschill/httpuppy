@@ -71,6 +71,13 @@ export function useWriter(
 		console.warn('warning: write attempt on an ended stream in useWriter');
 		return;
 	}
-	res.writeHead(options.status, options.statusText, useHeaders(options, config));
-	return useVirtualStreamReader(options.virtualFile, res);
+	if(options.virtualFile.symLink) {
+		res.writeHead(options.status, options.statusText, useHeaders(options, config));
+		return useVirtualStreamReader(options.virtualFile, res);
+	}
+	else {
+		// todo - 404 path config option
+		res.writeHead(404, 'page not found', ['Content-Type', 'text/plain']);
+		res.end('404: page not found');
+	}
 }

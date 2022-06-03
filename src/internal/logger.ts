@@ -28,5 +28,10 @@ export function useLogger(
 		server.on('error', (err) => {
 			error(`${prefix}: ${err.message}\n\n${err.stack}`);
 		});
+
+		server.on('clientError', (err, socket) => {
+			warn(`${prefix}: ${err.name}`);
+			socket.end('HTTP/1.1 400 Bad Request');
+		});
 	}
 }
