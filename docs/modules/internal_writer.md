@@ -34,7 +34,7 @@ boolean whether or not it needs to be written as a buffer or can be served direc
 
 #### Defined in
 
-[src/internal/writer.ts:13](https://github.com/abschill/httpuppy/blob/1769d2f/src/internal/writer.ts#L13)
+[src/internal/writer.ts:13](https://github.com/abschill/httpuppy/blob/b81b706/src/internal/writer.ts#L13)
 
 ___
 
@@ -59,7 +59,7 @@ ___
 
 #### Defined in
 
-[src/internal/writer.ts:26](https://github.com/abschill/httpuppy/blob/1769d2f/src/internal/writer.ts#L26)
+[src/internal/writer.ts:26](https://github.com/abschill/httpuppy/blob/b81b706/src/internal/writer.ts#L26)
 
 ___
 
@@ -81,4 +81,4 @@ ___
 
 #### Defined in
 
-[src/internal/writer.ts:55](https://github.com/abschill/httpuppy/blob/1769d2f/src/internal/writer.ts#L55)
+[src/internal/writer.ts:55](https://github.com/abschill/httpuppy/blob/b81b706/src/internal/writer.ts#L55)

@@ -21,7 +21,7 @@
 
 #### Defined in
 
-[src/internal/argv.ts:40](https://github.com/abschill/httpuppy/blob/1769d2f/src/internal/argv.ts#L40)
+[src/internal/argv.ts:40](https://github.com/abschill/httpuppy/blob/b81b706/src/internal/argv.ts#L40)
 
 ___
 
@@ -35,4 +35,4 @@ ___
 
 #### Defined in
 
-[src/internal/argv.ts:4](https://github.com/abschill/httpuppy/blob/1769d2f/src/internal/argv.ts#L4)
+[src/internal/argv.ts:4](https://github.com/abschill/httpuppy/blob/b81b706/src/internal/argv.ts#L4)
