@@ -1,4 +1,4 @@
-#! /usr/bin/node
+#! /usr/bin/env node
 const { useProcessArgs } = require('../lib/internal/argv');
 const { useServer } = require('../lib');
 const args = useProcessArgs();

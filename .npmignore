@@ -3,3 +3,4 @@ scripts
 .eslintignore
 .git*
 .assets
+examples
