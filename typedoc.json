@@ -1,7 +1,4 @@
 {
-	"entryPoints": [
-		"./src/*.ts"
-	],
 	"out": "docs",
 	"includeVersion": true
 }

@@ -1,8 +1,7 @@
 /**
  * @module server
- * @description Hooks for spinning up a web server
  * @example calling the userServer hook
- * ```javascript
+	* ```javascript
  	* const app = useServer({
 	* 	static: {
 	* 		path: join(process.cwd(), './examples/files')
@@ -15,8 +14,8 @@
 	*			handler: (req, res) => console.log('middleware')
 	*		}
 	*	],
-});
-```
+	* });
+	* ```
  */
 import { createServer as stlCreateServer } from 'http';
 import { createServer as stdCreateSecureServer } from 'https';
@@ -24,7 +23,7 @@ import { HTTPuppyServer } from './types';
 import { useConfig } from './internal/config';
 import { _useServer } from './internal/startup';
 import { usePort } from './internal/port';
-import GracefulShutdown from 'http-graceful-shutdown';
+import { shutdown } from './internal/_shutdown';
 import { useStaticMount } from './static';
 import { DiagnosticLog } from './types/server';
 import { useAnyConfig } from './internal/argv';
@@ -57,25 +56,4 @@ export function useServer(
 	}
 	server._shutdown = () => shutdown(server);
 	return server;
-}
-
-/**
- *
- * @param s http server to shut down
- * @returns void promise to gracefully shut down
- */
-export async function shutdown(
-	s	: HTTPuppyServer.Runtime
-): Promise<HTTPuppyServer.HTTPuppySleep>  {
-	try {
-		s.onClose();
-		s.removeAllListeners();
-		s.close();
-
-		return GracefulShutdown(s);
-	}
-	catch(e) {
-		process.exit(1);
-	}
-
 }
