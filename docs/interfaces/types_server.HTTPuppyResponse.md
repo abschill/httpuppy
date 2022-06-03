@@ -1341,7 +1341,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:103](https://github.com/abschill/httpuppy/blob/f65c9fa/src/types/server/index.ts#L103)
+[src/types/server/index.ts:103](https://github.com/abschill/httpuppy/blob/8b3eb74/src/types/server/index.ts#L103)
 
 ___
 
@@ -2360,7 +2360,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:102](https://github.com/abschill/httpuppy/blob/f65c9fa/src/types/server/index.ts#L102)
+[src/types/server/index.ts:102](https://github.com/abschill/httpuppy/blob/8b3eb74/src/types/server/index.ts#L102)
 
 ___
 
