@@ -32,4 +32,4 @@ the tuple representing the content type header for the static file
 
 #### Defined in
 
-src/internal/content-type.js:10
+[src/internal/content-type.js:10](https://github.com/abschill/httpuppy/blob/70019ad/src/internal/content-type.js#L10)

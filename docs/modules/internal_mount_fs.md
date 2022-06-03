@@ -31,4 +31,4 @@
 
 #### Defined in
 
-[src/internal/mount-fs.ts:36](https://github.com/abschill/httpuppy/blob/5ad0bb8/src/internal/mount-fs.ts#L36)
+[src/internal/mount-fs.ts:36](https://github.com/abschill/httpuppy/blob/70019ad/src/internal/mount-fs.ts#L36)

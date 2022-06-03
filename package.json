@@ -13,9 +13,17 @@
     "test:watch": "ts-mocha -w test/**/*.test.ts",
     "run-ex": "nodemon examples/static-demo.js"
   },
-  "keywords": [],
+  "keywords": [
+	  "http",
+	  "https",
+	  "express",
+	  "web-server",
+	  "server",
+	  "backend",
+	  "proxy"
+  ],
   "author": "abschill",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@types/expect": "^24.3.0",
     "@types/mocha": "^9.1.1",
@@ -35,5 +43,10 @@
     "mime-types": "^2.1.35",
     "tcp-port-used": "^1.0.2",
     "typedoc": "^0.22.15"
-  }
+  },
+  "repository": {
+	  "type": "git",
+	  "url": "https://github.com/abschill/httpuppy"
+  },
+  "homepage": "https://github.com/abschill/httpuppy"
 }

@@ -30,4 +30,4 @@ nothing
 
 #### Defined in
 
-[src/internal/status.ts:12](https://github.com/abschill/httpuppy/blob/5ad0bb8/src/internal/status.ts#L12)
+[src/internal/status.ts:12](https://github.com/abschill/httpuppy/blob/70019ad/src/internal/status.ts#L12)
