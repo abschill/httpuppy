@@ -1,9 +1,6 @@
 /**
  * @module server
- * @example calling the userServer hook
-	* ```javascript
-
-	* ```
+ * @description core server module
  */
 import { createServer as stlCreateServer } from 'http';
 import { createServer as stdCreateSecureServer } from 'https';
