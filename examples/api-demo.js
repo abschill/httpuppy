@@ -3,9 +3,7 @@ const { useServer, useRouter } = require('../lib');
 const app = useServer({
 	static: {
 		path: './examples/files'
-	},
-    throwWarnings: false,
-	logLevel: 'base'
+	}
 });
 
 const endpoint = useRouter(app);

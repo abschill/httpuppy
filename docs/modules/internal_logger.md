@@ -27,7 +27,7 @@
 
 #### Defined in
 
-[src/internal/logger.ts:8](https://github.com/abschill/httpuppy/blob/70019ad/src/internal/logger.ts#L8)
+[src/internal/logger.ts:8](https://github.com/abschill/httpuppy/blob/edd8373/src/internal/logger.ts#L8)
 
 ___
 
@@ -48,4 +48,4 @@ ___
 
 #### Defined in
 
-[src/internal/logger.ts:18](https://github.com/abschill/httpuppy/blob/70019ad/src/internal/logger.ts#L18)
+[src/internal/logger.ts:18](https://github.com/abschill/httpuppy/blob/edd8373/src/internal/logger.ts#L18)

@@ -33,4 +33,4 @@ cleaned user config
 
 #### Defined in
 
-[src/internal/config.ts:11](https://github.com/abschill/httpuppy/blob/70019ad/src/internal/config.ts#L11)
+[src/internal/config.ts:11](https://github.com/abschill/httpuppy/blob/edd8373/src/internal/config.ts#L11)

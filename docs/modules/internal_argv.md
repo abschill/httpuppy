@@ -21,7 +21,7 @@
 
 #### Defined in
 
-[src/internal/argv.js:39](https://github.com/abschill/httpuppy/blob/70019ad/src/internal/argv.js#L39)
+[src/internal/argv.js:39](https://github.com/abschill/httpuppy/blob/edd8373/src/internal/argv.js#L39)
 
 ___
 
@@ -35,4 +35,4 @@ ___
 
 #### Defined in
 
-[src/internal/argv.js:3](https://github.com/abschill/httpuppy/blob/70019ad/src/internal/argv.js#L3)
+[src/internal/argv.js:3](https://github.com/abschill/httpuppy/blob/edd8373/src/internal/argv.js#L3)
