@@ -1,6 +1,6 @@
 /**
  * @module middleware
- * hooks for setting up middleware for the request chain
+ * @description hooks for setting up middleware for the request chain
  */
 import {
 	iHTTP,
