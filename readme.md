@@ -23,6 +23,20 @@ npx httpuppy --port=3000 --path=path/to/files
 
 spin up a server at `<cwd>/path/to/files`
 
+
+## Programmatic Usage
+
+```js
+const { useServer } = require('httpuppy');
+
+const app = useServer({
+	static: {
+		path: './path/to/content'
+	}
+});
+app.listen(3000, () => console.log('listening on 3000'))
+```
+
 [Examples](/examples/)
 
 [Reference](/docs/modules.md)
