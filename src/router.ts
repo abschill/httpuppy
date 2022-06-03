@@ -17,7 +17,7 @@ import { HTTPuppyRequest, HTTPuppyResponse } from './types/server';
  * @returns
  */
 export function useRouter(
-	attachTo: HTTPuppyServer.Runtime,
+	attachTo: HTTPuppyServer.Runtime, // server to attach the router to as a handler
 	routerOptions ?: any // placeholder: planned feature
 ) {
 	// router callback choices

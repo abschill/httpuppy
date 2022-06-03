@@ -27,7 +27,7 @@ import { useLogger } from './internal/logger';
  * @returns httpuppy server
  */
 export function useServer(
-    conf	: HTTPuppyServer.HTTPuppyServerOptions
+    conf	: HTTPuppyServer.HTTPuppyServerOptions // user config for server
 ): HTTPuppyServer.Runtime {
 	usePort(conf.port ?? 80);
 	const diagnostics: DiagnosticLog[] = [];
