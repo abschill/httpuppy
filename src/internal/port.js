@@ -1,3 +1,6 @@
+/**
+ * @internal
+ */
 import { check } from 'tcp-port-used';
 
 /**

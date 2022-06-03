@@ -1,3 +1,6 @@
+/**
+ * @internal
+ */
 import { HTTPuppyServer } from '../types';
 import { createReadStream } from 'fs';
 import useContentType from './content-type';

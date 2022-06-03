@@ -7,7 +7,7 @@
   "scripts": {
     "build": "tsc",
     "build:watch": "tsc -w",
-    "build:docs": "typedoc --excludeInternal --darkHighlightTheme dark-plus ./src/**/*",
+    "build:docs": "typedoc --excludeInternal --darkHighlightTheme dark-plus",
     "dev": "make -j 2 dev-ts dev-example",
     "test": "ts-mocha test/**/*.test.ts",
     "test:watch": "ts-mocha -w test/**/*.test.ts",

@@ -1,3 +1,6 @@
+/**
+ * @internal
+ */
 export const bufferTypes = [
 	'png',
 	'jpg',

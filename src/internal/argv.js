@@ -1,3 +1,6 @@
+/**
+ * @internal
+ */
 import { resolve } from 'path';
 
 export function useProcessArgs() {

@@ -1,3 +1,6 @@
+/**
+ * @internal
+ */
 import { HTTPuppyServer } from '../types';
 import GracefulShutdown from 'http-graceful-shutdown';
 /**

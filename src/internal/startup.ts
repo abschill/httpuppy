@@ -1,4 +1,6 @@
-
+/**
+ * @internal
+ */
 import {
 	HTTPuppyServer,
 } from '../types';

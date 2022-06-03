@@ -1,3 +1,6 @@
+/**
+ * @internal
+ */
 import {
 	HTTPuppyRequest, HTTPuppyResponse
 } from '../types/server';
