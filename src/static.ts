@@ -31,14 +31,14 @@ export function useStaticMount(
 					return useVirtualStreamReader(pathData, res);
 				}
 				else {
-						return useWriter(res, config, {
-							status: 200,
-							statusText: 'ok',
-							type: pathData.contentType,
-							virtualFile: pathData
-						});
-					}
+					return useWriter(res, config, {
+						status: 200,
+						statusText: 'ok',
+						type: pathData.contentType,
+						virtualFile: pathData
+					});
 				}
+			}
 		}
 		catch(e) {
 			emitWarning(e);

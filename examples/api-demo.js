@@ -6,13 +6,7 @@ const app = useServer({
 		path: join(process.cwd(), './examples/files')
 	},
     throwWarnings: false,
-	logLevel: 'base',
-	middleware: [
-		{
-			href: '/',
-			handler: (req, res) => console.log('middleware')
-		}
-	],
+	logLevel: 'base'
 });
 
 const endpoint = useRouter(app);

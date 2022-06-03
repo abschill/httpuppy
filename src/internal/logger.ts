@@ -1,4 +1,4 @@
-import { HTTPuppyServer } from 'types';
+import { HTTPuppyServer } from '../types';
 import {
 	LogConfig,
 	useDefaultLogConfig

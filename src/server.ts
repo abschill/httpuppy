@@ -14,7 +14,6 @@ import { usePort } from './internal/port';
 import { shutdown } from './internal/_shutdown';
 import { useStaticMount } from './static';
 import { DiagnosticLog } from './types/server';
-import { useAnyConfig } from './internal/argv';
 import { useLogger } from './internal/logger';
 
 /**
@@ -41,7 +40,7 @@ export function useServer(
 ): HTTPuppyServer.Runtime {
 	usePort(conf.port ?? 80);
 	const diagnostics: DiagnosticLog[] = [];
-	useAnyConfig();
+	// useAnyConfig();
     const config = useConfig(conf, diagnostics);
 	let _server;
 	if(!conf.secure) {

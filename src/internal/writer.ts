@@ -65,9 +65,4 @@ export function useWriter(
 		res.writeHead(options.status, options.statusText, useHeaders(options, config));
 		return useVirtualStreamReader(options.virtualFile, res);
 	}
-	else {
-		// todo - 404 path config option
-		res.writeHead(404, 'page not found', ['Content-Type', 'text/plain']);
-		res.end('404: page not found');
-	}
 }

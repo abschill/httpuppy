@@ -1,5 +1,5 @@
 import mime from 'mime-types';
-import { iHTTP } from 'types';
+import { iHTTP } from '../types';
 
 /**
  * @internal useContentType

@@ -2,17 +2,14 @@
  * @module middleware
  * @description hooks for setting up middleware for the request chain
  */
-import {
-	iHTTP,
-} from 'types';
+import { iHTTP } from './types';
+import { useEtag } from './internal/etag';
 import {
 	uOptions,
 	HTTPuppyWriterOptions,
 	HTTPuppyRequest,
 	HTTPuppyResponse
 } from './types/server';
-import { useEtag } from './internal/etag';
-
 /**
  *
  * @param options the writer options to apply the headers against
