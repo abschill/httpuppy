@@ -81,11 +81,11 @@ export interface uOptions extends ServerOptions {
 
 export const defaultHTTPConfig:
 uOptions = {
-	port: 80,
-	coldInit: true,
-	hostname: '127.0.0.1',
-	throwWarnings: false,
-	cache: defaultCacheSettings
+	port		  : 80,
+	coldInit	  : true,
+	hostname	  : '127.0.0.1',
+	throwWarnings : false,
+	cache		  : defaultCacheSettings
 };
 
 export function fromDefaultHTTPConfig(
@@ -104,13 +104,13 @@ declare function HTTPuppyCallback(req: HTTPuppyRequest, res: HTTPuppyResponse): 
 
 declare function HTTPuppyRouterMethod(url: string, cb: typeof HTTPuppyCallback): typeof HTTPuppyCallback | void;
 export interface HTTPuppyRouter {
-	baseUrl: string;
-	get: typeof HTTPuppyRouterMethod;
-	head: typeof HTTPuppyRouterMethod;
-	post: typeof HTTPuppyRouterMethod;
-	put: typeof HTTPuppyRouterMethod;
-	patch: typeof HTTPuppyRouterMethod;
-	delete: typeof HTTPuppyRouterMethod;
+	baseUrl		: string;
+	get			: typeof HTTPuppyRouterMethod;
+	head		: typeof HTTPuppyRouterMethod;
+	post		: typeof HTTPuppyRouterMethod;
+	put			: typeof HTTPuppyRouterMethod;
+	patch		: typeof HTTPuppyRouterMethod;
+	delete		: typeof HTTPuppyRouterMethod;
 }
 
 export * from './middleware';

@@ -15,8 +15,8 @@ export function useLogConfig(
 }
 
 export function useLogger(
-	config: LogConfig,
-	server: HTTPuppyServer.Runtime
+	config	: LogConfig,
+	server	: HTTPuppyServer.Runtime
 ) {
 	server.on('request', (req) => {
 		console.log(`${req.method} ${req.url}`);

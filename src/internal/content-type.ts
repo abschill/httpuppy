@@ -7,7 +7,7 @@ import { iHTTP } from 'types';
  * @returns the tuple representing the content type header for the static file
  */
 export default function useContentType(
-	fpath: string
+	fpath	: string
 ): iHTTP.HTTPHeader {
 	return [
 		'Content-Type',

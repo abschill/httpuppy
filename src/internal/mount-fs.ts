@@ -29,7 +29,7 @@ function useCleanPaths(
  * @returns
  */
 export function useMountedFS(
-	config: HTTPuppyServer.uOptions
+	config : HTTPuppyServer.uOptions
 ) {
 	// mountedPath is the path to retrieve filesMounted from
 	const mountedPath = join(config.static.path);

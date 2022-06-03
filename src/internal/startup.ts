@@ -12,8 +12,8 @@ import {
  * @returns the http server object
  */
 export function _useServer(
-	config: HTTPuppyServer.uOptions,
-	server: Server,
+	config	: HTTPuppyServer.uOptions,
+	server	: Server,
 	diagnostics: HTTPuppyServer.DiagnosticLog[]
 ): HTTPuppyServer.Runtime {
 	if(config.onMount) server.once('listening', config.onMount);

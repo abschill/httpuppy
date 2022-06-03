@@ -1,6 +1,22 @@
 /**
  * @module server
  * @description Hooks for spinning up a web server
+ * @example calling the userServer hook
+ * ```javascript
+ * const app = useServer({
+	static: {
+		path: join(process.cwd(), './examples/files')
+	},
+    throwWarnings: false,
+	logLevel: 'base',
+	middleware: [
+		{
+			href: '/',
+			handler: (req, res) => console.log('middleware')
+		}
+	],
+});
+```
  */
 import { createServer as stlCreateServer } from 'http';
 import { createServer as stdCreateSecureServer } from 'https';

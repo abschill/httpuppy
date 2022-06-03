@@ -25,7 +25,7 @@ export function useProcessArgs() {
 
 
 function useForceCheck(
-	p: string
+	p	: string
 ) {
 	try {
 		return require(resolve(process.cwd(), p));

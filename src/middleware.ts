@@ -4,10 +4,15 @@
  */
 import {
 	HTTPuppyServer,
-	HTTP_INCMSG,
-	HTTP_RES,
 	iHTTP,
 } from 'types';
+import {
+	uOptions,
+	HTTPuppyWriterOptions,
+	HTTPuppyRequest,
+	HTTPuppyResponse,
+	Runtime
+} from 'types/server';
 import { useEtag } from './internal/etag';
 
 /**
@@ -17,8 +22,8 @@ import { useEtag } from './internal/etag';
  * @returns default list of http headers based on given config cache settings / content type of the request options
  */
 export function useHeaders(
-	options : HTTPuppyServer.HTTPuppyWriterOptions,
-	config: HTTPuppyServer.uOptions
+	options : HTTPuppyWriterOptions,
+	config	: uOptions
 ): iHTTP.HTTPHeaders {
 	const applyHeaders: iHTTP.HTTPHeaders = [
 		[
@@ -39,9 +44,9 @@ export function useHeaders(
 }
 
 export function useMiddleware(
-	config: HTTPuppyServer.uOptions,
-	req: HTTP_INCMSG,
-	res: HTTP_RES
+	config	: uOptions,
+	req		: HTTPuppyRequest,
+	res		: HTTPuppyResponse
 ) {
 	const match = config.middleware.filter(opt => opt.href === req.url).shift();
 	match?.handler(req, res);

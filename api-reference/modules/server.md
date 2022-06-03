@@ -4,6 +4,23 @@
 
 **`description`** Hooks for spinning up a web server
 
+**`example`** calling the userServer hook
+```javascript
+const app = useServer({
+static: {
+path: join(process.cwd(), './examples/files')
+},
+throwWarnings: false,
+logLevel: 'base',
+middleware: [
+{
+href: '/',
+handler: (req, res) => console.log('middleware')
+}
+],
+});
+```
+
 ## Table of contents
 
 ### Functions
@@ -31,7 +48,7 @@ void promise to gracefully shut down
 
 #### Defined in
 
-[server.ts:49](https://github.com/abschill/httpuppy/blob/7cda2cd/src/server.ts#L49)
+[server.ts:65](https://github.com/abschill/httpuppy/blob/18aaec0/src/server.ts#L65)
 
 ___
 
@@ -53,4 +70,4 @@ httpuppy server
 
 #### Defined in
 
-[server.ts:22](https://github.com/abschill/httpuppy/blob/7cda2cd/src/server.ts#L22)
+[server.ts:38](https://github.com/abschill/httpuppy/blob/18aaec0/src/server.ts#L38)

@@ -2,6 +2,14 @@
 
 # Module: router
 
+**`description`** for adding custom routing to your server
+
+**`example`**
+```javascript
+const router = useRouter(app);
+router.get('/', (req, res) => res.send('hi'))
+```
+
 ## Table of contents
 
 ### Functions
@@ -26,4 +34,4 @@
 
 #### Defined in
 
-[router.ts:3](https://github.com/abschill/httpuppy/blob/7cda2cd/src/router.ts#L3)
+[router.ts:12](https://github.com/abschill/httpuppy/blob/18aaec0/src/router.ts#L12)

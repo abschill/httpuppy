@@ -28,8 +28,8 @@ export function isBufferType(file: string) {
 }
 
 export function useStreamReader(
-	pathData: HTTPuppyServer.MountedFile,
-	res: HTTP_RES
+	pathData	: HTTPuppyServer.MountedFile,
+	res			: HTTP_RES
 ): void {
 	if(!res.writable) {
 		console.warn('warning: write attempt on an ended stream in useStreamReader');
@@ -55,9 +55,9 @@ export function useStreamReader(
  * @returns
  */
 export function useWriter(
-	res: HTTP_RES,
-	config: HTTPuppyServer.uOptions,
-	options: HTTPuppyServer.HTTPuppyWriterOptions
+	res		: HTTP_RES,
+	config	: HTTPuppyServer.uOptions,
+	options	: HTTPuppyServer.HTTPuppyWriterOptions
 ): void {
 	if(!res.writable) {
 		console.warn('warning: write attempt on an ended stream in useWriter');

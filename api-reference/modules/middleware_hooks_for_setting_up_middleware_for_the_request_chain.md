@@ -32,7 +32,7 @@ default list of http headers based on given config cache settings / content type
 
 #### Defined in
 
-[middleware.ts:19](https://github.com/abschill/httpuppy/blob/7cda2cd/src/middleware.ts#L19)
+[middleware.ts:24](https://github.com/abschill/httpuppy/blob/18aaec0/src/middleware.ts#L24)
 
 ___
 
@@ -45,8 +45,8 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `config` | `uOptions` |
-| `req` | `IncomingMessage` |
-| `res` | `ServerResponse` |
+| `req` | `HTTPuppyRequest` |
+| `res` | `HTTPuppyResponse` |
 
 #### Returns
 
@@ -54,4 +54,4 @@ ___
 
 #### Defined in
 
-[middleware.ts:41](https://github.com/abschill/httpuppy/blob/7cda2cd/src/middleware.ts#L41)
+[middleware.ts:46](https://github.com/abschill/httpuppy/blob/18aaec0/src/middleware.ts#L46)

@@ -1,3 +1,12 @@
+/**
+ * @module router
+ * @description for adding custom routing to your server
+ * @example
+ * ```javascript
+ * const router = useRouter(app);
+ * router.get('/', (req, res) => res.send('hi'))
+ * ```
+ */
 import { HTTPuppyServer } from './types';
 
 export function useRouter(

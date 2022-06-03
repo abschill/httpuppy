@@ -1,10 +1,9 @@
 import expect from 'expect';
-import { WebServer } from '../src';
+import { useServer} from '../src';
 
 describe('Retrieve Server with coldInit', () => {
 	it('should not start until user does', () => {
-		const server = WebServer.create({
-			coldInit: true,
+		const server = useServer({
 			static: {
 				path: './examples/files'
 			},
