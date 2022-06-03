@@ -37,7 +37,7 @@ const app = useServer({
 app.listen(3000, () => console.log('listening on 3000'))
 ```
 
-## API Configuration on top of static content
+## Layered Routing
 
 ```js
 const { useServer, useRouter } = require('httpuppy');
