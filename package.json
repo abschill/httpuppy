@@ -1,13 +1,13 @@
 {
   "name": "httpuppy",
   "version": "0.1.0",
-  "description": "simple abstraction layer for web servers",
+  "description": "simple abstraction layer for node web servers",
   "main": "lib/index.js",
   "bin": "bin/index.js",
   "scripts": {
     "build": "tsc",
     "build:watch": "tsc -w",
-    "build:docs": "typedoc --excludeInternal --darkHighlightTheme dark-plus",
+    "build:docs": "typedoc --excludeInternal",
     "dev": "make -j 2 dev-ts dev-example",
     "test": "ts-mocha test/**/*.test.ts",
     "test:watch": "ts-mocha -w test/**/*.test.ts",
