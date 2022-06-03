@@ -36,7 +36,7 @@ router.get('/test', (req, res) => res.end('hello'));
 
 #### Defined in
 
-[router.ts:23](https://github.com/abschill/httpuppy/blob/98667cf/src/router.ts#L23)
+[router.ts:23](https://github.com/abschill/httpuppy/blob/9949fcd/src/router.ts#L23)
 
 ___
 
@@ -75,4 +75,4 @@ httpuppy server
 
 #### Defined in
 
-[server.ts:39](https://github.com/abschill/httpuppy/blob/98667cf/src/server.ts#L39)
+[server.ts:39](https://github.com/abschill/httpuppy/blob/9949fcd/src/server.ts#L39)

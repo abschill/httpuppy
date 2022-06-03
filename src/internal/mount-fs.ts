@@ -8,10 +8,11 @@ import { HTTPuppyServer } from '../types';
 import useContentType from './content-type';
 
 /**
- *
+ * @function useCleanPaths
+ * @description list possible hrefs to be used for given vpath
  * @param file the path of the file to check any aliases for
  * @param _static the static config options of the calling process
- * @returns list of possible hrefs to be used for the given virtual path
+ * @returns list of strings defining possible hrefs
  */
 function useCleanPaths(
 	file	: string,

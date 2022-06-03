@@ -1,32 +1,14 @@
-import {
-	HTTP_RES,
-	HTTPuppyServer
-} from '../types';
+import { HTTPuppyServer } from '../types';
 import { createReadStream } from 'fs';
 import useContentType from './content-type';
 import { useHeaders } from '../middleware';
-
-export const bufferTypes = [
-	'png',
-	'jpg',
-	'jpeg',
-	'apng',
-	'webp',
-	'gif',
-	'avif',
-	'mp4',
-	'mp3',
-	'wav',
-	'webm',
-	'bmp',
-	'ico',
-	'tiff'
-];
+import { bufferTypes } from './_constants';
 
 /**
- *
+ * @internal isBufferType
+ * @description check whether or not the file needs to be written into a stream as a buffer, or utf-8 content
  * @param file the file read by the VFS that is undergoing buffer check
- * @returns whether or not it needs to be written as a buffer or can be served directly
+ * @returns boolean whether or not it needs to be written as a buffer or can be served directly
  */
 export function isBufferType(
 	file: string
@@ -34,6 +16,13 @@ export function isBufferType(
 	return bufferTypes.filter((el) => file.includes(el)).length > 0;
 }
 
+/**
+ * @internal useVirtualStreamReader
+ * @description apply virtual stream reader to the given request, and close stream on exit
+ * @param pathData the resulting mount file from useStaticUrlParser call in useStaticMount
+ * @param res the current response being handled by the server
+ * @returns
+ */
 export function useVirtualStreamReader(
 	pathData	: HTTPuppyServer.MountedFile,
 	res			: HTTPuppyServer.HTTPuppyResponse
@@ -55,6 +44,7 @@ export function useVirtualStreamReader(
 	}
 	return;
 }
+
 /**
  *
  * @param res the response to write to
