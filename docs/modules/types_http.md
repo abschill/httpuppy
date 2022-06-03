@@ -17,7 +17,7 @@
 
 #### Defined in
 
-[src/types/http.ts:1](https://github.com/abschill/httpuppy/blob/b81b706/src/types/http.ts#L1)
+[src/types/http.ts:1](https://github.com/abschill/httpuppy/blob/0e45f00/src/types/http.ts#L1)
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 #### Defined in
 
-[src/types/http.ts:2](https://github.com/abschill/httpuppy/blob/b81b706/src/types/http.ts#L2)
+[src/types/http.ts:2](https://github.com/abschill/httpuppy/blob/0e45f00/src/types/http.ts#L2)

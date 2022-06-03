@@ -1,17 +1,20 @@
 #! /usr/bin/node
 const { useProcessArgs } = require('../lib/internal/argv');
-const { createServer } = require('../lib');
-// const { readFileSync } = require('fs');
-// const { join } = require('path');
+const { useServer } = require('../lib');
 const args = useProcessArgs();
 let pathHref = process.cwd();
-
+let port = 3000;
 if(args && args.path) {
 	pathHref = args.path;
 }
 
-createServer({
-	port: 3000,
+if(args && args.port) {
+	port = port;
+}
+
+useServer({
+	coldInit: false,
+	port,
 	static: {
 		path: pathHref
 	},

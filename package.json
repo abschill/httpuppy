@@ -1,7 +1,7 @@
 {
   "name": "httpuppy",
   "version": "0.1.0",
-  "description": "low bundle footprint webserver for node",
+  "description": "simple abstraction layer for web servers",
   "main": "lib/index.js",
   "bin": "bin/index.js",
   "scripts": {

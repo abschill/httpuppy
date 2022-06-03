@@ -34,4 +34,4 @@ the http server object
 
 #### Defined in
 
-[src/internal/startup.ts:14](https://github.com/abschill/httpuppy/blob/b81b706/src/internal/startup.ts#L14)
+[src/internal/startup.ts:14](https://github.com/abschill/httpuppy/blob/0e45f00/src/internal/startup.ts#L14)
