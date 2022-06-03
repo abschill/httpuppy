@@ -2,15 +2,8 @@
  * @module request
  * @description hooks for handling requests for the core module
  */
-import {
-	useStaticURLParser
-} from './url';
+import { useStaticURLParser } from './url';
 import { emitWarning } from 'process';
-import {
-	isBufferType,
-	useWriter,
-	useVirtualStreamReader
-} from './internal/writer';
 import { use404 } from './internal/error';
 import { useMiddleware } from './middleware';
 import { _useCloseHandler } from './internal/_middleware';
@@ -18,10 +11,12 @@ import {
 	uOptions,
 	HTTPuppyRequest,
 	HTTPuppyResponse,
-	Runtime
 } from './types/server';
-
-const test = (req) => console.log('closed static req @', req.url);
+import {
+	isBufferType,
+	useWriter,
+	useVirtualStreamReader
+} from './internal/writer';
 /**
  *
  * @param req incoming message to handle args from

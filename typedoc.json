@@ -1,12 +1,7 @@
 {
 	"entryPoints": [
-		"./src/server.ts",
-		"./src/url.ts",
-		"./src/request.ts",
-		"./src/middleware.ts",
-		"./src/router.ts",
-		"./src/static.ts"
+		"./src/*.ts"
 	],
-	"out": "api-reference",
+	"out": "docs",
 	"includeVersion": true
 }
