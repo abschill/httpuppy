@@ -1,6 +1,5 @@
 node_modules
 *-error.log
-lib
 *.lock
 *.cert
 *.key

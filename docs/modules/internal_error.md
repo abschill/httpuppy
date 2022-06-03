@@ -28,4 +28,4 @@ nothing
 
 #### Defined in
 
-[src/internal/error.ts:12](https://github.com/abschill/httpuppy/blob/edd8373/src/internal/error.ts#L12)
+[src/internal/error.ts:12](https://github.com/abschill/httpuppy/blob/02c4e18/src/internal/error.ts#L12)

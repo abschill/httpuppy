@@ -28,4 +28,4 @@ void promise to gracefully shut down
 
 #### Defined in
 
-[src/internal/_shutdown.ts:8](https://github.com/abschill/httpuppy/blob/edd8373/src/internal/_shutdown.ts#L8)
+[src/internal/_shutdown.ts:8](https://github.com/abschill/httpuppy/blob/02c4e18/src/internal/_shutdown.ts#L8)
