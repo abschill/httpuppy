@@ -1,4 +1,8 @@
-import { HTTP_RES } from '../types';
+/**
+ * @internal
+ * @description hooks for handling errors that aren't defined by the user
+ */
+import { HTTPuppyResponse } from '../types/server';
 
 /**
  *
@@ -6,7 +10,7 @@ import { HTTP_RES } from '../types';
  * @returns nothing
  */
 export function use404(
-	res	: HTTP_RES
+	res	: HTTPuppyResponse
 ): void {
 	res.writeHead(404, '404: page not found');
 	res.end('404: page not found');

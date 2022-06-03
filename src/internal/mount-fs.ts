@@ -1,4 +1,7 @@
-
+/**
+ * @internal mount-fs
+ * @description virtual file system mount hooks
+ */
 import { join, resolve } from 'path';
 import { readdirSync, readFileSync } from 'fs';
 import { HTTPuppyServer } from '../types';

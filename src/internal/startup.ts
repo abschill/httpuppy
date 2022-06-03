@@ -5,7 +5,8 @@ import {
 } from '../types';
 
 /**
- *
+ * @internal _useServer
+ * @description an internal startup process for the `useServer` hook
  * @param config config from user for runtime
  * @param server server generated from node standard http library
  * @param diagnostics diagnostic list from the prestartup process

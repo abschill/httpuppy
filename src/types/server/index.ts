@@ -21,7 +21,7 @@ export type DiagnosticLog = {
 export interface Runtime extends stlServer  {
 	diagnostics	: DiagnosticLog[];
 	onClose		: iExitHandler;
-	_shutdown	: Promise<HTTPuppySleep>;
+	_shutdown	: () => Promise<HTTPuppySleep>;
 }
 /**
  * @type MountedFile

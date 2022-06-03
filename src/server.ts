@@ -55,7 +55,7 @@ export function useServer(
 	if(!config.coldInit) {
 		server.listen(config.port, config.hostname);
 	}
-	server._shutdown = shutdown(server);
+	server._shutdown = () => shutdown(server);
 	return server;
 }
 
