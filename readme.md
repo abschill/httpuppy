@@ -40,7 +40,7 @@ app.listen(3000, () => console.log('listening on 3000'))
 ## API Configuration on top of static content
 
 ```js
-const { useServer } = require('httpuppy');
+const { useServer, useRouter } = require('httpuppy');
 
 const app = useServer({
 	static: {
@@ -48,7 +48,9 @@ const app = useServer({
 	}
 });
 
-app.get('/api/v1/content', (req, res) => res.json({msg: "success"}));
+const router = useRouter(app);
+
+router.get('/api/v1/content', (req, res) => res.json({msg: "success"}));
 
 app.listen(3000, () => console.log('listening on 3000'))
 
