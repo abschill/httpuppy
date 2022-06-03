@@ -8,15 +8,15 @@
 ```javascript
 const app = useServer({
 static: {
-path: join(process.cwd(), './examples/files')
+	path: join(process.cwd(), './examples/files')
 },
 throwWarnings: false,
 logLevel: 'base',
 middleware: [
-{
-href: '/',
-handler: (req, res) => console.log('middleware')
-}
+	{
+		href: '/',
+		handler: (req, res) => console.log('middleware')
+	}
 ],
 });
 ```
@@ -48,7 +48,7 @@ void promise to gracefully shut down
 
 #### Defined in
 
-[server.ts:65](https://github.com/abschill/httpuppy/blob/42d880c/src/server.ts#L65)
+[server.ts:67](https://github.com/abschill/httpuppy/blob/8ab730e/src/server.ts#L67)
 
 ___
 
@@ -70,4 +70,4 @@ httpuppy server
 
 #### Defined in
 
-[server.ts:38](https://github.com/abschill/httpuppy/blob/42d880c/src/server.ts#L38)
+[server.ts:38](https://github.com/abschill/httpuppy/blob/8ab730e/src/server.ts#L38)

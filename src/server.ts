@@ -3,18 +3,18 @@
  * @description Hooks for spinning up a web server
  * @example calling the userServer hook
  * ```javascript
- const app = useServer({
-	static: {
-		path: join(process.cwd(), './examples/files')
-	},
-    throwWarnings: false,
-	logLevel: 'base',
-	middleware: [
-		{
-			href: '/',
-			handler: (req, res) => console.log('middleware')
-		}
-	],
+ 	* const app = useServer({
+	* static: {
+	* 	path: join(process.cwd(), './examples/files')
+	* },
+    * throwWarnings: false,
+	* logLevel: 'base',
+	* middleware: [
+	* 	{
+	*		href: '/',
+	*		handler: (req, res) => console.log('middleware')
+	*	}
+	* ],
 });
 ```
  */
@@ -55,8 +55,10 @@ export function useServer(
 	if(!config.coldInit) {
 		server.listen(config.port, config.hostname);
 	}
+	server._shutdown = shutdown(server);
 	return server;
 }
+
 /**
  *
  * @param s http server to shut down

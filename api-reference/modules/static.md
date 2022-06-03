@@ -29,4 +29,4 @@
 
 #### Defined in
 
-[static.ts:13](https://github.com/abschill/httpuppy/blob/42d880c/src/static.ts#L13)
+[static.ts:13](https://github.com/abschill/httpuppy/blob/8ab730e/src/static.ts#L13)

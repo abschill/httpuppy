@@ -34,4 +34,4 @@ router.get('/', (req, res) => res.send('hi'))
 
 #### Defined in
 
-[router.ts:12](https://github.com/abschill/httpuppy/blob/42d880c/src/router.ts#L12)
+[router.ts:12](https://github.com/abschill/httpuppy/blob/8ab730e/src/router.ts#L12)
