@@ -12,7 +12,7 @@ import { shutdown } from './internal/_shutdown';
 import { useStaticMount } from './static';
 import { DiagnosticLog } from './types/server';
 import { useLogger } from './internal/logger';
-
+import { ServerOptions as HTTPSOptions } from 'https';
 /**
  * @function useServer
  * @example
@@ -38,9 +38,9 @@ export function useServer(
 		_server = stlCreateServer(config.handler);
 	}
 	else {
-		_server = stdCreateSecureServer(conf.secureContext, config.handler);
+		_server = stdCreateSecureServer(<HTTPSOptions>conf.secureContext, config.handler);
 	}
-    const server = _useServer(config, _server, diagnostics);
+    const server = _useServer(config, <HTTPuppyServer.Runtime>_server, diagnostics);
 	if(conf.log && conf.log.logLevel !== 'silent') useLogger(conf.log, server);
 	if(config.static) useStaticMount(config, server);
 	if(!config.coldInit) {

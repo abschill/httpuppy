@@ -15,7 +15,7 @@
 
 ### isValidStats
 
-▸ **isValidStats**(`o`): `boolean`
+▸ **isValidStats**(`o`): `any`
 
 #### Parameters
 
@@ -25,11 +25,11 @@
 
 #### Returns
 
-`boolean`
+`any`
 
 #### Defined in
 
-[src/internal/etag.js:38](https://github.com/abschill/httpuppy/blob/769369d/src/internal/etag.js#L38)
+[src/internal/etag.js:38](https://github.com/abschill/httpuppy/blob/5ad0bb8/src/internal/etag.js#L38)
 
 ___
 
@@ -49,7 +49,7 @@ ___
 
 #### Defined in
 
-[src/internal/etag.js:4](https://github.com/abschill/httpuppy/blob/769369d/src/internal/etag.js#L4)
+[src/internal/etag.js:4](https://github.com/abschill/httpuppy/blob/5ad0bb8/src/internal/etag.js#L4)
 
 ___
 
@@ -70,7 +70,7 @@ ___
 
 #### Defined in
 
-[src/internal/etag.js:14](https://github.com/abschill/httpuppy/blob/769369d/src/internal/etag.js#L14)
+[src/internal/etag.js:14](https://github.com/abschill/httpuppy/blob/5ad0bb8/src/internal/etag.js#L14)
 
 ___
 
@@ -90,4 +90,4 @@ ___
 
 #### Defined in
 
-[src/internal/etag.js:31](https://github.com/abschill/httpuppy/blob/769369d/src/internal/etag.js#L31)
+[src/internal/etag.js:31](https://github.com/abschill/httpuppy/blob/5ad0bb8/src/internal/etag.js#L31)

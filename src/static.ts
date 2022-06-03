@@ -27,7 +27,7 @@ export function useStaticMount(
 			if(config.middleware && config.middleware.length > 0) useMiddleware(config, req, res);
 			const pathData = useStaticURLParser(req, config);
 			if(req.method === 'GET') {
-				if(isBufferType(req.url)) {
+				if(isBufferType(<string>req.url)) {
 					return useVirtualStreamReader(pathData, res);
 				}
 				else {
@@ -40,15 +40,15 @@ export function useStaticMount(
 				}
 			}
 		}
-		catch(e) {
-			emitWarning(e);
+		catch(e: unknown) {
+			emitWarning(JSON.stringify(e));
 			return use404(res);
 		}
 	});
 
 	server.on('error', (e) =>
 		server.diagnostics.push({
-			msg: e.stack
+			msg: e.message
 		})
 	);
 }

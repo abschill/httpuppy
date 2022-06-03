@@ -17,7 +17,6 @@
 
 - [CacheSettings](types_server.md#cachesettings)
 - [DiagnosticLog](types_server.md#diagnosticlog)
-- [HTTPHandlerFunction](types_server.md#httphandlerfunction)
 - [HTTPuppySleep](types_server.md#httpuppysleep)
 - [HTTPuppyWriterOptions](types_server.md#httpuppywriteroptions)
 - [LogLevel](types_server.md#loglevel)
@@ -96,7 +95,7 @@
 
 #### Defined in
 
-[src/types/server/middleware.ts:18](https://github.com/abschill/httpuppy/blob/769369d/src/types/server/middleware.ts#L18)
+[src/types/server/middleware.ts:20](https://github.com/abschill/httpuppy/blob/5ad0bb8/src/types/server/middleware.ts#L20)
 
 ___
 
@@ -112,37 +111,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:13](https://github.com/abschill/httpuppy/blob/769369d/src/types/server/index.ts#L13)
-
-___
-
-### HTTPHandlerFunction
-
-Ƭ **HTTPHandlerFunction**<`T`\>: (`IncomingMessage`: `any`) => `T`
-
-#### Type parameters
-
-| Name |
-| :------ |
-| `T` |
-
-#### Type declaration
-
-▸ (`IncomingMessage`): `T`
-
-##### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `IncomingMessage` | `any` |
-
-##### Returns
-
-`T`
-
-#### Defined in
-
-[src/types/server/middleware.ts:57](https://github.com/abschill/httpuppy/blob/769369d/src/types/server/middleware.ts#L57)
+[src/types/server/index.ts:12](https://github.com/abschill/httpuppy/blob/5ad0bb8/src/types/server/index.ts#L12)
 
 ___
 
@@ -160,7 +129,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:38](https://github.com/abschill/httpuppy/blob/769369d/src/types/server/index.ts#L38)
+[src/types/server/index.ts:37](https://github.com/abschill/httpuppy/blob/5ad0bb8/src/types/server/index.ts#L37)
 
 ___
 
@@ -179,7 +148,7 @@ ___
 
 #### Defined in
 
-[src/types/server/writer.ts:3](https://github.com/abschill/httpuppy/blob/769369d/src/types/server/writer.ts#L3)
+[src/types/server/writer.ts:3](https://github.com/abschill/httpuppy/blob/5ad0bb8/src/types/server/writer.ts#L3)
 
 ___
 
@@ -189,7 +158,7 @@ ___
 
 #### Defined in
 
-[src/types/server/logger.ts:1](https://github.com/abschill/httpuppy/blob/769369d/src/types/server/logger.ts#L1)
+[src/types/server/logger.ts:1](https://github.com/abschill/httpuppy/blob/5ad0bb8/src/types/server/logger.ts#L1)
 
 ___
 
@@ -207,11 +176,11 @@ ___
 | `fileName` | `string` |
 | `hrefs` | `string`[] |
 | `reqUrl` | `string` |
-| `symLink` | `string` |
+| `symLink?` | `string` |
 
 #### Defined in
 
-[src/types/server/index.ts:30](https://github.com/abschill/httpuppy/blob/769369d/src/types/server/index.ts#L30)
+[src/types/server/index.ts:29](https://github.com/abschill/httpuppy/blob/5ad0bb8/src/types/server/index.ts#L29)
 
 ___
 
@@ -228,7 +197,7 @@ ___
 
 #### Defined in
 
-[src/types/server/middleware.ts:52](https://github.com/abschill/httpuppy/blob/769369d/src/types/server/middleware.ts#L52)
+[src/types/server/middleware.ts:54](https://github.com/abschill/httpuppy/blob/5ad0bb8/src/types/server/middleware.ts#L54)
 
 ___
 
@@ -247,50 +216,42 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:40](https://github.com/abschill/httpuppy/blob/769369d/src/types/server/index.ts#L40)
+[src/types/server/index.ts:39](https://github.com/abschill/httpuppy/blob/5ad0bb8/src/types/server/index.ts#L39)
 
 ___
 
 ### iExitHandler
 
-Ƭ **iExitHandler**: () => `Promise`<`void`\> \| () => `void`
-
-#### Type declaration
-
-▸ (): `Promise`<`void`\> \| () => `void`
-
-##### Returns
-
-`Promise`<`void`\> \| () => `void`
+Ƭ **iExitHandler**: `undefined` \| () => `Promise`<`void`\> \| () => `void`
 
 #### Defined in
 
-[src/types/server/middleware.ts:50](https://github.com/abschill/httpuppy/blob/769369d/src/types/server/middleware.ts#L50)
+[src/types/server/middleware.ts:52](https://github.com/abschill/httpuppy/blob/5ad0bb8/src/types/server/middleware.ts#L52)
 
 ___
 
 ### iHandlerType
 
-Ƭ **iHandlerType**: (`req`: `any`, `res`: `any`) => `Promise`<`void`\> \| (`req`: `any`, `res`: `any`) => `void`
+Ƭ **iHandlerType**: (`req`: [`HTTPuppyRequest`](../interfaces/types_server.HTTPuppyRequest.md), `res`: [`HTTPuppyResponse`](../interfaces/types_server.HTTPuppyResponse.md)) => `Promise`<`void`\> \| (`req`: [`HTTPuppyRequest`](../interfaces/types_server.HTTPuppyRequest.md), `res`: [`HTTPuppyResponse`](../interfaces/types_server.HTTPuppyResponse.md)) => `void`
 
 #### Type declaration
 
-▸ (`req`, `res`): `Promise`<`void`\> \| (`req`: `any`, `res`: `any`) => `void`
+▸ (`req`, `res`): `Promise`<`void`\> \| (`req`: [`HTTPuppyRequest`](../interfaces/types_server.HTTPuppyRequest.md), `res`: [`HTTPuppyResponse`](../interfaces/types_server.HTTPuppyResponse.md)) => `void`
 
 ##### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `req` | `any` |
-| `res` | `any` |
+| `req` | [`HTTPuppyRequest`](../interfaces/types_server.HTTPuppyRequest.md) |
+| `res` | [`HTTPuppyResponse`](../interfaces/types_server.HTTPuppyResponse.md) |
 
 ##### Returns
 
-`Promise`<`void`\> \| (`req`: `any`, `res`: `any`) => `void`
+`Promise`<`void`\> \| (`req`: [`HTTPuppyRequest`](../interfaces/types_server.HTTPuppyRequest.md), `res`: [`HTTPuppyResponse`](../interfaces/types_server.HTTPuppyResponse.md)) => `void`
 
 #### Defined in
 
-[src/types/server/middleware.ts:51](https://github.com/abschill/httpuppy/blob/769369d/src/types/server/middleware.ts#L51)
+[src/types/server/middleware.ts:53](https://github.com/abschill/httpuppy/blob/5ad0bb8/src/types/server/middleware.ts#L53)
 
 ## Variables
 
@@ -300,7 +261,7 @@ ___
 
 #### Defined in
 
-[src/types/server/middleware.ts:34](https://github.com/abschill/httpuppy/blob/769369d/src/types/server/middleware.ts#L34)
+[src/types/server/middleware.ts:36](https://github.com/abschill/httpuppy/blob/5ad0bb8/src/types/server/middleware.ts#L36)
 
 ___
 
@@ -310,7 +271,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:83](https://github.com/abschill/httpuppy/blob/769369d/src/types/server/index.ts#L83)
+[src/types/server/index.ts:82](https://github.com/abschill/httpuppy/blob/5ad0bb8/src/types/server/index.ts#L82)
 
 ## Functions
 
@@ -331,7 +292,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:104](https://github.com/abschill/httpuppy/blob/769369d/src/types/server/index.ts#L104)
+[src/types/server/index.ts:103](https://github.com/abschill/httpuppy/blob/5ad0bb8/src/types/server/index.ts#L103)
 
 ___
 
@@ -352,7 +313,7 @@ typeof [`HTTPuppyCallback`](types_server.md#httpuppycallback) \| `void`
 
 #### Defined in
 
-[src/types/server/index.ts:106](https://github.com/abschill/httpuppy/blob/769369d/src/types/server/index.ts#L106)
+[src/types/server/index.ts:105](https://github.com/abschill/httpuppy/blob/5ad0bb8/src/types/server/index.ts#L105)
 
 ___
 
@@ -372,7 +333,7 @@ ___
 
 #### Defined in
 
-[src/types/server/middleware.ts:41](https://github.com/abschill/httpuppy/blob/769369d/src/types/server/middleware.ts#L41)
+[src/types/server/middleware.ts:43](https://github.com/abschill/httpuppy/blob/5ad0bb8/src/types/server/middleware.ts#L43)
 
 ___
 
@@ -392,7 +353,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:92](https://github.com/abschill/httpuppy/blob/769369d/src/types/server/index.ts#L92)
+[src/types/server/index.ts:91](https://github.com/abschill/httpuppy/blob/5ad0bb8/src/types/server/index.ts#L91)
 
 ___
 
@@ -406,4 +367,4 @@ ___
 
 #### Defined in
 
-[src/types/server/logger.ts:8](https://github.com/abschill/httpuppy/blob/769369d/src/types/server/logger.ts#L8)
+[src/types/server/logger.ts:8](https://github.com/abschill/httpuppy/blob/5ad0bb8/src/types/server/logger.ts#L8)

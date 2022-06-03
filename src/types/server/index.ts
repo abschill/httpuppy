@@ -4,7 +4,6 @@ import { LogConfig } from './logger';
 import {
 	iExitHandler,
 	UserMiddlewareOption,
-	HTTPHandlerFunction,
 	iHandlerType,
 	CacheSettings,
 	defaultCacheSettings
@@ -29,7 +28,7 @@ export interface Runtime extends stlServer  {
  */
 export type MountedFile = {
 	reqUrl		: string;
-	symLink		: string;
+	symLink		?: string;
 	contentType	: any | any[];
 	fileName	: string;
 	hrefs		: string[];
@@ -53,7 +52,7 @@ export type UserStaticConfig = {
  * @member hostname hostname for the server itself (default: 127.0.0.1)
  * @member static virtual file system options, static directories basically
  * @member throwWarnings false = print warnings true = throw them as errors (default: false)
- * @member handler default handler if you would like to override the request chain and handle each url externally
+ * @member handler default handler if you would like to override the request chain and handle each url manually thru the standard library
  * @member middleware list of middleware instances to run along the server
  * @member onMount a function to run once after the server is mounted (doesn't run on return if `coldInit` is set to true)
  * @member cache options for caching, standard http but camelcase
@@ -67,11 +66,11 @@ export interface HTTPuppyServerOptions extends stlServerOptions {
 	static 			?: UserStaticConfig;
     throwWarnings 	?: boolean;
 	log				?: LogConfig;
-	handler 		?: HTTPHandlerFunction<void>;
 	middleware 		?: UserMiddlewareOption[]
 	onMount 		?: iHandlerType;
 	onClose			?: iExitHandler;
 	cache 			?: CacheSettings;
+	handler			?: any;
 	secure			?: boolean;
 	secureContext	?: {
 		key			: string;

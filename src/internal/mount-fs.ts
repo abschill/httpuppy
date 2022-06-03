@@ -6,6 +6,7 @@ import { join, resolve } from 'path';
 import { readdirSync, readFileSync } from 'fs';
 import { HTTPuppyServer } from '../types';
 import useContentType from './content-type';
+import { UserStaticConfig } from '../types/server';
 
 /**
  * @function useCleanPaths
@@ -36,7 +37,7 @@ export function useMountedFS(
 	config : HTTPuppyServer.HTTPuppyServerOptions
 ) {
 	// mountedPath is the path to retrieve filesMounted from
-	const mountedPath = join(config.static.path);
+	const mountedPath = join(config.static?.path ?? './');
 	// filesMounted is the accessible file tree that can be used against the upcoming handlers
 	const filesMounted = readdirSync(mountedPath).map(file => {
 	const symLink = resolve(mountedPath, file);
@@ -45,7 +46,7 @@ export function useMountedFS(
 		symLink,
 		contentType: useContentType(symLink),
 		content: readFileSync(symLink),
-		hrefs: useCleanPaths(file, config.static)
+		hrefs: useCleanPaths(file, <UserStaticConfig>config.static)
 	};
 
 	});

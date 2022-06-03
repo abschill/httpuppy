@@ -1,3 +1,5 @@
+import { HTTPuppyRequest, HTTPuppyResponse } from ".";
+
 /**
  * @interface Cache Settings
  * @description All supported cache control options in camelcase
@@ -47,11 +49,10 @@ export function fromDefaultCacheSettings(
 	};
 }
 
-export type iExitHandler = () => Promise<void> | (() => void);
-export type iHandlerType = (req, res) => Promise<void> | ((req, res) => void);
+export type iExitHandler = undefined | (() => Promise<void>) | (() => void);
+export type iHandlerType = (req: HTTPuppyRequest, res: HTTPuppyResponse) => Promise<void> | ((req: HTTPuppyRequest, res: HTTPuppyResponse) => void);
 export type UserMiddlewareOption = {
 	href		: string;
 	handler		: iHandlerType;
 };
 
-export type HTTPHandlerFunction<T> = (IncomingMessage) => T;

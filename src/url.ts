@@ -19,8 +19,14 @@ export function useStaticURLParser (
 	// mount the local fs (possibly move this into the initializer, but for now we want to just refresh the fs per request)
 	const iFS = useMountedFS(config);
 	// filter the mounted filesystem based on the request url
-	return {
-		reqUrl: req.url,
-		...iFS.filesMounted.filter(f => f.hrefs.includes(req.url)).shift()
-	};
+	const match = iFS.filesMounted.filter(f => f.hrefs.includes(req.url ?? '')).shift();
+	if(match) {
+		return {
+			reqUrl: req.url ?? '',
+			...match
+		};
+	}
+	else {
+		return <iTypes.HTTPuppyServer.MountedFile>{};
+	}
 }

@@ -43,6 +43,6 @@ export function useMiddleware(
 	req		: HTTPuppyRequest,
 	res		: HTTPuppyResponse
 ) {
-	const match = config.middleware.filter(opt => opt.href === req.url).shift();
+	const match = config.middleware?.filter(opt => opt.href === req.url).shift();
 	match?.handler(req, res);
 }

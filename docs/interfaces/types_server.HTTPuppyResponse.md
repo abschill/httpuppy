@@ -96,7 +96,7 @@ ___
 
 ### connection
 
-• `Readonly` **connection**: `Socket`
+• `Readonly` **connection**: ``null`` \| `Socket`
 
 Aliases of `outgoingMessage.socket`
 
@@ -210,7 +210,7 @@ ___
 
 ### socket
 
-• `Readonly` **socket**: `Socket`
+• `Readonly` **socket**: ``null`` \| `Socket`
 
 Reference to the underlying socket. Usually, users will not want to access
 this property.
@@ -437,7 +437,7 @@ node_modules/@types/node/stream.d.ts:532
 
 | Name | Type |
 | :------ | :------ |
-| `callback` | (`error?`: `Error`) => `void` |
+| `callback` | (`error?`: ``null`` \| `Error`) => `void` |
 
 #### Returns
 
@@ -461,8 +461,8 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `error` | `Error` |
-| `callback` | (`error?`: `Error`) => `void` |
+| `error` | ``null`` \| `Error` |
+| `callback` | (`error?`: ``null`` \| `Error`) => `void` |
 
 #### Returns
 
@@ -486,7 +486,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `callback` | (`error?`: `Error`) => `void` |
+| `callback` | (`error?`: ``null`` \| `Error`) => `void` |
 
 #### Returns
 
@@ -512,7 +512,7 @@ ___
 | :------ | :------ |
 | `chunk` | `any` |
 | `encoding` | `BufferEncoding` |
-| `callback` | (`error?`: `Error`) => `void` |
+| `callback` | (`error?`: ``null`` \| `Error`) => `void` |
 
 #### Returns
 
@@ -537,7 +537,7 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `chunks` | { `chunk`: `any` ; `encoding`: `BufferEncoding`  }[] |
-| `callback` | (`error?`: `Error`) => `void` |
+| `callback` | (`error?`: ``null`` \| `Error`) => `void` |
 
 #### Returns
 
@@ -1178,7 +1178,7 @@ ___
 
 ### getHeader
 
-▸ **getHeader**(`name`): `string` \| `number` \| `string`[]
+▸ **getHeader**(`name`): `undefined` \| `string` \| `number` \| `string`[]
 
 Gets the value of HTTP header with the given name. If such a name doesn't
 exist in message, it will be `undefined`.
@@ -1193,7 +1193,7 @@ exist in message, it will be `undefined`.
 
 #### Returns
 
-`string` \| `number` \| `string`[]
+`undefined` \| `string` \| `number` \| `string`[]
 
 #### Inherited from
 
@@ -2552,7 +2552,7 @@ A `Writable` stream in object mode will always ignore the `encoding` argument.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `chunk` | `any` | Optional data to write. For streams not operating in object mode, `chunk` must be a string, `Buffer` or `Uint8Array`. For object mode streams, `chunk` may be any JavaScript value other than `null`. |
-| `callback?` | (`error`: `Error`) => `void` | Callback for when this chunk of data is flushed. |
+| `callback?` | (`error`: `undefined` \| ``null`` \| `Error`) => `void` | Callback for when this chunk of data is flushed. |
 
 #### Returns
 
@@ -2576,7 +2576,7 @@ node_modules/@types/node/stream.d.ts:612
 | :------ | :------ |
 | `chunk` | `any` |
 | `encoding` | `BufferEncoding` |
-| `callback?` | (`error`: `Error`) => `void` |
+| `callback?` | (`error`: `undefined` \| ``null`` \| `Error`) => `void` |
 
 #### Returns
 

@@ -27,6 +27,7 @@ export function useConfig(
 
 	if(!conf.handler && !conf.static) {
         const msg = 'Request Handler no-op, nothing is handling your requests';
+		//@ts-ignore
         emitWarning(msg, (new Error().stack.split("at ")[1]));
         diagnostics.push({msg});
     }

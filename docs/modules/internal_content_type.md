@@ -12,7 +12,7 @@
 
 ### default
 
-▸ **default**(`fpath`): [`HTTPHeader`](types_http.md#httpheader)
+▸ **default**(`fpath`): `any`[]
 
 **`internal`** useContentType
 
@@ -22,14 +22,14 @@
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `fpath` | `string` | the file path of the type to resolve |
+| `fpath` | `any` | the file path of the type to resolve |
 
 #### Returns
 
-[`HTTPHeader`](types_http.md#httpheader)
+`any`[]
 
 the tuple representing the content type header for the static file
 
 #### Defined in
 
-[src/internal/content-type.ts:10](https://github.com/abschill/httpuppy/blob/769369d/src/internal/content-type.ts#L10)
+src/internal/content-type.js:10

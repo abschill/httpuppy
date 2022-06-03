@@ -26,9 +26,9 @@
 
 | Name | Type |
 | :------ | :------ |
-| `filesMounted` | { `content`: `Buffer` ; `contentType`: [`HTTPHeader`](types_http.md#httpheader) ; `fileName`: `string` = file; `hrefs`: `string`[] ; `symLink`: `string`  }[] |
+| `filesMounted` | { `content`: `Buffer` ; `contentType`: `any`[] ; `fileName`: `string` = file; `hrefs`: `string`[] ; `symLink`: `string`  }[] |
 | `mountedPath` | `string` |
 
 #### Defined in
 
-[src/internal/mount-fs.ts:35](https://github.com/abschill/httpuppy/blob/769369d/src/internal/mount-fs.ts#L35)
+[src/internal/mount-fs.ts:36](https://github.com/abschill/httpuppy/blob/5ad0bb8/src/internal/mount-fs.ts#L36)

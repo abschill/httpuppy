@@ -36,11 +36,11 @@ export function useVirtualStreamReader(
 		const stream = createReadStream(pathData.symLink);
 		stream.on('data', (chunk) => {
 			// type the symlink of the streamable file, write into the response stream
-			res.writeHead(200, 'ok', useContentType(pathData.symLink));
+			res.writeHead(200, 'ok', useContentType(pathData.symLink ?? ''));
 			res.write(chunk);
 		});
 		// end response when data is done streaming from vfile
-		stream.on('end', _ => res.end());
+		stream.on('end', (_: any) => res.end());
 	}
 	return;
 }

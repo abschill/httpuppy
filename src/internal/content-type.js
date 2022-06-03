@@ -8,8 +8,14 @@ import { iHTTP } from '../types';
  * @returns the tuple representing the content type header for the static file
  */
 export default function useContentType(
-	fpath	: string
-): iHTTP.HTTPHeader {
+	fpath
+) {
+	if(fpath === '') {
+		return [
+			'Content-Type',
+			'text/plain'
+		];
+	}
 	return [
 		'Content-Type',
 		mime.lookup(fpath)

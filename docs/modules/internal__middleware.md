@@ -28,7 +28,7 @@
 
 #### Defined in
 
-[src/internal/_middleware.ts:15](https://github.com/abschill/httpuppy/blob/769369d/src/internal/_middleware.ts#L15)
+[src/internal/_middleware.ts:15](https://github.com/abschill/httpuppy/blob/5ad0bb8/src/internal/_middleware.ts#L15)
 
 ___
 
@@ -55,4 +55,4 @@ ___
 
 #### Defined in
 
-[src/internal/_middleware.ts:5](https://github.com/abschill/httpuppy/blob/769369d/src/internal/_middleware.ts#L5)
+[src/internal/_middleware.ts:5](https://github.com/abschill/httpuppy/blob/5ad0bb8/src/internal/_middleware.ts#L5)

@@ -9,7 +9,7 @@ export async function shutdown(
 	s	: HTTPuppyServer.Runtime
 ): Promise<HTTPuppyServer.HTTPuppySleep>  {
 	try {
-		s.onClose();
+		if(s.onClose) s.onClose();
 		s.removeAllListeners();
 		s.close();
 

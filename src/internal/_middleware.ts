@@ -16,7 +16,7 @@ export function _onReadable(
 	req	: HTTPuppyRequest,
 	cb	: () => void
 ): void {
-	req.on('readable', _ => {
+	req.on('readable', (_: any) => {
 		if(cb && typeof cb === 'function') {
 			cb();
 		}

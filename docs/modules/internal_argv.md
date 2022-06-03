@@ -21,18 +21,18 @@
 
 #### Defined in
 
-[src/internal/argv.ts:39](https://github.com/abschill/httpuppy/blob/769369d/src/internal/argv.ts#L39)
+src/internal/argv.js:39
 
 ___
 
 ### useProcessArgs
 
-▸ **useProcessArgs**(): `any`
+▸ **useProcessArgs**(): `undefined` \| ``null`` \| { `[k: string]`: `T`;  }
 
 #### Returns
 
-`any`
+`undefined` \| ``null`` \| { `[k: string]`: `T`;  }
 
 #### Defined in
 
-[src/internal/argv.ts:3](https://github.com/abschill/httpuppy/blob/769369d/src/internal/argv.ts#L3)
+src/internal/argv.js:3

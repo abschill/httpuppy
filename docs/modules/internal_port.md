@@ -26,4 +26,4 @@
 
 #### Defined in
 
-[src/internal/port.js:7](https://github.com/abschill/httpuppy/blob/769369d/src/internal/port.js#L7)
+[src/internal/port.js:7](https://github.com/abschill/httpuppy/blob/5ad0bb8/src/internal/port.js#L7)

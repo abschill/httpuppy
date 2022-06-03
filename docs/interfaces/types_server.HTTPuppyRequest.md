@@ -398,7 +398,7 @@ ___
 
 ### readableEncoding
 
-• `Readonly` **readableEncoding**: `BufferEncoding`
+• `Readonly` **readableEncoding**: ``null`` \| `BufferEncoding`
 
 Getter for the property `encoding` of a given `Readable` stream. The `encoding`property can be set using the `readable.setEncoding()` method.
 
@@ -434,7 +434,7 @@ ___
 
 ### readableFlowing
 
-• `Readonly` **readableFlowing**: `boolean`
+• `Readonly` **readableFlowing**: ``null`` \| `boolean`
 
 This property reflects the current state of a `Readable` stream as described
 in the `Three states` section.
@@ -653,7 +653,7 @@ node_modules/@types/node/http.d.ts:959
 
 #### Inherited from
 
-IncomingMessage.\_\_@asyncIterator@21459
+IncomingMessage.\_\_@asyncIterator@21461
 
 #### Defined in
 
@@ -669,7 +669,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `callback` | (`error?`: `Error`) => `void` |
+| `callback` | (`error?`: ``null`` \| `Error`) => `void` |
 
 #### Returns
 
@@ -693,8 +693,8 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `error` | `Error` |
-| `callback` | (`error?`: `Error`) => `void` |
+| `error` | ``null`` \| `Error` |
+| `callback` | (`error?`: ``null`` \| `Error`) => `void` |
 
 #### Returns
 
