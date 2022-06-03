@@ -98,7 +98,10 @@ export function fromDefaultHTTPConfig(
 }
 
 export interface HTTPuppyRequest extends IncomingMessage {}
-export interface HTTPuppyResponse extends ServerResponse {}
+export interface HTTPuppyResponse extends ServerResponse {
+	send: (msg: any) => void;
+	json: (msg: any) => void;
+}
 
 export declare function HTTPuppyCallback(req: HTTPuppyRequest, res: HTTPuppyResponse): any;
 

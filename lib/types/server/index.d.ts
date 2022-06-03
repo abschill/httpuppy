@@ -71,6 +71,8 @@ export declare function fromDefaultHTTPConfig(config: HTTPuppyServerOptions): HT
 export interface HTTPuppyRequest extends IncomingMessage {
 }
 export interface HTTPuppyResponse extends ServerResponse {
+    send: (msg: any) => void;
+    json: (msg: any) => void;
 }
 export declare function HTTPuppyCallback(req: HTTPuppyRequest, res: HTTPuppyResponse): any;
 export declare function HTTPuppyRouterMethod(url: string, cb: typeof HTTPuppyCallback): typeof HTTPuppyCallback | void;

@@ -22,7 +22,10 @@ export function useStaticMount(
 	server		: HTTPuppyServer.Runtime
 ) {
 	// mount configured FS path to the request handler
-	server.on('request', (req, res) => {
+	server.on('request', (
+		req: HTTPuppyServer.HTTPuppyRequest,
+		res: HTTPuppyServer.HTTPuppyResponse
+	) => {
 		try {
 			if(config.middleware && config.middleware.length > 0) useMiddleware(config, req, res);
 			const pathData = useStaticURLParser(req, config);

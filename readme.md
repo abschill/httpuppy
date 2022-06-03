@@ -15,6 +15,14 @@ npm i httpuppy
 yarn add httpuppy
 ```
 
+## Command Line Use
+
+```cmd
+npx httpuppy --port=3000 --path=path/to/files
+```
+
+spin up a server at `<cwd>/path/to/files`
+
 [Examples](/examples/)
 
 [Reference](/docs/modules.md)

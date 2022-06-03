@@ -3,8 +3,47 @@
  * @description for adding custom routing to your server
  */
 import { HTTPuppyServer } from './types';
-import { HTTPuppyRequest, HTTPuppyResponse } from './types/server';
+import {
+	Runtime,
+	HTTPuppyRouter,
+	HTTPuppyRequest,
+	HTTPuppyResponse,
+	HTTPuppyCallback
+} from './types/server';
 
+function _useBetterSignatures(
+	res: HTTPuppyResponse
+) {
+	res.send = res.end;
+	res.json = (content: any) => {
+		if(!res.writable) {
+			res.writeHead(500, 'cannot write to json stream');
+			res.end();
+		}
+		// content type is json if they are calling this method so overwrite if preset
+		if(res.hasHeader('Content-Type')) res.removeHeader('Content-Type');
+		res.writeHead(200, ['Content-Type', 'application/json']);
+		res.end(Buffer.from(JSON.stringify(content)));
+	};
+}
+
+function _useHTTPHandle(
+	name: string,
+	_url: string,
+	server: Runtime,
+	cb: typeof HTTPuppyCallback
+) {
+	server.on('request', (
+		req: HTTPuppyRequest,
+		res: HTTPuppyResponse
+	) => {
+		if(req.method === name && req.url === _url) {
+			_useBetterSignatures(res);
+			return cb(<HTTPuppyRequest>req, <HTTPuppyResponse>res);
+		}
+		return;
+	});
+}
 /**
  * @function useRouter
  * @example
@@ -17,81 +56,51 @@ import { HTTPuppyRequest, HTTPuppyResponse } from './types/server';
  * @returns
  */
 export function useRouter(
-	attachTo: HTTPuppyServer.Runtime, // server to attach the router to as a handler
+	server: Runtime, // server to attach the router to as a handler
 	routerOptions ?: any // placeholder: planned feature
-) {
+): HTTPuppyRouter {
 	// router callback choices
 	// todo: setup glob handler functionality if config option is set
 	function get(
 		url: string,
-		cb: typeof HTTPuppyServer.HTTPuppyCallback
+		cb: typeof HTTPuppyCallback
 	): void {
-		attachTo.on('request', (req, res) => {
-			if(req.method === 'GET' && req.url === url) {
-				return cb(<HTTPuppyRequest>req, <HTTPuppyResponse>res);
-			}
-			return;
-		});
+		_useHTTPHandle('GET', url, server, cb);
 	}
 
 	function post(
 		url: string,
 		cb: typeof HTTPuppyServer.HTTPuppyCallback
 	): void {
-		attachTo.on('request', (req, res) => {
-			if(req.method === 'POST' && req.url === url) {
-				return cb(<HTTPuppyRequest>req, <HTTPuppyResponse>res);
-			}
-			return;
-		});
+		_useHTTPHandle('POST', url, server, cb);
 	}
 
 	function head(
 		url: string,
-		cb: typeof HTTPuppyServer.HTTPuppyCallback
+		cb: typeof HTTPuppyCallback
 	): void {
-		attachTo.on('request', (req, res) => {
-			if(req.method === 'HEAD' && req.url === url) {
-				return cb(<HTTPuppyRequest>req, <HTTPuppyResponse>res);
-			}
-			return;
-		});
+		_useHTTPHandle('HEAD', url, server, cb);
 	}
 
 	function put(
 		url: string,
-		cb: typeof HTTPuppyServer.HTTPuppyCallback
+		cb: typeof HTTPuppyCallback
 	): void {
-		attachTo.on('request', (req, res) => {
-			if(req.method === 'PUT' && req.url === url) {
-				return cb(<HTTPuppyRequest>req, <HTTPuppyResponse>res);
-			}
-			return;
-		});
+		_useHTTPHandle('PUT', url, server, cb);
 	}
 
 	function patch(
 		url: string,
-		cb: typeof HTTPuppyServer.HTTPuppyCallback
+		cb: typeof HTTPuppyCallback
 	): void {
-		attachTo.on('request', (req, res) => {
-			if(req.method === 'PATCH' && req.url === url) {
-				return cb(<HTTPuppyRequest>req, <HTTPuppyResponse>res);
-			}
-			return;
-		});
+		_useHTTPHandle('PATCH', url, server, cb);
 	}
 
 	function _delete(
 		url: string,
-		cb: typeof HTTPuppyServer.HTTPuppyCallback
+		cb: typeof HTTPuppyCallback
 	): void {
-		attachTo.on('request', (req, res) => {
-			if(req.method === 'DELETE' && req.url === url) {
-				return cb(<HTTPuppyRequest>req, <HTTPuppyResponse>res);
-			}
-			return;
-		});
+		_useHTTPHandle('DELETE', url, server, cb);
 	}
 
 	return <HTTPuppyServer.HTTPuppyRouter>{

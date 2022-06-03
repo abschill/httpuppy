@@ -56,6 +56,7 @@
 - [getHeaders](types_server.HTTPuppyResponse.md#getheaders)
 - [getMaxListeners](types_server.HTTPuppyResponse.md#getmaxlisteners)
 - [hasHeader](types_server.HTTPuppyResponse.md#hasheader)
+- [json](types_server.HTTPuppyResponse.md#json)
 - [listenerCount](types_server.HTTPuppyResponse.md#listenercount)
 - [listeners](types_server.HTTPuppyResponse.md#listeners)
 - [off](types_server.HTTPuppyResponse.md#off)
@@ -68,6 +69,7 @@
 - [removeAllListeners](types_server.HTTPuppyResponse.md#removealllisteners)
 - [removeHeader](types_server.HTTPuppyResponse.md#removeheader)
 - [removeListener](types_server.HTTPuppyResponse.md#removelistener)
+- [send](types_server.HTTPuppyResponse.md#send)
 - [setDefaultEncoding](types_server.HTTPuppyResponse.md#setdefaultencoding)
 - [setHeader](types_server.HTTPuppyResponse.md#setheader)
 - [setMaxListeners](types_server.HTTPuppyResponse.md#setmaxlisteners)
@@ -1323,6 +1325,26 @@ node_modules/@types/node/http.d.ts:413
 
 ___
 
+### json
+
+▸ **json**(`msg`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `msg` | `any` |
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[src/types/server/index.ts:103](https://github.com/abschill/httpuppy/blob/a85d5bb/src/types/server/index.ts#L103)
+
+___
+
 ### listenerCount
 
 ▸ **listenerCount**(`eventName`): `number`
@@ -2319,6 +2341,26 @@ ServerResponse.removeListener
 #### Defined in
 
 node_modules/@types/node/stream.d.ts:769
+
+___
+
+### send
+
+▸ **send**(`msg`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `msg` | `any` |
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[src/types/server/index.ts:102](https://github.com/abschill/httpuppy/blob/a85d5bb/src/types/server/index.ts#L102)
 
 ___
 

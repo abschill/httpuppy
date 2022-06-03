@@ -7,6 +7,6 @@ const app = useServer({
 });
 
 const endpoint = useRouter(app);
-endpoint.get('/test', (req, res) => res.end('hello'));
-
+endpoint.get('/test', (req, res) => res.send('hello'));
+endpoint.get('/test1', (req, res) => res.json({foo: "bar"}));
 app.listen(3000, () => console.log('server started, open browser to port 3000'));

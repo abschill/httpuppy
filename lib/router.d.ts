@@ -1,8 +1,4 @@
-/**
- * @module router
- * @description for adding custom routing to your server
- */
-import { HTTPuppyServer } from './types';
+import { Runtime, HTTPuppyRouter } from './types/server';
 /**
  * @function useRouter
  * @example
@@ -14,5 +10,5 @@ import { HTTPuppyServer } from './types';
  * @param attachTo
  * @returns
  */
-export declare function useRouter(attachTo: HTTPuppyServer.Runtime, // server to attach the router to as a handler
-routerOptions?: any): HTTPuppyServer.HTTPuppyRouter;
+export declare function useRouter(server: Runtime, // server to attach the router to as a handler
+routerOptions?: any): HTTPuppyRouter;
