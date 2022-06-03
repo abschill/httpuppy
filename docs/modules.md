@@ -1,72 +1,25 @@
-[httpuppy - v0.1.0](README.md) / Exports
+[httpuppy - v0.1.0](README.md) / Modules
 
 # httpuppy - v0.1.0
 
 ## Table of contents
 
-### Functions
+### Modules
 
-- [useRouter](modules.md#userouter)
-- [useServer](modules.md#useserver)
-
-## Functions
-
-### useRouter
-
-▸ **useRouter**(`attachTo`): `HTTPuppyRouter`
-
-**`function`** useRouter
-
-**`example`**
-```javascript
-const app = useServer({...});
-const router = useRouter(app);
-router.get('/test', (req, res) => res.end('hello'));
-```
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `attachTo` | `Runtime` |
-
-#### Returns
-
-`HTTPuppyRouter`
-
-#### Defined in
-
-[router.ts:23](https://github.com/abschill/httpuppy/blob/85d98d9/src/router.ts#L23)
-
-___
-
-### useServer
-
-▸ **useServer**(`conf`): `HTTPuppyServer.Runtime`
-
-**`function`** useServer
-
-**`example`**
-```javascript
-const app = useServer({
-	static: {
-		path: './examples/files'
-	}
-});
-```
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `conf` | `HTTPuppyServerOptions` | configuration options |
-
-#### Returns
-
-`HTTPuppyServer.Runtime`
-
-httpuppy server
-
-#### Defined in
-
-[server.ts:29](https://github.com/abschill/httpuppy/blob/85d98d9/src/server.ts#L29)
+- [internal/\_constants](modules/internal__constants.md)
+- [internal/\_middleware](modules/internal__middleware.md)
+- [internal/\_shutdown](modules/internal__shutdown.md)
+- [internal/argv](modules/internal_argv.md)
+- [internal/config](modules/internal_config.md)
+- [internal/content-type](modules/internal_content_type.md)
+- [internal/error](modules/internal_error.md)
+- [internal/etag](modules/internal_etag.md)
+- [internal/logger](modules/internal_logger.md)
+- [internal/mount-fs](modules/internal_mount_fs.md)
+- [internal/port](modules/internal_port.md)
+- [internal/startup](modules/internal_startup.md)
+- [internal/status](modules/internal_status.md)
+- [internal/writer](modules/internal_writer.md)
+- [types](modules/types.md)
+- [types/http](modules/types_http.md)
+- [types/server](modules/types_server.md)

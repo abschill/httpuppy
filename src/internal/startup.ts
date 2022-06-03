@@ -1,7 +1,6 @@
 
 import {
 	HTTPuppyServer,
-	Server
 } from '../types';
 
 /**
@@ -14,7 +13,7 @@ import {
  */
 export function _useServer(
 	config	: HTTPuppyServer.HTTPuppyServerOptions,
-	server	: Server,
+	server	: HTTPuppyServer.Runtime,
 	diagnostics: HTTPuppyServer.DiagnosticLog[]
 ): HTTPuppyServer.Runtime {
 	if(config.onMount) server.once('listening', config.onMount);

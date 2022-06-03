@@ -7,7 +7,7 @@
   "scripts": {
     "build": "tsc",
     "build:watch": "tsc -w",
-    "build:docs": "typedoc ./src",
+    "build:docs": "typedoc ./src/**/*",
     "dev": "make -j 2 dev-ts dev-example",
     "test": "ts-mocha test/**/*.test.ts",
     "test:watch": "ts-mocha -w test/**/*.test.ts",

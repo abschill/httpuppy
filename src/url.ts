@@ -13,7 +13,7 @@ import { useMountedFS } from './internal/mount-fs';
  * @returns the mounted file to serve based on the given request information
  */
 export function useStaticURLParser (
-	req		: iTypes.HTTP_INCMSG,
+	req		: iTypes.HTTPuppyServer.HTTPuppyRequest,
 	config	: iTypes.HTTPuppyServer.HTTPuppyServerOptions
 ): iTypes.HTTPuppyServer.MountedFile {
 	// mount the local fs (possibly move this into the initializer, but for now we want to just refresh the fs per request)

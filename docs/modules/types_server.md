@@ -1,0 +1,365 @@
+[httpuppy - v0.1.0](../README.md) / [Modules](../modules.md) / types/server
+
+# Module: types/server
+
+## Table of contents
+
+### Interfaces
+
+- [HTTPuppyRequest](../interfaces/types_server.HTTPuppyRequest.md)
+- [HTTPuppyResponse](../interfaces/types_server.HTTPuppyResponse.md)
+- [HTTPuppyRouter](../interfaces/types_server.HTTPuppyRouter.md)
+- [HTTPuppyServerOptions](../interfaces/types_server.HTTPuppyServerOptions.md)
+- [LogConfig](../interfaces/types_server.LogConfig.md)
+- [Runtime](../interfaces/types_server.Runtime.md)
+
+### Type Aliases
+
+- [CacheSettings](types_server.md#cachesettings)
+- [DiagnosticLog](types_server.md#diagnosticlog)
+- [HTTPHandlerFunction](types_server.md#httphandlerfunction)
+- [HTTPuppySleep](types_server.md#httpuppysleep)
+- [HTTPuppyWriterOptions](types_server.md#httpuppywriteroptions)
+- [LogLevel](types_server.md#loglevel)
+- [MountedFile](types_server.md#mountedfile)
+- [UserMiddlewareOption](types_server.md#usermiddlewareoption)
+- [UserStaticConfig](types_server.md#userstaticconfig)
+- [iExitHandler](types_server.md#iexithandler)
+- [iHandlerType](types_server.md#ihandlertype)
+
+### Variables
+
+- [defaultCacheSettings](types_server.md#defaultcachesettings)
+- [defaultHTTPConfig](types_server.md#defaulthttpconfig)
+
+### Functions
+
+- [fromDefaultCacheSettings](types_server.md#fromdefaultcachesettings)
+- [fromDefaultHTTPConfig](types_server.md#fromdefaulthttpconfig)
+- [useDefaultLogConfig](types_server.md#usedefaultlogconfig)
+
+## Type Aliases
+
+### CacheSettings
+
+Ƭ **CacheSettings**: `Object`
+
+**`interface`** Cache Settings
+
+**`description`** All supported cache control options in camelcase
+
+**`member`** maxAge maximum age to keep a response as "fresh" after its etag is generated
+
+**`member`** sMaxAge maxAge for shared caches
+
+**`member`** noCache response can be stored in caches, but must be revalidated with origin before reuse
+
+**`member`** noStore caches of any kind (private or shared) should not store this response
+
+**`member`** noTransform any intermediary (regardless of whether it implements a cache) shouldn't transform the response contents
+
+**`member`** mustRevalidate response can be stored in caches and can be reused while fresh. If the response becomes stale, it must be validated with the origin server before reuse
+
+**`member`** mustUnderstand should store the response only if it understands the requirements for caching based on status code
+
+**`member`** proxyRevalidate response directive is the equivalent of must-revalidate, but specifically for shared caches only
+
+**`member`** immutable response directive indicates that the response will not be updated while it's fresh.
+
+**`member`** private response can be stored only in a private cache (e.g. local caches in browsers)
+
+**`member`** public can be stored in a shared cache
+
+**`member`** staleWhileRevalidate the cache could reuse a stale response while it revalidates it to a cache
+
+**`member`** staleIfError  cache can reuse a stale response when an origin server responds with an error (500, 502, 503, or 504)
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `immutable?` | `boolean` |
+| `maxAge?` | `number` |
+| `mustRevalidate?` | `boolean` |
+| `mustUnderstand?` | `boolean` |
+| `noCache?` | `boolean` |
+| `noStore?` | `boolean` |
+| `noTransform?` | `boolean` |
+| `private?` | `boolean` |
+| `proxyRevalidate?` | `boolean` |
+| `public?` | `boolean` |
+| `sMaxAge?` | `number` |
+| `staleIfError?` | `boolean` |
+| `staleWhileRevalidate?` | `boolean` |
+
+#### Defined in
+
+[src/types/server/middleware.ts:18](https://github.com/abschill/httpuppy/blob/1769d2f/src/types/server/middleware.ts#L18)
+
+___
+
+### DiagnosticLog
+
+Ƭ **DiagnosticLog**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `msg` | `string` |
+
+#### Defined in
+
+[src/types/server/index.ts:13](https://github.com/abschill/httpuppy/blob/1769d2f/src/types/server/index.ts#L13)
+
+___
+
+### HTTPHandlerFunction
+
+Ƭ **HTTPHandlerFunction**<`T`\>: (`IncomingMessage`: `any`) => `T`
+
+#### Type parameters
+
+| Name |
+| :------ |
+| `T` |
+
+#### Type declaration
+
+▸ (`IncomingMessage`): `T`
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `IncomingMessage` | `any` |
+
+##### Returns
+
+`T`
+
+#### Defined in
+
+[src/types/server/middleware.ts:57](https://github.com/abschill/httpuppy/blob/1769d2f/src/types/server/middleware.ts#L57)
+
+___
+
+### HTTPuppySleep
+
+Ƭ **HTTPuppySleep**: () => `Promise`<`void`\>
+
+#### Type declaration
+
+▸ (): `Promise`<`void`\>
+
+##### Returns
+
+`Promise`<`void`\>
+
+#### Defined in
+
+[src/types/server/index.ts:38](https://github.com/abschill/httpuppy/blob/1769d2f/src/types/server/index.ts#L38)
+
+___
+
+### HTTPuppyWriterOptions
+
+Ƭ **HTTPuppyWriterOptions**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `status` | `number` |
+| `statusText` | `string` |
+| `type` | `string` |
+| `virtualFile` | [`MountedFile`](types_server.md#mountedfile) |
+
+#### Defined in
+
+[src/types/server/writer.ts:3](https://github.com/abschill/httpuppy/blob/1769d2f/src/types/server/writer.ts#L3)
+
+___
+
+### LogLevel
+
+Ƭ **LogLevel**: ``"silent"`` \| ``"base"`` \| ``"verbose"``
+
+#### Defined in
+
+[src/types/server/logger.ts:1](https://github.com/abschill/httpuppy/blob/1769d2f/src/types/server/logger.ts#L1)
+
+___
+
+### MountedFile
+
+Ƭ **MountedFile**: `Object`
+
+**`description`** A File Mounted within a virtual filesystem to be served at a given static href
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `contentType` | `any` \| `any`[] |
+| `fileName` | `string` |
+| `hrefs` | `string`[] |
+| `reqUrl` | `string` |
+| `symLink` | `string` |
+
+#### Defined in
+
+[src/types/server/index.ts:30](https://github.com/abschill/httpuppy/blob/1769d2f/src/types/server/index.ts#L30)
+
+___
+
+### UserMiddlewareOption
+
+Ƭ **UserMiddlewareOption**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `handler` | [`iHandlerType`](types_server.md#ihandlertype) |
+| `href` | `string` |
+
+#### Defined in
+
+[src/types/server/middleware.ts:52](https://github.com/abschill/httpuppy/blob/1769d2f/src/types/server/middleware.ts#L52)
+
+___
+
+### UserStaticConfig
+
+Ƭ **UserStaticConfig**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `href?` | `string` |
+| `indexType?` | `string` |
+| `mimeType?` | `string` |
+| `path?` | `string` |
+
+#### Defined in
+
+[src/types/server/index.ts:40](https://github.com/abschill/httpuppy/blob/1769d2f/src/types/server/index.ts#L40)
+
+___
+
+### iExitHandler
+
+Ƭ **iExitHandler**: () => `Promise`<`void`\> \| () => `void`
+
+#### Type declaration
+
+▸ (): `Promise`<`void`\> \| () => `void`
+
+##### Returns
+
+`Promise`<`void`\> \| () => `void`
+
+#### Defined in
+
+[src/types/server/middleware.ts:50](https://github.com/abschill/httpuppy/blob/1769d2f/src/types/server/middleware.ts#L50)
+
+___
+
+### iHandlerType
+
+Ƭ **iHandlerType**: (`req`: `any`, `res`: `any`) => `Promise`<`void`\> \| (`req`: `any`, `res`: `any`) => `void`
+
+#### Type declaration
+
+▸ (`req`, `res`): `Promise`<`void`\> \| (`req`: `any`, `res`: `any`) => `void`
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `req` | `any` |
+| `res` | `any` |
+
+##### Returns
+
+`Promise`<`void`\> \| (`req`: `any`, `res`: `any`) => `void`
+
+#### Defined in
+
+[src/types/server/middleware.ts:51](https://github.com/abschill/httpuppy/blob/1769d2f/src/types/server/middleware.ts#L51)
+
+## Variables
+
+### defaultCacheSettings
+
+• `Const` **defaultCacheSettings**: [`CacheSettings`](types_server.md#cachesettings)
+
+#### Defined in
+
+[src/types/server/middleware.ts:34](https://github.com/abschill/httpuppy/blob/1769d2f/src/types/server/middleware.ts#L34)
+
+___
+
+### defaultHTTPConfig
+
+• `Const` **defaultHTTPConfig**: [`HTTPuppyServerOptions`](../interfaces/types_server.HTTPuppyServerOptions.md)
+
+#### Defined in
+
+[src/types/server/index.ts:83](https://github.com/abschill/httpuppy/blob/1769d2f/src/types/server/index.ts#L83)
+
+## Functions
+
+### fromDefaultCacheSettings
+
+▸ **fromDefaultCacheSettings**(`settings`): [`CacheSettings`](types_server.md#cachesettings)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `settings` | [`CacheSettings`](types_server.md#cachesettings) |
+
+#### Returns
+
+[`CacheSettings`](types_server.md#cachesettings)
+
+#### Defined in
+
+[src/types/server/middleware.ts:41](https://github.com/abschill/httpuppy/blob/1769d2f/src/types/server/middleware.ts#L41)
+
+___
+
+### fromDefaultHTTPConfig
+
+▸ **fromDefaultHTTPConfig**(`config`): [`HTTPuppyServerOptions`](../interfaces/types_server.HTTPuppyServerOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `config` | [`HTTPuppyServerOptions`](../interfaces/types_server.HTTPuppyServerOptions.md) |
+
+#### Returns
+
+[`HTTPuppyServerOptions`](../interfaces/types_server.HTTPuppyServerOptions.md)
+
+#### Defined in
+
+[src/types/server/index.ts:92](https://github.com/abschill/httpuppy/blob/1769d2f/src/types/server/index.ts#L92)
+
+___
+
+### useDefaultLogConfig
+
+▸ **useDefaultLogConfig**(): [`LogConfig`](../interfaces/types_server.LogConfig.md)
+
+#### Returns
+
+[`LogConfig`](../interfaces/types_server.LogConfig.md)
+
+#### Defined in
+
+[src/types/server/logger.ts:8](https://github.com/abschill/httpuppy/blob/1769d2f/src/types/server/logger.ts#L8)
