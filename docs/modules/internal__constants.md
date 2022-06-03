@@ -16,4 +16,4 @@
 
 #### Defined in
 
-[src/internal/_constants.ts:1](https://github.com/abschill/httpuppy/blob/a85d5bb/src/internal/_constants.ts#L1)
+[src/internal/_constants.ts:1](https://github.com/abschill/httpuppy/blob/f65c9fa/src/internal/_constants.ts#L1)
