@@ -9,6 +9,17 @@
  */
 import { HTTPuppyServer } from './types';
 
+/**
+ * @function useRouter
+ * @example
+ * ```javascript
+* const app = useServer({...});
+* const router = useRouter(app);
+* router.get('/test', (req, res) => res.end('hello'));
+* ```
+ * @param attachTo
+ * @returns
+ */
 export function useRouter(
 	attachTo: HTTPuppyServer.Runtime
 ) {

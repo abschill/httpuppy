@@ -2,19 +2,7 @@
  * @module server
  * @example calling the userServer hook
 	* ```javascript
- 	* const app = useServer({
-	* 	static: {
-	* 		path: join(process.cwd(), './examples/files')
-	* 	},
-    * 	throwWarnings: false,
-	* 	logLevel: 'base',
-	* 	middleware: [
-	* 		{
-	*			href: '/',
-	*			handler: (req, res) => console.log('middleware')
-	*		}
-	*	],
-	* });
+
 	* ```
  */
 import { createServer as stlCreateServer } from 'http';
@@ -30,7 +18,21 @@ import { useAnyConfig } from './internal/argv';
 import { useLogger } from './internal/logger';
 
 /**
- *
+ * @function useServer
+ * @example
+ * ```javascript
+* const app = useServer({
+* 	static: {
+* 		path: join(process.cwd(), './examples/files')
+* 	},
+* 	middleware: [
+* 		{
+*			href: '/',
+*			handler: (req, res) => console.log('middleware')
+*		}
+*	],
+* });
+* ```
  * @param conf configuration options
  * @returns httpuppy server
  */

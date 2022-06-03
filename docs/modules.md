@@ -1,4 +1,4 @@
-[httpuppy - v0.1.0](README.md) / Modules
+[httpuppy - v0.1.0](README.md) / Exports
 
 # httpuppy - v0.1.0
 
@@ -15,6 +15,15 @@
 
 ▸ **useRouter**(`attachTo`): `HTTPuppyRouter`
 
+**`function`** useRouter
+
+**`example`**
+```javascript
+const app = useServer({...});
+const router = useRouter(app);
+router.get('/test', (req, res) => res.end('hello'));
+```
+
 #### Parameters
 
 | Name | Type |
@@ -27,13 +36,30 @@
 
 #### Defined in
 
-[router.ts:12](https://github.com/abschill/httpuppy/blob/2eba54c/src/router.ts#L12)
+[router.ts:23](https://github.com/abschill/httpuppy/blob/d77166a/src/router.ts#L23)
 
 ___
 
 ### useServer
 
 ▸ **useServer**(`conf`): `HTTPuppyServer.Runtime`
+
+**`function`** useServer
+
+**`example`**
+```javascript
+const app = useServer({
+	static: {
+		path: join(process.cwd(), './examples/files')
+	},
+	middleware: [
+		{
+			href: '/',
+			handler: (req, res) => console.log('middleware')
+		}
+	],
+});
+```
 
 #### Parameters
 
@@ -49,4 +75,4 @@ httpuppy server
 
 #### Defined in
 
-[server.ts:37](https://github.com/abschill/httpuppy/blob/2eba54c/src/server.ts#L37)
+[server.ts:39](https://github.com/abschill/httpuppy/blob/d77166a/src/server.ts#L39)
