@@ -41,4 +41,4 @@ httpuppy server
 
 #### Defined in
 
-[src/server.ts:29](https://github.com/abschill/httpuppy/blob/e6a8c07/src/server.ts#L29)
+[src/server.ts:29](https://github.com/abschill/httpuppy/blob/d89585b/src/server.ts#L29)
