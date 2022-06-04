@@ -12,6 +12,7 @@ import { shutdown } from './internal/_shutdown';
 import { useStaticMount } from './internal/mount-fs';
 import { useLogger } from './internal/logger';
 import { ServerOptions as HTTPSOptions } from 'https';
+import { useAnyConfig } from './internal/config/argv';
 /**
  * @function useServer
  * @example
@@ -30,8 +31,13 @@ export function useServer(
 ): HTTPuppyServer.Runtime {
 	usePort(conf.port ?? 80);
 	const diagnostics: HTTPuppyServer.DiagnosticLog[] = [];
-	// useAnyConfig();
-    const config = useConfig(conf, diagnostics);
+	let config;
+	if(conf?.noConfigFile) {
+		config = useConfig(conf, diagnostics);
+	} else {
+		config = useAnyConfig(useConfig(conf, diagnostics));
+	}
+
 	let _server;
 	if(!conf.secure) {
 		_server = stlCreateServer(config.handler);

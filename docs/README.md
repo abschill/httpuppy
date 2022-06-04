@@ -1,4 +1,4 @@
-httpuppy - v0.2.5 / [Modules](modules.md)
+httpuppy - v0.2.6 / [Modules](modules.md)
 
 # HTTPuppy
 
@@ -23,6 +23,8 @@ npx httpuppy --port=3000 --path=path/to/files
 ```
 
 spin up a server at `<cwd>/path/to/files`
+
+you can set up a config file instead of writing your arguments inline. [example here](/http.puppy)
 
 ## Programmatic Usage
 

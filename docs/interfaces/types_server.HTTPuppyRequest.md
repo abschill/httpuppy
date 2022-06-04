@@ -1,4 +1,4 @@
-[httpuppy - v0.2.5](../README.md) / [Modules](../modules.md) / [types/server](../modules/types_server.md) / HTTPuppyRequest
+[httpuppy - v0.2.6](../README.md) / [Modules](../modules.md) / [types/server](../modules/types_server.md) / HTTPuppyRequest
 
 # Interface: HTTPuppyRequest
 
@@ -83,7 +83,7 @@
 
 #### Defined in
 
-[src/types/server/index.ts:103](https://github.com/abschill/httpuppy/blob/aacf43f/src/types/server/index.ts#L103)
+[src/types/server/index.ts:104](https://github.com/abschill/httpuppy/blob/d4a7c7e/src/types/server/index.ts#L104)
 
 ___
 

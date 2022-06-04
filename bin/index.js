@@ -1,7 +1,13 @@
 #! /usr/bin/env node
-const { useProcessArgs } = require('../lib/internal/config/argv');
+const { useAnyConfig } = require('../lib/internal/config/argv');
+const { useProcessArgs } = require('../lib/internal/fmt/_argv');
 const { useServer } = require('../lib');
-const args = useProcessArgs();
+let args = useProcessArgs();
+
+if(!args || !args.noConfigFile) {
+	args = useAnyConfig(args);
+}
+
 let pathHref = process.cwd();
 let port = 3000;
 if(args && args.path) {

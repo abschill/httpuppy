@@ -23,6 +23,7 @@ npx httpuppy --port=3000 --path=path/to/files
 
 spin up a server at `<cwd>/path/to/files`
 
+you can set up a config file instead of writing your arguments inline. [example here](/http.puppy)
 
 ## Programmatic Usage
 

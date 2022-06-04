@@ -68,7 +68,8 @@ export interface HTTPuppyServerOptions extends stlServerOptions {
 	static 			?: UserStaticConfig;
     throwWarnings 	?: boolean;
 	log				?: LogConfig;
-	middleware 		?: UserMiddlewareOption[]
+	middleware 		?: UserMiddlewareOption[];
+	noConfigFile	?: boolean;
 	onMount 		?: iHandlerType;
 	onClose			?: iExitHandler;
 	cache 			?: CacheSettings;
