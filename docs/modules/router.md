@@ -38,4 +38,4 @@ router.get('/test', (req, res) => res.end('hello'));
 
 #### Defined in
 
-[src/router.ts:58](https://github.com/abschill/httpuppy/blob/74b7f27/src/router.ts#L58)
+[src/router.ts:58](https://github.com/abschill/httpuppy/blob/03c304a/src/router.ts#L58)
