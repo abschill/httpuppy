@@ -1,4 +1,4 @@
-httpuppy - v0.1.1 / [Modules](modules.md)
+httpuppy - v0.2.1 / [Modules](modules.md)
 
 # HTTPuppy
 
@@ -23,6 +23,38 @@ npx httpuppy --port=3000 --path=path/to/files
 ```
 
 spin up a server at `<cwd>/path/to/files`
+
+## Programmatic Usage
+
+```js
+const { useServer } = require('httpuppy');
+
+const app = useServer({
+	static: {
+		path: './path/to/content'
+	}
+});
+app.listen(3000, () => console.log('listening on 3000'))
+```
+
+## Layered Routing
+
+```js
+const { useServer, useRouter } = require('httpuppy');
+
+const app = useServer({
+	static: {
+		path: './path/to/content'
+	}
+});
+
+const router = useRouter(app);
+
+router.get('/api/v1/content', (req, res) => res.json({msg: "success"}));
+
+app.listen(3000, () => console.log('listening on 3000'))
+
+```
 
 [Examples](/examples/)
 

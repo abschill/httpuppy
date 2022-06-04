@@ -6,7 +6,8 @@ import {
 	LogConfig,
 	useDefaultLogConfig
 } from '../types/server';
-const { log, warn, error } = console;
+const { log } = console;
+import { _useColorLogger } from './_color';
 
 export function useLogConfig(
 	config ?: LogConfig
@@ -22,18 +23,18 @@ export function useLogger(
 	config	: LogConfig,
 	server	: HTTPuppyServer.Runtime
 ) {
-	const prefix = config.logPrefix || 'httpuppy_log';
+	const prefix = config.logPrefix || 'httpuppy';
 	if(config.logLevel === 'base') {
 		server.on('request', (req) => {
-			log(`${prefix}: ${req.method} ${req.url}`);
+			log(`${prefix}:`, _useColorLogger('status',  <string>req.method),  req.url);
 		});
 
 		server.on('error', (err) => {
-			error(`${prefix}: ${err.message}\n\n${err.stack}`);
+			log(`${prefix}:`, _useColorLogger('error',  `${err.message}\n\n${err.stack}`));
 		});
 
 		server.on('clientError', (err, socket) => {
-			warn(`${prefix}: ${err.name}`);
+			log(`${prefix}:`, _useColorLogger('warn', `${err.name}`));
 			socket.end('HTTP/1.1 400 Bad Request');
 		});
 	}

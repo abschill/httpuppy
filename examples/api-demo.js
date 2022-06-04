@@ -3,6 +3,9 @@ const { useServer, useRouter } = require('../lib');
 const app = useServer({
 	static: {
 		path: './examples/files'
+	},
+	log: {
+		logLevel: 'base'
 	}
 });
 

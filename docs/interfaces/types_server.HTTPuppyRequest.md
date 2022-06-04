@@ -1,4 +1,4 @@
-[httpuppy - v0.1.1](../README.md) / [Modules](../modules.md) / [types/server](../modules/types_server.md) / HTTPuppyRequest
+[httpuppy - v0.2.1](../README.md) / [Modules](../modules.md) / [types/server](../modules/types_server.md) / HTTPuppyRequest
 
 # Interface: HTTPuppyRequest
 
