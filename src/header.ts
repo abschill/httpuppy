@@ -1,15 +1,15 @@
 /**
- * @module middleware
+ * @module headers
  * @description hooks for setting up middleware for the request chain
  */
 import { iHTTP } from './types';
 import { useEtag } from './internal/etag';
+import { _useContentSignatures } from './internal/_middleware';
 import {
 	HTTPuppyServerOptions,
 	HTTPuppyWriterOptions,
-	HTTPuppyRequest,
-	HTTPuppyResponse
 } from './types/server';
+
 /**
  *
  * @param options the writer options to apply the headers against
@@ -34,15 +34,5 @@ export function useHeaders(
 			useEtag(options.virtualFile.fileName, { weak: true })
 		]);
 	}
-
 	return applyHeaders;
-}
-
-export function useMiddleware(
-	config	: HTTPuppyServerOptions,
-	req		: HTTPuppyRequest,
-	res		: HTTPuppyResponse
-) {
-	const match = config.middleware?.filter(opt => opt.href === req.url).shift();
-	match?.handler(req, res);
 }

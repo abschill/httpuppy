@@ -6,44 +6,13 @@ import { HTTPuppyServer } from './types';
 import {
 	Runtime,
 	HTTPuppyRouter,
-	HTTPuppyRequest,
-	HTTPuppyResponse,
 	HTTPuppyCallback
 } from './types/server';
+import {
+	_useHTTPHandle,
+	_useContentSignatures
+} from './internal/_middleware';
 
-function _useBetterSignatures(
-	res: HTTPuppyResponse
-) {
-	res.send = res.end;
-	res.json = (content: any) => {
-		if(!res.writable) {
-			res.writeHead(500, 'cannot write to json stream');
-			res.end();
-		}
-		// content type is json if they are calling this method so overwrite if preset
-		if(res.hasHeader('Content-Type')) res.removeHeader('Content-Type');
-		res.writeHead(200, ['Content-Type', 'application/json']);
-		res.end(Buffer.from(JSON.stringify(content)));
-	};
-}
-
-function _useHTTPHandle(
-	name: string,
-	_url: string,
-	server: Runtime,
-	cb: typeof HTTPuppyCallback
-) {
-	server.on('request', (
-		req: HTTPuppyRequest,
-		res: HTTPuppyResponse
-	) => {
-		if(req.method === name && req.url === _url) {
-			_useBetterSignatures(res);
-			return cb(<HTTPuppyRequest>req, <HTTPuppyResponse>res);
-		}
-		return;
-	});
-}
 /**
  * @function useRouter
  * @example

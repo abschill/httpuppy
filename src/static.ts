@@ -4,7 +4,7 @@
  */
 import { HTTPuppyServer } from './types';
 import { useStaticURLParser } from './url';
-import { useMiddleware } from './middleware';
+import { applyMiddleware } from './internal/_middleware';
 import { emitWarning } from 'process';
 import { use404 } from './internal/error';
 import {
@@ -27,7 +27,7 @@ export function useStaticMount(
 		res: HTTPuppyServer.HTTPuppyResponse
 	) => {
 		try {
-			if(config.middleware && config.middleware.length > 0) useMiddleware(config, req, res);
+			if(config.middleware && config.middleware.length > 0) applyMiddleware(config, req, res);
 			const pathData = useStaticURLParser(req, config);
 			if(req.method === 'GET') {
 				if(isBufferType(<string>req.url)) {

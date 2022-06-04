@@ -1,4 +1,4 @@
-[httpuppy - v0.2.1](../README.md) / [Modules](../modules.md) / [types/server](../modules/types_server.md) / Runtime
+[httpuppy - v0.2.2](../README.md) / [Modules](../modules.md) / [types/server](../modules/types_server.md) / Runtime
 
 # Interface: Runtime
 
@@ -78,7 +78,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:21](https://github.com/abschill/httpuppy/blob/9c9a255/src/types/server/index.ts#L21)
+[src/types/server/index.ts:21](https://github.com/abschill/httpuppy/blob/5c31cb1/src/types/server/index.ts#L21)
 
 ___
 
@@ -228,7 +228,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:22](https://github.com/abschill/httpuppy/blob/9c9a255/src/types/server/index.ts#L22)
+[src/types/server/index.ts:22](https://github.com/abschill/httpuppy/blob/5c31cb1/src/types/server/index.ts#L22)
 
 ___
 
@@ -292,7 +292,7 @@ node_modules/@types/node/http.d.ts:209
 
 #### Defined in
 
-[src/types/server/index.ts:23](https://github.com/abschill/httpuppy/blob/9c9a255/src/types/server/index.ts#L23)
+[src/types/server/index.ts:23](https://github.com/abschill/httpuppy/blob/5c31cb1/src/types/server/index.ts#L23)
 
 ___
 

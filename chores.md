@@ -9,4 +9,3 @@
 ## Idea Dump
 - template engine integration support
 - default .env support ?
-- middleware as a hook instead of the goofy inline array way
