@@ -3,7 +3,7 @@
  */
 import {
 	HTTPuppyServer,
-} from '../types';
+} from '../../types';
 
 /**
  * @internal _useServer

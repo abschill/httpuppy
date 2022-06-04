@@ -5,7 +5,7 @@ import { HTTPuppyServer } from '../types';
 import { createReadStream } from 'fs';
 import useContentType from './content-type';
 import { useHeaders } from '../header';
-import { bufferTypes } from './_constants';
+import { bufferTypes } from './include/_constants';
 
 /**
  * @internal isBufferType

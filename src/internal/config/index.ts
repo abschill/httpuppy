@@ -1,7 +1,7 @@
 /**
  * @internal
  */
-import { HTTPuppyServer } from '../types';
+import { HTTPuppyServer } from '../../types';
 import { emitWarning } from 'process';
 
 /**

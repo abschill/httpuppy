@@ -6,7 +6,7 @@ import { createServer as stlCreateServer } from 'http';
 import { createServer as stdCreateSecureServer } from 'https';
 import { HTTPuppyServer } from './types';
 import { useConfig } from './internal/config';
-import { _useServer } from './internal/startup';
+import { _useServer } from './internal/config/startup';
 import { usePort } from './internal/port';
 import { shutdown } from './internal/_shutdown';
 import { useStaticMount } from './internal/mount-fs';
@@ -55,8 +55,6 @@ export function useServer(
 	if(config.static) useStaticMount(config, server);
 
 	server._shutdown = () => shutdown(server);
-
-
 
 	if(!config.coldInit) {
 		server.listen(config.port, config.hostname);

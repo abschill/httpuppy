@@ -84,7 +84,7 @@ export function useStaticMount(
 		try {
 			if(config.middleware && config.middleware.length > 0) applyMiddleware(config, req, res);
 			const pathData = useStaticURLParser(req, config);
-			server.emit('static-get', pathData);
+			//server.emit('static-get', pathData);
 			if(req.method === 'GET') {
 				if(isBufferType(<string>req.url)) {
 					return useVirtualStreamReader(pathData, res);

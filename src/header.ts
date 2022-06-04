@@ -3,7 +3,7 @@
  * @description hooks for setting up middleware for the request chain
  */
 import { iHTTP } from './types';
-import { useEtag } from './internal/etag';
+import { useEtag } from './internal/include/etag';
 import { _useContentSignatures } from './internal/_middleware';
 import {
 	HTTPuppyServerOptions,

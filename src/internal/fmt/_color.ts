@@ -4,10 +4,10 @@ import {
 	FgGreen,
 	FgYellow,
 	Reset
-} from './_constants';
+} from '../include/_constants';
 import { format } from 'util';
 
-export function _useColorLogger(
+export function _useColorTag(
 	color: string,
 	val: string
 ): string {

@@ -1,5 +1,5 @@
 #! /usr/bin/env node
-const { useProcessArgs } = require('../lib/internal/argv');
+const { useProcessArgs } = require('../lib/internal/config/argv');
 const { useServer } = require('../lib');
 const args = useProcessArgs();
 let pathHref = process.cwd();
