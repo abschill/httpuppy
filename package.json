@@ -1,6 +1,6 @@
 {
   "name": "httpuppy",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "simple abstraction layer for node web servers",
   "main": "lib/index.js",
   "bin": "bin/index.js",
@@ -23,7 +23,7 @@
 	  "proxy"
   ],
   "author": "abschill",
-  "license": "MIT",
+  "license": "AGPL-3.0",
   "devDependencies": {
     "@types/expect": "^24.3.0",
     "@types/mocha": "^9.1.1",
