@@ -1,9 +1,5 @@
-/**
- * @module url
- * @description Hooks for handling url parsing strategies
- */
-import * as iTypes from './types';
-import { useMountedFS } from './internal/mount-fs';
+import * as iTypes from '../../types';
+import { useMountedFS } from '../mount-fs';
 
 /**
  * @function useStaticURLParser

@@ -37,5 +37,14 @@ export function useLogger(
 			log(`${prefix}:`, _useColorLogger('warn', `${err.name}`));
 			socket.end('HTTP/1.1 400 Bad Request');
 		});
+
+		server.addListener('static-get', (data) => {
+			console.log('static get');
+			console.log(data);
+		});
+
+		server.addListener('diagnostic-log', (...trace) => {
+			console.log(trace);
+		});
 	}
 }

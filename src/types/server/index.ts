@@ -18,9 +18,11 @@ export type DiagnosticLog = {
  * @description Core Module to wrap the standard http library for node
  */
 export interface Runtime extends stlServer  {
-	diagnostics	: DiagnosticLog[];
-	onClose		: iExitHandler;
-	_shutdown	: () => Promise<HTTPuppySleep>;
+	pConfig		: HTTPuppyServerOptions; //httpuppyserveroptions
+	diagnostics	: DiagnosticLog[]; //diagnostic log
+	onClose		: iExitHandler; // onclose handler
+	_shutdown	: () => Promise<HTTPuppySleep>; // shutdown handler
+	_vfs		: MountedFile[]; // virtual filesystem to load paths from
 }
 /**
  * @type MountedFile
@@ -97,8 +99,11 @@ export function fromDefaultHTTPConfig(
 	};
 }
 
-export interface HTTPuppyRequest extends IncomingMessage {}
+export interface HTTPuppyRequest extends IncomingMessage {
+	_process:	Runtime;
+}
 export interface HTTPuppyResponse extends ServerResponse {
+	_process:	Runtime;
 	send: (msg: any) => void;
 	json: (msg: any) => void;
 }

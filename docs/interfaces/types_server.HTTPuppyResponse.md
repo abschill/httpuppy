@@ -1,4 +1,4 @@
-[httpuppy - v0.2.3](../README.md) / [Modules](../modules.md) / [types/server](../modules/types_server.md) / HTTPuppyResponse
+[httpuppy - v0.2.4](../README.md) / [Modules](../modules.md) / [types/server](../modules/types_server.md) / HTTPuppyResponse
 
 # Interface: HTTPuppyResponse
 
@@ -14,6 +14,7 @@
 
 ### Properties
 
+- [\_process](types_server.HTTPuppyResponse.md#_process)
 - [chunkedEncoding](types_server.HTTPuppyResponse.md#chunkedencoding)
 - [connection](types_server.HTTPuppyResponse.md#connection)
 - [destroyed](types_server.HTTPuppyResponse.md#destroyed)
@@ -81,6 +82,16 @@
 - [writeProcessing](types_server.HTTPuppyResponse.md#writeprocessing)
 
 ## Properties
+
+### \_process
+
+• **\_process**: [`Runtime`](types_server.Runtime.md)
+
+#### Defined in
+
+[src/types/server/index.ts:106](https://github.com/abschill/httpuppy/blob/779ec15/src/types/server/index.ts#L106)
+
+___
 
 ### chunkedEncoding
 
@@ -1341,7 +1352,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:103](https://github.com/abschill/httpuppy/blob/75d127d/src/types/server/index.ts#L103)
+[src/types/server/index.ts:108](https://github.com/abschill/httpuppy/blob/779ec15/src/types/server/index.ts#L108)
 
 ___
 
@@ -2360,7 +2371,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:102](https://github.com/abschill/httpuppy/blob/75d127d/src/types/server/index.ts#L102)
+[src/types/server/index.ts:107](https://github.com/abschill/httpuppy/blob/779ec15/src/types/server/index.ts#L107)
 
 ___
 

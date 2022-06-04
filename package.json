@@ -1,6 +1,6 @@
 {
   "name": "httpuppy",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "simple abstraction layer for node web servers",
   "main": "lib/index.js",
   "bin": "bin/index.js",
@@ -13,14 +13,14 @@
     "test:watch": "ts-mocha -w test/**/*.test.ts",
     "run-ex": "nodemon examples/static-demo.js"
   },
-  "keywords": [
-	  "http",
-	  "https",
-	  "express",
-	  "web-server",
-	  "server",
-	  "backend",
-	  "proxy"
+"keywords": [
+    "http",
+    "https",
+    "express",
+    "web-server",
+    "server",
+    "backend",
+    "proxy"
   ],
   "author": "abschill",
   "license": "AGPL-3.0",

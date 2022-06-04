@@ -7,6 +7,15 @@ import { readdirSync, readFileSync } from 'fs';
 import { HTTPuppyServer } from '../types';
 import useContentType from './content-type';
 import { UserStaticConfig } from '../types/server';
+import { useStaticURLParser } from './static/url';
+import { applyMiddleware } from './_middleware';
+import { emitWarning } from 'process';
+import { use404 } from './error';
+import {
+	isBufferType,
+	useVirtualStreamReader,
+	useWriter
+} from './writer';
 
 /**
  * @function useCleanPaths
@@ -51,4 +60,54 @@ export function useMountedFS(
 
 	});
 	return { mountedPath, filesMounted };
+}
+
+
+/**
+ *
+ * @param config Configuration for runtime that needs static mount
+ * @param server Runtime to apply static handler mount point & error diagnostic list
+ */
+export function useStaticMount(
+	config		: HTTPuppyServer.HTTPuppyServerOptions,
+	server		: HTTPuppyServer.Runtime
+) {
+	/**
+	 * @todo
+	 * add mount for recursive directory walker initially, then handle request based on the original tree rather than generating a tree for every request and handling off it
+	 */
+	// mount configured FS path to the request handler
+	server.on('request', (
+		req: HTTPuppyServer.HTTPuppyRequest,
+		res: HTTPuppyServer.HTTPuppyResponse
+	) => {
+		try {
+			if(config.middleware && config.middleware.length > 0) applyMiddleware(config, req, res);
+			const pathData = useStaticURLParser(req, config);
+			server.emit('static-get', pathData);
+			if(req.method === 'GET') {
+				if(isBufferType(<string>req.url)) {
+					return useVirtualStreamReader(pathData, res);
+				}
+				else {
+					return useWriter(res, config, {
+						status: 200,
+						statusText: 'ok',
+						type: pathData.contentType,
+						virtualFile: pathData
+					});
+				}
+			}
+		}
+		catch(e: unknown) {
+			emitWarning(JSON.stringify(e));
+			return use404(res);
+		}
+	});
+
+	server.on('error', (e) =>
+		server.diagnostics.push({
+			msg: e.message
+		})
+	);
 }

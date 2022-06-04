@@ -1,4 +1,4 @@
-[httpuppy - v0.2.3](../README.md) / [Modules](../modules.md) / [types/server](../modules/types_server.md) / HTTPuppyRequest
+[httpuppy - v0.2.4](../README.md) / [Modules](../modules.md) / [types/server](../modules/types_server.md) / HTTPuppyRequest
 
 # Interface: HTTPuppyRequest
 
@@ -14,6 +14,7 @@
 
 ### Properties
 
+- [\_process](types_server.HTTPuppyRequest.md#_process)
 - [aborted](types_server.HTTPuppyRequest.md#aborted)
 - [complete](types_server.HTTPuppyRequest.md#complete)
 - [connection](types_server.HTTPuppyRequest.md#connection)
@@ -75,6 +76,16 @@
 - [wrap](types_server.HTTPuppyRequest.md#wrap)
 
 ## Properties
+
+### \_process
+
+• **\_process**: [`Runtime`](types_server.Runtime.md)
+
+#### Defined in
+
+[src/types/server/index.ts:103](https://github.com/abschill/httpuppy/blob/779ec15/src/types/server/index.ts#L103)
+
+___
 
 ### aborted
 
