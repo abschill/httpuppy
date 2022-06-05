@@ -4,7 +4,6 @@
  */
 import YML from 'yaml';
 import { readFileSync } from 'fs';
-import { Options } from 'typedoc';
 /**
  * @function yamlify
  * @description turns yaml filename into valid path map

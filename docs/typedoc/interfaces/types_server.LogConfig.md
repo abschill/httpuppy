@@ -19,7 +19,7 @@
 
 #### Defined in
 
-[src/types/server/logger.ts:4](https://github.com/abschill/httpuppy/blob/8cc241f/src/types/server/logger.ts#L4)
+[src/types/server/logger.ts:4](https://github.com/abschill/httpuppy/blob/392e7f9/src/types/server/logger.ts#L4)
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 #### Defined in
 
-[src/types/server/logger.ts:5](https://github.com/abschill/httpuppy/blob/8cc241f/src/types/server/logger.ts#L5)
+[src/types/server/logger.ts:5](https://github.com/abschill/httpuppy/blob/392e7f9/src/types/server/logger.ts#L5)
