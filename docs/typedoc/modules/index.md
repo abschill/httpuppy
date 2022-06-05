@@ -1,4 +1,4 @@
-[httpuppy - v0.2.8](../README.md) / [Modules](../modules.md) / index
+[httpuppy - v0.2.9](../README.md) / [Modules](../modules.md) / index
 
 # Module: index
 
