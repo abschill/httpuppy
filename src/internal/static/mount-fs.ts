@@ -66,9 +66,7 @@ export function useVirtualRequestHandler(
 	req		: HTTPuppyRequest,
 	res		: HTTPuppyResponse
 ): void {
-	console.log('writing static content..');
 	const virtualFile = useStaticURLParser(req, res);
-	console.log(virtualFile);
 	if(isBufferType(<string>req.url)) {
 		return useVirtualStreamReader(virtualFile, res);
 	}

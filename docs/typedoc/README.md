@@ -1,4 +1,4 @@
-httpuppy - v0.2.7 / [Modules](modules.md)
+httpuppy - v0.2.8 / [Modules](modules.md)
 
 # HTTPuppy
 
@@ -60,4 +60,6 @@ app.listen(3000, () => console.log('listening on 3000'))
 
 [Examples](/examples/)
 
-[Reference](/docs/modules.md)
+[Documentation](/docs/reference/)
+
+[API Reference](/docs/typedoc/modules.md)

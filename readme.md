@@ -59,4 +59,6 @@ app.listen(3000, () => console.log('listening on 3000'))
 
 [Examples](/examples/)
 
-[Reference](/docs/modules.md)
+[Documentation](/docs/reference/)
+
+[API Reference](/docs/typedoc/modules.md)

@@ -1,0 +1,12 @@
+# Changelog
+
+- [0.2.7](https://github.com/abschill/httpuppy/releases/tag/v0.2.7)
+	- fix up vfs internals to set themselves up on init and then query for the existing virtual path upon request
+- [0.2.5](https://github.com/abschill/httpuppy/releases/tag/v0.2.5)
+	- config file support / internals
+- [0.2.2](https://github.com/abschill/httpuppy/releases/tag/v0.2.2)
+	- internal updates / bugfixes
+- [0.2.1](https://github.com/abschill/httpuppy/releases/tag/v0.2.1)
+	- add color logger + update readme examples
+- [0.1.1](https://github.com/abschill/httpuppy/releases/tag/v0.1.1)
+	- initial premise

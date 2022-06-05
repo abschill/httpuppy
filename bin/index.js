@@ -7,16 +7,12 @@ let args = useProcessArgs();
 if(!args || !args.noConfigFile) {
 	args = useAnyConfig(args);
 }
+if(args.port) args.port = parseInt(args.port);
+console.log('Config Loaded:');
+console.log(args);
 
-let pathHref = process.cwd();
-let port = 3000;
-if(args && args.path) {
-	pathHref = args.path;
-}
-
-if(args && args.port) {
-	port = port;
-}
+const pathHref = args.path || process.cwd();
+const port = parseInt(args.port) || 3000;
 
 useServer({
 	coldInit: false,
@@ -24,7 +20,7 @@ useServer({
 	static: {
 		path: pathHref
 	},
-	onMount: () => console.log('listening on 3000')
+	onMount: () => console.log(`listening on ${port}`)
 });
 
 

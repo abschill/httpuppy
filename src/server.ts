@@ -70,7 +70,7 @@ export function useServer(
 	if(conf.log && conf.log.logLevel !== 'silent') useLogger(conf.log, server);
 	server._shutdown = () => shutdown(server);
 	if(!config.coldInit) {
-		server.listen(config.port, config.hostname);
+		server.listen(conf.port, config.hostname);
 	}
 	return server;
 }
