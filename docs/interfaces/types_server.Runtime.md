@@ -1,4 +1,4 @@
-[httpuppy - v0.2.6](../README.md) / [Modules](../modules.md) / [types/server](../modules/types_server.md) / Runtime
+[httpuppy - v0.2.7](../README.md) / [Modules](../modules.md) / [types/server](../modules/types_server.md) / Runtime
 
 # Interface: Runtime
 
@@ -62,11 +62,11 @@
 
 ### \_vfs
 
-• **\_vfs**: [`MountedFile`](../modules/types_server.md#mountedfile)[]
+• **\_vfs**: [`VirtualFileSystem`](../modules/types_server.md#virtualfilesystem)
 
 #### Defined in
 
-[src/types/server/index.ts:25](https://github.com/abschill/httpuppy/blob/d4a7c7e/src/types/server/index.ts#L25)
+[src/types/server/index.ts:33](https://github.com/abschill/httpuppy/blob/183d0aa/src/types/server/index.ts#L33)
 
 ___
 
@@ -90,7 +90,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:22](https://github.com/abschill/httpuppy/blob/d4a7c7e/src/types/server/index.ts#L22)
+[src/types/server/index.ts:30](https://github.com/abschill/httpuppy/blob/183d0aa/src/types/server/index.ts#L30)
 
 ___
 
@@ -240,7 +240,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:23](https://github.com/abschill/httpuppy/blob/d4a7c7e/src/types/server/index.ts#L23)
+[src/types/server/index.ts:31](https://github.com/abschill/httpuppy/blob/183d0aa/src/types/server/index.ts#L31)
 
 ___
 
@@ -250,7 +250,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:21](https://github.com/abschill/httpuppy/blob/d4a7c7e/src/types/server/index.ts#L21)
+[src/types/server/index.ts:29](https://github.com/abschill/httpuppy/blob/183d0aa/src/types/server/index.ts#L29)
 
 ___
 
@@ -314,7 +314,7 @@ node_modules/@types/node/http.d.ts:209
 
 #### Defined in
 
-[src/types/server/index.ts:24](https://github.com/abschill/httpuppy/blob/d4a7c7e/src/types/server/index.ts#L24)
+[src/types/server/index.ts:32](https://github.com/abschill/httpuppy/blob/183d0aa/src/types/server/index.ts#L32)
 
 ___
 

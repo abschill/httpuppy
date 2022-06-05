@@ -1,5 +1,5 @@
-import * as iTypes from '../../types';
-import { useMountedFS } from '../mount-fs';
+import { HTTPuppyServer } from '../../types';
+import { useMountedFS } from './mount-fs';
 
 /**
  * @function useStaticURLParser
@@ -9,13 +9,12 @@ import { useMountedFS } from '../mount-fs';
  * @returns the mounted file to serve based on the given request information
  */
 export function useStaticURLParser (
-	req		: iTypes.HTTPuppyServer.HTTPuppyRequest,
-	config	: iTypes.HTTPuppyServer.HTTPuppyServerOptions
-): iTypes.HTTPuppyServer.MountedFile {
-	// mount the local fs (possibly move this into the initializer, but for now we want to just refresh the fs per request)
-	const iFS = useMountedFS(config);
+	req		: HTTPuppyServer.HTTPuppyRequest,
+	res		: HTTPuppyServer.HTTPuppyResponse
+): HTTPuppyServer.VirtualWriteableFile {
+	const iFS = req._process._vfs;
 	// filter the mounted filesystem based on the request url
-	const match = iFS.filesMounted.filter(f => f.hrefs.includes(req.url ?? '')).shift();
+	const match = iFS.mountedFiles.filter(f => f.hrefs.includes(req.url ?? '')).shift();
 	if(match) {
 		return {
 			reqUrl: req.url ?? '',
@@ -23,6 +22,6 @@ export function useStaticURLParser (
 		};
 	}
 	else {
-		return <iTypes.HTTPuppyServer.MountedFile>{};
+		return <HTTPuppyServer.VirtualWriteableFile>{};
 	}
 }

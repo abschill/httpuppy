@@ -1,4 +1,4 @@
-[httpuppy - v0.2.6](../README.md) / [Modules](../modules.md) / [types/server](../modules/types_server.md) / HTTPuppyServerOptions
+[httpuppy - v0.2.7](../README.md) / [Modules](../modules.md) / [types/server](../modules/types_server.md) / HTTPuppyServerOptions
 
 # Interface: HTTPuppyServerOptions
 
@@ -93,7 +93,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:75](https://github.com/abschill/httpuppy/blob/d4a7c7e/src/types/server/index.ts#L75)
+[src/types/server/index.ts:63](https://github.com/abschill/httpuppy/blob/183d0aa/src/types/server/index.ts#L63)
 
 ___
 
@@ -103,7 +103,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:66](https://github.com/abschill/httpuppy/blob/d4a7c7e/src/types/server/index.ts#L66)
+[src/types/server/index.ts:54](https://github.com/abschill/httpuppy/blob/183d0aa/src/types/server/index.ts#L54)
 
 ___
 
@@ -113,7 +113,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:76](https://github.com/abschill/httpuppy/blob/d4a7c7e/src/types/server/index.ts#L76)
+[src/types/server/index.ts:64](https://github.com/abschill/httpuppy/blob/183d0aa/src/types/server/index.ts#L64)
 
 ___
 
@@ -123,7 +123,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:67](https://github.com/abschill/httpuppy/blob/d4a7c7e/src/types/server/index.ts#L67)
+[src/types/server/index.ts:55](https://github.com/abschill/httpuppy/blob/183d0aa/src/types/server/index.ts#L55)
 
 ___
 
@@ -153,7 +153,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:70](https://github.com/abschill/httpuppy/blob/d4a7c7e/src/types/server/index.ts#L70)
+[src/types/server/index.ts:58](https://github.com/abschill/httpuppy/blob/183d0aa/src/types/server/index.ts#L58)
 
 ___
 
@@ -183,7 +183,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:71](https://github.com/abschill/httpuppy/blob/d4a7c7e/src/types/server/index.ts#L71)
+[src/types/server/index.ts:59](https://github.com/abschill/httpuppy/blob/183d0aa/src/types/server/index.ts#L59)
 
 ___
 
@@ -193,7 +193,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:72](https://github.com/abschill/httpuppy/blob/d4a7c7e/src/types/server/index.ts#L72)
+[src/types/server/index.ts:60](https://github.com/abschill/httpuppy/blob/183d0aa/src/types/server/index.ts#L60)
 
 ___
 
@@ -203,7 +203,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:74](https://github.com/abschill/httpuppy/blob/d4a7c7e/src/types/server/index.ts#L74)
+[src/types/server/index.ts:62](https://github.com/abschill/httpuppy/blob/183d0aa/src/types/server/index.ts#L62)
 
 ___
 
@@ -213,7 +213,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:73](https://github.com/abschill/httpuppy/blob/d4a7c7e/src/types/server/index.ts#L73)
+[src/types/server/index.ts:61](https://github.com/abschill/httpuppy/blob/183d0aa/src/types/server/index.ts#L61)
 
 ___
 
@@ -223,7 +223,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:65](https://github.com/abschill/httpuppy/blob/d4a7c7e/src/types/server/index.ts#L65)
+[src/types/server/index.ts:53](https://github.com/abschill/httpuppy/blob/183d0aa/src/types/server/index.ts#L53)
 
 ___
 
@@ -233,7 +233,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:77](https://github.com/abschill/httpuppy/blob/d4a7c7e/src/types/server/index.ts#L77)
+[src/types/server/index.ts:65](https://github.com/abschill/httpuppy/blob/183d0aa/src/types/server/index.ts#L65)
 
 ___
 
@@ -251,7 +251,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:78](https://github.com/abschill/httpuppy/blob/d4a7c7e/src/types/server/index.ts#L78)
+[src/types/server/index.ts:66](https://github.com/abschill/httpuppy/blob/183d0aa/src/types/server/index.ts#L66)
 
 ___
 
@@ -261,7 +261,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:68](https://github.com/abschill/httpuppy/blob/d4a7c7e/src/types/server/index.ts#L68)
+[src/types/server/index.ts:56](https://github.com/abschill/httpuppy/blob/183d0aa/src/types/server/index.ts#L56)
 
 ___
 
@@ -271,4 +271,4 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:69](https://github.com/abschill/httpuppy/blob/d4a7c7e/src/types/server/index.ts#L69)
+[src/types/server/index.ts:57](https://github.com/abschill/httpuppy/blob/183d0aa/src/types/server/index.ts#L57)

@@ -27,7 +27,7 @@ export function isBufferType(
  * @returns
  */
 export function useVirtualStreamReader(
-	pathData	: HTTPuppyServer.MountedFile,
+	pathData	: HTTPuppyServer.VirtualWriteableFile,
 	res			: HTTPuppyServer.HTTPuppyResponse
 ): void {
 	if(!res.writable) {

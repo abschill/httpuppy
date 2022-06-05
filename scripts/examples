@@ -1,1 +1,2 @@
+#! /bin/bash
 node examples/static-demo.js

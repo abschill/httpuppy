@@ -2,6 +2,10 @@ import { IncomingMessage, Server as stlServer, ServerResponse } from 'http';
 import { ServerOptions as stlServerOptions } from 'http';
 import { LogConfig } from './logger';
 import {
+	VirtualFileSystem,
+	UserStaticConfig
+} from './vfs';
+import {
 	iExitHandler,
 	UserMiddlewareOption,
 	iHandlerType,
@@ -9,6 +13,10 @@ import {
 	defaultCacheSettings
 } from './middleware';
 
+/**
+ * @type DiagnosticLog
+ * @description Runtime Diagnostic log to store for debug purposes
+ */
 export type DiagnosticLog = {
 	msg			: string;
 }
@@ -22,30 +30,10 @@ export interface Runtime extends stlServer  {
 	diagnostics	: DiagnosticLog[]; //diagnostic log
 	onClose		: iExitHandler; // onclose handler
 	_shutdown	: () => Promise<HTTPuppySleep>; // shutdown handler
-	_vfs		: MountedFile[]; // virtual filesystem to load paths from
-}
-/**
- * @type MountedFile
- * @description A File Mounted within a virtual filesystem to be served at a given static href
- */
-export type MountedFile = {
-	reqUrl		: string;
-	symLink		?: string;
-	contentType	: any | any[];
-	fileName	: string;
-	hrefs		: string[];
+	_vfs		: VirtualFileSystem; // virtual filesystem to load paths from
 }
 
 export type HTTPuppySleep = () => Promise<void>;
-
-export type UserStaticConfig = {
-	href 		?: string; // prefix path to access the directory on router
-	path 		?: string; // path on filesystem to reflect
-	mimeType 	?: string; // default content type
-	indexType 	?: string; // file to use as the index of a directory (default: index.html)
-};
-
-
 
 /**
  * @interface HTTPuppyServerOptions
@@ -113,7 +101,7 @@ export declare function HTTPuppyCallback(req: HTTPuppyRequest, res: HTTPuppyResp
 
 export declare function HTTPuppyRouterMethod(url: string, cb: typeof HTTPuppyCallback): typeof HTTPuppyCallback | void;
 export interface HTTPuppyRouter {
-	baseUrl		: string;
+	url		: string;
 	get			: typeof HTTPuppyRouterMethod;
 	head		: typeof HTTPuppyRouterMethod;
 	post		: typeof HTTPuppyRouterMethod;
@@ -125,3 +113,4 @@ export interface HTTPuppyRouter {
 export * from './middleware';
 export * from './writer';
 export * from './logger';
+export * from './vfs';
