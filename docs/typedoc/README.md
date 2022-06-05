@@ -2,7 +2,7 @@ httpuppy - v0.2.9 / [Modules](modules.md)
 
 # HTTPuppy
 
-![](/logo.png)
+![](/.assets/logo.png)
 
 A simple abstraction layer for node web servers
 
