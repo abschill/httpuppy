@@ -31,19 +31,13 @@ export function useServer(
 ): HTTPuppyServer.Runtime {
 	usePort(conf.port ?? 80);
 	const diagnostics: HTTPuppyServer.DiagnosticLog[] = [];
-	let config;
-	if(conf?.noConfigFile) {
-		config = useConfig(conf, diagnostics);
-	} else {
-		config = useAnyConfig(useConfig(conf, diagnostics));
-	}
-
+	const config = useConfig(conf, diagnostics);
 	let _server;
 	if(!conf.secure) {
-		_server = stlCreateServer(config.handler);
+		_server = stlCreateServer(config?.handler);
 	}
 	else {
-		_server = stdCreateSecureServer(<HTTPSOptions>conf.secureContext, config.handler);
+		_server = stdCreateSecureServer(<HTTPSOptions>conf.secureContext, config?.handler);
 	}
 
 	const server = _useServer(config, <HTTPuppyServer.Runtime>_server, diagnostics);

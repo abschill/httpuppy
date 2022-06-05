@@ -30,3 +30,5 @@ const app = useServer({
 	port: 3000
 });
 ```
+
+you can have the cli ignore any detected config file by passing the `--noConfigFile` option

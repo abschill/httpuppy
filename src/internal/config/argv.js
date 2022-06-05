@@ -1,52 +1,86 @@
 /**
  * @internal
  */
-import { readFileSync } from 'fs';
 import { resolve } from 'path';
+import { prompt } from 'inquirer';
 import { useProcessArgs } from '../fmt/_argv';
+import {
+	CONFIG_FILE_OPTIONS,
+	useINIToJSON,
+	useJSON,
+	useYAMLToJSON
+} from './conf-map';
+import {
+	readFileSync,
+	readdirSync
+} from 'fs';
 
-function useForceCheck(p) {
-	try {
-		return useINI(readFileSync(resolve(process.cwd(), p))?.toString());
-	}
-	catch(e) {
-		console.warn('httpuppy config file missing: \n', `${process.cwd()}/${p}`);
-		console.warn('create an http.puppy file in the process directory or pass the --noConfigFile option in the cli to ignore this warning');
-		return {};
-	}
+export function checkNumConfigs(p) {
+	const fileList = readdirSync(p);
+	const matches = CONFIG_FILE_OPTIONS.filter(fileOpt => fileList.includes(fileOpt.fileName));
+	return matches.length;
 }
 
+export async function useMultiConfigPrompt(p) {
+	const fileList = readdirSync(p);
+	const matches = CONFIG_FILE_OPTIONS.filter(fileOpt => fileList.includes(fileOpt.fileName));
+	const { fileSelected } = await prompt([
+		{
+			type: 'list',
+			name: 'fileSelected',
+			message: 'choose config found in root',
+			choices: matches.map(match => match.fileName)
+		}
+	]);
+	return CONFIG_FILE_OPTIONS.filter(opt => opt.fileName === fileSelected).shift();
+}
 
-export function useAnyConfig(inline) {
+export async function useCLIConfigFinder() {
+	const cPath = process.argv[2] || process.cwd();
+	if(checkNumConfigs(cPath) > 1) {
+		const foundMatch = await useMultiConfigPrompt(cPath);
+		switch(foundMatch.fileType) {
+			case 'yml':
+				const yml = useYAMLToJSON(resolve(process.cwd(), foundMatch.fileName));
+				return {...yml};
+			case 'json':
+				const json = useJSON(resolve(process.cwd(), foundMatch.fileName));
+				return {...json};
+			default:
+				const ini = useINIToJSON(readFileSync(resolve(process.cwd(), foundMatch.fileName))?.toString());
+				return {...ini};
+		}
+	}
+	else return useValidConfigOption(cPath);
+
+}
+
+export async function useValidConfigOption(p) {
+	const fileList = readdirSync(p);
+	const matches = CONFIG_FILE_OPTIONS.filter(fileOpt => fileList.includes(fileOpt.fileName));
+	return matches?.shift() ?? null;
+}
+
+export function useAnyConfig(base) {
 	const args = useProcessArgs();
 	try {
-		const defaultOption = useForceCheck('http.puppy');
-		const { config = args } = defaultOption;
-
-		const out = {...args, ...config, ...inline};
-		return out;
+		const foundMatch = useValidConfigOption(args.path ?? base ?? '');
+		if(!foundMatch) {
+			return {...args};
+		}
+		switch(foundMatch.fileType) {
+			case 'yml':
+				const yml = useYAMLToJSON(resolve(process.cwd(), foundMatch.fileName));
+				return {...args, yml};
+			case 'json':
+				const json = useJSON(resolve(process.cwd(), foundMatch.fileName));
+				return {...args, ...json};
+			default:
+				const ini = useINIToJSON(readFileSync(resolve(process.cwd(), foundMatch.fileName))?.toString());
+				return {...args, ...ini}
+		}
 	}
 	catch(_) {
 		return args;
 	}
-}
-
-
-
-export function useINI(str) {
-	const INI_REG_GROUP = /^\s*\[(.+?)\]\s*$/;
-	const INI_REG_PROP = /^\s*([^#].*?)\s*=\s*(.*?)\s*$/;
-	const object = {};
-	const lines = str?.split('\n');
-	let group;
-	let match;
-
-	for(const i = 0, len = lines?.length; i !== len; i++) {
-		if(match = lines[i]?.match(INI_REG_GROUP))
-			object[match[1]] = group = object[match[1]] || {};
-		else if(group && (match = lines[i]?.match(INI_REG_PROP)))
-			group[match[1]] = match[2];
-	}
-
-	return object;
 }

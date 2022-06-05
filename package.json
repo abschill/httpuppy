@@ -1,6 +1,6 @@
 {
   "name": "httpuppy",
-  "version": "0.2.9",
+  "version": "0.2.10",
   "description": "simple abstraction layer for node web servers",
   "main": "lib/index.js",
   "bin": "bin/index.js",
@@ -13,7 +13,7 @@
     "test:watch": "ts-mocha -w test/**/*.test.ts",
     "run-ex": "nodemon examples/static-demo.js"
   },
-"keywords": [
+  "keywords": [
     "http",
     "https",
     "express",
@@ -40,13 +40,15 @@
   },
   "dependencies": {
     "http-graceful-shutdown": "^3.1.7",
+    "inquirer": "^8.2.4",
     "mime-types": "^2.1.35",
     "tcp-port-used": "^1.0.2",
-    "typedoc": "^0.22.15"
+    "typedoc": "^0.22.15",
+    "yaml": "^2.1.1"
   },
   "repository": {
-	  "type": "git",
-	  "url": "https://github.com/abschill/httpuppy"
+    "type": "git",
+    "url": "https://github.com/abschill/httpuppy"
   },
   "homepage": "https://github.com/abschill/httpuppy"
 }
