@@ -39,6 +39,7 @@ describe('basic coldinit setup', function() {
 		expect(router).toHaveProperty('patch');
 		expect(router).toHaveProperty('delete');
 	});
+	server0._shutdown();
 });
 
 describe('api doesnt conflict with static pages', function() {
@@ -50,7 +51,7 @@ describe('api doesnt conflict with static pages', function() {
 		});
 		const router = useRouter(server1);
 		router.get('/api/v1', (req, res) => res.send(Test_String));
-		server1.listen(3000);
+		server1.listen(3001);
 		Promise.resolve(get('http://localhost:3000/api/v1', (res) => {
 			res.on('data', (chunk) => {
 				const str = chunk.toString();
