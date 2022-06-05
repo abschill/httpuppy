@@ -112,5 +112,6 @@ export function useJSON(p) {
 }
 
 export function useYAMLToJSON(p) {
-	return YML.parse(readFileSync(p, 'utf-8'));
+	const { config } = YML.parse(readFileSync(p, 'utf-8'));
+	return config;
 }

@@ -1,4 +1,0 @@
-config:
- port: 3000
- static:
-  path: /examples/files

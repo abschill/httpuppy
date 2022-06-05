@@ -2,7 +2,7 @@
  * @internal mount-fs
  * @description virtual file system mount hooks
  */
-import { join, resolve } from 'path';
+import { isAbsolute, join, resolve } from 'path';
 import { readdirSync, readFileSync } from 'fs';
 import { HTTPuppyServer } from '../../types';
 import useContentType from '../content-type';
@@ -42,7 +42,6 @@ function useCleanPaths(
 export function useMountedFS(
 	server : HTTPuppyServer.Runtime
 ): VirtualFileSystem {
-	// mountedPath is the path to retrieve filesMounted from
 	const mountedPath = join(server.pConfig.static?.path ?? '');
 	// filesMounted is the accessible file tree that can be used against the upcoming handlers
 	const mountedFiles = readdirSync(mountedPath).map(file => {

@@ -52,7 +52,7 @@ describe('api doesnt conflict with static pages', function() {
 		const router = useRouter(server1);
 		router.get('/api/v1', (req, res) => res.send(Test_String));
 		server1.listen(3001);
-		Promise.resolve(get('http://localhost:3000/api/v1', (res) => {
+		Promise.resolve(get('http://localhost:3001/api/v1', (res) => {
 			res.on('data', (chunk) => {
 				const str = chunk.toString();
 				expect(str).toEqual(Test_String);

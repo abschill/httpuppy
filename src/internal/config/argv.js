@@ -35,23 +35,33 @@ export async function useMultiConfigPrompt(p) {
 	return CONFIG_FILE_OPTIONS.filter(opt => opt.fileName === fileSelected).shift();
 }
 
+function _switchConfigType(foundMatch) {
+	switch(foundMatch.fileType) {
+		case 'ini':
+			const ini = useINIToJSON(readFileSync(resolve(process.cwd(), foundMatch.fileName))?.toString());
+			return {...ini};
+		case 'yml':
+			const yml = useYAMLToJSON(resolve(process.cwd(), foundMatch.fileName));
+			return {...yml};
+		case 'json':
+			const json = useJSON(resolve(process.cwd(), foundMatch.fileName));
+			return {...json};
+		default:
+			return {};
+	}
+}
+
 export async function useCLIConfigFinder() {
 	const cPath = process.argv[2] || process.cwd();
-	if(checkNumConfigs(cPath) > 1) {
+	const configs = checkNumConfigs(cPath)
+	console.log(cPath);
+	if(configs >= 1) {
 		const foundMatch = await useMultiConfigPrompt(cPath);
-		switch(foundMatch.fileType) {
-			case 'yml':
-				const yml = useYAMLToJSON(resolve(process.cwd(), foundMatch.fileName));
-				return {...yml};
-			case 'json':
-				const json = useJSON(resolve(process.cwd(), foundMatch.fileName));
-				return {...json};
-			default:
-				const ini = useINIToJSON(readFileSync(resolve(process.cwd(), foundMatch.fileName))?.toString());
-				return {...ini};
-		}
+		return _switchConfigType(foundMatch);
 	}
-	else return useValidConfigOption(cPath);
+	else {
+		return {};
+	}
 
 }
 

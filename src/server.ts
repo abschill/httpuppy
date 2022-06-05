@@ -12,7 +12,7 @@ import { shutdown } from './internal/_shutdown';
 import { useMountedFS, useVirtualRequestHandler } from './internal/static/mount-fs';
 import { useLogger } from './internal/logger';
 import { ServerOptions as HTTPSOptions } from 'https';
-import { useAnyConfig } from './internal/config/argv';
+import { isAbsolute, join } from 'path';
 /**
  * @function useServer
  * @example
