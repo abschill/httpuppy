@@ -13,24 +13,6 @@ For example
 npx httpuppy
 ```
 
-is equal to having this in your config
-
-```ini
-[config]
-port = 3000
-```
-
-which is equal to using this configuration inline for the library
-
-
-```js
-import { useServer } from 'httpuppy'
-
-const app = useServer({
-	port: 3000
-});
-```
-
 you can set a custom path for the config file by adding argument in the format `npx httpuppy <path>`
 
 
