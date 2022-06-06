@@ -32,19 +32,24 @@ export function useServer(
 	usePort(conf.port ?? 80);
 	const diagnostics: HTTPuppyServer.DiagnosticLog[] = [];
 	const config = useConfig(conf, diagnostics);
+	// we are yet to narrow whether or not to create a secure or regular http server
 	let _server;
+	// handle based on config
 	if(!conf.secure) {
 		_server = stlCreateServer(config?.handler);
 	}
 	else {
 		_server = stdCreateSecureServer(<HTTPSOptions>conf.secureContext, config?.handler);
 	}
-
+	// _useServer is an internal hook for validating the init process of the server itself and setting diagnostics accordingly if anything goes wrong
 	const server = _useServer(config, <HTTPuppyServer.Runtime>_server, diagnostics);
+	// set process config to the hooked config
 	server.pConfig = config;
+	// if static properties exist, mount the vfs based on them
 	if(config.static) {
 		server._vfs = useMountedFS(server);
 	}
+	// set up handler to route based on static config
 	server.on('request', (
 		req: HTTPuppyServer.HTTPuppyRequest,
 		res: HTTPuppyServer.HTTPuppyResponse
@@ -60,9 +65,12 @@ export function useServer(
 			// todo check for api path
 		}
 	});
-
+	// hook in logger module
 	if(conf.log && conf.log.logLevel !== 'silent') useLogger(conf.log, server);
+	// bind safe shutdown to the server for callability on the end user side
 	server._shutdown = () => shutdown(server);
+
+	// if not conld init, auto set listening server before return
 	if(!config.coldInit) {
 		server.listen(conf.port, config.hostname);
 	}

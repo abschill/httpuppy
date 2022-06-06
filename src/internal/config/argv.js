@@ -3,7 +3,6 @@
  */
 import { resolve } from 'path';
 import { prompt } from 'inquirer';
-import { useProcessArgs } from '../fmt/_argv';
 import {
 	CONFIG_FILE_OPTIONS,
 	useINIToJSON,
@@ -54,6 +53,7 @@ function _switchConfigType(foundMatch) {
 export async function useCLIConfigFinder() {
 	const cPath = process.argv[2] || process.cwd();
 	const configs = checkNumConfigs(cPath)
+	console.log('checking for config in path:');
 	console.log(cPath);
 	if(configs >= 1) {
 		const foundMatch = await useMultiConfigPrompt(cPath);
@@ -69,28 +69,4 @@ export async function useValidConfigOption(p) {
 	const fileList = readdirSync(p);
 	const matches = CONFIG_FILE_OPTIONS.filter(fileOpt => fileList.includes(fileOpt.fileName));
 	return matches?.shift() ?? null;
-}
-
-export function useAnyConfig(base) {
-	const args = useProcessArgs();
-	try {
-		const foundMatch = useValidConfigOption(args.path ?? base ?? '');
-		if(!foundMatch) {
-			return {...args};
-		}
-		switch(foundMatch.fileType) {
-			case 'yml':
-				const yml = useYAMLToJSON(resolve(process.cwd(), foundMatch.fileName));
-				return {...args, yml};
-			case 'json':
-				const json = useJSON(resolve(process.cwd(), foundMatch.fileName));
-				return {...args, ...json};
-			default:
-				const ini = useINIToJSON(readFileSync(resolve(process.cwd(), foundMatch.fileName))?.toString());
-				return {...args, ...ini}
-		}
-	}
-	catch(_) {
-		return args;
-	}
 }

@@ -1,5 +1,6 @@
 # Changelog
-
+- [0.2.13]()
+	- fix up cli file options & remove bulk from initial modules. also update documentation, remove inline config options besides custom config path.
 - [0.2.7](https://github.com/abschill/httpuppy/releases/tag/v0.2.7)
 	- fix up vfs internals to set themselves up on init and then query for the existing virtual path upon request
 - [0.2.5](https://github.com/abschill/httpuppy/releases/tag/v0.2.5)

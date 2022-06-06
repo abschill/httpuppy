@@ -1,4 +1,4 @@
-httpuppy - v0.2.12 / [Modules](modules.md)
+httpuppy - v0.2.13 / [Modules](modules.md)
 
 # HTTPuppy
 
@@ -17,14 +17,11 @@ yarn add httpuppy
 ```
 
 ## Command Line Use
-
-```cmd
-npx httpuppy --port=3000 --path=path/to/files
+```
+npx httpuppy
 ```
 
-spin up a server at `<cwd>/path/to/files`
-
-you can set up a config file instead of writing your arguments inline. [example here](/http.puppy)
+[example config file](/http.puppy)
 
 ## Programmatic Usage
 

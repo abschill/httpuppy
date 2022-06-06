@@ -3,9 +3,10 @@
  */
 import { HTTPuppyServer } from '../types';
 import { createReadStream } from 'fs';
-import useContentType from './content-type';
-import { useHeaders } from '../header';
+import { useContentType, useHeaders } from './_middleware';
 import { bufferTypes } from './include/_constants';
+
+import { _useContentSignatures } from './_middleware';
 
 /**
  * @internal isBufferType

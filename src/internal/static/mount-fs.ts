@@ -2,10 +2,10 @@
  * @internal mount-fs
  * @description virtual file system mount hooks
  */
-import { isAbsolute, join, resolve } from 'path';
+import { join, resolve } from 'path';
 import { readdirSync, readFileSync } from 'fs';
 import { HTTPuppyServer } from '../../types';
-import useContentType from '../content-type';
+import { useContentType } from '../_middleware';
 import { HTTPuppyRequest, HTTPuppyResponse, MountedFile, UserStaticConfig, VirtualFileSystem } from '../../types/server';
 import { useStaticURLParser } from './url';
 import {
