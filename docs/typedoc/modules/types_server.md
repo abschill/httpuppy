@@ -1,4 +1,4 @@
-[httpuppy - v0.2.13](../README.md) / [Modules](../modules.md) / types/server
+[httpuppy - v0.2.14](../README.md) / [Modules](../modules.md) / types/server
 
 # Module: types/server
 
@@ -97,7 +97,7 @@
 
 #### Defined in
 
-[src/types/server/middleware.ts:20](https://github.com/abschill/httpuppy/blob/a4193fb/src/types/server/middleware.ts#L20)
+[src/types/server/middleware.ts:20](https://github.com/abschill/httpuppy/blob/901d68a/src/types/server/middleware.ts#L20)
 
 ___
 
@@ -115,7 +115,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:20](https://github.com/abschill/httpuppy/blob/a4193fb/src/types/server/index.ts#L20)
+[src/types/server/index.ts:20](https://github.com/abschill/httpuppy/blob/901d68a/src/types/server/index.ts#L20)
 
 ___
 
@@ -133,7 +133,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:36](https://github.com/abschill/httpuppy/blob/a4193fb/src/types/server/index.ts#L36)
+[src/types/server/index.ts:36](https://github.com/abschill/httpuppy/blob/901d68a/src/types/server/index.ts#L36)
 
 ___
 
@@ -152,7 +152,7 @@ ___
 
 #### Defined in
 
-[src/types/server/writer.ts:3](https://github.com/abschill/httpuppy/blob/a4193fb/src/types/server/writer.ts#L3)
+[src/types/server/writer.ts:3](https://github.com/abschill/httpuppy/blob/901d68a/src/types/server/writer.ts#L3)
 
 ___
 
@@ -162,7 +162,7 @@ ___
 
 #### Defined in
 
-[src/types/server/logger.ts:1](https://github.com/abschill/httpuppy/blob/a4193fb/src/types/server/logger.ts#L1)
+[src/types/server/logger.ts:1](https://github.com/abschill/httpuppy/blob/901d68a/src/types/server/logger.ts#L1)
 
 ___
 
@@ -182,7 +182,7 @@ ___
 
 #### Defined in
 
-[src/types/server/vfs.ts:15](https://github.com/abschill/httpuppy/blob/a4193fb/src/types/server/vfs.ts#L15)
+[src/types/server/vfs.ts:15](https://github.com/abschill/httpuppy/blob/901d68a/src/types/server/vfs.ts#L15)
 
 ___
 
@@ -199,7 +199,7 @@ ___
 
 #### Defined in
 
-[src/types/server/middleware.ts:54](https://github.com/abschill/httpuppy/blob/a4193fb/src/types/server/middleware.ts#L54)
+[src/types/server/middleware.ts:54](https://github.com/abschill/httpuppy/blob/901d68a/src/types/server/middleware.ts#L54)
 
 ___
 
@@ -218,7 +218,7 @@ ___
 
 #### Defined in
 
-[src/types/server/vfs.ts:23](https://github.com/abschill/httpuppy/blob/a4193fb/src/types/server/vfs.ts#L23)
+[src/types/server/vfs.ts:23](https://github.com/abschill/httpuppy/blob/901d68a/src/types/server/vfs.ts#L23)
 
 ___
 
@@ -235,7 +235,7 @@ ___
 
 #### Defined in
 
-[src/types/server/vfs.ts:30](https://github.com/abschill/httpuppy/blob/a4193fb/src/types/server/vfs.ts#L30)
+[src/types/server/vfs.ts:30](https://github.com/abschill/httpuppy/blob/901d68a/src/types/server/vfs.ts#L30)
 
 ___
 
@@ -257,7 +257,7 @@ ___
 
 #### Defined in
 
-[src/types/server/vfs.ts:7](https://github.com/abschill/httpuppy/blob/a4193fb/src/types/server/vfs.ts#L7)
+[src/types/server/vfs.ts:7](https://github.com/abschill/httpuppy/blob/901d68a/src/types/server/vfs.ts#L7)
 
 ___
 
@@ -267,7 +267,7 @@ ___
 
 #### Defined in
 
-[src/types/server/middleware.ts:52](https://github.com/abschill/httpuppy/blob/a4193fb/src/types/server/middleware.ts#L52)
+[src/types/server/middleware.ts:52](https://github.com/abschill/httpuppy/blob/901d68a/src/types/server/middleware.ts#L52)
 
 ___
 
@@ -292,7 +292,7 @@ ___
 
 #### Defined in
 
-[src/types/server/middleware.ts:53](https://github.com/abschill/httpuppy/blob/a4193fb/src/types/server/middleware.ts#L53)
+[src/types/server/middleware.ts:53](https://github.com/abschill/httpuppy/blob/901d68a/src/types/server/middleware.ts#L53)
 
 ## Variables
 
@@ -302,7 +302,7 @@ ___
 
 #### Defined in
 
-[src/types/server/middleware.ts:36](https://github.com/abschill/httpuppy/blob/a4193fb/src/types/server/middleware.ts#L36)
+[src/types/server/middleware.ts:36](https://github.com/abschill/httpuppy/blob/901d68a/src/types/server/middleware.ts#L36)
 
 ___
 
@@ -312,7 +312,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:73](https://github.com/abschill/httpuppy/blob/a4193fb/src/types/server/index.ts#L73)
+[src/types/server/index.ts:73](https://github.com/abschill/httpuppy/blob/901d68a/src/types/server/index.ts#L73)
 
 ## Functions
 
@@ -333,7 +333,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:100](https://github.com/abschill/httpuppy/blob/a4193fb/src/types/server/index.ts#L100)
+[src/types/server/index.ts:100](https://github.com/abschill/httpuppy/blob/901d68a/src/types/server/index.ts#L100)
 
 ___
 
@@ -354,7 +354,7 @@ typeof [`HTTPuppyCallback`](types_server.md#httpuppycallback) \| `void`
 
 #### Defined in
 
-[src/types/server/index.ts:102](https://github.com/abschill/httpuppy/blob/a4193fb/src/types/server/index.ts#L102)
+[src/types/server/index.ts:102](https://github.com/abschill/httpuppy/blob/901d68a/src/types/server/index.ts#L102)
 
 ___
 
@@ -374,7 +374,7 @@ ___
 
 #### Defined in
 
-[src/types/server/middleware.ts:43](https://github.com/abschill/httpuppy/blob/a4193fb/src/types/server/middleware.ts#L43)
+[src/types/server/middleware.ts:43](https://github.com/abschill/httpuppy/blob/901d68a/src/types/server/middleware.ts#L43)
 
 ___
 
@@ -394,7 +394,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:82](https://github.com/abschill/httpuppy/blob/a4193fb/src/types/server/index.ts#L82)
+[src/types/server/index.ts:82](https://github.com/abschill/httpuppy/blob/901d68a/src/types/server/index.ts#L82)
 
 ___
 
@@ -408,4 +408,4 @@ ___
 
 #### Defined in
 
-[src/types/server/logger.ts:8](https://github.com/abschill/httpuppy/blob/a4193fb/src/types/server/logger.ts#L8)
+[src/types/server/logger.ts:8](https://github.com/abschill/httpuppy/blob/901d68a/src/types/server/logger.ts#L8)
