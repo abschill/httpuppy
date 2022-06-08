@@ -1,11 +1,11 @@
 /**
  * @internal
  */
-import { HTTPuppyServer } from '../types';
 import {
 	LogConfig,
-	useDefaultLogConfig
-} from '../types/server';
+	useDefaultLogConfig,
+	Runtime
+} from '../types';
 const { log } = console;
 import { _useColorTag } from './fmt/_color';
 
@@ -21,7 +21,7 @@ export function useLogConfig(
 
 export function useLogger(
 	config	: LogConfig,
-	server	: HTTPuppyServer.Runtime
+	server	: Runtime
 ) {
 	const prefix = config.logPrefix || 'httpuppy';
 	if(config.logLevel === 'base') {

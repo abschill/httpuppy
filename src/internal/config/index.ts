@@ -1,7 +1,10 @@
 /**
  * @internal
  */
-import { HTTPuppyServer } from '../../types';
+import {
+	DiagnosticLog,
+	HTTPuppyServerOptions
+ } from '../../types';
 import { emitWarning } from 'process';
 
 /**
@@ -12,9 +15,9 @@ import { emitWarning } from 'process';
  * @returns cleaned user config
  */
 export function useConfig(
-	conf		: HTTPuppyServer.HTTPuppyServerOptions,
-	diagnostics : HTTPuppyServer.DiagnosticLog[]
-): HTTPuppyServer.HTTPuppyServerOptions {
+	conf		: HTTPuppyServerOptions,
+	diagnostics : DiagnosticLog[]
+): HTTPuppyServerOptions {
     const config = {...conf};
     if(!config.port) config.port = 80; //default http port
 
@@ -35,6 +38,9 @@ export function useConfig(
         diagnostics.push({msg});
     }
 
-    return <HTTPuppyServer.HTTPuppyServerOptions>config;
+    return <HTTPuppyServerOptions>config;
 }
 
+export * from './argv';
+export * from './conf-map';
+export * from './startup';

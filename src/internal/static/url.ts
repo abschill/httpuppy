@@ -1,6 +1,8 @@
-import { HTTPuppyServer } from '../../types';
-import { useMountedFS } from './mount-fs';
-
+import {
+	HTTPuppyRequest,
+	HTTPuppyResponse,
+	VirtualWriteableFile
+} from '../../types';
 /**
  * @function useStaticURLParser
  * @description hook for handling a response with a virtually mounted static filesystem browser
@@ -9,9 +11,9 @@ import { useMountedFS } from './mount-fs';
  * @returns the mounted file to serve based on the given request information
  */
 export function useStaticURLParser (
-	req		: HTTPuppyServer.HTTPuppyRequest,
-	res		: HTTPuppyServer.HTTPuppyResponse
-): HTTPuppyServer.VirtualWriteableFile {
+	req		: HTTPuppyRequest,
+	res		: HTTPuppyResponse
+): VirtualWriteableFile {
 	const iFS = req._process._vfs;
 	// filter the mounted filesystem based on the request url
 	const match = iFS.mountedFiles.filter(f => f.hrefs.includes(req.url ?? '')).shift();
@@ -22,6 +24,6 @@ export function useStaticURLParser (
 		};
 	}
 	else {
-		return <HTTPuppyServer.VirtualWriteableFile>{};
+		return <VirtualWriteableFile>{};
 	}
 }

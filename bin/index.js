@@ -21,6 +21,3 @@ useCLIConfigFinder().then(config => {
 		});
 	}
 });
-
-
-

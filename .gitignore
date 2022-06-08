@@ -4,3 +4,4 @@ node_modules
 *.cert
 *.key
 lib
+/.nyc-output

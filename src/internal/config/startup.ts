@@ -2,7 +2,9 @@
  * @internal
  */
 import {
-	HTTPuppyServer,
+	HTTPuppyServerOptions,
+	DiagnosticLog,
+	Runtime
 } from '../../types';
 
 /**
@@ -14,12 +16,12 @@ import {
  * @returns the http server object
  */
 export function _useServer(
-	config	: HTTPuppyServer.HTTPuppyServerOptions,
-	server	: HTTPuppyServer.Runtime,
-	diagnostics: HTTPuppyServer.DiagnosticLog[]
-): HTTPuppyServer.Runtime {
+	config	: HTTPuppyServerOptions,
+	server	: Runtime,
+	diagnostics: DiagnosticLog[]
+): Runtime {
 	if(config.onMount) server.once('listening', config.onMount);
-	const ss = <HTTPuppyServer.Runtime>server;
+	const ss = <Runtime>server;
 	ss.diagnostics = diagnostics;
 	ss.onClose = config.onClose;
 	return ss;

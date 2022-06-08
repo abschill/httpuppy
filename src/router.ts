@@ -2,16 +2,15 @@
  * @module router
  * @description for adding custom routing to your server
  */
-import { HTTPuppyServer } from './types';
 import {
 	Runtime,
 	HTTPuppyRouter,
 	HTTPuppyCallback
-} from './types/server';
+} from './types';
 import {
 	_useHTTPHandle,
 	_useContentSignatures
-} from './internal/_middleware';
+} from './internal';
 
 /**
  * @function useRouter
@@ -39,7 +38,7 @@ export function useRouter(
 
 	function post(
 		url: string,
-		cb: typeof HTTPuppyServer.HTTPuppyCallback
+		cb: typeof HTTPuppyCallback
 	): void {
 		_useHTTPHandle('POST', url, server, cb);
 	}
@@ -72,7 +71,7 @@ export function useRouter(
 		_useHTTPHandle('DELETE', url, server, cb);
 	}
 
-	return <HTTPuppyServer.HTTPuppyRouter>{
+	return <HTTPuppyRouter>{
 		get,
 		head,
 		post,

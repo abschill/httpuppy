@@ -1,4 +1,4 @@
-all: build test dev-example
+all: build runtests
 
 dev-ts:
 	yarn build:watch
@@ -6,8 +6,8 @@ dev-ts:
 build:
 	yarn build
 
-test:
-	yarn test
+runtests:
+	yarn test && ./scripts/run-coverage
 
 dev-example:
 	yarn run-ex

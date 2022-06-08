@@ -16,5 +16,5 @@ export function usePort (
 			process.exit(1);
 		}
 		return;
-	}).catch(err => console.error('Error on check:', err.message));
+	}).catch(err => console.error('Error on port check:', err.message));
 }

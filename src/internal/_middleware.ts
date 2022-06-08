@@ -2,17 +2,18 @@
  * @internal
  * @description middleware hooks, such mime type header resolution / header setting
  */
-import { iHTTP } from '../types';
 import { useEtag } from './include/etag';
 import { lookup } from 'mime-types';
 import {
+	HTTPHeader,
+	HTTPHeaders,
 	Runtime,
 	HTTPuppyCallback,
 	HTTPuppyRequest,
 	HTTPuppyResponse,
 	HTTPuppyServerOptions,
 	HTTPuppyWriterOptions
-} from '../types/server';
+} from '../types';
 export function _useCloseHandler<T extends HTTPuppyRequest | HTTPuppyResponse>(
 	msg	: T,
 	cb	: (ctx: T) => void
@@ -85,7 +86,7 @@ export function _useHTTPHandle(
 */
 export function useContentType(
 	fpath: string
-): iHTTP.HTTPHeader {
+): HTTPHeader {
 	if(fpath === '') return [
 		'Content-Type',
 		'text/plain'
@@ -107,8 +108,8 @@ export function useContentType(
  export function useHeaders(
 	options : HTTPuppyWriterOptions,
 	config	: HTTPuppyServerOptions
-): iHTTP.HTTPHeaders {
-	const applyHeaders: iHTTP.HTTPHeaders = [
+): HTTPHeaders {
+	const applyHeaders: HTTPHeaders = [
 		[
 			'Content-Type',
 			options.type ?? 'text/plain'

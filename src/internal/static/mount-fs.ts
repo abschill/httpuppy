@@ -4,17 +4,23 @@
  */
 import { join, resolve } from 'path';
 import { readdirSync, readFileSync } from 'fs';
-import { HTTPuppyServer } from '../../types';
 import { useContentType } from '../_middleware';
-import { HTTPuppyRequest, HTTPuppyResponse, MountedFile, UserStaticConfig, VirtualFileSystem } from '../../types/server';
 import { useStaticURLParser } from './url';
+import {
+	Runtime,
+	HTTPHeader,
+	HTTPuppyRequest,
+	HTTPuppyResponse,
+	MountedFile,
+	UserStaticConfig,
+	VirtualFileSystem
+} from '../../types';
+
 import {
 	isBufferType,
 	useVirtualStreamReader,
 	useWriter
 } from '../writer';
-import { HTTPHeader } from 'src/types/http';
-
 /**
  * @function useCleanPaths
  * @description list possible hrefs to be used for given vpath
@@ -24,7 +30,7 @@ import { HTTPHeader } from 'src/types/http';
  */
 function useCleanPaths(
 	file	: string,
-	_static : HTTPuppyServer.UserStaticConfig
+	_static : UserStaticConfig
 ): string[] {
 	const pathOptions = [
 		`${_static.href ?? ''}${file}`
@@ -40,7 +46,7 @@ function useCleanPaths(
  * @returns
  */
 export function useMountedFS(
-	server : HTTPuppyServer.Runtime
+	server : Runtime
 ): VirtualFileSystem {
 	const mountedPath = join(server.pConfig.static?.path ?? '');
 	// filesMounted is the accessible file tree that can be used against the upcoming handlers

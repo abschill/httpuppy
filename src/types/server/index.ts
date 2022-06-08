@@ -114,3 +114,4 @@ export * from './middleware';
 export * from './writer';
 export * from './logger';
 export * from './vfs';
+export * from './logger';

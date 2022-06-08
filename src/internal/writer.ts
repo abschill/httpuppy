@@ -1,13 +1,19 @@
 /**
  * @internal
  */
-import { HTTPuppyServer } from '../types';
 import { createReadStream } from 'fs';
-import { useContentType, useHeaders } from './_middleware';
-import { bufferTypes } from './include/_constants';
-
-import { _useContentSignatures } from './_middleware';
-
+import { bufferTypes } from './include';
+import {
+	useContentType,
+	useHeaders,
+	_useContentSignatures
+} from './_middleware';
+import {
+	VirtualWriteableFile,
+	HTTPuppyResponse,
+	HTTPuppyServerOptions,
+	HTTPuppyWriterOptions
+ } from '../types';
 /**
  * @internal isBufferType
  * @description check whether or not the file needs to be written into a stream as a buffer, or utf-8 content
@@ -28,8 +34,8 @@ export function isBufferType(
  * @returns
  */
 export function useVirtualStreamReader(
-	pathData	: HTTPuppyServer.VirtualWriteableFile,
-	res			: HTTPuppyServer.HTTPuppyResponse
+	pathData	: VirtualWriteableFile,
+	res			: HTTPuppyResponse
 ): void {
 	if(!res.writable) {
 		console.warn('warning: write attempt on an ended stream in useStreamReader');
@@ -57,9 +63,9 @@ export function useVirtualStreamReader(
  * @returns
  */
 export function useWriter(
-	res		: HTTPuppyServer.HTTPuppyResponse,
-	config	: HTTPuppyServer.HTTPuppyServerOptions,
-	options	: HTTPuppyServer.HTTPuppyWriterOptions
+	res		: HTTPuppyResponse,
+	config	: HTTPuppyServerOptions,
+	options	: HTTPuppyWriterOptions
 ): void {
 	if(!res.writable) {
 		console.warn('warning: write attempt on an ended stream in useWriter');
