@@ -83,7 +83,7 @@
 
 #### Defined in
 
-[src/types/server/index.ts:92](https://github.com/abschill/httpuppy/blob/7780866/src/types/server/index.ts#L92)
+[src/types/server/index.ts:92](https://github.com/abschill/httpuppy/blob/d611474/src/types/server/index.ts#L92)
 
 ___
 
