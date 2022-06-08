@@ -9,3 +9,4 @@ test
 chores.md
 /.nyc-output
 pkg-cache
+*.nyc-output

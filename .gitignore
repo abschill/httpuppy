@@ -4,5 +4,6 @@ node_modules
 *.cert
 *.key
 lib
-/.nyc-output
+*.nyc-output
 pkg-cache
+*.nyc-output
