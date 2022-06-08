@@ -35,7 +35,7 @@ export function _onReadable(
 	});
 }
 
-export function applyMiddleware(
+export function useMiddleware(
     config	: HTTPuppyServerOptions,
     req		: HTTPuppyRequest,
     res		: HTTPuppyResponse
@@ -125,3 +125,16 @@ export function useContentType(
 	}
 	return applyHeaders;
 }
+
+ /**
+  *
+  * @param res internal response to be written to
+  * @returns nothing
+  */
+  export function useStatus(
+	res	: HTTPuppyResponse,
+	status : number,
+	msg	: string
+ ): void {
+	res.writeHead(status, msg);
+ }

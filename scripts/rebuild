@@ -1,2 +1,2 @@
 #! /bin/bash
-rm -rf lib && npm ci && yarn build
+rm -rf lib && yarn && yarn build

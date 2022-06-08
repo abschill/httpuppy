@@ -1,6 +1,7 @@
 /**
  * @internal
  */
+import { useMountedFS } from '../static';
 import {
 	HTTPuppyServerOptions,
 	DiagnosticLog,
@@ -24,5 +25,10 @@ export function _useServer(
 	const ss = <Runtime>server;
 	ss.diagnostics = diagnostics;
 	ss.onClose = config.onClose;
+	ss.pConfig = config;
+	// if static properties exist, mount the vfs based on them
+	if(config.static) {
+		server._vfs = useMountedFS(server);
+	}
 	return ss;
 }

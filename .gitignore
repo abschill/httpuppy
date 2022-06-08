@@ -5,3 +5,4 @@ node_modules
 *.key
 lib
 /.nyc-output
+pkg-cache

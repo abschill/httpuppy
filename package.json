@@ -1,6 +1,6 @@
 {
   "name": "httpuppy",
-  "version": "0.2.15",
+  "version": "0.2.16",
   "description": "simple abstraction layer for node web servers",
   "main": "lib/index.js",
   "bin": "bin/index.js",

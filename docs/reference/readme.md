@@ -20,5 +20,5 @@ you can set a custom path for the config file by adding argument in the format `
 
 you can also configure your file to be in json/yml, which directly maps to the config structure, and needs no sort of mental difference in mapping. When you run `npx httpuppy` you will be greeted with a menu that gives you a list of options of valid config files that it detected, so just choose the one you want.
 
-[json example](/httpuppy.json)
-[yaml example](/httpuppy.yml)
+[json example](/__fixtures__/httpuppy.json)
+[yaml example](/__fixtures__/httpuppy.yml)

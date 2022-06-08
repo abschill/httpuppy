@@ -1,4 +1,4 @@
-[httpuppy - v0.2.15](../README.md) / [Modules](../modules.md) / router
+[httpuppy - v0.2.16](../README.md) / [Modules](../modules.md) / router
 
 # Module: router
 
@@ -38,4 +38,4 @@ router.get('/test', (req, res) => res.end('hello'));
 
 #### Defined in
 
-[src/router.ts:26](https://github.com/abschill/httpuppy/blob/d611474/src/router.ts#L26)
+[src/router.ts:26](https://github.com/abschill/httpuppy/blob/cbe6067/src/router.ts#L26)
