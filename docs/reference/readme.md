@@ -13,30 +13,12 @@ For example
 npx httpuppy
 ```
 
-is equal to having this in your config
-
-```ini
-[config]
-port = 3000
-```
-
-which is equal to using this configuration inline for the library
-
-
-```js
-import { useServer } from 'httpuppy'
-
-const app = useServer({
-	port: 3000
-});
-```
-
 you can set a custom path for the config file by adding argument in the format `npx httpuppy <path>`
 
 
 ## json/yml configuration
 
-you can also configure your file to be in json/yml, which directly maps to the config structure, and needs no sort of mental difference in mapping. When you run `npx httpuppy` you will be greeted with a menu that gives you a list of options of valid config options that it detected, so just choose the one you want.
+you can also configure your file to be in json/yml, which directly maps to the config structure, and needs no sort of mental difference in mapping. When you run `npx httpuppy` you will be greeted with a menu that gives you a list of options of valid config files that it detected, so just choose the one you want.
 
 [json example](/httpuppy.json)
 [yaml example](/httpuppy.yml)
