@@ -10,3 +10,11 @@ chores.md
 /.nyc-output
 pkg-cache
 *.nyc-output
+__fixtures__
+test
+.development
+.github
+.editorconfig
+nyc.config.js
+typedoc.json
+makefile

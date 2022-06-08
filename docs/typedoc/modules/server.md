@@ -1,4 +1,4 @@
-[httpuppy - v0.2.18](../README.md) / [Modules](../modules.md) / server
+[httpuppy - v0.2.19](../README.md) / [Modules](../modules.md) / server
 
 # Module: server
 
@@ -41,4 +41,4 @@ httpuppy server
 
 #### Defined in
 
-[src/server.ts:34](https://github.com/abschill/httpuppy/blob/89be17f/src/server.ts#L34)
+[src/server.ts:34](https://github.com/abschill/httpuppy/blob/df283c3/src/server.ts#L34)
