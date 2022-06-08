@@ -8,3 +8,4 @@ docs
 test
 chores.md
 /.nyc-output
+pkg-cache
