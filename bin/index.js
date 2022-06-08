@@ -3,8 +3,11 @@ const { useCLIConfigFinder } = require('../lib/internal/config/argv');
 const { _useColorTag } = require('../lib/internal/fmt/_color');
 const { useServer } = require('../lib');
 useCLIConfigFinder().then(config => {
-	console.log(_useColorTag('blue', 'httpuppy config:'))
-	console.log(config);
+	if(config.log.logLevel !== 'silent') {
+		console.log(_useColorTag('blue', 'httpuppy config:'))
+		console.log(config);
+	}
+
 	if(config.config) {
 		useServer({
 			...config.config,

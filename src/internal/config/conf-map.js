@@ -103,6 +103,9 @@ export function useINIToJSON(str) {
 		port: parseInt(args.config.port),
 		static: {
 			path: args.config.path
+		},
+		log: {
+			logLevel: args.config.logLevel || 'base'
 		}
 	}
 }
