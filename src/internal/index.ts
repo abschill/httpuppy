@@ -2,7 +2,6 @@ export * from './error';
 export * from './_shutdown';
 export * from './logger';
 export * from './writer';
-export * from './port';
 export * from './static';
 export * from './include';
 export * from './fmt';

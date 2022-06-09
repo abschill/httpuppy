@@ -1,7 +1,13 @@
 import { Stats } from 'fs';
 import { createHash } from 'crypto';
 
-export function useEntityTag(entity) {
+/**
+ * @private
+ * create entity tag with content hash
+ */
+export function useEntityTag(
+	entity: any
+) {
 	if (entity.length === 0) {
 		return '"0-2jmj7l5rSw0yVb/vlWAYkK/YBwk"';
 	}
@@ -10,32 +16,48 @@ export function useEntityTag(entity) {
 	const len = typeof entity === 'string' ? Buffer.byteLength(entity, 'utf8') : entity.length;
 	return '"' + len.toString(16) + '-' + hash + '"';
 }
-
-export function useEtag(entity, options) {
+/**
+ * @private
+ */
+export function useEtag(
+	entity: any,
+	options: any
+) {
 	if(!entity) {
 		throw new Error('etag entity is null');
 	}
 
-	const isStats = isValidStats(entity);
-	const weak = options && typeof options.weak === 'boolean' ? options.weak : isStats;
+	const isFileStats = isValidStats(entity);
+	const weak = options && typeof options.weak === 'boolean' ? options.weak : isFileStats;
 
-	if(!isStats && typeof entity !== 'string' && !Buffer.isBuffer(entity)) {
+	if(!isFileStats && typeof entity !== 'string' && !Buffer.isBuffer(entity)) {
 		throw new Error('etag arg must be a string, buffer or fs.Stats');
 	}
 
-	const tag = isStats ? useStats(entity) : useEntityTag(entity);
+	const tag = isFileStats ? useFileStats(entity) : useEntityTag(entity);
 	return weak ? 'W/' + tag : tag;
 }
 
-
-export function useStats(stats) {
+/**
+ * @private
+ * create file system stamp for cache
+ */
+export function useFileStats(
+	stats: Stats
+): string {
 	const mTime = stats.mtime.getTime().toString(16);
 	const size = stats.size.toString(16);
 	return '"' + size + '-' + mTime + '"';
-
 }
 
-export function isValidStats(o) {
+/**
+ *
+ * @private
+ * determine if an entry is a valid fs stat
+ */
+export function isValidStats(
+	o: any
+): boolean {
 	if(typeof Stats === 'function' && o instanceof Stats) {
 		return true;
 	}

@@ -7,3 +7,4 @@ lib
 *.nyc-output
 pkg-cache
 *.nyc-output
+nyc_output

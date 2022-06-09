@@ -18,11 +18,9 @@ export async function shutdown(
 		if(s.onClose) s.onClose();
 		s.removeAllListeners();
 		s.close();
-
 		return GracefulShutdown(s);
 	}
 	catch(e) {
-		process.exit(1);
+		throw 'invalid shutdown, nothing submitted/already shut down';
 	}
-
 }

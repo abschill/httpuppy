@@ -10,7 +10,6 @@ import {
 	useLogger,
 	useConfig,
 	_useServer,
-	usePort as usePortCheck,
 	useStaticHandler
 } from './internal';
 import {
@@ -34,7 +33,6 @@ import {
 export function useServer(
     conf	: HTTPuppyServerOptions // user config for server
 ): Runtime {
-	usePortCheck(conf.port ?? 80);
 	const diagnostics: DiagnosticLog[] = [];
 	const config = useConfig(conf, diagnostics);
 	// determine if they wanted a secure or a regular server

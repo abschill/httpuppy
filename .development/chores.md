@@ -6,4 +6,3 @@
 
 ## Idea Dump
 - template engine integration support
-- default .env support ?
