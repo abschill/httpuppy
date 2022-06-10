@@ -15,7 +15,7 @@ test
 .development
 .github
 .editorconfig
-nyc.config.js
+.nycrc.json
 typedoc.json
 makefile
 nyc_output

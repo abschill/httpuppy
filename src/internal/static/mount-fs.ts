@@ -4,7 +4,7 @@
  */
 import { join, resolve } from 'path';
 import { readdirSync, readFileSync } from 'fs';
-import { useContentType } from '../_middleware';
+import { useContentType } from '../middleware';
 import { useStaticURLParser } from './url';
 import {
 	Runtime,

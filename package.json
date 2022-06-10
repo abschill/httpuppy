@@ -1,18 +1,20 @@
 {
   "name": "httpuppy",
-  "version": "0.2.21",
+  "version": "0.2.22",
   "description": "simple abstraction layer for node web servers",
+  "types": "lib/index.d.ts",
   "main": "lib/index.js",
   "bin": "bin/index.js",
   "scripts": {
-    "build": "tsc",
-    "build:watch": "tsc -w",
-    "build:docs": "typedoc --excludeInternal",
-    "dev": "make -j 2 dev-ts dev-example",
-    "test": "ts-mocha test/**/*.test.ts",
-    "test:watch": "ts-mocha -w test/**/*.test.ts",
-    "run-ex": "nodemon examples/static-demo.js",
-	"test:coverage": "nyc yarn test"
+	"setup": "chmod +x ./scripts/**/*",
+    "build": "./scripts/run/build",
+    "build:watch": "./scripts/run/build-watch",
+    "build:docs": "./scripts/run/build-docs",
+    "dev": "./scripts/run/dev",
+    "test": "./scripts/run/test",
+    "test:watch": "./scripts/run/test-watch",
+    "run-ex": "./scripts/run/static-example",
+	"test:coverage": "./scripts/run/coverage"
   },
   "keywords": [
     "http",

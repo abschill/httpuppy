@@ -24,7 +24,7 @@ export function useMiddleware(
 	match?.handler(req, res);
 }
 
-export function _useContentSignatures(
+export function useRouterSignatures(
 	res: HTTPuppyResponse
 ) {
 	res.send = res.end;
@@ -40,7 +40,7 @@ export function _useContentSignatures(
 	};
 }
 
-export function _useHTTPHandle(
+export function useHTTPHandle(
 	name: string,
 	_url: string,
 	server: Runtime,
@@ -51,7 +51,7 @@ export function _useHTTPHandle(
 		res: HTTPuppyResponse
 	) => {
 		if(req.method === name && req.url === _url) {
-			_useContentSignatures(res);
+			useRouterSignatures(res);
 			return cb(<HTTPuppyRequest>req, <HTTPuppyResponse>res);
 		}
 		return;

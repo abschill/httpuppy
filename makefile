@@ -7,7 +7,7 @@ build:
 	yarn build
 
 runtests:
-	yarn test && ./scripts/run-coverage
+	./scripts/run/coverage
 
 dev-example:
 	yarn run-ex

@@ -1,4 +1,4 @@
-import { HTTPHeader } from '../../types';
+import { HTTPHeader } from '..';
 
 /**
  * @type MountedFile
@@ -30,4 +30,11 @@ export type UserStaticConfig = {
 export type VirtualFileSystem = {
 	mountedPath	 : string;
 	mountedFiles : MountedFile[];
+}
+
+export type HTTPuppyWriterOptions = {
+	status		: number;
+	statusText	: string;
+	type		: string;
+	virtualFile : VirtualWriteableFile;
 }

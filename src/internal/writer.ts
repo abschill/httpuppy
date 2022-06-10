@@ -5,15 +5,15 @@ import { createReadStream } from 'fs';
 import { bufferTypes } from './include';
 import {
 	useContentType,
-	useHeaders,
-	_useContentSignatures
-} from './_middleware';
+	useHeaders
+} from './middleware';
 import {
 	VirtualWriteableFile,
 	HTTPuppyResponse,
 	HTTPuppyServerOptions,
 	HTTPuppyWriterOptions
  } from '../types';
+
 /**
  * @internal isBufferType
  * @description check whether or not the file needs to be written into a stream as a buffer, or utf-8 content

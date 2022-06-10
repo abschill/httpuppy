@@ -5,7 +5,7 @@ import GracefulShutdown from 'http-graceful-shutdown';
 import {
 	Runtime,
 	HTTPuppySleep
- } from '../types';
+ } from '../../types';
 /**
  *
  * @param s http server to shut down

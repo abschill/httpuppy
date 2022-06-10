@@ -8,8 +8,7 @@ import {
 	HTTPuppyCallback
 } from './types';
 import {
-	_useHTTPHandle,
-	_useContentSignatures
+	useHTTPHandle
 } from './internal';
 
 /**
@@ -33,42 +32,42 @@ export function useRouter(
 		url: string,
 		cb: typeof HTTPuppyCallback
 	): void {
-		_useHTTPHandle('GET', url, server, cb);
+		useHTTPHandle('GET', url, server, cb);
 	}
 
 	function post(
 		url: string,
 		cb: typeof HTTPuppyCallback
 	): void {
-		_useHTTPHandle('POST', url, server, cb);
+		useHTTPHandle('POST', url, server, cb);
 	}
 
 	function head(
 		url: string,
 		cb: typeof HTTPuppyCallback
 	): void {
-		_useHTTPHandle('HEAD', url, server, cb);
+		useHTTPHandle('HEAD', url, server, cb);
 	}
 
 	function put(
 		url: string,
 		cb: typeof HTTPuppyCallback
 	): void {
-		_useHTTPHandle('PUT', url, server, cb);
+		useHTTPHandle('PUT', url, server, cb);
 	}
 
 	function patch(
 		url: string,
 		cb: typeof HTTPuppyCallback
 	): void {
-		_useHTTPHandle('PATCH', url, server, cb);
+		useHTTPHandle('PATCH', url, server, cb);
 	}
 
 	function _delete(
 		url: string,
 		cb: typeof HTTPuppyCallback
 	): void {
-		_useHTTPHandle('DELETE', url, server, cb);
+		useHTTPHandle('DELETE', url, server, cb);
 	}
 
 	return <HTTPuppyRouter>{

@@ -109,9 +109,10 @@ export interface HTTPuppyRouter {
 	patch		: typeof HTTPuppyRouterMethod;
 	delete		: typeof HTTPuppyRouterMethod;
 }
+export type HTTPHeader = string[];
+export type HTTPHeaders = HTTPHeader[];
 
 export * from './middleware';
-export * from './writer';
 export * from './logger';
 export * from './vfs';
 export * from './logger';
