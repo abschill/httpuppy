@@ -2,12 +2,10 @@
  * @internal mount-fs
  * @description virtual file system mount hooks
  */
-import { join, resolve } from 'path';
-import { readdirSync, readFileSync } from 'fs';
 import { useContentType } from '../middleware';
 import { useStaticURLParser } from './url';
 import {
-	Runtime,
+	HTTPuppyServer,
 	HTTPHeader,
 	HTTPuppyRequest,
 	HTTPuppyResponse,
@@ -15,7 +13,14 @@ import {
 	UserStaticConfig,
 	VirtualFileSystem
 } from '../../types';
-
+import {
+	join,
+	resolve
+} from 'path';
+import {
+	readdirSync,
+	readFileSync
+} from 'fs';
 import {
 	isBufferType,
 	useVirtualStreamReader,
@@ -46,7 +51,7 @@ function useCleanPaths(
  * @returns
  */
 export function useMountedFS(
-	server : Runtime
+	server : HTTPuppyServer
 ): VirtualFileSystem {
 	const mountedPath = join(server.pConfig.static?.path ?? '');
 	// filesMounted is the accessible file tree that can be used against the upcoming handlers

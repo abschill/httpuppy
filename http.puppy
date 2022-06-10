@@ -1,3 +1,4 @@
 [config]
 port = 3000
 path = examples/files
+logLevel = verbose

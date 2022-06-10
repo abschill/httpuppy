@@ -3,7 +3,7 @@
  * @description for adding custom routing to your server
  */
 import {
-	Runtime,
+	HTTPuppyServer,
 	HTTPuppyRouter,
 	HTTPuppyCallback
 } from './types';
@@ -23,7 +23,7 @@ import {
  * @returns
  */
 export function useRouter(
-	server: Runtime, // server to attach the router to as a handler
+	server: HTTPuppyServer, // server to attach the router to as a handler
 	routerOptions ?: any // placeholder: planned feature
 ): HTTPuppyRouter {
 	// router callback choices

@@ -1,4 +1,4 @@
-[httpuppy - v0.2.22](../README.md) / [Modules](../modules.md) / server
+[httpuppy - v0.2.23](../README.md) / [Modules](../modules.md) / server
 
 # Module: server
 
@@ -14,7 +14,7 @@
 
 ### useServer
 
-▸ **useServer**(`conf`): [`Runtime`](../interfaces/types_server.Runtime.md)
+▸ **useServer**(`conf`): [`HTTPuppyServer`](../interfaces/types_server.HTTPuppyServer.md)
 
 **`function`** useServer
 
@@ -35,10 +35,10 @@ const app = useServer({
 
 #### Returns
 
-[`Runtime`](../interfaces/types_server.Runtime.md)
+[`HTTPuppyServer`](../interfaces/types_server.HTTPuppyServer.md)
 
 httpuppy server
 
 #### Defined in
 
-[src/server.ts:33](https://github.com/abschill/httpuppy/blob/b727800/src/server.ts#L33)
+[src/server.ts:33](https://github.com/abschill/httpuppy/blob/677b219/src/server.ts#L33)

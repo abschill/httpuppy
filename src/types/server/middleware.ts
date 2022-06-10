@@ -1,4 +1,7 @@
-import { HTTPuppyRequest, HTTPuppyResponse } from ".";
+import {
+	HTTPuppyRequest,
+	HTTPuppyResponse
+} from '.';
 
 /**
  * @interface Cache Settings

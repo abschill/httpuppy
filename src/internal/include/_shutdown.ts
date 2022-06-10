@@ -3,7 +3,7 @@
  */
 import GracefulShutdown from 'http-graceful-shutdown';
 import {
-	Runtime,
+	HTTPuppyServer,
 	HTTPuppySleep
  } from '../../types';
 /**
@@ -12,7 +12,7 @@ import {
  * @returns void promise to gracefully shut down
  */
 export async function shutdown(
-	s			: Runtime
+	s			: HTTPuppyServer
 ): Promise<HTTPuppySleep>  {
 	try {
 		if(s.onClose) s.onClose();

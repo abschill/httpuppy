@@ -1,6 +1,9 @@
 import { IncomingMessage, Server as stlServer, ServerResponse } from 'http';
 import { ServerOptions as stlServerOptions } from 'http';
-import { LogConfig } from './logger';
+import {
+	LogConfig,
+	useDefaultLogConfig
+} from './logger';
 import {
 	VirtualFileSystem,
 	UserStaticConfig
@@ -22,10 +25,10 @@ export type DiagnosticLog = {
 }
 
 /**
- * @interface Runtime
+ * @interface HTTPuppyServer
  * @description Core Module to wrap the standard http library for node
  */
-export interface Runtime extends stlServer  {
+export interface HTTPuppyServer extends stlServer  {
 	pConfig		: HTTPuppyServerOptions; //httpuppyserveroptions
 	diagnostics	: DiagnosticLog[]; //diagnostic log
 	onClose		: iExitHandler; // onclose handler
@@ -46,18 +49,19 @@ export type HTTPuppySleep = () => Promise<void>;
  * @member middleware list of middleware instances to run along the server
  * @member onMount a function to run once after the server is mounted (doesn't run on return if `coldInit` is set to true)
  * @member cache options for caching, standard http but camelcase
+ * @member clustered is a planned feature for version 3 to automatically cluster the server process to utilize multiple core ipc it doesnt do anything in x.2.z
  * @member secure boolean for https instead of http, requires follow up options in secureContext
  * @member secureContext options for resolving the SSL cert / key
  */
 export interface HTTPuppyServerOptions extends stlServerOptions {
     port 			?: number;
+	clustered		?: boolean;
     coldInit 		?: boolean;
     hostname 		?: string;
 	static 			?: UserStaticConfig;
     throwWarnings 	?: boolean;
 	log				?: LogConfig;
 	middleware 		?: UserMiddlewareOption[];
-	noConfigFile	?: boolean;
 	onMount 		?: iHandlerType;
 	onClose			?: iExitHandler;
 	cache 			?: CacheSettings;
@@ -68,15 +72,19 @@ export interface HTTPuppyServerOptions extends stlServerOptions {
 		cert		: string;
 		dhparam 	?: string;
 	}
+	timeout			?: number;
 }
 
 export const defaultHTTPConfig:
 HTTPuppyServerOptions = {
 	port		  : 80,
+	clustered	  : false,
 	coldInit	  : true,
+	cache		  : defaultCacheSettings,
+	log			  : useDefaultLogConfig(),
 	hostname	  : '127.0.0.1',
 	throwWarnings : false,
-	cache		  : defaultCacheSettings
+	timeout		  : 0
 };
 
 export function fromDefaultHTTPConfig(
@@ -89,10 +97,10 @@ export function fromDefaultHTTPConfig(
 }
 
 export interface HTTPuppyRequest extends IncomingMessage {
-	_process:	Runtime;
+	_process:	HTTPuppyServer;
 }
 export interface HTTPuppyResponse extends ServerResponse {
-	_process:	Runtime;
+	_process:	HTTPuppyServer;
 	send: (msg: any) => void;
 	json: (msg: any) => void;
 }
@@ -101,7 +109,7 @@ export declare function HTTPuppyCallback(req: HTTPuppyRequest, res: HTTPuppyResp
 
 export declare function HTTPuppyRouterMethod(url: string, cb: typeof HTTPuppyCallback): typeof HTTPuppyCallback | void;
 export interface HTTPuppyRouter {
-	url		: string;
+	url			: string;
 	get			: typeof HTTPuppyRouterMethod;
 	head		: typeof HTTPuppyRouterMethod;
 	post		: typeof HTTPuppyRouterMethod;

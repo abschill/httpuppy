@@ -1,7 +1,6 @@
 /**
  * @internal
  */
-import { resolve } from 'path';
 import { prompt } from 'inquirer';
 import {
 	CONFIG_FILE_OPTIONS,
@@ -13,6 +12,10 @@ import {
 	readFileSync,
 	readdirSync
 } from 'fs';
+import {
+	resolve,
+	join
+} from 'path';
 
 export function checkNumConfigs(p) {
 	const fileList = readdirSync(p);
@@ -34,16 +37,16 @@ export async function useMultiConfigPrompt(p) {
 	return CONFIG_FILE_OPTIONS.filter(opt => opt.fileName === fileSelected).shift();
 }
 
-function _switchConfigType(foundMatch) {
-	switch(foundMatch.fileType) {
+function _switchConfigType(pathPrefix, match) {
+	switch(match.fileType) {
 		case 'ini':
-			const ini = useINIToJSON(readFileSync(resolve(process.cwd(), foundMatch.fileName))?.toString());
+			const ini = useINIToJSON(readFileSync(resolve(pathPrefix, match.fileName))?.toString());
 			return {...ini};
 		case 'yml':
-			const yml = useYAMLToJSON(resolve(process.cwd(), foundMatch.fileName));
+			const yml = useYAMLToJSON(resolve(pathPrefix, match.fileName));
 			return {...yml};
 		case 'json':
-			const json = useJSON(resolve(process.cwd(), foundMatch.fileName));
+			const json = useJSON(resolve(pathPrefix, match.fileName));
 			return {...json};
 		default:
 			return {};
@@ -52,17 +55,15 @@ function _switchConfigType(foundMatch) {
 
 export async function useCLIConfigFinder() {
 	const cPath = process.argv[2] || process.cwd();
-	const configs = checkNumConfigs(cPath)
-	console.log('checking for config in path:');
-	console.log(cPath);
+	const configs = checkNumConfigs(cPath);
 	if(configs >= 1) {
-		const foundMatch = await useMultiConfigPrompt(cPath);
-		return _switchConfigType(foundMatch);
+		const lookPath = cPath[0] != '/' ? join(process.cwd(), cPath) : cPath;
+		const foundMatch = await useMultiConfigPrompt(lookPath);
+		return _switchConfigType(lookPath, foundMatch);
 	}
 	else {
 		return {};
 	}
-
 }
 
 export async function useValidConfigOption(p) {

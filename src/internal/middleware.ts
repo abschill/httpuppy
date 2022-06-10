@@ -7,7 +7,7 @@ import { lookup } from 'mime-types';
 import {
 	HTTPHeader,
 	HTTPHeaders,
-	Runtime,
+	HTTPuppyServer,
 	HTTPuppyCallback,
 	HTTPuppyRequest,
 	HTTPuppyResponse,
@@ -43,7 +43,7 @@ export function useRouterSignatures(
 export function useHTTPHandle(
 	name: string,
 	_url: string,
-	server: Runtime,
+	server: HTTPuppyServer,
 	cb: typeof HTTPuppyCallback
 ) {
 	server.on('request', (

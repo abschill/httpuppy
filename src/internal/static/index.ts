@@ -1,13 +1,13 @@
 import { useVirtualRequestHandler } from './mount-fs';
 // import { isMainThread } from 'worker_threads';
 import {
-	Runtime,
+	HTTPuppyServer,
 	HTTPuppyRequest,
 	HTTPuppyResponse
  } from '../../types';
 
 export function useStaticHandler(
-	server: Runtime
+	server: HTTPuppyServer
 ) {
 	server.on('request', (
 		req: HTTPuppyRequest,

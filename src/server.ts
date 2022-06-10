@@ -13,7 +13,7 @@ import {
 	useStaticHandler
 } from './internal';
 import {
-	Runtime,
+	HTTPuppyServer,
 	HTTPuppyServerOptions,
 	DiagnosticLog
 } from './types';
@@ -32,20 +32,20 @@ import {
  */
 export function useServer(
     conf	: HTTPuppyServerOptions // user config for server
-): Runtime {
+): HTTPuppyServer {
 	const diagnostics: DiagnosticLog[] = [];
 	const config = useConfig(conf, diagnostics);
 	// determine if they wanted a secure or a regular server
 	const _server = conf.secure ? useCreateSecureServer(<HTTPSOptions>conf.secureContext, config?.handler) : useCreateServer(config?.handler);
 	// _useServer is an internal hook for validating the init process of the server itself and setting diagnostics accordingly if anything goes wrong
-	const server = _useServer(config, <Runtime>_server, diagnostics);
+	const server = _useServer(config, <HTTPuppyServer>_server, diagnostics);
 	// set up handler to route based on static config
 	if(config.static) useStaticHandler(server);
 	// hook in logger module
 	if(conf.log && conf.log.logLevel !== 'silent') useLogger(conf.log, server);
 	// bind safe shutdown to the server for callability on the end user side
 	server._shutdown = () => shutdown(server);
-
+	server.timeout = conf.timeout || 0;
 	// if not conld init, auto set listening server before return
 	if(!config.coldInit) {
 		server.listen(conf.port, config.hostname);

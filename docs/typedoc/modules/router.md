@@ -1,4 +1,4 @@
-[httpuppy - v0.2.22](../README.md) / [Modules](../modules.md) / router
+[httpuppy - v0.2.23](../README.md) / [Modules](../modules.md) / router
 
 # Module: router
 
@@ -29,7 +29,7 @@ router.get('/test', (req, res) => res.end('hello'));
 
 | Name | Type |
 | :------ | :------ |
-| `server` | [`Runtime`](../interfaces/types_server.Runtime.md) |
+| `server` | [`HTTPuppyServer`](../interfaces/types_server.HTTPuppyServer.md) |
 | `routerOptions?` | `any` |
 
 #### Returns
@@ -38,4 +38,4 @@ router.get('/test', (req, res) => res.end('hello'));
 
 #### Defined in
 
-[src/router.ts:25](https://github.com/abschill/httpuppy/blob/b727800/src/router.ts#L25)
+[src/router.ts:25](https://github.com/abschill/httpuppy/blob/677b219/src/router.ts#L25)

@@ -4,7 +4,7 @@
 import {
 	LogConfig,
 	useDefaultLogConfig,
-	Runtime,
+	HTTPuppyServer,
 	HTTPuppyRequest
 } from '../types';
 const { log } = console;
@@ -22,7 +22,7 @@ export function useLogConfig(
 
 export function useLogger(
 	config	: LogConfig,
-	server	: Runtime
+	server	: HTTPuppyServer
 ) {
 	const prefix = config.logPrefix || 'httpuppy';
 	if(config.logLevel === 'verbose') {

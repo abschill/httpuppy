@@ -1,4 +1,4 @@
-[httpuppy - v0.2.22](../README.md) / [Modules](../modules.md) / [types/server](../modules/types_server.md) / HTTPuppyRequest
+[httpuppy - v0.2.23](../README.md) / [Modules](../modules.md) / [types/server](../modules/types_server.md) / HTTPuppyRequest
 
 # Interface: HTTPuppyRequest
 
@@ -79,11 +79,11 @@
 
 ### \_process
 
-• **\_process**: [`Runtime`](types_server.Runtime.md)
+• **\_process**: [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
 
 #### Defined in
 
-[src/types/server/index.ts:92](https://github.com/abschill/httpuppy/blob/b727800/src/types/server/index.ts#L92)
+[src/types/server/index.ts:100](https://github.com/abschill/httpuppy/blob/677b219/src/types/server/index.ts#L100)
 
 ___
 

@@ -5,7 +5,7 @@ import { useMountedFS } from '../static';
 import {
 	HTTPuppyServerOptions,
 	DiagnosticLog,
-	Runtime
+	HTTPuppyServer
 } from '../../types';
 
 /**
@@ -18,11 +18,11 @@ import {
  */
 export function _useServer(
 	config	: HTTPuppyServerOptions,
-	server	: Runtime,
+	server	: HTTPuppyServer,
 	diagnostics: DiagnosticLog[]
-): Runtime {
+): HTTPuppyServer {
 	if(config.onMount) server.once('listening', config.onMount);
-	const ss = <Runtime>server;
+	const ss = <HTTPuppyServer>server;
 	ss.diagnostics = diagnostics;
 	ss.onClose = config.onClose;
 	ss.pConfig = config;

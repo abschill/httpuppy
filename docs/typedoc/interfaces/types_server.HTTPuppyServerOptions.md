@@ -1,4 +1,4 @@
-[httpuppy - v0.2.22](../README.md) / [Modules](../modules.md) / [types/server](../modules/types_server.md) / HTTPuppyServerOptions
+[httpuppy - v0.2.23](../README.md) / [Modules](../modules.md) / [types/server](../modules/types_server.md) / HTTPuppyServerOptions
 
 # Interface: HTTPuppyServerOptions
 
@@ -24,6 +24,8 @@
 
 **`member`** cache options for caching, standard http but camelcase
 
+**`member`** clustered is a planned feature for version 3 to automatically cluster the server process to utilize multiple core ipc it doesnt do anything in x.2.z
+
 **`member`** secure boolean for https instead of http, requires follow up options in secureContext
 
 **`member`** secureContext options for resolving the SSL cert / key
@@ -41,6 +43,7 @@
 - [IncomingMessage](types_server.HTTPuppyServerOptions.md#incomingmessage)
 - [ServerResponse](types_server.HTTPuppyServerOptions.md#serverresponse)
 - [cache](types_server.HTTPuppyServerOptions.md#cache)
+- [clustered](types_server.HTTPuppyServerOptions.md#clustered)
 - [coldInit](types_server.HTTPuppyServerOptions.md#coldinit)
 - [handler](types_server.HTTPuppyServerOptions.md#handler)
 - [hostname](types_server.HTTPuppyServerOptions.md#hostname)
@@ -48,7 +51,6 @@
 - [log](types_server.HTTPuppyServerOptions.md#log)
 - [maxHeaderSize](types_server.HTTPuppyServerOptions.md#maxheadersize)
 - [middleware](types_server.HTTPuppyServerOptions.md#middleware)
-- [noConfigFile](types_server.HTTPuppyServerOptions.md#noconfigfile)
 - [onClose](types_server.HTTPuppyServerOptions.md#onclose)
 - [onMount](types_server.HTTPuppyServerOptions.md#onmount)
 - [port](types_server.HTTPuppyServerOptions.md#port)
@@ -56,6 +58,7 @@
 - [secureContext](types_server.HTTPuppyServerOptions.md#securecontext)
 - [static](types_server.HTTPuppyServerOptions.md#static)
 - [throwWarnings](types_server.HTTPuppyServerOptions.md#throwwarnings)
+- [timeout](types_server.HTTPuppyServerOptions.md#timeout)
 
 ## Properties
 
@@ -93,7 +96,17 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:63](https://github.com/abschill/httpuppy/blob/b727800/src/types/server/index.ts#L63)
+[src/types/server/index.ts:67](https://github.com/abschill/httpuppy/blob/677b219/src/types/server/index.ts#L67)
+
+___
+
+### clustered
+
+• `Optional` **clustered**: `boolean`
+
+#### Defined in
+
+[src/types/server/index.ts:58](https://github.com/abschill/httpuppy/blob/677b219/src/types/server/index.ts#L58)
 
 ___
 
@@ -103,7 +116,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:54](https://github.com/abschill/httpuppy/blob/b727800/src/types/server/index.ts#L54)
+[src/types/server/index.ts:59](https://github.com/abschill/httpuppy/blob/677b219/src/types/server/index.ts#L59)
 
 ___
 
@@ -113,7 +126,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:64](https://github.com/abschill/httpuppy/blob/b727800/src/types/server/index.ts#L64)
+[src/types/server/index.ts:68](https://github.com/abschill/httpuppy/blob/677b219/src/types/server/index.ts#L68)
 
 ___
 
@@ -123,7 +136,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:55](https://github.com/abschill/httpuppy/blob/b727800/src/types/server/index.ts#L55)
+[src/types/server/index.ts:60](https://github.com/abschill/httpuppy/blob/677b219/src/types/server/index.ts#L60)
 
 ___
 
@@ -153,7 +166,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:58](https://github.com/abschill/httpuppy/blob/b727800/src/types/server/index.ts#L58)
+[src/types/server/index.ts:63](https://github.com/abschill/httpuppy/blob/677b219/src/types/server/index.ts#L63)
 
 ___
 
@@ -183,17 +196,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:59](https://github.com/abschill/httpuppy/blob/b727800/src/types/server/index.ts#L59)
-
-___
-
-### noConfigFile
-
-• `Optional` **noConfigFile**: `boolean`
-
-#### Defined in
-
-[src/types/server/index.ts:60](https://github.com/abschill/httpuppy/blob/b727800/src/types/server/index.ts#L60)
+[src/types/server/index.ts:64](https://github.com/abschill/httpuppy/blob/677b219/src/types/server/index.ts#L64)
 
 ___
 
@@ -203,7 +206,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:62](https://github.com/abschill/httpuppy/blob/b727800/src/types/server/index.ts#L62)
+[src/types/server/index.ts:66](https://github.com/abschill/httpuppy/blob/677b219/src/types/server/index.ts#L66)
 
 ___
 
@@ -213,7 +216,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:61](https://github.com/abschill/httpuppy/blob/b727800/src/types/server/index.ts#L61)
+[src/types/server/index.ts:65](https://github.com/abschill/httpuppy/blob/677b219/src/types/server/index.ts#L65)
 
 ___
 
@@ -223,7 +226,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:53](https://github.com/abschill/httpuppy/blob/b727800/src/types/server/index.ts#L53)
+[src/types/server/index.ts:57](https://github.com/abschill/httpuppy/blob/677b219/src/types/server/index.ts#L57)
 
 ___
 
@@ -233,7 +236,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:65](https://github.com/abschill/httpuppy/blob/b727800/src/types/server/index.ts#L65)
+[src/types/server/index.ts:69](https://github.com/abschill/httpuppy/blob/677b219/src/types/server/index.ts#L69)
 
 ___
 
@@ -251,7 +254,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:66](https://github.com/abschill/httpuppy/blob/b727800/src/types/server/index.ts#L66)
+[src/types/server/index.ts:70](https://github.com/abschill/httpuppy/blob/677b219/src/types/server/index.ts#L70)
 
 ___
 
@@ -261,7 +264,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:56](https://github.com/abschill/httpuppy/blob/b727800/src/types/server/index.ts#L56)
+[src/types/server/index.ts:61](https://github.com/abschill/httpuppy/blob/677b219/src/types/server/index.ts#L61)
 
 ___
 
@@ -271,4 +274,14 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:57](https://github.com/abschill/httpuppy/blob/b727800/src/types/server/index.ts#L57)
+[src/types/server/index.ts:62](https://github.com/abschill/httpuppy/blob/677b219/src/types/server/index.ts#L62)
+
+___
+
+### timeout
+
+• `Optional` **timeout**: `number`
+
+#### Defined in
+
+[src/types/server/index.ts:75](https://github.com/abschill/httpuppy/blob/677b219/src/types/server/index.ts#L75)
