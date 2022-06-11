@@ -7,7 +7,6 @@ import { useStaticURLParser } from './url';
 import walk from 'walkdir';
 import {
 	MountedFile,
-	UserStaticConfig,
 	VirtualFileSystem
 } from '../types';
 import {
@@ -15,6 +14,7 @@ import {
 	HTTPHeader,
 	HTTPuppyRequest,
 	HTTPuppyResponse,
+	UserStaticConfig,
 } from '../../';
 import {
 	isBufferType,

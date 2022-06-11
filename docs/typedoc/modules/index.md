@@ -18,6 +18,7 @@
 - [HTTPuppyServer](index.md#httpuppyserver)
 - [HTTPuppyServerOptions](index.md#httpuppyserveroptions)
 - [HTTPuppySleep](index.md#httpuppysleep)
+- [UserStaticConfig](index.md#userstaticconfig)
 - [defaultHTTPConfig](index.md#defaulthttpconfig)
 - [fromDefaultHTTPConfig](index.md#fromdefaulthttpconfig)
 - [useRouter](index.md#userouter)
@@ -94,6 +95,12 @@ ___
 ### HTTPuppySleep
 
 Re-exports [HTTPuppySleep](server.md#httpuppysleep)
+
+___
+
+### UserStaticConfig
+
+Re-exports [UserStaticConfig](server.md#userstaticconfig)
 
 ___
 

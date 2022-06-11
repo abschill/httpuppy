@@ -1,3 +1,6 @@
+/**
+ * @internal
+ */
 import { HTTPHeader } from '../..';
 
 /**
@@ -19,14 +22,6 @@ export type MountedFile = {
 	content		: any;
 	hrefs		: string[];
 }
-
-export type UserStaticConfig = {
-	href 		?: string; // prefix path to access the directory on router
-	path 		?: string; // path on filesystem to reflect
-	mimeType 	?: string; // default content type
-	indexType 	?: string; // file to use as the index of a directory (default: index.html)
-};
-
 export type VirtualFileSystem = {
 	mountedPath	 : string;
 	mountedFiles : MountedFile[];

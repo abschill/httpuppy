@@ -23,7 +23,6 @@ import {
 import {
 	LogConfig,
 	useDefaultLogConfig,
-	UserStaticConfig,
 	iExitHandler,
 	UserMiddlewareOption,
 	iHandlerType,
@@ -52,7 +51,12 @@ export interface HTTPuppyResponse extends HTTPResponse {
 	send: (msg: any) => void;
 	json: (msg: any) => void;
 }
-
+export type UserStaticConfig = {
+	href 		?: string; // prefix path to access the directory on router
+	path 		?: string; // path on filesystem to reflect
+	mimeType 	?: string; // default content type
+	indexType 	?: string; // file to use as the index of a directory (default: index.html)
+};
 /**
  * @type DiagnosticLog
  * @description Runtime Diagnostic log to store for debug purposes

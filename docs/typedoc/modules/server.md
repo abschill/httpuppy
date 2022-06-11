@@ -17,6 +17,7 @@
 
 - [DiagnosticLog](server.md#diagnosticlog)
 - [HTTPuppySleep](server.md#httpuppysleep)
+- [UserStaticConfig](server.md#userstaticconfig)
 
 ### Variables
 
@@ -43,7 +44,7 @@
 
 #### Defined in
 
-[src/server.ts:60](https://github.com/abschill/httpuppy/blob/6cb858f/src/server.ts#L60)
+[src/server.ts:64](https://github.com/abschill/httpuppy/blob/c5e0640/src/server.ts#L64)
 
 ___
 
@@ -61,7 +62,26 @@ ___
 
 #### Defined in
 
-[src/server.ts:64](https://github.com/abschill/httpuppy/blob/6cb858f/src/server.ts#L64)
+[src/server.ts:68](https://github.com/abschill/httpuppy/blob/c5e0640/src/server.ts#L68)
+
+___
+
+### UserStaticConfig
+
+Ƭ **UserStaticConfig**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `href?` | `string` |
+| `indexType?` | `string` |
+| `mimeType?` | `string` |
+| `path?` | `string` |
+
+#### Defined in
+
+[src/server.ts:54](https://github.com/abschill/httpuppy/blob/c5e0640/src/server.ts#L54)
 
 ## Variables
 
@@ -71,7 +91,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:102](https://github.com/abschill/httpuppy/blob/6cb858f/src/server.ts#L102)
+[src/server.ts:106](https://github.com/abschill/httpuppy/blob/c5e0640/src/server.ts#L106)
 
 ## Functions
 
@@ -91,7 +111,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:113](https://github.com/abschill/httpuppy/blob/6cb858f/src/server.ts#L113)
+[src/server.ts:117](https://github.com/abschill/httpuppy/blob/c5e0640/src/server.ts#L117)
 
 ___
 
@@ -124,4 +144,4 @@ httpuppy server
 
 #### Defined in
 
-[src/server.ts:135](https://github.com/abschill/httpuppy/blob/6cb858f/src/server.ts#L135)
+[src/server.ts:139](https://github.com/abschill/httpuppy/blob/c5e0640/src/server.ts#L139)

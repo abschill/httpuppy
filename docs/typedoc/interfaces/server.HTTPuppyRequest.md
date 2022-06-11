@@ -83,7 +83,7 @@
 
 #### Defined in
 
-[src/server.ts:48](https://github.com/abschill/httpuppy/blob/6cb858f/src/server.ts#L48)
+[src/server.ts:47](https://github.com/abschill/httpuppy/blob/c5e0640/src/server.ts#L47)
 
 ___
 
