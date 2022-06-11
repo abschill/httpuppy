@@ -1,4 +1,4 @@
-[httpuppy - v0.3.0](../README.md) / [Modules](../modules.md) / [types/server](../modules/types_server.md) / LogConfig
+[httpuppy - v0.3.1](../README.md) / [Modules](../modules.md) / [types/server](../modules/types_server.md) / LogConfig
 
 # Interface: LogConfig
 
@@ -20,7 +20,7 @@
 
 #### Defined in
 
-[src/types/server/logger.ts:6](https://github.com/abschill/httpuppy/blob/e18a17c/src/types/server/logger.ts#L6)
+[src/types/server/logger.ts:6](https://github.com/abschill/httpuppy/blob/22f5812/src/types/server/logger.ts#L6)
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 #### Defined in
 
-[src/types/server/logger.ts:4](https://github.com/abschill/httpuppy/blob/e18a17c/src/types/server/logger.ts#L4)
+[src/types/server/logger.ts:4](https://github.com/abschill/httpuppy/blob/22f5812/src/types/server/logger.ts#L4)
 
 ___
 
@@ -40,4 +40,4 @@ ___
 
 #### Defined in
 
-[src/types/server/logger.ts:5](https://github.com/abschill/httpuppy/blob/e18a17c/src/types/server/logger.ts#L5)
+[src/types/server/logger.ts:5](https://github.com/abschill/httpuppy/blob/22f5812/src/types/server/logger.ts#L5)

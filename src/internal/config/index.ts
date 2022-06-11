@@ -28,7 +28,7 @@ export function useConfig(
 	if(config.static) {
 		config.static = {
 			href: '/', // base href to access with requests
-			path: '.', // path to map to the href
+			path: process.cwd(), // path to map to the href
 			...config.static // go last to just use href and path as defaults to override, config is the user input
 		};
 	}

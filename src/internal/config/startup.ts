@@ -5,8 +5,7 @@ import { useMountedFS } from '../static';
 import {
 	HTTPuppyServerOptions,
 	DiagnosticLog,
-	HTTPuppyServer,
-	useDefaultLogConfig
+	HTTPuppyServer
 } from '../../types';
 import useCluster from './cluster';
 

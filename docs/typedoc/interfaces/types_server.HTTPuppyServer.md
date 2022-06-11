@@ -1,4 +1,4 @@
-[httpuppy - v0.3.0](../README.md) / [Modules](../modules.md) / [types/server](../modules/types_server.md) / HTTPuppyServer
+[httpuppy - v0.3.1](../README.md) / [Modules](../modules.md) / [types/server](../modules/types_server.md) / HTTPuppyServer
 
 # Interface: HTTPuppyServer
 
@@ -67,7 +67,7 @@
 
 #### Defined in
 
-[src/types/server/index.ts:37](https://github.com/abschill/httpuppy/blob/e18a17c/src/types/server/index.ts#L37)
+[src/types/server/index.ts:37](https://github.com/abschill/httpuppy/blob/22f5812/src/types/server/index.ts#L37)
 
 ___
 
@@ -91,7 +91,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:33](https://github.com/abschill/httpuppy/blob/e18a17c/src/types/server/index.ts#L33)
+[src/types/server/index.ts:33](https://github.com/abschill/httpuppy/blob/22f5812/src/types/server/index.ts#L33)
 
 ___
 
@@ -241,7 +241,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:34](https://github.com/abschill/httpuppy/blob/e18a17c/src/types/server/index.ts#L34)
+[src/types/server/index.ts:34](https://github.com/abschill/httpuppy/blob/22f5812/src/types/server/index.ts#L34)
 
 ___
 
@@ -251,7 +251,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:32](https://github.com/abschill/httpuppy/blob/e18a17c/src/types/server/index.ts#L32)
+[src/types/server/index.ts:32](https://github.com/abschill/httpuppy/blob/22f5812/src/types/server/index.ts#L32)
 
 ___
 
@@ -2535,7 +2535,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:35](https://github.com/abschill/httpuppy/blob/e18a17c/src/types/server/index.ts#L35)
+[src/types/server/index.ts:35](https://github.com/abschill/httpuppy/blob/22f5812/src/types/server/index.ts#L35)
 
 ___
 
@@ -2549,7 +2549,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:36](https://github.com/abschill/httpuppy/blob/e18a17c/src/types/server/index.ts#L36)
+[src/types/server/index.ts:36](https://github.com/abschill/httpuppy/blob/22f5812/src/types/server/index.ts#L36)
 
 ___
 
