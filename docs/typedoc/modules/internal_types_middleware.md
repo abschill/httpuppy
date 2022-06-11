@@ -75,7 +75,7 @@
 
 #### Defined in
 
-[src/internal/types/middleware.ts:23](https://github.com/abschill/httpuppy/blob/70dd813/src/internal/types/middleware.ts#L23)
+[src/internal/types/middleware.ts:23](https://github.com/abschill/httpuppy/blob/ee38a23/src/internal/types/middleware.ts#L23)
 
 ___
 
@@ -92,7 +92,7 @@ ___
 
 #### Defined in
 
-[src/internal/types/middleware.ts:57](https://github.com/abschill/httpuppy/blob/70dd813/src/internal/types/middleware.ts#L57)
+[src/internal/types/middleware.ts:57](https://github.com/abschill/httpuppy/blob/ee38a23/src/internal/types/middleware.ts#L57)
 
 ___
 
@@ -102,7 +102,7 @@ ___
 
 #### Defined in
 
-[src/internal/types/middleware.ts:55](https://github.com/abschill/httpuppy/blob/70dd813/src/internal/types/middleware.ts#L55)
+[src/internal/types/middleware.ts:55](https://github.com/abschill/httpuppy/blob/ee38a23/src/internal/types/middleware.ts#L55)
 
 ___
 
@@ -127,7 +127,7 @@ ___
 
 #### Defined in
 
-[src/internal/types/middleware.ts:56](https://github.com/abschill/httpuppy/blob/70dd813/src/internal/types/middleware.ts#L56)
+[src/internal/types/middleware.ts:56](https://github.com/abschill/httpuppy/blob/ee38a23/src/internal/types/middleware.ts#L56)
 
 ## Variables
 
@@ -137,7 +137,7 @@ ___
 
 #### Defined in
 
-[src/internal/types/middleware.ts:39](https://github.com/abschill/httpuppy/blob/70dd813/src/internal/types/middleware.ts#L39)
+[src/internal/types/middleware.ts:39](https://github.com/abschill/httpuppy/blob/ee38a23/src/internal/types/middleware.ts#L39)
 
 ## Functions
 
@@ -157,4 +157,4 @@ ___
 
 #### Defined in
 
-[src/internal/types/middleware.ts:46](https://github.com/abschill/httpuppy/blob/70dd813/src/internal/types/middleware.ts#L46)
+[src/internal/types/middleware.ts:46](https://github.com/abschill/httpuppy/blob/ee38a23/src/internal/types/middleware.ts#L46)
