@@ -43,7 +43,7 @@ export type HTTPuppyRouterOptions = {
 * const router = useRouter(app);
 * router.get('/test', (req, res) => res.end('hello'));
 * ```
- * @param attachTo
+ * @param server
  * @returns
  */
 export function useRouter(

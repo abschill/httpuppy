@@ -1,4 +1,4 @@
-import { HTTPHeader } from '../../..';
+import { HTTPHeader } from '../..';
 
 /**
  * @type MountedFile

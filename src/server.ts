@@ -2,7 +2,6 @@
  * @module server
  * @description core server module
  */
-import { VirtualFileSystem } from './internal/types';
 import {
 	createServer as useCreateSecureServer,
 	ServerOptions as HTTPSOptions
@@ -29,8 +28,9 @@ import {
 	UserMiddlewareOption,
 	iHandlerType,
 	CacheSettings,
-	defaultCacheSettings
-} from './internal/types/server';
+	defaultCacheSettings,
+	VirtualFileSystem
+} from './internal/types';
 
 /**
  * @interface HTTPuppyServer
