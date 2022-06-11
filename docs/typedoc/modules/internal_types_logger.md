@@ -1,4 +1,4 @@
-[httpuppy - v0.3.5](../README.md) / [Modules](../modules.md) / internal/types/logger
+[httpuppy - v0.3.6](../README.md) / [Modules](../modules.md) / internal/types/logger
 
 # Module: internal/types/logger
 
@@ -26,7 +26,7 @@
 
 #### Defined in
 
-[src/internal/types/logger.ts:1](https://github.com/abschill/httpuppy/blob/ee38a23/src/internal/types/logger.ts#L1)
+[src/internal/types/logger.ts:1](https://github.com/abschill/httpuppy/blob/cf51615/src/internal/types/logger.ts#L1)
 
 ___
 
@@ -36,7 +36,7 @@ ___
 
 #### Defined in
 
-[src/internal/types/logger.ts:24](https://github.com/abschill/httpuppy/blob/ee38a23/src/internal/types/logger.ts#L24)
+[src/internal/types/logger.ts:24](https://github.com/abschill/httpuppy/blob/cf51615/src/internal/types/logger.ts#L24)
 
 ## Functions
 
@@ -50,4 +50,4 @@ ___
 
 #### Defined in
 
-[src/internal/types/logger.ts:9](https://github.com/abschill/httpuppy/blob/ee38a23/src/internal/types/logger.ts#L9)
+[src/internal/types/logger.ts:9](https://github.com/abschill/httpuppy/blob/cf51615/src/internal/types/logger.ts#L9)

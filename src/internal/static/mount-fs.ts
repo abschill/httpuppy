@@ -4,7 +4,7 @@
  */
 import { useLocalMimeType } from '.';
 import { useStaticURLParser } from './url';
-import walk from 'walkdir';
+import { resolve } from 'path';
 import {
 	MountedFile,
 	VirtualFileSystem
@@ -21,6 +21,8 @@ import {
 	useVirtualStreamReader,
 	useWriter
 } from '../writer';
+import { readdirSync } from 'fs';
+
 /**
  * @function useCleanPaths
  * @description list possible hrefs to be used for given vpath
@@ -52,14 +54,13 @@ export function useMountedFS(
 		throw 'error: fs attempted to mount with no path set in configuration';
 	}
 	const mountedPath = server.pConfig.static.path;
-	const mountedFiles = walk.sync(mountedPath).map(file => {
-		const asHref = file.split(process.cwd()).pop()?.split(mountedPath).pop();
-		const fileName = asHref?.split('/').pop();
+	const mountedFiles = readdirSync(mountedPath).map(file => {
+		const symLink = resolve(mountedPath, file);
 		return <MountedFile> {
-			fileName,
-			symLink: file,
-			contentType: <HTTPHeader>useLocalMimeType(file),
-			hrefs: useCleanPaths(fileName ?? '', <UserStaticConfig>server.pConfig.static)
+			fileName: file,
+			symLink,
+			contentType: <HTTPHeader>useLocalMimeType(symLink),
+			hrefs: useCleanPaths(file, <UserStaticConfig>server.pConfig.static)
 		};
 	});
 	// filesMounted is the accessible file tree that can be used against the upcoming handlers

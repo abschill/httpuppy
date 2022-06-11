@@ -1,4 +1,4 @@
-[httpuppy - v0.3.5](../README.md) / [Modules](../modules.md) / [internal/types/logger](../modules/internal_types_logger.md) / LogConfig
+[httpuppy - v0.3.6](../README.md) / [Modules](../modules.md) / [internal/types/logger](../modules/internal_types_logger.md) / LogConfig
 
 # Interface: LogConfig
 
@@ -20,7 +20,7 @@
 
 #### Defined in
 
-[src/internal/types/logger.ts:6](https://github.com/abschill/httpuppy/blob/ee38a23/src/internal/types/logger.ts#L6)
+[src/internal/types/logger.ts:6](https://github.com/abschill/httpuppy/blob/cf51615/src/internal/types/logger.ts#L6)
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 #### Defined in
 
-[src/internal/types/logger.ts:4](https://github.com/abschill/httpuppy/blob/ee38a23/src/internal/types/logger.ts#L4)
+[src/internal/types/logger.ts:4](https://github.com/abschill/httpuppy/blob/cf51615/src/internal/types/logger.ts#L4)
 
 ___
 
@@ -40,4 +40,4 @@ ___
 
 #### Defined in
 
-[src/internal/types/logger.ts:5](https://github.com/abschill/httpuppy/blob/ee38a23/src/internal/types/logger.ts#L5)
+[src/internal/types/logger.ts:5](https://github.com/abschill/httpuppy/blob/cf51615/src/internal/types/logger.ts#L5)
