@@ -7,6 +7,7 @@ import {
  } from '../../types';
 import { emitWarning } from 'process';
 import { useLogConfig } from '../logger';
+import { useColorTag } from '../fmt';
 
 /**
  * @internal useConfig
@@ -28,12 +29,12 @@ export function useConfig(
 	if(config.static) {
 		config.static = {
 			href: '/', // base href to access with requests
-			path: process.cwd(), // path to map to the href
 			...config.static // go last to just use href and path as defaults to override, config is the user input
 		};
-		if(config.static.path === '.') {
-			config.static.path = process.cwd();
-		}
+	}
+	if(config.static && (config.static.path === '.' || !config.static.path)) {
+		console.error(useColorTag('error', 'error: cannot use base path as a static root'));
+		process.exit(1);
 	}
 
 	if(!conf.handler && !conf.static) {
