@@ -17,12 +17,23 @@ import {
 	join
 } from 'path';
 
+/**
+ *
+ * @private
+ *
+ * @returns check number of config options in a given dir
+ */
 export function checkNumConfigs(p) {
 	const fileList = readdirSync(p);
 	const matches = CONFIG_FILE_OPTIONS.filter(fileOpt => fileList.includes(fileOpt.fileName));
 	return matches.length;
 }
-
+/**
+ *
+ * @private
+ *
+ * @returns take `any` config from a dir
+ */
 export function useConfigFrom(p) {
 	const fileList = readdirSync(p);
 	const matches = CONFIG_FILE_OPTIONS.filter(fileOpt => fileList.includes(fileOpt.fileName));
@@ -31,7 +42,12 @@ export function useConfigFrom(p) {
 	}
 	return {};
 }
-
+/**
+ *
+ * @private
+ *
+ * @returns inquirer prompt to select from multiple config options in a given path
+ */
 export async function useMultiConfigPrompt(p) {
 	const fileList = readdirSync(p);
 	const matches = CONFIG_FILE_OPTIONS.filter(fileOpt => fileList.includes(fileOpt.fileName));
@@ -46,6 +62,12 @@ export async function useMultiConfigPrompt(p) {
 	return CONFIG_FILE_OPTIONS.filter(opt => opt.fileName === fileSelected).shift();
 }
 
+/**
+ *
+ * @private
+ *
+ * @returns config formatted from various options
+ */
 function _switchConfigType(pathPrefix, match) {
 	switch(match.fileType) {
 		case 'ini':
@@ -61,7 +83,12 @@ function _switchConfigType(pathPrefix, match) {
 			return {};
 	}
 }
-
+/**
+ *
+ * @private
+ *
+ * @returns config from inline path arguments
+ */
 export async function useCLIConfigFinder() {
 	const cPath = process.argv[2] || process.cwd();
 	const configs = checkNumConfigs(cPath);
@@ -78,7 +105,12 @@ export async function useCLIConfigFinder() {
 		return {};
 	}
 }
-
+/**
+ *
+ * @private
+ *
+ * @returns auto select valid config option from list
+ */
 export async function useValidConfigOption(p) {
 	const fileList = readdirSync(p);
 	const matches = CONFIG_FILE_OPTIONS.filter(fileOpt => fileList.includes(fileOpt.fileName));

@@ -1,12 +1,12 @@
 /**
- * @internal
+ * @internal startup module proxy for cluster
  */
-import { useMountedFS } from '../static';
 import {
 	HTTPuppyServerOptions,
 	DiagnosticLog,
 	HTTPuppyServer
-} from '../../types';
+} from '../..';
+import { useMountedFS } from '../static';
 import useCluster from './cluster';
 
 /**

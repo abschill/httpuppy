@@ -4,7 +4,7 @@
 import {
 	DiagnosticLog,
 	HTTPuppyServerOptions
- } from '../../types';
+ } from '../..';
 import { emitWarning } from 'process';
 import { useLogConfig } from '../logger';
 import { useColorTag } from '../fmt';

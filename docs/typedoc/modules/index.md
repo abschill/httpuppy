@@ -1,4 +1,4 @@
-[httpuppy - v0.3.4](../README.md) / [Modules](../modules.md) / index
+[httpuppy - v0.3.5](../README.md) / [Modules](../modules.md) / index
 
 # Module: index
 
@@ -6,10 +6,101 @@
 
 ### References
 
+- [DiagnosticLog](index.md#diagnosticlog)
+- [HTTPHeader](index.md#httpheader)
+- [HTTPHeaders](index.md#httpheaders)
+- [HTTPuppyCallback](index.md#httpuppycallback)
+- [HTTPuppyRequest](index.md#httpuppyrequest)
+- [HTTPuppyResponse](index.md#httpuppyresponse)
+- [HTTPuppyRouter](index.md#httpuppyrouter)
+- [HTTPuppyRouterMethod](index.md#httpuppyroutermethod)
+- [HTTPuppyServer](index.md#httpuppyserver)
+- [HTTPuppyServerOptions](index.md#httpuppyserveroptions)
+- [HTTPuppySleep](index.md#httpuppysleep)
+- [defaultHTTPConfig](index.md#defaulthttpconfig)
+- [fromDefaultHTTPConfig](index.md#fromdefaulthttpconfig)
 - [useRouter](index.md#userouter)
 - [useServer](index.md#useserver)
 
 ## References
+
+### DiagnosticLog
+
+Re-exports [DiagnosticLog](server.md#diagnosticlog)
+
+___
+
+### HTTPHeader
+
+Re-exports [HTTPHeader](router.md#httpheader)
+
+___
+
+### HTTPHeaders
+
+Re-exports [HTTPHeaders](router.md#httpheaders)
+
+___
+
+### HTTPuppyCallback
+
+Re-exports [HTTPuppyCallback](router.md#httpuppycallback)
+
+___
+
+### HTTPuppyRequest
+
+Re-exports [HTTPuppyRequest](../interfaces/server.HTTPuppyRequest.md)
+
+___
+
+### HTTPuppyResponse
+
+Re-exports [HTTPuppyResponse](../interfaces/server.HTTPuppyResponse.md)
+
+___
+
+### HTTPuppyRouter
+
+Re-exports [HTTPuppyRouter](../interfaces/router.HTTPuppyRouter.md)
+
+___
+
+### HTTPuppyRouterMethod
+
+Re-exports [HTTPuppyRouterMethod](router.md#httpuppyroutermethod)
+
+___
+
+### HTTPuppyServer
+
+Re-exports [HTTPuppyServer](../interfaces/server.HTTPuppyServer.md)
+
+___
+
+### HTTPuppyServerOptions
+
+Re-exports [HTTPuppyServerOptions](../interfaces/server.HTTPuppyServerOptions.md)
+
+___
+
+### HTTPuppySleep
+
+Re-exports [HTTPuppySleep](server.md#httpuppysleep)
+
+___
+
+### defaultHTTPConfig
+
+Re-exports [defaultHTTPConfig](server.md#defaulthttpconfig)
+
+___
+
+### fromDefaultHTTPConfig
+
+Re-exports [fromDefaultHTTPConfig](server.md#fromdefaulthttpconfig)
+
+___
 
 ### useRouter
 

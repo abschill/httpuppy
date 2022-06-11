@@ -1,8 +1,8 @@
-[httpuppy - v0.3.4](../README.md) / [Modules](../modules.md) / [types/server](../modules/types_server.md) / HTTPuppyServer
+[httpuppy - v0.3.5](../README.md) / [Modules](../modules.md) / [server](../modules/server.md) / HTTPuppyServer
 
 # Interface: HTTPuppyServer
 
-[types/server](../modules/types_server.md).HTTPuppyServer
+[server](../modules/server.md).HTTPuppyServer
 
 **`interface`** HTTPuppyServer
 
@@ -18,56 +18,56 @@
 
 ### Properties
 
-- [\_vfs](types_server.HTTPuppyServer.md#_vfs)
-- [connections](types_server.HTTPuppyServer.md#connections)
-- [diagnostics](types_server.HTTPuppyServer.md#diagnostics)
-- [headersTimeout](types_server.HTTPuppyServer.md#headerstimeout)
-- [keepAliveTimeout](types_server.HTTPuppyServer.md#keepalivetimeout)
-- [listening](types_server.HTTPuppyServer.md#listening)
-- [maxConnections](types_server.HTTPuppyServer.md#maxconnections)
-- [maxHeadersCount](types_server.HTTPuppyServer.md#maxheaderscount)
-- [maxRequestsPerSocket](types_server.HTTPuppyServer.md#maxrequestspersocket)
-- [onClose](types_server.HTTPuppyServer.md#onclose)
-- [pConfig](types_server.HTTPuppyServer.md#pconfig)
-- [requestTimeout](types_server.HTTPuppyServer.md#requesttimeout)
-- [timeout](types_server.HTTPuppyServer.md#timeout)
+- [\_vfs](server.HTTPuppyServer.md#_vfs)
+- [connections](server.HTTPuppyServer.md#connections)
+- [diagnostics](server.HTTPuppyServer.md#diagnostics)
+- [headersTimeout](server.HTTPuppyServer.md#headerstimeout)
+- [keepAliveTimeout](server.HTTPuppyServer.md#keepalivetimeout)
+- [listening](server.HTTPuppyServer.md#listening)
+- [maxConnections](server.HTTPuppyServer.md#maxconnections)
+- [maxHeadersCount](server.HTTPuppyServer.md#maxheaderscount)
+- [maxRequestsPerSocket](server.HTTPuppyServer.md#maxrequestspersocket)
+- [onClose](server.HTTPuppyServer.md#onclose)
+- [pConfig](server.HTTPuppyServer.md#pconfig)
+- [requestTimeout](server.HTTPuppyServer.md#requesttimeout)
+- [timeout](server.HTTPuppyServer.md#timeout)
 
 ### Methods
 
-- [addListener](types_server.HTTPuppyServer.md#addlistener)
-- [address](types_server.HTTPuppyServer.md#address)
-- [close](types_server.HTTPuppyServer.md#close)
-- [emit](types_server.HTTPuppyServer.md#emit)
-- [eventNames](types_server.HTTPuppyServer.md#eventnames)
-- [getConnections](types_server.HTTPuppyServer.md#getconnections)
-- [getMaxListeners](types_server.HTTPuppyServer.md#getmaxlisteners)
-- [listen](types_server.HTTPuppyServer.md#listen)
-- [listenerCount](types_server.HTTPuppyServer.md#listenercount)
-- [listeners](types_server.HTTPuppyServer.md#listeners)
-- [off](types_server.HTTPuppyServer.md#off)
-- [on](types_server.HTTPuppyServer.md#on)
-- [once](types_server.HTTPuppyServer.md#once)
-- [prependListener](types_server.HTTPuppyServer.md#prependlistener)
-- [prependOnceListener](types_server.HTTPuppyServer.md#prependoncelistener)
-- [rawListeners](types_server.HTTPuppyServer.md#rawlisteners)
-- [ref](types_server.HTTPuppyServer.md#ref)
-- [removeAllListeners](types_server.HTTPuppyServer.md#removealllisteners)
-- [removeListener](types_server.HTTPuppyServer.md#removelistener)
-- [setMaxListeners](types_server.HTTPuppyServer.md#setmaxlisteners)
-- [setTimeout](types_server.HTTPuppyServer.md#settimeout)
-- [start](types_server.HTTPuppyServer.md#start)
-- [stop](types_server.HTTPuppyServer.md#stop)
-- [unref](types_server.HTTPuppyServer.md#unref)
+- [addListener](server.HTTPuppyServer.md#addlistener)
+- [address](server.HTTPuppyServer.md#address)
+- [close](server.HTTPuppyServer.md#close)
+- [emit](server.HTTPuppyServer.md#emit)
+- [eventNames](server.HTTPuppyServer.md#eventnames)
+- [getConnections](server.HTTPuppyServer.md#getconnections)
+- [getMaxListeners](server.HTTPuppyServer.md#getmaxlisteners)
+- [listen](server.HTTPuppyServer.md#listen)
+- [listenerCount](server.HTTPuppyServer.md#listenercount)
+- [listeners](server.HTTPuppyServer.md#listeners)
+- [off](server.HTTPuppyServer.md#off)
+- [on](server.HTTPuppyServer.md#on)
+- [once](server.HTTPuppyServer.md#once)
+- [prependListener](server.HTTPuppyServer.md#prependlistener)
+- [prependOnceListener](server.HTTPuppyServer.md#prependoncelistener)
+- [rawListeners](server.HTTPuppyServer.md#rawlisteners)
+- [ref](server.HTTPuppyServer.md#ref)
+- [removeAllListeners](server.HTTPuppyServer.md#removealllisteners)
+- [removeListener](server.HTTPuppyServer.md#removelistener)
+- [setMaxListeners](server.HTTPuppyServer.md#setmaxlisteners)
+- [setTimeout](server.HTTPuppyServer.md#settimeout)
+- [start](server.HTTPuppyServer.md#start)
+- [stop](server.HTTPuppyServer.md#stop)
+- [unref](server.HTTPuppyServer.md#unref)
 
 ## Properties
 
 ### \_vfs
 
-• **\_vfs**: [`VirtualFileSystem`](../modules/types_server.md#virtualfilesystem)
+• **\_vfs**: `VirtualFileSystem`
 
 #### Defined in
 
-[src/types/server/index.ts:37](https://github.com/abschill/httpuppy/blob/1d512f9/src/types/server/index.ts#L37)
+[src/server.ts:45](https://github.com/abschill/httpuppy/blob/94ff392/src/server.ts#L45)
 
 ___
 
@@ -87,11 +87,11 @@ ___
 
 ### diagnostics
 
-• **diagnostics**: [`DiagnosticLog`](../modules/types_server.md#diagnosticlog)[]
+• **diagnostics**: [`DiagnosticLog`](../modules/server.md#diagnosticlog)[]
 
 #### Defined in
 
-[src/types/server/index.ts:33](https://github.com/abschill/httpuppy/blob/1d512f9/src/types/server/index.ts#L33)
+[src/server.ts:41](https://github.com/abschill/httpuppy/blob/94ff392/src/server.ts#L41)
 
 ___
 
@@ -237,21 +237,21 @@ ___
 
 ### onClose
 
-• **onClose**: [`iExitHandler`](../modules/types_server.md#iexithandler)
+• **onClose**: `iExitHandler`
 
 #### Defined in
 
-[src/types/server/index.ts:34](https://github.com/abschill/httpuppy/blob/1d512f9/src/types/server/index.ts#L34)
+[src/server.ts:42](https://github.com/abschill/httpuppy/blob/94ff392/src/server.ts#L42)
 
 ___
 
 ### pConfig
 
-• **pConfig**: [`HTTPuppyServerOptions`](types_server.HTTPuppyServerOptions.md)
+• **pConfig**: [`HTTPuppyServerOptions`](server.HTTPuppyServerOptions.md)
 
 #### Defined in
 
-[src/types/server/index.ts:32](https://github.com/abschill/httpuppy/blob/1d512f9/src/types/server/index.ts#L32)
+[src/server.ts:40](https://github.com/abschill/httpuppy/blob/94ff392/src/server.ts#L40)
 
 ___
 
@@ -307,7 +307,7 @@ node_modules/@types/node/http.d.ts:209
 
 ### addListener
 
-▸ **addListener**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **addListener**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -318,7 +318,7 @@ node_modules/@types/node/http.d.ts:209
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -328,7 +328,7 @@ stlServer.addListener
 
 node_modules/@types/node/http.d.ts:254
 
-▸ **addListener**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **addListener**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -339,7 +339,7 @@ node_modules/@types/node/http.d.ts:254
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -349,7 +349,7 @@ stlServer.addListener
 
 node_modules/@types/node/http.d.ts:255
 
-▸ **addListener**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **addListener**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -360,7 +360,7 @@ node_modules/@types/node/http.d.ts:255
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -370,7 +370,7 @@ stlServer.addListener
 
 node_modules/@types/node/http.d.ts:256
 
-▸ **addListener**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **addListener**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -381,7 +381,7 @@ node_modules/@types/node/http.d.ts:256
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -391,7 +391,7 @@ stlServer.addListener
 
 node_modules/@types/node/http.d.ts:257
 
-▸ **addListener**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **addListener**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -402,7 +402,7 @@ node_modules/@types/node/http.d.ts:257
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -412,7 +412,7 @@ stlServer.addListener
 
 node_modules/@types/node/http.d.ts:258
 
-▸ **addListener**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **addListener**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -423,7 +423,7 @@ node_modules/@types/node/http.d.ts:258
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -433,7 +433,7 @@ stlServer.addListener
 
 node_modules/@types/node/http.d.ts:259
 
-▸ **addListener**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **addListener**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -444,7 +444,7 @@ node_modules/@types/node/http.d.ts:259
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -454,7 +454,7 @@ stlServer.addListener
 
 node_modules/@types/node/http.d.ts:260
 
-▸ **addListener**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **addListener**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -465,7 +465,7 @@ node_modules/@types/node/http.d.ts:260
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -475,7 +475,7 @@ stlServer.addListener
 
 node_modules/@types/node/http.d.ts:261
 
-▸ **addListener**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **addListener**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -486,7 +486,7 @@ node_modules/@types/node/http.d.ts:261
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -496,7 +496,7 @@ stlServer.addListener
 
 node_modules/@types/node/http.d.ts:262
 
-▸ **addListener**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **addListener**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -507,7 +507,7 @@ node_modules/@types/node/http.d.ts:262
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -517,7 +517,7 @@ stlServer.addListener
 
 node_modules/@types/node/http.d.ts:263
 
-▸ **addListener**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **addListener**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -528,7 +528,7 @@ node_modules/@types/node/http.d.ts:263
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -586,7 +586,7 @@ ___
 
 ### close
 
-▸ **close**(`callback?`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **close**(`callback?`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 Stops the server from accepting new connections and keeps existing
 connections. This function is asynchronous, the server is finally closed
@@ -605,7 +605,7 @@ was not open when it was closed.
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -950,7 +950,7 @@ ___
 
 ### listen
 
-▸ **listen**(`port?`, `hostname?`, `backlog?`, `listeningListener?`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **listen**(`port?`, `hostname?`, `backlog?`, `listeningListener?`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 Start a server listening for connections. A `net.Server` can be a TCP or
 an `IPC` server depending on what it listens to.
@@ -1003,7 +1003,7 @@ server.on('error', (e) => {
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -1013,7 +1013,7 @@ stlServer.listen
 
 node_modules/@types/node/net.d.ts:451
 
-▸ **listen**(`port?`, `hostname?`, `listeningListener?`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **listen**(`port?`, `hostname?`, `listeningListener?`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -1025,7 +1025,7 @@ node_modules/@types/node/net.d.ts:451
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -1035,7 +1035,7 @@ stlServer.listen
 
 node_modules/@types/node/net.d.ts:452
 
-▸ **listen**(`port?`, `backlog?`, `listeningListener?`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **listen**(`port?`, `backlog?`, `listeningListener?`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -1047,7 +1047,7 @@ node_modules/@types/node/net.d.ts:452
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -1057,7 +1057,7 @@ stlServer.listen
 
 node_modules/@types/node/net.d.ts:453
 
-▸ **listen**(`port?`, `listeningListener?`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **listen**(`port?`, `listeningListener?`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -1068,7 +1068,7 @@ node_modules/@types/node/net.d.ts:453
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -1078,7 +1078,7 @@ stlServer.listen
 
 node_modules/@types/node/net.d.ts:454
 
-▸ **listen**(`path`, `backlog?`, `listeningListener?`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **listen**(`path`, `backlog?`, `listeningListener?`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -1090,7 +1090,7 @@ node_modules/@types/node/net.d.ts:454
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -1100,7 +1100,7 @@ stlServer.listen
 
 node_modules/@types/node/net.d.ts:455
 
-▸ **listen**(`path`, `listeningListener?`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **listen**(`path`, `listeningListener?`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -1111,7 +1111,7 @@ node_modules/@types/node/net.d.ts:455
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -1121,7 +1121,7 @@ stlServer.listen
 
 node_modules/@types/node/net.d.ts:456
 
-▸ **listen**(`options`, `listeningListener?`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **listen**(`options`, `listeningListener?`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -1132,7 +1132,7 @@ node_modules/@types/node/net.d.ts:456
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -1142,7 +1142,7 @@ stlServer.listen
 
 node_modules/@types/node/net.d.ts:457
 
-▸ **listen**(`handle`, `backlog?`, `listeningListener?`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **listen**(`handle`, `backlog?`, `listeningListener?`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -1154,7 +1154,7 @@ node_modules/@types/node/net.d.ts:457
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -1164,7 +1164,7 @@ stlServer.listen
 
 node_modules/@types/node/net.d.ts:458
 
-▸ **listen**(`handle`, `listeningListener?`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **listen**(`handle`, `listeningListener?`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -1175,7 +1175,7 @@ node_modules/@types/node/net.d.ts:458
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -1253,7 +1253,7 @@ ___
 
 ### off
 
-▸ **off**(`eventName`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **off**(`eventName`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 Alias for `emitter.removeListener()`.
 
@@ -1268,7 +1268,7 @@ Alias for `emitter.removeListener()`.
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -1282,7 +1282,7 @@ ___
 
 ### on
 
-▸ **on**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **on**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -1293,7 +1293,7 @@ ___
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -1303,7 +1303,7 @@ stlServer.on
 
 node_modules/@types/node/http.d.ts:276
 
-▸ **on**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **on**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -1314,7 +1314,7 @@ node_modules/@types/node/http.d.ts:276
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -1324,7 +1324,7 @@ stlServer.on
 
 node_modules/@types/node/http.d.ts:277
 
-▸ **on**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **on**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -1335,7 +1335,7 @@ node_modules/@types/node/http.d.ts:277
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -1345,7 +1345,7 @@ stlServer.on
 
 node_modules/@types/node/http.d.ts:278
 
-▸ **on**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **on**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -1356,7 +1356,7 @@ node_modules/@types/node/http.d.ts:278
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -1366,7 +1366,7 @@ stlServer.on
 
 node_modules/@types/node/http.d.ts:279
 
-▸ **on**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **on**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -1377,7 +1377,7 @@ node_modules/@types/node/http.d.ts:279
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -1387,7 +1387,7 @@ stlServer.on
 
 node_modules/@types/node/http.d.ts:280
 
-▸ **on**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **on**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -1398,7 +1398,7 @@ node_modules/@types/node/http.d.ts:280
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -1408,7 +1408,7 @@ stlServer.on
 
 node_modules/@types/node/http.d.ts:281
 
-▸ **on**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **on**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -1419,7 +1419,7 @@ node_modules/@types/node/http.d.ts:281
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -1429,7 +1429,7 @@ stlServer.on
 
 node_modules/@types/node/http.d.ts:282
 
-▸ **on**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **on**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -1440,7 +1440,7 @@ node_modules/@types/node/http.d.ts:282
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -1450,7 +1450,7 @@ stlServer.on
 
 node_modules/@types/node/http.d.ts:283
 
-▸ **on**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **on**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -1461,7 +1461,7 @@ node_modules/@types/node/http.d.ts:283
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -1471,7 +1471,7 @@ stlServer.on
 
 node_modules/@types/node/http.d.ts:284
 
-▸ **on**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **on**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -1482,7 +1482,7 @@ node_modules/@types/node/http.d.ts:284
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -1492,7 +1492,7 @@ stlServer.on
 
 node_modules/@types/node/http.d.ts:285
 
-▸ **on**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **on**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -1503,7 +1503,7 @@ node_modules/@types/node/http.d.ts:285
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -1517,7 +1517,7 @@ ___
 
 ### once
 
-▸ **once**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **once**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -1528,7 +1528,7 @@ ___
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -1538,7 +1538,7 @@ stlServer.once
 
 node_modules/@types/node/http.d.ts:287
 
-▸ **once**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **once**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -1549,7 +1549,7 @@ node_modules/@types/node/http.d.ts:287
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -1559,7 +1559,7 @@ stlServer.once
 
 node_modules/@types/node/http.d.ts:288
 
-▸ **once**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **once**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -1570,7 +1570,7 @@ node_modules/@types/node/http.d.ts:288
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -1580,7 +1580,7 @@ stlServer.once
 
 node_modules/@types/node/http.d.ts:289
 
-▸ **once**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **once**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -1591,7 +1591,7 @@ node_modules/@types/node/http.d.ts:289
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -1601,7 +1601,7 @@ stlServer.once
 
 node_modules/@types/node/http.d.ts:290
 
-▸ **once**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **once**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -1612,7 +1612,7 @@ node_modules/@types/node/http.d.ts:290
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -1622,7 +1622,7 @@ stlServer.once
 
 node_modules/@types/node/http.d.ts:291
 
-▸ **once**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **once**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -1633,7 +1633,7 @@ node_modules/@types/node/http.d.ts:291
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -1643,7 +1643,7 @@ stlServer.once
 
 node_modules/@types/node/http.d.ts:292
 
-▸ **once**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **once**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -1654,7 +1654,7 @@ node_modules/@types/node/http.d.ts:292
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -1664,7 +1664,7 @@ stlServer.once
 
 node_modules/@types/node/http.d.ts:293
 
-▸ **once**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **once**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -1675,7 +1675,7 @@ node_modules/@types/node/http.d.ts:293
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -1685,7 +1685,7 @@ stlServer.once
 
 node_modules/@types/node/http.d.ts:294
 
-▸ **once**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **once**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -1696,7 +1696,7 @@ node_modules/@types/node/http.d.ts:294
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -1706,7 +1706,7 @@ stlServer.once
 
 node_modules/@types/node/http.d.ts:295
 
-▸ **once**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **once**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -1717,7 +1717,7 @@ node_modules/@types/node/http.d.ts:295
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -1727,7 +1727,7 @@ stlServer.once
 
 node_modules/@types/node/http.d.ts:296
 
-▸ **once**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **once**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -1738,7 +1738,7 @@ node_modules/@types/node/http.d.ts:296
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -1752,7 +1752,7 @@ ___
 
 ### prependListener
 
-▸ **prependListener**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **prependListener**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -1763,7 +1763,7 @@ ___
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -1773,7 +1773,7 @@ stlServer.prependListener
 
 node_modules/@types/node/http.d.ts:298
 
-▸ **prependListener**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **prependListener**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -1784,7 +1784,7 @@ node_modules/@types/node/http.d.ts:298
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -1794,7 +1794,7 @@ stlServer.prependListener
 
 node_modules/@types/node/http.d.ts:299
 
-▸ **prependListener**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **prependListener**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -1805,7 +1805,7 @@ node_modules/@types/node/http.d.ts:299
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -1815,7 +1815,7 @@ stlServer.prependListener
 
 node_modules/@types/node/http.d.ts:300
 
-▸ **prependListener**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **prependListener**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -1826,7 +1826,7 @@ node_modules/@types/node/http.d.ts:300
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -1836,7 +1836,7 @@ stlServer.prependListener
 
 node_modules/@types/node/http.d.ts:301
 
-▸ **prependListener**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **prependListener**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -1847,7 +1847,7 @@ node_modules/@types/node/http.d.ts:301
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -1857,7 +1857,7 @@ stlServer.prependListener
 
 node_modules/@types/node/http.d.ts:302
 
-▸ **prependListener**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **prependListener**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -1868,7 +1868,7 @@ node_modules/@types/node/http.d.ts:302
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -1878,7 +1878,7 @@ stlServer.prependListener
 
 node_modules/@types/node/http.d.ts:303
 
-▸ **prependListener**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **prependListener**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -1889,7 +1889,7 @@ node_modules/@types/node/http.d.ts:303
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -1899,7 +1899,7 @@ stlServer.prependListener
 
 node_modules/@types/node/http.d.ts:304
 
-▸ **prependListener**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **prependListener**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -1910,7 +1910,7 @@ node_modules/@types/node/http.d.ts:304
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -1920,7 +1920,7 @@ stlServer.prependListener
 
 node_modules/@types/node/http.d.ts:305
 
-▸ **prependListener**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **prependListener**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -1931,7 +1931,7 @@ node_modules/@types/node/http.d.ts:305
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -1941,7 +1941,7 @@ stlServer.prependListener
 
 node_modules/@types/node/http.d.ts:306
 
-▸ **prependListener**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **prependListener**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -1952,7 +1952,7 @@ node_modules/@types/node/http.d.ts:306
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -1962,7 +1962,7 @@ stlServer.prependListener
 
 node_modules/@types/node/http.d.ts:307
 
-▸ **prependListener**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **prependListener**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -1973,7 +1973,7 @@ node_modules/@types/node/http.d.ts:307
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -1987,7 +1987,7 @@ ___
 
 ### prependOnceListener
 
-▸ **prependOnceListener**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **prependOnceListener**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -1998,7 +1998,7 @@ ___
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -2008,7 +2008,7 @@ stlServer.prependOnceListener
 
 node_modules/@types/node/http.d.ts:309
 
-▸ **prependOnceListener**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **prependOnceListener**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -2019,7 +2019,7 @@ node_modules/@types/node/http.d.ts:309
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -2029,7 +2029,7 @@ stlServer.prependOnceListener
 
 node_modules/@types/node/http.d.ts:310
 
-▸ **prependOnceListener**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **prependOnceListener**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -2040,7 +2040,7 @@ node_modules/@types/node/http.d.ts:310
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -2050,7 +2050,7 @@ stlServer.prependOnceListener
 
 node_modules/@types/node/http.d.ts:311
 
-▸ **prependOnceListener**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **prependOnceListener**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -2061,7 +2061,7 @@ node_modules/@types/node/http.d.ts:311
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -2071,7 +2071,7 @@ stlServer.prependOnceListener
 
 node_modules/@types/node/http.d.ts:312
 
-▸ **prependOnceListener**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **prependOnceListener**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -2082,7 +2082,7 @@ node_modules/@types/node/http.d.ts:312
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -2092,7 +2092,7 @@ stlServer.prependOnceListener
 
 node_modules/@types/node/http.d.ts:313
 
-▸ **prependOnceListener**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **prependOnceListener**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -2103,7 +2103,7 @@ node_modules/@types/node/http.d.ts:313
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -2113,7 +2113,7 @@ stlServer.prependOnceListener
 
 node_modules/@types/node/http.d.ts:314
 
-▸ **prependOnceListener**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **prependOnceListener**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -2124,7 +2124,7 @@ node_modules/@types/node/http.d.ts:314
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -2134,7 +2134,7 @@ stlServer.prependOnceListener
 
 node_modules/@types/node/http.d.ts:315
 
-▸ **prependOnceListener**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **prependOnceListener**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -2145,7 +2145,7 @@ node_modules/@types/node/http.d.ts:315
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -2155,7 +2155,7 @@ stlServer.prependOnceListener
 
 node_modules/@types/node/http.d.ts:316
 
-▸ **prependOnceListener**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **prependOnceListener**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -2166,7 +2166,7 @@ node_modules/@types/node/http.d.ts:316
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -2176,7 +2176,7 @@ stlServer.prependOnceListener
 
 node_modules/@types/node/http.d.ts:317
 
-▸ **prependOnceListener**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **prependOnceListener**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -2187,7 +2187,7 @@ node_modules/@types/node/http.d.ts:317
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -2197,7 +2197,7 @@ stlServer.prependOnceListener
 
 node_modules/@types/node/http.d.ts:318
 
-▸ **prependOnceListener**(`event`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **prependOnceListener**(`event`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -2208,7 +2208,7 @@ node_modules/@types/node/http.d.ts:318
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -2275,7 +2275,7 @@ ___
 
 ### ref
 
-▸ **ref**(): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **ref**(): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 Opposite of `unref()`, calling `ref()` on a previously `unref`ed server will_not_ let the program exit if it's the only server left (the default behavior).
 If the server is `ref`ed calling `ref()` again will have no effect.
@@ -2284,7 +2284,7 @@ If the server is `ref`ed calling `ref()` again will have no effect.
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -2298,7 +2298,7 @@ ___
 
 ### removeAllListeners
 
-▸ **removeAllListeners**(`event?`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **removeAllListeners**(`event?`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 Removes all listeners, or those of the specified `eventName`.
 
@@ -2318,7 +2318,7 @@ Returns a reference to the `EventEmitter`, so that calls can be chained.
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -2332,7 +2332,7 @@ ___
 
 ### removeListener
 
-▸ **removeListener**(`eventName`, `listener`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **removeListener**(`eventName`, `listener`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 Removes the specified `listener` from the listener array for the event named`eventName`.
 
@@ -2422,7 +2422,7 @@ Returns a reference to the `EventEmitter`, so that calls can be chained.
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -2436,7 +2436,7 @@ ___
 
 ### setMaxListeners
 
-▸ **setMaxListeners**(`n`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **setMaxListeners**(`n`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 By default `EventEmitter`s will print a warning if more than `10` listeners are
 added for a particular event. This is a useful default that helps finding
@@ -2455,7 +2455,7 @@ Returns a reference to the `EventEmitter`, so that calls can be chained.
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -2469,7 +2469,7 @@ ___
 
 ### setTimeout
 
-▸ **setTimeout**(`msecs?`, `callback?`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **setTimeout**(`msecs?`, `callback?`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 Sets the timeout value for sockets, and emits a `'timeout'` event on
 the Server object, passing the socket as an argument, if a timeout
@@ -2493,7 +2493,7 @@ explicitly.
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -2503,7 +2503,7 @@ stlServer.setTimeout
 
 node_modules/@types/node/http.d.ts:180
 
-▸ **setTimeout**(`callback`): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **setTimeout**(`callback`): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Parameters
 
@@ -2513,7 +2513,7 @@ node_modules/@types/node/http.d.ts:180
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 
@@ -2535,27 +2535,27 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:35](https://github.com/abschill/httpuppy/blob/1d512f9/src/types/server/index.ts#L35)
+[src/server.ts:43](https://github.com/abschill/httpuppy/blob/94ff392/src/server.ts#L43)
 
 ___
 
 ### stop
 
-▸ **stop**(): `Promise`<[`HTTPuppySleep`](../modules/types_server.md#httpuppysleep)\>
+▸ **stop**(): `Promise`<[`HTTPuppySleep`](../modules/server.md#httpuppysleep)\>
 
 #### Returns
 
-`Promise`<[`HTTPuppySleep`](../modules/types_server.md#httpuppysleep)\>
+`Promise`<[`HTTPuppySleep`](../modules/server.md#httpuppysleep)\>
 
 #### Defined in
 
-[src/types/server/index.ts:36](https://github.com/abschill/httpuppy/blob/1d512f9/src/types/server/index.ts#L36)
+[src/server.ts:44](https://github.com/abschill/httpuppy/blob/94ff392/src/server.ts#L44)
 
 ___
 
 ### unref
 
-▸ **unref**(): [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+▸ **unref**(): [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 Calling `unref()` on a server will allow the program to exit if this is the only
 active server in the event system. If the server is already `unref`ed calling`unref()` again will have no effect.
@@ -2564,7 +2564,7 @@ active server in the event system. If the server is already `unref`ed calling`un
 
 #### Returns
 
-[`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+[`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Inherited from
 

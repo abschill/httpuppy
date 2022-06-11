@@ -3,18 +3,21 @@
  */
 import { useColorTag } from './fmt/_color';
 import {
+	HTTPuppyServer,
+	HTTPuppyRequest
+} from '../';
+import {
 	LogConfig,
 	useDefaultLogConfig,
-	HTTPuppyServer,
-	HTTPuppyRequest,
 	ValidLogMsg
-} from '../types';
+} from './types';
 import {
 	existsSync,
 	appendFileSync,
 	writeFileSync
 } from 'fs';
 import cluster from 'cluster';
+
 const { log } = console;
 
 export function fLog(

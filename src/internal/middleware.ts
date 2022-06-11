@@ -3,16 +3,15 @@
  * @description middleware hooks, such mime type header resolution / header setting
  */
 import { useEtag } from './include/etag';
+import { HTTPuppyWriterOptions } from './types';
 import {
 	HTTPHeaders,
 	HTTPuppyServer,
 	HTTPuppyCallback,
 	HTTPuppyRequest,
 	HTTPuppyResponse,
-	HTTPuppyServerOptions,
-	HTTPuppyWriterOptions
-} from '../types';
-
+	HTTPuppyServerOptions
+} from '../';
 export function useMiddleware(
     config	: HTTPuppyServerOptions,
     req		: HTTPuppyRequest,

@@ -1,6 +1,13 @@
+/**
+ * @internal
+ * cluster callback handler
+ */
 import cluster from 'cluster';
 import { cpus } from 'os';
-import { HTTPuppyServer, HTTPuppyServerOptions } from '../../types';
+import {
+	HTTPuppyServer,
+	HTTPuppyServerOptions
+} from '../..';
 
 export default function useCluster(
 	server: HTTPuppyServer

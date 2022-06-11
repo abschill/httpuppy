@@ -3,7 +3,7 @@ import {
 	HTTPuppyServer,
 	HTTPuppyRequest,
 	HTTPuppyResponse
- } from '../../types';
+ } from '../..';
 
 export function useStaticHandler(
 	server: HTTPuppyServer

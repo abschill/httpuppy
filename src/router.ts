@@ -2,15 +2,27 @@
  * @module router
  * @description for adding custom routing to your server
  */
+import { useHTTPHandle } from './internal';
 import {
 	HTTPuppyServer,
-	HTTPuppyRouter,
-	HTTPuppyCallback
-} from './types';
-import {
-	useHTTPHandle
-} from './internal';
+	HTTPuppyRequest,
+	HTTPuppyResponse
+} from '.';
 
+export declare function HTTPuppyCallback(req: HTTPuppyRequest, res: HTTPuppyResponse): any;
+
+export declare function HTTPuppyRouterMethod(url: string, cb: typeof HTTPuppyCallback): typeof HTTPuppyCallback | void;
+export interface HTTPuppyRouter {
+	url			: string;
+	get			: typeof HTTPuppyRouterMethod;
+	head		: typeof HTTPuppyRouterMethod;
+	post		: typeof HTTPuppyRouterMethod;
+	put			: typeof HTTPuppyRouterMethod;
+	patch		: typeof HTTPuppyRouterMethod;
+	delete		: typeof HTTPuppyRouterMethod;
+}
+export type HTTPHeader = string[];
+export type HTTPHeaders = HTTPHeader[];
 /**
  * @function useRouter
  * @example

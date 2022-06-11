@@ -7,10 +7,12 @@ import { useLocalMimeType } from './static';
 import { useHeaders } from './middleware';
 import {
 	VirtualWriteableFile,
+	HTTPuppyWriterOptions
+ } from './types';
+import {
 	HTTPuppyResponse,
 	HTTPuppyServerOptions,
-	HTTPuppyWriterOptions
- } from '../types';
+} from '..';
 
 /**
  * @internal isBufferType

@@ -3,8 +3,7 @@
 	"entryPoints": [
 		"./src/index.ts",
 		"./src/server.ts",
-		"./src/router.ts",
-		"./src/types/server/index.ts"
+		"./src/router.ts"
 	],
 	"includeVersion": true
 }

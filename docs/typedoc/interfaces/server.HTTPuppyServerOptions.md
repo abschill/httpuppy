@@ -1,8 +1,8 @@
-[httpuppy - v0.3.4](../README.md) / [Modules](../modules.md) / [types/server](../modules/types_server.md) / HTTPuppyServerOptions
+[httpuppy - v0.3.5](../README.md) / [Modules](../modules.md) / [server](../modules/server.md) / HTTPuppyServerOptions
 
 # Interface: HTTPuppyServerOptions
 
-[types/server](../modules/types_server.md).HTTPuppyServerOptions
+[server](../modules/server.md).HTTPuppyServerOptions
 
 **`interface`** HTTPuppyServerOptions
 
@@ -40,24 +40,24 @@
 
 ### Properties
 
-- [IncomingMessage](types_server.HTTPuppyServerOptions.md#incomingmessage)
-- [ServerResponse](types_server.HTTPuppyServerOptions.md#serverresponse)
-- [cache](types_server.HTTPuppyServerOptions.md#cache)
-- [clustered](types_server.HTTPuppyServerOptions.md#clustered)
-- [handler](types_server.HTTPuppyServerOptions.md#handler)
-- [hostname](types_server.HTTPuppyServerOptions.md#hostname)
-- [insecureHTTPParser](types_server.HTTPuppyServerOptions.md#insecurehttpparser)
-- [log](types_server.HTTPuppyServerOptions.md#log)
-- [maxHeaderSize](types_server.HTTPuppyServerOptions.md#maxheadersize)
-- [middleware](types_server.HTTPuppyServerOptions.md#middleware)
-- [onClose](types_server.HTTPuppyServerOptions.md#onclose)
-- [onMount](types_server.HTTPuppyServerOptions.md#onmount)
-- [port](types_server.HTTPuppyServerOptions.md#port)
-- [secure](types_server.HTTPuppyServerOptions.md#secure)
-- [secureContext](types_server.HTTPuppyServerOptions.md#securecontext)
-- [static](types_server.HTTPuppyServerOptions.md#static)
-- [throwWarnings](types_server.HTTPuppyServerOptions.md#throwwarnings)
-- [timeout](types_server.HTTPuppyServerOptions.md#timeout)
+- [IncomingMessage](server.HTTPuppyServerOptions.md#incomingmessage)
+- [ServerResponse](server.HTTPuppyServerOptions.md#serverresponse)
+- [cache](server.HTTPuppyServerOptions.md#cache)
+- [clustered](server.HTTPuppyServerOptions.md#clustered)
+- [handler](server.HTTPuppyServerOptions.md#handler)
+- [hostname](server.HTTPuppyServerOptions.md#hostname)
+- [insecureHTTPParser](server.HTTPuppyServerOptions.md#insecurehttpparser)
+- [log](server.HTTPuppyServerOptions.md#log)
+- [maxHeaderSize](server.HTTPuppyServerOptions.md#maxheadersize)
+- [middleware](server.HTTPuppyServerOptions.md#middleware)
+- [onClose](server.HTTPuppyServerOptions.md#onclose)
+- [onMount](server.HTTPuppyServerOptions.md#onmount)
+- [port](server.HTTPuppyServerOptions.md#port)
+- [secure](server.HTTPuppyServerOptions.md#secure)
+- [secureContext](server.HTTPuppyServerOptions.md#securecontext)
+- [static](server.HTTPuppyServerOptions.md#static)
+- [throwWarnings](server.HTTPuppyServerOptions.md#throwwarnings)
+- [timeout](server.HTTPuppyServerOptions.md#timeout)
 
 ## Properties
 
@@ -91,11 +91,11 @@ ___
 
 ### cache
 
-• `Optional` **cache**: [`CacheSettings`](../modules/types_server.md#cachesettings)
+• `Optional` **cache**: `CacheSettings`
 
 #### Defined in
 
-[src/types/server/index.ts:67](https://github.com/abschill/httpuppy/blob/1d512f9/src/types/server/index.ts#L67)
+[src/server.ts:91](https://github.com/abschill/httpuppy/blob/94ff392/src/server.ts#L91)
 
 ___
 
@@ -105,7 +105,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:59](https://github.com/abschill/httpuppy/blob/1d512f9/src/types/server/index.ts#L59)
+[src/server.ts:83](https://github.com/abschill/httpuppy/blob/94ff392/src/server.ts#L83)
 
 ___
 
@@ -115,7 +115,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:68](https://github.com/abschill/httpuppy/blob/1d512f9/src/types/server/index.ts#L68)
+[src/server.ts:92](https://github.com/abschill/httpuppy/blob/94ff392/src/server.ts#L92)
 
 ___
 
@@ -125,7 +125,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:60](https://github.com/abschill/httpuppy/blob/1d512f9/src/types/server/index.ts#L60)
+[src/server.ts:84](https://github.com/abschill/httpuppy/blob/94ff392/src/server.ts#L84)
 
 ___
 
@@ -151,11 +151,11 @@ ___
 
 ### log
 
-• `Optional` **log**: [`LogConfig`](types_server.LogConfig.md)
+• `Optional` **log**: `LogConfig`
 
 #### Defined in
 
-[src/types/server/index.ts:63](https://github.com/abschill/httpuppy/blob/1d512f9/src/types/server/index.ts#L63)
+[src/server.ts:87](https://github.com/abschill/httpuppy/blob/94ff392/src/server.ts#L87)
 
 ___
 
@@ -181,31 +181,31 @@ ___
 
 ### middleware
 
-• `Optional` **middleware**: [`UserMiddlewareOption`](../modules/types_server.md#usermiddlewareoption)[]
+• `Optional` **middleware**: `UserMiddlewareOption`[]
 
 #### Defined in
 
-[src/types/server/index.ts:64](https://github.com/abschill/httpuppy/blob/1d512f9/src/types/server/index.ts#L64)
+[src/server.ts:88](https://github.com/abschill/httpuppy/blob/94ff392/src/server.ts#L88)
 
 ___
 
 ### onClose
 
-• `Optional` **onClose**: [`iExitHandler`](../modules/types_server.md#iexithandler)
+• `Optional` **onClose**: `iExitHandler`
 
 #### Defined in
 
-[src/types/server/index.ts:66](https://github.com/abschill/httpuppy/blob/1d512f9/src/types/server/index.ts#L66)
+[src/server.ts:90](https://github.com/abschill/httpuppy/blob/94ff392/src/server.ts#L90)
 
 ___
 
 ### onMount
 
-• `Optional` **onMount**: [`iHandlerType`](../modules/types_server.md#ihandlertype)
+• `Optional` **onMount**: `iHandlerType`
 
 #### Defined in
 
-[src/types/server/index.ts:65](https://github.com/abschill/httpuppy/blob/1d512f9/src/types/server/index.ts#L65)
+[src/server.ts:89](https://github.com/abschill/httpuppy/blob/94ff392/src/server.ts#L89)
 
 ___
 
@@ -215,7 +215,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:58](https://github.com/abschill/httpuppy/blob/1d512f9/src/types/server/index.ts#L58)
+[src/server.ts:82](https://github.com/abschill/httpuppy/blob/94ff392/src/server.ts#L82)
 
 ___
 
@@ -225,7 +225,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:69](https://github.com/abschill/httpuppy/blob/1d512f9/src/types/server/index.ts#L69)
+[src/server.ts:93](https://github.com/abschill/httpuppy/blob/94ff392/src/server.ts#L93)
 
 ___
 
@@ -243,17 +243,17 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:70](https://github.com/abschill/httpuppy/blob/1d512f9/src/types/server/index.ts#L70)
+[src/server.ts:94](https://github.com/abschill/httpuppy/blob/94ff392/src/server.ts#L94)
 
 ___
 
 ### static
 
-• `Optional` **static**: [`UserStaticConfig`](../modules/types_server.md#userstaticconfig)
+• `Optional` **static**: `UserStaticConfig`
 
 #### Defined in
 
-[src/types/server/index.ts:61](https://github.com/abschill/httpuppy/blob/1d512f9/src/types/server/index.ts#L61)
+[src/server.ts:85](https://github.com/abschill/httpuppy/blob/94ff392/src/server.ts#L85)
 
 ___
 
@@ -263,7 +263,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:62](https://github.com/abschill/httpuppy/blob/1d512f9/src/types/server/index.ts#L62)
+[src/server.ts:86](https://github.com/abschill/httpuppy/blob/94ff392/src/server.ts#L86)
 
 ___
 
@@ -273,4 +273,4 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:75](https://github.com/abschill/httpuppy/blob/1d512f9/src/types/server/index.ts#L75)
+[src/server.ts:99](https://github.com/abschill/httpuppy/blob/94ff392/src/server.ts#L99)

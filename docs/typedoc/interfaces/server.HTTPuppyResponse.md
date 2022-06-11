@@ -1,8 +1,8 @@
-[httpuppy - v0.3.4](../README.md) / [Modules](../modules.md) / [types/server](../modules/types_server.md) / HTTPuppyResponse
+[httpuppy - v0.3.5](../README.md) / [Modules](../modules.md) / [server](../modules/server.md) / HTTPuppyResponse
 
 # Interface: HTTPuppyResponse
 
-[types/server](../modules/types_server.md).HTTPuppyResponse
+[server](../modules/server.md).HTTPuppyResponse
 
 ## Hierarchy
 
@@ -14,82 +14,82 @@
 
 ### Properties
 
-- [\_process](types_server.HTTPuppyResponse.md#_process)
-- [chunkedEncoding](types_server.HTTPuppyResponse.md#chunkedencoding)
-- [connection](types_server.HTTPuppyResponse.md#connection)
-- [destroyed](types_server.HTTPuppyResponse.md#destroyed)
-- [finished](types_server.HTTPuppyResponse.md#finished)
-- [headersSent](types_server.HTTPuppyResponse.md#headerssent)
-- [req](types_server.HTTPuppyResponse.md#req)
-- [sendDate](types_server.HTTPuppyResponse.md#senddate)
-- [shouldKeepAlive](types_server.HTTPuppyResponse.md#shouldkeepalive)
-- [socket](types_server.HTTPuppyResponse.md#socket)
-- [statusCode](types_server.HTTPuppyResponse.md#statuscode)
-- [statusMessage](types_server.HTTPuppyResponse.md#statusmessage)
-- [useChunkedEncodingByDefault](types_server.HTTPuppyResponse.md#usechunkedencodingbydefault)
-- [writable](types_server.HTTPuppyResponse.md#writable)
-- [writableCorked](types_server.HTTPuppyResponse.md#writablecorked)
-- [writableEnded](types_server.HTTPuppyResponse.md#writableended)
-- [writableFinished](types_server.HTTPuppyResponse.md#writablefinished)
-- [writableHighWaterMark](types_server.HTTPuppyResponse.md#writablehighwatermark)
-- [writableLength](types_server.HTTPuppyResponse.md#writablelength)
-- [writableObjectMode](types_server.HTTPuppyResponse.md#writableobjectmode)
+- [\_process](server.HTTPuppyResponse.md#_process)
+- [chunkedEncoding](server.HTTPuppyResponse.md#chunkedencoding)
+- [connection](server.HTTPuppyResponse.md#connection)
+- [destroyed](server.HTTPuppyResponse.md#destroyed)
+- [finished](server.HTTPuppyResponse.md#finished)
+- [headersSent](server.HTTPuppyResponse.md#headerssent)
+- [req](server.HTTPuppyResponse.md#req)
+- [sendDate](server.HTTPuppyResponse.md#senddate)
+- [shouldKeepAlive](server.HTTPuppyResponse.md#shouldkeepalive)
+- [socket](server.HTTPuppyResponse.md#socket)
+- [statusCode](server.HTTPuppyResponse.md#statuscode)
+- [statusMessage](server.HTTPuppyResponse.md#statusmessage)
+- [useChunkedEncodingByDefault](server.HTTPuppyResponse.md#usechunkedencodingbydefault)
+- [writable](server.HTTPuppyResponse.md#writable)
+- [writableCorked](server.HTTPuppyResponse.md#writablecorked)
+- [writableEnded](server.HTTPuppyResponse.md#writableended)
+- [writableFinished](server.HTTPuppyResponse.md#writablefinished)
+- [writableHighWaterMark](server.HTTPuppyResponse.md#writablehighwatermark)
+- [writableLength](server.HTTPuppyResponse.md#writablelength)
+- [writableObjectMode](server.HTTPuppyResponse.md#writableobjectmode)
 
 ### Methods
 
-- [\_construct](types_server.HTTPuppyResponse.md#_construct)
-- [\_destroy](types_server.HTTPuppyResponse.md#_destroy)
-- [\_final](types_server.HTTPuppyResponse.md#_final)
-- [\_write](types_server.HTTPuppyResponse.md#_write)
-- [\_writev](types_server.HTTPuppyResponse.md#_writev)
-- [addListener](types_server.HTTPuppyResponse.md#addlistener)
-- [addTrailers](types_server.HTTPuppyResponse.md#addtrailers)
-- [assignSocket](types_server.HTTPuppyResponse.md#assignsocket)
-- [cork](types_server.HTTPuppyResponse.md#cork)
-- [destroy](types_server.HTTPuppyResponse.md#destroy)
-- [detachSocket](types_server.HTTPuppyResponse.md#detachsocket)
-- [emit](types_server.HTTPuppyResponse.md#emit)
-- [end](types_server.HTTPuppyResponse.md#end)
-- [eventNames](types_server.HTTPuppyResponse.md#eventnames)
-- [flushHeaders](types_server.HTTPuppyResponse.md#flushheaders)
-- [getHeader](types_server.HTTPuppyResponse.md#getheader)
-- [getHeaderNames](types_server.HTTPuppyResponse.md#getheadernames)
-- [getHeaders](types_server.HTTPuppyResponse.md#getheaders)
-- [getMaxListeners](types_server.HTTPuppyResponse.md#getmaxlisteners)
-- [hasHeader](types_server.HTTPuppyResponse.md#hasheader)
-- [json](types_server.HTTPuppyResponse.md#json)
-- [listenerCount](types_server.HTTPuppyResponse.md#listenercount)
-- [listeners](types_server.HTTPuppyResponse.md#listeners)
-- [off](types_server.HTTPuppyResponse.md#off)
-- [on](types_server.HTTPuppyResponse.md#on)
-- [once](types_server.HTTPuppyResponse.md#once)
-- [pipe](types_server.HTTPuppyResponse.md#pipe)
-- [prependListener](types_server.HTTPuppyResponse.md#prependlistener)
-- [prependOnceListener](types_server.HTTPuppyResponse.md#prependoncelistener)
-- [rawListeners](types_server.HTTPuppyResponse.md#rawlisteners)
-- [removeAllListeners](types_server.HTTPuppyResponse.md#removealllisteners)
-- [removeHeader](types_server.HTTPuppyResponse.md#removeheader)
-- [removeListener](types_server.HTTPuppyResponse.md#removelistener)
-- [send](types_server.HTTPuppyResponse.md#send)
-- [setDefaultEncoding](types_server.HTTPuppyResponse.md#setdefaultencoding)
-- [setHeader](types_server.HTTPuppyResponse.md#setheader)
-- [setMaxListeners](types_server.HTTPuppyResponse.md#setmaxlisteners)
-- [setTimeout](types_server.HTTPuppyResponse.md#settimeout)
-- [uncork](types_server.HTTPuppyResponse.md#uncork)
-- [write](types_server.HTTPuppyResponse.md#write)
-- [writeContinue](types_server.HTTPuppyResponse.md#writecontinue)
-- [writeHead](types_server.HTTPuppyResponse.md#writehead)
-- [writeProcessing](types_server.HTTPuppyResponse.md#writeprocessing)
+- [\_construct](server.HTTPuppyResponse.md#_construct)
+- [\_destroy](server.HTTPuppyResponse.md#_destroy)
+- [\_final](server.HTTPuppyResponse.md#_final)
+- [\_write](server.HTTPuppyResponse.md#_write)
+- [\_writev](server.HTTPuppyResponse.md#_writev)
+- [addListener](server.HTTPuppyResponse.md#addlistener)
+- [addTrailers](server.HTTPuppyResponse.md#addtrailers)
+- [assignSocket](server.HTTPuppyResponse.md#assignsocket)
+- [cork](server.HTTPuppyResponse.md#cork)
+- [destroy](server.HTTPuppyResponse.md#destroy)
+- [detachSocket](server.HTTPuppyResponse.md#detachsocket)
+- [emit](server.HTTPuppyResponse.md#emit)
+- [end](server.HTTPuppyResponse.md#end)
+- [eventNames](server.HTTPuppyResponse.md#eventnames)
+- [flushHeaders](server.HTTPuppyResponse.md#flushheaders)
+- [getHeader](server.HTTPuppyResponse.md#getheader)
+- [getHeaderNames](server.HTTPuppyResponse.md#getheadernames)
+- [getHeaders](server.HTTPuppyResponse.md#getheaders)
+- [getMaxListeners](server.HTTPuppyResponse.md#getmaxlisteners)
+- [hasHeader](server.HTTPuppyResponse.md#hasheader)
+- [json](server.HTTPuppyResponse.md#json)
+- [listenerCount](server.HTTPuppyResponse.md#listenercount)
+- [listeners](server.HTTPuppyResponse.md#listeners)
+- [off](server.HTTPuppyResponse.md#off)
+- [on](server.HTTPuppyResponse.md#on)
+- [once](server.HTTPuppyResponse.md#once)
+- [pipe](server.HTTPuppyResponse.md#pipe)
+- [prependListener](server.HTTPuppyResponse.md#prependlistener)
+- [prependOnceListener](server.HTTPuppyResponse.md#prependoncelistener)
+- [rawListeners](server.HTTPuppyResponse.md#rawlisteners)
+- [removeAllListeners](server.HTTPuppyResponse.md#removealllisteners)
+- [removeHeader](server.HTTPuppyResponse.md#removeheader)
+- [removeListener](server.HTTPuppyResponse.md#removelistener)
+- [send](server.HTTPuppyResponse.md#send)
+- [setDefaultEncoding](server.HTTPuppyResponse.md#setdefaultencoding)
+- [setHeader](server.HTTPuppyResponse.md#setheader)
+- [setMaxListeners](server.HTTPuppyResponse.md#setmaxlisteners)
+- [setTimeout](server.HTTPuppyResponse.md#settimeout)
+- [uncork](server.HTTPuppyResponse.md#uncork)
+- [write](server.HTTPuppyResponse.md#write)
+- [writeContinue](server.HTTPuppyResponse.md#writecontinue)
+- [writeHead](server.HTTPuppyResponse.md#writehead)
+- [writeProcessing](server.HTTPuppyResponse.md#writeprocessing)
 
 ## Properties
 
 ### \_process
 
-• **\_process**: [`HTTPuppyServer`](types_server.HTTPuppyServer.md)
+• **\_process**: [`HTTPuppyServer`](server.HTTPuppyServer.md)
 
 #### Defined in
 
-[src/types/server/index.ts:102](https://github.com/abschill/httpuppy/blob/1d512f9/src/types/server/index.ts#L102)
+[src/server.ts:51](https://github.com/abschill/httpuppy/blob/94ff392/src/server.ts#L51)
 
 ___
 
@@ -99,7 +99,7 @@ ___
 
 #### Inherited from
 
-ServerResponse.chunkedEncoding
+HTTPResponse.chunkedEncoding
 
 #### Defined in
 
@@ -119,7 +119,7 @@ Aliases of `outgoingMessage.socket`
 
 #### Inherited from
 
-ServerResponse.connection
+HTTPResponse.connection
 
 #### Defined in
 
@@ -137,7 +137,7 @@ Is `true` after `writable.destroy()` has been called.
 
 #### Inherited from
 
-ServerResponse.destroyed
+HTTPResponse.destroyed
 
 #### Defined in
 
@@ -153,7 +153,7 @@ ___
 
 #### Inherited from
 
-ServerResponse.finished
+HTTPResponse.finished
 
 #### Defined in
 
@@ -171,7 +171,7 @@ Read-only. `true` if the headers were sent, otherwise `false`.
 
 #### Inherited from
 
-ServerResponse.headersSent
+HTTPResponse.headersSent
 
 #### Defined in
 
@@ -185,7 +185,7 @@ ___
 
 #### Inherited from
 
-ServerResponse.req
+HTTPResponse.req
 
 #### Defined in
 
@@ -199,7 +199,7 @@ ___
 
 #### Inherited from
 
-ServerResponse.sendDate
+HTTPResponse.sendDate
 
 #### Defined in
 
@@ -213,7 +213,7 @@ ___
 
 #### Inherited from
 
-ServerResponse.shouldKeepAlive
+HTTPResponse.shouldKeepAlive
 
 #### Defined in
 
@@ -234,7 +234,7 @@ After calling `outgoingMessage.end()`, this property will be nulled.
 
 #### Inherited from
 
-ServerResponse.socket
+HTTPResponse.socket
 
 #### Defined in
 
@@ -261,7 +261,7 @@ status code which was sent out.
 
 #### Inherited from
 
-ServerResponse.statusCode
+HTTPResponse.statusCode
 
 #### Defined in
 
@@ -289,7 +289,7 @@ status message which was sent out.
 
 #### Inherited from
 
-ServerResponse.statusMessage
+HTTPResponse.statusMessage
 
 #### Defined in
 
@@ -303,7 +303,7 @@ ___
 
 #### Inherited from
 
-ServerResponse.useChunkedEncodingByDefault
+HTTPResponse.useChunkedEncodingByDefault
 
 #### Defined in
 
@@ -322,7 +322,7 @@ the stream has not been destroyed, errored or ended.
 
 #### Inherited from
 
-ServerResponse.writable
+HTTPResponse.writable
 
 #### Defined in
 
@@ -341,7 +341,7 @@ called in order to fully uncork the stream.
 
 #### Inherited from
 
-ServerResponse.writableCorked
+HTTPResponse.writableCorked
 
 #### Defined in
 
@@ -360,7 +360,7 @@ does not indicate whether the data has been flushed, for this use `writable.writ
 
 #### Inherited from
 
-ServerResponse.writableEnded
+HTTPResponse.writableEnded
 
 #### Defined in
 
@@ -378,7 +378,7 @@ Is set to `true` immediately before the `'finish'` event is emitted.
 
 #### Inherited from
 
-ServerResponse.writableFinished
+HTTPResponse.writableFinished
 
 #### Defined in
 
@@ -396,7 +396,7 @@ Return the value of `highWaterMark` passed when creating this `Writable`.
 
 #### Inherited from
 
-ServerResponse.writableHighWaterMark
+HTTPResponse.writableHighWaterMark
 
 #### Defined in
 
@@ -416,7 +416,7 @@ the status of the `highWaterMark`.
 
 #### Inherited from
 
-ServerResponse.writableLength
+HTTPResponse.writableLength
 
 #### Defined in
 
@@ -434,7 +434,7 @@ Getter for the property `objectMode` of a given `Writable` stream.
 
 #### Inherited from
 
-ServerResponse.writableObjectMode
+HTTPResponse.writableObjectMode
 
 #### Defined in
 
@@ -458,7 +458,7 @@ node_modules/@types/node/stream.d.ts:532
 
 #### Inherited from
 
-ServerResponse.\_construct
+HTTPResponse.\_construct
 
 #### Defined in
 
@@ -483,7 +483,7 @@ ___
 
 #### Inherited from
 
-ServerResponse.\_destroy
+HTTPResponse.\_destroy
 
 #### Defined in
 
@@ -507,7 +507,7 @@ ___
 
 #### Inherited from
 
-ServerResponse.\_final
+HTTPResponse.\_final
 
 #### Defined in
 
@@ -533,7 +533,7 @@ ___
 
 #### Inherited from
 
-ServerResponse.\_write
+HTTPResponse.\_write
 
 #### Defined in
 
@@ -558,7 +558,7 @@ ___
 
 #### Inherited from
 
-ServerResponse.\_writev
+HTTPResponse.\_writev
 
 #### Defined in
 
@@ -568,7 +568,7 @@ ___
 
 ### addListener
 
-▸ **addListener**(`event`, `listener`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **addListener**(`event`, `listener`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 Event emitter
 The defined events on documents including:
@@ -588,17 +588,17 @@ The defined events on documents including:
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.addListener
+HTTPResponse.addListener
 
 #### Defined in
 
 node_modules/@types/node/stream.d.ts:721
 
-▸ **addListener**(`event`, `listener`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **addListener**(`event`, `listener`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Parameters
 
@@ -609,17 +609,17 @@ node_modules/@types/node/stream.d.ts:721
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.addListener
+HTTPResponse.addListener
 
 #### Defined in
 
 node_modules/@types/node/stream.d.ts:722
 
-▸ **addListener**(`event`, `listener`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **addListener**(`event`, `listener`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Parameters
 
@@ -630,17 +630,17 @@ node_modules/@types/node/stream.d.ts:722
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.addListener
+HTTPResponse.addListener
 
 #### Defined in
 
 node_modules/@types/node/stream.d.ts:723
 
-▸ **addListener**(`event`, `listener`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **addListener**(`event`, `listener`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Parameters
 
@@ -651,17 +651,17 @@ node_modules/@types/node/stream.d.ts:723
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.addListener
+HTTPResponse.addListener
 
 #### Defined in
 
 node_modules/@types/node/stream.d.ts:724
 
-▸ **addListener**(`event`, `listener`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **addListener**(`event`, `listener`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Parameters
 
@@ -672,17 +672,17 @@ node_modules/@types/node/stream.d.ts:724
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.addListener
+HTTPResponse.addListener
 
 #### Defined in
 
 node_modules/@types/node/stream.d.ts:725
 
-▸ **addListener**(`event`, `listener`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **addListener**(`event`, `listener`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Parameters
 
@@ -693,17 +693,17 @@ node_modules/@types/node/stream.d.ts:725
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.addListener
+HTTPResponse.addListener
 
 #### Defined in
 
 node_modules/@types/node/stream.d.ts:726
 
-▸ **addListener**(`event`, `listener`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **addListener**(`event`, `listener`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Parameters
 
@@ -714,11 +714,11 @@ node_modules/@types/node/stream.d.ts:726
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.addListener
+HTTPResponse.addListener
 
 #### Defined in
 
@@ -763,7 +763,7 @@ will result in a `TypeError` being thrown.
 
 #### Inherited from
 
-ServerResponse.addTrailers
+HTTPResponse.addTrailers
 
 #### Defined in
 
@@ -787,7 +787,7 @@ ___
 
 #### Inherited from
 
-ServerResponse.assignSocket
+HTTPResponse.assignSocket
 
 #### Defined in
 
@@ -800,7 +800,7 @@ ___
 ▸ **cork**(): `void`
 
 The `writable.cork()` method forces all written data to be buffered in memory.
-The buffered data will be flushed when either the [uncork](types_server.HTTPuppyResponse.md#uncork) or [end](types_server.HTTPuppyResponse.md#end) methods are called.
+The buffered data will be flushed when either the [uncork](server.HTTPuppyResponse.md#uncork) or [end](server.HTTPuppyResponse.md#end) methods are called.
 
 The primary intent of `writable.cork()` is to accommodate a situation in which
 several small chunks are written to the stream in rapid succession. Instead of
@@ -819,7 +819,7 @@ See also: `writable.uncork()`, `writable._writev()`.
 
 #### Inherited from
 
-ServerResponse.cork
+HTTPResponse.cork
 
 #### Defined in
 
@@ -829,7 +829,7 @@ ___
 
 ### destroy
 
-▸ **destroy**(`error?`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **destroy**(`error?`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 Destroy the stream. Optionally emit an `'error'` event, and emit a `'close'`event (unless `emitClose` is set to `false`). After this call, the writable
 stream has ended and subsequent calls to `write()` or `end()` will result in
@@ -854,11 +854,11 @@ but instead implement `writable._destroy()`.
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.destroy
+HTTPResponse.destroy
 
 #### Defined in
 
@@ -882,7 +882,7 @@ ___
 
 #### Inherited from
 
-ServerResponse.detachSocket
+HTTPResponse.detachSocket
 
 #### Defined in
 
@@ -906,7 +906,7 @@ ___
 
 #### Inherited from
 
-ServerResponse.emit
+HTTPResponse.emit
 
 #### Defined in
 
@@ -926,7 +926,7 @@ node_modules/@types/node/stream.d.ts:728
 
 #### Inherited from
 
-ServerResponse.emit
+HTTPResponse.emit
 
 #### Defined in
 
@@ -947,7 +947,7 @@ node_modules/@types/node/stream.d.ts:729
 
 #### Inherited from
 
-ServerResponse.emit
+HTTPResponse.emit
 
 #### Defined in
 
@@ -967,7 +967,7 @@ node_modules/@types/node/stream.d.ts:730
 
 #### Inherited from
 
-ServerResponse.emit
+HTTPResponse.emit
 
 #### Defined in
 
@@ -988,7 +988,7 @@ node_modules/@types/node/stream.d.ts:731
 
 #### Inherited from
 
-ServerResponse.emit
+HTTPResponse.emit
 
 #### Defined in
 
@@ -1009,7 +1009,7 @@ node_modules/@types/node/stream.d.ts:732
 
 #### Inherited from
 
-ServerResponse.emit
+HTTPResponse.emit
 
 #### Defined in
 
@@ -1030,7 +1030,7 @@ node_modules/@types/node/stream.d.ts:733
 
 #### Inherited from
 
-ServerResponse.emit
+HTTPResponse.emit
 
 #### Defined in
 
@@ -1040,14 +1040,14 @@ ___
 
 ### end
 
-▸ **end**(`cb?`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **end**(`cb?`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 Calling the `writable.end()` method signals that no more data will be written
 to the `Writable`. The optional `chunk` and `encoding` arguments allow one
 final additional chunk of data to be written immediately before closing the
 stream.
 
-Calling the [write](types_server.HTTPuppyResponse.md#write) method after calling [end](types_server.HTTPuppyResponse.md#end) will raise an error.
+Calling the [write](server.HTTPuppyResponse.md#write) method after calling [end](server.HTTPuppyResponse.md#end) will raise an error.
 
 ```js
 // Write 'hello, ' and then end with 'world!'.
@@ -1068,17 +1068,17 @@ file.end('world!');
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.end
+HTTPResponse.end
 
 #### Defined in
 
 node_modules/@types/node/stream.d.ts:642
 
-▸ **end**(`chunk`, `cb?`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **end**(`chunk`, `cb?`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Parameters
 
@@ -1089,17 +1089,17 @@ node_modules/@types/node/stream.d.ts:642
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.end
+HTTPResponse.end
 
 #### Defined in
 
 node_modules/@types/node/stream.d.ts:643
 
-▸ **end**(`chunk`, `encoding`, `cb?`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **end**(`chunk`, `encoding`, `cb?`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Parameters
 
@@ -1111,11 +1111,11 @@ node_modules/@types/node/stream.d.ts:643
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.end
+HTTPResponse.end
 
 #### Defined in
 
@@ -1151,7 +1151,7 @@ console.log(myEE.eventNames());
 
 #### Inherited from
 
-ServerResponse.eventNames
+HTTPResponse.eventNames
 
 #### Defined in
 
@@ -1181,7 +1181,7 @@ data is not sent until possibly much later. `outgoingMessage.flushHeaders()`bypa
 
 #### Inherited from
 
-ServerResponse.flushHeaders
+HTTPResponse.flushHeaders
 
 #### Defined in
 
@@ -1210,7 +1210,7 @@ exist in message, it will be `undefined`.
 
 #### Inherited from
 
-ServerResponse.getHeader
+HTTPResponse.getHeader
 
 #### Defined in
 
@@ -1233,7 +1233,7 @@ names are lowercase.
 
 #### Inherited from
 
-ServerResponse.getHeaderNames
+HTTPResponse.getHeaderNames
 
 #### Defined in
 
@@ -1272,7 +1272,7 @@ const headers = outgoingMessage.getHeaders();
 
 #### Inherited from
 
-ServerResponse.getHeaders
+HTTPResponse.getHeaders
 
 #### Defined in
 
@@ -1295,7 +1295,7 @@ set by `emitter.setMaxListeners(n)` or defaults to {@link defaultMaxListeners}.
 
 #### Inherited from
 
-ServerResponse.getMaxListeners
+HTTPResponse.getMaxListeners
 
 #### Defined in
 
@@ -1328,7 +1328,7 @@ const hasContentType = outgoingMessage.hasHeader('content-type');
 
 #### Inherited from
 
-ServerResponse.hasHeader
+HTTPResponse.hasHeader
 
 #### Defined in
 
@@ -1352,7 +1352,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:104](https://github.com/abschill/httpuppy/blob/1d512f9/src/types/server/index.ts#L104)
+[src/server.ts:53](https://github.com/abschill/httpuppy/blob/94ff392/src/server.ts#L53)
 
 ___
 
@@ -1376,7 +1376,7 @@ Returns the number of listeners listening to the event named `eventName`.
 
 #### Inherited from
 
-ServerResponse.listenerCount
+HTTPResponse.listenerCount
 
 #### Defined in
 
@@ -1412,7 +1412,7 @@ console.log(util.inspect(server.listeners('connection')));
 
 #### Inherited from
 
-ServerResponse.listeners
+HTTPResponse.listeners
 
 #### Defined in
 
@@ -1422,7 +1422,7 @@ ___
 
 ### off
 
-▸ **off**(`eventName`, `listener`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **off**(`eventName`, `listener`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 Alias for `emitter.removeListener()`.
 
@@ -1437,11 +1437,11 @@ Alias for `emitter.removeListener()`.
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.off
+HTTPResponse.off
 
 #### Defined in
 
@@ -1451,7 +1451,7 @@ ___
 
 ### on
 
-▸ **on**(`event`, `listener`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **on**(`event`, `listener`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Parameters
 
@@ -1462,17 +1462,17 @@ ___
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.on
+HTTPResponse.on
 
 #### Defined in
 
 node_modules/@types/node/stream.d.ts:735
 
-▸ **on**(`event`, `listener`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **on**(`event`, `listener`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Parameters
 
@@ -1483,17 +1483,17 @@ node_modules/@types/node/stream.d.ts:735
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.on
+HTTPResponse.on
 
 #### Defined in
 
 node_modules/@types/node/stream.d.ts:736
 
-▸ **on**(`event`, `listener`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **on**(`event`, `listener`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Parameters
 
@@ -1504,17 +1504,17 @@ node_modules/@types/node/stream.d.ts:736
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.on
+HTTPResponse.on
 
 #### Defined in
 
 node_modules/@types/node/stream.d.ts:737
 
-▸ **on**(`event`, `listener`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **on**(`event`, `listener`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Parameters
 
@@ -1525,17 +1525,17 @@ node_modules/@types/node/stream.d.ts:737
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.on
+HTTPResponse.on
 
 #### Defined in
 
 node_modules/@types/node/stream.d.ts:738
 
-▸ **on**(`event`, `listener`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **on**(`event`, `listener`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Parameters
 
@@ -1546,17 +1546,17 @@ node_modules/@types/node/stream.d.ts:738
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.on
+HTTPResponse.on
 
 #### Defined in
 
 node_modules/@types/node/stream.d.ts:739
 
-▸ **on**(`event`, `listener`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **on**(`event`, `listener`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Parameters
 
@@ -1567,17 +1567,17 @@ node_modules/@types/node/stream.d.ts:739
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.on
+HTTPResponse.on
 
 #### Defined in
 
 node_modules/@types/node/stream.d.ts:740
 
-▸ **on**(`event`, `listener`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **on**(`event`, `listener`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Parameters
 
@@ -1588,11 +1588,11 @@ node_modules/@types/node/stream.d.ts:740
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.on
+HTTPResponse.on
 
 #### Defined in
 
@@ -1602,7 +1602,7 @@ ___
 
 ### once
 
-▸ **once**(`event`, `listener`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **once**(`event`, `listener`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Parameters
 
@@ -1613,17 +1613,17 @@ ___
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.once
+HTTPResponse.once
 
 #### Defined in
 
 node_modules/@types/node/stream.d.ts:742
 
-▸ **once**(`event`, `listener`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **once**(`event`, `listener`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Parameters
 
@@ -1634,17 +1634,17 @@ node_modules/@types/node/stream.d.ts:742
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.once
+HTTPResponse.once
 
 #### Defined in
 
 node_modules/@types/node/stream.d.ts:743
 
-▸ **once**(`event`, `listener`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **once**(`event`, `listener`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Parameters
 
@@ -1655,17 +1655,17 @@ node_modules/@types/node/stream.d.ts:743
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.once
+HTTPResponse.once
 
 #### Defined in
 
 node_modules/@types/node/stream.d.ts:744
 
-▸ **once**(`event`, `listener`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **once**(`event`, `listener`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Parameters
 
@@ -1676,17 +1676,17 @@ node_modules/@types/node/stream.d.ts:744
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.once
+HTTPResponse.once
 
 #### Defined in
 
 node_modules/@types/node/stream.d.ts:745
 
-▸ **once**(`event`, `listener`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **once**(`event`, `listener`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Parameters
 
@@ -1697,17 +1697,17 @@ node_modules/@types/node/stream.d.ts:745
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.once
+HTTPResponse.once
 
 #### Defined in
 
 node_modules/@types/node/stream.d.ts:746
 
-▸ **once**(`event`, `listener`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **once**(`event`, `listener`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Parameters
 
@@ -1718,17 +1718,17 @@ node_modules/@types/node/stream.d.ts:746
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.once
+HTTPResponse.once
 
 #### Defined in
 
 node_modules/@types/node/stream.d.ts:747
 
-▸ **once**(`event`, `listener`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **once**(`event`, `listener`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Parameters
 
@@ -1739,11 +1739,11 @@ node_modules/@types/node/stream.d.ts:747
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.once
+HTTPResponse.once
 
 #### Defined in
 
@@ -1775,7 +1775,7 @@ ___
 
 #### Inherited from
 
-ServerResponse.pipe
+HTTPResponse.pipe
 
 #### Defined in
 
@@ -1785,7 +1785,7 @@ ___
 
 ### prependListener
 
-▸ **prependListener**(`event`, `listener`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **prependListener**(`event`, `listener`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Parameters
 
@@ -1796,17 +1796,17 @@ ___
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.prependListener
+HTTPResponse.prependListener
 
 #### Defined in
 
 node_modules/@types/node/stream.d.ts:749
 
-▸ **prependListener**(`event`, `listener`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **prependListener**(`event`, `listener`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Parameters
 
@@ -1817,17 +1817,17 @@ node_modules/@types/node/stream.d.ts:749
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.prependListener
+HTTPResponse.prependListener
 
 #### Defined in
 
 node_modules/@types/node/stream.d.ts:750
 
-▸ **prependListener**(`event`, `listener`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **prependListener**(`event`, `listener`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Parameters
 
@@ -1838,17 +1838,17 @@ node_modules/@types/node/stream.d.ts:750
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.prependListener
+HTTPResponse.prependListener
 
 #### Defined in
 
 node_modules/@types/node/stream.d.ts:751
 
-▸ **prependListener**(`event`, `listener`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **prependListener**(`event`, `listener`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Parameters
 
@@ -1859,17 +1859,17 @@ node_modules/@types/node/stream.d.ts:751
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.prependListener
+HTTPResponse.prependListener
 
 #### Defined in
 
 node_modules/@types/node/stream.d.ts:752
 
-▸ **prependListener**(`event`, `listener`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **prependListener**(`event`, `listener`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Parameters
 
@@ -1880,17 +1880,17 @@ node_modules/@types/node/stream.d.ts:752
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.prependListener
+HTTPResponse.prependListener
 
 #### Defined in
 
 node_modules/@types/node/stream.d.ts:753
 
-▸ **prependListener**(`event`, `listener`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **prependListener**(`event`, `listener`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Parameters
 
@@ -1901,17 +1901,17 @@ node_modules/@types/node/stream.d.ts:753
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.prependListener
+HTTPResponse.prependListener
 
 #### Defined in
 
 node_modules/@types/node/stream.d.ts:754
 
-▸ **prependListener**(`event`, `listener`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **prependListener**(`event`, `listener`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Parameters
 
@@ -1922,11 +1922,11 @@ node_modules/@types/node/stream.d.ts:754
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.prependListener
+HTTPResponse.prependListener
 
 #### Defined in
 
@@ -1936,7 +1936,7 @@ ___
 
 ### prependOnceListener
 
-▸ **prependOnceListener**(`event`, `listener`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **prependOnceListener**(`event`, `listener`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Parameters
 
@@ -1947,17 +1947,17 @@ ___
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.prependOnceListener
+HTTPResponse.prependOnceListener
 
 #### Defined in
 
 node_modules/@types/node/stream.d.ts:756
 
-▸ **prependOnceListener**(`event`, `listener`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **prependOnceListener**(`event`, `listener`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Parameters
 
@@ -1968,17 +1968,17 @@ node_modules/@types/node/stream.d.ts:756
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.prependOnceListener
+HTTPResponse.prependOnceListener
 
 #### Defined in
 
 node_modules/@types/node/stream.d.ts:757
 
-▸ **prependOnceListener**(`event`, `listener`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **prependOnceListener**(`event`, `listener`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Parameters
 
@@ -1989,17 +1989,17 @@ node_modules/@types/node/stream.d.ts:757
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.prependOnceListener
+HTTPResponse.prependOnceListener
 
 #### Defined in
 
 node_modules/@types/node/stream.d.ts:758
 
-▸ **prependOnceListener**(`event`, `listener`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **prependOnceListener**(`event`, `listener`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Parameters
 
@@ -2010,17 +2010,17 @@ node_modules/@types/node/stream.d.ts:758
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.prependOnceListener
+HTTPResponse.prependOnceListener
 
 #### Defined in
 
 node_modules/@types/node/stream.d.ts:759
 
-▸ **prependOnceListener**(`event`, `listener`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **prependOnceListener**(`event`, `listener`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Parameters
 
@@ -2031,17 +2031,17 @@ node_modules/@types/node/stream.d.ts:759
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.prependOnceListener
+HTTPResponse.prependOnceListener
 
 #### Defined in
 
 node_modules/@types/node/stream.d.ts:760
 
-▸ **prependOnceListener**(`event`, `listener`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **prependOnceListener**(`event`, `listener`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Parameters
 
@@ -2052,17 +2052,17 @@ node_modules/@types/node/stream.d.ts:760
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.prependOnceListener
+HTTPResponse.prependOnceListener
 
 #### Defined in
 
 node_modules/@types/node/stream.d.ts:761
 
-▸ **prependOnceListener**(`event`, `listener`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **prependOnceListener**(`event`, `listener`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Parameters
 
@@ -2073,11 +2073,11 @@ node_modules/@types/node/stream.d.ts:761
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.prependOnceListener
+HTTPResponse.prependOnceListener
 
 #### Defined in
 
@@ -2130,7 +2130,7 @@ emitter.emit('log');
 
 #### Inherited from
 
-ServerResponse.rawListeners
+HTTPResponse.rawListeners
 
 #### Defined in
 
@@ -2140,7 +2140,7 @@ ___
 
 ### removeAllListeners
 
-▸ **removeAllListeners**(`event?`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **removeAllListeners**(`event?`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 Removes all listeners, or those of the specified `eventName`.
 
@@ -2160,11 +2160,11 @@ Returns a reference to the `EventEmitter`, so that calls can be chained.
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.removeAllListeners
+HTTPResponse.removeAllListeners
 
 #### Defined in
 
@@ -2196,7 +2196,7 @@ outgoingMessage.removeHeader('Content-Encoding');
 
 #### Inherited from
 
-ServerResponse.removeHeader
+HTTPResponse.removeHeader
 
 #### Defined in
 
@@ -2206,7 +2206,7 @@ ___
 
 ### removeListener
 
-▸ **removeListener**(`event`, `listener`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **removeListener**(`event`, `listener`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Parameters
 
@@ -2217,17 +2217,17 @@ ___
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.removeListener
+HTTPResponse.removeListener
 
 #### Defined in
 
 node_modules/@types/node/stream.d.ts:763
 
-▸ **removeListener**(`event`, `listener`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **removeListener**(`event`, `listener`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Parameters
 
@@ -2238,17 +2238,17 @@ node_modules/@types/node/stream.d.ts:763
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.removeListener
+HTTPResponse.removeListener
 
 #### Defined in
 
 node_modules/@types/node/stream.d.ts:764
 
-▸ **removeListener**(`event`, `listener`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **removeListener**(`event`, `listener`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Parameters
 
@@ -2259,17 +2259,17 @@ node_modules/@types/node/stream.d.ts:764
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.removeListener
+HTTPResponse.removeListener
 
 #### Defined in
 
 node_modules/@types/node/stream.d.ts:765
 
-▸ **removeListener**(`event`, `listener`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **removeListener**(`event`, `listener`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Parameters
 
@@ -2280,17 +2280,17 @@ node_modules/@types/node/stream.d.ts:765
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.removeListener
+HTTPResponse.removeListener
 
 #### Defined in
 
 node_modules/@types/node/stream.d.ts:766
 
-▸ **removeListener**(`event`, `listener`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **removeListener**(`event`, `listener`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Parameters
 
@@ -2301,17 +2301,17 @@ node_modules/@types/node/stream.d.ts:766
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.removeListener
+HTTPResponse.removeListener
 
 #### Defined in
 
 node_modules/@types/node/stream.d.ts:767
 
-▸ **removeListener**(`event`, `listener`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **removeListener**(`event`, `listener`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Parameters
 
@@ -2322,17 +2322,17 @@ node_modules/@types/node/stream.d.ts:767
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.removeListener
+HTTPResponse.removeListener
 
 #### Defined in
 
 node_modules/@types/node/stream.d.ts:768
 
-▸ **removeListener**(`event`, `listener`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **removeListener**(`event`, `listener`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Parameters
 
@@ -2343,11 +2343,11 @@ node_modules/@types/node/stream.d.ts:768
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.removeListener
+HTTPResponse.removeListener
 
 #### Defined in
 
@@ -2371,13 +2371,13 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:103](https://github.com/abschill/httpuppy/blob/1d512f9/src/types/server/index.ts#L103)
+[src/server.ts:52](https://github.com/abschill/httpuppy/blob/94ff392/src/server.ts#L52)
 
 ___
 
 ### setDefaultEncoding
 
-▸ **setDefaultEncoding**(`encoding`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **setDefaultEncoding**(`encoding`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 The `writable.setDefaultEncoding()` method sets the default `encoding` for a `Writable` stream.
 
@@ -2391,11 +2391,11 @@ The `writable.setDefaultEncoding()` method sets the default `encoding` for a `Wr
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.setDefaultEncoding
+HTTPResponse.setDefaultEncoding
 
 #### Defined in
 
@@ -2405,7 +2405,7 @@ ___
 
 ### setHeader
 
-▸ **setHeader**(`name`, `value`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **setHeader**(`name`, `value`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 Sets a single header value for the header object.
 
@@ -2420,11 +2420,11 @@ Sets a single header value for the header object.
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.setHeader
+HTTPResponse.setHeader
 
 #### Defined in
 
@@ -2434,7 +2434,7 @@ ___
 
 ### setMaxListeners
 
-▸ **setMaxListeners**(`n`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **setMaxListeners**(`n`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 By default `EventEmitter`s will print a warning if more than `10` listeners are
 added for a particular event. This is a useful default that helps finding
@@ -2453,11 +2453,11 @@ Returns a reference to the `EventEmitter`, so that calls can be chained.
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.setMaxListeners
+HTTPResponse.setMaxListeners
 
 #### Defined in
 
@@ -2467,7 +2467,7 @@ ___
 
 ### setTimeout
 
-▸ **setTimeout**(`msecs`, `callback?`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **setTimeout**(`msecs`, `callback?`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 Once a socket is associated with the message and is connected,`socket.setTimeout()` will be called with `msecs` as the first parameter.
 
@@ -2482,11 +2482,11 @@ Once a socket is associated with the message and is connected,`socket.setTimeout
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.setTimeout
+HTTPResponse.setTimeout
 
 #### Defined in
 
@@ -2498,7 +2498,7 @@ ___
 
 ▸ **uncork**(): `void`
 
-The `writable.uncork()` method flushes all data buffered since [cork](types_server.HTTPuppyResponse.md#cork) was called.
+The `writable.uncork()` method flushes all data buffered since [cork](server.HTTPuppyResponse.md#cork) was called.
 
 When using `writable.cork()` and `writable.uncork()` to manage the buffering
 of writes to a stream, it is recommended that calls to `writable.uncork()` be
@@ -2537,7 +2537,7 @@ See also: `writable.cork()`.
 
 #### Inherited from
 
-ServerResponse.uncork
+HTTPResponse.uncork
 
 #### Defined in
 
@@ -2578,7 +2578,7 @@ by default until they are piped or a `'data'` or `'readable'` event handler
 is added.
 
 If the data to be written can be generated or fetched on demand, it is
-recommended to encapsulate the logic into a `Readable` and use [pipe](types_server.HTTPuppyResponse.md#pipe). However, if calling `write()` is preferred, it is
+recommended to encapsulate the logic into a `Readable` and use [pipe](server.HTTPuppyResponse.md#pipe). However, if calling `write()` is preferred, it is
 possible to respect backpressure and avoid memory issues using the `'drain'` event:
 
 ```js
@@ -2615,7 +2615,7 @@ A `Writable` stream in object mode will always ignore the `encoding` argument.
 
 #### Inherited from
 
-ServerResponse.write
+HTTPResponse.write
 
 #### Defined in
 
@@ -2637,7 +2637,7 @@ node_modules/@types/node/stream.d.ts:612
 
 #### Inherited from
 
-ServerResponse.write
+HTTPResponse.write
 
 #### Defined in
 
@@ -2666,7 +2666,7 @@ the request body should be sent. See the `'checkContinue'` event on`Server`.
 
 #### Inherited from
 
-ServerResponse.writeContinue
+HTTPResponse.writeContinue
 
 #### Defined in
 
@@ -2676,7 +2676,7 @@ ___
 
 ### writeHead
 
-▸ **writeHead**(`statusCode`, `statusMessage?`, `headers?`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **writeHead**(`statusCode`, `statusMessage?`, `headers?`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 Sends a response header to the request. The status code is a 3-digit HTTP
 status code, like `404`. The last argument, `headers`, are the response headers.
@@ -2745,17 +2745,17 @@ will result in a `TypeError` being thrown.
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.writeHead
+HTTPResponse.writeHead
 
 #### Defined in
 
 node_modules/@types/node/http.d.ts:560
 
-▸ **writeHead**(`statusCode`, `headers?`): [`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+▸ **writeHead**(`statusCode`, `headers?`): [`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Parameters
 
@@ -2766,11 +2766,11 @@ node_modules/@types/node/http.d.ts:560
 
 #### Returns
 
-[`HTTPuppyResponse`](types_server.HTTPuppyResponse.md)
+[`HTTPuppyResponse`](server.HTTPuppyResponse.md)
 
 #### Inherited from
 
-ServerResponse.writeHead
+HTTPResponse.writeHead
 
 #### Defined in
 
@@ -2793,7 +2793,7 @@ the request body should be sent.
 
 #### Inherited from
 
-ServerResponse.writeProcessing
+HTTPResponse.writeProcessing
 
 #### Defined in
 

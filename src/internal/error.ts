@@ -2,7 +2,7 @@
  * @internal
  * @description hooks for handling errors that aren't defined by the user
  */
-import { HTTPuppyResponse } from '../types/server';
+import { HTTPuppyResponse } from '../';
 
 /**
  *

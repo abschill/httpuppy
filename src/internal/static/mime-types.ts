@@ -1,5 +1,5 @@
 import { lookup } from 'mime-types';
-import { HTTPHeader } from '../../types';
+import { HTTPHeader } from '../..';
 /**
  * @internal useLocalMimeType
  * @description hook for determining content type of a virtual fpath on the system

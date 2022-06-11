@@ -1,7 +1,7 @@
 import {
 	HTTPuppyRequest,
 	HTTPuppyResponse
-} from '.';
+} from '../../..';
 
 /**
  * @interface Cache Settings

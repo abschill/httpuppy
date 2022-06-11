@@ -1,6 +1,6 @@
-[httpuppy - v0.3.4](README.md) / Modules
+[httpuppy - v0.3.5](README.md) / Modules
 
-# httpuppy - v0.3.4
+# httpuppy - v0.3.5
 
 ## Table of contents
 
@@ -9,4 +9,3 @@
 - [index](modules/index.md)
 - [router](modules/router.md)
 - [server](modules/server.md)
-- [types/server](modules/types_server.md)

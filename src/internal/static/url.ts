@@ -1,8 +1,8 @@
+import { VirtualWriteableFile } from '../types';
 import {
 	HTTPuppyRequest,
-	HTTPuppyResponse,
-	VirtualWriteableFile
-} from '../../types';
+	HTTPuppyResponse
+} from '../../';
 /**
  * @function useStaticURLParser
  * @description hook for handling a response with a virtually mounted static filesystem browser

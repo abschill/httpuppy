@@ -6,23 +6,16 @@ import { useLocalMimeType } from '.';
 import { useStaticURLParser } from './url';
 import walk from 'walkdir';
 import {
+	MountedFile,
+	UserStaticConfig,
+	VirtualFileSystem
+} from '../types';
+import {
 	HTTPuppyServer,
 	HTTPHeader,
 	HTTPuppyRequest,
 	HTTPuppyResponse,
-	MountedFile,
-	UserStaticConfig,
-	VirtualFileSystem
-} from '../../types';
-import {
-	join,
-	resolve
-} from 'path';
-import {
-	readdirSync,
-	readFileSync,
-	statSync
-} from 'fs';
+} from '../../';
 import {
 	isBufferType,
 	useVirtualStreamReader,
