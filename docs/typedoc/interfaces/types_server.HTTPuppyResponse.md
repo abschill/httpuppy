@@ -1,4 +1,4 @@
-[httpuppy - v0.2.24](../README.md) / [Modules](../modules.md) / [types/server](../modules/types_server.md) / HTTPuppyResponse
+[httpuppy - v0.3.0](../README.md) / [Modules](../modules.md) / [types/server](../modules/types_server.md) / HTTPuppyResponse
 
 # Interface: HTTPuppyResponse
 
@@ -89,7 +89,7 @@
 
 #### Defined in
 
-[src/types/server/index.ts:103](https://github.com/abschill/httpuppy/blob/85ac7bc/src/types/server/index.ts#L103)
+[src/types/server/index.ts:102](https://github.com/abschill/httpuppy/blob/e18a17c/src/types/server/index.ts#L102)
 
 ___
 
@@ -1352,7 +1352,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:105](https://github.com/abschill/httpuppy/blob/85ac7bc/src/types/server/index.ts#L105)
+[src/types/server/index.ts:104](https://github.com/abschill/httpuppy/blob/e18a17c/src/types/server/index.ts#L104)
 
 ___
 
@@ -2371,7 +2371,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:104](https://github.com/abschill/httpuppy/blob/85ac7bc/src/types/server/index.ts#L104)
+[src/types/server/index.ts:103](https://github.com/abschill/httpuppy/blob/e18a17c/src/types/server/index.ts#L103)
 
 ___
 

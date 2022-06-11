@@ -50,7 +50,7 @@ describe('basic coldinit setup', function() {
 		expect(router).toHaveProperty('patch');
 		expect(router).toHaveProperty('delete');
 	});
-	server0._shutdown();
+	server0.stop();
 });
 
 describe('api doesnt conflict with static pages', function() {
@@ -58,11 +58,12 @@ describe('api doesnt conflict with static pages', function() {
 		const server1 = useServer({
 			static: {
 				path: './examples/files'
-			}
+			},
+			port: 3001
 		});
 		const router = useRouter(server1);
 		router.get('/api/v1', (req, res) => res.send(Test_String));
-		server1.listen(3001);
+		server1.start();
 		Promise.resolve(get('http://localhost:3001/api/v1', (res) => {
 			res.on('data', (chunk) => {
 				const str = chunk.toString();
@@ -70,7 +71,7 @@ describe('api doesnt conflict with static pages', function() {
 			});
 		})).then(() => {
 			done();
-			setTimeout(()=> (server1._shutdown(), process.exit(0)), Log_Timeout);
+			setTimeout(()=> (server1.stop(), process.exit(0)), Log_Timeout);
 		});
 	});
 });

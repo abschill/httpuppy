@@ -1,12 +1,12 @@
 {
   "name": "httpuppy",
-  "version": "0.2.24",
-  "description": "simple abstraction layer for node web servers",
+  "version": "0.3.0",
+  "description": "speedy abstraction layer for node web servers with automatic clustering",
   "types": "lib/index.d.ts",
   "main": "lib/index.js",
   "bin": "bin/index.js",
   "scripts": {
-	"setup": "chmod +x ./scripts/**/*",
+    "setup": "chmod +x ./scripts/**/*",
     "build": "tsc",
     "build:watch": "tsc -w",
     "build:docs": "typedoc --excludeInternal",
@@ -14,7 +14,7 @@
     "test": "ts-mocha test/**/*.test.ts",
     "test:watch": "ts-mocha -w test/**/*.test.ts",
     "run-ex": "nodemon examples/static-demo.js",
-	"test:coverage": "rm -rf nyc-output && nyc yarn test"
+    "test:coverage": "rm -rf nyc-output && nyc yarn test"
   },
   "keywords": [
     "http",
@@ -36,12 +36,11 @@
     "eslint": "^8.14.0",
     "expect": "^28.1.0",
     "mocha": "^10.0.0",
-    "nodemon": "^2.0.16",
+    "nyc": "^15.1.0",
     "ts-mocha": "^10.0.0",
     "typedoc": "^0.22.17",
     "typedoc-plugin-markdown": "^3.12.1",
-    "typescript": "^4.6.3",
-	"nyc": "^15.1.0"
+    "typescript": "^4.6.3"
   },
   "dependencies": {
     "http-graceful-shutdown": "^3.1.7",

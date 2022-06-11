@@ -10,7 +10,7 @@ export function useDefaultLogConfig():
 LogConfig {
 	return {
 		logLevel	: 'base',
-		logPrefix	: 'httpuppy_log',
+		logPrefix	: 'httpuppy',
 		logFile		: null
 	};
 }

@@ -32,7 +32,8 @@ export interface HTTPuppyServer extends stlServer  {
 	pConfig		: HTTPuppyServerOptions; //httpuppyserveroptions
 	diagnostics	: DiagnosticLog[]; //diagnostic log
 	onClose		: iExitHandler; // onclose handler
-	_shutdown	: () => Promise<HTTPuppySleep>; // shutdown handler
+	start		: () => boolean; //start process for server (wrapper around .listen())
+	stop		: () => Promise<HTTPuppySleep>; // shutdown handler
 	_vfs		: VirtualFileSystem; // virtual filesystem to load paths from
 }
 
@@ -56,7 +57,6 @@ export type HTTPuppySleep = () => Promise<void>;
 export interface HTTPuppyServerOptions extends stlServerOptions {
     port 			?: number;
 	clustered		?: boolean;
-    coldInit 		?: boolean;
     hostname 		?: string;
 	static 			?: UserStaticConfig;
     throwWarnings 	?: boolean;
@@ -79,7 +79,6 @@ export const defaultHTTPConfig:
 HTTPuppyServerOptions = {
 	port		  : 80,
 	clustered	  : false,
-	coldInit	  : true,
 	cache		  : defaultCacheSettings,
 	log			  : useDefaultLogConfig(),
 	hostname	  : '127.0.0.1',

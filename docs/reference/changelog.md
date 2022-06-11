@@ -1,4 +1,6 @@
 # Changelog
+- [0.3.0]
+	- add clustered mode, clean up logger
 - [0.2.14](https://github.com/abschill/httpuppy/releases/tag/v0.2.14)
 	- fix up cli file options & remove bulk from initial modules. also update documentation, remove inline config options besides custom config path.
 - [0.2.7](https://github.com/abschill/httpuppy/releases/tag/v0.2.7)

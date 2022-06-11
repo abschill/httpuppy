@@ -16,8 +16,8 @@ const secureApp = useServer({
 		// define these files on your pc
 		key: readFileSync(join(process.cwd(), 'server.key')),
 		cert: readFileSync(join('server.cert'))
-	}
+	},
+	port: 3000
 });
 
-
-secureApp.listen(3000, secureApp.onMount);
+secureApp.start();

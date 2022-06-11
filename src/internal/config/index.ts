@@ -6,6 +6,7 @@ import {
 	HTTPuppyServerOptions
  } from '../../types';
 import { emitWarning } from 'process';
+import { useLogConfig } from '../logger';
 
 /**
  * @internal useConfig
@@ -17,11 +18,12 @@ import { emitWarning } from 'process';
 export function useConfig(
 	conf		: HTTPuppyServerOptions,
 	diagnostics : DiagnosticLog[]
-): HTTPuppyServerOptions {
+): Required<HTTPuppyServerOptions> {
     const config = {...conf};
     if(!config.port) config.port = 80; //default http port
-
-    if(!config.hostname) config.hostname = '127.0.0.1'; // default lh
+	config.timeout = conf.timeout || 0;
+	config.log = useLogConfig(config.log);
+    config.hostname = conf.hostname || '127.0.0.1'; // default lh
 	if(!config.throwWarnings || (config.throwWarnings === null)) config.throwWarnings = false;
 	if(config.static) {
 		config.static = {
@@ -38,7 +40,7 @@ export function useConfig(
         diagnostics.push({msg});
     }
 
-    return <HTTPuppyServerOptions>config;
+    return <Required<HTTPuppyServerOptions>>config;
 }
 
 export * from './argv';

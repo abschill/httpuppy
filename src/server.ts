@@ -42,13 +42,8 @@ export function useServer(
 	// set up handler to route based on static config
 	if(config.static) useStaticHandler(server);
 	// hook in logger module
-	if(conf.log && conf.log.logLevel !== 'silent') useLogger(conf.log, server);
+	if(config.log.logLevel !== 'silent') useLogger(config.log, server);
 	// bind safe shutdown to the server for callability on the end user side
-	server._shutdown = () => shutdown(server);
-	server.timeout = conf.timeout || 0;
-	// if not conld init, auto set listening server before return
-	if(!config.coldInit) {
-		server.listen(conf.port, config.hostname);
-	}
+	server.stop = () => shutdown(server);
 	return server;
 }

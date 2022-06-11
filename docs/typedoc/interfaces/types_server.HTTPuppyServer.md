@@ -1,4 +1,4 @@
-[httpuppy - v0.2.24](../README.md) / [Modules](../modules.md) / [types/server](../modules/types_server.md) / HTTPuppyServer
+[httpuppy - v0.3.0](../README.md) / [Modules](../modules.md) / [types/server](../modules/types_server.md) / HTTPuppyServer
 
 # Interface: HTTPuppyServer
 
@@ -34,7 +34,6 @@
 
 ### Methods
 
-- [\_shutdown](types_server.HTTPuppyServer.md#_shutdown)
 - [addListener](types_server.HTTPuppyServer.md#addlistener)
 - [address](types_server.HTTPuppyServer.md#address)
 - [close](types_server.HTTPuppyServer.md#close)
@@ -56,6 +55,8 @@
 - [removeListener](types_server.HTTPuppyServer.md#removelistener)
 - [setMaxListeners](types_server.HTTPuppyServer.md#setmaxlisteners)
 - [setTimeout](types_server.HTTPuppyServer.md#settimeout)
+- [start](types_server.HTTPuppyServer.md#start)
+- [stop](types_server.HTTPuppyServer.md#stop)
 - [unref](types_server.HTTPuppyServer.md#unref)
 
 ## Properties
@@ -66,7 +67,7 @@
 
 #### Defined in
 
-[src/types/server/index.ts:36](https://github.com/abschill/httpuppy/blob/85ac7bc/src/types/server/index.ts#L36)
+[src/types/server/index.ts:37](https://github.com/abschill/httpuppy/blob/e18a17c/src/types/server/index.ts#L37)
 
 ___
 
@@ -90,7 +91,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:33](https://github.com/abschill/httpuppy/blob/85ac7bc/src/types/server/index.ts#L33)
+[src/types/server/index.ts:33](https://github.com/abschill/httpuppy/blob/e18a17c/src/types/server/index.ts#L33)
 
 ___
 
@@ -240,7 +241,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:34](https://github.com/abschill/httpuppy/blob/85ac7bc/src/types/server/index.ts#L34)
+[src/types/server/index.ts:34](https://github.com/abschill/httpuppy/blob/e18a17c/src/types/server/index.ts#L34)
 
 ___
 
@@ -250,7 +251,7 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:32](https://github.com/abschill/httpuppy/blob/85ac7bc/src/types/server/index.ts#L32)
+[src/types/server/index.ts:32](https://github.com/abschill/httpuppy/blob/e18a17c/src/types/server/index.ts#L32)
 
 ___
 
@@ -303,20 +304,6 @@ stlServer.timeout
 node_modules/@types/node/http.d.ts:209
 
 ## Methods
-
-### \_shutdown
-
-▸ **_shutdown**(): `Promise`<[`HTTPuppySleep`](../modules/types_server.md#httpuppysleep)\>
-
-#### Returns
-
-`Promise`<[`HTTPuppySleep`](../modules/types_server.md#httpuppysleep)\>
-
-#### Defined in
-
-[src/types/server/index.ts:35](https://github.com/abschill/httpuppy/blob/85ac7bc/src/types/server/index.ts#L35)
-
-___
 
 ### addListener
 
@@ -2535,6 +2522,34 @@ stlServer.setTimeout
 #### Defined in
 
 node_modules/@types/node/http.d.ts:181
+
+___
+
+### start
+
+▸ **start**(): `boolean`
+
+#### Returns
+
+`boolean`
+
+#### Defined in
+
+[src/types/server/index.ts:35](https://github.com/abschill/httpuppy/blob/e18a17c/src/types/server/index.ts#L35)
+
+___
+
+### stop
+
+▸ **stop**(): `Promise`<[`HTTPuppySleep`](../modules/types_server.md#httpuppysleep)\>
+
+#### Returns
+
+`Promise`<[`HTTPuppySleep`](../modules/types_server.md#httpuppysleep)\>
+
+#### Defined in
+
+[src/types/server/index.ts:36](https://github.com/abschill/httpuppy/blob/e18a17c/src/types/server/index.ts#L36)
 
 ___
 

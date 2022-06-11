@@ -5,8 +5,10 @@ import { useMountedFS } from '../static';
 import {
 	HTTPuppyServerOptions,
 	DiagnosticLog,
-	HTTPuppyServer
+	HTTPuppyServer,
+	useDefaultLogConfig
 } from '../../types';
+import useCluster from './cluster';
 
 /**
  * @internal _useServer
@@ -30,5 +32,21 @@ export function _useServer(
 	if(config.static) {
 		ss._vfs = useMountedFS(server);
 	}
+	ss.start = () => {
+		try {
+			if(!config.clustered) {
+				ss.listen(config.port);
+				return true;
+			}
+			useCluster(ss);
+			return true;
+		}
+		catch(e) {
+			diagnostics.push({
+				msg: JSON.stringify(e)
+			});
+			return false;
+		}
+	};
 	return ss;
 }

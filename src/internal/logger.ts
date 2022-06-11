@@ -1,6 +1,7 @@
 /**
  * @internal
  */
+import { useColorTag } from './fmt/_color';
 import {
 	LogConfig,
 	useDefaultLogConfig,
@@ -8,13 +9,12 @@ import {
 	HTTPuppyRequest,
 	ValidLogMsg
 } from '../types';
-import { useColorTag } from './fmt/_color';
 import {
 	existsSync,
 	appendFileSync,
 	writeFileSync
 } from 'fs';
-
+import cluster from 'cluster';
 const { log } = console;
 
 export function fLog(
@@ -76,19 +76,12 @@ export function useLogger(
 	}
 
 	if(config.logLevel !== 'silent') {
-		server.addListener('listening', () => log(`${prefix}:`, useColorTag('green', 'server started '), 'on port', server.pConfig.port));
-
+		if(cluster.isWorker) server.addListener('listening', () => log(`${prefix}:`, useColorTag('green', `worker pid ${process.pid} listening`), 'on port', server.pConfig.port));
 		server.on('clientError', (err, socket) => {
 			log(`${prefix}:`, useColorTag('warn', `${err.name}`));
 			socket.end('HTTP/1.1 400 Bad Request');
 		});
-
-		server.on('error', (err) => {
-			log(`${prefix}:`, useColorTag('error',  `${err.message}\n\n${err.stack}`));
-		});
-
-		server.on('request', (req) => {
-			log(`${prefix}:`, useColorTag('status',  <string>req.method),  req.url);
-		});
+		server.on('error', (err) => log(`${prefix}:`, useColorTag('error',  `${err.message}\n\n${err.stack}`)));
+		server.on('request', (req) => log(`${prefix}:`, useColorTag('status',  <string>req.method),  req.url));
 	}
 }
