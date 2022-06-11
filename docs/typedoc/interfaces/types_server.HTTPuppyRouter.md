@@ -1,4 +1,4 @@
-[httpuppy - v0.3.2](../README.md) / [Modules](../modules.md) / [types/server](../modules/types_server.md) / HTTPuppyRouter
+[httpuppy - v0.3.3](../README.md) / [Modules](../modules.md) / [types/server](../modules/types_server.md) / HTTPuppyRouter
 
 # Interface: HTTPuppyRouter
 
@@ -39,7 +39,7 @@ typeof [`HTTPuppyCallback`](../modules/types_server.md#httpuppycallback) \| `voi
 
 #### Defined in
 
-[src/types/server/index.ts:117](https://github.com/abschill/httpuppy/blob/c2e0fb0/src/types/server/index.ts#L117)
+[src/types/server/index.ts:117](https://github.com/abschill/httpuppy/blob/64a998c/src/types/server/index.ts#L117)
 
 ___
 
@@ -64,7 +64,7 @@ typeof [`HTTPuppyCallback`](../modules/types_server.md#httpuppycallback) \| `voi
 
 #### Defined in
 
-[src/types/server/index.ts:112](https://github.com/abschill/httpuppy/blob/c2e0fb0/src/types/server/index.ts#L112)
+[src/types/server/index.ts:112](https://github.com/abschill/httpuppy/blob/64a998c/src/types/server/index.ts#L112)
 
 ___
 
@@ -89,7 +89,7 @@ typeof [`HTTPuppyCallback`](../modules/types_server.md#httpuppycallback) \| `voi
 
 #### Defined in
 
-[src/types/server/index.ts:113](https://github.com/abschill/httpuppy/blob/c2e0fb0/src/types/server/index.ts#L113)
+[src/types/server/index.ts:113](https://github.com/abschill/httpuppy/blob/64a998c/src/types/server/index.ts#L113)
 
 ___
 
@@ -114,7 +114,7 @@ typeof [`HTTPuppyCallback`](../modules/types_server.md#httpuppycallback) \| `voi
 
 #### Defined in
 
-[src/types/server/index.ts:116](https://github.com/abschill/httpuppy/blob/c2e0fb0/src/types/server/index.ts#L116)
+[src/types/server/index.ts:116](https://github.com/abschill/httpuppy/blob/64a998c/src/types/server/index.ts#L116)
 
 ___
 
@@ -139,7 +139,7 @@ typeof [`HTTPuppyCallback`](../modules/types_server.md#httpuppycallback) \| `voi
 
 #### Defined in
 
-[src/types/server/index.ts:114](https://github.com/abschill/httpuppy/blob/c2e0fb0/src/types/server/index.ts#L114)
+[src/types/server/index.ts:114](https://github.com/abschill/httpuppy/blob/64a998c/src/types/server/index.ts#L114)
 
 ___
 
@@ -164,7 +164,7 @@ typeof [`HTTPuppyCallback`](../modules/types_server.md#httpuppycallback) \| `voi
 
 #### Defined in
 
-[src/types/server/index.ts:115](https://github.com/abschill/httpuppy/blob/c2e0fb0/src/types/server/index.ts#L115)
+[src/types/server/index.ts:115](https://github.com/abschill/httpuppy/blob/64a998c/src/types/server/index.ts#L115)
 
 ___
 
@@ -174,4 +174,4 @@ ___
 
 #### Defined in
 
-[src/types/server/index.ts:111](https://github.com/abschill/httpuppy/blob/c2e0fb0/src/types/server/index.ts#L111)
+[src/types/server/index.ts:111](https://github.com/abschill/httpuppy/blob/64a998c/src/types/server/index.ts#L111)

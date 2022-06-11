@@ -32,7 +32,7 @@ export function useConfig(
 			...config.static // go last to just use href and path as defaults to override, config is the user input
 		};
 		if(config.static.path === '.') {
-			config.static.path === process.cwd();
+			config.static.path = process.cwd();
 		}
 	}
 
