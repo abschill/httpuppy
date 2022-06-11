@@ -4,7 +4,7 @@
 		"./src/index.ts",
 		"./src/server.ts",
 		"./src/router.ts",
-		"./src/internal/types/middleware"
+		"./src/internal/types/middleware.ts"
 	],
 	"includeVersion": true
 }
