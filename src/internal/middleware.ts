@@ -3,9 +3,7 @@
  * @description middleware hooks, such mime type header resolution / header setting
  */
 import { useEtag } from './include/etag';
-import { lookup } from 'mime-types';
 import {
-	HTTPHeader,
 	HTTPHeaders,
 	HTTPuppyServer,
 	HTTPuppyCallback,
@@ -56,27 +54,6 @@ export function useHTTPHandle(
 		}
 		return;
 	});
-}
-
-/**
- * @internal useContentType
- * @description hook for determining content type of a virtual fpath on the system
- * @param fpath the file path of the type to resolve
- * @returns the tuple representing the content type header for the static file
-*/
-export function useContentType(
-	fpath: string
-): HTTPHeader {
-	if(fpath === '') return [
-		'Content-Type',
-		'text/plain'
-	];
-
-	const matchType = lookup(fpath);
-	return [
-		'Content-Type',
-		(matchType ? matchType : 'text/plain')
-	];
 }
 
 /**

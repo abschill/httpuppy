@@ -23,6 +23,15 @@ export function checkNumConfigs(p) {
 	return matches.length;
 }
 
+export function useConfigFrom(p) {
+	const fileList = readdirSync(p);
+	const matches = CONFIG_FILE_OPTIONS.filter(fileOpt => fileList.includes(fileOpt.fileName));
+	if(matches.length > 0) {
+		return _switchConfigType(p, matches[0]);
+	}
+	return {};
+}
+
 export async function useMultiConfigPrompt(p) {
 	const fileList = readdirSync(p);
 	const matches = CONFIG_FILE_OPTIONS.filter(fileOpt => fileList.includes(fileOpt.fileName));
@@ -56,10 +65,14 @@ function _switchConfigType(pathPrefix, match) {
 export async function useCLIConfigFinder() {
 	const cPath = process.argv[2] || process.cwd();
 	const configs = checkNumConfigs(cPath);
-	if(configs >= 1) {
+	if(configs > 1) {
 		const lookPath = cPath[0] != '/' ? join(process.cwd(), cPath) : cPath;
 		const foundMatch = await useMultiConfigPrompt(lookPath);
 		return _switchConfigType(lookPath, foundMatch);
+	}
+	if(configs === 1) {
+		const conf = useConfigFrom(cPath);
+		return conf;
 	}
 	else {
 		return {};

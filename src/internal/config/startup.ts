@@ -28,7 +28,7 @@ export function _useServer(
 	ss.pConfig = config;
 	// if static properties exist, mount the vfs based on them
 	if(config.static) {
-		server._vfs = useMountedFS(server);
+		ss._vfs = useMountedFS(server);
 	}
 	return ss;
 }

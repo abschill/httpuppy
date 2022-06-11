@@ -1,5 +1,4 @@
 import { useVirtualRequestHandler } from './mount-fs';
-// import { isMainThread } from 'worker_threads';
 import {
 	HTTPuppyServer,
 	HTTPuppyRequest,
@@ -30,3 +29,4 @@ export function useStaticHandler(
 
 export * from './mount-fs';
 export * from './url';
+export * from './mime-types';

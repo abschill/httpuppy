@@ -7,7 +7,7 @@ import {
 } from '../include/_constants';
 import { format } from 'util';
 
-export function _useColorTag(
+export function useColorTag(
 	color: string,
 	val: string
 ): string {

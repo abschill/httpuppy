@@ -2,7 +2,7 @@
  * @internal mount-fs
  * @description virtual file system mount hooks
  */
-import { useContentType } from '../middleware';
+import { useLocalMimeType } from '.';
 import { useStaticURLParser } from './url';
 import {
 	HTTPuppyServer,
@@ -60,7 +60,7 @@ export function useMountedFS(
 		return <MountedFile>{
 			fileName: file,
 			symLink,
-			contentType: <HTTPHeader>useContentType(symLink),
+			contentType: <HTTPHeader>useLocalMimeType(symLink),
 			content: readFileSync(symLink),
 			hrefs: useCleanPaths(file, <UserStaticConfig>server.pConfig.static)
 		};

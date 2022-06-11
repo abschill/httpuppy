@@ -13,13 +13,24 @@ import {
 	useServer
 } from '../lib';
 
+const mountPath = 'examples/files';
+
 describe('basic coldinit setup', function() {
 	const server0 = useServer({
 		static: {
-			path: './examples/files'
+			path: mountPath
 		},
 		port: 3000
 	});
+
+	it('should properly give the vfs the given path', () => {
+		expect(server0._vfs.mountedPath).toBe(mountPath);
+	});
+
+	it('should load 3 files into the virtual filesystem', () => {
+		expect(server0._vfs.mountedFiles.length).toBe(3);
+	});
+
 
 	it('should not start until user does', function() {
 		expect(server0).toHaveProperty('listen');

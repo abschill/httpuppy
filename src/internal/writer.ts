@@ -3,10 +3,8 @@
  */
 import { createReadStream } from 'fs';
 import { bufferTypes } from './include';
-import {
-	useContentType,
-	useHeaders
-} from './middleware';
+import { useLocalMimeType } from './static';
+import { useHeaders } from './middleware';
 import {
 	VirtualWriteableFile,
 	HTTPuppyResponse,
@@ -46,7 +44,7 @@ export function useVirtualStreamReader(
 		const stream = createReadStream(pathData.symLink);
 		stream.on('data', (chunk) => {
 			// type the symlink of the streamable file, write into the response stream
-			res.writeHead(200, 'ok', useContentType(pathData.symLink ?? ''));
+			res.writeHead(200, 'ok', useLocalMimeType(pathData.symLink ?? ''));
 			res.write(chunk);
 		});
 		// end response when data is done streaming from vfile

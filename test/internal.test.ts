@@ -4,13 +4,17 @@ import {
 	describe
 } from 'mocha';
 import { statSync } from 'fs';
-import { resolve } from 'path';
+import { join, resolve } from 'path';
 import {
 	isValidStats,
 	useEntityTag,
 	checkNumConfigs,
-	useValidConfigOption
+	useValidConfigOption,
+	useLocalMimeType,
+	useConfigFrom
 } from '../lib/internal';
+
+const fixtures = join(process.cwd(), '__fixtures__');
 
 describe('test etag generation process', () => {
 	it('generates etag for a given content', () => {
@@ -27,8 +31,24 @@ describe('test etag generation process', () => {
 
 describe('misc internal testing', () => {
 	it('finds the right number of configs in figures', () => {
-		const p = resolve(process.cwd(), '__fixtures__');
-		expect(checkNumConfigs(p)).toBe(2);
-		expect(useValidConfigOption(p)).toBeTruthy();
+		expect(checkNumConfigs(fixtures)).toBe(2);
+		expect(useValidConfigOption(fixtures)).toBeTruthy();
+	});
+});
+
+describe('localized mime types', () => {
+	it('detects the html file in fixtures', () => {
+		expect(useLocalMimeType(resolve(fixtures, 'index.html'))).toEqual(['Content-Type', 'text/html']);
+
+	});
+	it('detects css as css', () => {
+		expect(useLocalMimeType(resolve(process.cwd(), 'examples', 'style.css'))).toEqual(['Content-Type', 'text/css']);
+	});
+});
+
+describe('config tests', () => {
+	it('loads config without prompt from local dir with only one option', () => {
+		const expected = require('../httpuppy.json');
+		expect(useConfigFrom(process.cwd())).toEqual(expected);
 	});
 });
