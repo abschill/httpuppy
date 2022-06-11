@@ -43,7 +43,7 @@
 
 #### Defined in
 
-[src/server.ts:60](https://github.com/abschill/httpuppy/blob/94ff392/src/server.ts#L60)
+[src/server.ts:60](https://github.com/abschill/httpuppy/blob/acdf1e9/src/server.ts#L60)
 
 ___
 
@@ -61,7 +61,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:64](https://github.com/abschill/httpuppy/blob/94ff392/src/server.ts#L64)
+[src/server.ts:64](https://github.com/abschill/httpuppy/blob/acdf1e9/src/server.ts#L64)
 
 ## Variables
 
@@ -71,7 +71,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:102](https://github.com/abschill/httpuppy/blob/94ff392/src/server.ts#L102)
+[src/server.ts:102](https://github.com/abschill/httpuppy/blob/acdf1e9/src/server.ts#L102)
 
 ## Functions
 
@@ -91,7 +91,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:113](https://github.com/abschill/httpuppy/blob/94ff392/src/server.ts#L113)
+[src/server.ts:113](https://github.com/abschill/httpuppy/blob/acdf1e9/src/server.ts#L113)
 
 ___
 
@@ -124,4 +124,4 @@ httpuppy server
 
 #### Defined in
 
-[src/server.ts:135](https://github.com/abschill/httpuppy/blob/94ff392/src/server.ts#L135)
+[src/server.ts:135](https://github.com/abschill/httpuppy/blob/acdf1e9/src/server.ts#L135)

@@ -9,7 +9,6 @@ import {
 	isValidStats,
 	useEntityTag,
 	checkNumConfigs,
-	useValidConfigOption,
 	useLocalMimeType,
 	useConfigFrom
 } from '../lib/internal';
@@ -32,7 +31,6 @@ describe('test etag generation process', () => {
 describe('misc internal testing', () => {
 	it('finds the right number of configs in figures', () => {
 		expect(checkNumConfigs(fixtures)).toBe(2);
-		expect(useValidConfigOption(fixtures)).toBeTruthy();
 	});
 });
 

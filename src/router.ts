@@ -2,7 +2,10 @@
  * @module router
  * @description for adding custom routing to your server
  */
-import { useHTTPHandle } from './internal';
+import {
+	useHTTPHandle,
+	HTTPuppySymbolRegistry
+} from './internal';
 import {
 	HTTPuppyServer,
 	HTTPuppyRequest,
@@ -19,10 +22,19 @@ export interface HTTPuppyRouter {
 	post		: typeof HTTPuppyRouterMethod;
 	put			: typeof HTTPuppyRouterMethod;
 	patch		: typeof HTTPuppyRouterMethod;
+	trace		: typeof HTTPuppyRouterMethod;
+	connect		: typeof HTTPuppyRouterMethod;
 	delete		: typeof HTTPuppyRouterMethod;
+	options		: typeof HTTPuppyRouterMethod;
 }
 export type HTTPHeader = string[];
 export type HTTPHeaders = HTTPHeader[];
+
+export type HTTPuppyRouterOptions = {
+	baseUrl				?: string; //glob or prefix
+	allowPassthrough	?: boolean;
+}
+
 /**
  * @function useRouter
  * @example
@@ -36,7 +48,7 @@ export type HTTPHeaders = HTTPHeader[];
  */
 export function useRouter(
 	server: HTTPuppyServer, // server to attach the router to as a handler
-	routerOptions ?: any // placeholder: planned feature
+	rOptions ?: HTTPuppyRouterOptions // placeholder: planned feature
 ): HTTPuppyRouter {
 	// router callback choices
 	// todo: setup glob handler functionality if config option is set
@@ -44,42 +56,90 @@ export function useRouter(
 		url: string,
 		cb: typeof HTTPuppyCallback
 	): void {
-		useHTTPHandle('GET', url, server, cb);
+		useHTTPHandle(
+			HTTPuppySymbolRegistry['kGET'].toString(),
+			url, server, cb
+		);
 	}
 
 	function post(
 		url: string,
 		cb: typeof HTTPuppyCallback
 	): void {
-		useHTTPHandle('POST', url, server, cb);
+		useHTTPHandle(
+			HTTPuppySymbolRegistry['kPOST'].toString(),
+			url, server, cb
+		);
 	}
 
 	function head(
 		url: string,
 		cb: typeof HTTPuppyCallback
 	): void {
-		useHTTPHandle('HEAD', url, server, cb);
+		useHTTPHandle(
+			HTTPuppySymbolRegistry['kHEAD'].toString(),
+			url, server, cb
+		);
 	}
 
 	function put(
 		url: string,
 		cb: typeof HTTPuppyCallback
 	): void {
-		useHTTPHandle('PUT', url, server, cb);
+		useHTTPHandle(
+			HTTPuppySymbolRegistry['kPUT'].toString(),
+			url, server, cb
+		);
 	}
 
 	function patch(
 		url: string,
 		cb: typeof HTTPuppyCallback
 	): void {
-		useHTTPHandle('PATCH', url, server, cb);
+		useHTTPHandle(
+			HTTPuppySymbolRegistry['kPATCH'].toString(),
+			url, server, cb
+		);
+	}
+
+	function trace(
+		url: string,
+		cb: typeof HTTPuppyCallback
+	): void {
+		useHTTPHandle(
+			HTTPuppySymbolRegistry['kTRACE'].toString(),
+			url, server, cb
+		);
+	}
+
+	function connect(
+		url: string,
+		cb: typeof HTTPuppyCallback
+	): void {
+		useHTTPHandle(
+			HTTPuppySymbolRegistry['kCONNECT'].toString(),
+			url, server, cb
+		);
+	}
+
+	function options(
+		url: string,
+		cb: typeof HTTPuppyCallback
+	): void {
+		useHTTPHandle(
+			HTTPuppySymbolRegistry['kOPTIONS'].toString(),
+			url, server, cb
+		);
 	}
 
 	function _delete(
 		url: string,
 		cb: typeof HTTPuppyCallback
 	): void {
-		useHTTPHandle('DELETE', url, server, cb);
+		useHTTPHandle(
+			HTTPuppySymbolRegistry['kDELETE'].toString(),
+		url, server, cb
+		);
 	}
 
 	return <HTTPuppyRouter>{
@@ -89,5 +149,8 @@ export function useRouter(
 		put,
 		patch,
 		delete: _delete,
+		trace,
+		connect,
+		options
 	};
 }

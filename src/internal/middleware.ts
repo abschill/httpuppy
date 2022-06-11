@@ -28,6 +28,9 @@ export function useRouterSignatures(
 	res.json = (content: any) => {
 		if(!res.writable) {
 			res.writeHead(500, 'cannot write to json stream');
+			res._process.diagnostics.push({
+				msg: `error writing to json stream at ${res.req.url}`
+			});
 			res.end();
 		}
 		// content type is json if they are calling this method so overwrite if preset

@@ -14,6 +14,7 @@
 
 - [HTTPHeader](router.md#httpheader)
 - [HTTPHeaders](router.md#httpheaders)
+- [HTTPuppyRouterOptions](router.md#httpuppyrouteroptions)
 
 ### Functions
 
@@ -29,7 +30,7 @@
 
 #### Defined in
 
-[src/router.ts:24](https://github.com/abschill/httpuppy/blob/94ff392/src/router.ts#L24)
+[src/router.ts:30](https://github.com/abschill/httpuppy/blob/acdf1e9/src/router.ts#L30)
 
 ___
 
@@ -39,7 +40,24 @@ ___
 
 #### Defined in
 
-[src/router.ts:25](https://github.com/abschill/httpuppy/blob/94ff392/src/router.ts#L25)
+[src/router.ts:31](https://github.com/abschill/httpuppy/blob/acdf1e9/src/router.ts#L31)
+
+___
+
+### HTTPuppyRouterOptions
+
+Ƭ **HTTPuppyRouterOptions**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `allowPassthrough?` | `boolean` |
+| `baseUrl?` | `string` |
+
+#### Defined in
+
+[src/router.ts:33](https://github.com/abschill/httpuppy/blob/acdf1e9/src/router.ts#L33)
 
 ## Functions
 
@@ -60,7 +78,7 @@ ___
 
 #### Defined in
 
-[src/router.ts:12](https://github.com/abschill/httpuppy/blob/94ff392/src/router.ts#L12)
+[src/router.ts:15](https://github.com/abschill/httpuppy/blob/acdf1e9/src/router.ts#L15)
 
 ___
 
@@ -81,13 +99,13 @@ typeof [`HTTPuppyCallback`](router.md#httpuppycallback) \| `void`
 
 #### Defined in
 
-[src/router.ts:14](https://github.com/abschill/httpuppy/blob/94ff392/src/router.ts#L14)
+[src/router.ts:17](https://github.com/abschill/httpuppy/blob/acdf1e9/src/router.ts#L17)
 
 ___
 
 ### useRouter
 
-▸ **useRouter**(`server`, `routerOptions?`): [`HTTPuppyRouter`](../interfaces/router.HTTPuppyRouter.md)
+▸ **useRouter**(`server`, `rOptions?`): [`HTTPuppyRouter`](../interfaces/router.HTTPuppyRouter.md)
 
 **`function`** useRouter
 
@@ -103,7 +121,7 @@ router.get('/test', (req, res) => res.end('hello'));
 | Name | Type |
 | :------ | :------ |
 | `server` | [`HTTPuppyServer`](../interfaces/server.HTTPuppyServer.md) |
-| `routerOptions?` | `any` |
+| `rOptions?` | [`HTTPuppyRouterOptions`](router.md#httpuppyrouteroptions) |
 
 #### Returns
 
@@ -111,4 +129,4 @@ router.get('/test', (req, res) => res.end('hello'));
 
 #### Defined in
 
-[src/router.ts:37](https://github.com/abschill/httpuppy/blob/94ff392/src/router.ts#L37)
+[src/router.ts:49](https://github.com/abschill/httpuppy/blob/acdf1e9/src/router.ts#L49)

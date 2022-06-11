@@ -105,14 +105,3 @@ export async function useCLIConfigFinder() {
 		return {};
 	}
 }
-/**
- *
- * @private
- *
- * @returns auto select valid config option from list
- */
-export async function useValidConfigOption(p) {
-	const fileList = readdirSync(p);
-	const matches = CONFIG_FILE_OPTIONS.filter(fileOpt => fileList.includes(fileOpt.fileName));
-	return matches?.shift() ?? null;
-}

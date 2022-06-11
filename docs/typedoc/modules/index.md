@@ -14,6 +14,7 @@
 - [HTTPuppyResponse](index.md#httpuppyresponse)
 - [HTTPuppyRouter](index.md#httpuppyrouter)
 - [HTTPuppyRouterMethod](index.md#httpuppyroutermethod)
+- [HTTPuppyRouterOptions](index.md#httpuppyrouteroptions)
 - [HTTPuppyServer](index.md#httpuppyserver)
 - [HTTPuppyServerOptions](index.md#httpuppyserveroptions)
 - [HTTPuppySleep](index.md#httpuppysleep)
@@ -69,6 +70,12 @@ ___
 ### HTTPuppyRouterMethod
 
 Re-exports [HTTPuppyRouterMethod](router.md#httpuppyroutermethod)
+
+___
+
+### HTTPuppyRouterOptions
+
+Re-exports [HTTPuppyRouterOptions](router.md#httpuppyrouteroptions)
 
 ___
 

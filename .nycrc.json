@@ -9,6 +9,8 @@
 		"lib/internal/writer.js",
 		"lib/internal/middleware.js",
 		"lib/internal/static/url.js",
-		"lib/types/server/middleware.js"
+		"lib/types/server/middleware.js",
+		"lib/internal/config/cluster.js",
+		"lib/internal/config/argv.js"
 	]
 }
