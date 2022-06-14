@@ -44,7 +44,7 @@
 
 #### Defined in
 
-[src/server.ts:65](https://github.com/abschill/httpuppy/blob/2a31667/src/server.ts#L65)
+[src/server.ts:65](https://github.com/abschill/httpuppy/blob/990fd4c/src/server.ts#L65)
 
 ___
 
@@ -62,7 +62,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:69](https://github.com/abschill/httpuppy/blob/2a31667/src/server.ts#L69)
+[src/server.ts:69](https://github.com/abschill/httpuppy/blob/990fd4c/src/server.ts#L69)
 
 ___
 
@@ -81,7 +81,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:55](https://github.com/abschill/httpuppy/blob/2a31667/src/server.ts#L55)
+[src/server.ts:55](https://github.com/abschill/httpuppy/blob/990fd4c/src/server.ts#L55)
 
 ## Variables
 
@@ -91,7 +91,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:109](https://github.com/abschill/httpuppy/blob/2a31667/src/server.ts#L109)
+[src/server.ts:109](https://github.com/abschill/httpuppy/blob/990fd4c/src/server.ts#L109)
 
 ## Functions
 
@@ -111,7 +111,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:120](https://github.com/abschill/httpuppy/blob/2a31667/src/server.ts#L120)
+[src/server.ts:120](https://github.com/abschill/httpuppy/blob/990fd4c/src/server.ts#L120)
 
 ___
 
@@ -144,4 +144,4 @@ httpuppy server
 
 #### Defined in
 
-[src/server.ts:142](https://github.com/abschill/httpuppy/blob/2a31667/src/server.ts#L142)
+[src/server.ts:142](https://github.com/abschill/httpuppy/blob/990fd4c/src/server.ts#L142)
