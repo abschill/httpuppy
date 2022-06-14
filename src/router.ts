@@ -2,10 +2,7 @@
  * @module router
  * @description for adding custom routing to your server
  */
-import {
-	useHTTPHandle,
-	HTTPuppySymbolRegistry
-} from './internal';
+import { useHTTPHandle } from './internal';
 import {
 	HTTPuppyServer,
 	HTTPuppyRequest,
@@ -57,7 +54,7 @@ export function useRouter(
 		cb: typeof HTTPuppyCallback
 	): void {
 		useHTTPHandle(
-			HTTPuppySymbolRegistry['kGET'].toString(),
+			'GET',
 			url, server, cb
 		);
 	}
@@ -67,7 +64,7 @@ export function useRouter(
 		cb: typeof HTTPuppyCallback
 	): void {
 		useHTTPHandle(
-			HTTPuppySymbolRegistry['kPOST'].toString(),
+			'POST',
 			url, server, cb
 		);
 	}
@@ -77,7 +74,7 @@ export function useRouter(
 		cb: typeof HTTPuppyCallback
 	): void {
 		useHTTPHandle(
-			HTTPuppySymbolRegistry['kHEAD'].toString(),
+			'HEAD',
 			url, server, cb
 		);
 	}
@@ -87,7 +84,7 @@ export function useRouter(
 		cb: typeof HTTPuppyCallback
 	): void {
 		useHTTPHandle(
-			HTTPuppySymbolRegistry['kPUT'].toString(),
+			'PUT',
 			url, server, cb
 		);
 	}
@@ -97,7 +94,7 @@ export function useRouter(
 		cb: typeof HTTPuppyCallback
 	): void {
 		useHTTPHandle(
-			HTTPuppySymbolRegistry['kPATCH'].toString(),
+			'PATCH',
 			url, server, cb
 		);
 	}
@@ -107,7 +104,7 @@ export function useRouter(
 		cb: typeof HTTPuppyCallback
 	): void {
 		useHTTPHandle(
-			HTTPuppySymbolRegistry['kTRACE'].toString(),
+			'TRACE',
 			url, server, cb
 		);
 	}
@@ -117,7 +114,7 @@ export function useRouter(
 		cb: typeof HTTPuppyCallback
 	): void {
 		useHTTPHandle(
-			HTTPuppySymbolRegistry['kCONNECT'].toString(),
+			'CONNECT',
 			url, server, cb
 		);
 	}
@@ -127,7 +124,7 @@ export function useRouter(
 		cb: typeof HTTPuppyCallback
 	): void {
 		useHTTPHandle(
-			HTTPuppySymbolRegistry['kOPTIONS'].toString(),
+			'OPTIONS',
 			url, server, cb
 		);
 	}
@@ -137,7 +134,7 @@ export function useRouter(
 		cb: typeof HTTPuppyCallback
 	): void {
 		useHTTPHandle(
-			HTTPuppySymbolRegistry['kDELETE'].toString(),
+			'DELETE',
 		url, server, cb
 		);
 	}

@@ -1,7 +1,7 @@
 /**
  * @internal
  */
-import { useColorTag } from './fmt/_color';
+import { useColorTag } from './include/_color';
 import {
 	HTTPuppyServer,
 	HTTPuppyRequest
@@ -56,7 +56,6 @@ export function useLogConfig(
 	}
 	return {...def, ...config};
 }
-
 
 export function useLogger(
 	config	: LogConfig,

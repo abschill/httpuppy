@@ -7,7 +7,7 @@ import {
  } from '../..';
 import { emitWarning } from 'process';
 import { useLogConfig } from '../logger';
-import { useColorTag } from '../fmt';
+import { useColorTag } from '../include';
 
 /**
  * @internal useConfig

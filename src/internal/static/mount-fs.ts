@@ -63,6 +63,10 @@ export function useMountedFS(
 			hrefs: useCleanPaths(file, <UserStaticConfig>server.pConfig.static)
 		};
 	});
+	if(server.pConfig.log && server.pConfig.log.logLevel === 'verbose') {
+		console.log('mounted static files:');
+		console.log(mountedFiles);
+	}
 	// filesMounted is the accessible file tree that can be used against the upcoming handlers
 	return {
 		mountedPath,

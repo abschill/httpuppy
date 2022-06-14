@@ -1,4 +1,4 @@
-[httpuppy - v0.3.6](../README.md) / [Modules](../modules.md) / internal/types/middleware
+[httpuppy - v0.3.7](../README.md) / [Modules](../modules.md) / internal/types/middleware
 
 # Module: internal/types/middleware
 
@@ -18,6 +18,7 @@
 ### Functions
 
 - [fromDefaultCacheSettings](internal_types_middleware.md#fromdefaultcachesettings)
+- [use404](internal_types_middleware.md#use404)
 
 ## Type Aliases
 
@@ -75,7 +76,7 @@
 
 #### Defined in
 
-[src/internal/types/middleware.ts:23](https://github.com/abschill/httpuppy/blob/cf51615/src/internal/types/middleware.ts#L23)
+[src/internal/types/middleware.ts:23](https://github.com/abschill/httpuppy/blob/96efb1a/src/internal/types/middleware.ts#L23)
 
 ___
 
@@ -92,7 +93,7 @@ ___
 
 #### Defined in
 
-[src/internal/types/middleware.ts:57](https://github.com/abschill/httpuppy/blob/cf51615/src/internal/types/middleware.ts#L57)
+[src/internal/types/middleware.ts:57](https://github.com/abschill/httpuppy/blob/96efb1a/src/internal/types/middleware.ts#L57)
 
 ___
 
@@ -102,7 +103,7 @@ ___
 
 #### Defined in
 
-[src/internal/types/middleware.ts:55](https://github.com/abschill/httpuppy/blob/cf51615/src/internal/types/middleware.ts#L55)
+[src/internal/types/middleware.ts:55](https://github.com/abschill/httpuppy/blob/96efb1a/src/internal/types/middleware.ts#L55)
 
 ___
 
@@ -127,7 +128,7 @@ ___
 
 #### Defined in
 
-[src/internal/types/middleware.ts:56](https://github.com/abschill/httpuppy/blob/cf51615/src/internal/types/middleware.ts#L56)
+[src/internal/types/middleware.ts:56](https://github.com/abschill/httpuppy/blob/96efb1a/src/internal/types/middleware.ts#L56)
 
 ## Variables
 
@@ -137,7 +138,7 @@ ___
 
 #### Defined in
 
-[src/internal/types/middleware.ts:39](https://github.com/abschill/httpuppy/blob/cf51615/src/internal/types/middleware.ts#L39)
+[src/internal/types/middleware.ts:39](https://github.com/abschill/httpuppy/blob/96efb1a/src/internal/types/middleware.ts#L39)
 
 ## Functions
 
@@ -157,4 +158,26 @@ ___
 
 #### Defined in
 
-[src/internal/types/middleware.ts:46](https://github.com/abschill/httpuppy/blob/cf51615/src/internal/types/middleware.ts#L46)
+[src/internal/types/middleware.ts:46](https://github.com/abschill/httpuppy/blob/96efb1a/src/internal/types/middleware.ts#L46)
+
+___
+
+### use404
+
+▸ `Private` **use404**(`res`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `res` | [`HTTPuppyResponse`](../interfaces/server.HTTPuppyResponse.md) |
+
+#### Returns
+
+`void`
+
+nothing
+
+#### Defined in
+
+[src/internal/types/middleware.ts:67](https://github.com/abschill/httpuppy/blob/96efb1a/src/internal/types/middleware.ts#L67)

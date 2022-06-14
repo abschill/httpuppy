@@ -1,4 +1,4 @@
-[httpuppy - v0.3.6](../README.md) / [Modules](../modules.md) / [internal/types/logger](../modules/internal_types_logger.md) / LogMsg
+[httpuppy - v0.3.7](../README.md) / [Modules](../modules.md) / [internal/types/logger](../modules/internal_types_logger.md) / LogMsg
 
 # Interface: LogMsg
 
@@ -23,7 +23,7 @@
 
 #### Defined in
 
-[src/internal/types/logger.ts:19](https://github.com/abschill/httpuppy/blob/cf51615/src/internal/types/logger.ts#L19)
+[src/internal/types/logger.ts:19](https://github.com/abschill/httpuppy/blob/96efb1a/src/internal/types/logger.ts#L19)
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 #### Defined in
 
-[src/internal/types/logger.ts:20](https://github.com/abschill/httpuppy/blob/cf51615/src/internal/types/logger.ts#L20)
+[src/internal/types/logger.ts:20](https://github.com/abschill/httpuppy/blob/96efb1a/src/internal/types/logger.ts#L20)
 
 ## Methods
 
@@ -47,4 +47,4 @@ ___
 
 #### Defined in
 
-[src/internal/types/logger.ts:21](https://github.com/abschill/httpuppy/blob/cf51615/src/internal/types/logger.ts#L21)
+[src/internal/types/logger.ts:21](https://github.com/abschill/httpuppy/blob/96efb1a/src/internal/types/logger.ts#L21)
