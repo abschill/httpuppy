@@ -42,7 +42,7 @@ typeof [`HTTPuppyCallback`](../modules/router.md#httpuppycallback) \| `void`
 
 #### Defined in
 
-[src/router.ts:23](https://github.com/abschill/httpuppy/blob/96efb1a/src/router.ts#L23)
+[src/router.ts:23](https://github.com/abschill/httpuppy/blob/eda9c3a/src/router.ts#L23)
 
 ___
 
@@ -67,7 +67,7 @@ typeof [`HTTPuppyCallback`](../modules/router.md#httpuppycallback) \| `void`
 
 #### Defined in
 
-[src/router.ts:24](https://github.com/abschill/httpuppy/blob/96efb1a/src/router.ts#L24)
+[src/router.ts:24](https://github.com/abschill/httpuppy/blob/eda9c3a/src/router.ts#L24)
 
 ___
 
@@ -92,7 +92,7 @@ typeof [`HTTPuppyCallback`](../modules/router.md#httpuppycallback) \| `void`
 
 #### Defined in
 
-[src/router.ts:17](https://github.com/abschill/httpuppy/blob/96efb1a/src/router.ts#L17)
+[src/router.ts:17](https://github.com/abschill/httpuppy/blob/eda9c3a/src/router.ts#L17)
 
 ___
 
@@ -117,7 +117,7 @@ typeof [`HTTPuppyCallback`](../modules/router.md#httpuppycallback) \| `void`
 
 #### Defined in
 
-[src/router.ts:18](https://github.com/abschill/httpuppy/blob/96efb1a/src/router.ts#L18)
+[src/router.ts:18](https://github.com/abschill/httpuppy/blob/eda9c3a/src/router.ts#L18)
 
 ___
 
@@ -142,7 +142,7 @@ typeof [`HTTPuppyCallback`](../modules/router.md#httpuppycallback) \| `void`
 
 #### Defined in
 
-[src/router.ts:25](https://github.com/abschill/httpuppy/blob/96efb1a/src/router.ts#L25)
+[src/router.ts:25](https://github.com/abschill/httpuppy/blob/eda9c3a/src/router.ts#L25)
 
 ___
 
@@ -167,7 +167,7 @@ typeof [`HTTPuppyCallback`](../modules/router.md#httpuppycallback) \| `void`
 
 #### Defined in
 
-[src/router.ts:21](https://github.com/abschill/httpuppy/blob/96efb1a/src/router.ts#L21)
+[src/router.ts:21](https://github.com/abschill/httpuppy/blob/eda9c3a/src/router.ts#L21)
 
 ___
 
@@ -192,7 +192,7 @@ typeof [`HTTPuppyCallback`](../modules/router.md#httpuppycallback) \| `void`
 
 #### Defined in
 
-[src/router.ts:19](https://github.com/abschill/httpuppy/blob/96efb1a/src/router.ts#L19)
+[src/router.ts:19](https://github.com/abschill/httpuppy/blob/eda9c3a/src/router.ts#L19)
 
 ___
 
@@ -217,7 +217,7 @@ typeof [`HTTPuppyCallback`](../modules/router.md#httpuppycallback) \| `void`
 
 #### Defined in
 
-[src/router.ts:20](https://github.com/abschill/httpuppy/blob/96efb1a/src/router.ts#L20)
+[src/router.ts:20](https://github.com/abschill/httpuppy/blob/eda9c3a/src/router.ts#L20)
 
 ___
 
@@ -242,7 +242,7 @@ typeof [`HTTPuppyCallback`](../modules/router.md#httpuppycallback) \| `void`
 
 #### Defined in
 
-[src/router.ts:22](https://github.com/abschill/httpuppy/blob/96efb1a/src/router.ts#L22)
+[src/router.ts:22](https://github.com/abschill/httpuppy/blob/eda9c3a/src/router.ts#L22)
 
 ___
 
@@ -252,4 +252,4 @@ ___
 
 #### Defined in
 
-[src/router.ts:16](https://github.com/abschill/httpuppy/blob/96efb1a/src/router.ts#L16)
+[src/router.ts:16](https://github.com/abschill/httpuppy/blob/eda9c3a/src/router.ts#L16)

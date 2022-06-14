@@ -19,7 +19,6 @@ export function useStaticHandler(
 			//console.log(isMainThread);
 			// static only handles get requests, so after validating those check on the path and if its there, send it
 			const hasValidPath = req._process._vfs.mountedFiles.map(file => file.hrefs).flat().includes(<string>req.url);
-			console.log(hasValidPath);
 			if(hasValidPath) {
 				useVirtualRequestHandler(req, res);
 			}

@@ -23,7 +23,7 @@
 
 #### Defined in
 
-[src/internal/types/logger.ts:19](https://github.com/abschill/httpuppy/blob/96efb1a/src/internal/types/logger.ts#L19)
+[src/internal/types/logger.ts:19](https://github.com/abschill/httpuppy/blob/eda9c3a/src/internal/types/logger.ts#L19)
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 #### Defined in
 
-[src/internal/types/logger.ts:20](https://github.com/abschill/httpuppy/blob/96efb1a/src/internal/types/logger.ts#L20)
+[src/internal/types/logger.ts:20](https://github.com/abschill/httpuppy/blob/eda9c3a/src/internal/types/logger.ts#L20)
 
 ## Methods
 
@@ -47,4 +47,4 @@ ___
 
 #### Defined in
 
-[src/internal/types/logger.ts:21](https://github.com/abschill/httpuppy/blob/96efb1a/src/internal/types/logger.ts#L21)
+[src/internal/types/logger.ts:21](https://github.com/abschill/httpuppy/blob/eda9c3a/src/internal/types/logger.ts#L21)
