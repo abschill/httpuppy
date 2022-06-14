@@ -1,4 +1,4 @@
-[httpuppy - v0.3.7](../README.md) / [Modules](../modules.md) / server
+[httpuppy - v0.3.8](../README.md) / [Modules](../modules.md) / server
 
 # Module: server
 
@@ -44,7 +44,7 @@
 
 #### Defined in
 
-[src/server.ts:64](https://github.com/abschill/httpuppy/blob/eda9c3a/src/server.ts#L64)
+[src/server.ts:64](https://github.com/abschill/httpuppy/blob/272217e/src/server.ts#L64)
 
 ___
 
@@ -62,7 +62,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:68](https://github.com/abschill/httpuppy/blob/eda9c3a/src/server.ts#L68)
+[src/server.ts:68](https://github.com/abschill/httpuppy/blob/272217e/src/server.ts#L68)
 
 ___
 
@@ -81,7 +81,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:54](https://github.com/abschill/httpuppy/blob/eda9c3a/src/server.ts#L54)
+[src/server.ts:54](https://github.com/abschill/httpuppy/blob/272217e/src/server.ts#L54)
 
 ## Variables
 
@@ -91,7 +91,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:106](https://github.com/abschill/httpuppy/blob/eda9c3a/src/server.ts#L106)
+[src/server.ts:106](https://github.com/abschill/httpuppy/blob/272217e/src/server.ts#L106)
 
 ## Functions
 
@@ -111,7 +111,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:117](https://github.com/abschill/httpuppy/blob/eda9c3a/src/server.ts#L117)
+[src/server.ts:117](https://github.com/abschill/httpuppy/blob/272217e/src/server.ts#L117)
 
 ___
 
@@ -144,4 +144,4 @@ httpuppy server
 
 #### Defined in
 
-[src/server.ts:139](https://github.com/abschill/httpuppy/blob/eda9c3a/src/server.ts#L139)
+[src/server.ts:139](https://github.com/abschill/httpuppy/blob/272217e/src/server.ts#L139)
