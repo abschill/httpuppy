@@ -71,6 +71,11 @@ const app = useServer({
 });
 ```
 
+## built in static upload parsing
+
+by default any images uploaded via `POST` will be saved directly into the `tmp` dir relative to the process. if youd like to change this directory set `tmpDir` in your config's top level
+
+
 [Examples](/examples/)
 
 [Documentation](/docs/reference/)

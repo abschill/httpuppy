@@ -13,7 +13,6 @@ import {
 	HTTPuppyResponse,
 	HTTPuppyServerOptions,
 } from '..';
-
 /**
  * @internal isBufferType
  * @description check whether or not the file needs to be written into a stream as a buffer, or utf-8 content

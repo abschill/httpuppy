@@ -1,4 +1,4 @@
-[httpuppy - v0.3.8](../README.md) / [Modules](../modules.md) / [server](../modules/server.md) / HTTPuppyRequest
+[httpuppy - v0.3.9](../README.md) / [Modules](../modules.md) / [server](../modules/server.md) / HTTPuppyRequest
 
 # Interface: HTTPuppyRequest
 
@@ -15,6 +15,7 @@
 ### Properties
 
 - [\_process](server.HTTPuppyRequest.md#_process)
+- [\_tmpWritten](server.HTTPuppyRequest.md#_tmpwritten)
 - [aborted](server.HTTPuppyRequest.md#aborted)
 - [complete](server.HTTPuppyRequest.md#complete)
 - [connection](server.HTTPuppyRequest.md#connection)
@@ -83,7 +84,17 @@
 
 #### Defined in
 
-[src/server.ts:47](https://github.com/abschill/httpuppy/blob/272217e/src/server.ts#L47)
+[src/server.ts:47](https://github.com/abschill/httpuppy/blob/2a31667/src/server.ts#L47)
+
+___
+
+### \_tmpWritten
+
+• `Optional` **\_tmpWritten**: `string`
+
+#### Defined in
+
+[src/server.ts:48](https://github.com/abschill/httpuppy/blob/2a31667/src/server.ts#L48)
 
 ___
 

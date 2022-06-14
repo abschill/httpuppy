@@ -1,4 +1,4 @@
-httpuppy - v0.3.8 / [Modules](modules.md)
+httpuppy - v0.3.9 / [Modules](modules.md)
 
 # HTTPuppy
 
@@ -71,6 +71,10 @@ const app = useServer({
 	onMount: () => console.log('listening on 3000')
 });
 ```
+
+## built in static upload parsing
+
+by default any images uploaded via `POST` will be saved directly into the `tmp` dir relative to the process. if youd like to change this directory set `tmpDir` in your config's top level
 
 [Examples](/examples/)
 

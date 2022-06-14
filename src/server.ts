@@ -45,6 +45,7 @@ import {
 }
 export interface HTTPuppyRequest extends HTTPRequest {
 	_process:	HTTPuppyServer;
+	_tmpWritten ?: string;
 }
 export interface HTTPuppyResponse extends HTTPResponse {
 	_process:	HTTPuppyServer;
@@ -81,6 +82,7 @@ export type HTTPuppySleep = () => Promise<void>;
  * @member clustered is a planned feature for version 3 to automatically cluster the server process to utilize multiple core ipc it doesnt do anything in x.2.z
  * @member secure boolean for https instead of http, requires follow up options in secureContext
  * @member secureContext options for resolving the SSL cert / key
+ * @member tmpDir the dir to write files uploaded from multipart forms from request
  */
 export interface HTTPuppyServerOptions extends stlServerOptions {
     port 			?: number;
@@ -101,6 +103,7 @@ export interface HTTPuppyServerOptions extends stlServerOptions {
 		dhparam 	?: string;
 	}
 	timeout			?: number;
+	tmpDir			?: string;
 }
 
 export const defaultHTTPConfig:

@@ -19,3 +19,4 @@ test
 typedoc.json
 makefile
 nyc_output
+tmp

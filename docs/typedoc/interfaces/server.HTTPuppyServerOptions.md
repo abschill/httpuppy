@@ -1,4 +1,4 @@
-[httpuppy - v0.3.8](../README.md) / [Modules](../modules.md) / [server](../modules/server.md) / HTTPuppyServerOptions
+[httpuppy - v0.3.9](../README.md) / [Modules](../modules.md) / [server](../modules/server.md) / HTTPuppyServerOptions
 
 # Interface: HTTPuppyServerOptions
 
@@ -30,6 +30,8 @@
 
 **`member`** secureContext options for resolving the SSL cert / key
 
+**`member`** tmpDir the dir to write files uploaded from multipart forms from request
+
 ## Hierarchy
 
 - `ServerOptions`
@@ -58,6 +60,7 @@
 - [static](server.HTTPuppyServerOptions.md#static)
 - [throwWarnings](server.HTTPuppyServerOptions.md#throwwarnings)
 - [timeout](server.HTTPuppyServerOptions.md#timeout)
+- [tmpDir](server.HTTPuppyServerOptions.md#tmpdir)
 
 ## Properties
 
@@ -95,7 +98,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:95](https://github.com/abschill/httpuppy/blob/272217e/src/server.ts#L95)
+[src/server.ts:97](https://github.com/abschill/httpuppy/blob/2a31667/src/server.ts#L97)
 
 ___
 
@@ -105,7 +108,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:87](https://github.com/abschill/httpuppy/blob/272217e/src/server.ts#L87)
+[src/server.ts:89](https://github.com/abschill/httpuppy/blob/2a31667/src/server.ts#L89)
 
 ___
 
@@ -115,7 +118,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:96](https://github.com/abschill/httpuppy/blob/272217e/src/server.ts#L96)
+[src/server.ts:98](https://github.com/abschill/httpuppy/blob/2a31667/src/server.ts#L98)
 
 ___
 
@@ -125,7 +128,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:88](https://github.com/abschill/httpuppy/blob/272217e/src/server.ts#L88)
+[src/server.ts:90](https://github.com/abschill/httpuppy/blob/2a31667/src/server.ts#L90)
 
 ___
 
@@ -155,7 +158,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:91](https://github.com/abschill/httpuppy/blob/272217e/src/server.ts#L91)
+[src/server.ts:93](https://github.com/abschill/httpuppy/blob/2a31667/src/server.ts#L93)
 
 ___
 
@@ -185,7 +188,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:92](https://github.com/abschill/httpuppy/blob/272217e/src/server.ts#L92)
+[src/server.ts:94](https://github.com/abschill/httpuppy/blob/2a31667/src/server.ts#L94)
 
 ___
 
@@ -195,7 +198,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:94](https://github.com/abschill/httpuppy/blob/272217e/src/server.ts#L94)
+[src/server.ts:96](https://github.com/abschill/httpuppy/blob/2a31667/src/server.ts#L96)
 
 ___
 
@@ -205,7 +208,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:93](https://github.com/abschill/httpuppy/blob/272217e/src/server.ts#L93)
+[src/server.ts:95](https://github.com/abschill/httpuppy/blob/2a31667/src/server.ts#L95)
 
 ___
 
@@ -215,7 +218,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:86](https://github.com/abschill/httpuppy/blob/272217e/src/server.ts#L86)
+[src/server.ts:88](https://github.com/abschill/httpuppy/blob/2a31667/src/server.ts#L88)
 
 ___
 
@@ -225,7 +228,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:97](https://github.com/abschill/httpuppy/blob/272217e/src/server.ts#L97)
+[src/server.ts:99](https://github.com/abschill/httpuppy/blob/2a31667/src/server.ts#L99)
 
 ___
 
@@ -243,7 +246,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:98](https://github.com/abschill/httpuppy/blob/272217e/src/server.ts#L98)
+[src/server.ts:100](https://github.com/abschill/httpuppy/blob/2a31667/src/server.ts#L100)
 
 ___
 
@@ -253,7 +256,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:89](https://github.com/abschill/httpuppy/blob/272217e/src/server.ts#L89)
+[src/server.ts:91](https://github.com/abschill/httpuppy/blob/2a31667/src/server.ts#L91)
 
 ___
 
@@ -263,7 +266,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:90](https://github.com/abschill/httpuppy/blob/272217e/src/server.ts#L90)
+[src/server.ts:92](https://github.com/abschill/httpuppy/blob/2a31667/src/server.ts#L92)
 
 ___
 
@@ -273,4 +276,14 @@ ___
 
 #### Defined in
 
-[src/server.ts:103](https://github.com/abschill/httpuppy/blob/272217e/src/server.ts#L103)
+[src/server.ts:105](https://github.com/abschill/httpuppy/blob/2a31667/src/server.ts#L105)
+
+___
+
+### tmpDir
+
+• `Optional` **tmpDir**: `string`
+
+#### Defined in
+
+[src/server.ts:106](https://github.com/abschill/httpuppy/blob/2a31667/src/server.ts#L106)
