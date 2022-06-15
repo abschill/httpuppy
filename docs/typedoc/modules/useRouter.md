@@ -32,7 +32,7 @@
 
 #### Defined in
 
-[src/router.ts:26](https://github.com/abschill/httpuppy/blob/05aa246/src/router.ts#L26)
+[src/router.ts:26](https://github.com/abschill/httpuppy/blob/dfb46c7/src/router.ts#L26)
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 #### Defined in
 
-[src/router.ts:27](https://github.com/abschill/httpuppy/blob/05aa246/src/router.ts#L27)
+[src/router.ts:27](https://github.com/abschill/httpuppy/blob/dfb46c7/src/router.ts#L27)
 
 ___
 
@@ -59,7 +59,7 @@ ___
 
 #### Defined in
 
-[src/router.ts:29](https://github.com/abschill/httpuppy/blob/05aa246/src/router.ts#L29)
+[src/router.ts:29](https://github.com/abschill/httpuppy/blob/dfb46c7/src/router.ts#L29)
 
 ## Functions
 
@@ -80,7 +80,7 @@ ___
 
 #### Defined in
 
-[src/router.ts:11](https://github.com/abschill/httpuppy/blob/05aa246/src/router.ts#L11)
+[src/router.ts:11](https://github.com/abschill/httpuppy/blob/dfb46c7/src/router.ts#L11)
 
 ___
 
@@ -101,7 +101,7 @@ typeof [`HTTPuppyCallback`](useRouter.md#httpuppycallback) \| `void`
 
 #### Defined in
 
-[src/router.ts:13](https://github.com/abschill/httpuppy/blob/05aa246/src/router.ts#L13)
+[src/router.ts:13](https://github.com/abschill/httpuppy/blob/dfb46c7/src/router.ts#L13)
 
 ___
 
@@ -124,7 +124,7 @@ ___
 
 #### Defined in
 
-[src/router.ts:53](https://github.com/abschill/httpuppy/blob/05aa246/src/router.ts#L53)
+[src/router.ts:53](https://github.com/abschill/httpuppy/blob/dfb46c7/src/router.ts#L53)
 
 ___
 
@@ -154,7 +154,7 @@ router.get('/test', (req, res) => res.end('hello'));
 
 #### Defined in
 
-[src/router.ts:81](https://github.com/abschill/httpuppy/blob/05aa246/src/router.ts#L81)
+[src/router.ts:81](https://github.com/abschill/httpuppy/blob/dfb46c7/src/router.ts#L81)
 
 ___
 
@@ -174,4 +174,4 @@ ___
 
 #### Defined in
 
-[src/router.ts:34](https://github.com/abschill/httpuppy/blob/05aa246/src/router.ts#L34)
+[src/router.ts:34](https://github.com/abschill/httpuppy/blob/dfb46c7/src/router.ts#L34)

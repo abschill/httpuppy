@@ -67,7 +67,7 @@
 
 #### Defined in
 
-[src/server.ts:48](https://github.com/abschill/httpuppy/blob/05aa246/src/server.ts#L48)
+[src/server.ts:48](https://github.com/abschill/httpuppy/blob/dfb46c7/src/server.ts#L48)
 
 ___
 
@@ -91,7 +91,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:44](https://github.com/abschill/httpuppy/blob/05aa246/src/server.ts#L44)
+[src/server.ts:44](https://github.com/abschill/httpuppy/blob/dfb46c7/src/server.ts#L44)
 
 ___
 
@@ -241,7 +241,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:45](https://github.com/abschill/httpuppy/blob/05aa246/src/server.ts#L45)
+[src/server.ts:45](https://github.com/abschill/httpuppy/blob/dfb46c7/src/server.ts#L45)
 
 ___
 
@@ -251,7 +251,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:43](https://github.com/abschill/httpuppy/blob/05aa246/src/server.ts#L43)
+[src/server.ts:43](https://github.com/abschill/httpuppy/blob/dfb46c7/src/server.ts#L43)
 
 ___
 
@@ -2535,7 +2535,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:46](https://github.com/abschill/httpuppy/blob/05aa246/src/server.ts#L46)
+[src/server.ts:46](https://github.com/abschill/httpuppy/blob/dfb46c7/src/server.ts#L46)
 
 ___
 
@@ -2549,7 +2549,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:47](https://github.com/abschill/httpuppy/blob/05aa246/src/server.ts#L47)
+[src/server.ts:47](https://github.com/abschill/httpuppy/blob/dfb46c7/src/server.ts#L47)
 
 ___
 
