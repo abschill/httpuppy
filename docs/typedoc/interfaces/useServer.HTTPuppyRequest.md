@@ -84,7 +84,7 @@
 
 #### Defined in
 
-[src/server.ts:51](https://github.com/abschill/httpuppy/blob/0ce48f2/src/server.ts#L51)
+[src/server.ts:51](https://github.com/abschill/httpuppy/blob/05aa246/src/server.ts#L51)
 
 ___
 
@@ -94,7 +94,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:52](https://github.com/abschill/httpuppy/blob/0ce48f2/src/server.ts#L52)
+[src/server.ts:52](https://github.com/abschill/httpuppy/blob/05aa246/src/server.ts#L52)
 
 ___
 
