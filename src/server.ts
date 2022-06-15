@@ -1,5 +1,5 @@
 /**
- * @module server
+ * @module useServer
  * @description core server module
  */
 import {
@@ -21,8 +21,6 @@ import {
 	ServerOptions as stlServerOptions
 } from 'http';
 import {
-	LogConfig,
-	useDefaultLogConfig,
 	iExitHandler,
 	UserMiddlewareOption,
 	iHandlerType,
@@ -30,13 +28,19 @@ import {
 	defaultCacheSettings,
 	VirtualFileSystem
 } from './internal/types';
-
+import {
+	LogConfig,
+	useDefaultLogConfig,
+} from './internal/logger';
+/**
+ * Typedefs for Server Runtiem
+ */
 /**
  * @interface HTTPuppyServer
  * @description Core Module to wrap the standard http library for node
  */
  export interface HTTPuppyServer extends stlServer  {
-	pConfig		: HTTPuppyServerOptions; //httpuppyserveroptions
+	pConfig		: HTTPuppyServerOptions; //httpuppyserveroptions - process config
 	diagnostics	: DiagnosticLog[]; //diagnostic log
 	onClose		: iExitHandler; // onclose handler
 	start		: () => boolean; //start process for server (wrapper around .listen())
@@ -113,6 +117,7 @@ HTTPuppyServerOptions = {
 	cache		  : defaultCacheSettings,
 	log			  : useDefaultLogConfig(),
 	hostname	  : '127.0.0.1',
+	secure: false,
 	throwWarnings : false,
 	timeout		  : 0
 };
@@ -144,13 +149,11 @@ export function useServer(
 ): HTTPuppyServer {
 	const diagnostics: DiagnosticLog[] = [];
 	const config = useConfig(conf, diagnostics);
-	// determine if they wanted a secure or a regular server
-	const _server = conf.secure ? useCreateSecureServer(<HTTPSOptions>conf.secureContext, config?.handler) : useCreateServer(config?.handler);
-	// _useServer is an internal hook for validating the init process of the server itself and setting diagnostics accordingly if anything goes wrong
+	const _server = conf.secure ?
+	useCreateSecureServer(<HTTPSOptions>conf.secureContext, config?.handler) : useCreateServer(config?.handler);
+	// internal hook for validating the init process of the server itself and setting diagnostics accordingly if anything goes wrong
 	const server = _useServer(config, <HTTPuppyServer>_server, diagnostics);
-	// set up handler to route based on static config
 	if(config.static) useStaticHandler(server);
-	// hook in logger module
 	if(config.log.logLevel !== 'silent') useLogger(config.log, server);
 	// bind safe shutdown to the server for callability on the end user side
 	server.stop = () => shutdown(server);

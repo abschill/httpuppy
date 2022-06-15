@@ -1,4 +1,4 @@
-[httpuppy - v0.3.9](../README.md) / [Modules](../modules.md) / internal/types/middleware
+[httpuppy - v0.3.10](../README.md) / [Modules](../modules.md) / internal/types/middleware
 
 # Module: internal/types/middleware
 
@@ -76,7 +76,7 @@
 
 #### Defined in
 
-[src/internal/types/middleware.ts:23](https://github.com/abschill/httpuppy/blob/990fd4c/src/internal/types/middleware.ts#L23)
+[src/internal/types/middleware.ts:23](https://github.com/abschill/httpuppy/blob/0ce48f2/src/internal/types/middleware.ts#L23)
 
 ___
 
@@ -93,7 +93,7 @@ ___
 
 #### Defined in
 
-[src/internal/types/middleware.ts:57](https://github.com/abschill/httpuppy/blob/990fd4c/src/internal/types/middleware.ts#L57)
+[src/internal/types/middleware.ts:57](https://github.com/abschill/httpuppy/blob/0ce48f2/src/internal/types/middleware.ts#L57)
 
 ___
 
@@ -103,32 +103,32 @@ ___
 
 #### Defined in
 
-[src/internal/types/middleware.ts:55](https://github.com/abschill/httpuppy/blob/990fd4c/src/internal/types/middleware.ts#L55)
+[src/internal/types/middleware.ts:55](https://github.com/abschill/httpuppy/blob/0ce48f2/src/internal/types/middleware.ts#L55)
 
 ___
 
 ### iHandlerType
 
-Ƭ **iHandlerType**: (`req`: [`HTTPuppyRequest`](../interfaces/server.HTTPuppyRequest.md), `res`: [`HTTPuppyResponse`](../interfaces/server.HTTPuppyResponse.md)) => `Promise`<`void`\> \| (`req`: [`HTTPuppyRequest`](../interfaces/server.HTTPuppyRequest.md), `res`: [`HTTPuppyResponse`](../interfaces/server.HTTPuppyResponse.md)) => `void`
+Ƭ **iHandlerType**: (`req`: [`HTTPuppyRequest`](../interfaces/useServer.HTTPuppyRequest.md), `res`: [`HTTPuppyResponse`](../interfaces/useServer.HTTPuppyResponse.md)) => `Promise`<`void`\> \| (`req`: [`HTTPuppyRequest`](../interfaces/useServer.HTTPuppyRequest.md), `res`: [`HTTPuppyResponse`](../interfaces/useServer.HTTPuppyResponse.md)) => `void`
 
 #### Type declaration
 
-▸ (`req`, `res`): `Promise`<`void`\> \| (`req`: [`HTTPuppyRequest`](../interfaces/server.HTTPuppyRequest.md), `res`: [`HTTPuppyResponse`](../interfaces/server.HTTPuppyResponse.md)) => `void`
+▸ (`req`, `res`): `Promise`<`void`\> \| (`req`: [`HTTPuppyRequest`](../interfaces/useServer.HTTPuppyRequest.md), `res`: [`HTTPuppyResponse`](../interfaces/useServer.HTTPuppyResponse.md)) => `void`
 
 ##### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `req` | [`HTTPuppyRequest`](../interfaces/server.HTTPuppyRequest.md) |
-| `res` | [`HTTPuppyResponse`](../interfaces/server.HTTPuppyResponse.md) |
+| `req` | [`HTTPuppyRequest`](../interfaces/useServer.HTTPuppyRequest.md) |
+| `res` | [`HTTPuppyResponse`](../interfaces/useServer.HTTPuppyResponse.md) |
 
 ##### Returns
 
-`Promise`<`void`\> \| (`req`: [`HTTPuppyRequest`](../interfaces/server.HTTPuppyRequest.md), `res`: [`HTTPuppyResponse`](../interfaces/server.HTTPuppyResponse.md)) => `void`
+`Promise`<`void`\> \| (`req`: [`HTTPuppyRequest`](../interfaces/useServer.HTTPuppyRequest.md), `res`: [`HTTPuppyResponse`](../interfaces/useServer.HTTPuppyResponse.md)) => `void`
 
 #### Defined in
 
-[src/internal/types/middleware.ts:56](https://github.com/abschill/httpuppy/blob/990fd4c/src/internal/types/middleware.ts#L56)
+[src/internal/types/middleware.ts:56](https://github.com/abschill/httpuppy/blob/0ce48f2/src/internal/types/middleware.ts#L56)
 
 ## Variables
 
@@ -138,7 +138,7 @@ ___
 
 #### Defined in
 
-[src/internal/types/middleware.ts:39](https://github.com/abschill/httpuppy/blob/990fd4c/src/internal/types/middleware.ts#L39)
+[src/internal/types/middleware.ts:39](https://github.com/abschill/httpuppy/blob/0ce48f2/src/internal/types/middleware.ts#L39)
 
 ## Functions
 
@@ -158,7 +158,7 @@ ___
 
 #### Defined in
 
-[src/internal/types/middleware.ts:46](https://github.com/abschill/httpuppy/blob/990fd4c/src/internal/types/middleware.ts#L46)
+[src/internal/types/middleware.ts:46](https://github.com/abschill/httpuppy/blob/0ce48f2/src/internal/types/middleware.ts#L46)
 
 ___
 
@@ -170,7 +170,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `res` | [`HTTPuppyResponse`](../interfaces/server.HTTPuppyResponse.md) |
+| `res` | [`HTTPuppyResponse`](../interfaces/useServer.HTTPuppyResponse.md) |
 
 #### Returns
 
@@ -180,4 +180,4 @@ nothing
 
 #### Defined in
 
-[src/internal/types/middleware.ts:67](https://github.com/abschill/httpuppy/blob/990fd4c/src/internal/types/middleware.ts#L67)
+[src/internal/types/middleware.ts:67](https://github.com/abschill/httpuppy/blob/0ce48f2/src/internal/types/middleware.ts#L67)

@@ -1,8 +1,8 @@
-[httpuppy - v0.3.9](../README.md) / [Modules](../modules.md) / [server](../modules/server.md) / HTTPuppyRequest
+[httpuppy - v0.3.10](../README.md) / [Modules](../modules.md) / [useServer](../modules/useServer.md) / HTTPuppyRequest
 
 # Interface: HTTPuppyRequest
 
-[server](../modules/server.md).HTTPuppyRequest
+[useServer](../modules/useServer.md).HTTPuppyRequest
 
 ## Hierarchy
 
@@ -14,77 +14,77 @@
 
 ### Properties
 
-- [\_process](server.HTTPuppyRequest.md#_process)
-- [\_tmpWritten](server.HTTPuppyRequest.md#_tmpwritten)
-- [aborted](server.HTTPuppyRequest.md#aborted)
-- [complete](server.HTTPuppyRequest.md#complete)
-- [connection](server.HTTPuppyRequest.md#connection)
-- [destroyed](server.HTTPuppyRequest.md#destroyed)
-- [headers](server.HTTPuppyRequest.md#headers)
-- [httpVersion](server.HTTPuppyRequest.md#httpversion)
-- [httpVersionMajor](server.HTTPuppyRequest.md#httpversionmajor)
-- [httpVersionMinor](server.HTTPuppyRequest.md#httpversionminor)
-- [method](server.HTTPuppyRequest.md#method)
-- [rawHeaders](server.HTTPuppyRequest.md#rawheaders)
-- [rawTrailers](server.HTTPuppyRequest.md#rawtrailers)
-- [readable](server.HTTPuppyRequest.md#readable)
-- [readableAborted](server.HTTPuppyRequest.md#readableaborted)
-- [readableDidRead](server.HTTPuppyRequest.md#readabledidread)
-- [readableEncoding](server.HTTPuppyRequest.md#readableencoding)
-- [readableEnded](server.HTTPuppyRequest.md#readableended)
-- [readableFlowing](server.HTTPuppyRequest.md#readableflowing)
-- [readableHighWaterMark](server.HTTPuppyRequest.md#readablehighwatermark)
-- [readableLength](server.HTTPuppyRequest.md#readablelength)
-- [readableObjectMode](server.HTTPuppyRequest.md#readableobjectmode)
-- [socket](server.HTTPuppyRequest.md#socket)
-- [statusCode](server.HTTPuppyRequest.md#statuscode)
-- [statusMessage](server.HTTPuppyRequest.md#statusmessage)
-- [trailers](server.HTTPuppyRequest.md#trailers)
-- [url](server.HTTPuppyRequest.md#url)
+- [\_process](useServer.HTTPuppyRequest.md#_process)
+- [\_tmpWritten](useServer.HTTPuppyRequest.md#_tmpwritten)
+- [aborted](useServer.HTTPuppyRequest.md#aborted)
+- [complete](useServer.HTTPuppyRequest.md#complete)
+- [connection](useServer.HTTPuppyRequest.md#connection)
+- [destroyed](useServer.HTTPuppyRequest.md#destroyed)
+- [headers](useServer.HTTPuppyRequest.md#headers)
+- [httpVersion](useServer.HTTPuppyRequest.md#httpversion)
+- [httpVersionMajor](useServer.HTTPuppyRequest.md#httpversionmajor)
+- [httpVersionMinor](useServer.HTTPuppyRequest.md#httpversionminor)
+- [method](useServer.HTTPuppyRequest.md#method)
+- [rawHeaders](useServer.HTTPuppyRequest.md#rawheaders)
+- [rawTrailers](useServer.HTTPuppyRequest.md#rawtrailers)
+- [readable](useServer.HTTPuppyRequest.md#readable)
+- [readableAborted](useServer.HTTPuppyRequest.md#readableaborted)
+- [readableDidRead](useServer.HTTPuppyRequest.md#readabledidread)
+- [readableEncoding](useServer.HTTPuppyRequest.md#readableencoding)
+- [readableEnded](useServer.HTTPuppyRequest.md#readableended)
+- [readableFlowing](useServer.HTTPuppyRequest.md#readableflowing)
+- [readableHighWaterMark](useServer.HTTPuppyRequest.md#readablehighwatermark)
+- [readableLength](useServer.HTTPuppyRequest.md#readablelength)
+- [readableObjectMode](useServer.HTTPuppyRequest.md#readableobjectmode)
+- [socket](useServer.HTTPuppyRequest.md#socket)
+- [statusCode](useServer.HTTPuppyRequest.md#statuscode)
+- [statusMessage](useServer.HTTPuppyRequest.md#statusmessage)
+- [trailers](useServer.HTTPuppyRequest.md#trailers)
+- [url](useServer.HTTPuppyRequest.md#url)
 
 ### Methods
 
-- [[asyncIterator]](server.HTTPuppyRequest.md#[asynciterator])
-- [\_construct](server.HTTPuppyRequest.md#_construct)
-- [\_destroy](server.HTTPuppyRequest.md#_destroy)
-- [\_read](server.HTTPuppyRequest.md#_read)
-- [addListener](server.HTTPuppyRequest.md#addlistener)
-- [destroy](server.HTTPuppyRequest.md#destroy)
-- [emit](server.HTTPuppyRequest.md#emit)
-- [eventNames](server.HTTPuppyRequest.md#eventnames)
-- [getMaxListeners](server.HTTPuppyRequest.md#getmaxlisteners)
-- [isPaused](server.HTTPuppyRequest.md#ispaused)
-- [listenerCount](server.HTTPuppyRequest.md#listenercount)
-- [listeners](server.HTTPuppyRequest.md#listeners)
-- [off](server.HTTPuppyRequest.md#off)
-- [on](server.HTTPuppyRequest.md#on)
-- [once](server.HTTPuppyRequest.md#once)
-- [pause](server.HTTPuppyRequest.md#pause)
-- [pipe](server.HTTPuppyRequest.md#pipe)
-- [prependListener](server.HTTPuppyRequest.md#prependlistener)
-- [prependOnceListener](server.HTTPuppyRequest.md#prependoncelistener)
-- [push](server.HTTPuppyRequest.md#push)
-- [rawListeners](server.HTTPuppyRequest.md#rawlisteners)
-- [read](server.HTTPuppyRequest.md#read)
-- [removeAllListeners](server.HTTPuppyRequest.md#removealllisteners)
-- [removeListener](server.HTTPuppyRequest.md#removelistener)
-- [resume](server.HTTPuppyRequest.md#resume)
-- [setEncoding](server.HTTPuppyRequest.md#setencoding)
-- [setMaxListeners](server.HTTPuppyRequest.md#setmaxlisteners)
-- [setTimeout](server.HTTPuppyRequest.md#settimeout)
-- [unpipe](server.HTTPuppyRequest.md#unpipe)
-- [unshift](server.HTTPuppyRequest.md#unshift)
-- [wrap](server.HTTPuppyRequest.md#wrap)
+- [[asyncIterator]](useServer.HTTPuppyRequest.md#[asynciterator])
+- [\_construct](useServer.HTTPuppyRequest.md#_construct)
+- [\_destroy](useServer.HTTPuppyRequest.md#_destroy)
+- [\_read](useServer.HTTPuppyRequest.md#_read)
+- [addListener](useServer.HTTPuppyRequest.md#addlistener)
+- [destroy](useServer.HTTPuppyRequest.md#destroy)
+- [emit](useServer.HTTPuppyRequest.md#emit)
+- [eventNames](useServer.HTTPuppyRequest.md#eventnames)
+- [getMaxListeners](useServer.HTTPuppyRequest.md#getmaxlisteners)
+- [isPaused](useServer.HTTPuppyRequest.md#ispaused)
+- [listenerCount](useServer.HTTPuppyRequest.md#listenercount)
+- [listeners](useServer.HTTPuppyRequest.md#listeners)
+- [off](useServer.HTTPuppyRequest.md#off)
+- [on](useServer.HTTPuppyRequest.md#on)
+- [once](useServer.HTTPuppyRequest.md#once)
+- [pause](useServer.HTTPuppyRequest.md#pause)
+- [pipe](useServer.HTTPuppyRequest.md#pipe)
+- [prependListener](useServer.HTTPuppyRequest.md#prependlistener)
+- [prependOnceListener](useServer.HTTPuppyRequest.md#prependoncelistener)
+- [push](useServer.HTTPuppyRequest.md#push)
+- [rawListeners](useServer.HTTPuppyRequest.md#rawlisteners)
+- [read](useServer.HTTPuppyRequest.md#read)
+- [removeAllListeners](useServer.HTTPuppyRequest.md#removealllisteners)
+- [removeListener](useServer.HTTPuppyRequest.md#removelistener)
+- [resume](useServer.HTTPuppyRequest.md#resume)
+- [setEncoding](useServer.HTTPuppyRequest.md#setencoding)
+- [setMaxListeners](useServer.HTTPuppyRequest.md#setmaxlisteners)
+- [setTimeout](useServer.HTTPuppyRequest.md#settimeout)
+- [unpipe](useServer.HTTPuppyRequest.md#unpipe)
+- [unshift](useServer.HTTPuppyRequest.md#unshift)
+- [wrap](useServer.HTTPuppyRequest.md#wrap)
 
 ## Properties
 
 ### \_process
 
-• **\_process**: [`HTTPuppyServer`](server.HTTPuppyServer.md)
+• **\_process**: [`HTTPuppyServer`](useServer.HTTPuppyServer.md)
 
 #### Defined in
 
-[src/server.ts:47](https://github.com/abschill/httpuppy/blob/990fd4c/src/server.ts#L47)
+[src/server.ts:51](https://github.com/abschill/httpuppy/blob/0ce48f2/src/server.ts#L51)
 
 ___
 
@@ -94,7 +94,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:48](https://github.com/abschill/httpuppy/blob/990fd4c/src/server.ts#L48)
+[src/server.ts:52](https://github.com/abschill/httpuppy/blob/0ce48f2/src/server.ts#L52)
 
 ___
 
@@ -758,7 +758,7 @@ ___
 
 ### addListener
 
-▸ **addListener**(`event`, `listener`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **addListener**(`event`, `listener`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 Event emitter
 The defined events on documents including:
@@ -779,7 +779,7 @@ The defined events on documents including:
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -789,7 +789,7 @@ HTTPRequest.addListener
 
 node_modules/@types/node/stream.d.ts:423
 
-▸ **addListener**(`event`, `listener`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **addListener**(`event`, `listener`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Parameters
 
@@ -800,7 +800,7 @@ node_modules/@types/node/stream.d.ts:423
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -810,7 +810,7 @@ HTTPRequest.addListener
 
 node_modules/@types/node/stream.d.ts:424
 
-▸ **addListener**(`event`, `listener`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **addListener**(`event`, `listener`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Parameters
 
@@ -821,7 +821,7 @@ node_modules/@types/node/stream.d.ts:424
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -831,7 +831,7 @@ HTTPRequest.addListener
 
 node_modules/@types/node/stream.d.ts:425
 
-▸ **addListener**(`event`, `listener`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **addListener**(`event`, `listener`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Parameters
 
@@ -842,7 +842,7 @@ node_modules/@types/node/stream.d.ts:425
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -852,7 +852,7 @@ HTTPRequest.addListener
 
 node_modules/@types/node/stream.d.ts:426
 
-▸ **addListener**(`event`, `listener`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **addListener**(`event`, `listener`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Parameters
 
@@ -863,7 +863,7 @@ node_modules/@types/node/stream.d.ts:426
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -873,7 +873,7 @@ HTTPRequest.addListener
 
 node_modules/@types/node/stream.d.ts:427
 
-▸ **addListener**(`event`, `listener`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **addListener**(`event`, `listener`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Parameters
 
@@ -884,7 +884,7 @@ node_modules/@types/node/stream.d.ts:427
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -894,7 +894,7 @@ HTTPRequest.addListener
 
 node_modules/@types/node/stream.d.ts:428
 
-▸ **addListener**(`event`, `listener`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **addListener**(`event`, `listener`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Parameters
 
@@ -905,7 +905,7 @@ node_modules/@types/node/stream.d.ts:428
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -915,7 +915,7 @@ HTTPRequest.addListener
 
 node_modules/@types/node/stream.d.ts:429
 
-▸ **addListener**(`event`, `listener`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **addListener**(`event`, `listener`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Parameters
 
@@ -926,7 +926,7 @@ node_modules/@types/node/stream.d.ts:429
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -940,7 +940,7 @@ ___
 
 ### destroy
 
-▸ **destroy**(`error?`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **destroy**(`error?`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 Calls `destroy()` on the socket that received the `IncomingMessage`. If `error`is provided, an `'error'` event is emitted on the socket and `error` is passed
 as an argument to any listeners on the event.
@@ -955,7 +955,7 @@ as an argument to any listeners on the event.
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -1293,7 +1293,7 @@ ___
 
 ### off
 
-▸ **off**(`eventName`, `listener`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **off**(`eventName`, `listener`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 Alias for `emitter.removeListener()`.
 
@@ -1308,7 +1308,7 @@ Alias for `emitter.removeListener()`.
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -1322,7 +1322,7 @@ ___
 
 ### on
 
-▸ **on**(`event`, `listener`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **on**(`event`, `listener`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Parameters
 
@@ -1333,7 +1333,7 @@ ___
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -1343,7 +1343,7 @@ HTTPRequest.on
 
 node_modules/@types/node/stream.d.ts:439
 
-▸ **on**(`event`, `listener`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **on**(`event`, `listener`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Parameters
 
@@ -1354,7 +1354,7 @@ node_modules/@types/node/stream.d.ts:439
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -1364,7 +1364,7 @@ HTTPRequest.on
 
 node_modules/@types/node/stream.d.ts:440
 
-▸ **on**(`event`, `listener`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **on**(`event`, `listener`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Parameters
 
@@ -1375,7 +1375,7 @@ node_modules/@types/node/stream.d.ts:440
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -1385,7 +1385,7 @@ HTTPRequest.on
 
 node_modules/@types/node/stream.d.ts:441
 
-▸ **on**(`event`, `listener`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **on**(`event`, `listener`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Parameters
 
@@ -1396,7 +1396,7 @@ node_modules/@types/node/stream.d.ts:441
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -1406,7 +1406,7 @@ HTTPRequest.on
 
 node_modules/@types/node/stream.d.ts:442
 
-▸ **on**(`event`, `listener`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **on**(`event`, `listener`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Parameters
 
@@ -1417,7 +1417,7 @@ node_modules/@types/node/stream.d.ts:442
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -1427,7 +1427,7 @@ HTTPRequest.on
 
 node_modules/@types/node/stream.d.ts:443
 
-▸ **on**(`event`, `listener`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **on**(`event`, `listener`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Parameters
 
@@ -1438,7 +1438,7 @@ node_modules/@types/node/stream.d.ts:443
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -1448,7 +1448,7 @@ HTTPRequest.on
 
 node_modules/@types/node/stream.d.ts:444
 
-▸ **on**(`event`, `listener`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **on**(`event`, `listener`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Parameters
 
@@ -1459,7 +1459,7 @@ node_modules/@types/node/stream.d.ts:444
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -1469,7 +1469,7 @@ HTTPRequest.on
 
 node_modules/@types/node/stream.d.ts:445
 
-▸ **on**(`event`, `listener`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **on**(`event`, `listener`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Parameters
 
@@ -1480,7 +1480,7 @@ node_modules/@types/node/stream.d.ts:445
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -1494,7 +1494,7 @@ ___
 
 ### once
 
-▸ **once**(`event`, `listener`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **once**(`event`, `listener`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Parameters
 
@@ -1505,7 +1505,7 @@ ___
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -1515,7 +1515,7 @@ HTTPRequest.once
 
 node_modules/@types/node/stream.d.ts:447
 
-▸ **once**(`event`, `listener`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **once**(`event`, `listener`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Parameters
 
@@ -1526,7 +1526,7 @@ node_modules/@types/node/stream.d.ts:447
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -1536,7 +1536,7 @@ HTTPRequest.once
 
 node_modules/@types/node/stream.d.ts:448
 
-▸ **once**(`event`, `listener`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **once**(`event`, `listener`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Parameters
 
@@ -1547,7 +1547,7 @@ node_modules/@types/node/stream.d.ts:448
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -1557,7 +1557,7 @@ HTTPRequest.once
 
 node_modules/@types/node/stream.d.ts:449
 
-▸ **once**(`event`, `listener`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **once**(`event`, `listener`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Parameters
 
@@ -1568,7 +1568,7 @@ node_modules/@types/node/stream.d.ts:449
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -1578,7 +1578,7 @@ HTTPRequest.once
 
 node_modules/@types/node/stream.d.ts:450
 
-▸ **once**(`event`, `listener`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **once**(`event`, `listener`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Parameters
 
@@ -1589,7 +1589,7 @@ node_modules/@types/node/stream.d.ts:450
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -1599,7 +1599,7 @@ HTTPRequest.once
 
 node_modules/@types/node/stream.d.ts:451
 
-▸ **once**(`event`, `listener`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **once**(`event`, `listener`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Parameters
 
@@ -1610,7 +1610,7 @@ node_modules/@types/node/stream.d.ts:451
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -1620,7 +1620,7 @@ HTTPRequest.once
 
 node_modules/@types/node/stream.d.ts:452
 
-▸ **once**(`event`, `listener`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **once**(`event`, `listener`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Parameters
 
@@ -1631,7 +1631,7 @@ node_modules/@types/node/stream.d.ts:452
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -1641,7 +1641,7 @@ HTTPRequest.once
 
 node_modules/@types/node/stream.d.ts:453
 
-▸ **once**(`event`, `listener`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **once**(`event`, `listener`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Parameters
 
@@ -1652,7 +1652,7 @@ node_modules/@types/node/stream.d.ts:453
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -1666,7 +1666,7 @@ ___
 
 ### pause
 
-▸ **pause**(): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **pause**(): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 The `readable.pause()` method will cause a stream in flowing mode to stop
 emitting `'data'` events, switching out of flowing mode. Any data that
@@ -1691,7 +1691,7 @@ The `readable.pause()` method has no effect if there is a `'readable'`event list
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -1737,7 +1737,7 @@ ___
 
 ### prependListener
 
-▸ **prependListener**(`event`, `listener`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **prependListener**(`event`, `listener`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Parameters
 
@@ -1748,7 +1748,7 @@ ___
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -1758,7 +1758,7 @@ HTTPRequest.prependListener
 
 node_modules/@types/node/stream.d.ts:455
 
-▸ **prependListener**(`event`, `listener`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **prependListener**(`event`, `listener`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Parameters
 
@@ -1769,7 +1769,7 @@ node_modules/@types/node/stream.d.ts:455
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -1779,7 +1779,7 @@ HTTPRequest.prependListener
 
 node_modules/@types/node/stream.d.ts:456
 
-▸ **prependListener**(`event`, `listener`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **prependListener**(`event`, `listener`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Parameters
 
@@ -1790,7 +1790,7 @@ node_modules/@types/node/stream.d.ts:456
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -1800,7 +1800,7 @@ HTTPRequest.prependListener
 
 node_modules/@types/node/stream.d.ts:457
 
-▸ **prependListener**(`event`, `listener`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **prependListener**(`event`, `listener`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Parameters
 
@@ -1811,7 +1811,7 @@ node_modules/@types/node/stream.d.ts:457
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -1821,7 +1821,7 @@ HTTPRequest.prependListener
 
 node_modules/@types/node/stream.d.ts:458
 
-▸ **prependListener**(`event`, `listener`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **prependListener**(`event`, `listener`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Parameters
 
@@ -1832,7 +1832,7 @@ node_modules/@types/node/stream.d.ts:458
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -1842,7 +1842,7 @@ HTTPRequest.prependListener
 
 node_modules/@types/node/stream.d.ts:459
 
-▸ **prependListener**(`event`, `listener`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **prependListener**(`event`, `listener`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Parameters
 
@@ -1853,7 +1853,7 @@ node_modules/@types/node/stream.d.ts:459
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -1863,7 +1863,7 @@ HTTPRequest.prependListener
 
 node_modules/@types/node/stream.d.ts:460
 
-▸ **prependListener**(`event`, `listener`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **prependListener**(`event`, `listener`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Parameters
 
@@ -1874,7 +1874,7 @@ node_modules/@types/node/stream.d.ts:460
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -1884,7 +1884,7 @@ HTTPRequest.prependListener
 
 node_modules/@types/node/stream.d.ts:461
 
-▸ **prependListener**(`event`, `listener`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **prependListener**(`event`, `listener`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Parameters
 
@@ -1895,7 +1895,7 @@ node_modules/@types/node/stream.d.ts:461
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -1909,7 +1909,7 @@ ___
 
 ### prependOnceListener
 
-▸ **prependOnceListener**(`event`, `listener`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **prependOnceListener**(`event`, `listener`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Parameters
 
@@ -1920,7 +1920,7 @@ ___
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -1930,7 +1930,7 @@ HTTPRequest.prependOnceListener
 
 node_modules/@types/node/stream.d.ts:463
 
-▸ **prependOnceListener**(`event`, `listener`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **prependOnceListener**(`event`, `listener`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Parameters
 
@@ -1941,7 +1941,7 @@ node_modules/@types/node/stream.d.ts:463
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -1951,7 +1951,7 @@ HTTPRequest.prependOnceListener
 
 node_modules/@types/node/stream.d.ts:464
 
-▸ **prependOnceListener**(`event`, `listener`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **prependOnceListener**(`event`, `listener`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Parameters
 
@@ -1962,7 +1962,7 @@ node_modules/@types/node/stream.d.ts:464
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -1972,7 +1972,7 @@ HTTPRequest.prependOnceListener
 
 node_modules/@types/node/stream.d.ts:465
 
-▸ **prependOnceListener**(`event`, `listener`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **prependOnceListener**(`event`, `listener`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Parameters
 
@@ -1983,7 +1983,7 @@ node_modules/@types/node/stream.d.ts:465
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -1993,7 +1993,7 @@ HTTPRequest.prependOnceListener
 
 node_modules/@types/node/stream.d.ts:466
 
-▸ **prependOnceListener**(`event`, `listener`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **prependOnceListener**(`event`, `listener`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Parameters
 
@@ -2004,7 +2004,7 @@ node_modules/@types/node/stream.d.ts:466
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -2014,7 +2014,7 @@ HTTPRequest.prependOnceListener
 
 node_modules/@types/node/stream.d.ts:467
 
-▸ **prependOnceListener**(`event`, `listener`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **prependOnceListener**(`event`, `listener`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Parameters
 
@@ -2025,7 +2025,7 @@ node_modules/@types/node/stream.d.ts:467
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -2035,7 +2035,7 @@ HTTPRequest.prependOnceListener
 
 node_modules/@types/node/stream.d.ts:468
 
-▸ **prependOnceListener**(`event`, `listener`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **prependOnceListener**(`event`, `listener`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Parameters
 
@@ -2046,7 +2046,7 @@ node_modules/@types/node/stream.d.ts:468
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -2056,7 +2056,7 @@ HTTPRequest.prependOnceListener
 
 node_modules/@types/node/stream.d.ts:469
 
-▸ **prependOnceListener**(`event`, `listener`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **prependOnceListener**(`event`, `listener`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Parameters
 
@@ -2067,7 +2067,7 @@ node_modules/@types/node/stream.d.ts:469
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -2231,7 +2231,7 @@ a call to `readable.read(size)`, regardless of the value of the`size` argument.
 If the `readable.read()` method returns a chunk of data, a `'data'` event will
 also be emitted.
 
-Calling [read](server.HTTPuppyRequest.md#read) after the `'end'` event has
+Calling [read](useServer.HTTPuppyRequest.md#read) after the `'end'` event has
 been emitted will return `null`. No runtime error will be raised.
 
 **`since`** v0.9.4
@@ -2258,7 +2258,7 @@ ___
 
 ### removeAllListeners
 
-▸ **removeAllListeners**(`event?`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **removeAllListeners**(`event?`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 Removes all listeners, or those of the specified `eventName`.
 
@@ -2278,7 +2278,7 @@ Returns a reference to the `EventEmitter`, so that calls can be chained.
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -2292,7 +2292,7 @@ ___
 
 ### removeListener
 
-▸ **removeListener**(`event`, `listener`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **removeListener**(`event`, `listener`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Parameters
 
@@ -2303,7 +2303,7 @@ ___
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -2313,7 +2313,7 @@ HTTPRequest.removeListener
 
 node_modules/@types/node/stream.d.ts:471
 
-▸ **removeListener**(`event`, `listener`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **removeListener**(`event`, `listener`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Parameters
 
@@ -2324,7 +2324,7 @@ node_modules/@types/node/stream.d.ts:471
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -2334,7 +2334,7 @@ HTTPRequest.removeListener
 
 node_modules/@types/node/stream.d.ts:472
 
-▸ **removeListener**(`event`, `listener`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **removeListener**(`event`, `listener`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Parameters
 
@@ -2345,7 +2345,7 @@ node_modules/@types/node/stream.d.ts:472
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -2355,7 +2355,7 @@ HTTPRequest.removeListener
 
 node_modules/@types/node/stream.d.ts:473
 
-▸ **removeListener**(`event`, `listener`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **removeListener**(`event`, `listener`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Parameters
 
@@ -2366,7 +2366,7 @@ node_modules/@types/node/stream.d.ts:473
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -2376,7 +2376,7 @@ HTTPRequest.removeListener
 
 node_modules/@types/node/stream.d.ts:474
 
-▸ **removeListener**(`event`, `listener`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **removeListener**(`event`, `listener`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Parameters
 
@@ -2387,7 +2387,7 @@ node_modules/@types/node/stream.d.ts:474
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -2397,7 +2397,7 @@ HTTPRequest.removeListener
 
 node_modules/@types/node/stream.d.ts:475
 
-▸ **removeListener**(`event`, `listener`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **removeListener**(`event`, `listener`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Parameters
 
@@ -2408,7 +2408,7 @@ node_modules/@types/node/stream.d.ts:475
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -2418,7 +2418,7 @@ HTTPRequest.removeListener
 
 node_modules/@types/node/stream.d.ts:476
 
-▸ **removeListener**(`event`, `listener`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **removeListener**(`event`, `listener`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Parameters
 
@@ -2429,7 +2429,7 @@ node_modules/@types/node/stream.d.ts:476
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -2439,7 +2439,7 @@ HTTPRequest.removeListener
 
 node_modules/@types/node/stream.d.ts:477
 
-▸ **removeListener**(`event`, `listener`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **removeListener**(`event`, `listener`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Parameters
 
@@ -2450,7 +2450,7 @@ node_modules/@types/node/stream.d.ts:477
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -2464,7 +2464,7 @@ ___
 
 ### resume
 
-▸ **resume**(): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **resume**(): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 The `readable.resume()` method causes an explicitly paused `Readable` stream to
 resume emitting `'data'` events, switching the stream into flowing mode.
@@ -2486,7 +2486,7 @@ The `readable.resume()` method has no effect if there is a `'readable'`event lis
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -2500,7 +2500,7 @@ ___
 
 ### setEncoding
 
-▸ **setEncoding**(`encoding`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **setEncoding**(`encoding`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 The `readable.setEncoding()` method sets the character encoding for
 data read from the `Readable` stream.
@@ -2533,7 +2533,7 @@ readable.on('data', (chunk) => {
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -2547,7 +2547,7 @@ ___
 
 ### setMaxListeners
 
-▸ **setMaxListeners**(`n`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **setMaxListeners**(`n`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 By default `EventEmitter`s will print a warning if more than `10` listeners are
 added for a particular event. This is a useful default that helps finding
@@ -2566,7 +2566,7 @@ Returns a reference to the `EventEmitter`, so that calls can be chained.
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -2580,7 +2580,7 @@ ___
 
 ### setTimeout
 
-▸ **setTimeout**(`msecs`, `callback?`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **setTimeout**(`msecs`, `callback?`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 Calls `message.socket.setTimeout(msecs, callback)`.
 
@@ -2595,7 +2595,7 @@ Calls `message.socket.setTimeout(msecs, callback)`.
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -2609,10 +2609,10 @@ ___
 
 ### unpipe
 
-▸ **unpipe**(`destination?`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **unpipe**(`destination?`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 The `readable.unpipe()` method detaches a `Writable` stream previously attached
-using the [pipe](server.HTTPuppyRequest.md#pipe) method.
+using the [pipe](useServer.HTTPuppyRequest.md#pipe) method.
 
 If the `destination` is not specified, then _all_ pipes are detached.
 
@@ -2644,7 +2644,7 @@ setTimeout(() => {
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 
@@ -2712,11 +2712,11 @@ function parseHeader(stream, callback) {
 }
 ```
 
-Unlike [push](server.HTTPuppyRequest.md#push), `stream.unshift(chunk)` will not
+Unlike [push](useServer.HTTPuppyRequest.md#push), `stream.unshift(chunk)` will not
 end the reading process by resetting the internal reading state of the stream.
 This can cause unexpected results if `readable.unshift()` is called during a
-read (i.e. from within a [_read](server.HTTPuppyRequest.md#_read) implementation on a
-custom stream). Following the call to `readable.unshift()` with an immediate [push](server.HTTPuppyRequest.md#push) will reset the reading state appropriately,
+read (i.e. from within a [_read](useServer.HTTPuppyRequest.md#_read) implementation on a
+custom stream). Following the call to `readable.unshift()` with an immediate [push](useServer.HTTPuppyRequest.md#push) will reset the reading state appropriately,
 however it is best to simply avoid calling `readable.unshift()` while in the
 process of performing a read.
 
@@ -2745,12 +2745,12 @@ ___
 
 ### wrap
 
-▸ **wrap**(`stream`): [`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+▸ **wrap**(`stream`): [`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 Prior to Node.js 0.10, streams did not implement the entire `stream` module API
 as it is currently defined. (See `Compatibility` for more information.)
 
-When using an older Node.js library that emits `'data'` events and has a [pause](server.HTTPuppyRequest.md#pause) method that is advisory only, the`readable.wrap()` method can be used to create a `Readable`
+When using an older Node.js library that emits `'data'` events and has a [pause](useServer.HTTPuppyRequest.md#pause) method that is advisory only, the`readable.wrap()` method can be used to create a `Readable`
 stream that uses
 the old stream as its data source.
 
@@ -2779,7 +2779,7 @@ myReader.on('readable', () => {
 
 #### Returns
 
-[`HTTPuppyRequest`](server.HTTPuppyRequest.md)
+[`HTTPuppyRequest`](useServer.HTTPuppyRequest.md)
 
 #### Inherited from
 

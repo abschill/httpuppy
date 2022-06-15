@@ -1,8 +1,7 @@
 /**
- * @module router
+ * @module useRouter
  * @description for adding custom routing to your server
  */
-import { useHTTPHandle } from './internal';
 import {
 	HTTPuppyServer,
 	HTTPuppyRequest,
@@ -32,6 +31,42 @@ export type HTTPuppyRouterOptions = {
 	allowPassthrough	?: boolean;
 }
 
+export function useRouterSignatures(
+	res: HTTPuppyResponse
+) {
+	res.send = res.end;
+	res.json = (content: any) => {
+		if(!res.writable) {
+			res.writeHead(500, 'cannot write to json stream');
+			res._process.diagnostics.push({
+				msg: `error writing to json stream at ${res.req.url}`
+			});
+			res.end();
+		}
+		// content type is json if they are calling this method so overwrite if preset
+		if(res.hasHeader('Content-Type')) res.removeHeader('Content-Type');
+		res.writeHead(200, ['Content-Type', 'application/json']);
+		res.end(Buffer.from(JSON.stringify(content)));
+	};
+}
+
+export function useHTTPHandle(
+	name: string,
+	_url: string,
+	server: HTTPuppyServer,
+	cb: typeof HTTPuppyCallback
+) {
+	server.on('request', (
+		req: HTTPuppyRequest,
+		res: HTTPuppyResponse
+	) => {
+		if(req.method === name && req.url === _url) {
+			useRouterSignatures(res);
+			return cb(<HTTPuppyRequest>req, <HTTPuppyResponse>res);
+		}
+		return;
+	});
+}
 /**
  * @function useRouter
  * @example
@@ -47,15 +82,15 @@ export function useRouter(
 	server: HTTPuppyServer, // server to attach the router to as a handler
 	rOptions ?: HTTPuppyRouterOptions // placeholder: planned feature
 ): HTTPuppyRouter {
-	// router callback choices
-	// todo: setup glob handler functionality if config option is set
+	const wrapperUrl = rOptions?.baseUrl ?? '';
+
 	function get(
 		url: string,
 		cb: typeof HTTPuppyCallback
 	): void {
 		useHTTPHandle(
 			'GET',
-			url, server, cb
+			wrapperUrl+url, server, cb
 		);
 	}
 
@@ -63,80 +98,64 @@ export function useRouter(
 		url: string,
 		cb: typeof HTTPuppyCallback
 	): void {
-		useHTTPHandle(
-			'POST',
-			url, server, cb
-		);
+		useHTTPHandle('POST',
+			wrapperUrl+url, server, cb);
 	}
 
 	function head(
 		url: string,
 		cb: typeof HTTPuppyCallback
 	): void {
-		useHTTPHandle(
-			'HEAD',
-			url, server, cb
-		);
+		useHTTPHandle('HEAD',
+			wrapperUrl+url, server, cb);
 	}
 
 	function put(
 		url: string,
 		cb: typeof HTTPuppyCallback
 	): void {
-		useHTTPHandle(
-			'PUT',
-			url, server, cb
-		);
+		useHTTPHandle('PUT',
+			wrapperUrl+url, server, cb);
 	}
 
 	function patch(
 		url: string,
 		cb: typeof HTTPuppyCallback
 	): void {
-		useHTTPHandle(
-			'PATCH',
-			url, server, cb
-		);
+		useHTTPHandle('PATCH',
+			wrapperUrl+url, server, cb);
 	}
 
 	function trace(
 		url: string,
 		cb: typeof HTTPuppyCallback
 	): void {
-		useHTTPHandle(
-			'TRACE',
-			url, server, cb
-		);
+		useHTTPHandle('TRACE',
+			wrapperUrl+url, server, cb);
 	}
 
 	function connect(
 		url: string,
 		cb: typeof HTTPuppyCallback
 	): void {
-		useHTTPHandle(
-			'CONNECT',
-			url, server, cb
-		);
+		useHTTPHandle('CONNECT',
+			wrapperUrl+url, server, cb);
 	}
 
 	function options(
 		url: string,
 		cb: typeof HTTPuppyCallback
 	): void {
-		useHTTPHandle(
-			'OPTIONS',
-			url, server, cb
-		);
+		useHTTPHandle('OPTIONS',
+			wrapperUrl+url, server, cb);
 	}
 
 	function _delete(
 		url: string,
 		cb: typeof HTTPuppyCallback
 	): void {
-		useHTTPHandle(
-			'DELETE',
-		url, server, cb
-		);
+		useHTTPHandle('DELETE',
+			wrapperUrl+url, server, cb);
 	}
 
 	return <HTTPuppyRouter>{

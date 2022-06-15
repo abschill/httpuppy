@@ -7,12 +7,14 @@ import {
 import busboy from 'busboy';
 import { join } from 'path';
 import { writeFileSync } from 'fs';
-// import { randomFillSync } from 'crypto';
+import { randomFillSync } from 'crypto';
+
+const seed = (() => {
+	const buf = Buffer.alloc(16);
+	return () => randomFillSync(buf).toString('hex');
+})();
+
 const { log } = console;
-// const seed = (() => {
-// 	const buf = Buffer.alloc(16);
-// 	return () => randomFillSync(buf).toString('hex');
-// })();
 export function useStaticHandler(
 	server: HTTPuppyServer
 ) {
@@ -22,18 +24,14 @@ export function useStaticHandler(
 	) => {
 		req._process = server;
 		res._process = server;
-		if(server.pConfig.static && req.method === 'GET') {
+		if(server.pConfig.static && req.method === 'GET' &&
+		(req._process._vfs.mountedFiles.map(file => file.hrefs).flat().includes(<string>req.url))) {
 			server.emit('static-get', req);
-			//console.log(isMainThread);
-			// static only handles get requests, so after validating those check on the path and if its there, send it
-			const hasValidPath = req._process._vfs.mountedFiles.map(file => file.hrefs).flat().includes(<string>req.url);
-			if(hasValidPath) {
-				useVirtualRequestHandler(req, res);
-			}
-			// todo check for api path
+			useVirtualRequestHandler(req, res);
 		}
 		// by default, save any files uploaded from forms to the tmpdir defined in the config
 		if(req.method === 'POST') {
+			const body = Object();
 			const bb = busboy({ headers: req.headers });
 			bb.on('file', (name, file, info) => {
 				const { filename, encoding, mimeType } = info;
@@ -50,12 +48,14 @@ export function useStaticHandler(
 			});
 
 			bb.on('field', (name, val, info) => {
-				log(`Field [${name}]: value: %j`, val);
+				if(server.pConfig.log && server.pConfig.log.logLevel === 'verbose') log(`Field [${name}]: value: %j`, val);
+				body[name] = val;
 			});
 
 			bb.on('close', () => {
 				res.writeHead(303, { Connection: 'close', Location: '/' });
-				res.end('Done Parsing form!');
+				writeFileSync(join(server.pConfig.tmpDir ?? './tmp', `${seed()}-formdata.json`), JSON.stringify(body));
+				res.end('Form Submitted');
 			});
 			req.pipe(bb);
 		}

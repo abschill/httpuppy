@@ -2,16 +2,15 @@
  * @internal
  * @description middleware hooks, such mime type header resolution / header setting
  */
-import { useEtag } from './include/etag';
+import { etag } from './include/etag';
 import { HTTPuppyWriterOptions } from './types';
 import {
 	HTTPHeaders,
-	HTTPuppyServer,
-	HTTPuppyCallback,
 	HTTPuppyRequest,
 	HTTPuppyResponse,
 	HTTPuppyServerOptions
 } from '../';
+
 export function useMiddleware(
     config	: HTTPuppyServerOptions,
     req		: HTTPuppyRequest,
@@ -19,43 +18,6 @@ export function useMiddleware(
 ) {
 	const match = config.middleware?.filter(opt => opt.href === req.url).shift();
 	match?.handler(req, res);
-}
-
-export function useRouterSignatures(
-	res: HTTPuppyResponse
-) {
-	res.send = res.end;
-	res.json = (content: any) => {
-		if(!res.writable) {
-			res.writeHead(500, 'cannot write to json stream');
-			res._process.diagnostics.push({
-				msg: `error writing to json stream at ${res.req.url}`
-			});
-			res.end();
-		}
-		// content type is json if they are calling this method so overwrite if preset
-		if(res.hasHeader('Content-Type')) res.removeHeader('Content-Type');
-		res.writeHead(200, ['Content-Type', 'application/json']);
-		res.end(Buffer.from(JSON.stringify(content)));
-	};
-}
-
-export function useHTTPHandle(
-	name: string,
-	_url: string,
-	server: HTTPuppyServer,
-	cb: typeof HTTPuppyCallback
-) {
-	server.on('request', (
-		req: HTTPuppyRequest,
-		res: HTTPuppyResponse
-	) => {
-		if(req.method === name && req.url === _url) {
-			useRouterSignatures(res);
-			return cb(<HTTPuppyRequest>req, <HTTPuppyResponse>res);
-		}
-		return;
-	});
 }
 
 /**
@@ -79,7 +41,7 @@ export function useHTTPHandle(
 	if(config.cache) {
 		applyHeaders.push([
 			'ETag',
-			useEtag(options.virtualFile.fileName, { weak: true })
+			etag(options.virtualFile.fileName, { weak: true })
 		]);
 	}
 	return applyHeaders;

@@ -1,8 +1,8 @@
-[httpuppy - v0.3.9](../README.md) / [Modules](../modules.md) / [server](../modules/server.md) / HTTPuppyServerOptions
+[httpuppy - v0.3.10](../README.md) / [Modules](../modules.md) / [useServer](../modules/useServer.md) / HTTPuppyServerOptions
 
 # Interface: HTTPuppyServerOptions
 
-[server](../modules/server.md).HTTPuppyServerOptions
+[useServer](../modules/useServer.md).HTTPuppyServerOptions
 
 **`interface`** HTTPuppyServerOptions
 
@@ -42,25 +42,25 @@
 
 ### Properties
 
-- [IncomingMessage](server.HTTPuppyServerOptions.md#incomingmessage)
-- [ServerResponse](server.HTTPuppyServerOptions.md#serverresponse)
-- [cache](server.HTTPuppyServerOptions.md#cache)
-- [clustered](server.HTTPuppyServerOptions.md#clustered)
-- [handler](server.HTTPuppyServerOptions.md#handler)
-- [hostname](server.HTTPuppyServerOptions.md#hostname)
-- [insecureHTTPParser](server.HTTPuppyServerOptions.md#insecurehttpparser)
-- [log](server.HTTPuppyServerOptions.md#log)
-- [maxHeaderSize](server.HTTPuppyServerOptions.md#maxheadersize)
-- [middleware](server.HTTPuppyServerOptions.md#middleware)
-- [onClose](server.HTTPuppyServerOptions.md#onclose)
-- [onMount](server.HTTPuppyServerOptions.md#onmount)
-- [port](server.HTTPuppyServerOptions.md#port)
-- [secure](server.HTTPuppyServerOptions.md#secure)
-- [secureContext](server.HTTPuppyServerOptions.md#securecontext)
-- [static](server.HTTPuppyServerOptions.md#static)
-- [throwWarnings](server.HTTPuppyServerOptions.md#throwwarnings)
-- [timeout](server.HTTPuppyServerOptions.md#timeout)
-- [tmpDir](server.HTTPuppyServerOptions.md#tmpdir)
+- [IncomingMessage](useServer.HTTPuppyServerOptions.md#incomingmessage)
+- [ServerResponse](useServer.HTTPuppyServerOptions.md#serverresponse)
+- [cache](useServer.HTTPuppyServerOptions.md#cache)
+- [clustered](useServer.HTTPuppyServerOptions.md#clustered)
+- [handler](useServer.HTTPuppyServerOptions.md#handler)
+- [hostname](useServer.HTTPuppyServerOptions.md#hostname)
+- [insecureHTTPParser](useServer.HTTPuppyServerOptions.md#insecurehttpparser)
+- [log](useServer.HTTPuppyServerOptions.md#log)
+- [maxHeaderSize](useServer.HTTPuppyServerOptions.md#maxheadersize)
+- [middleware](useServer.HTTPuppyServerOptions.md#middleware)
+- [onClose](useServer.HTTPuppyServerOptions.md#onclose)
+- [onMount](useServer.HTTPuppyServerOptions.md#onmount)
+- [port](useServer.HTTPuppyServerOptions.md#port)
+- [secure](useServer.HTTPuppyServerOptions.md#secure)
+- [secureContext](useServer.HTTPuppyServerOptions.md#securecontext)
+- [static](useServer.HTTPuppyServerOptions.md#static)
+- [throwWarnings](useServer.HTTPuppyServerOptions.md#throwwarnings)
+- [timeout](useServer.HTTPuppyServerOptions.md#timeout)
+- [tmpDir](useServer.HTTPuppyServerOptions.md#tmpdir)
 
 ## Properties
 
@@ -98,7 +98,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:97](https://github.com/abschill/httpuppy/blob/990fd4c/src/server.ts#L97)
+[src/server.ts:101](https://github.com/abschill/httpuppy/blob/0ce48f2/src/server.ts#L101)
 
 ___
 
@@ -108,7 +108,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:89](https://github.com/abschill/httpuppy/blob/990fd4c/src/server.ts#L89)
+[src/server.ts:93](https://github.com/abschill/httpuppy/blob/0ce48f2/src/server.ts#L93)
 
 ___
 
@@ -118,7 +118,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:98](https://github.com/abschill/httpuppy/blob/990fd4c/src/server.ts#L98)
+[src/server.ts:102](https://github.com/abschill/httpuppy/blob/0ce48f2/src/server.ts#L102)
 
 ___
 
@@ -128,7 +128,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:90](https://github.com/abschill/httpuppy/blob/990fd4c/src/server.ts#L90)
+[src/server.ts:94](https://github.com/abschill/httpuppy/blob/0ce48f2/src/server.ts#L94)
 
 ___
 
@@ -154,11 +154,11 @@ ___
 
 ### log
 
-• `Optional` **log**: [`LogConfig`](internal_types_logger.LogConfig.md)
+• `Optional` **log**: `LogConfig`
 
 #### Defined in
 
-[src/server.ts:93](https://github.com/abschill/httpuppy/blob/990fd4c/src/server.ts#L93)
+[src/server.ts:97](https://github.com/abschill/httpuppy/blob/0ce48f2/src/server.ts#L97)
 
 ___
 
@@ -188,7 +188,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:94](https://github.com/abschill/httpuppy/blob/990fd4c/src/server.ts#L94)
+[src/server.ts:98](https://github.com/abschill/httpuppy/blob/0ce48f2/src/server.ts#L98)
 
 ___
 
@@ -198,7 +198,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:96](https://github.com/abschill/httpuppy/blob/990fd4c/src/server.ts#L96)
+[src/server.ts:100](https://github.com/abschill/httpuppy/blob/0ce48f2/src/server.ts#L100)
 
 ___
 
@@ -208,7 +208,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:95](https://github.com/abschill/httpuppy/blob/990fd4c/src/server.ts#L95)
+[src/server.ts:99](https://github.com/abschill/httpuppy/blob/0ce48f2/src/server.ts#L99)
 
 ___
 
@@ -218,7 +218,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:88](https://github.com/abschill/httpuppy/blob/990fd4c/src/server.ts#L88)
+[src/server.ts:92](https://github.com/abschill/httpuppy/blob/0ce48f2/src/server.ts#L92)
 
 ___
 
@@ -228,7 +228,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:99](https://github.com/abschill/httpuppy/blob/990fd4c/src/server.ts#L99)
+[src/server.ts:103](https://github.com/abschill/httpuppy/blob/0ce48f2/src/server.ts#L103)
 
 ___
 
@@ -246,17 +246,17 @@ ___
 
 #### Defined in
 
-[src/server.ts:100](https://github.com/abschill/httpuppy/blob/990fd4c/src/server.ts#L100)
+[src/server.ts:104](https://github.com/abschill/httpuppy/blob/0ce48f2/src/server.ts#L104)
 
 ___
 
 ### static
 
-• `Optional` **static**: [`UserStaticConfig`](../modules/server.md#userstaticconfig)
+• `Optional` **static**: [`UserStaticConfig`](../modules/useServer.md#userstaticconfig)
 
 #### Defined in
 
-[src/server.ts:91](https://github.com/abschill/httpuppy/blob/990fd4c/src/server.ts#L91)
+[src/server.ts:95](https://github.com/abschill/httpuppy/blob/0ce48f2/src/server.ts#L95)
 
 ___
 
@@ -266,7 +266,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:92](https://github.com/abschill/httpuppy/blob/990fd4c/src/server.ts#L92)
+[src/server.ts:96](https://github.com/abschill/httpuppy/blob/0ce48f2/src/server.ts#L96)
 
 ___
 
@@ -276,7 +276,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:105](https://github.com/abschill/httpuppy/blob/990fd4c/src/server.ts#L105)
+[src/server.ts:109](https://github.com/abschill/httpuppy/blob/0ce48f2/src/server.ts#L109)
 
 ___
 
@@ -286,4 +286,4 @@ ___
 
 #### Defined in
 
-[src/server.ts:106](https://github.com/abschill/httpuppy/blob/990fd4c/src/server.ts#L106)
+[src/server.ts:110](https://github.com/abschill/httpuppy/blob/0ce48f2/src/server.ts#L110)

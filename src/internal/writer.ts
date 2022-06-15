@@ -5,25 +5,24 @@ import { createReadStream } from 'fs';
 import { bufferTypes } from './include';
 import { useLocalMimeType } from './static';
 import { useHeaders } from './middleware';
-import {
-	VirtualWriteableFile,
-	HTTPuppyWriterOptions
- } from './types';
+import { VirtualWriteableFile } from './types';
 import {
 	HTTPuppyResponse,
 	HTTPuppyServerOptions,
 } from '..';
 /**
- * @internal isBufferType
- * @description check whether or not the file needs to be written into a stream as a buffer, or utf-8 content
- * @param file the file read by the VFS that is undergoing buffer check
- * @returns boolean whether or not it needs to be written as a buffer or can be served directly
+ * @private
  */
-export function isBufferType(
-	file: string
-): boolean {
-	return bufferTypes.filter((el) => file.includes(el)).length > 0;
+ export type HTTPuppyWriterOptions = {
+	status		: number;
+	statusText	: string;
+	type		: string;
+	virtualFile : VirtualWriteableFile;
 }
+/**
+ * @private
+ */
+export const isBufferType = (file: string) => (bufferTypes.filter((el) => file.includes(el)).length > 0);
 
 /**
  * @internal useVirtualStreamReader

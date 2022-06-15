@@ -19,7 +19,7 @@ export function useEntityTag(
 /**
  * @private
  */
-export function useEtag(
+export function etag(
 	entity: any,
 	options: any
 ) {
