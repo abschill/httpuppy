@@ -85,7 +85,7 @@
 
 #### Defined in
 
-[src/server.ts:54](https://github.com/abschill/httpuppy/blob/90ed0eb/src/server.ts#L54)
+[src/server.ts:54](https://github.com/abschill/httpuppy/blob/60143b3/src/server.ts#L54)
 
 ___
 
@@ -95,7 +95,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:55](https://github.com/abschill/httpuppy/blob/90ed0eb/src/server.ts#L55)
+[src/server.ts:55](https://github.com/abschill/httpuppy/blob/60143b3/src/server.ts#L55)
 
 ___
 
@@ -126,7 +126,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:53](https://github.com/abschill/httpuppy/blob/90ed0eb/src/server.ts#L53)
+[src/server.ts:53](https://github.com/abschill/httpuppy/blob/60143b3/src/server.ts#L53)
 
 ___
 

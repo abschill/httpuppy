@@ -2,10 +2,9 @@
 	"port": 3000,
 	"clustered": true,
 	"static": {
-		"path": "__fixtures__"
+		"path": "examples/files"
 	},
 	"log": {
 		"logLevel": "base"
-	},
-	"tmpDir": "./tmp"
+	}
 }

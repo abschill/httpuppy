@@ -24,7 +24,7 @@ describe('basic coldinit setup', function() {
 	});
 
 	it('should properly give the vfs the given path', () => {
-		expect(server0._vfs.mountedPath).toBe(mountPath);
+		expect(server0._vfs.mountedPath).toMatch(mountPath);
 	});
 
 	it('should load 3 files into the virtual filesystem', () => {
