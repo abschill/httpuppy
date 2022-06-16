@@ -6,47 +6,15 @@
 
 ## Table of contents
 
-### Interfaces
-
-- [HTTPuppyRouter](../interfaces/useRouter.HTTPuppyRouter.md)
-
 ### Type Aliases
 
-- [HTTPHeader](useRouter.md#httpheader)
-- [HTTPHeaders](useRouter.md#httpheaders)
 - [HTTPuppyRouterOptions](useRouter.md#httpuppyrouteroptions)
 
 ### Functions
 
-- [HTTPuppyCallback](useRouter.md#httpuppycallback)
-- [HTTPuppyRouterMethod](useRouter.md#httpuppyroutermethod)
 - [useRouter](useRouter.md#userouter)
 
 ## Type Aliases
-
-### HTTPHeader
-
-Ƭ `Private` **HTTPHeader**: `Object`
-
-#### Index signature
-
-▪ [key: `string`]: `string`
-
-#### Defined in
-
-[src/router.ts:34](https://github.com/abschill/httpuppy/blob/3328e6c/src/router.ts#L34)
-
-___
-
-### HTTPHeaders
-
-Ƭ `Private` **HTTPHeaders**: [`HTTPHeader`](useRouter.md#httpheader)[]
-
-#### Defined in
-
-[src/router.ts:41](https://github.com/abschill/httpuppy/blob/3328e6c/src/router.ts#L41)
-
-___
 
 ### HTTPuppyRouterOptions
 
@@ -61,55 +29,13 @@ ___
 
 #### Defined in
 
-[src/router.ts:43](https://github.com/abschill/httpuppy/blob/3328e6c/src/router.ts#L43)
+[src/router.ts:50](https://github.com/abschill/httpuppy/blob/53d71ee/src/router.ts#L50)
 
 ## Functions
 
-### HTTPuppyCallback
-
-▸ **HTTPuppyCallback**(`req`, `res`): `any`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `req` | [`HTTPuppyRequest`](../interfaces/useServer.HTTPuppyRequest.md) |
-| `res` | [`HTTPuppyResponse`](../interfaces/useServer.HTTPuppyResponse.md) |
-
-#### Returns
-
-`any`
-
-#### Defined in
-
-[src/router.ts:11](https://github.com/abschill/httpuppy/blob/3328e6c/src/router.ts#L11)
-
-___
-
-### HTTPuppyRouterMethod
-
-▸ `Private` **HTTPuppyRouterMethod**(`url`, `cb`): typeof [`HTTPuppyCallback`](useRouter.md#httpuppycallback) \| `void`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `url` | `string` |
-| `cb` | (`req`: [`HTTPuppyRequest`](../interfaces/useServer.HTTPuppyRequest.md), `res`: [`HTTPuppyResponse`](../interfaces/useServer.HTTPuppyResponse.md)) => `any` |
-
-#### Returns
-
-typeof [`HTTPuppyCallback`](useRouter.md#httpuppycallback) \| `void`
-
-#### Defined in
-
-[src/router.ts:17](https://github.com/abschill/httpuppy/blob/3328e6c/src/router.ts#L17)
-
-___
-
 ### useRouter
 
-▸ **useRouter**(`server`, `rOptions?`): [`HTTPuppyRouter`](../interfaces/useRouter.HTTPuppyRouter.md)
+▸ **useRouter**(`server`, `rOptions?`): `HTTPuppyRouter`
 
 **`function`** useRouter
 
@@ -129,8 +55,8 @@ router.get('/test', (req, res) => res.end('hello'));
 
 #### Returns
 
-[`HTTPuppyRouter`](../interfaces/useRouter.HTTPuppyRouter.md)
+`HTTPuppyRouter`
 
 #### Defined in
 
-[src/router.ts:103](https://github.com/abschill/httpuppy/blob/3328e6c/src/router.ts#L103)
+[src/router.ts:110](https://github.com/abschill/httpuppy/blob/53d71ee/src/router.ts#L110)

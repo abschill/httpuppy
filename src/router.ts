@@ -7,14 +7,21 @@ import {
 	HTTPuppyRequest,
 	HTTPuppyResponse
 } from '.';
-
+/**
+ * @internal
+ * @private
+ */
 export declare function HTTPuppyCallback(req: HTTPuppyRequest, res: HTTPuppyResponse): any;
 
 /**
- *
+ * @internal
  * @private
  */
 export declare function HTTPuppyRouterMethod(url: string, cb: typeof HTTPuppyCallback): typeof HTTPuppyCallback | void;
+/**
+ * @internal
+ * @private
+ */
 export interface HTTPuppyRouter {
 	url			: string;
 	get			: typeof HTTPuppyRouterMethod;
@@ -28,14 +35,14 @@ export interface HTTPuppyRouter {
 	options		: typeof HTTPuppyRouterMethod;
 }
 /**
- *
+ * @internal
  * @private
  */
 export type HTTPHeader = {
 	[key: string]: string;
 };
 /**
- *
+ * @internal
  * @private
  */
 export type HTTPHeaders = HTTPHeader[];
@@ -46,7 +53,7 @@ export type HTTPuppyRouterOptions = {
 }
 
 /**
- *
+ * @internal
  * @private
  */
 function useRouterSignatures(
@@ -68,7 +75,7 @@ function useRouterSignatures(
 	};
 }
 /**
- *
+ * @internal
  * @private
  */
 function useHTTPHandle(
