@@ -32,6 +32,7 @@ import {
 	LogConfig,
 	useDefaultLogConfig,
 } from './internal/logger';
+import { HTTPuppyRouter } from './router';
 /**
  * Typedefs for Server Runtiem
  */
@@ -46,9 +47,11 @@ import {
 	start		: () => boolean; //start process for server (wrapper around .listen())
 	stop		: () => Promise<HTTPuppySleep>; // shutdown handler
 	_vfs		: VirtualFileSystem; // virtual filesystem to load paths from
+	_routers	: HTTPuppyRouter[];
 }
 export interface HTTPuppyRequest extends HTTPRequest {
-	_process:	HTTPuppyServer;
+	body		: Object;
+	_process	:	HTTPuppyServer;
 	_tmpWritten ?: string;
 }
 export interface HTTPuppyResponse extends HTTPResponse {
@@ -68,6 +71,7 @@ export type UserStaticConfig = {
  */
 export type DiagnosticLog = {
 	msg			: string;
+	timestamp   : string;
 }
 
 export type HTTPuppySleep = () => Promise<void>;
@@ -88,7 +92,7 @@ export type HTTPuppySleep = () => Promise<void>;
  * @member secureContext options for resolving the SSL cert / key
  * @member tmpDir the dir to write files uploaded from multipart forms from request
  */
-export interface HTTPuppyServerOptions extends stlServerOptions {
+export interface HTTPuppyServerOptions {
     port 			?: number;
 	clustered		?: boolean;
     hostname 		?: string;

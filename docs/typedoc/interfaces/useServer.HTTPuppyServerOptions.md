@@ -1,4 +1,4 @@
-[httpuppy - v0.3.12](../README.md) / [Modules](../modules.md) / [useServer](../modules/useServer.md) / HTTPuppyServerOptions
+[httpuppy - v0.3.13](../README.md) / [Modules](../modules.md) / [useServer](../modules/useServer.md) / HTTPuppyServerOptions
 
 # Interface: HTTPuppyServerOptions
 
@@ -32,25 +32,15 @@
 
 **`member`** tmpDir the dir to write files uploaded from multipart forms from request
 
-## Hierarchy
-
-- `ServerOptions`
-
-  ↳ **`HTTPuppyServerOptions`**
-
 ## Table of contents
 
 ### Properties
 
-- [IncomingMessage](useServer.HTTPuppyServerOptions.md#incomingmessage)
-- [ServerResponse](useServer.HTTPuppyServerOptions.md#serverresponse)
 - [cache](useServer.HTTPuppyServerOptions.md#cache)
 - [clustered](useServer.HTTPuppyServerOptions.md#clustered)
 - [handler](useServer.HTTPuppyServerOptions.md#handler)
 - [hostname](useServer.HTTPuppyServerOptions.md#hostname)
-- [insecureHTTPParser](useServer.HTTPuppyServerOptions.md#insecurehttpparser)
 - [log](useServer.HTTPuppyServerOptions.md#log)
-- [maxHeaderSize](useServer.HTTPuppyServerOptions.md#maxheadersize)
 - [middleware](useServer.HTTPuppyServerOptions.md#middleware)
 - [onClose](useServer.HTTPuppyServerOptions.md#onclose)
 - [onMount](useServer.HTTPuppyServerOptions.md#onmount)
@@ -64,41 +54,13 @@
 
 ## Properties
 
-### IncomingMessage
-
-• `Optional` **IncomingMessage**: typeof `IncomingMessage`
-
-#### Inherited from
-
-stlServerOptions.IncomingMessage
-
-#### Defined in
-
-node_modules/@types/node/http.d.ts:142
-
-___
-
-### ServerResponse
-
-• `Optional` **ServerResponse**: typeof `ServerResponse`
-
-#### Inherited from
-
-stlServerOptions.ServerResponse
-
-#### Defined in
-
-node_modules/@types/node/http.d.ts:143
-
-___
-
 ### cache
 
 • `Optional` **cache**: `CacheSettings`
 
 #### Defined in
 
-[src/server.ts:101](https://github.com/abschill/httpuppy/blob/53d71ee/src/server.ts#L101)
+[src/server.ts:105](https://github.com/abschill/httpuppy/blob/90ed0eb/src/server.ts#L105)
 
 ___
 
@@ -108,7 +70,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:93](https://github.com/abschill/httpuppy/blob/53d71ee/src/server.ts#L93)
+[src/server.ts:97](https://github.com/abschill/httpuppy/blob/90ed0eb/src/server.ts#L97)
 
 ___
 
@@ -118,7 +80,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:102](https://github.com/abschill/httpuppy/blob/53d71ee/src/server.ts#L102)
+[src/server.ts:106](https://github.com/abschill/httpuppy/blob/90ed0eb/src/server.ts#L106)
 
 ___
 
@@ -128,27 +90,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:94](https://github.com/abschill/httpuppy/blob/53d71ee/src/server.ts#L94)
-
-___
-
-### insecureHTTPParser
-
-• `Optional` **insecureHTTPParser**: `boolean`
-
-Use an insecure HTTP parser that accepts invalid HTTP headers when true.
-Using the insecure parser should be avoided.
-See --insecure-http-parser for more information.
-
-**`default`** false
-
-#### Inherited from
-
-stlServerOptions.insecureHTTPParser
-
-#### Defined in
-
-node_modules/@types/node/http.d.ts:157
+[src/server.ts:98](https://github.com/abschill/httpuppy/blob/90ed0eb/src/server.ts#L98)
 
 ___
 
@@ -158,27 +100,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:97](https://github.com/abschill/httpuppy/blob/53d71ee/src/server.ts#L97)
-
-___
-
-### maxHeaderSize
-
-• `Optional` **maxHeaderSize**: `number`
-
-Optionally overrides the value of
-`--max-http-header-size` for requests received by this server, i.e.
-the maximum length of request headers in bytes.
-
-**`default`** 8192
-
-#### Inherited from
-
-stlServerOptions.maxHeaderSize
-
-#### Defined in
-
-node_modules/@types/node/http.d.ts:150
+[src/server.ts:101](https://github.com/abschill/httpuppy/blob/90ed0eb/src/server.ts#L101)
 
 ___
 
@@ -188,7 +110,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:98](https://github.com/abschill/httpuppy/blob/53d71ee/src/server.ts#L98)
+[src/server.ts:102](https://github.com/abschill/httpuppy/blob/90ed0eb/src/server.ts#L102)
 
 ___
 
@@ -198,7 +120,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:100](https://github.com/abschill/httpuppy/blob/53d71ee/src/server.ts#L100)
+[src/server.ts:104](https://github.com/abschill/httpuppy/blob/90ed0eb/src/server.ts#L104)
 
 ___
 
@@ -208,7 +130,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:99](https://github.com/abschill/httpuppy/blob/53d71ee/src/server.ts#L99)
+[src/server.ts:103](https://github.com/abschill/httpuppy/blob/90ed0eb/src/server.ts#L103)
 
 ___
 
@@ -218,7 +140,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:92](https://github.com/abschill/httpuppy/blob/53d71ee/src/server.ts#L92)
+[src/server.ts:96](https://github.com/abschill/httpuppy/blob/90ed0eb/src/server.ts#L96)
 
 ___
 
@@ -228,7 +150,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:103](https://github.com/abschill/httpuppy/blob/53d71ee/src/server.ts#L103)
+[src/server.ts:107](https://github.com/abschill/httpuppy/blob/90ed0eb/src/server.ts#L107)
 
 ___
 
@@ -246,7 +168,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:104](https://github.com/abschill/httpuppy/blob/53d71ee/src/server.ts#L104)
+[src/server.ts:108](https://github.com/abschill/httpuppy/blob/90ed0eb/src/server.ts#L108)
 
 ___
 
@@ -256,7 +178,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:95](https://github.com/abschill/httpuppy/blob/53d71ee/src/server.ts#L95)
+[src/server.ts:99](https://github.com/abschill/httpuppy/blob/90ed0eb/src/server.ts#L99)
 
 ___
 
@@ -266,7 +188,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:96](https://github.com/abschill/httpuppy/blob/53d71ee/src/server.ts#L96)
+[src/server.ts:100](https://github.com/abschill/httpuppy/blob/90ed0eb/src/server.ts#L100)
 
 ___
 
@@ -276,7 +198,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:109](https://github.com/abschill/httpuppy/blob/53d71ee/src/server.ts#L109)
+[src/server.ts:113](https://github.com/abschill/httpuppy/blob/90ed0eb/src/server.ts#L113)
 
 ___
 
@@ -286,4 +208,4 @@ ___
 
 #### Defined in
 
-[src/server.ts:110](https://github.com/abschill/httpuppy/blob/53d71ee/src/server.ts#L110)
+[src/server.ts:114](https://github.com/abschill/httpuppy/blob/90ed0eb/src/server.ts#L114)

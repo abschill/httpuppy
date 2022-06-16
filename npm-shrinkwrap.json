@@ -1,15 +1,14 @@
 {
   "name": "httpuppy",
-  "version": "0.3.9",
+  "version": "0.3.12",
   "lockfileVersion": 2,
   "requires": true,
   "packages": {
     "": {
       "name": "httpuppy",
-      "version": "0.3.9",
+      "version": "0.3.12",
       "license": "AGPL-3.0",
       "dependencies": {
-        "busboy": "^1.6.0",
         "http-graceful-shutdown": "^3.1.7",
         "inquirer": "^8.2.4",
         "mime-types": "^2.1.35",
@@ -19,7 +18,6 @@
         "httpuppy": "bin/index.js"
       },
       "devDependencies": {
-        "@types/busboy": "^1.5.0",
         "@types/mime-types": "^2.1.1",
         "@types/mocha": "^9.1.1",
         "@types/node": "^17.0.31",
@@ -688,16 +686,6 @@
       "dev": true,
       "license": "MIT"
     },
-    "node_modules/@types/busboy": {
-      "version": "1.5.0",
-      "resolved": "https://registry.npmjs.org/@types/busboy/-/busboy-1.5.0.tgz",
-      "integrity": "sha512-ncOOhwmyFDW76c/Tuvv9MA9VGYUCn8blzyWmzYELcNGDb0WXWLSmFi7hJq25YdRBYJrmMBB5jZZwUjlJe9HCjQ==",
-      "dev": true,
-      "license": "MIT",
-      "dependencies": {
-        "@types/node": "*"
-      }
-    },
     "node_modules/@types/istanbul-lib-coverage": {
       "version": "2.0.4",
       "resolved": "https://registry.npmjs.org/@types/istanbul-lib-coverage/-/istanbul-lib-coverage-2.0.4.tgz",
@@ -1354,17 +1342,6 @@
       "integrity": "sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ==",
       "dev": true,
       "license": "MIT"
-    },
-    "node_modules/busboy": {
-      "version": "1.6.0",
-      "resolved": "https://registry.npmjs.org/busboy/-/busboy-1.6.0.tgz",
-      "integrity": "sha512-8SFQbg/0hQ9xy3UNTB0YEnsNBbWfhf7RtnzpL7TkBiTBRfrQ9Fxcnz7VJsleJpyp6rVLvXiuORqjlHi5q+PYuA==",
-      "dependencies": {
-        "streamsearch": "^1.1.0"
-      },
-      "engines": {
-        "node": ">=10.16.0"
-      }
     },
     "node_modules/caching-transform": {
       "version": "4.0.0",
@@ -4114,14 +4091,6 @@
         "node": ">=8"
       }
     },
-    "node_modules/streamsearch": {
-      "version": "1.1.0",
-      "resolved": "https://registry.npmjs.org/streamsearch/-/streamsearch-1.1.0.tgz",
-      "integrity": "sha512-Mcc5wHehp9aXz1ax6bZUyY5afg9u2rv5cqQI3mRrYkGC8rW2hM02jWuwjtL++LS5qinSyhj2QfLyNsuc+VsExg==",
-      "engines": {
-        "node": ">=10.0.0"
-      }
-    },
     "node_modules/string_decoder": {
       "version": "1.3.0",
       "resolved": "https://registry.npmjs.org/string_decoder/-/string_decoder-1.3.0.tgz",
@@ -5237,15 +5206,6 @@
       "integrity": "sha512-AFBVi/iT4g20DHoujvMH1aEDn8fGJh4xsRGCP6d8RpLPMqsNPvW01Jcn0QysXTsg++/xj25NmJsGyH9xug/wKg==",
       "dev": true
     },
-    "@types/busboy": {
-      "version": "1.5.0",
-      "resolved": "https://registry.npmjs.org/@types/busboy/-/busboy-1.5.0.tgz",
-      "integrity": "sha512-ncOOhwmyFDW76c/Tuvv9MA9VGYUCn8blzyWmzYELcNGDb0WXWLSmFi7hJq25YdRBYJrmMBB5jZZwUjlJe9HCjQ==",
-      "dev": true,
-      "requires": {
-        "@types/node": "*"
-      }
-    },
     "@types/istanbul-lib-coverage": {
       "version": "2.0.4",
       "resolved": "https://registry.npmjs.org/@types/istanbul-lib-coverage/-/istanbul-lib-coverage-2.0.4.tgz",
@@ -5653,14 +5613,6 @@
       "resolved": "https://registry.npmjs.org/buffer-from/-/buffer-from-1.1.2.tgz",
       "integrity": "sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ==",
       "dev": true
-    },
-    "busboy": {
-      "version": "1.6.0",
-      "resolved": "https://registry.npmjs.org/busboy/-/busboy-1.6.0.tgz",
-      "integrity": "sha512-8SFQbg/0hQ9xy3UNTB0YEnsNBbWfhf7RtnzpL7TkBiTBRfrQ9Fxcnz7VJsleJpyp6rVLvXiuORqjlHi5q+PYuA==",
-      "requires": {
-        "streamsearch": "^1.1.0"
-      }
     },
     "caching-transform": {
       "version": "4.0.0",
@@ -7519,11 +7471,6 @@
           "dev": true
         }
       }
-    },
-    "streamsearch": {
-      "version": "1.1.0",
-      "resolved": "https://registry.npmjs.org/streamsearch/-/streamsearch-1.1.0.tgz",
-      "integrity": "sha512-Mcc5wHehp9aXz1ax6bZUyY5afg9u2rv5cqQI3mRrYkGC8rW2hM02jWuwjtL++LS5qinSyhj2QfLyNsuc+VsExg=="
     },
     "string_decoder": {
       "version": "1.3.0",

@@ -7,10 +7,27 @@
 	<title>Document</title>
 </head>
 <body>
+	<h1>/ post</h1>
 	<form enctype="multipart/form-data" action="/" method="POST">
 		<input name="text1" type="text" placeholder="Enter Text">
 		<input name="file1" type="file">
 		<button>Submit</button>
 	</form>
+
+	<script>
+		async function foo() {
+			const res = await fetch('/test', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({ foo: 'bar' })
+			});
+			const json = await res.json();
+			console.log(json);
+		}
+
+		foo();
+	</script>
 </body>
 </html>

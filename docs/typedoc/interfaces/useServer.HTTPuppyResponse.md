@@ -1,4 +1,4 @@
-[httpuppy - v0.3.12](../README.md) / [Modules](../modules.md) / [useServer](../modules/useServer.md) / HTTPuppyResponse
+[httpuppy - v0.3.13](../README.md) / [Modules](../modules.md) / [useServer](../modules/useServer.md) / HTTPuppyResponse
 
 # Interface: HTTPuppyResponse
 
@@ -89,7 +89,7 @@
 
 #### Defined in
 
-[src/server.ts:55](https://github.com/abschill/httpuppy/blob/53d71ee/src/server.ts#L55)
+[src/server.ts:58](https://github.com/abschill/httpuppy/blob/90ed0eb/src/server.ts#L58)
 
 ___
 
@@ -1352,7 +1352,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:57](https://github.com/abschill/httpuppy/blob/53d71ee/src/server.ts#L57)
+[src/server.ts:60](https://github.com/abschill/httpuppy/blob/90ed0eb/src/server.ts#L60)
 
 ___
 
@@ -2371,7 +2371,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:56](https://github.com/abschill/httpuppy/blob/53d71ee/src/server.ts#L56)
+[src/server.ts:59](https://github.com/abschill/httpuppy/blob/90ed0eb/src/server.ts#L59)
 
 ___
 

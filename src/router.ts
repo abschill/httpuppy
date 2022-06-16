@@ -7,6 +7,7 @@ import {
 	HTTPuppyRequest,
 	HTTPuppyResponse
 } from '.';
+
 /**
  * @internal
  * @private
@@ -33,6 +34,7 @@ export interface HTTPuppyRouter {
 	connect		: typeof HTTPuppyRouterMethod;
 	delete		: typeof HTTPuppyRouterMethod;
 	options		: typeof HTTPuppyRouterMethod;
+	_options	: HTTPuppyRouterOptions;
 }
 /**
  * @internal
@@ -57,6 +59,7 @@ export type HTTPuppyRouterOptions = {
  * @private
  */
 function useRouterSignatures(
+	req: HTTPuppyRequest,
 	res: HTTPuppyResponse
 ) {
 	res.send = res.end;
@@ -64,7 +67,8 @@ function useRouterSignatures(
 		if(!res.writable) {
 			res.writeHead(500, 'cannot write to json stream');
 			res._process.diagnostics.push({
-				msg: `error writing to json stream at ${res.req.url}`
+				msg: `error writing to json stream at ${res.req.url}`,
+				timestamp: Date.now().toLocaleString()
 			});
 			res.end();
 		}
@@ -89,10 +93,19 @@ function useHTTPHandle(
 		res: HTTPuppyResponse
 	) => {
 		if(req.method === name && req.url === _url) {
-			useRouterSignatures(res);
-			return cb(<HTTPuppyRequest>req, <HTTPuppyResponse>res);
+			if(req._process._vfs.mountedFiles.filter(f => f.hrefs.includes(_url))) {
+				req._process.diagnostics.push({
+					msg: 'static paths conflict with router, will override router',
+					timestamp: Date.now().toLocaleString()
+				});
+			}
+			useRouterSignatures(req, res);
+			server.emit(`k.router${req.method}`, _url);
+			req.on('data', (chunk) => {
+				req.body = JSON.parse(chunk);
+			});
+			return setTimeout(()=>cb(<HTTPuppyRequest>req, <HTTPuppyResponse>res));
 		}
-		return;
 	});
 }
 
@@ -112,6 +125,10 @@ export function useRouter(
 	rOptions ?: HTTPuppyRouterOptions // placeholder: planned feature
 ): HTTPuppyRouter {
 	const wrapperUrl = rOptions?.baseUrl ?? '';
+	const opts = rOptions || {
+		baseUrl: wrapperUrl,
+		allowPassthrough: false
+	};
 
 	function get(
 		url: string,
@@ -186,8 +203,7 @@ export function useRouter(
 		useHTTPHandle('DELETE',
 			wrapperUrl+url, server, cb);
 	}
-
-	return <HTTPuppyRouter>{
+	const router = <HTTPuppyRouter>{
 		get,
 		head,
 		post,
@@ -196,6 +212,9 @@ export function useRouter(
 		delete: _delete,
 		trace,
 		connect,
-		options
+		options,
+		_options: opts
 	};
+	server._routers.push(router);
+	return router;
 }

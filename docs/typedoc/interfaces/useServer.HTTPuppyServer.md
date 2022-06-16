@@ -1,4 +1,4 @@
-[httpuppy - v0.3.12](../README.md) / [Modules](../modules.md) / [useServer](../modules/useServer.md) / HTTPuppyServer
+[httpuppy - v0.3.13](../README.md) / [Modules](../modules.md) / [useServer](../modules/useServer.md) / HTTPuppyServer
 
 # Interface: HTTPuppyServer
 
@@ -18,6 +18,7 @@
 
 ### Properties
 
+- [\_routers](useServer.HTTPuppyServer.md#_routers)
 - [\_vfs](useServer.HTTPuppyServer.md#_vfs)
 - [connections](useServer.HTTPuppyServer.md#connections)
 - [diagnostics](useServer.HTTPuppyServer.md#diagnostics)
@@ -61,13 +62,23 @@
 
 ## Properties
 
+### \_routers
+
+• **\_routers**: `HTTPuppyRouter`[]
+
+#### Defined in
+
+[src/server.ts:50](https://github.com/abschill/httpuppy/blob/90ed0eb/src/server.ts#L50)
+
+___
+
 ### \_vfs
 
 • **\_vfs**: `VirtualFileSystem`
 
 #### Defined in
 
-[src/server.ts:48](https://github.com/abschill/httpuppy/blob/53d71ee/src/server.ts#L48)
+[src/server.ts:49](https://github.com/abschill/httpuppy/blob/90ed0eb/src/server.ts#L49)
 
 ___
 
@@ -91,7 +102,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:44](https://github.com/abschill/httpuppy/blob/53d71ee/src/server.ts#L44)
+[src/server.ts:45](https://github.com/abschill/httpuppy/blob/90ed0eb/src/server.ts#L45)
 
 ___
 
@@ -241,7 +252,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:45](https://github.com/abschill/httpuppy/blob/53d71ee/src/server.ts#L45)
+[src/server.ts:46](https://github.com/abschill/httpuppy/blob/90ed0eb/src/server.ts#L46)
 
 ___
 
@@ -251,7 +262,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:43](https://github.com/abschill/httpuppy/blob/53d71ee/src/server.ts#L43)
+[src/server.ts:44](https://github.com/abschill/httpuppy/blob/90ed0eb/src/server.ts#L44)
 
 ___
 
@@ -2535,7 +2546,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:46](https://github.com/abschill/httpuppy/blob/53d71ee/src/server.ts#L46)
+[src/server.ts:47](https://github.com/abschill/httpuppy/blob/90ed0eb/src/server.ts#L47)
 
 ___
 
@@ -2549,7 +2560,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:47](https://github.com/abschill/httpuppy/blob/53d71ee/src/server.ts#L47)
+[src/server.ts:48](https://github.com/abschill/httpuppy/blob/90ed0eb/src/server.ts#L48)
 
 ___
 

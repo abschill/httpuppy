@@ -1,4 +1,4 @@
-httpuppy - v0.3.12 / [Modules](modules.md)
+httpuppy - v0.3.13 / [Modules](modules.md)
 
 # HTTPuppy
 
@@ -84,9 +84,29 @@ const app = useServer({
 });
 ```
 
-## built in static upload parsing
+## handling form data
 
-by default any form submissions will be uploaded (files, and the body as JSON with a random seed) into the user-defined (default tmp) temp dir. planning to add an override to allow people to define a hook to determine what to name the file.
+```js
+const { useServer, useRouter } = require('httpuppy');
+
+const app = useServer({
+	static: {
+		path: './path/to/content'
+	},
+	port: 3000,
+	onMount: () => console.log('listening on 3000')
+});
+
+const router = useRouter(app);
+
+router.post('/api/v1/thing', (req, res) => {
+	console.log(req.body) // json format: { foo: 'bar' }
+	// do something with body and respond
+});
+
+app.start();
+
+```
 
 [Examples](/examples/)
 

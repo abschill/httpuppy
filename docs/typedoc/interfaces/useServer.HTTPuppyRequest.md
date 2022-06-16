@@ -1,4 +1,4 @@
-[httpuppy - v0.3.12](../README.md) / [Modules](../modules.md) / [useServer](../modules/useServer.md) / HTTPuppyRequest
+[httpuppy - v0.3.13](../README.md) / [Modules](../modules.md) / [useServer](../modules/useServer.md) / HTTPuppyRequest
 
 # Interface: HTTPuppyRequest
 
@@ -17,6 +17,7 @@
 - [\_process](useServer.HTTPuppyRequest.md#_process)
 - [\_tmpWritten](useServer.HTTPuppyRequest.md#_tmpwritten)
 - [aborted](useServer.HTTPuppyRequest.md#aborted)
+- [body](useServer.HTTPuppyRequest.md#body)
 - [complete](useServer.HTTPuppyRequest.md#complete)
 - [connection](useServer.HTTPuppyRequest.md#connection)
 - [destroyed](useServer.HTTPuppyRequest.md#destroyed)
@@ -84,7 +85,7 @@
 
 #### Defined in
 
-[src/server.ts:51](https://github.com/abschill/httpuppy/blob/53d71ee/src/server.ts#L51)
+[src/server.ts:54](https://github.com/abschill/httpuppy/blob/90ed0eb/src/server.ts#L54)
 
 ___
 
@@ -94,7 +95,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:52](https://github.com/abschill/httpuppy/blob/53d71ee/src/server.ts#L52)
+[src/server.ts:55](https://github.com/abschill/httpuppy/blob/90ed0eb/src/server.ts#L55)
 
 ___
 
@@ -116,6 +117,16 @@ HTTPRequest.aborted
 #### Defined in
 
 node_modules/@types/node/http.d.ts:793
+
+___
+
+### body
+
+• **body**: `Object`
+
+#### Defined in
+
+[src/server.ts:53](https://github.com/abschill/httpuppy/blob/90ed0eb/src/server.ts#L53)
 
 ___
 
