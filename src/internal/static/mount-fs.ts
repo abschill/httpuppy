@@ -70,6 +70,7 @@ export function useMountedFS(
 		mountedFiles
 	};
 }
+
 /**
  * @private
  *
@@ -92,7 +93,11 @@ export function virtualRequestHandler(
 	}
 }
 
-export function getStaticURL (
+/**
+ * @private
+ *
+ */
+export function getStaticURL(
 	req		: HTTPuppyRequest,
 	res		: HTTPuppyResponse
 ): VirtualWriteableFile {

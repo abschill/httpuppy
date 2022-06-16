@@ -1,6 +1,6 @@
 #! /usr/bin/env node
 const { useCLIConfigFinder } = require('../lib/internal/config/argv.js');
-const { useColorTag } = require('../lib/internal/include/_color.js');
+const { useColorTag } = require('../lib/internal/include');
 const { useServer } = require('../lib');
 const cluster = require('cluster');
 const { log } = console;

@@ -1,10 +1,8 @@
-export * from './_constants';
-export * from './etag';
-export * from './_color';
-
 /**
  * @internal
  */
+export * from './_constants';
+export * from './etag';
 import GracefulShutdown from 'http-graceful-shutdown';
 import {
 	HTTPuppyServer,

@@ -1,10 +1,22 @@
-httpuppy - v0.3.11 / [Modules](modules.md)
+httpuppy - v0.3.12 / [Modules](modules.md)
 
 # HTTPuppy
 
 ![](/.assets/logo.png)
 
 A simple & speedy abstraction layer for node web servers :dog:
+
+## Features
+
+- simple, easy to use api
+- worker thread support for :fire: blazing fast response times
+- middleware support
+- router support
+- static directory serving
+- exposes underlying node HTTP API for full customization, just adds helpers
+- command line interface
+- static typed, very handy intellisense
+- great for local front end dev environments
 
 ## Installation
 

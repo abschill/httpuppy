@@ -1,7 +1,8 @@
 /**
  * @internal
+ * @private
  */
-import { useColorTag } from './include/_color';
+import { useColorTag } from './include';
 import {
 	HTTPuppyServer,
 	HTTPuppyRequest
@@ -14,12 +15,19 @@ import {
 import cluster from 'cluster';
 export type LogLevel = 'silent' | 'base' | 'verbose';
 
+/**
+ * @internal
+ * @private
+ *  */
 export interface LogConfig {
 	logLevel	: LogLevel;
 	logPrefix 	?: string;
 	logFile		?: string | null;
 }
-
+/**
+ * @internal
+ * @private
+ *  */
 export function useDefaultLogConfig():
 LogConfig {
 	return {
@@ -28,14 +36,20 @@ LogConfig {
 		logFile		: null
 	};
 }
-
-export interface LogMsg {
+/**
+ * @internal
+ * @private
+ *  */
+interface LogMsg {
 	code: number;
 	msg: string;
 	toString: () => string;
 }
-
-export type ValidLogMsg = string | LogMsg | object;
+/**
+ * @internal
+ * @private
+ *  */
+type ValidLogMsg = string | LogMsg | object;
 
 const { log } = console;
 /**
@@ -47,17 +61,18 @@ export function fLog(
 	conf: LogConfig
 ) {
 	if(!conf.logFile) {
-		return;
+		conf.logFile = 'httpuppy.log';
 	}
+
 	if(!existsSync(conf.logFile)) {
-		writeFileSync(conf.logFile, data.toString());
+		writeFileSync(conf.logFile, `${Date.now().toLocaleString()}\n${data.toString()}\n`);
 		return;
 	}
 	if(typeof data === 'string') {
 		appendFileSync(conf.logFile,  `${conf.logPrefix}: ${data}`);
 		return;
 	}
-	return appendFileSync(conf.logFile, `${conf.logPrefix}: ${data.toString()}`);
+	return appendFileSync(conf.logFile, `${Date.now().toLocaleString()}|${conf.logPrefix}: ${data.toString()}\n`);
 }
 /**
  * @internal
@@ -105,6 +120,7 @@ export function useLogger(
 		});
 		server.addListener('diagnostic-log', (...trace) => {
 			log(trace);
+			fLog({...trace}, config);
 		});
 	}
 
