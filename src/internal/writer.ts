@@ -3,7 +3,7 @@
  */
 import { createReadStream } from 'fs';
 import { bufferTypes } from './include';
-import { useLocalMimeType } from './static';
+import { mimeType } from './static';
 import { useHeaders } from './middleware';
 import { VirtualWriteableFile } from './types';
 import {
@@ -31,7 +31,7 @@ export const isBufferType = (file: string) => (bufferTypes.filter((el) => file.i
  * @param res the current response being handled by the server
  * @returns
  */
-export function useVirtualStreamReader(
+export function virtualStreamReader(
 	pathData	: VirtualWriteableFile,
 	res			: HTTPuppyResponse
 ): void {
@@ -44,7 +44,7 @@ export function useVirtualStreamReader(
 		const stream = createReadStream(pathData.symLink);
 		stream.on('data', (chunk) => {
 			// type the symlink of the streamable file, write into the response stream
-			res.writeHead(200, 'ok', useLocalMimeType(pathData.symLink ?? ''));
+			res.writeHead(200, 'ok', mimeType(pathData.symLink ?? ''));
 			res.write(chunk);
 		});
 		// end response when data is done streaming from vfile
@@ -54,7 +54,8 @@ export function useVirtualStreamReader(
 }
 
 /**
- *
+ * @internal
+ * @private
  * @param res the response to write to
  * @param config the config to base the write on
  * @param options the writer instance options
@@ -70,7 +71,7 @@ export function useWriter(
 		return;
 	}
 	if(options.virtualFile.symLink) {
-		res.writeHead(options.status, options.statusText, useHeaders(options, config));
-		return useVirtualStreamReader(options.virtualFile, res);
+		res.writeHead(options.status, options.statusText, ...useHeaders(options, config));
+		return virtualStreamReader(options.virtualFile, res);
 	}
 }

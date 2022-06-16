@@ -1,4 +1,4 @@
-[httpuppy - v0.3.10](../README.md) / [Modules](../modules.md) / [useRouter](../modules/useRouter.md) / HTTPuppyRouter
+[httpuppy - v0.3.11](../README.md) / [Modules](../modules.md) / [useRouter](../modules/useRouter.md) / HTTPuppyRouter
 
 # Interface: HTTPuppyRouter
 
@@ -27,7 +27,7 @@
 
 #### Type declaration
 
-▸ (`url`, `cb`): typeof [`HTTPuppyCallback`](../modules/useRouter.md#httpuppycallback) \| `void`
+▸ `Private` (`url`, `cb`): typeof [`HTTPuppyCallback`](../modules/useRouter.md#httpuppycallback) \| `void`
 
 ##### Parameters
 
@@ -42,7 +42,7 @@ typeof [`HTTPuppyCallback`](../modules/useRouter.md#httpuppycallback) \| `void`
 
 #### Defined in
 
-[src/router.ts:22](https://github.com/abschill/httpuppy/blob/dfb46c7/src/router.ts#L22)
+[src/router.ts:26](https://github.com/abschill/httpuppy/blob/3003846/src/router.ts#L26)
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 #### Type declaration
 
-▸ (`url`, `cb`): typeof [`HTTPuppyCallback`](../modules/useRouter.md#httpuppycallback) \| `void`
+▸ `Private` (`url`, `cb`): typeof [`HTTPuppyCallback`](../modules/useRouter.md#httpuppycallback) \| `void`
 
 ##### Parameters
 
@@ -67,7 +67,7 @@ typeof [`HTTPuppyCallback`](../modules/useRouter.md#httpuppycallback) \| `void`
 
 #### Defined in
 
-[src/router.ts:23](https://github.com/abschill/httpuppy/blob/dfb46c7/src/router.ts#L23)
+[src/router.ts:27](https://github.com/abschill/httpuppy/blob/3003846/src/router.ts#L27)
 
 ___
 
@@ -77,7 +77,7 @@ ___
 
 #### Type declaration
 
-▸ (`url`, `cb`): typeof [`HTTPuppyCallback`](../modules/useRouter.md#httpuppycallback) \| `void`
+▸ `Private` (`url`, `cb`): typeof [`HTTPuppyCallback`](../modules/useRouter.md#httpuppycallback) \| `void`
 
 ##### Parameters
 
@@ -92,7 +92,7 @@ typeof [`HTTPuppyCallback`](../modules/useRouter.md#httpuppycallback) \| `void`
 
 #### Defined in
 
-[src/router.ts:16](https://github.com/abschill/httpuppy/blob/dfb46c7/src/router.ts#L16)
+[src/router.ts:20](https://github.com/abschill/httpuppy/blob/3003846/src/router.ts#L20)
 
 ___
 
@@ -102,7 +102,7 @@ ___
 
 #### Type declaration
 
-▸ (`url`, `cb`): typeof [`HTTPuppyCallback`](../modules/useRouter.md#httpuppycallback) \| `void`
+▸ `Private` (`url`, `cb`): typeof [`HTTPuppyCallback`](../modules/useRouter.md#httpuppycallback) \| `void`
 
 ##### Parameters
 
@@ -117,7 +117,7 @@ typeof [`HTTPuppyCallback`](../modules/useRouter.md#httpuppycallback) \| `void`
 
 #### Defined in
 
-[src/router.ts:17](https://github.com/abschill/httpuppy/blob/dfb46c7/src/router.ts#L17)
+[src/router.ts:21](https://github.com/abschill/httpuppy/blob/3003846/src/router.ts#L21)
 
 ___
 
@@ -127,7 +127,7 @@ ___
 
 #### Type declaration
 
-▸ (`url`, `cb`): typeof [`HTTPuppyCallback`](../modules/useRouter.md#httpuppycallback) \| `void`
+▸ `Private` (`url`, `cb`): typeof [`HTTPuppyCallback`](../modules/useRouter.md#httpuppycallback) \| `void`
 
 ##### Parameters
 
@@ -142,7 +142,7 @@ typeof [`HTTPuppyCallback`](../modules/useRouter.md#httpuppycallback) \| `void`
 
 #### Defined in
 
-[src/router.ts:24](https://github.com/abschill/httpuppy/blob/dfb46c7/src/router.ts#L24)
+[src/router.ts:28](https://github.com/abschill/httpuppy/blob/3003846/src/router.ts#L28)
 
 ___
 
@@ -152,7 +152,7 @@ ___
 
 #### Type declaration
 
-▸ (`url`, `cb`): typeof [`HTTPuppyCallback`](../modules/useRouter.md#httpuppycallback) \| `void`
+▸ `Private` (`url`, `cb`): typeof [`HTTPuppyCallback`](../modules/useRouter.md#httpuppycallback) \| `void`
 
 ##### Parameters
 
@@ -167,7 +167,7 @@ typeof [`HTTPuppyCallback`](../modules/useRouter.md#httpuppycallback) \| `void`
 
 #### Defined in
 
-[src/router.ts:20](https://github.com/abschill/httpuppy/blob/dfb46c7/src/router.ts#L20)
+[src/router.ts:24](https://github.com/abschill/httpuppy/blob/3003846/src/router.ts#L24)
 
 ___
 
@@ -177,7 +177,7 @@ ___
 
 #### Type declaration
 
-▸ (`url`, `cb`): typeof [`HTTPuppyCallback`](../modules/useRouter.md#httpuppycallback) \| `void`
+▸ `Private` (`url`, `cb`): typeof [`HTTPuppyCallback`](../modules/useRouter.md#httpuppycallback) \| `void`
 
 ##### Parameters
 
@@ -192,7 +192,7 @@ typeof [`HTTPuppyCallback`](../modules/useRouter.md#httpuppycallback) \| `void`
 
 #### Defined in
 
-[src/router.ts:18](https://github.com/abschill/httpuppy/blob/dfb46c7/src/router.ts#L18)
+[src/router.ts:22](https://github.com/abschill/httpuppy/blob/3003846/src/router.ts#L22)
 
 ___
 
@@ -202,7 +202,7 @@ ___
 
 #### Type declaration
 
-▸ (`url`, `cb`): typeof [`HTTPuppyCallback`](../modules/useRouter.md#httpuppycallback) \| `void`
+▸ `Private` (`url`, `cb`): typeof [`HTTPuppyCallback`](../modules/useRouter.md#httpuppycallback) \| `void`
 
 ##### Parameters
 
@@ -217,7 +217,7 @@ typeof [`HTTPuppyCallback`](../modules/useRouter.md#httpuppycallback) \| `void`
 
 #### Defined in
 
-[src/router.ts:19](https://github.com/abschill/httpuppy/blob/dfb46c7/src/router.ts#L19)
+[src/router.ts:23](https://github.com/abschill/httpuppy/blob/3003846/src/router.ts#L23)
 
 ___
 
@@ -227,7 +227,7 @@ ___
 
 #### Type declaration
 
-▸ (`url`, `cb`): typeof [`HTTPuppyCallback`](../modules/useRouter.md#httpuppycallback) \| `void`
+▸ `Private` (`url`, `cb`): typeof [`HTTPuppyCallback`](../modules/useRouter.md#httpuppycallback) \| `void`
 
 ##### Parameters
 
@@ -242,7 +242,7 @@ typeof [`HTTPuppyCallback`](../modules/useRouter.md#httpuppycallback) \| `void`
 
 #### Defined in
 
-[src/router.ts:21](https://github.com/abschill/httpuppy/blob/dfb46c7/src/router.ts#L21)
+[src/router.ts:25](https://github.com/abschill/httpuppy/blob/3003846/src/router.ts#L25)
 
 ___
 
@@ -252,4 +252,4 @@ ___
 
 #### Defined in
 
-[src/router.ts:15](https://github.com/abschill/httpuppy/blob/dfb46c7/src/router.ts#L15)
+[src/router.ts:19](https://github.com/abschill/httpuppy/blob/3003846/src/router.ts#L19)

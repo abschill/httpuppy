@@ -10,6 +10,10 @@ import {
 
 export declare function HTTPuppyCallback(req: HTTPuppyRequest, res: HTTPuppyResponse): any;
 
+/**
+ *
+ * @private
+ */
 export declare function HTTPuppyRouterMethod(url: string, cb: typeof HTTPuppyCallback): typeof HTTPuppyCallback | void;
 export interface HTTPuppyRouter {
 	url			: string;
@@ -23,7 +27,17 @@ export interface HTTPuppyRouter {
 	delete		: typeof HTTPuppyRouterMethod;
 	options		: typeof HTTPuppyRouterMethod;
 }
-export type HTTPHeader = string[];
+/**
+ *
+ * @private
+ */
+export type HTTPHeader = {
+	[key: string]: string;
+};
+/**
+ *
+ * @private
+ */
 export type HTTPHeaders = HTTPHeader[];
 
 export type HTTPuppyRouterOptions = {
@@ -31,7 +45,11 @@ export type HTTPuppyRouterOptions = {
 	allowPassthrough	?: boolean;
 }
 
-export function useRouterSignatures(
+/**
+ *
+ * @private
+ */
+function useRouterSignatures(
 	res: HTTPuppyResponse
 ) {
 	res.send = res.end;
@@ -45,12 +63,15 @@ export function useRouterSignatures(
 		}
 		// content type is json if they are calling this method so overwrite if preset
 		if(res.hasHeader('Content-Type')) res.removeHeader('Content-Type');
-		res.writeHead(200, ['Content-Type', 'application/json']);
+		res.writeHead(200, {'Content-Type' : 'application/json'});
 		res.end(Buffer.from(JSON.stringify(content)));
 	};
 }
-
-export function useHTTPHandle(
+/**
+ *
+ * @private
+ */
+function useHTTPHandle(
 	name: string,
 	_url: string,
 	server: HTTPuppyServer,
@@ -67,6 +88,7 @@ export function useHTTPHandle(
 		return;
 	});
 }
+
 /**
  * @function useRouter
  * @example

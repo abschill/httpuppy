@@ -1,4 +1,4 @@
-[httpuppy - v0.3.10](../README.md) / [Modules](../modules.md) / useRouter
+[httpuppy - v0.3.11](../README.md) / [Modules](../modules.md) / useRouter
 
 # Module: useRouter
 
@@ -20,29 +20,31 @@
 
 - [HTTPuppyCallback](useRouter.md#httpuppycallback)
 - [HTTPuppyRouterMethod](useRouter.md#httpuppyroutermethod)
-- [useHTTPHandle](useRouter.md#usehttphandle)
 - [useRouter](useRouter.md#userouter)
-- [useRouterSignatures](useRouter.md#useroutersignatures)
 
 ## Type Aliases
 
 ### HTTPHeader
 
-Ƭ **HTTPHeader**: `string`[]
+Ƭ `Private` **HTTPHeader**: `Object`
+
+#### Index signature
+
+▪ [key: `string`]: `string`
 
 #### Defined in
 
-[src/router.ts:26](https://github.com/abschill/httpuppy/blob/dfb46c7/src/router.ts#L26)
+[src/router.ts:34](https://github.com/abschill/httpuppy/blob/3003846/src/router.ts#L34)
 
 ___
 
 ### HTTPHeaders
 
-Ƭ **HTTPHeaders**: [`HTTPHeader`](useRouter.md#httpheader)[]
+Ƭ `Private` **HTTPHeaders**: [`HTTPHeader`](useRouter.md#httpheader)[]
 
 #### Defined in
 
-[src/router.ts:27](https://github.com/abschill/httpuppy/blob/dfb46c7/src/router.ts#L27)
+[src/router.ts:41](https://github.com/abschill/httpuppy/blob/3003846/src/router.ts#L41)
 
 ___
 
@@ -59,7 +61,7 @@ ___
 
 #### Defined in
 
-[src/router.ts:29](https://github.com/abschill/httpuppy/blob/dfb46c7/src/router.ts#L29)
+[src/router.ts:43](https://github.com/abschill/httpuppy/blob/3003846/src/router.ts#L43)
 
 ## Functions
 
@@ -80,13 +82,13 @@ ___
 
 #### Defined in
 
-[src/router.ts:11](https://github.com/abschill/httpuppy/blob/dfb46c7/src/router.ts#L11)
+[src/router.ts:11](https://github.com/abschill/httpuppy/blob/3003846/src/router.ts#L11)
 
 ___
 
 ### HTTPuppyRouterMethod
 
-▸ **HTTPuppyRouterMethod**(`url`, `cb`): typeof [`HTTPuppyCallback`](useRouter.md#httpuppycallback) \| `void`
+▸ `Private` **HTTPuppyRouterMethod**(`url`, `cb`): typeof [`HTTPuppyCallback`](useRouter.md#httpuppycallback) \| `void`
 
 #### Parameters
 
@@ -101,30 +103,7 @@ typeof [`HTTPuppyCallback`](useRouter.md#httpuppycallback) \| `void`
 
 #### Defined in
 
-[src/router.ts:13](https://github.com/abschill/httpuppy/blob/dfb46c7/src/router.ts#L13)
-
-___
-
-### useHTTPHandle
-
-▸ **useHTTPHandle**(`name`, `_url`, `server`, `cb`): `void`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `name` | `string` |
-| `_url` | `string` |
-| `server` | [`HTTPuppyServer`](../interfaces/useServer.HTTPuppyServer.md) |
-| `cb` | (`req`: [`HTTPuppyRequest`](../interfaces/useServer.HTTPuppyRequest.md), `res`: [`HTTPuppyResponse`](../interfaces/useServer.HTTPuppyResponse.md)) => `any` |
-
-#### Returns
-
-`void`
-
-#### Defined in
-
-[src/router.ts:53](https://github.com/abschill/httpuppy/blob/dfb46c7/src/router.ts#L53)
+[src/router.ts:17](https://github.com/abschill/httpuppy/blob/3003846/src/router.ts#L17)
 
 ___
 
@@ -154,24 +133,4 @@ router.get('/test', (req, res) => res.end('hello'));
 
 #### Defined in
 
-[src/router.ts:81](https://github.com/abschill/httpuppy/blob/dfb46c7/src/router.ts#L81)
-
-___
-
-### useRouterSignatures
-
-▸ **useRouterSignatures**(`res`): `void`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `res` | [`HTTPuppyResponse`](../interfaces/useServer.HTTPuppyResponse.md) |
-
-#### Returns
-
-`void`
-
-#### Defined in
-
-[src/router.ts:34](https://github.com/abschill/httpuppy/blob/dfb46c7/src/router.ts#L34)
+[src/router.ts:103](https://github.com/abschill/httpuppy/blob/3003846/src/router.ts#L103)

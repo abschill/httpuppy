@@ -1,6 +1,6 @@
 {
   "name": "httpuppy",
-  "version": "0.3.10",
+  "version": "0.3.11",
   "description": "speedy abstraction layer for node web servers with automatic clustering",
   "types": "lib/index.d.ts",
   "main": "lib/index.js",
@@ -24,6 +24,9 @@
     "server",
     "backend",
     "proxy"
+  ],
+  "files": [
+	"lib/**/*"
   ],
   "author": "abschill",
   "license": "AGPL-3.0",

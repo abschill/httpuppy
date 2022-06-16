@@ -2,8 +2,8 @@
  * @internal mount-fs
  * @description virtual file system mount hooks
  */
-import { useLocalMimeType } from '.';
-import { useStaticURLParser } from './url';
+import { VirtualWriteableFile } from '../types';
+import { mimeType } from '.';
 import { resolve } from 'path';
 import {
 	MountedFile,
@@ -18,19 +18,16 @@ import {
 } from '../../';
 import {
 	isBufferType,
-	useVirtualStreamReader,
+	virtualStreamReader,
 	useWriter
 } from '../writer';
 import { readdirSync } from 'fs';
 
 /**
- * @function useCleanPaths
- * @description list possible hrefs to be used for given vpath
- * @param file the path of the file to check any aliases for
- * @param _static the static config options of the calling process
- * @returns list of strings defining possible hrefs
+ * @private
+ *
  */
-function useCleanPaths(
+function indexPaths(
 	file	: string,
 	_static : UserStaticConfig
 ): string[] {
@@ -44,8 +41,8 @@ function useCleanPaths(
 }
 
 /**
- * @param server config options for the runtime that wants to mount an FS
- * @returns
+ * @private
+ *
  */
 export function useMountedFS(
 	server : HTTPuppyServer
@@ -59,8 +56,8 @@ export function useMountedFS(
 		return <MountedFile> {
 			fileName: file,
 			symLink,
-			contentType: <HTTPHeader>useLocalMimeType(symLink),
-			hrefs: useCleanPaths(file, <UserStaticConfig>server.pConfig.static)
+			contentType: <HTTPHeader>mimeType(symLink),
+			hrefs: indexPaths(file, <UserStaticConfig>server.pConfig.static)
 		};
 	});
 	if(server.pConfig.log && server.pConfig.log.logLevel === 'verbose') {
@@ -73,21 +70,42 @@ export function useMountedFS(
 		mountedFiles
 	};
 }
-
-export function useVirtualRequestHandler(
+/**
+ * @private
+ *
+ */
+export function virtualRequestHandler(
 	req		: HTTPuppyRequest,
 	res		: HTTPuppyResponse
 ): void {
-	const virtualFile = useStaticURLParser(req, res);
+	const virtualFile = getStaticURL(req, res);
 	if(isBufferType(<string>req.url)) {
-		return useVirtualStreamReader(virtualFile, res);
+		return virtualStreamReader(virtualFile, res);
 	}
 	else {
 		return useWriter(res, res._process.pConfig, {
 			status: 200,
 			statusText: 'ok',
-			type: virtualFile.contentType[1],
+			type: virtualFile.contentType['Content-Type'],
 			virtualFile
 		});
+	}
+}
+
+export function getStaticURL (
+	req		: HTTPuppyRequest,
+	res		: HTTPuppyResponse
+): VirtualWriteableFile {
+	const iFS = req._process._vfs;
+	// filter the mounted filesystem based on the request url
+	const match = iFS.mountedFiles.filter(f => f.hrefs.includes(req.url ?? '')).shift();
+	if(match) {
+		return {
+			reqUrl: req.url ?? '',
+			...match
+		};
+	}
+	else {
+		return <VirtualWriteableFile>{};
 	}
 }

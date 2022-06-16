@@ -9,7 +9,7 @@ import {
 	isValidStats,
 	useEntityTag,
 	checkNumConfigs,
-	useLocalMimeType,
+	mimeType,
 	useConfigFrom
 } from '../lib/internal';
 
@@ -36,11 +36,11 @@ describe('misc internal testing', () => {
 
 describe('localized mime types', () => {
 	it('detects the html file in fixtures', () => {
-		expect(useLocalMimeType(resolve(fixtures, 'index.html'))).toEqual(['Content-Type', 'text/html']);
+		expect(mimeType(resolve(fixtures, 'index.html'))).toEqual({'Content-Type': 'text/html'});
 
 	});
 	it('detects css as css', () => {
-		expect(useLocalMimeType(resolve(process.cwd(), 'examples', 'style.css'))).toEqual(['Content-Type', 'text/css']);
+		expect(mimeType(resolve(process.cwd(), 'examples', 'style.css'))).toEqual({'Content-Type': 'text/css'});
 	});
 });
 

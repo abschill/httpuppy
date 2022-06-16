@@ -31,18 +31,17 @@ export function useMiddleware(
 	config	: HTTPuppyServerOptions
 ): HTTPHeaders {
 	const applyHeaders: HTTPHeaders = [
-		[
-			'Content-Type',
+		{
+			'Content-Type':
 			options.type ?? 'text/plain'
-		]
+		}
 	];
 
 	// set weak etag generation if applicable
 	if(config.cache) {
-		applyHeaders.push([
-			'ETag',
-			etag(options.virtualFile.fileName, { weak: true })
-		]);
+		applyHeaders.push({
+			'ETag': etag(options.virtualFile.fileName, { weak: true })
+		});
 	}
 	return applyHeaders;
 }

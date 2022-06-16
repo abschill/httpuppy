@@ -38,7 +38,10 @@ export interface LogMsg {
 export type ValidLogMsg = string | LogMsg | object;
 
 const { log } = console;
-
+/**
+ * @internal
+ * @private
+ *  */
 export function fLog(
 	data: ValidLogMsg,
 	conf: LogConfig
@@ -56,7 +59,10 @@ export function fLog(
 	}
 	return appendFileSync(conf.logFile, `${conf.logPrefix}: ${data.toString()}`);
 }
-
+/**
+ * @internal
+ * @private
+ *  */
 export function pLog(
 	data: ValidLogMsg
 ) {
@@ -65,7 +71,10 @@ export function pLog(
 	}
 	return log(data.toString());
 }
-
+/**
+ * @internal
+ * @private
+ *  */
 export function useLogConfig(
 	config ?: LogConfig
 ): LogConfig {
@@ -75,7 +84,10 @@ export function useLogConfig(
 	}
 	return {...def, ...config};
 }
-
+/**
+ * @internal
+ * @private
+ *  */
 export function useLogger(
 	config	: LogConfig,
 	server	: HTTPuppyServer
