@@ -1,4 +1,4 @@
-[httpuppy - v0.3.14](../README.md) / [Modules](../modules.md) / useRouter
+[httpuppy - v0.3.15](../README.md) / [Modules](../modules.md) / useRouter
 
 # Module: useRouter
 
@@ -8,6 +8,7 @@
 
 ### Type Aliases
 
+- [HTTPuppyRouterCallback](useRouter.md#httpuppyroutercallback)
 - [HTTPuppyRouterOptions](useRouter.md#httpuppyrouteroptions)
 
 ### Functions
@@ -15,6 +16,31 @@
 - [useRouter](useRouter.md#userouter)
 
 ## Type Aliases
+
+### HTTPuppyRouterCallback
+
+Ƭ **HTTPuppyRouterCallback**: (`req`: [`HTTPuppyRequest`](../interfaces/useServer.HTTPuppyRequest.md), `res`: [`HTTPuppyResponse`](../interfaces/useServer.HTTPuppyResponse.md)) => `Promise`<`any`\> \| (`req`: [`HTTPuppyRequest`](../interfaces/useServer.HTTPuppyRequest.md), `res`: [`HTTPuppyResponse`](../interfaces/useServer.HTTPuppyResponse.md)) => `any`
+
+#### Type declaration
+
+▸ (`req`, `res`): `Promise`<`any`\> \| (`req`: [`HTTPuppyRequest`](../interfaces/useServer.HTTPuppyRequest.md), `res`: [`HTTPuppyResponse`](../interfaces/useServer.HTTPuppyResponse.md)) => `any`
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `req` | [`HTTPuppyRequest`](../interfaces/useServer.HTTPuppyRequest.md) |
+| `res` | [`HTTPuppyResponse`](../interfaces/useServer.HTTPuppyResponse.md) |
+
+##### Returns
+
+`Promise`<`any`\> \| (`req`: [`HTTPuppyRequest`](../interfaces/useServer.HTTPuppyRequest.md), `res`: [`HTTPuppyResponse`](../interfaces/useServer.HTTPuppyResponse.md)) => `any`
+
+#### Defined in
+
+[src/router.ts:16](https://github.com/abschill/httpuppy/blob/bf01d3d/src/router.ts#L16)
+
+___
 
 ### HTTPuppyRouterOptions
 
@@ -29,7 +55,7 @@
 
 #### Defined in
 
-[src/router.ts:52](https://github.com/abschill/httpuppy/blob/7fbe8ea/src/router.ts#L52)
+[src/router.ts:52](https://github.com/abschill/httpuppy/blob/bf01d3d/src/router.ts#L52)
 
 ## Functions
 
@@ -59,4 +85,4 @@ router.get('/test', (req, res) => res.end('hello'));
 
 #### Defined in
 
-[src/router.ts:123](https://github.com/abschill/httpuppy/blob/7fbe8ea/src/router.ts#L123)
+[src/router.ts:123](https://github.com/abschill/httpuppy/blob/bf01d3d/src/router.ts#L123)

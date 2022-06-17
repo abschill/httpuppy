@@ -13,7 +13,7 @@ import {
  * @private
  */
 export declare function HTTPuppyCallback(req: HTTPuppyRequest, res: HTTPuppyResponse): any;
-
+export type HTTPuppyRouterCallback = (req: HTTPuppyRequest, res: HTTPuppyResponse) => Promise<any> | ((req: HTTPuppyRequest, res: HTTPuppyResponse) => any);
 /**
  * @internal
  * @private
@@ -132,7 +132,7 @@ export function useRouter(
 
 	function get(
 		url: string,
-		cb: typeof HTTPuppyCallback
+		cb: HTTPuppyRouterCallback
 	): void {
 		useHTTPHandle(
 			'GET',
@@ -142,7 +142,7 @@ export function useRouter(
 
 	function post(
 		url: string,
-		cb: typeof HTTPuppyCallback
+		cb: HTTPuppyRouterCallback
 	): void {
 		useHTTPHandle('POST',
 			wrapperUrl+url, server, cb);
@@ -150,7 +150,7 @@ export function useRouter(
 
 	function head(
 		url: string,
-		cb: typeof HTTPuppyCallback
+		cb: HTTPuppyRouterCallback
 	): void {
 		useHTTPHandle('HEAD',
 			wrapperUrl+url, server, cb);
@@ -158,7 +158,7 @@ export function useRouter(
 
 	function put(
 		url: string,
-		cb: typeof HTTPuppyCallback
+		cb: HTTPuppyRouterCallback
 	): void {
 		useHTTPHandle('PUT',
 			wrapperUrl+url, server, cb);
@@ -166,7 +166,7 @@ export function useRouter(
 
 	function patch(
 		url: string,
-		cb: typeof HTTPuppyCallback
+		cb: HTTPuppyRouterCallback
 	): void {
 		useHTTPHandle('PATCH',
 			wrapperUrl+url, server, cb);
@@ -174,7 +174,7 @@ export function useRouter(
 
 	function trace(
 		url: string,
-		cb: typeof HTTPuppyCallback
+		cb: HTTPuppyRouterCallback
 	): void {
 		useHTTPHandle('TRACE',
 			wrapperUrl+url, server, cb);
@@ -190,7 +190,7 @@ export function useRouter(
 
 	function options(
 		url: string,
-		cb: typeof HTTPuppyCallback
+		cb: HTTPuppyRouterCallback
 	): void {
 		useHTTPHandle('OPTIONS',
 			wrapperUrl+url, server, cb);
@@ -198,7 +198,7 @@ export function useRouter(
 
 	function _delete(
 		url: string,
-		cb: typeof HTTPuppyCallback
+		cb: HTTPuppyRouterCallback
 	): void {
 		useHTTPHandle('DELETE',
 			wrapperUrl+url, server, cb);
