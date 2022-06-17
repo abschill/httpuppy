@@ -121,4 +121,3 @@ export function useConfig(
 	};
 	return ss;
 }
-export * from './conf-map';
