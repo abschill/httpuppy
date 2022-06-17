@@ -11,6 +11,36 @@ import { useColorTag } from '../include';
 import { useMountedFS } from '../static';
 import useCluster from './cluster';
 import { isAbsolute, join } from 'path';
+import { useConfig as useQuickfig } from 'quickfig';
+import { fromDefaultHTTPConfig } from '../../server';
+/**
+ *
+ * @private
+ * @returns take `any` config from a dir
+ */
+export function useConfigFrom(p: string) {
+	const fileMatch = useQuickfig( {
+		allowedTypes: ['json', 'yaml', 'toml'],
+		pattern: 'httpuppy.*',
+		basePath: p
+	});
+	if(Array.isArray(fileMatch)) {
+		return fileMatch[0];
+	}
+	return fileMatch;
+}
+/**
+ *
+ * @private
+ *
+ * @returns config from inline path arguments
+ */
+export async function useCLIConfigFinder() {
+	const cPath = process.argv[2] || process.cwd();
+	const config = useConfigFrom(cPath);
+	return (config || fromDefaultHTTPConfig({}));
+}
+
 /**
  * @internal useConfig
  * @description hook for applying default config settings against given user input
@@ -91,5 +121,4 @@ export function useConfig(
 	};
 	return ss;
 }
-export * from './argv';
 export * from './conf-map';
