@@ -29,7 +29,7 @@
 
 #### Defined in
 
-[src/router.ts:52](https://github.com/abschill/httpuppy/blob/1c77fbb/src/router.ts#L52)
+[src/router.ts:52](https://github.com/abschill/httpuppy/blob/7fbe8ea/src/router.ts#L52)
 
 ## Functions
 
@@ -59,4 +59,4 @@ router.get('/test', (req, res) => res.end('hello'));
 
 #### Defined in
 
-[src/router.ts:123](https://github.com/abschill/httpuppy/blob/1c77fbb/src/router.ts#L123)
+[src/router.ts:123](https://github.com/abschill/httpuppy/blob/7fbe8ea/src/router.ts#L123)

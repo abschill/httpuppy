@@ -60,7 +60,7 @@
 
 #### Defined in
 
-[src/server.ts:105](https://github.com/abschill/httpuppy/blob/1c77fbb/src/server.ts#L105)
+[src/server.ts:105](https://github.com/abschill/httpuppy/blob/7fbe8ea/src/server.ts#L105)
 
 ___
 
@@ -70,7 +70,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:97](https://github.com/abschill/httpuppy/blob/1c77fbb/src/server.ts#L97)
+[src/server.ts:97](https://github.com/abschill/httpuppy/blob/7fbe8ea/src/server.ts#L97)
 
 ___
 
@@ -80,7 +80,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:106](https://github.com/abschill/httpuppy/blob/1c77fbb/src/server.ts#L106)
+[src/server.ts:106](https://github.com/abschill/httpuppy/blob/7fbe8ea/src/server.ts#L106)
 
 ___
 
@@ -90,7 +90,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:98](https://github.com/abschill/httpuppy/blob/1c77fbb/src/server.ts#L98)
+[src/server.ts:98](https://github.com/abschill/httpuppy/blob/7fbe8ea/src/server.ts#L98)
 
 ___
 
@@ -100,7 +100,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:101](https://github.com/abschill/httpuppy/blob/1c77fbb/src/server.ts#L101)
+[src/server.ts:101](https://github.com/abschill/httpuppy/blob/7fbe8ea/src/server.ts#L101)
 
 ___
 
@@ -110,7 +110,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:102](https://github.com/abschill/httpuppy/blob/1c77fbb/src/server.ts#L102)
+[src/server.ts:102](https://github.com/abschill/httpuppy/blob/7fbe8ea/src/server.ts#L102)
 
 ___
 
@@ -120,7 +120,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:104](https://github.com/abschill/httpuppy/blob/1c77fbb/src/server.ts#L104)
+[src/server.ts:104](https://github.com/abschill/httpuppy/blob/7fbe8ea/src/server.ts#L104)
 
 ___
 
@@ -130,7 +130,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:103](https://github.com/abschill/httpuppy/blob/1c77fbb/src/server.ts#L103)
+[src/server.ts:103](https://github.com/abschill/httpuppy/blob/7fbe8ea/src/server.ts#L103)
 
 ___
 
@@ -140,7 +140,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:96](https://github.com/abschill/httpuppy/blob/1c77fbb/src/server.ts#L96)
+[src/server.ts:96](https://github.com/abschill/httpuppy/blob/7fbe8ea/src/server.ts#L96)
 
 ___
 
@@ -150,7 +150,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:107](https://github.com/abschill/httpuppy/blob/1c77fbb/src/server.ts#L107)
+[src/server.ts:107](https://github.com/abschill/httpuppy/blob/7fbe8ea/src/server.ts#L107)
 
 ___
 
@@ -168,7 +168,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:108](https://github.com/abschill/httpuppy/blob/1c77fbb/src/server.ts#L108)
+[src/server.ts:108](https://github.com/abschill/httpuppy/blob/7fbe8ea/src/server.ts#L108)
 
 ___
 
@@ -178,7 +178,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:99](https://github.com/abschill/httpuppy/blob/1c77fbb/src/server.ts#L99)
+[src/server.ts:99](https://github.com/abschill/httpuppy/blob/7fbe8ea/src/server.ts#L99)
 
 ___
 
@@ -188,7 +188,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:100](https://github.com/abschill/httpuppy/blob/1c77fbb/src/server.ts#L100)
+[src/server.ts:100](https://github.com/abschill/httpuppy/blob/7fbe8ea/src/server.ts#L100)
 
 ___
 
@@ -198,7 +198,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:113](https://github.com/abschill/httpuppy/blob/1c77fbb/src/server.ts#L113)
+[src/server.ts:113](https://github.com/abschill/httpuppy/blob/7fbe8ea/src/server.ts#L113)
 
 ___
 
@@ -208,4 +208,4 @@ ___
 
 #### Defined in
 
-[src/server.ts:114](https://github.com/abschill/httpuppy/blob/1c77fbb/src/server.ts#L114)
+[src/server.ts:114](https://github.com/abschill/httpuppy/blob/7fbe8ea/src/server.ts#L114)
