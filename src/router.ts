@@ -7,33 +7,27 @@ import {
 	HTTPuppyRequest,
 	HTTPuppyResponse
 } from '.';
-
 /**
  * @internal
  * @private
  */
-export declare function HTTPuppyCallback(req: HTTPuppyRequest, res: HTTPuppyResponse): any;
 export type HTTPuppyRouterCallback = (req: HTTPuppyRequest, res: HTTPuppyResponse) => Promise<any> | ((req: HTTPuppyRequest, res: HTTPuppyResponse) => any);
-/**
- * @internal
- * @private
- */
-export declare function HTTPuppyRouterMethod(url: string, cb: typeof HTTPuppyCallback): typeof HTTPuppyCallback | void;
+export type HTTPuppyBindMethod = (url: string, cb: HTTPuppyRouterCallback) => any
 /**
  * @internal
  * @private
  */
 export interface HTTPuppyRouter {
 	url			: string;
-	get			: typeof HTTPuppyRouterMethod;
-	head		: typeof HTTPuppyRouterMethod;
-	post		: typeof HTTPuppyRouterMethod;
-	put			: typeof HTTPuppyRouterMethod;
-	patch		: typeof HTTPuppyRouterMethod;
-	trace		: typeof HTTPuppyRouterMethod;
-	connect		: typeof HTTPuppyRouterMethod;
-	delete		: typeof HTTPuppyRouterMethod;
-	options		: typeof HTTPuppyRouterMethod;
+	get			: HTTPuppyBindMethod;
+	head		: HTTPuppyBindMethod;
+	post		: HTTPuppyBindMethod;
+	put			: HTTPuppyBindMethod;
+	patch		: HTTPuppyBindMethod;
+	trace		: HTTPuppyBindMethod;
+	connect		: HTTPuppyBindMethod;
+	delete		: HTTPuppyBindMethod;
+	options		: HTTPuppyBindMethod;
 	_options	: HTTPuppyRouterOptions;
 }
 /**
@@ -63,7 +57,7 @@ function useRouterSignatures(
 	res: HTTPuppyResponse
 ) {
 	res.send = res.end;
-	res.json = (content: any) => {
+	res.json = (content: object) => {
 		if(!res.writable) {
 			res.writeHead(500, 'cannot write to json stream');
 			res._process.diagnostics.push({
@@ -75,7 +69,7 @@ function useRouterSignatures(
 		// content type is json if they are calling this method so overwrite if preset
 		if(res.hasHeader('Content-Type')) res.removeHeader('Content-Type');
 		res.writeHead(200, {'Content-Type' : 'application/json'});
-		res.end(Buffer.from(JSON.stringify(content)));
+		res.end(JSON.stringify(content));
 	};
 }
 /**
@@ -86,7 +80,8 @@ function useHTTPHandle(
 	name: string,
 	_url: string,
 	server: HTTPuppyServer,
-	cb: typeof HTTPuppyCallback
+	cb: HTTPuppyRouterCallback,
+	async: boolean
 ) {
 	server.on('request', (
 		req: HTTPuppyRequest,
@@ -102,9 +97,16 @@ function useHTTPHandle(
 			useRouterSignatures(req, res);
 			server.emit(`k.router${req.method}`, _url);
 			req.on('data', (chunk) => {
+				if(typeof chunk !== 'string') chunk = chunk.toString();
 				req.body = JSON.parse(chunk);
 			});
-			return setTimeout(()=>cb(<HTTPuppyRequest>req, <HTTPuppyResponse>res));
+
+			if(!async) {
+				req.on('end', () => cb(<HTTPuppyRequest>req, <HTTPuppyResponse>res));
+			}
+			else {
+				req.on('end', async() => await cb(req, res));
+			}
 		}
 	});
 }
@@ -130,13 +132,13 @@ export function useRouter(
 		allowPassthrough: false
 	};
 
-	function get(
+	async function get(
 		url: string,
 		cb: HTTPuppyRouterCallback
-	): void {
+	): Promise<void> {
 		useHTTPHandle(
 			'GET',
-			wrapperUrl+url, server, cb
+			wrapperUrl+url, server, cb, cb.constructor.name === 'AsyncFunction'
 		);
 	}
 
@@ -144,66 +146,83 @@ export function useRouter(
 		url: string,
 		cb: HTTPuppyRouterCallback
 	): void {
-		useHTTPHandle('POST',
-			wrapperUrl+url, server, cb);
+		useHTTPHandle(
+			'POST',
+			wrapperUrl+url, server, cb, cb.constructor.name === 'AsyncFunction'
+		);
 	}
 
 	function head(
 		url: string,
 		cb: HTTPuppyRouterCallback
 	): void {
-		useHTTPHandle('HEAD',
-			wrapperUrl+url, server, cb);
+		useHTTPHandle(
+			'HEAD',
+			wrapperUrl+url, server, cb, cb.constructor.name === 'AsyncFunction'
+		);
 	}
 
 	function put(
 		url: string,
 		cb: HTTPuppyRouterCallback
 	): void {
-		useHTTPHandle('PUT',
-			wrapperUrl+url, server, cb);
+		useHTTPHandle(
+			'PUT',
+			wrapperUrl+url, server, cb, cb.constructor.name === 'AsyncFunction'
+		);
 	}
 
 	function patch(
 		url: string,
 		cb: HTTPuppyRouterCallback
 	): void {
-		useHTTPHandle('PATCH',
-			wrapperUrl+url, server, cb);
+		useHTTPHandle(
+			'PATCH',
+			wrapperUrl+url, server, cb, cb.constructor.name === 'AsyncFunction'
+		);
 	}
 
 	function trace(
 		url: string,
 		cb: HTTPuppyRouterCallback
 	): void {
-		useHTTPHandle('TRACE',
-			wrapperUrl+url, server, cb);
+		useHTTPHandle(
+			'TRACE',
+			wrapperUrl+url, server, cb, cb.constructor.name === 'AsyncFunction'
+		);
 	}
 
 	function connect(
 		url: string,
-		cb: typeof HTTPuppyCallback
+		cb: HTTPuppyRouterCallback
 	): void {
-		useHTTPHandle('CONNECT',
-			wrapperUrl+url, server, cb);
+		useHTTPHandle(
+			'CONNECT',
+			wrapperUrl+url, server, cb, cb.constructor.name === 'AsyncFunction'
+		);
 	}
 
 	function options(
 		url: string,
 		cb: HTTPuppyRouterCallback
 	): void {
-		useHTTPHandle('OPTIONS',
-			wrapperUrl+url, server, cb);
+		useHTTPHandle(
+			'OPTIONS',
+			wrapperUrl+url, server, cb, cb.constructor.name === 'AsyncFunction'
+		);
 	}
 
 	function _delete(
 		url: string,
 		cb: HTTPuppyRouterCallback
 	): void {
-		useHTTPHandle('DELETE',
-			wrapperUrl+url, server, cb);
+		useHTTPHandle(
+			'DELETE',
+			wrapperUrl+url, server, cb, cb.constructor.name === 'AsyncFunction'
+		);
 	}
 	const router = <HTTPuppyRouter>{
+		url: opts.baseUrl,
 		get,
 		head,
 		post,

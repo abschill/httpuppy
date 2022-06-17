@@ -26,7 +26,8 @@ import {
 	iHandlerType,
 	CacheSettings,
 	defaultCacheSettings,
-	VirtualFileSystem
+	VirtualFileSystem,
+	CallableSideEffect
 } from './internal/types';
 import {
 	LogConfig,
@@ -53,11 +54,12 @@ export interface HTTPuppyRequest extends HTTPRequest {
 	body		: Object;
 	_process	:	HTTPuppyServer;
 	_tmpWritten ?: string;
+	_boundCallback ?: CallableSideEffect<(any)>;
 }
 export interface HTTPuppyResponse extends HTTPResponse {
 	_process:	HTTPuppyServer;
-	send: (msg: any) => void;
-	json: (msg: any) => void;
+	send: CallableSideEffect<(any)>;
+	json: CallableSideEffect<(any)>;
 }
 export type UserStaticConfig = {
 	href 		?: string; // prefix path to access the directory on router

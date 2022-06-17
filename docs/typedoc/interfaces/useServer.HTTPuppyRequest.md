@@ -1,4 +1,4 @@
-[httpuppy - v0.3.15](../README.md) / [Modules](../modules.md) / [useServer](../modules/useServer.md) / HTTPuppyRequest
+[httpuppy - v0.3.16](../README.md) / [Modules](../modules.md) / [useServer](../modules/useServer.md) / HTTPuppyRequest
 
 # Interface: HTTPuppyRequest
 
@@ -14,6 +14,7 @@
 
 ### Properties
 
+- [\_boundCallback](useServer.HTTPuppyRequest.md#_boundcallback)
 - [\_process](useServer.HTTPuppyRequest.md#_process)
 - [\_tmpWritten](useServer.HTTPuppyRequest.md#_tmpwritten)
 - [aborted](useServer.HTTPuppyRequest.md#aborted)
@@ -79,13 +80,23 @@
 
 ## Properties
 
+### \_boundCallback
+
+• `Optional` **\_boundCallback**: `CallableSideEffect`<`any`\>
+
+#### Defined in
+
+[src/server.ts:57](https://github.com/abschill/httpuppy/blob/f04ab73/src/server.ts#L57)
+
+___
+
 ### \_process
 
 • **\_process**: [`HTTPuppyServer`](useServer.HTTPuppyServer.md)
 
 #### Defined in
 
-[src/server.ts:54](https://github.com/abschill/httpuppy/blob/eb6f9e3/src/server.ts#L54)
+[src/server.ts:55](https://github.com/abschill/httpuppy/blob/f04ab73/src/server.ts#L55)
 
 ___
 
@@ -95,7 +106,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:55](https://github.com/abschill/httpuppy/blob/eb6f9e3/src/server.ts#L55)
+[src/server.ts:56](https://github.com/abschill/httpuppy/blob/f04ab73/src/server.ts#L56)
 
 ___
 
@@ -126,7 +137,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:53](https://github.com/abschill/httpuppy/blob/eb6f9e3/src/server.ts#L53)
+[src/server.ts:54](https://github.com/abschill/httpuppy/blob/f04ab73/src/server.ts#L54)
 
 ___
 

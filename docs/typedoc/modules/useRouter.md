@@ -1,4 +1,4 @@
-[httpuppy - v0.3.15](../README.md) / [Modules](../modules.md) / useRouter
+[httpuppy - v0.3.16](../README.md) / [Modules](../modules.md) / useRouter
 
 # Module: useRouter
 
@@ -8,7 +8,7 @@
 
 ### Type Aliases
 
-- [HTTPuppyRouterCallback](useRouter.md#httpuppyroutercallback)
+- [HTTPuppyBindMethod](useRouter.md#httpuppybindmethod)
 - [HTTPuppyRouterOptions](useRouter.md#httpuppyrouteroptions)
 
 ### Functions
@@ -17,28 +17,28 @@
 
 ## Type Aliases
 
-### HTTPuppyRouterCallback
+### HTTPuppyBindMethod
 
-Ƭ **HTTPuppyRouterCallback**: (`req`: [`HTTPuppyRequest`](../interfaces/useServer.HTTPuppyRequest.md), `res`: [`HTTPuppyResponse`](../interfaces/useServer.HTTPuppyResponse.md)) => `Promise`<`any`\> \| (`req`: [`HTTPuppyRequest`](../interfaces/useServer.HTTPuppyRequest.md), `res`: [`HTTPuppyResponse`](../interfaces/useServer.HTTPuppyResponse.md)) => `any`
+Ƭ **HTTPuppyBindMethod**: (`url`: `string`, `cb`: `HTTPuppyRouterCallback`) => `any`
 
 #### Type declaration
 
-▸ (`req`, `res`): `Promise`<`any`\> \| (`req`: [`HTTPuppyRequest`](../interfaces/useServer.HTTPuppyRequest.md), `res`: [`HTTPuppyResponse`](../interfaces/useServer.HTTPuppyResponse.md)) => `any`
+▸ (`url`, `cb`): `any`
 
 ##### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `req` | [`HTTPuppyRequest`](../interfaces/useServer.HTTPuppyRequest.md) |
-| `res` | [`HTTPuppyResponse`](../interfaces/useServer.HTTPuppyResponse.md) |
+| `url` | `string` |
+| `cb` | `HTTPuppyRouterCallback` |
 
 ##### Returns
 
-`Promise`<`any`\> \| (`req`: [`HTTPuppyRequest`](../interfaces/useServer.HTTPuppyRequest.md), `res`: [`HTTPuppyResponse`](../interfaces/useServer.HTTPuppyResponse.md)) => `any`
+`any`
 
 #### Defined in
 
-[src/router.ts:16](https://github.com/abschill/httpuppy/blob/eb6f9e3/src/router.ts#L16)
+[src/router.ts:15](https://github.com/abschill/httpuppy/blob/f04ab73/src/router.ts#L15)
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 #### Defined in
 
-[src/router.ts:52](https://github.com/abschill/httpuppy/blob/eb6f9e3/src/router.ts#L52)
+[src/router.ts:46](https://github.com/abschill/httpuppy/blob/f04ab73/src/router.ts#L46)
 
 ## Functions
 
@@ -85,4 +85,4 @@ router.get('/test', (req, res) => res.end('hello'));
 
 #### Defined in
 
-[src/router.ts:123](https://github.com/abschill/httpuppy/blob/eb6f9e3/src/router.ts#L123)
+[src/router.ts:125](https://github.com/abschill/httpuppy/blob/f04ab73/src/router.ts#L125)

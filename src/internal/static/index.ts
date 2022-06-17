@@ -37,6 +37,9 @@ export function useStaticHandler(
 			server.emit('static-get', req);
 			virtualRequestHandler(req, res);
 		}
+		else {
+			return;
+		}
 	});
 }
 

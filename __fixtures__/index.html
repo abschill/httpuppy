@@ -8,9 +8,8 @@
 </head>
 <body>
 	<h1>/ post</h1>
-	<form enctype="multipart/form-data" action="/" method="POST">
+	<form>
 		<input name="text1" type="text" placeholder="Enter Text">
-		<input name="file1" type="file">
 		<button>Submit</button>
 	</form>
 
@@ -28,6 +27,22 @@
 		}
 
 		foo();
+
+		const form = document.querySelector('form');
+		form.addEventListener('submit', async (e) => {
+			e.preventDefault();
+			const { text1 = '' } = e.target;
+
+			const res = await fetch('/', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({val: text1.value } )
+			});
+			const json = await res.json();
+			console.log(json);
+		});
 	</script>
 </body>
 </html>

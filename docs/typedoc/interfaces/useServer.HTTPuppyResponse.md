@@ -1,4 +1,4 @@
-[httpuppy - v0.3.15](../README.md) / [Modules](../modules.md) / [useServer](../modules/useServer.md) / HTTPuppyResponse
+[httpuppy - v0.3.16](../README.md) / [Modules](../modules.md) / [useServer](../modules/useServer.md) / HTTPuppyResponse
 
 # Interface: HTTPuppyResponse
 
@@ -20,7 +20,9 @@
 - [destroyed](useServer.HTTPuppyResponse.md#destroyed)
 - [finished](useServer.HTTPuppyResponse.md#finished)
 - [headersSent](useServer.HTTPuppyResponse.md#headerssent)
+- [json](useServer.HTTPuppyResponse.md#json)
 - [req](useServer.HTTPuppyResponse.md#req)
+- [send](useServer.HTTPuppyResponse.md#send)
 - [sendDate](useServer.HTTPuppyResponse.md#senddate)
 - [shouldKeepAlive](useServer.HTTPuppyResponse.md#shouldkeepalive)
 - [socket](useServer.HTTPuppyResponse.md#socket)
@@ -57,7 +59,6 @@
 - [getHeaders](useServer.HTTPuppyResponse.md#getheaders)
 - [getMaxListeners](useServer.HTTPuppyResponse.md#getmaxlisteners)
 - [hasHeader](useServer.HTTPuppyResponse.md#hasheader)
-- [json](useServer.HTTPuppyResponse.md#json)
 - [listenerCount](useServer.HTTPuppyResponse.md#listenercount)
 - [listeners](useServer.HTTPuppyResponse.md#listeners)
 - [off](useServer.HTTPuppyResponse.md#off)
@@ -70,7 +71,6 @@
 - [removeAllListeners](useServer.HTTPuppyResponse.md#removealllisteners)
 - [removeHeader](useServer.HTTPuppyResponse.md#removeheader)
 - [removeListener](useServer.HTTPuppyResponse.md#removelistener)
-- [send](useServer.HTTPuppyResponse.md#send)
 - [setDefaultEncoding](useServer.HTTPuppyResponse.md#setdefaultencoding)
 - [setHeader](useServer.HTTPuppyResponse.md#setheader)
 - [setMaxListeners](useServer.HTTPuppyResponse.md#setmaxlisteners)
@@ -89,7 +89,7 @@
 
 #### Defined in
 
-[src/server.ts:58](https://github.com/abschill/httpuppy/blob/eb6f9e3/src/server.ts#L58)
+[src/server.ts:60](https://github.com/abschill/httpuppy/blob/f04ab73/src/server.ts#L60)
 
 ___
 
@@ -179,6 +179,16 @@ node_modules/@types/node/http.d.ts:340
 
 ___
 
+### json
+
+• **json**: `CallableSideEffect`<`any`\>
+
+#### Defined in
+
+[src/server.ts:62](https://github.com/abschill/httpuppy/blob/f04ab73/src/server.ts#L62)
+
+___
+
 ### req
 
 • `Readonly` **req**: `IncomingMessage`
@@ -190,6 +200,16 @@ HTTPResponse.req
 #### Defined in
 
 node_modules/@types/node/http.d.ts:327
+
+___
+
+### send
+
+• **send**: `CallableSideEffect`<`any`\>
+
+#### Defined in
+
+[src/server.ts:61](https://github.com/abschill/httpuppy/blob/f04ab73/src/server.ts#L61)
 
 ___
 
@@ -1336,26 +1356,6 @@ node_modules/@types/node/http.d.ts:413
 
 ___
 
-### json
-
-▸ **json**(`msg`): `void`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `msg` | `any` |
-
-#### Returns
-
-`void`
-
-#### Defined in
-
-[src/server.ts:60](https://github.com/abschill/httpuppy/blob/eb6f9e3/src/server.ts#L60)
-
-___
-
 ### listenerCount
 
 ▸ **listenerCount**(`eventName`): `number`
@@ -2352,26 +2352,6 @@ HTTPResponse.removeListener
 #### Defined in
 
 node_modules/@types/node/stream.d.ts:769
-
-___
-
-### send
-
-▸ **send**(`msg`): `void`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `msg` | `any` |
-
-#### Returns
-
-`void`
-
-#### Defined in
-
-[src/server.ts:59](https://github.com/abschill/httpuppy/blob/eb6f9e3/src/server.ts#L59)
 
 ___
 

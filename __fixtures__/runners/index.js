@@ -14,11 +14,15 @@ const clusteredRouterPost = useServer({
 
 
 const router0 = useRouter(clusteredRouterPost);
-router0.post('/test', (req, res) => {
+
+router0.post('/', (req, res) => {
+	res.json(req.body);
+});
+
+router0.post('/test', async (req, res) => {
 	console.log(req.body);
 	res.json({...req.body});
 });
-
 clusteredRouterPost.start();
 
 module.exports = {
