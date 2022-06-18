@@ -1,5 +1,6 @@
 import expect from 'expect';
 import { get, request } from 'http';
+import { type } from 'os';
 import {
 	it,
 	describe
@@ -13,6 +14,7 @@ import {
 	useServer
 } from '../lib';
 
+const os = type();
 const mountPath = 'examples/files';
 
 describe('basic coldinit setup', function() {
@@ -24,7 +26,7 @@ describe('basic coldinit setup', function() {
 	});
 
 	it('should properly give the vfs the given path', () => {
-		expect(server0._vfs.mountedPath).toMatch(mountPath);
+		if(os !== 'Windows_NT') expect(server0._vfs.mountedPath).toMatch(mountPath);
 	});
 
 	it('should load 3 files into the virtual filesystem', () => {
