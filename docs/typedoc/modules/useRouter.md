@@ -1,4 +1,4 @@
-[httpuppy - v0.3.16](../README.md) / [Modules](../modules.md) / useRouter
+[httpuppy - v0.3.17](../README.md) / [Modules](../modules.md) / useRouter
 
 # Module: useRouter
 
@@ -38,7 +38,7 @@
 
 #### Defined in
 
-[src/router.ts:15](https://github.com/abschill/httpuppy/blob/5b4a95d/src/router.ts#L15)
+[src/router.ts:15](https://github.com/abschill/httpuppy/blob/4904c0b/src/router.ts#L15)
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 #### Defined in
 
-[src/router.ts:46](https://github.com/abschill/httpuppy/blob/5b4a95d/src/router.ts#L46)
+[src/router.ts:46](https://github.com/abschill/httpuppy/blob/4904c0b/src/router.ts#L46)
 
 ## Functions
 
@@ -85,4 +85,4 @@ router.get('/test', (req, res) => res.end('hello'));
 
 #### Defined in
 
-[src/router.ts:125](https://github.com/abschill/httpuppy/blob/5b4a95d/src/router.ts#L125)
+[src/router.ts:125](https://github.com/abschill/httpuppy/blob/4904c0b/src/router.ts#L125)

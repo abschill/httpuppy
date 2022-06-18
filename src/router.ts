@@ -132,10 +132,10 @@ export function useRouter(
 		allowPassthrough: false
 	};
 
-	async function get(
+	function get(
 		url: string,
 		cb: HTTPuppyRouterCallback
-	): Promise<void> {
+	): void {
 		useHTTPHandle(
 			'GET',
 			wrapperUrl+url, server, cb, cb.constructor.name === 'AsyncFunction'
