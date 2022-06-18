@@ -2,17 +2,15 @@
  * @module useRouter
  * @description for adding custom routing to your server
  */
+import { HTTPuppyServer } from '.';
 import {
-	HTTPuppyServer,
 	HTTPuppyRequest,
-	HTTPuppyResponse
-} from '.';
-/**
- * @internal
- * @private
- */
-export type HTTPuppyRouterCallback = (req: HTTPuppyRequest, res: HTTPuppyResponse) => Promise<any> | ((req: HTTPuppyRequest, res: HTTPuppyResponse) => any);
-export type HTTPuppyBindMethod = (url: string, cb: HTTPuppyRouterCallback) => any
+	HTTPuppyResponse,
+	HTTPuppyBindMethod,
+	HTTPuppyRouterCallback,
+	HTTPuppyRouterOptions
+} from './internal/types';
+
 /**
  * @internal
  * @private
@@ -30,23 +28,7 @@ export interface HTTPuppyRouter {
 	options		: HTTPuppyBindMethod;
 	_options	: HTTPuppyRouterOptions;
 }
-/**
- * @internal
- * @private
- */
-export type HTTPHeader = {
-	[key: string]: string;
-};
-/**
- * @internal
- * @private
- */
-export type HTTPHeaders = HTTPHeader[];
 
-export type HTTPuppyRouterOptions = {
-	baseUrl				?: string; //glob or prefix
-	allowPassthrough	?: boolean;
-}
 
 /**
  * @internal

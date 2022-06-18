@@ -7,7 +7,7 @@ import { cpus } from 'os';
 import {
 	HTTPuppyServer,
 	HTTPuppyServerOptions
-} from '../..';
+} from '..';
 
 export default function useCluster(
 	server: HTTPuppyServer

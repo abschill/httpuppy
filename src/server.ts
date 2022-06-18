@@ -2,37 +2,34 @@
  * @module useServer
  * @description core server module
  */
+import { HTTPuppyRouter } from './router';
+import winston from 'winston';
 import {
 	createServer as useCreateSecureServer,
 	ServerOptions as HTTPSOptions
  } from 'https';
+ import {
+	createServer as useCreateServer,
+	Server as stlServer,
+} from 'http';
 import {
 	shutdown,
-	useLogger,
 	useConfig,
 	_useServer,
 	useStaticHandler,
-	defaultLogConfig,
-	LogConfig
+	LogConfig,
+	UserStaticConfig
 } from './internal';
-import {
-	createServer as useCreateServer,
-	Server as stlServer,
-	IncomingMessage as HTTPRequest,
-	ServerResponse as HTTPResponse,
-	ServerOptions as stlServerOptions
-} from 'http';
 import {
 	iExitHandler,
 	UserMiddlewareOption,
 	iHandlerType,
 	CacheSettings,
-	defaultCacheSettings,
 	VirtualFileSystem,
-	CallableSideEffect
+	DiagnosticLog,
+	HTTPuppySleep,
 } from './internal/types';
-import { HTTPuppyRouter } from './router';
-import winston from 'winston';
+
 /**
  * Typedefs for Server Runtiem
  */
@@ -50,32 +47,6 @@ import winston from 'winston';
 	_routers	: HTTPuppyRouter[];
 	_logger		: winston.Logger;
 }
-export interface HTTPuppyRequest extends HTTPRequest {
-	body		: Object;
-	_process	:	HTTPuppyServer;
-	_tmpWritten ?: string;
-	_boundCallback ?: CallableSideEffect<(any)>;
-}
-export interface HTTPuppyResponse extends HTTPResponse {
-	_process:	HTTPuppyServer;
-	send: CallableSideEffect<(any)>;
-	json: CallableSideEffect<(any)>;
-}
-export type UserStaticConfig = {
-	href 		?: string; // prefix path to access the directory on router
-	path 		?: string; // path on filesystem to reflect
-	indexType 	?: string; // file to use as the index of a directory (default: index.html)
-};
-/**
- * @type DiagnosticLog
- * @description Runtime Diagnostic log to store for debug purposes
- */
-export type DiagnosticLog = {
-	msg			: string;
-	timestamp   : string;
-}
-
-export type HTTPuppySleep = () => Promise<void>;
 
 /**
  * @interface HTTPuppyServerOptions
@@ -113,27 +84,6 @@ export interface HTTPuppyServerOptions {
 	}
 	timeout			?: number;
 	tmpDir			?: string;
-}
-
-export const defaultHTTPConfig:
-HTTPuppyServerOptions = {
-	port		  : 80,
-	clustered	  : false,
-	cache		  : defaultCacheSettings,
-	log			  : defaultLogConfig,
-	hostname	  : '127.0.0.1',
-	secure: false,
-	throwWarnings : false,
-	timeout		  : 0
-};
-
-export function fromDefaultHTTPConfig(
-	config: HTTPuppyServerOptions
-): HTTPuppyServerOptions {
-	return {
-		...defaultHTTPConfig,
-		...config
-	};
 }
 
 /**

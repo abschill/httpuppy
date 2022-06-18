@@ -1,4 +1,4 @@
-import winston, { level } from 'winston';
+import winston from 'winston';
 
 export type LogConfig = {
 	log_level  : 'silent' | 'base' | 'verbose';

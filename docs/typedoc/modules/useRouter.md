@@ -1,4 +1,4 @@
-[httpuppy - v0.3.20](../README.md) / [Modules](../modules.md) / useRouter
+[httpuppy - v0.3.21](../README.md) / [Modules](../modules.md) / useRouter
 
 # Module: useRouter
 
@@ -6,56 +6,9 @@
 
 ## Table of contents
 
-### Type Aliases
-
-- [HTTPuppyBindMethod](useRouter.md#httpuppybindmethod)
-- [HTTPuppyRouterOptions](useRouter.md#httpuppyrouteroptions)
-
 ### Functions
 
 - [useRouter](useRouter.md#userouter)
-
-## Type Aliases
-
-### HTTPuppyBindMethod
-
-Ƭ **HTTPuppyBindMethod**: (`url`: `string`, `cb`: `HTTPuppyRouterCallback`) => `any`
-
-#### Type declaration
-
-▸ (`url`, `cb`): `any`
-
-##### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `url` | `string` |
-| `cb` | `HTTPuppyRouterCallback` |
-
-##### Returns
-
-`any`
-
-#### Defined in
-
-[src/router.ts:15](https://github.com/abschill/httpuppy/blob/d0236d9/src/router.ts#L15)
-
-___
-
-### HTTPuppyRouterOptions
-
-Ƭ **HTTPuppyRouterOptions**: `Object`
-
-#### Type declaration
-
-| Name | Type |
-| :------ | :------ |
-| `allowPassthrough?` | `boolean` |
-| `baseUrl?` | `string` |
-
-#### Defined in
-
-[src/router.ts:46](https://github.com/abschill/httpuppy/blob/d0236d9/src/router.ts#L46)
 
 ## Functions
 
@@ -77,7 +30,7 @@ router.get('/test', (req, res) => res.end('hello'));
 | Name | Type |
 | :------ | :------ |
 | `server` | [`HTTPuppyServer`](../interfaces/useServer.HTTPuppyServer.md) |
-| `rOptions?` | [`HTTPuppyRouterOptions`](useRouter.md#httpuppyrouteroptions) |
+| `rOptions?` | `HTTPuppyRouterOptions` |
 
 #### Returns
 
@@ -85,4 +38,4 @@ router.get('/test', (req, res) => res.end('hello'));
 
 #### Defined in
 
-[src/router.ts:132](https://github.com/abschill/httpuppy/blob/d0236d9/src/router.ts#L132)
+[src/router.ts:114](https://github.com/abschill/httpuppy/blob/731a790/src/router.ts#L114)

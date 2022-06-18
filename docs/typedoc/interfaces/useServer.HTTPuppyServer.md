@@ -1,4 +1,4 @@
-[httpuppy - v0.3.20](../README.md) / [Modules](../modules.md) / [useServer](../modules/useServer.md) / HTTPuppyServer
+[httpuppy - v0.3.21](../README.md) / [Modules](../modules.md) / [useServer](../modules/useServer.md) / HTTPuppyServer
 
 # Interface: HTTPuppyServer
 
@@ -69,7 +69,7 @@
 
 #### Defined in
 
-[src/server.ts:51](https://github.com/abschill/httpuppy/blob/d0236d9/src/server.ts#L51)
+[src/server.ts:48](https://github.com/abschill/httpuppy/blob/731a790/src/server.ts#L48)
 
 ___
 
@@ -79,7 +79,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:50](https://github.com/abschill/httpuppy/blob/d0236d9/src/server.ts#L50)
+[src/server.ts:47](https://github.com/abschill/httpuppy/blob/731a790/src/server.ts#L47)
 
 ___
 
@@ -89,7 +89,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:49](https://github.com/abschill/httpuppy/blob/d0236d9/src/server.ts#L49)
+[src/server.ts:46](https://github.com/abschill/httpuppy/blob/731a790/src/server.ts#L46)
 
 ___
 
@@ -109,11 +109,11 @@ ___
 
 ### diagnostics
 
-• **diagnostics**: [`DiagnosticLog`](../modules/useServer.md#diagnosticlog)[]
+• **diagnostics**: `DiagnosticLog`[]
 
 #### Defined in
 
-[src/server.ts:45](https://github.com/abschill/httpuppy/blob/d0236d9/src/server.ts#L45)
+[src/server.ts:42](https://github.com/abschill/httpuppy/blob/731a790/src/server.ts#L42)
 
 ___
 
@@ -263,7 +263,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:46](https://github.com/abschill/httpuppy/blob/d0236d9/src/server.ts#L46)
+[src/server.ts:43](https://github.com/abschill/httpuppy/blob/731a790/src/server.ts#L43)
 
 ___
 
@@ -273,7 +273,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:44](https://github.com/abschill/httpuppy/blob/d0236d9/src/server.ts#L44)
+[src/server.ts:41](https://github.com/abschill/httpuppy/blob/731a790/src/server.ts#L41)
 
 ___
 
@@ -2557,21 +2557,21 @@ ___
 
 #### Defined in
 
-[src/server.ts:47](https://github.com/abschill/httpuppy/blob/d0236d9/src/server.ts#L47)
+[src/server.ts:44](https://github.com/abschill/httpuppy/blob/731a790/src/server.ts#L44)
 
 ___
 
 ### stop
 
-▸ **stop**(): `Promise`<[`HTTPuppySleep`](../modules/useServer.md#httpuppysleep)\>
+▸ **stop**(): `Promise`<`HTTPuppySleep`\>
 
 #### Returns
 
-`Promise`<[`HTTPuppySleep`](../modules/useServer.md#httpuppysleep)\>
+`Promise`<`HTTPuppySleep`\>
 
 #### Defined in
 
-[src/server.ts:48](https://github.com/abschill/httpuppy/blob/d0236d9/src/server.ts#L48)
+[src/server.ts:45](https://github.com/abschill/httpuppy/blob/731a790/src/server.ts#L45)
 
 ___
 

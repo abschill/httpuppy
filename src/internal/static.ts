@@ -1,33 +1,31 @@
-/**
- * @internal mount-fs
- * @description virtual file system mount hooks
- */
-import { VirtualWriteableFile } from '../types';
-import { mimeType } from '.';
+import { lookup } from 'mime-types';
 import { resolve } from 'path';
+import { readdirSync } from 'fs';
+import { HTTPuppyServer } from '..';
 import {
-	MountedFile,
-	VirtualFileSystem
-} from '../types';
-import {
-	HTTPuppyServer,
-	HTTPHeader,
 	HTTPuppyRequest,
 	HTTPuppyResponse,
-	UserStaticConfig,
-} from '../../';
+	MountedFile,
+	VirtualFileSystem,
+	VirtualWriteableFile,
+	HTTPHeader
+} from './types';
 import {
 	isBufferType,
 	virtualStreamReader,
 	useWriter
-} from '../writer';
-import { readdirSync } from 'fs';
+} from './writer';
 
+export type UserStaticConfig = {
+	href 		?: string; // prefix path to access the directory on router
+	path 		?: string; // path on filesystem to reflect
+	indexType 	?: string; // file to use as the index of a directory (default: index.html)
+};
 /**
  * @private
  *
  */
-function indexPaths(
+ function indexPaths(
 	file	: string,
 	_static : UserStaticConfig
 ): string[] {
@@ -114,3 +112,43 @@ export function getStaticURL(
 		return <VirtualWriteableFile>{};
 	}
 }
+
+
+/**
+ * @internal useLocalMimeType
+ * @description hook for determining content type of a virtual fpath on the system
+ * @param fpath the file path of the type to resolve
+ * @returns the tuple representing the content type header for the static file
+*/
+export function mimeType(
+	fpath: string
+): HTTPHeader {
+	if(fpath === '') return {
+		'Content-Type': 'text/plain'
+	};
+	const matchType = lookup(fpath);
+	return {
+		'Content-Type': (matchType ? matchType : 'text/plain')
+	};
+}
+export function useStaticHandler(
+	server	: HTTPuppyServer
+) {
+	server.on('request', (
+		req: HTTPuppyRequest,
+		res: HTTPuppyResponse
+	) => {
+		req._process = server;
+		res._process = server;
+		if(!server.pConfig.static || req.method !== 'GET' ||
+		(server.pConfig.static.href && (!req.url?.includes(server.pConfig.static.href)))) {
+			return;
+		}
+		if(req._process._vfs.mountedFiles.map(file => file.hrefs).flat().includes(<string>req.url)) {
+			server.emit('static-get', req);
+			return virtualRequestHandler(req, res);
+		}
+		return;
+	});
+}
+

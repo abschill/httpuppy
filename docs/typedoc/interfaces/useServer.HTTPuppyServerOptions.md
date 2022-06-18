@@ -1,4 +1,4 @@
-[httpuppy - v0.3.20](../README.md) / [Modules](../modules.md) / [useServer](../modules/useServer.md) / HTTPuppyServerOptions
+[httpuppy - v0.3.21](../README.md) / [Modules](../modules.md) / [useServer](../modules/useServer.md) / HTTPuppyServerOptions
 
 # Interface: HTTPuppyServerOptions
 
@@ -60,7 +60,7 @@
 
 #### Defined in
 
-[src/server.ts:106](https://github.com/abschill/httpuppy/blob/d0236d9/src/server.ts#L106)
+[src/server.ts:77](https://github.com/abschill/httpuppy/blob/731a790/src/server.ts#L77)
 
 ___
 
@@ -70,7 +70,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:98](https://github.com/abschill/httpuppy/blob/d0236d9/src/server.ts#L98)
+[src/server.ts:69](https://github.com/abschill/httpuppy/blob/731a790/src/server.ts#L69)
 
 ___
 
@@ -80,7 +80,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:107](https://github.com/abschill/httpuppy/blob/d0236d9/src/server.ts#L107)
+[src/server.ts:78](https://github.com/abschill/httpuppy/blob/731a790/src/server.ts#L78)
 
 ___
 
@@ -90,7 +90,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:99](https://github.com/abschill/httpuppy/blob/d0236d9/src/server.ts#L99)
+[src/server.ts:70](https://github.com/abschill/httpuppy/blob/731a790/src/server.ts#L70)
 
 ___
 
@@ -100,7 +100,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:102](https://github.com/abschill/httpuppy/blob/d0236d9/src/server.ts#L102)
+[src/server.ts:73](https://github.com/abschill/httpuppy/blob/731a790/src/server.ts#L73)
 
 ___
 
@@ -110,7 +110,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:103](https://github.com/abschill/httpuppy/blob/d0236d9/src/server.ts#L103)
+[src/server.ts:74](https://github.com/abschill/httpuppy/blob/731a790/src/server.ts#L74)
 
 ___
 
@@ -120,7 +120,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:105](https://github.com/abschill/httpuppy/blob/d0236d9/src/server.ts#L105)
+[src/server.ts:76](https://github.com/abschill/httpuppy/blob/731a790/src/server.ts#L76)
 
 ___
 
@@ -130,7 +130,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:104](https://github.com/abschill/httpuppy/blob/d0236d9/src/server.ts#L104)
+[src/server.ts:75](https://github.com/abschill/httpuppy/blob/731a790/src/server.ts#L75)
 
 ___
 
@@ -140,7 +140,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:97](https://github.com/abschill/httpuppy/blob/d0236d9/src/server.ts#L97)
+[src/server.ts:68](https://github.com/abschill/httpuppy/blob/731a790/src/server.ts#L68)
 
 ___
 
@@ -150,7 +150,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:108](https://github.com/abschill/httpuppy/blob/d0236d9/src/server.ts#L108)
+[src/server.ts:79](https://github.com/abschill/httpuppy/blob/731a790/src/server.ts#L79)
 
 ___
 
@@ -168,17 +168,17 @@ ___
 
 #### Defined in
 
-[src/server.ts:109](https://github.com/abschill/httpuppy/blob/d0236d9/src/server.ts#L109)
+[src/server.ts:80](https://github.com/abschill/httpuppy/blob/731a790/src/server.ts#L80)
 
 ___
 
 ### static
 
-• `Optional` **static**: [`UserStaticConfig`](../modules/useServer.md#userstaticconfig)
+• `Optional` **static**: `UserStaticConfig`
 
 #### Defined in
 
-[src/server.ts:100](https://github.com/abschill/httpuppy/blob/d0236d9/src/server.ts#L100)
+[src/server.ts:71](https://github.com/abschill/httpuppy/blob/731a790/src/server.ts#L71)
 
 ___
 
@@ -188,7 +188,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:101](https://github.com/abschill/httpuppy/blob/d0236d9/src/server.ts#L101)
+[src/server.ts:72](https://github.com/abschill/httpuppy/blob/731a790/src/server.ts#L72)
 
 ___
 
@@ -198,7 +198,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:114](https://github.com/abschill/httpuppy/blob/d0236d9/src/server.ts#L114)
+[src/server.ts:85](https://github.com/abschill/httpuppy/blob/731a790/src/server.ts#L85)
 
 ___
 
@@ -208,4 +208,4 @@ ___
 
 #### Defined in
 
-[src/server.ts:115](https://github.com/abschill/httpuppy/blob/d0236d9/src/server.ts#L115)
+[src/server.ts:86](https://github.com/abschill/httpuppy/blob/731a790/src/server.ts#L86)

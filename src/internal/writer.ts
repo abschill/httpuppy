@@ -5,11 +5,12 @@ import { createReadStream } from 'fs';
 import { bufferTypes } from './include';
 import { mimeType } from './static';
 import { useHeaders } from './middleware';
-import { VirtualWriteableFile } from './types';
+import { HTTPuppyServerOptions } from '..';
 import {
-	HTTPuppyResponse,
-	HTTPuppyServerOptions,
-} from '..';
+	VirtualWriteableFile,
+	HTTPuppyResponse
+} from './types';
+
 /**
  * @private
  */

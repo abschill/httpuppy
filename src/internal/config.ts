@@ -1,19 +1,45 @@
 /**
  * @internal
  */
-import {
-	DiagnosticLog,
-	HTTPuppyServerOptions,
-	HTTPuppyServer
- } from '../..';
-import { defaultLogConfig, useLogConfig } from '../logger';
-import { useColorTag } from '../include';
-import { useMountedFS } from '../static';
+import { useColorTag } from './include';
+import { useMountedFS } from './static';
 import useCluster from './cluster';
 import { isAbsolute, join } from 'path';
 import { useConfig as useQuickfig } from 'quickfig';
-import { fromDefaultHTTPConfig } from '../../server';
-import { useLogger } from '../logger';
+import { useLogger } from './logger';
+import {
+	DiagnosticLog,
+	defaultCacheSettings
+ } from './types';
+ import {
+	HTTPuppyServerOptions,
+	HTTPuppyServer
+ } from '..';
+import {
+	defaultLogConfig,
+	useLogConfig
+} from './logger';
+
+export const defaultHTTPConfig:
+HTTPuppyServerOptions = {
+	port		  : 80,
+	clustered	  : false,
+	cache		  : defaultCacheSettings,
+	log			  : defaultLogConfig,
+	hostname	  : '127.0.0.1',
+	secure: false,
+	throwWarnings : false,
+	timeout		  : 0
+};
+
+export function fromDefaultHTTPConfig(
+	config: HTTPuppyServerOptions
+): HTTPuppyServerOptions {
+	return {
+		...defaultHTTPConfig,
+		...config
+	};
+}
 /**
  *
  * @private

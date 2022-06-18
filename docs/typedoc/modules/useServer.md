@@ -1,4 +1,4 @@
-[httpuppy - v0.3.20](../README.md) / [Modules](../modules.md) / useServer
+[httpuppy - v0.3.21](../README.md) / [Modules](../modules.md) / useServer
 
 # Module: useServer
 
@@ -8,112 +8,14 @@
 
 ### Interfaces
 
-- [HTTPuppyRequest](../interfaces/useServer.HTTPuppyRequest.md)
-- [HTTPuppyResponse](../interfaces/useServer.HTTPuppyResponse.md)
 - [HTTPuppyServer](../interfaces/useServer.HTTPuppyServer.md)
 - [HTTPuppyServerOptions](../interfaces/useServer.HTTPuppyServerOptions.md)
 
-### Type Aliases
-
-- [DiagnosticLog](useServer.md#diagnosticlog)
-- [HTTPuppySleep](useServer.md#httpuppysleep)
-- [UserStaticConfig](useServer.md#userstaticconfig)
-
-### Variables
-
-- [defaultHTTPConfig](useServer.md#defaulthttpconfig)
-
 ### Functions
 
-- [fromDefaultHTTPConfig](useServer.md#fromdefaulthttpconfig)
 - [useServer](useServer.md#useserver)
 
-## Type Aliases
-
-### DiagnosticLog
-
-Ƭ **DiagnosticLog**: `Object`
-
-**`description`** Runtime Diagnostic log to store for debug purposes
-
-#### Type declaration
-
-| Name | Type |
-| :------ | :------ |
-| `msg` | `string` |
-| `timestamp` | `string` |
-
-#### Defined in
-
-[src/server.ts:73](https://github.com/abschill/httpuppy/blob/d0236d9/src/server.ts#L73)
-
-___
-
-### HTTPuppySleep
-
-Ƭ **HTTPuppySleep**: () => `Promise`<`void`\>
-
-#### Type declaration
-
-▸ (): `Promise`<`void`\>
-
-##### Returns
-
-`Promise`<`void`\>
-
-#### Defined in
-
-[src/server.ts:78](https://github.com/abschill/httpuppy/blob/d0236d9/src/server.ts#L78)
-
-___
-
-### UserStaticConfig
-
-Ƭ **UserStaticConfig**: `Object`
-
-#### Type declaration
-
-| Name | Type |
-| :------ | :------ |
-| `href?` | `string` |
-| `indexType?` | `string` |
-| `path?` | `string` |
-
-#### Defined in
-
-[src/server.ts:64](https://github.com/abschill/httpuppy/blob/d0236d9/src/server.ts#L64)
-
-## Variables
-
-### defaultHTTPConfig
-
-• `Const` **defaultHTTPConfig**: [`HTTPuppyServerOptions`](../interfaces/useServer.HTTPuppyServerOptions.md)
-
-#### Defined in
-
-[src/server.ts:118](https://github.com/abschill/httpuppy/blob/d0236d9/src/server.ts#L118)
-
 ## Functions
-
-### fromDefaultHTTPConfig
-
-▸ **fromDefaultHTTPConfig**(`config`): [`HTTPuppyServerOptions`](../interfaces/useServer.HTTPuppyServerOptions.md)
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `config` | [`HTTPuppyServerOptions`](../interfaces/useServer.HTTPuppyServerOptions.md) |
-
-#### Returns
-
-[`HTTPuppyServerOptions`](../interfaces/useServer.HTTPuppyServerOptions.md)
-
-#### Defined in
-
-[src/server.ts:130](https://github.com/abschill/httpuppy/blob/d0236d9/src/server.ts#L130)
-
-___
 
 ### useServer
 
@@ -144,4 +46,4 @@ httpuppy server
 
 #### Defined in
 
-[src/server.ts:152](https://github.com/abschill/httpuppy/blob/d0236d9/src/server.ts#L152)
+[src/server.ts:102](https://github.com/abschill/httpuppy/blob/731a790/src/server.ts#L102)
