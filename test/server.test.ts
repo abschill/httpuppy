@@ -53,7 +53,7 @@ describe('basic coldinit setup', function() {
 	server0.stop();
 });
 
-describe(`api doesn't conflict with static pages`, function() {
+describe('api doesnt conflict with static pages', function() {
 	it('successfully perform HTTP GET against api', function(done) {
 		const server1 = useServer({
 			static: {
