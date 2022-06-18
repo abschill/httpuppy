@@ -24,6 +24,9 @@ const app = useServer({
 	static: {
 		path: './path/to/content'
 	},
+	log: {
+		log_level: 'silent'
+	},
 	port: 3000,
 	onMount: () => console.log('listening on 3000')
 });

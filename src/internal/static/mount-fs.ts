@@ -48,6 +48,10 @@ export function useMountedFS(
 	server : HTTPuppyServer
 ): VirtualFileSystem {
 	if(!server.pConfig?.static?.path) {
+		server._logger.log(
+			'error',
+			`${server.pConfig.log?.log_prefix} error: fs attempted to mount with no path set in configuration`
+		);
 		throw 'error: fs attempted to mount with no path set in configuration';
 	}
 	const mountedPath = server.pConfig.static.path;
@@ -60,10 +64,6 @@ export function useMountedFS(
 			hrefs: indexPaths(file, <UserStaticConfig>server.pConfig.static)
 		};
 	});
-	if(server.pConfig.log && server.pConfig.log.logLevel === 'verbose') {
-		console.log('mounted static files:');
-		console.log(mountedFiles);
-	}
 	// filesMounted is the accessible file tree that can be used against the upcoming handlers
 	return {
 		mountedPath,

@@ -20,3 +20,4 @@ typedoc.json
 makefile
 nyc_output
 tmp
+*.log

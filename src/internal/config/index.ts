@@ -6,13 +6,14 @@ import {
 	HTTPuppyServerOptions,
 	HTTPuppyServer
  } from '../..';
-import { useLogConfig } from '../logger';
+import { defaultLogConfig, useLogConfig } from '../logger';
 import { useColorTag } from '../include';
 import { useMountedFS } from '../static';
 import useCluster from './cluster';
 import { isAbsolute, join } from 'path';
 import { useConfig as useQuickfig } from 'quickfig';
 import { fromDefaultHTTPConfig } from '../../server';
+import { useLogger } from '../logger';
 /**
  *
  * @private
@@ -98,6 +99,7 @@ export function useConfig(
 	ss.onClose = config.onClose;
 	ss.pConfig = config;
 	ss._routers = [];
+	ss._logger = useLogger(config.log ?? defaultLogConfig);
 	// if static properties exist, mount the vfs based on them
 	if(config.static) {
 		ss._vfs = useMountedFS(ss);
@@ -116,6 +118,10 @@ export function useConfig(
 				msg: JSON.stringify(e),
 				timestamp: Date.now().toLocaleString()
 			});
+			server._logger.log(
+				'error',
+				`${config.log?.log_prefix} error: ${JSON.stringify(e)}`
+			)
 			return false;
 		}
 	};

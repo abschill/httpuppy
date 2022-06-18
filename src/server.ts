@@ -11,7 +11,9 @@ import {
 	useLogger,
 	useConfig,
 	_useServer,
-	useStaticHandler
+	useStaticHandler,
+	defaultLogConfig,
+	LogConfig
 } from './internal';
 import {
 	createServer as useCreateServer,
@@ -29,11 +31,8 @@ import {
 	VirtualFileSystem,
 	CallableSideEffect
 } from './internal/types';
-import {
-	LogConfig,
-	useDefaultLogConfig,
-} from './internal/logger';
 import { HTTPuppyRouter } from './router';
+import winston from 'winston';
 /**
  * Typedefs for Server Runtiem
  */
@@ -49,6 +48,7 @@ import { HTTPuppyRouter } from './router';
 	stop		: () => Promise<HTTPuppySleep>; // shutdown handler
 	_vfs		: VirtualFileSystem; // virtual filesystem to load paths from
 	_routers	: HTTPuppyRouter[];
+	_logger		: winston.Logger;
 }
 export interface HTTPuppyRequest extends HTTPRequest {
 	body		: Object;
@@ -121,7 +121,7 @@ HTTPuppyServerOptions = {
 	port		  : 80,
 	clustered	  : false,
 	cache		  : defaultCacheSettings,
-	log			  : useDefaultLogConfig(),
+	log			  : defaultLogConfig,
 	hostname	  : '127.0.0.1',
 	secure: false,
 	throwWarnings : false,
@@ -160,7 +160,12 @@ export function useServer(
 	// internal hook for validating the init process of the server itself and setting diagnostics accordingly if anything goes wrong
 	const server = _useServer(config, <HTTPuppyServer>_server, diagnostics);
 	if(config.static) useStaticHandler(server);
-	if(config.log.logLevel !== 'silent') useLogger(config.log, server);
+
+	server._logger.log(
+		'info',
+		`${config.log.log_prefix}: logger online (child pid: ${process.pid}) (parent: ${process.ppid})`
+	);
+
 	// bind safe shutdown to the server for callability on the end user side
 	server.stop = () => shutdown(server);
 	return server;

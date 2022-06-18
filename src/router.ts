@@ -93,6 +93,10 @@ function useHTTPHandle(
 					msg: 'static paths conflict with router, will override router',
 					timestamp: Date.now().toLocaleString()
 				});
+				server._logger.log(
+					'error',
+					`${server.pConfig.log?.log_prefix} error: static paths confilict at ${req.url}, will override router`
+				);
 			}
 			useRouterSignatures(req, res);
 			server.emit(`k.router${req.method}`, _url);

@@ -5,6 +5,6 @@
 		"path": "examples/files"
 	},
 	"log": {
-		"logLevel": "base"
+		"log_level": "verbose"
 	}
 }

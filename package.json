@@ -1,6 +1,6 @@
 {
   "name": "httpuppy",
-  "version": "0.3.18",
+  "version": "0.3.19",
   "description": "speedy abstraction layer for node web servers with automatic clustering",
   "types": "lib/index.d.ts",
   "main": "lib/index.js",
@@ -48,7 +48,8 @@
   "dependencies": {
     "http-graceful-shutdown": "^3.1.7",
     "mime-types": "^2.1.35",
-    "quickfig": "^0.1.0"
+    "quickfig": "^0.1.0",
+    "winston": "^3.7.2"
   },
   "repository": {
     "type": "git",
