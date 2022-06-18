@@ -108,6 +108,29 @@ app.start();
 
 ```
 
+async support
+```js
+const { useServer, useRouter } = require('httpuppy');
+
+const app = useServer({
+	static: {
+		path: './path/to/content'
+	},
+	port: 3000,
+	onMount: () => console.log('listening on 3000')
+});
+
+const router = useRouter(app);
+
+router.post('/api/v1/thing', async(req, res) => {
+	// await something
+	console.log(req.body) // json format: { foo: 'bar' }
+	// do something with body and respond
+});
+
+app.start();
+
+```
 [Examples](/examples/)
 
 [Documentation](/docs/reference/)
