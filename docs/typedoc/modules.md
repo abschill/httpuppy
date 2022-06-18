@@ -1,6 +1,6 @@
-[httpuppy - v0.3.19](README.md) / Modules
+[httpuppy - v0.3.20](README.md) / Modules
 
-# httpuppy - v0.3.19
+# httpuppy - v0.3.20
 
 ## Table of contents
 

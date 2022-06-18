@@ -1,5 +1,5 @@
 import expect from 'expect';
-import { get } from 'http';
+import { get, request } from 'http';
 import {
 	it,
 	describe
@@ -63,13 +63,22 @@ describe('api doesnt conflict with static pages', function() {
 		});
 		const router = useRouter(server1);
 		router.get('/api/v1', (req, res) => res.send(Test_String));
+		router.get('/api/v2/get1', (req, res) => res.json( { foo: 'bar' } ) );
+		router.post('/api/v3/poster', (req, res) => res.json(req.body));
 		server1.start();
 		Promise.resolve(get('http://localhost:3001/api/v1', (res) => {
 			res.on('data', (chunk) => {
 				const str = chunk.toString();
 				expect(str).toEqual(Test_String);
 			});
-		})).then(() => {
+		})).then(null).catch(console.error);
+
+		Promise.resolve(get('http://localhost:3001/api/v2/get1', (res) => {
+			res.on('data', (chunk) => {
+				const json = JSON.parse(chunk);
+				expect(json).toBeDefined();
+			});
+		})).then((foo) => {
 			done();
 			setTimeout(()=> (server1.stop(), process.exit(0)), Log_Timeout);
 		});

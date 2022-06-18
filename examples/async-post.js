@@ -25,7 +25,3 @@ router0.post('/test', async (req, res) => {
 	res.json({...req.body});
 });
 clusteredRouterPost.start();
-
-module.exports = {
-	clusteredRouterPost
-}

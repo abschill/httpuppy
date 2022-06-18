@@ -1,4 +1,4 @@
-[httpuppy - v0.3.19](../README.md) / [Modules](../modules.md) / useServer
+[httpuppy - v0.3.20](../README.md) / [Modules](../modules.md) / useServer
 
 # Module: useServer
 
@@ -45,7 +45,7 @@
 
 #### Defined in
 
-[src/server.ts:74](https://github.com/abschill/httpuppy/blob/e5a29e6/src/server.ts#L74)
+[src/server.ts:73](https://github.com/abschill/httpuppy/blob/6913fac/src/server.ts#L73)
 
 ___
 
@@ -63,7 +63,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:79](https://github.com/abschill/httpuppy/blob/e5a29e6/src/server.ts#L79)
+[src/server.ts:78](https://github.com/abschill/httpuppy/blob/6913fac/src/server.ts#L78)
 
 ___
 
@@ -77,12 +77,11 @@ ___
 | :------ | :------ |
 | `href?` | `string` |
 | `indexType?` | `string` |
-| `mimeType?` | `string` |
 | `path?` | `string` |
 
 #### Defined in
 
-[src/server.ts:64](https://github.com/abschill/httpuppy/blob/e5a29e6/src/server.ts#L64)
+[src/server.ts:64](https://github.com/abschill/httpuppy/blob/6913fac/src/server.ts#L64)
 
 ## Variables
 
@@ -92,7 +91,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:119](https://github.com/abschill/httpuppy/blob/e5a29e6/src/server.ts#L119)
+[src/server.ts:118](https://github.com/abschill/httpuppy/blob/6913fac/src/server.ts#L118)
 
 ## Functions
 
@@ -112,7 +111,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:131](https://github.com/abschill/httpuppy/blob/e5a29e6/src/server.ts#L131)
+[src/server.ts:130](https://github.com/abschill/httpuppy/blob/6913fac/src/server.ts#L130)
 
 ___
 
@@ -145,4 +144,4 @@ httpuppy server
 
 #### Defined in
 
-[src/server.ts:153](https://github.com/abschill/httpuppy/blob/e5a29e6/src/server.ts#L153)
+[src/server.ts:152](https://github.com/abschill/httpuppy/blob/6913fac/src/server.ts#L152)

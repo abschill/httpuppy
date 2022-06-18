@@ -32,14 +32,15 @@ export function useStaticHandler(
 	) => {
 		req._process = server;
 		res._process = server;
-		if(server.pConfig.static && req.method === 'GET' &&
-		(req._process._vfs.mountedFiles.map(file => file.hrefs).flat().includes(<string>req.url))) {
-			server.emit('static-get', req);
-			virtualRequestHandler(req, res);
-		}
-		else {
+		if(!server.pConfig.static || req.method !== 'GET' ||
+		(server.pConfig.static.href && (!req.url?.includes(server.pConfig.static.href)))) {
 			return;
 		}
+		if(req._process._vfs.mountedFiles.map(file => file.hrefs).flat().includes(<string>req.url)) {
+			server.emit('static-get', req);
+			return virtualRequestHandler(req, res);
+		}
+		return;
 	});
 }
 
