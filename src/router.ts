@@ -108,6 +108,9 @@ function useHTTPHandle(
 				req.on('end', async() => await cb(req, res));
 			}
 		}
+		else {
+			return;
+		}
 	});
 }
 
@@ -124,7 +127,7 @@ function useHTTPHandle(
  */
 export function useRouter(
 	server: HTTPuppyServer, // server to attach the router to as a handler
-	rOptions ?: HTTPuppyRouterOptions // placeholder: planned feature
+	rOptions ?: HTTPuppyRouterOptions
 ): HTTPuppyRouter {
 	const wrapperUrl = rOptions?.baseUrl ?? '';
 	const opts = rOptions || {
