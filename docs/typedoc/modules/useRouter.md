@@ -38,7 +38,7 @@
 
 #### Defined in
 
-[src/router.ts:15](https://github.com/abschill/httpuppy/blob/6913fac/src/router.ts#L15)
+[src/router.ts:15](https://github.com/abschill/httpuppy/blob/9cf194a/src/router.ts#L15)
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 #### Defined in
 
-[src/router.ts:46](https://github.com/abschill/httpuppy/blob/6913fac/src/router.ts#L46)
+[src/router.ts:46](https://github.com/abschill/httpuppy/blob/9cf194a/src/router.ts#L46)
 
 ## Functions
 
@@ -85,4 +85,4 @@ router.get('/test', (req, res) => res.end('hello'));
 
 #### Defined in
 
-[src/router.ts:132](https://github.com/abschill/httpuppy/blob/6913fac/src/router.ts#L132)
+[src/router.ts:132](https://github.com/abschill/httpuppy/blob/9cf194a/src/router.ts#L132)

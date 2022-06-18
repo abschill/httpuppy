@@ -6,6 +6,7 @@
   "main": "lib/index.js",
   "bin": "bin/index.js",
   "scripts": {
+	"prepare": "husky install",
     "setup": "chmod +x ./scripts/**/*",
     "build": "tsc",
     "build:watch": "tsc -w",
@@ -38,6 +39,7 @@
     "@typescript-eslint/parser": "^5.22.0",
     "eslint": "^8.14.0",
     "expect": "^28.1.0",
+    "husky": "^8.0.1",
     "mocha": "^10.0.0",
     "nyc": "^15.1.0",
     "ts-mocha": "^10.0.0",

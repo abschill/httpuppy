@@ -69,7 +69,7 @@
 
 #### Defined in
 
-[src/server.ts:51](https://github.com/abschill/httpuppy/blob/6913fac/src/server.ts#L51)
+[src/server.ts:51](https://github.com/abschill/httpuppy/blob/9cf194a/src/server.ts#L51)
 
 ___
 
@@ -79,7 +79,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:50](https://github.com/abschill/httpuppy/blob/6913fac/src/server.ts#L50)
+[src/server.ts:50](https://github.com/abschill/httpuppy/blob/9cf194a/src/server.ts#L50)
 
 ___
 
@@ -89,7 +89,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:49](https://github.com/abschill/httpuppy/blob/6913fac/src/server.ts#L49)
+[src/server.ts:49](https://github.com/abschill/httpuppy/blob/9cf194a/src/server.ts#L49)
 
 ___
 
@@ -103,7 +103,7 @@ stlServer.connections
 
 #### Defined in
 
-node_modules/@types/node/net.d.ts:527
+node_modules/@types/node/net.d.ts:522
 
 ___
 
@@ -113,7 +113,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:45](https://github.com/abschill/httpuppy/blob/6913fac/src/server.ts#L45)
+[src/server.ts:45](https://github.com/abschill/httpuppy/blob/9cf194a/src/server.ts#L45)
 
 ___
 
@@ -188,7 +188,7 @@ stlServer.listening
 
 #### Defined in
 
-node_modules/@types/node/net.d.ts:532
+node_modules/@types/node/net.d.ts:527
 
 ___
 
@@ -210,7 +210,7 @@ stlServer.maxConnections
 
 #### Defined in
 
-node_modules/@types/node/net.d.ts:526
+node_modules/@types/node/net.d.ts:521
 
 ___
 
@@ -263,7 +263,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:46](https://github.com/abschill/httpuppy/blob/6913fac/src/server.ts#L46)
+[src/server.ts:46](https://github.com/abschill/httpuppy/blob/9cf194a/src/server.ts#L46)
 
 ___
 
@@ -273,7 +273,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:44](https://github.com/abschill/httpuppy/blob/6913fac/src/server.ts#L44)
+[src/server.ts:44](https://github.com/abschill/httpuppy/blob/9cf194a/src/server.ts#L44)
 
 ___
 
@@ -602,7 +602,7 @@ stlServer.address
 
 #### Defined in
 
-node_modules/@types/node/net.d.ts:497
+node_modules/@types/node/net.d.ts:492
 
 ___
 
@@ -635,7 +635,7 @@ stlServer.close
 
 #### Defined in
 
-node_modules/@types/node/net.d.ts:470
+node_modules/@types/node/net.d.ts:465
 
 ___
 
@@ -943,7 +943,7 @@ stlServer.getConnections
 
 #### Defined in
 
-node_modules/@types/node/net.d.ts:505
+node_modules/@types/node/net.d.ts:500
 
 ___
 
@@ -1033,7 +1033,7 @@ stlServer.listen
 
 #### Defined in
 
-node_modules/@types/node/net.d.ts:451
+node_modules/@types/node/net.d.ts:446
 
 ▸ **listen**(`port?`, `hostname?`, `listeningListener?`): [`HTTPuppyServer`](useServer.HTTPuppyServer.md)
 
@@ -1055,7 +1055,7 @@ stlServer.listen
 
 #### Defined in
 
-node_modules/@types/node/net.d.ts:452
+node_modules/@types/node/net.d.ts:447
 
 ▸ **listen**(`port?`, `backlog?`, `listeningListener?`): [`HTTPuppyServer`](useServer.HTTPuppyServer.md)
 
@@ -1077,7 +1077,7 @@ stlServer.listen
 
 #### Defined in
 
-node_modules/@types/node/net.d.ts:453
+node_modules/@types/node/net.d.ts:448
 
 ▸ **listen**(`port?`, `listeningListener?`): [`HTTPuppyServer`](useServer.HTTPuppyServer.md)
 
@@ -1098,7 +1098,7 @@ stlServer.listen
 
 #### Defined in
 
-node_modules/@types/node/net.d.ts:454
+node_modules/@types/node/net.d.ts:449
 
 ▸ **listen**(`path`, `backlog?`, `listeningListener?`): [`HTTPuppyServer`](useServer.HTTPuppyServer.md)
 
@@ -1120,7 +1120,7 @@ stlServer.listen
 
 #### Defined in
 
-node_modules/@types/node/net.d.ts:455
+node_modules/@types/node/net.d.ts:450
 
 ▸ **listen**(`path`, `listeningListener?`): [`HTTPuppyServer`](useServer.HTTPuppyServer.md)
 
@@ -1141,7 +1141,7 @@ stlServer.listen
 
 #### Defined in
 
-node_modules/@types/node/net.d.ts:456
+node_modules/@types/node/net.d.ts:451
 
 ▸ **listen**(`options`, `listeningListener?`): [`HTTPuppyServer`](useServer.HTTPuppyServer.md)
 
@@ -1162,7 +1162,7 @@ stlServer.listen
 
 #### Defined in
 
-node_modules/@types/node/net.d.ts:457
+node_modules/@types/node/net.d.ts:452
 
 ▸ **listen**(`handle`, `backlog?`, `listeningListener?`): [`HTTPuppyServer`](useServer.HTTPuppyServer.md)
 
@@ -1184,7 +1184,7 @@ stlServer.listen
 
 #### Defined in
 
-node_modules/@types/node/net.d.ts:458
+node_modules/@types/node/net.d.ts:453
 
 ▸ **listen**(`handle`, `listeningListener?`): [`HTTPuppyServer`](useServer.HTTPuppyServer.md)
 
@@ -1205,7 +1205,7 @@ stlServer.listen
 
 #### Defined in
 
-node_modules/@types/node/net.d.ts:459
+node_modules/@types/node/net.d.ts:454
 
 ___
 
@@ -2314,7 +2314,7 @@ stlServer.ref
 
 #### Defined in
 
-node_modules/@types/node/net.d.ts:511
+node_modules/@types/node/net.d.ts:506
 
 ___
 
@@ -2557,7 +2557,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:47](https://github.com/abschill/httpuppy/blob/6913fac/src/server.ts#L47)
+[src/server.ts:47](https://github.com/abschill/httpuppy/blob/9cf194a/src/server.ts#L47)
 
 ___
 
@@ -2571,7 +2571,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:48](https://github.com/abschill/httpuppy/blob/6913fac/src/server.ts#L48)
+[src/server.ts:48](https://github.com/abschill/httpuppy/blob/9cf194a/src/server.ts#L48)
 
 ___
 
@@ -2594,4 +2594,4 @@ stlServer.unref
 
 #### Defined in
 
-node_modules/@types/node/net.d.ts:517
+node_modules/@types/node/net.d.ts:512
