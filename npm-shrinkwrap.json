@@ -1,12 +1,13 @@
 {
   "name": "httpuppy",
-  "version": "0.3.20",
+  "version": "0.3.23",
   "lockfileVersion": 2,
   "requires": true,
   "packages": {
     "": {
       "name": "httpuppy",
-      "version": "0.3.20",
+      "version": "0.3.23",
+      "hasInstallScript": true,
       "license": "AGPL-3.0",
       "dependencies": {
         "http-graceful-shutdown": "^3.1.7",
@@ -28,6 +29,7 @@
         "husky": "^8.0.1",
         "mocha": "^10.0.0",
         "nyc": "^15.1.0",
+        "pinst": "^3.0.0",
         "ts-mocha": "^10.0.0",
         "typedoc": "^0.22.17",
         "typedoc-plugin-markdown": "^3.12.1",
@@ -2107,6 +2109,20 @@
       "integrity": "sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==",
       "license": "ISC"
     },
+    "node_modules/fsevents": {
+      "version": "2.3.2",
+      "resolved": "https://registry.npmjs.org/fsevents/-/fsevents-2.3.2.tgz",
+      "integrity": "sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==",
+      "dev": true,
+      "license": "MIT",
+      "optional": true,
+      "os": [
+        "darwin"
+      ],
+      "engines": {
+        "node": "^8.16.0 || ^10.6.0 || >=11.0.0"
+      }
+    },
     "node_modules/functional-red-black-tree": {
       "version": "1.0.1",
       "resolved": "https://registry.npmjs.org/functional-red-black-tree/-/functional-red-black-tree-1.0.1.tgz",
@@ -3497,6 +3513,19 @@
       },
       "funding": {
         "url": "https://github.com/sponsors/jonschlinkert"
+      }
+    },
+    "node_modules/pinst": {
+      "version": "3.0.0",
+      "resolved": "https://registry.npmjs.org/pinst/-/pinst-3.0.0.tgz",
+      "integrity": "sha512-cengSmBxtCyaJqtRSvJorIIZXMXg+lJ3sIljGmtBGUVonMnMsVJbnzl6jGN1HkOWwxNuJynCJ2hXxxqCQrFDdw==",
+      "dev": true,
+      "license": "MIT",
+      "bin": {
+        "pinst": "bin.js"
+      },
+      "engines": {
+        "node": ">=12.0.0"
       }
     },
     "node_modules/pkg-dir": {
@@ -6116,6 +6145,13 @@
       "resolved": "https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz",
       "integrity": "sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw=="
     },
+    "fsevents": {
+      "version": "2.3.2",
+      "resolved": "https://registry.npmjs.org/fsevents/-/fsevents-2.3.2.tgz",
+      "integrity": "sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==",
+      "dev": true,
+      "optional": true
+    },
     "functional-red-black-tree": {
       "version": "1.0.1",
       "resolved": "https://registry.npmjs.org/functional-red-black-tree/-/functional-red-black-tree-1.0.1.tgz",
@@ -7081,6 +7117,12 @@
       "version": "2.3.1",
       "resolved": "https://registry.npmjs.org/picomatch/-/picomatch-2.3.1.tgz",
       "integrity": "sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==",
+      "dev": true
+    },
+    "pinst": {
+      "version": "3.0.0",
+      "resolved": "https://registry.npmjs.org/pinst/-/pinst-3.0.0.tgz",
+      "integrity": "sha512-cengSmBxtCyaJqtRSvJorIIZXMXg+lJ3sIljGmtBGUVonMnMsVJbnzl6jGN1HkOWwxNuJynCJ2hXxxqCQrFDdw==",
       "dev": true
     },
     "pkg-dir": {
