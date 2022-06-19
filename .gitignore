@@ -10,3 +10,4 @@ pkg-cache
 nyc_output
 tmp
 *.log
+.DS_STORE

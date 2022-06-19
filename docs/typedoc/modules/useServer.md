@@ -45,4 +45,4 @@ httpuppy server
 
 #### Defined in
 
-[server.ts:61](https://github.com/abschill/httpuppy/blob/c41b4fd/src/server.ts#L61)
+[server.ts:61](https://github.com/abschill/httpuppy/blob/146176d/src/server.ts#L61)
