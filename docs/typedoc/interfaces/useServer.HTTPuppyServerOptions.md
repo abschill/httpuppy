@@ -1,36 +1,10 @@
-[httpuppy - v0.3.21](../README.md) / [Modules](../modules.md) / [useServer](../modules/useServer.md) / HTTPuppyServerOptions
+[httpuppy - v0.3.22](../README.md) / [Modules](../modules.md) / [useServer](../modules/useServer.md) / HTTPuppyServerOptions
 
 # Interface: HTTPuppyServerOptions
 
 [useServer](../modules/useServer.md).HTTPuppyServerOptions
 
-**`interface`** HTTPuppyServerOptions
-
-**`member`** port the port number to run the configuration with (default: 80)
-
-**`member`** coldInit whether or not to return the server or autostart it from config (default: true)
-
-**`member`** hostname hostname for the server itself (default: 127.0.0.1)
-
-**`member`** static virtual file system options, static directories basically
-
-**`member`** throwWarnings false = print warnings true = throw them as errors (default: false)
-
-**`member`** handler default handler if you would like to override the request chain and handle each url manually thru the standard library
-
-**`member`** middleware list of middleware instances to run along the server
-
-**`member`** onMount a function to run once after the server is mounted (doesn't run on return if `coldInit` is set to true)
-
-**`member`** cache options for caching, standard http but camelcase
-
-**`member`** clustered is a planned feature for version 3 to automatically cluster the server process to utilize multiple core ipc it doesnt do anything in x.2.z
-
-**`member`** secure boolean for https instead of http, requires follow up options in secureContext
-
-**`member`** secureContext options for resolving the SSL cert / key
-
-**`member`** tmpDir the dir to write files uploaded from multipart forms from request
+Config for useServer hook
 
 ## Table of contents
 
@@ -60,7 +34,7 @@
 
 #### Defined in
 
-[src/server.ts:77](https://github.com/abschill/httpuppy/blob/731a790/src/server.ts#L77)
+[server.ts:36](https://github.com/abschill/httpuppy/blob/cbfeb16/src/server.ts#L36)
 
 ___
 
@@ -70,7 +44,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:69](https://github.com/abschill/httpuppy/blob/731a790/src/server.ts#L69)
+[server.ts:28](https://github.com/abschill/httpuppy/blob/cbfeb16/src/server.ts#L28)
 
 ___
 
@@ -80,7 +54,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:78](https://github.com/abschill/httpuppy/blob/731a790/src/server.ts#L78)
+[server.ts:37](https://github.com/abschill/httpuppy/blob/cbfeb16/src/server.ts#L37)
 
 ___
 
@@ -90,7 +64,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:70](https://github.com/abschill/httpuppy/blob/731a790/src/server.ts#L70)
+[server.ts:29](https://github.com/abschill/httpuppy/blob/cbfeb16/src/server.ts#L29)
 
 ___
 
@@ -100,7 +74,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:73](https://github.com/abschill/httpuppy/blob/731a790/src/server.ts#L73)
+[server.ts:32](https://github.com/abschill/httpuppy/blob/cbfeb16/src/server.ts#L32)
 
 ___
 
@@ -110,7 +84,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:74](https://github.com/abschill/httpuppy/blob/731a790/src/server.ts#L74)
+[server.ts:33](https://github.com/abschill/httpuppy/blob/cbfeb16/src/server.ts#L33)
 
 ___
 
@@ -120,7 +94,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:76](https://github.com/abschill/httpuppy/blob/731a790/src/server.ts#L76)
+[server.ts:35](https://github.com/abschill/httpuppy/blob/cbfeb16/src/server.ts#L35)
 
 ___
 
@@ -130,7 +104,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:75](https://github.com/abschill/httpuppy/blob/731a790/src/server.ts#L75)
+[server.ts:34](https://github.com/abschill/httpuppy/blob/cbfeb16/src/server.ts#L34)
 
 ___
 
@@ -140,7 +114,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:68](https://github.com/abschill/httpuppy/blob/731a790/src/server.ts#L68)
+[server.ts:27](https://github.com/abschill/httpuppy/blob/cbfeb16/src/server.ts#L27)
 
 ___
 
@@ -150,7 +124,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:79](https://github.com/abschill/httpuppy/blob/731a790/src/server.ts#L79)
+[server.ts:38](https://github.com/abschill/httpuppy/blob/cbfeb16/src/server.ts#L38)
 
 ___
 
@@ -168,7 +142,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:80](https://github.com/abschill/httpuppy/blob/731a790/src/server.ts#L80)
+[server.ts:39](https://github.com/abschill/httpuppy/blob/cbfeb16/src/server.ts#L39)
 
 ___
 
@@ -178,7 +152,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:71](https://github.com/abschill/httpuppy/blob/731a790/src/server.ts#L71)
+[server.ts:30](https://github.com/abschill/httpuppy/blob/cbfeb16/src/server.ts#L30)
 
 ___
 
@@ -188,7 +162,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:72](https://github.com/abschill/httpuppy/blob/731a790/src/server.ts#L72)
+[server.ts:31](https://github.com/abschill/httpuppy/blob/cbfeb16/src/server.ts#L31)
 
 ___
 
@@ -198,7 +172,7 @@ ___
 
 #### Defined in
 
-[src/server.ts:85](https://github.com/abschill/httpuppy/blob/731a790/src/server.ts#L85)
+[server.ts:44](https://github.com/abschill/httpuppy/blob/cbfeb16/src/server.ts#L44)
 
 ___
 
@@ -208,4 +182,4 @@ ___
 
 #### Defined in
 
-[src/server.ts:86](https://github.com/abschill/httpuppy/blob/731a790/src/server.ts#L86)
+[server.ts:45](https://github.com/abschill/httpuppy/blob/cbfeb16/src/server.ts#L45)

@@ -8,18 +8,9 @@ import { useHeaders } from './middleware';
 import { HTTPuppyServerOptions } from '..';
 import {
 	VirtualWriteableFile,
-	HTTPuppyResponse
+	HTTPuppyResponse,
+	HTTPuppyWriterOptions
 } from './types';
-
-/**
- * @private
- */
- export type HTTPuppyWriterOptions = {
-	status		: number;
-	statusText	: string;
-	type		: string;
-	virtualFile : VirtualWriteableFile;
-}
 /**
  * @private
  */

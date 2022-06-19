@@ -4,10 +4,8 @@
  */
 import cluster from 'cluster';
 import { cpus } from 'os';
-import {
-	HTTPuppyServer,
-	HTTPuppyServerOptions
-} from '..';
+import { HTTPuppyServerOptions } from '..';
+import { HTTPuppyServer } from './types';
 
 export default function useCluster(
 	server: HTTPuppyServer

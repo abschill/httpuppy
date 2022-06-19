@@ -1,10 +1,32 @@
 export * from './middleware';
 export * from './vfs';
-import { HTTPuppyServer } from '../../server';
+import winston from 'winston';
 import {
-	IncomingMessage as HTTPRequest,
-	ServerResponse as HTTPResponse
-} from 'http';
+	stlServer,
+	iExitHandler,
+	VirtualFileSystem,
+	HTTPRequest,
+	HTTPResponse
+} from '../../internal';
+import { HTTPuppyServerOptions } from '../../server';
+import { HTTPuppyRouter } from '../../router';
+/**
+ * Typedefs for Server Runtiem
+ */
+/**
+ * @interface HTTPuppyServer
+ * @description Core Module to wrap the standard http library for node
+ */
+ export interface HTTPuppyServer extends stlServer  {
+	pConfig		: HTTPuppyServerOptions; //httpuppyserveroptions - process config
+	diagnostics	: DiagnosticLog[]; //diagnostic log
+	onClose		: iExitHandler; // onclose handler
+	start		: () => boolean; //start process for server (wrapper around .listen())
+	stop		: () => Promise<HTTPuppySleep>; // shutdown handler
+	_vfs		: VirtualFileSystem; // virtual filesystem to load paths from
+	_routers	: HTTPuppyRouter[];
+	_logger		: winston.Logger;
+}
 
 /**
  * @internal

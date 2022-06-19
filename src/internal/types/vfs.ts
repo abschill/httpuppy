@@ -17,6 +17,7 @@ export type VirtualWriteableFile = {
 	fileName	: string;
 	hrefs		: string[];
 }
+
 /**
  * @private
  */
@@ -27,6 +28,7 @@ export type MountedFile = {
 	content		: any;
 	hrefs		: string[];
 }
+
 /**
  * @private
  */
@@ -34,7 +36,6 @@ export type VirtualFileSystem = {
 	mountedPath	 : string;
 	mountedFiles : MountedFile[];
 }
-
 
 /**
  * @private

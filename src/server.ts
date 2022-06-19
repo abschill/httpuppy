@@ -2,88 +2,47 @@
  * @module useServer
  * @description core server module
  */
-import { HTTPuppyRouter } from './router';
-import winston from 'winston';
 import {
-	createServer as useCreateSecureServer,
-	ServerOptions as HTTPSOptions
- } from 'https';
- import {
-	createServer as useCreateServer,
-	Server as stlServer,
-} from 'http';
-import {
+	useCreateServer,
+	useCreateSecureServer,
+	HTTPSOptions,
 	shutdown,
 	useConfig,
 	_useServer,
 	useStaticHandler,
 	LogConfig,
-	UserStaticConfig
-} from './internal';
-import {
+	UserStaticConfig,
 	iExitHandler,
 	UserMiddlewareOption,
 	iHandlerType,
 	CacheSettings,
-	VirtualFileSystem,
+	HTTPuppyServer,
 	DiagnosticLog,
-	HTTPuppySleep,
-} from './internal/types';
+} from './internal';
 
 /**
- * Typedefs for Server Runtiem
- */
-/**
- * @interface HTTPuppyServer
- * @description Core Module to wrap the standard http library for node
- */
- export interface HTTPuppyServer extends stlServer  {
-	pConfig		: HTTPuppyServerOptions; //httpuppyserveroptions - process config
-	diagnostics	: DiagnosticLog[]; //diagnostic log
-	onClose		: iExitHandler; // onclose handler
-	start		: () => boolean; //start process for server (wrapper around .listen())
-	stop		: () => Promise<HTTPuppySleep>; // shutdown handler
-	_vfs		: VirtualFileSystem; // virtual filesystem to load paths from
-	_routers	: HTTPuppyRouter[];
-	_logger		: winston.Logger;
-}
-
-/**
- * @interface HTTPuppyServerOptions
- * @member port the port number to run the configuration with (default: 80)
- * @member coldInit whether or not to return the server or autostart it from config (default: true)
- * @member hostname hostname for the server itself (default: 127.0.0.1)
- * @member static virtual file system options, static directories basically
- * @member throwWarnings false = print warnings true = throw them as errors (default: false)
- * @member handler default handler if you would like to override the request chain and handle each url manually thru the standard library
- * @member middleware list of middleware instances to run along the server
- * @member onMount a function to run once after the server is mounted (doesn't run on return if `coldInit` is set to true)
- * @member cache options for caching, standard http but camelcase
- * @member clustered is a planned feature for version 3 to automatically cluster the server process to utilize multiple core ipc it doesnt do anything in x.2.z
- * @member secure boolean for https instead of http, requires follow up options in secureContext
- * @member secureContext options for resolving the SSL cert / key
- * @member tmpDir the dir to write files uploaded from multipart forms from request
+ * Config for useServer hook
  */
 export interface HTTPuppyServerOptions {
-    port 			?: number;
-	clustered		?: boolean;
-    hostname 		?: string;
-	static 			?: UserStaticConfig;
-    throwWarnings 	?: boolean;
+    port 			?: number; //the port number to run the configuration with (default: 80)
+	clustered		?: boolean; //automatically cluster the server process to utilize multiple core ipc it doesnt do anything in x.2.z
+    hostname 		?: string; //hostname for the server itself (default: 127.0.0.1)
+	static 			?: UserStaticConfig; //virtual file system options
+    throwWarnings 	?: boolean; //false = print warnings true = throw them as errors (default: false)
 	log				?: LogConfig;
-	middleware 		?: UserMiddlewareOption[];
-	onMount 		?: iHandlerType;
+	middleware 		?: UserMiddlewareOption[]; //list of middleware instances to run along the server
+	onMount 		?: iHandlerType; // a function to run once after the server is mounted (doesn't run on return if `coldInit` is set to true)
 	onClose			?: iExitHandler;
-	cache 			?: CacheSettings;
-	handler			?: any;
-	secure			?: boolean;
-	secureContext	?: {
+	cache 			?: CacheSettings; //options for caching, standard http but camelcase
+	handler			?: any; //default handler if you would like to override the request chain and handle each url manually thru the standard library
+	secure			?: boolean; //https instead of http, requires follow up options in secureContext
+	secureContext	?: { //options for resolving the SSL cert / key
 		key			: string;
 		cert		: string;
 		dhparam 	?: string;
 	}
 	timeout			?: number;
-	tmpDir			?: string;
+	tmpDir			?: string; //the dir to write files uploaded from multipart forms from request
 }
 
 /**
@@ -110,10 +69,7 @@ export function useServer(
 	const server = _useServer(config, <HTTPuppyServer>_server, diagnostics);
 	if(config.static) useStaticHandler(server);
 
-	server._logger.log(
-		'info',
-		`${config.log.log_prefix}: logger online (child pid: ${process.pid}) (parent: ${process.ppid})`
-	);
+	server._logger.info(`logger online (child pid: ${process.pid}) (parent: ${process.ppid})`);
 
 	// bind safe shutdown to the server for callability on the end user side
 	server.stop = () => shutdown(server);

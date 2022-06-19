@@ -6,16 +6,14 @@ import { useMountedFS } from './static';
 import useCluster from './cluster';
 import { isAbsolute, join } from 'path';
 import { useConfig as useQuickfig } from 'quickfig';
-import { useLogger } from './logger';
+import { HTTPuppyServerOptions } from '..';
 import {
 	DiagnosticLog,
-	defaultCacheSettings
- } from './types';
- import {
-	HTTPuppyServerOptions,
+	defaultCacheSettings,
 	HTTPuppyServer
- } from '..';
+ } from './types';
 import {
+	useLogger,
 	defaultLogConfig,
 	useLogConfig
 } from './logger';
@@ -140,14 +138,8 @@ export function useConfig(
 			return true;
 		}
 		catch(e) {
-			diagnostics.push({
-				msg: JSON.stringify(e),
-				timestamp: Date.now().toLocaleString()
-			});
-			server._logger.log(
-				'error',
-				`${config.log?.log_prefix} error: ${JSON.stringify(e)}`
-			)
+			diagnostics.push({ msg: JSON.stringify(e), timestamp: Date.now().toLocaleString() });
+			server._logger.error(`${JSON.stringify(e)}`);
 			return false;
 		}
 	};

@@ -4,8 +4,18 @@
 export * from './_constants';
 export * from './etag';
 import GracefulShutdown from 'http-graceful-shutdown';
-import { HTTPuppyServer } from '../..';
+import { HTTPuppyServer } from '../types';
 import { HTTPuppySleep } from '../types';
+export {
+	createServer as useCreateSecureServer,
+	ServerOptions as HTTPSOptions
+ } from 'https';
+export {
+	createServer as useCreateServer,
+	Server as stlServer,
+	IncomingMessage as HTTPRequest,
+	ServerResponse as HTTPResponse
+} from 'http';
 /**
  *
  * @param s http server to shut down

@@ -30,18 +30,14 @@ export function useMiddleware(
 	options : HTTPuppyWriterOptions,
 	config	: HTTPuppyServerOptions
 ): HTTPHeaders {
-	const applyHeaders: HTTPHeaders = [
-		{
+	const applyHeaders: HTTPHeaders = [{
 			'Content-Type':
 			options.type ?? 'text/plain'
-		}
-	];
+	}];
 
 	// set weak etag generation if applicable
 	if(config.cache) {
-		applyHeaders.push({
-			'ETag': etag(options.virtualFile.fileName, { weak: true })
-		});
+		applyHeaders.push({ 'ETag': etag(options.virtualFile.fileName, { weak: true }) });
 	}
 	return applyHeaders;
 }
@@ -51,10 +47,23 @@ export function useMiddleware(
   * @param res internal response to be written to
   * @returns nothing
   */
-  export function useStatus(
+export function useStatus(
 	res	: HTTPuppyResponse,
 	status : number,
 	msg	: string
- ): void {
+): void {
 	res.writeHead(status, msg);
- }
+}
+
+ /**
+ *
+ * @private
+ * @returns nothing
+ */
+export function use404(
+	res	: HTTPuppyResponse
+): void {
+	res.writeHead(404, '404: page not found');
+	res.end('404: page not found');
+	return;
+}

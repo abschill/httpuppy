@@ -1,5 +1,5 @@
 import winston from 'winston';
-
+import { useColorTag } from './include';
 export type LogConfig = {
 	log_level  : 'silent' | 'base' | 'verbose';
 	log_prefix : 'httpuppy';
@@ -25,12 +25,16 @@ export function useLogger(
 ): winston.Logger {
 	const conf = useLogConfig(config);
 	const transports = config.log_level === 'verbose' ? [
-		new winston.transports.Console,
-		new winston.transports.File({ filename: 'httpuppy-err.log', level: 'error' }),
-		new winston.transports.File({ filename: 'httpuppy.log' }),
+		new winston.transports.Console({format: winston.format.combine(winston.format.label({label: config.log_prefix}), winston.format.timestamp(), winston.format.printf(({
+			level, message, label, timestamp
+		}) => {
+			return `[${useColorTag('blue', label)}] ${level}: ${message} @ ${useColorTag('green', timestamp)}`;
+		}) ),}),
+		new winston.transports.File({ filename: 'httpuppy-err.log', level: 'error', format: winston.format.colorize() }),
+		new winston.transports.File({ filename: 'httpuppy.log', format: winston.format.colorize() }),
 	] : [
-		new winston.transports.File({ filename: 'httpuppy-err.log', level: 'error' }),
-		new winston.transports.File({ filename: 'httpuppy.log' }),
+		new winston.transports.File({ filename: 'httpuppy-err.log', level: 'error', format: winston.format.colorize() }),
+		new winston.transports.File({ filename: 'httpuppy.log', format: winston.format.colorize() }),
 	];
 	const logger = winston.createLogger({
 		level: 'info',

@@ -1,14 +1,14 @@
 import { lookup } from 'mime-types';
 import { resolve } from 'path';
 import { readdirSync } from 'fs';
-import { HTTPuppyServer } from '..';
 import {
 	HTTPuppyRequest,
 	HTTPuppyResponse,
 	MountedFile,
 	VirtualFileSystem,
 	VirtualWriteableFile,
-	HTTPHeader
+	HTTPHeader,
+	HTTPuppyServer
 } from './types';
 import {
 	isBufferType,
@@ -46,10 +46,7 @@ export function useMountedFS(
 	server : HTTPuppyServer
 ): VirtualFileSystem {
 	if(!server.pConfig?.static?.path) {
-		server._logger.log(
-			'error',
-			`${server.pConfig.log?.log_prefix} error: fs attempted to mount with no path set in configuration`
-		);
+		server._logger.error('fs attempted to mount with no path set in configuration');
 		throw 'error: fs attempted to mount with no path set in configuration';
 	}
 	const mountedPath = server.pConfig.static.path;

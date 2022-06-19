@@ -2,7 +2,7 @@
  * @module useRouter
  * @description for adding custom routing to your server
  */
-import { HTTPuppyServer } from '.';
+import { HTTPuppyServer } from './internal/types';
 import {
 	HTTPuppyRequest,
 	HTTPuppyResponse,
@@ -29,7 +29,6 @@ export interface HTTPuppyRouter {
 	_options	: HTTPuppyRouterOptions;
 }
 
-
 /**
  * @internal
  * @private
@@ -42,10 +41,8 @@ function useRouterSignatures(
 	res.json = (content: object) => {
 		if(!res.writable) {
 			res.writeHead(500, 'cannot write to json stream');
-			res._process.diagnostics.push({
-				msg: `error writing to json stream at ${res.req.url}`,
-				timestamp: Date.now().toLocaleString()
-			});
+			res._process.diagnostics.push({ msg: `error writing to json stream at ${res.req.url}`, timestamp: Date.now().toLocaleString() });
+			res._process._logger.error(`serror writing to json stream at ${res.req.url}`);
 			res.end();
 		}
 		// content type is json if they are calling this method so overwrite if preset
@@ -75,10 +72,7 @@ function useHTTPHandle(
 					msg: 'static paths conflict with router, will override router',
 					timestamp: Date.now().toLocaleString()
 				});
-				server._logger.log(
-					'error',
-					`${server.pConfig.log?.log_prefix} error: static paths confilict at ${req.url}, will override router`
-				);
+				server._logger.error(`static paths confilict at ${req.url}, will override router`);
 			}
 			useRouterSignatures(req, res);
 			server.emit(`k.router${req.method}`, _url);
@@ -125,30 +119,21 @@ export function useRouter(
 		url: string,
 		cb: HTTPuppyRouterCallback
 	): void {
-		useHTTPHandle(
-			'GET',
-			wrapperUrl+url, server, cb, cb.constructor.name === 'AsyncFunction'
-		);
+		useHTTPHandle('GET', wrapperUrl+url, server, cb, cb.constructor.name === 'AsyncFunction');
 	}
 
 	function post(
 		url: string,
 		cb: HTTPuppyRouterCallback
 	): void {
-		useHTTPHandle(
-			'POST',
-			wrapperUrl+url, server, cb, cb.constructor.name === 'AsyncFunction'
-		);
+		useHTTPHandle('POST', wrapperUrl+url, server, cb, cb.constructor.name === 'AsyncFunction');
 	}
 
 	function head(
 		url: string,
 		cb: HTTPuppyRouterCallback
 	): void {
-		useHTTPHandle(
-			'HEAD',
-			wrapperUrl+url, server, cb, cb.constructor.name === 'AsyncFunction'
-		);
+		useHTTPHandle('HEAD', wrapperUrl+url, server, cb, cb.constructor.name === 'AsyncFunction');
 	}
 
 	function put(
@@ -156,19 +141,14 @@ export function useRouter(
 		cb: HTTPuppyRouterCallback
 	): void {
 		useHTTPHandle(
-			'PUT',
-			wrapperUrl+url, server, cb, cb.constructor.name === 'AsyncFunction'
-		);
+		'PUT', wrapperUrl+url, server, cb, cb.constructor.name === 'AsyncFunction');
 	}
 
 	function patch(
 		url: string,
 		cb: HTTPuppyRouterCallback
 	): void {
-		useHTTPHandle(
-			'PATCH',
-			wrapperUrl+url, server, cb, cb.constructor.name === 'AsyncFunction'
-		);
+		useHTTPHandle('PATCH', wrapperUrl+url, server, cb, cb.constructor.name === 'AsyncFunction');
 	}
 
 	function trace(
@@ -176,40 +156,30 @@ export function useRouter(
 		cb: HTTPuppyRouterCallback
 	): void {
 		useHTTPHandle(
-			'TRACE',
-			wrapperUrl+url, server, cb, cb.constructor.name === 'AsyncFunction'
-		);
+			'TRACE', wrapperUrl+url, server, cb, cb.constructor.name === 'AsyncFunction');
 	}
 
 	function connect(
 		url: string,
 		cb: HTTPuppyRouterCallback
 	): void {
-		useHTTPHandle(
-			'CONNECT',
-			wrapperUrl+url, server, cb, cb.constructor.name === 'AsyncFunction'
-		);
+		useHTTPHandle('CONNECT', wrapperUrl+url, server, cb, cb.constructor.name === 'AsyncFunction');
 	}
 
 	function options(
 		url: string,
 		cb: HTTPuppyRouterCallback
 	): void {
-		useHTTPHandle(
-			'OPTIONS',
-			wrapperUrl+url, server, cb, cb.constructor.name === 'AsyncFunction'
-		);
+		useHTTPHandle('OPTIONS', wrapperUrl+url, server, cb, cb.constructor.name === 'AsyncFunction');
 	}
 
 	function _delete(
 		url: string,
 		cb: HTTPuppyRouterCallback
 	): void {
-		useHTTPHandle(
-			'DELETE',
-			wrapperUrl+url, server, cb, cb.constructor.name === 'AsyncFunction'
-		);
+		useHTTPHandle('DELETE', wrapperUrl+url, server, cb, cb.constructor.name === 'AsyncFunction');
 	}
+
 	const router = <HTTPuppyRouter>{
 		url: opts.baseUrl,
 		get,
