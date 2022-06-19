@@ -6,7 +6,7 @@
   "main": "lib/index.js",
   "bin": "bin/index.js",
   "scripts": {
-	"prepare": "husky install",
+    "prepare": "husky install",
     "setup": "chmod +x ./scripts/**/*",
     "build": "tsc",
     "build:watch": "tsc -w",
@@ -15,7 +15,10 @@
     "test": "ts-mocha test/**/*.test.ts",
     "test:watch": "ts-mocha -w test/**/*.test.ts",
     "run-ex": "nodemon examples/static-demo.js",
-    "test:coverage": "rm -rf nyc-output && nyc yarn test"
+    "test:coverage": "rm -rf nyc-output && nyc yarn test",
+	"postinstall": "husky install",
+	"prepack": "pinst --disable",
+	"postpack": "pinst --enable"
   },
   "keywords": [
     "http",
@@ -42,6 +45,7 @@
     "husky": "^8.0.1",
     "mocha": "^10.0.0",
     "nyc": "^15.1.0",
+    "pinst": "^3.0.0",
     "ts-mocha": "^10.0.0",
     "typedoc": "^0.22.17",
     "typedoc-plugin-markdown": "^3.12.1",
