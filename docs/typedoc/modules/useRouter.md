@@ -32,7 +32,7 @@
 
 #### Defined in
 
-[router.ts:98](https://github.com/abschill/httpuppy/blob/a35a896/src/router.ts#L98)
+[router.ts:98](https://github.com/abschill/httpuppy/blob/6c8a84d/src/router.ts#L98)
 
 ___
 
@@ -62,4 +62,4 @@ router.get('/test', (req, res) => res.end('hello'));
 
 #### Defined in
 
-[router.ts:138](https://github.com/abschill/httpuppy/blob/a35a896/src/router.ts#L138)
+[router.ts:138](https://github.com/abschill/httpuppy/blob/6c8a84d/src/router.ts#L138)
