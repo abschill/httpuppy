@@ -1,4 +1,4 @@
-[httpuppy - v0.3.23](../README.md) / [Modules](../modules.md) / useServer
+[httpuppy - v0.3.24](../README.md) / [Modules](../modules.md) / useServer
 
 # Module: useServer
 
@@ -45,4 +45,4 @@ httpuppy server
 
 #### Defined in
 
-[server.ts:61](https://github.com/abschill/httpuppy/blob/146176d/src/server.ts#L61)
+[server.ts:62](https://github.com/abschill/httpuppy/blob/a35a896/src/server.ts#L62)

@@ -1,17 +1,17 @@
 import winston from 'winston';
 import { useColorTag } from './include';
 export type LogConfig = {
-	log_level  : 'silent' | 'base' | 'verbose';
-	log_prefix : 'httpuppy';
-	error_file : string;
-	event_file : string;
+	log_level  ?: 'silent' | 'base' | 'verbose';
+	log_prefix ?: 'httpuppy';
+	error_file ?: string;
+	event_file ?: string;
 }
 
 export const defaultLogConfig: LogConfig = {
 	log_level: 'base',
 	log_prefix: 'httpuppy',
-	error_file: 'error.log',
-	event_file: 'combined.log'
+	error_file: 'log/httpuppy-err.log',
+	event_file: 'log/httpuppy.log'
 };
 
 export function useLogConfig(
@@ -30,11 +30,11 @@ export function useLogger(
 		}) => {
 			return `[${useColorTag('blue', label)}] ${level}: ${message} @ ${useColorTag('green', timestamp)}`;
 		}) ),}),
-		new winston.transports.File({ filename: 'httpuppy-err.log', level: 'error', format: winston.format.colorize() }),
-		new winston.transports.File({ filename: 'httpuppy.log', format: winston.format.colorize() }),
+		new winston.transports.File({ filename: config.error_file, level: 'error', format: winston.format.colorize() }),
+		new winston.transports.File({ filename: config.event_file, format: winston.format.colorize() }),
 	] : [
-		new winston.transports.File({ filename: 'httpuppy-err.log', level: 'error', format: winston.format.colorize() }),
-		new winston.transports.File({ filename: 'httpuppy.log', format: winston.format.colorize() }),
+		new winston.transports.File({ filename: config.error_file, level: 'error', format: winston.format.colorize() }),
+		new winston.transports.File({ filename: config.event_file, format: winston.format.colorize() }),
 	];
 	const logger = winston.createLogger({
 		level: 'info',

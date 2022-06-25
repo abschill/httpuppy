@@ -1,4 +1,4 @@
-[httpuppy - v0.3.23](../README.md) / [Modules](../modules.md) / useRouter
+[httpuppy - v0.3.24](../README.md) / [Modules](../modules.md) / useRouter
 
 # Module: useRouter
 
@@ -8,9 +8,33 @@
 
 ### Functions
 
+- [usePassthrough](useRouter.md#usepassthrough)
 - [useRouter](useRouter.md#userouter)
 
 ## Functions
+
+### usePassthrough
+
+▸ **usePassthrough**(`_url`, `server`, `cb`, `async`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `_url` | `string` |
+| `server` | `HTTPuppyServer` |
+| `cb` | `HTTPuppyRouterCallback` |
+| `async` | `boolean` |
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[router.ts:98](https://github.com/abschill/httpuppy/blob/a35a896/src/router.ts#L98)
+
+___
 
 ### useRouter
 
@@ -38,4 +62,4 @@ router.get('/test', (req, res) => res.end('hello'));
 
 #### Defined in
 
-[router.ts:108](https://github.com/abschill/httpuppy/blob/146176d/src/router.ts#L108)
+[router.ts:138](https://github.com/abschill/httpuppy/blob/a35a896/src/router.ts#L138)

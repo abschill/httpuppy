@@ -67,12 +67,13 @@ function useHTTPHandle(
 		res: HTTPuppyResponse
 	) => {
 		if(req.method === name && req.url === _url) {
-			if(req._process._vfs.mountedFiles.filter(f => f.hrefs.includes(_url))) {
+			const overrides = req._process._vfs.mountedFiles.filter(f => f.hrefs.includes(_url));
+			if(overrides.length > 0) {
 				req._process.diagnostics.push({
 					msg: 'static paths conflict with router, will override router',
 					timestamp: Date.now().toLocaleString()
 				});
-				server._logger.error(`static paths confilict at ${req.url}, will override router`);
+				server._logger.error(`static paths confilict at ${req.url}, will override router\n${overrides.toString()}`);
 			}
 			useRouterSignatures(req, res);
 			server.emit(`k.router${req.method}`, _url);
@@ -91,6 +92,35 @@ function useHTTPHandle(
 		else {
 			return;
 		}
+	});
+}
+
+export function usePassthrough(
+	_url: string,
+	server: HTTPuppyServer,
+	cb: HTTPuppyRouterCallback,
+	async: boolean
+) {
+	if(async) {
+		server.on('request', async (
+			req: HTTPuppyRequest,
+			res: HTTPuppyResponse
+		) => {
+			if(_url === req.url)
+				await cb(req, res);
+
+			return;
+		});
+		return;
+	}
+	server.on('request', (
+		req: HTTPuppyRequest,
+		res: HTTPuppyResponse
+	) => {
+		if(_url === req.url)
+			cb(req, res);
+
+		return;
 	});
 }
 
@@ -180,6 +210,13 @@ export function useRouter(
 		useHTTPHandle('DELETE', wrapperUrl+url, server, cb, cb.constructor.name === 'AsyncFunction');
 	}
 
+	function use(
+		url: string,
+		cb: HTTPuppyRouterCallback
+	): void {
+		usePassthrough(wrapperUrl+url, server, cb, cb.constructor.name === 'AsyncFunction');
+	}
+
 	const router = <HTTPuppyRouter>{
 		url: opts.baseUrl,
 		get,
@@ -191,6 +228,7 @@ export function useRouter(
 		trace,
 		connect,
 		options,
+		use,
 		_options: opts
 	};
 	server._routers.push(router);

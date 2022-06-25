@@ -25,7 +25,7 @@ HTTPuppyServerOptions = {
 	cache		  : defaultCacheSettings,
 	log			  : defaultLogConfig,
 	hostname	  : '127.0.0.1',
-	secure: false,
+	secure		  : false,
 	throwWarnings : false,
 	timeout		  : 0
 };
@@ -74,10 +74,17 @@ export async function useCLIConfigFinder() {
  * @returns cleaned user config
  */
 export function useConfig(
-	conf		: HTTPuppyServerOptions,
-	diagnostics : DiagnosticLog[]
+	conf		?: HTTPuppyServerOptions,
+	diagnostics ?: DiagnosticLog[]
 ): Required<HTTPuppyServerOptions> {
-    const config = {...conf};
+	if(!conf) {
+		return <Required<HTTPuppyServerOptions>>defaultHTTPConfig;
+	}
+	if(!diagnostics) {
+		diagnostics = [];
+	}
+
+    const config = {...defaultHTTPConfig, ...conf};
     if(!config.port) config.port = 80; //default http port
 	config.timeout = conf.timeout || 0;
 	config.log = useLogConfig(config.log);

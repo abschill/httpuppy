@@ -1,6 +1,6 @@
 {
   "name": "httpuppy",
-  "version": "0.3.23",
+  "version": "0.3.24",
   "description": "speedy abstraction layer for node web servers with automatic clustering",
   "types": "lib/index.d.ts",
   "main": "lib/index.js",
@@ -14,7 +14,7 @@
     "dev": "make -j 2 dev-ts dev-example",
     "test": "ts-mocha test/**/*.test.ts",
     "test:watch": "ts-mocha -w test/**/*.test.ts",
-    "run-ex": "nodemon examples/static-demo.js",
+    "run-static": "nodemon examples/static-demo.js",
     "test:coverage": "rm -rf nyc-output && nyc yarn test",
     "postinstall": "husky install",
     "prepack": "pinst --disable",
@@ -27,7 +27,8 @@
     "web-server",
     "server",
     "backend",
-    "proxy"
+    "proxy",
+	"dev-server"
   ],
   "files": [
     "lib/**/*"

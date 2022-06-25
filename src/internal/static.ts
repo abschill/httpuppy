@@ -19,8 +19,8 @@ import {
 export type UserStaticConfig = {
 	href 		?: string; // prefix path to access the directory on router
 	path 		?: string; // path on filesystem to reflect
-	indexType 	?: string; // file to use as the index of a directory (default: index.html)
 };
+
 /**
  * @private
  *
@@ -37,6 +37,22 @@ export type UserStaticConfig = {
 	}
 	return pathOptions;
 }
+/**
+ * @private
+ *
+ */
+export function asVirtualFile(
+	file: string,
+	symLink: string,
+	staticConfig: UserStaticConfig
+): MountedFile {
+	return <MountedFile> {
+		fileName: file,
+		symLink,
+		contentType: <HTTPHeader>mimeType(symLink),
+		hrefs: indexPaths(file, staticConfig)
+	};
+}
 
 /**
  * @private
@@ -52,16 +68,12 @@ export function useMountedFS(
 	const mountedPath = server.pConfig.static.path;
 	const mountedFiles = readdirSync(mountedPath).map(file => {
 		const symLink = resolve(mountedPath, file);
-		return <MountedFile> {
-			fileName: file,
-			symLink,
-			contentType: <HTTPHeader>mimeType(symLink),
-			hrefs: indexPaths(file, <UserStaticConfig>server.pConfig.static)
-		};
+		return asVirtualFile(file, symLink, <UserStaticConfig>server.pConfig.static);
 	});
 	// filesMounted is the accessible file tree that can be used against the upcoming handlers
 	return {
 		mountedPath,
+		mountedHref: server.pConfig.static.href ?? '/',
 		mountedFiles
 	};
 }
@@ -74,7 +86,7 @@ export function virtualRequestHandler(
 	req		: HTTPuppyRequest,
 	res		: HTTPuppyResponse
 ): void {
-	const virtualFile = getStaticURL(req, res);
+	const virtualFile = getStaticURL(req);
 	if(isBufferType(<string>req.url)) {
 		return virtualStreamReader(virtualFile, res);
 	}
@@ -93,8 +105,7 @@ export function virtualRequestHandler(
  *
  */
 export function getStaticURL(
-	req		: HTTPuppyRequest,
-	res		: HTTPuppyResponse
+	req		: HTTPuppyRequest
 ): VirtualWriteableFile {
 	const iFS = req._process._vfs;
 	// filter the mounted filesystem based on the request url

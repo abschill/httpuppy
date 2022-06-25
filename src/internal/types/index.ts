@@ -66,11 +66,23 @@ export interface HTTPuppyResponse extends HTTPResponse {
 	_process:	HTTPuppyServer;
 	send: CallableSideEffect<(any)>;
 	json: CallableSideEffect<(any)>;
+	use ?: CallableSideEffect<(any)>; // only present when `allowPassthrough` is enabled
 }
 
 /**
  * @internal
  * @private
  */
- export type HTTPuppyRouterCallback = (req: HTTPuppyRequest, res: HTTPuppyResponse) => Promise<any> | ((req: HTTPuppyRequest, res: HTTPuppyResponse) => any);
- export type HTTPuppyBindMethod = (url: string, cb: HTTPuppyRouterCallback) => any
+export type HTTPuppyRouterCallback = (req: HTTPuppyRequest, res: HTTPuppyResponse) => Promise<any> | ((req: HTTPuppyRequest, res: HTTPuppyResponse) => any);
+
+/**
+ * @internal
+ * @private
+ */
+export type HTTPuppyRouterMiddleware = (req: HTTPuppyRequest, res: HTTPuppyResponse, next: () => any) => Promise<any> | ((req: HTTPuppyRequest, res: HTTPuppyResponse, next: () => any) => any);
+
+/**
+ * @internal
+ * @private
+ */
+export type HTTPuppyBindMethod = (url: string, cb: HTTPuppyRouterCallback) => any

@@ -42,6 +42,7 @@ export interface HTTPuppyServerOptions {
 		dhparam 	?: string;
 	}
 	timeout			?: number;
+	resTimeout		?: number; // timer to measure for when to determine a request is unresolveable and should display a 404 - default 10s
 	tmpDir			?: string; //the dir to write files uploaded from multipart forms from request
 }
 

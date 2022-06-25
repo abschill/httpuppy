@@ -34,6 +34,7 @@ export type MountedFile = {
  */
 export type VirtualFileSystem = {
 	mountedPath	 : string;
+	mountedHref	 : string;
 	mountedFiles : MountedFile[];
 }
 
