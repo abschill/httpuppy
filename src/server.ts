@@ -9,17 +9,23 @@ import {
 	shutdown,
 	useConfig,
 	_useServer,
-	useStaticHandler,
 	LogConfig,
-	UserStaticConfig,
 	iExitHandler,
 	UserMiddlewareOption,
 	iHandlerType,
 	CacheSettings,
 	HTTPuppyServer,
 	DiagnosticLog,
+	virtualStreamReader,
+	useMountedFS,
+	VirtualWriteableFile,
+	indexPaths,
+	HTTPuppyRequest,
+	HTTPuppyResponse,
+	isBufferType,
+	useWriter,
+	mimeType,
 } from './internal';
-
 /**
  * Config for useServer hook
  */
@@ -27,7 +33,7 @@ export interface HTTPuppyServerOptions {
     port 			?: number; //the port number to run the configuration with (default: 80)
 	clustered		?: boolean; //automatically cluster the server process to utilize multiple core ipc it doesnt do anything in x.2.z
     hostname 		?: string; //hostname for the server itself (default: 127.0.0.1)
-	static 			?: UserStaticConfig; //virtual file system options
+	//static 			?: UserStaticConfig; //virtual file system options
     throwWarnings 	?: boolean; //false = print warnings true = throw them as errors (default: false)
 	log				?: LogConfig;
 	middleware 		?: UserMiddlewareOption[]; //list of middleware instances to run along the server
@@ -68,11 +74,51 @@ export function useServer(
 	useCreateSecureServer(<HTTPSOptions>conf.secureContext, config?.handler) : useCreateServer(config?.handler);
 	// internal hook for validating the init process of the server itself and setting diagnostics accordingly if anything goes wrong
 	const server = _useServer(config, <HTTPuppyServer>_server, diagnostics);
-	if(config.static) useStaticHandler(server);
 
 	server._logger.info(`logger online (child pid: ${process.pid}) (parent: ${process.ppid})`);
 
 	// bind safe shutdown to the server for callability on the end user side
 	server.stop = () => shutdown(server);
+
+	/**
+	 *
+	 * @param _url url to serve as the base prefix of the static href
+	 * @param static_path path to serve static files from
+	 */
+	server.static = (_url: string, static_path: string) => {
+		server.on('request', (req: HTTPuppyRequest, res: HTTPuppyResponse) => {
+			const url = req.url ?? '/';
+			if(url?.includes(_url)) {
+				const sConfig = { href: _url, path: static_path };
+				const vfs = useMountedFS(server, sConfig);
+				if(vfs.mountedFiles.some((file) => file.hrefs.includes(_url))) {
+					const match = vfs.mountedFiles.filter(f => f.hrefs.includes(url)).shift();
+					if(!match) {
+						server.diagnostics.push({
+							msg: `url missed in static callback at ${url}`,
+							timestamp: Date.now().toLocaleString()
+						});
+						return;
+					}
+					const vFile: VirtualWriteableFile = {
+						contentType: match.contentType,
+						symLink: match.symLink,
+						fileName: match.fileName,
+						reqUrl: url,
+						hrefs: indexPaths(match.fileName, sConfig)
+					};
+					if(isBufferType(url)) {
+						return virtualStreamReader(vFile, res);
+					}
+					return useWriter(res, config, {
+						status: 200,
+						statusText: 'ok',
+						type: mimeType(match.symLink)['Content-Type'],
+						virtualFile: vFile
+					});
+				}
+			}
+		});
+	};
 	return server;
 }

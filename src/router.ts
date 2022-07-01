@@ -67,14 +67,6 @@ function useHTTPHandle(
 		res: HTTPuppyResponse
 	) => {
 		if(req.method === name && req.url === _url) {
-			const overrides = req._process._vfs.mountedFiles.filter(f => f.hrefs.includes(_url));
-			if(overrides.length > 0) {
-				req._process.diagnostics.push({
-					msg: 'static paths conflict with router, will override router',
-					timestamp: Date.now().toLocaleString()
-				});
-				server._logger.error(`static paths confilict at ${req.url}, will override router\n${overrides.toString()}`);
-			}
 			useRouterSignatures(req, res);
 			server.emit(`k.router${req.method}`, _url);
 			req.on('data', (chunk) => {
@@ -170,8 +162,7 @@ export function useRouter(
 		url: string,
 		cb: HTTPuppyRouterCallback
 	): void {
-		useHTTPHandle(
-		'PUT', wrapperUrl+url, server, cb, cb.constructor.name === 'AsyncFunction');
+		useHTTPHandle('PUT', wrapperUrl+url, server, cb, cb.constructor.name === 'AsyncFunction');
 	}
 
 	function patch(
@@ -185,8 +176,7 @@ export function useRouter(
 		url: string,
 		cb: HTTPuppyRouterCallback
 	): void {
-		useHTTPHandle(
-			'TRACE', wrapperUrl+url, server, cb, cb.constructor.name === 'AsyncFunction');
+		useHTTPHandle('TRACE', wrapperUrl+url, server, cb, cb.constructor.name === 'AsyncFunction');
 	}
 
 	function connect(

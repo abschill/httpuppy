@@ -5,12 +5,8 @@ const { readFileSync } = require('fs');
  * local http server setup demo
  */
 const secureApp = useServer({
-	static: {
-		path: './examples/files'
-	},
 	onMount: () => console.log('server started, open browser to port 3000'),
     throwWarnings: false,
-	coldInit: true,
 	secure: true,
 	secureContext: {
 		// define these files on your pc
@@ -19,5 +15,5 @@ const secureApp = useServer({
 	},
 	port: 3000
 });
-
+secureApp.static('/', 'examples/files');
 secureApp.start();

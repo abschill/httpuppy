@@ -28,7 +28,7 @@ export function virtualStreamReader(
 	res			: HTTPuppyResponse
 ): void {
 	if(!res.writable) {
-		console.warn('warning: write attempt on an ended stream in useStreamReader');
+		res._process._logger.warn('warning: write attempt on an ended stream in virtualStreamReader');
 		return;
 	}
 	if(pathData && pathData.symLink) {
@@ -59,7 +59,7 @@ export function useWriter(
 	options	: HTTPuppyWriterOptions
 ): void {
 	if(!res.writable) {
-		console.warn('warning: write attempt on an ended stream in useWriter');
+		res._process._logger.warn('warning: write attempt on an ended stream in useWriter');
 		return;
 	}
 	if(options.virtualFile.symLink) {

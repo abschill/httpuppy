@@ -1,4 +1,6 @@
 # Changelog
+- [0.4.0]
+	- remove `static` config option, make it an app method instead, and CLI flag
 - [0.3.0]
 	- add clustered mode, clean up logger
 - [0.2.14](https://github.com/abschill/httpuppy/releases/tag/v0.2.14)

@@ -18,14 +18,15 @@ import { HTTPuppyRouter } from '../../router';
  * @description Core Module to wrap the standard http library for node
  */
  export interface HTTPuppyServer extends stlServer  {
-	pConfig		: HTTPuppyServerOptions; //httpuppyserveroptions - process config
-	diagnostics	: DiagnosticLog[]; //diagnostic log
-	onClose		: iExitHandler; // onclose handler
-	start		: () => boolean; //start process for server (wrapper around .listen())
-	stop		: () => Promise<HTTPuppySleep>; // shutdown handler
-	_vfs		: VirtualFileSystem; // virtual filesystem to load paths from
-	_routers	: HTTPuppyRouter[];
-	_logger		: winston.Logger;
+	pConfig: HTTPuppyServerOptions; //httpuppyserveroptions - process config
+	diagnostics: DiagnosticLog[]; //diagnostic log
+	onClose: iExitHandler; // onclose handler
+	start: () => boolean; //start process for server (wrapper around .listen())
+	stop: () => Promise<HTTPuppySleep>; // shutdown handler
+	static: (path: string, static_path: string) => void;
+	_vfs: VirtualFileSystem; // virtual filesystem to load paths from
+	_routers: HTTPuppyRouter[];
+	_logger: winston.Logger;
 }
 
 /**

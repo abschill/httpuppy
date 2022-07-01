@@ -14,7 +14,7 @@ A simple & speedy abstraction layer for node web servers :dog:
 - exposes underlying node HTTP API for full customization, just adds helpers
 - command line interface
 - static typed, very handy intellisense
-- great for local front end dev environments
+- familiar express style
 
 ## Installation
 
@@ -28,10 +28,10 @@ yarn add httpuppy
 
 ## Command Line Use
 ```
-npx httpuppy
+npx httpuppy --serve path/to/files
 ```
 
-[example config file](/http.puppy)
+create static dev server which is mounted at `path/to/files` by default on port 3000
 
 ## Programmatic Usage
 
@@ -39,12 +39,10 @@ npx httpuppy
 const { useServer } = require('httpuppy');
 
 const app = useServer({
-	static: {
-		path: './path/to/content'
-	},
 	port: 3000,
 	onMount: () => console.log('listening on 3000')
 });
+app.static('/', 'path/to/content'); //serve arg[1] at the arg[0] href
 app.start();
 ```
 
@@ -54,12 +52,11 @@ app.start();
 const { useServer, useRouter } = require('httpuppy');
 
 const app = useServer({
-	static: {
-		path: './path/to/content'
-	},
 	port: 3000,
 	onMount: () => console.log('listening on 3000')
 });
+
+app.static('/', 'path/to/content'); //serve arg[1] at the arg[0] href
 
 const router = useRouter(app);
 
@@ -75,9 +72,6 @@ supports middleware without a `next` method - will continue when the computation
 const { useServer, useRouter } = require('httpuppy');
 
 const app = useServer({
-	static: {
-		path: './path/to/content'
-	},
 	port: 3000,
 	onMount: () => console.log('listening on 3000')
 });
@@ -94,12 +88,9 @@ app.start();
 clustered mode will allow your server to utilize multiple cores available on your system to speed up your requests. If you'd like to enable this, make sure to set `clustered: true` in your config, programmatic or cli it will be available.
 ```js
 const app = useServer({
-	clustered: true,
-	static: {
-		path: './path/to/content'
-	},
-	port: 3000,
-	onMount: () => console.log('listening on 3000')
+	...
+	clustered: true
+	...
 });
 ```
 
@@ -109,11 +100,7 @@ const app = useServer({
 const { useServer, useRouter } = require('httpuppy');
 
 const app = useServer({
-	static: {
-		path: './path/to/content'
-	},
-	port: 3000,
-	onMount: () => console.log('listening on 3000')
+	...
 });
 
 const router = useRouter(app);
@@ -132,13 +119,9 @@ async support
 const { useServer, useRouter } = require('httpuppy');
 
 const app = useServer({
-	static: {
-		path: './path/to/content'
-	},
 	port: 3000,
 	onMount: () => console.log('listening on 3000')
 });
-
 const router = useRouter(app);
 
 router.post('/api/v1/thing', async(req, res) => {

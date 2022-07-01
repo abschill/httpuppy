@@ -6,12 +6,9 @@ const {
 
 const clusteredRouterPost = useServer({
 	clustered: true,
-	static: {
-		path: '__fixtures__'
-	},
 	port: 3000
 });
-
+clusteredRouterPost.static('/', '__fixtures__');
 
 const router0 = useRouter(clusteredRouterPost);
 

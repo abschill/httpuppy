@@ -19,27 +19,13 @@ const mountPath = 'examples/files';
 
 describe('basic setup', function() {
 	const server0 = useServer({
-		static: {
-			path: mountPath
-		},
 		port: 3000
 	});
+	server0.static('/', mountPath);
 	const router = useRouter(server0);
-	it('should properly give the vfs the given path', () => {
-		if(os !== 'Windows_NT') expect(server0._vfs.mountedPath).toMatch(mountPath);
-	});
-
-	it('should load 3 files into the virtual filesystem', () => {
-		expect(server0._vfs.mountedFiles.length).toBe(3);
-	});
 
 	it('should not start until user does', function() {
 		expect(server0).toHaveProperty('listen');
-	});
-
-	it('creates virtual filesystem on creation', function() {
-		expect(server0).toHaveProperty('_vfs');
-		expect(server0._vfs.mountedFiles.length).toBe(3);
 	});
 
 	it('creates router', function() {
@@ -63,30 +49,16 @@ describe('basic setup', function() {
 
 describe('handle static/router base path', () => {
 	const server1 = useServer({
-		static: {
-			path: mountPath
-		},
 		log: {
 			log_level: 'verbose'
 		},
 		port: 3000
 	});
+	server1.static('/', mountPath);
 	const router = useRouter(server1, { baseUrl: '/api/v1' });
-	it('should properly give the vfs the given path', () => {
-		if(os !== 'Windows_NT') expect(server1._vfs.mountedPath).toMatch(mountPath);
-	});
-
-	it('should load 3 files into the virtual filesystem', () => {
-		expect(server1._vfs.mountedFiles.length).toBe(3);
-	});
 
 	it('should not start until user does', function() {
 		expect(server1).toHaveProperty('listen');
-	});
-
-	it('creates virtual filesystem on creation', function() {
-		expect(server1).toHaveProperty('_vfs');
-		expect(server1._vfs.mountedFiles.length).toBe(3);
 	});
 
 	it('creates router', function() {
@@ -111,11 +83,10 @@ describe('handle static/router base path', () => {
 describe('api doesn\'t conflict with static pages', function() {
 	it('successfully perform HTTP GET against api', function(done) {
 		const server1 = useServer({
-			static: {
-				path: './examples/files'
-			},
 			port: 3001
 		});
+		server1.static('/', mountPath);
+
 		const router = useRouter(server1, { baseUrl: '/api/v1'});
 		router.get('/', (req, res) => res.send(Test_String));
 		router.get('/get1', (req, res) => res.json( { foo: 'bar' } ) );
