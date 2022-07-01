@@ -1,4 +1,4 @@
-[httpuppy - v0.3.24](../README.md) / [Modules](../modules.md) / [useServer](../modules/useServer.md) / HTTPuppyServerOptions
+[httpuppy - v0.4.0](../README.md) / [Modules](../modules.md) / [useServer](../modules/useServer.md) / HTTPuppyServerOptions
 
 # Interface: HTTPuppyServerOptions
 
@@ -22,7 +22,6 @@ Config for useServer hook
 - [resTimeout](useServer.HTTPuppyServerOptions.md#restimeout)
 - [secure](useServer.HTTPuppyServerOptions.md#secure)
 - [secureContext](useServer.HTTPuppyServerOptions.md#securecontext)
-- [static](useServer.HTTPuppyServerOptions.md#static)
 - [throwWarnings](useServer.HTTPuppyServerOptions.md#throwwarnings)
 - [timeout](useServer.HTTPuppyServerOptions.md#timeout)
 - [tmpDir](useServer.HTTPuppyServerOptions.md#tmpdir)
@@ -35,7 +34,7 @@ Config for useServer hook
 
 #### Defined in
 
-[server.ts:36](https://github.com/abschill/httpuppy/blob/cc240f3/src/server.ts#L36)
+[server.ts:42](https://github.com/abschill/httpuppy/blob/4cc0584/src/server.ts#L42)
 
 ___
 
@@ -45,7 +44,7 @@ ___
 
 #### Defined in
 
-[server.ts:28](https://github.com/abschill/httpuppy/blob/cc240f3/src/server.ts#L28)
+[server.ts:34](https://github.com/abschill/httpuppy/blob/4cc0584/src/server.ts#L34)
 
 ___
 
@@ -55,7 +54,7 @@ ___
 
 #### Defined in
 
-[server.ts:37](https://github.com/abschill/httpuppy/blob/cc240f3/src/server.ts#L37)
+[server.ts:43](https://github.com/abschill/httpuppy/blob/4cc0584/src/server.ts#L43)
 
 ___
 
@@ -65,7 +64,7 @@ ___
 
 #### Defined in
 
-[server.ts:29](https://github.com/abschill/httpuppy/blob/cc240f3/src/server.ts#L29)
+[server.ts:35](https://github.com/abschill/httpuppy/blob/4cc0584/src/server.ts#L35)
 
 ___
 
@@ -75,7 +74,7 @@ ___
 
 #### Defined in
 
-[server.ts:32](https://github.com/abschill/httpuppy/blob/cc240f3/src/server.ts#L32)
+[server.ts:38](https://github.com/abschill/httpuppy/blob/4cc0584/src/server.ts#L38)
 
 ___
 
@@ -85,7 +84,7 @@ ___
 
 #### Defined in
 
-[server.ts:33](https://github.com/abschill/httpuppy/blob/cc240f3/src/server.ts#L33)
+[server.ts:39](https://github.com/abschill/httpuppy/blob/4cc0584/src/server.ts#L39)
 
 ___
 
@@ -95,7 +94,7 @@ ___
 
 #### Defined in
 
-[server.ts:35](https://github.com/abschill/httpuppy/blob/cc240f3/src/server.ts#L35)
+[server.ts:41](https://github.com/abschill/httpuppy/blob/4cc0584/src/server.ts#L41)
 
 ___
 
@@ -105,7 +104,7 @@ ___
 
 #### Defined in
 
-[server.ts:34](https://github.com/abschill/httpuppy/blob/cc240f3/src/server.ts#L34)
+[server.ts:40](https://github.com/abschill/httpuppy/blob/4cc0584/src/server.ts#L40)
 
 ___
 
@@ -115,7 +114,7 @@ ___
 
 #### Defined in
 
-[server.ts:27](https://github.com/abschill/httpuppy/blob/cc240f3/src/server.ts#L27)
+[server.ts:33](https://github.com/abschill/httpuppy/blob/4cc0584/src/server.ts#L33)
 
 ___
 
@@ -125,7 +124,7 @@ ___
 
 #### Defined in
 
-[server.ts:45](https://github.com/abschill/httpuppy/blob/cc240f3/src/server.ts#L45)
+[server.ts:51](https://github.com/abschill/httpuppy/blob/4cc0584/src/server.ts#L51)
 
 ___
 
@@ -135,7 +134,7 @@ ___
 
 #### Defined in
 
-[server.ts:38](https://github.com/abschill/httpuppy/blob/cc240f3/src/server.ts#L38)
+[server.ts:44](https://github.com/abschill/httpuppy/blob/4cc0584/src/server.ts#L44)
 
 ___
 
@@ -153,17 +152,7 @@ ___
 
 #### Defined in
 
-[server.ts:39](https://github.com/abschill/httpuppy/blob/cc240f3/src/server.ts#L39)
-
-___
-
-### static
-
-• `Optional` **static**: `UserStaticConfig`
-
-#### Defined in
-
-[server.ts:30](https://github.com/abschill/httpuppy/blob/cc240f3/src/server.ts#L30)
+[server.ts:45](https://github.com/abschill/httpuppy/blob/4cc0584/src/server.ts#L45)
 
 ___
 
@@ -173,7 +162,7 @@ ___
 
 #### Defined in
 
-[server.ts:31](https://github.com/abschill/httpuppy/blob/cc240f3/src/server.ts#L31)
+[server.ts:37](https://github.com/abschill/httpuppy/blob/4cc0584/src/server.ts#L37)
 
 ___
 
@@ -183,7 +172,7 @@ ___
 
 #### Defined in
 
-[server.ts:44](https://github.com/abschill/httpuppy/blob/cc240f3/src/server.ts#L44)
+[server.ts:50](https://github.com/abschill/httpuppy/blob/4cc0584/src/server.ts#L50)
 
 ___
 
@@ -193,4 +182,4 @@ ___
 
 #### Defined in
 
-[server.ts:46](https://github.com/abschill/httpuppy/blob/cc240f3/src/server.ts#L46)
+[server.ts:52](https://github.com/abschill/httpuppy/blob/4cc0584/src/server.ts#L52)
