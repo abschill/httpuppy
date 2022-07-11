@@ -2,7 +2,7 @@
  * @module useRouter
  * @description for adding custom routing to your server
  */
-import { HTTPuppyServer } from './internal/types';
+import { HTTPServer } from './internal/types';
 import {
 	HTTPuppyRequest,
 	HTTPuppyResponse,
@@ -60,7 +60,7 @@ function useRouterSignatures(req: HTTPuppyRequest, res: HTTPuppyResponse) {
 function useHTTPHandle(
 	name: string,
 	_url: string,
-	server: HTTPuppyServer,
+	server: HTTPServer,
 	cb: HTTPRouterCallback,
 	async: boolean
 ) {
@@ -88,7 +88,7 @@ function useHTTPHandle(
 
 export function usePassthrough(
 	_url: string,
-	server: HTTPuppyServer,
+	server: HTTPServer,
 	cb: HTTPRouterCallback,
 	async: boolean
 ) {
@@ -122,7 +122,7 @@ export function usePassthrough(
  * @returns
  */
 export function useRouter(
-	server: HTTPuppyServer, // server to attach the router to as a handler
+	server: HTTPServer, // server to attach the router to as a handler
 	rOptions?: HTTPRouterOptions
 ): HTTPRouter {
 	const wrapperUrl = rOptions?.baseUrl ?? '';

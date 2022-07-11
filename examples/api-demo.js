@@ -1,12 +1,8 @@
 const { useServer, useRouter } = require('../lib');
 
 const app = useServer({
-	log: {
-		logLevel: 'base'
-	},
 	port: 3000,
-	clustered: true,
-	onMount: () => console.log('server started, open browser to port 3000')
+	clustered: true
 });
 app.static('/', 'examples/files');
 const endpoint = useRouter(app);

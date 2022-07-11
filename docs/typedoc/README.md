@@ -1,4 +1,4 @@
-httpuppy - v0.4.0 / [Modules](modules.md)
+httpuppy - v0.4.1 / [Modules](modules.md)
 
 # HTTPuppy
 

@@ -1,4 +1,9 @@
 # Changelog
+- [0.4.1]
+	- remove `log` config object and turn into top level
+	- change internals to be snake case instead of camel, public modules remain camel (not options tho)
+	- change up logger
+	- fixed a few hanging response cases
 - [0.4.0]
 	- remove `static` config option, make it an app method instead, and CLI flag
 - [0.3.0]

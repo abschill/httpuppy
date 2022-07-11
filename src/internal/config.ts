@@ -2,11 +2,11 @@
  * @internal
  */
 import useCluster from './cluster';
-import { HTTPuppyServerOptions } from '..';
+import { HTTPServerOptions } from '../server';
 import {
 	DiagnosticLog,
 	defaultCacheSettings,
-	HTTPuppyServer,
+	HTTPServer,
 	shutdown,
 	useLogger,
 	ENV_DEFAULT_ERROR_FILE,
@@ -16,7 +16,8 @@ import {
 	ENV_PORT_DEFAULT
 } from '.';
 
-export const defaultHTTPConfig: HTTPuppyServerOptions = {
+
+export const default_http_config: HTTPServerOptions = {
 	port: ENV_PORT_DEFAULT,
 	clustered: false,
 	cache: defaultCacheSettings,
@@ -25,15 +26,6 @@ export const defaultHTTPConfig: HTTPuppyServerOptions = {
 	throw_warnings: false,
 	ttl_default: ENV_TTL_DEFAULT,
 };
-
-export function fromDefaultHTTPConfig(
-	config: HTTPuppyServerOptions
-): HTTPuppyServerOptions {
-	return {
-		...defaultHTTPConfig,
-		...config,
-	};
-}
 /**
  * @internal useConfig
  * @description hook for applying default config settings against given user input
@@ -41,19 +33,19 @@ export function fromDefaultHTTPConfig(
  * @param diagnostics diagnostic log of the top level
  * @returns cleaned user config
  */
-export function useConfig(
-	conf?: HTTPuppyServerOptions,
+export function use_config(
+	conf?: HTTPServerOptions,
 	diagnostics?: DiagnosticLog[]
-): Required<HTTPuppyServerOptions> {
+): Required<HTTPServerOptions> {
 	if (!conf) {
-		return <Required<HTTPuppyServerOptions>>defaultHTTPConfig;
+		return <Required<HTTPServerOptions>>default_http_config;
 	}
 	if (!diagnostics) {
 		diagnostics = [];
 	}
 
-	const config = { ...defaultHTTPConfig, ...conf };
-	return <Required<HTTPuppyServerOptions>>config;
+	const config = { ...default_http_config, ...conf };
+	return <Required<HTTPServerOptions>>config;
 }
 /**
  * @internal _useServer
@@ -63,12 +55,13 @@ export function useConfig(
  * @param diagnostics diagnostic list from the prestartup process
  * @returns the http server object
  */
-export function _useServer(
-	config: HTTPuppyServerOptions,
-	server: HTTPuppyServer,
+export function _use_server(
+	config: Required<HTTPServerOptions>,
+	server: HTTPServer,
 	diagnostics: DiagnosticLog[]
-): HTTPuppyServer {
-	const ss = <HTTPuppyServer>server;
+): HTTPServer {
+	const ss = <HTTPServer>server;
+	ss.timeout = config.ttl_default;
 	ss.diagnostics = diagnostics;
 	ss.pConfig = config;
 	ss._routers = [];
@@ -84,8 +77,7 @@ export function _useServer(
 				ss.listen(config.port);
 				return true;
 			}
-			useCluster(ss);
-			return true;
+			return useCluster(ss);
 		} catch (e) {
 			diagnostics.push({
 				msg: JSON.stringify(e),

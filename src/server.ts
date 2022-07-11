@@ -3,29 +3,33 @@
  * @description core server module
  */
 import {
-	useCreateServer,
-	useCreateSecureServer,
-	HTTPSOptions,
-	useConfig,
-	_useServer,
+	_use_server,
+	apply_404,
 	CacheSettings,
-	HTTPuppyServer,
+	create_server,
+	create_secure_server,
 	DiagnosticLog,
-	virtualStreamReader,
-	useMountedFS,
-	VirtualWriteableFile,
+	https_options,
+	HTTPServer,
+	mount_vfs,
 	indexPaths,
 	HTTPuppyRequest,
 	HTTPuppyResponse,
 	isBufferType,
-	useWriter,
-	mimeType,
+	mime_type,
 	LogLevel,
+	ENV_ASYNC_SIGNATURE,
+	ENV_TTL_DEFAULT,
+	ENV_REQUEST_SIGNATURE,
+	use_config,
+	use_writer,
+	vfs_stream_reader,
+	VirtualWriteableFile,
 } from './internal';
 /**
  * Config for useServer hook
  */
-export interface HTTPuppyServerOptions {
+export interface HTTPServerOptions {
 	cache?: CacheSettings; //options for caching, standard http but camelcase
 	clustered?: boolean; //automatically cluster the server process to utilize multiple core ipc it doesnt do anything in x.2.z
 	handler?: any; //default handler if you would like to override the request chain and handle each url manually thru the standard library
@@ -50,16 +54,17 @@ export interface HTTPuppyServerOptions {
  * @internal
  */
 
-function _applyStaticCallback(
-	server: HTTPuppyServer,
+function apply_static_callback(
+	server: HTTPServer,
 	_url: string,
 	static_path: string
 ) {
-	server.on('request', (req: HTTPuppyRequest, res: HTTPuppyResponse) => {
+	const sConfig = { href: _url, path: static_path };
+	const vfs = mount_vfs(server, sConfig);
+	server._vfs = vfs;
+	server.on(ENV_REQUEST_SIGNATURE, (req: HTTPuppyRequest, res: HTTPuppyResponse) => {
 		const url = req.url ?? '/';
 		if (url?.includes(_url)) {
-			const sConfig = { href: _url, path: static_path };
-			const vfs = useMountedFS(server, sConfig);
 			if (vfs.mountedFiles.some((file) => file.hrefs.includes(_url))) {
 				const match = vfs.mountedFiles
 					.filter((f) => f.hrefs.includes(url))
@@ -79,15 +84,18 @@ function _applyStaticCallback(
 					hrefs: indexPaths(match.fileName, sConfig),
 				};
 				if (isBufferType(url)) {
-					return virtualStreamReader(vFile, res);
+					return vfs_stream_reader(vFile, res);
 				}
-				return useWriter(res, server.pConfig, {
+				return use_writer(res, server.pConfig, {
 					status: 200,
 					statusText: 'ok',
-					type: mimeType(match.symLink)['Content-Type'],
+					type: mime_type(match.symLink)['Content-Type'],
 					virtualFile: vFile,
 				});
 			}
+			return setTimeout(() => {
+				res.end();
+			}, server.pConfig.ttl_default ?? ENV_TTL_DEFAULT * 100);
 		}
 	});
 }
@@ -104,23 +112,43 @@ function _applyStaticCallback(
  * @returns httpuppy server
  */
 export function useServer(
-	conf: HTTPuppyServerOptions // user config for server
-): HTTPuppyServer {
+	conf: HTTPServerOptions // user config for server
+): HTTPServer {
 	const def_event_handler = conf?.handler;
-
 	const diagnostics: DiagnosticLog[] = [];
-	const config = useConfig(conf, diagnostics);
+	const config = use_config(conf, diagnostics);
 	const _server = conf.secure
-		? useCreateSecureServer(
-				<HTTPSOptions>conf.secure,
+		? create_secure_server(
+				<https_options>conf.secure,
 				def_event_handler
 		)
-		: useCreateServer(def_event_handler);
-	const server = _useServer(config, <HTTPuppyServer>_server, diagnostics);
+		: create_server(def_event_handler);
+	const server = _use_server(config, <HTTPServer>_server, diagnostics);
 	server._logger.info(
 		`logger online (child pid: ${process.pid}) (parent: ${process.ppid})`
 	);
+	server.on(ENV_REQUEST_SIGNATURE, (req: HTTPuppyRequest, res: HTTPuppyResponse) => {
+		if(req.method !== 'GET' && server._routers.length === 0) {
+			apply_404(res);
+		}
+		if(req.url === '/favicon.ico') {
+			setTimeout(() => apply_404(res), 5000);
+		}
+		return;
+	});
+	server.use = (url: string, fn: any|Promise<any>) => {
+		server.on(ENV_REQUEST_SIGNATURE, async (req, res) => {
+			if(req.url === url) {
+				if(fn.constructor && fn.constructor.name === ENV_ASYNC_SIGNATURE) {
+					return await fn(req, res);
+				}
+				return fn(req, res);
+			}
+			return;
+		});
+	};
+
 	server.static = (_url: string, static_path: string) =>
-		_applyStaticCallback(server, _url, static_path);
+		apply_static_callback(server, _url, static_path);
 	return server;
 }

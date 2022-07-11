@@ -2,12 +2,13 @@ import { lookup } from 'mime-types';
 import { resolve, normalize } from 'path';
 import { readdirSync } from 'fs';
 import {
+	ENV_DEFAULT_INDEXFILE,
+	ENV_DEFAULT_CONTENT_TYPE,
+	HTTPHeader,
+	HTTPServer,
 	MountedFile,
 	VirtualFileSystem,
-	HTTPHeader,
-	HTTPuppyServer,
-} from './types';
-
+} from '.';
 export type UserStaticConfig = {
 	href?: string; // prefix path to access the directory on router
 	path?: string; // path on filesystem to reflect
@@ -19,7 +20,7 @@ export type UserStaticConfig = {
  */
 export function indexPaths(file: string, _static: UserStaticConfig): string[] {
 	const pathOptions = [`${_static.href ?? ''}${file}`];
-	if (file === 'index.html') {
+	if (file === ENV_DEFAULT_INDEXFILE) {
 		pathOptions.push(`${_static.href ?? ''}`);
 	}
 	return pathOptions;
@@ -36,7 +37,7 @@ export function asVirtualFile(
 	return <MountedFile>{
 		fileName: file,
 		symLink,
-		contentType: <HTTPHeader>mimeType(symLink),
+		contentType: <HTTPHeader>mime_type(symLink),
 		hrefs: indexPaths(file, staticConfig),
 	};
 }
@@ -45,8 +46,8 @@ export function asVirtualFile(
  * @private
  *
  */
-export function useMountedFS(
-	server: HTTPuppyServer,
+export function mount_vfs(
+	server: HTTPServer,
 	staticOptions?: UserStaticConfig
 ): VirtualFileSystem {
 	if (!staticOptions?.path) {
@@ -74,13 +75,13 @@ export function useMountedFS(
  * @param fpath the file path of the type to resolve
  * @returns the tuple representing the content type header for the static file
  */
-export function mimeType(fpath: string): HTTPHeader {
+export function mime_type(fpath: string): HTTPHeader {
 	if (fpath === '')
 		return {
-			'Content-Type': 'text/plain',
+			'Content-Type': ENV_DEFAULT_CONTENT_TYPE,
 		};
 	const matchType = lookup(fpath);
 	return {
-		'Content-Type': matchType ? matchType : 'text/plain',
+		'Content-Type': matchType ? matchType : ENV_DEFAULT_CONTENT_TYPE,
 	};
 }

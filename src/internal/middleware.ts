@@ -3,26 +3,27 @@
  * @description middleware hooks, such mime type header resolution / header setting
  */
 import { etag } from './include/etag';
-import { HTTPuppyServerOptions } from '../';
+import { HTTPServerOptions } from '../';
 import {
-	HTTPuppyWriterOptions,
-	HTTPuppyResponse,
+	ENV_DEFAULT_CONTENT_TYPE,
+	ENV_STATUS_404,
+	HTTPWriterOptions,
 	HTTPHeaders,
-} from './types';
-
+	HTTPuppyResponse,
+} from '.';
 /**
  *
  * @param options the writer options to apply the headers against
  * @param config the server config to apply against
  * @returns default list of http headers based on given config cache settings / content type of the request options
  */
-export function useHeaders(
-	options: HTTPuppyWriterOptions,
-	config: HTTPuppyServerOptions
+export function apply_headers(
+	options: HTTPWriterOptions,
+	config: HTTPServerOptions
 ): HTTPHeaders {
 	const applyHeaders: HTTPHeaders = [
 		{
-			'Content-Type': options.type ?? 'text/plain',
+			'Content-Type': options.type ?? ENV_DEFAULT_CONTENT_TYPE,
 		},
 	];
 
@@ -35,26 +36,13 @@ export function useHeaders(
 	return applyHeaders;
 }
 
-/**
- *
- * @param res internal response to be written to
- * @returns nothing
- */
-export function useStatus(
-	res: HTTPuppyResponse,
-	status: number,
-	msg: string
-): void {
-	res.writeHead(status, msg);
-}
 
-/**
- *
- * @private
- * @returns nothing
- */
-export function use404(res: HTTPuppyResponse): void {
-	res.writeHead(404, '404: page not found');
-	res.end('404: page not found');
-	return;
+export function apply_404(
+	res: HTTPuppyResponse
+) {
+	if(res.writable) {
+		res.writeHead(404, ENV_STATUS_404);
+		res.end();
+		return;
+	}
 }

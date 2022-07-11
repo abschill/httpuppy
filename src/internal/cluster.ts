@@ -4,27 +4,31 @@
  */
 import cluster from 'cluster';
 import { cpus } from 'os';
-import { HTTPuppyServerOptions } from '..';
-import { HTTPuppyServer } from './types';
+import { HTTPServerOptions } from '..';
+import { HTTPServer } from './types';
 
-export default function useCluster(server: HTTPuppyServer) {
+export default function useCluster(
+	server: HTTPServer
+): boolean {
 	if (cluster.isPrimary) {
-		useMasterProcess();
-	} else {
-		useChildProcess(server.pConfig, server);
+		return useMasterProcess();
 	}
+	return useChildProcess(server.pConfig, server);
 }
 
 function useMasterProcess() {
 	const numCPUs = cpus().length;
+	cluster.setMaxListeners(numCPUs);
 	for (let i = 0; i < numCPUs; i++) {
 		cluster.fork();
 	}
+	return true;
 }
 
 function useChildProcess(
-	config: HTTPuppyServerOptions,
-	server: HTTPuppyServer
-) {
-	return server.listen(config.port);
+	config: HTTPServerOptions,
+	server: HTTPServer
+): boolean {
+	server.listen(config.port);
+	return true;
 }

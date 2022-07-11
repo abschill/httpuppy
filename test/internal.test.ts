@@ -8,10 +8,9 @@ import { join, resolve } from 'path';
 import {
 	isValidStats,
 	useEntityTag,
-	mimeType,
-	useConfig,
-	defaultHTTPConfig,
-	fromDefaultHTTPConfig
+	mime_type,
+	use_config,
+	default_http_config
 } from '../lib/internal';
 
 const fixtures = join(process.cwd(), '__fixtures__');
@@ -33,23 +32,23 @@ describe('test etag generation process', () => {
 describe('localized mime types', () => {
 
 	it('detects the html file in fixtures', () => {
-		expect(mimeType(resolve(fixtures, 'index.html'))).toEqual({'Content-Type': 'text/html'});
+		expect(mime_type(resolve(fixtures, 'index.html'))).toEqual({'Content-Type': 'text/html'});
 	});
 
 	it('detects css as css', () => {
-		expect(mimeType(resolve(process.cwd(), 'examples', 'style.css'))).toEqual({'Content-Type': 'text/css'});
+		expect(mime_type(resolve(process.cwd(), 'examples', 'style.css'))).toEqual({'Content-Type': 'text/css'});
 	});
 });
 
 describe('config loading', () => {
 	const h_test = { hostname: 'https://test.com' };
-	const c_0 = useConfig();
-	const c_1 = useConfig({}, []);
-	const c_2 = useConfig(h_test);
+	const c_0 = use_config();
+	const c_1 = use_config({}, []);
+	const c_2 = use_config(h_test);
 
 	it('loads dynamic config opts', () => {
-		expect(c_0).toEqual(defaultHTTPConfig);
-		expect(c_1).toEqual(defaultHTTPConfig);
-		expect(c_2).toEqual(fromDefaultHTTPConfig(h_test));
+		expect(c_0).toEqual(default_http_config);
+		expect(c_1).toEqual(default_http_config);
+		expect(c_2).toEqual({...default_http_config, ...h_test});
 	});
 });

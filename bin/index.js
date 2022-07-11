@@ -1,6 +1,8 @@
 #! /usr/bin/env node
 const { useColorTag } = require('../lib/internal/include');
 const { useServer } = require('../lib');
+const cluster = require('cluster');
+const { resolve } = require('path');
 const { log } = console;
 const args = process.argv;
 
@@ -18,7 +20,15 @@ if(args.length <= serve_index) {
 }
 
 const hot_dir = args[args.indexOf('--serve')+1];
-log(useColorTag('blue', '[httpuppy]'), 'serving files at:', useColorTag('yellow', hot_dir), 'on port 3000');
+if(cluster.isPrimary) {
+	const serve_dir = resolve(process.cwd(), hot_dir);
+	log(useColorTag('blue', '[httpuppy]'), useColorTag('green', 'server started'));
+	log(useColorTag('green', '\nServer Options:\n'));
+
+	log(useColorTag('purp', 'port'), ':', port);
+	log(useColorTag('purp', 'static directory:'), serve_dir);
+}
+
 const server = useServer({
 	clustered: true,
 	port

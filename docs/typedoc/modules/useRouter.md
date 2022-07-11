@@ -1,4 +1,4 @@
-[httpuppy - v0.4.0](../README.md) / [Modules](../modules.md) / useRouter
+[httpuppy - v0.4.1](../README.md) / [Modules](../modules.md) / useRouter
 
 # Module: useRouter
 
@@ -22,8 +22,8 @@
 | Name | Type |
 | :------ | :------ |
 | `_url` | `string` |
-| `server` | `HTTPuppyServer` |
-| `cb` | `HTTPuppyRouterCallback` |
+| `server` | `HTTPServer` |
+| `cb` | `HTTPRouterCallback` |
 | `async` | `boolean` |
 
 #### Returns
@@ -32,13 +32,13 @@
 
 #### Defined in
 
-[router.ts:90](https://github.com/abschill/httpuppy/blob/4cc0584/src/router.ts#L90)
+[router.ts:89](https://github.com/webpuppy/httpuppy/blob/fae7f8c/src/router.ts#L89)
 
 ___
 
 ### useRouter
 
-▸ **useRouter**(`server`, `rOptions?`): `HTTPuppyRouter`
+▸ **useRouter**(`server`, `rOptions?`): `HTTPRouter`
 
 **`function`** useRouter
 
@@ -53,13 +53,13 @@ router.get('/test', (req, res) => res.end('hello'));
 
 | Name | Type |
 | :------ | :------ |
-| `server` | `HTTPuppyServer` |
-| `rOptions?` | `HTTPuppyRouterOptions` |
+| `server` | `HTTPServer` |
+| `rOptions?` | `HTTPRouterOptions` |
 
 #### Returns
 
-`HTTPuppyRouter`
+`HTTPRouter`
 
 #### Defined in
 
-[router.ts:130](https://github.com/abschill/httpuppy/blob/4cc0584/src/router.ts#L130)
+[router.ts:124](https://github.com/webpuppy/httpuppy/blob/fae7f8c/src/router.ts#L124)

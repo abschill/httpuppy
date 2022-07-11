@@ -41,7 +41,7 @@ export type VirtualFileSystem = {
 /**
  * @private
  */
-export type HTTPuppyWriterOptions = {
+export type HTTPWriterOptions = {
 	status: number;
 	statusText: string;
 	type: string;

@@ -2,7 +2,8 @@ import { Logger, format, transports, createLogger } from 'winston';
 import { useColorTag } from './include';
 import {
 	ENV_DEFAULT_ERROR_FILE,
-	ENV_DEFAULT_EVENT_FILE
+	ENV_DEFAULT_EVENT_FILE,
+	ENV_LOG_PREFIX
 } from '.';
 export type LogLevel = 'silent' | 'base' | 'verbose';
 export type LogErrorFile = string;
@@ -21,7 +22,7 @@ export function useLogger(
 			? [
 					new transports.Console({
 						format: format.combine(
-							format.label({ label: 'httpuppy' }),
+							format.label({ label: ENV_LOG_PREFIX }),
 							format.timestamp(),
 							format.printf(
 								({ level, message, label, timestamp }) => {

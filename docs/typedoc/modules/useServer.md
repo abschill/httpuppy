@@ -1,4 +1,4 @@
-[httpuppy - v0.4.0](../README.md) / [Modules](../modules.md) / useServer
+[httpuppy - v0.4.1](../README.md) / [Modules](../modules.md) / useServer
 
 # Module: useServer
 
@@ -8,7 +8,7 @@
 
 ### Interfaces
 
-- [HTTPuppyServerOptions](../interfaces/useServer.HTTPuppyServerOptions.md)
+- [HTTPServerOptions](../interfaces/useServer.HTTPServerOptions.md)
 
 ### Functions
 
@@ -18,31 +18,29 @@
 
 ### useServer
 
-▸ **useServer**(`conf`): `HTTPuppyServer`
+▸ **useServer**(`conf`): `HTTPServer`
 
 **`function`** useServer
 
 **`example`**
 ```javascript
-const app = useServer({
-	static: {
-		path: './examples/files'
-	}
-});
+const app0 = useServer({ port: 3000, clustered: false });
+const app1 = useServer({ port: 3001, clustered: true })
+
 ```
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `conf` | [`HTTPuppyServerOptions`](../interfaces/useServer.HTTPuppyServerOptions.md) | configuration options |
+| `conf` | [`HTTPServerOptions`](../interfaces/useServer.HTTPServerOptions.md) | configuration options |
 
 #### Returns
 
-`HTTPuppyServer`
+`HTTPServer`
 
 httpuppy server
 
 #### Defined in
 
-[server.ts:68](https://github.com/abschill/httpuppy/blob/4cc0584/src/server.ts#L68)
+[server.ts:106](https://github.com/webpuppy/httpuppy/blob/fae7f8c/src/server.ts#L106)

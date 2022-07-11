@@ -2,15 +2,16 @@
  * @internal
  */
 import { createReadStream } from 'fs';
-import { bufferTypes } from './include';
-import { mimeType } from './static';
-import { useHeaders } from './middleware';
-import { HTTPuppyServerOptions } from '..';
+import { HTTPServerOptions } from '..';
 import {
-	VirtualWriteableFile,
+	apply_headers,
+	bufferTypes,
+	ENV_STATUS_OK,
 	HTTPuppyResponse,
-	HTTPuppyWriterOptions,
-} from './types';
+	HTTPWriterOptions,
+	mime_type,
+	VirtualWriteableFile
+} from '.';
 /**
  * @private
  */
@@ -24,13 +25,13 @@ export const isBufferType = (file: string) =>
  * @param res the current response being handled by the server
  * @returns
  */
-export function virtualStreamReader(
+export function vfs_stream_reader(
 	pathData: VirtualWriteableFile,
 	res: HTTPuppyResponse
 ): void {
 	if (!res.writable) {
 		res._process._logger.warn(
-			'warning: write attempt on an ended stream in virtualStreamReader'
+			'warning: write attempt on an ended stream in vfs_stream_reader'
 		);
 		return;
 	}
@@ -39,7 +40,7 @@ export function virtualStreamReader(
 		const stream = createReadStream(pathData.symLink);
 		stream.on('data', (chunk) => {
 			// type the symlink of the streamable file, write into the response stream
-			res.writeHead(200, 'ok', mimeType(pathData.symLink ?? ''));
+			res.writeHead(200, ENV_STATUS_OK, mime_type(pathData.symLink ?? ''));
 			res.write(chunk);
 		});
 		// end response when data is done streaming from vfile
@@ -56,14 +57,14 @@ export function virtualStreamReader(
  * @param options the writer instance options
  * @returns
  */
-export function useWriter(
+export function use_writer(
 	res: HTTPuppyResponse,
-	config: HTTPuppyServerOptions,
-	options: HTTPuppyWriterOptions
+	config: HTTPServerOptions,
+	options: HTTPWriterOptions
 ): void {
 	if (!res.writable) {
 		res._process._logger.warn(
-			'warning: write attempt on an ended stream in useWriter'
+			'warning: write attempt on an ended stream in use_writer'
 		);
 		return;
 	}
@@ -71,8 +72,8 @@ export function useWriter(
 		res.writeHead(
 			options.status,
 			options.statusText,
-			...useHeaders(options, config)
+			...apply_headers(options, config)
 		);
-		return virtualStreamReader(options.virtualFile, res);
+		return vfs_stream_reader(options.virtualFile, res);
 	}
 }

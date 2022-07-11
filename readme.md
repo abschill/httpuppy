@@ -39,8 +39,7 @@ create static dev server which is mounted at `path/to/files` by default on port 
 const { useServer } = require('httpuppy');
 
 const app = useServer({
-	port: 3000,
-	onMount: () => console.log('listening on 3000')
+	port: 3000
 });
 app.static('/', 'path/to/content'); //serve arg[1] at the arg[0] href
 app.start();
@@ -52,8 +51,7 @@ app.start();
 const { useServer, useRouter } = require('httpuppy');
 
 const app = useServer({
-	port: 3000,
-	onMount: () => console.log('listening on 3000')
+	port: 3000
 });
 
 app.static('/', 'path/to/content'); //serve arg[1] at the arg[0] href
@@ -72,8 +70,7 @@ supports middleware without a `next` method - will continue when the computation
 const { useServer, useRouter } = require('httpuppy');
 
 const app = useServer({
-	port: 3000,
-	onMount: () => console.log('listening on 3000')
+	port: 3000
 });
 
 const router = useRouter(app);
@@ -119,8 +116,7 @@ async support
 const { useServer, useRouter } = require('httpuppy');
 
 const app = useServer({
-	port: 3000,
-	onMount: () => console.log('listening on 3000')
+	port: 3000
 });
 const router = useRouter(app);
 

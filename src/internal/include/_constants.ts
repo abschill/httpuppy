@@ -47,6 +47,11 @@ export const BgWhite = '\x1b[47m';
 
 export function useColorTag(color: string, val: string): string {
 	switch (color) {
+		case 'pink':
+			return format('%s%s%s\x1b[0m', Bright, FgMagenta, val);
+		case 'purp':
+		case 'prop':
+			return format('%s%s\x1b[0m', FgMagenta, val);
 		case 'yellow':
 		case 'warn':
 		case 'txt-yellow':

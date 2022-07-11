@@ -2,23 +2,23 @@ export * from './middleware';
 export * from './vfs';
 import winston from 'winston';
 import {
-	stlServer,
+	node_http_server,
 	iExitHandler,
 	VirtualFileSystem,
-	HTTPRequest,
-	HTTPResponse,
+	node_http_request,
+	node_http_response
 } from '../../internal';
-import { HTTPuppyServerOptions } from '../../server';
-import { HTTPRouter } from '../../router';
+import { HTTPServerOptions } from '../../server';
+import { HTTPRouter } from '../../';
 /**
  * Typedefs for Server Runtiem
  */
 /**
- * @interface HTTPuppyServer
+ * @interface HTTPServer
  * @description Core Module to wrap the standard http library for node
  */
-export interface HTTPuppyServer extends stlServer {
-	pConfig: HTTPuppyServerOptions; //httpuppyserveroptions - process config
+export interface HTTPServer extends node_http_server {
+	pConfig: HTTPServerOptions; //HTTPServerOptions - process config
 	diagnostics: DiagnosticLog[]; //diagnostic log
 	onClose: iExitHandler; // onclose handler
 	start: () => boolean; //start process for server (wrapper around .listen())
@@ -27,6 +27,7 @@ export interface HTTPuppyServer extends stlServer {
 	_vfs: VirtualFileSystem; // virtual filesystem to load paths from
 	_routers: HTTPRouter[];
 	_logger: winston.Logger;
+	use: (url: string, fn: HTTPRouterCallback) => void;
 }
 
 /**
@@ -47,7 +48,7 @@ export type HTTPRouterOptions = {
 	allowPassthrough?: boolean;
 };
 export type HTTPuppySleep = () => Promise<void>;
-export type CallableSideEffect<T> = (args: T) => Promise<any> | any;
+export type Callable<T> = (args: T) => Promise<any> | any;
 /**
  * @type DiagnosticLog
  * @description Runtime Diagnostic log to store for debug purposes
@@ -56,18 +57,18 @@ export type DiagnosticLog = {
 	msg: string;
 	timestamp: string;
 };
-export interface HTTPuppyRequest extends HTTPRequest {
+export interface HTTPuppyRequest extends node_http_request {
 	body: Object;
-	_process: HTTPuppyServer;
+	_process: HTTPServer;
 	_tmpWritten?: string;
-	_boundCallback?: CallableSideEffect<any>;
+	_boundCallback?: Callable<any>;
 }
 
-export interface HTTPuppyResponse extends HTTPResponse {
-	_process: HTTPuppyServer;
-	send: CallableSideEffect<any>;
-	json: CallableSideEffect<any>;
-	use?: CallableSideEffect<any>; // only present when `allowPassthrough` is enabled
+export interface HTTPuppyResponse extends node_http_response {
+	_process: HTTPServer;
+	send: Callable<any>;
+	json: Callable<any>;
+	use?: Callable<any>; // only present when `allowPassthrough` is enabled
 }
 
 /**
@@ -83,7 +84,7 @@ export type HTTPRouterCallback = (
  * @internal
  * @private
  */
-export type HTTPuppyRouterMiddleware = (
+export type HTTPRouterMiddleware = (
 	req: HTTPuppyRequest,
 	res: HTTPuppyResponse,
 	next: () => any
