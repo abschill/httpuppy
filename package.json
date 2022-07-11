@@ -8,9 +8,14 @@
 	"license": "AGPL-3.0",
 	"private": true,
 	"scripts": {
-		"prepare": "chmod +x ./scripts/*",
+		"prepare:scripts": "chmod +x ./scripts/*",
 		"pinstall": "cd packages/httpuppy && yarn",
 		"build:core": "cd packages/httpuppy && yarn build",
-		"test:core": "cd packages/httpuppy && yarn test"
+		"test:core": "cd packages/httpuppy && yarn test",
+		"test:workspace": "node tests/index.cjs",
+		"prepare": "husky install"
+	},
+	"devDependencies": {
+		"husky": "^8.0.1"
 	}
 }
