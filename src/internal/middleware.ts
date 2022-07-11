@@ -6,7 +6,6 @@ import { etag } from './include/etag';
 import { HTTPuppyServerOptions } from '../';
 import {
 	HTTPuppyWriterOptions,
-	HTTPuppyRequest,
 	HTTPuppyResponse,
 	HTTPHeaders,
 } from './types';

@@ -6,12 +6,8 @@ import {
 	useCreateServer,
 	useCreateSecureServer,
 	HTTPSOptions,
-	shutdown,
 	useConfig,
 	_useServer,
-	iExitHandler,
-	UserMiddlewareOption,
-	iHandlerType,
 	CacheSettings,
 	HTTPuppyServer,
 	DiagnosticLog,
@@ -37,20 +33,16 @@ export interface HTTPuppyServerOptions {
 	log_level?: LogLevel;
 	log_error_file?: string;
 	log_event_file?: string;
-	onMount?: iHandlerType; // a function to run once after the server is mounted (doesn't run on return if `coldInit` is set to true)
-	onClose?: iExitHandler;
 	port?: number; //the port number to run the configuration with (default: 80)
-	secure?: boolean; //https instead of http, requires follow up options in secureContext
-	secureContext?: {
+	secure?: {
 		//options for resolving the SSL cert / key
 		key: string;
 		cert: string;
 		dhparam?: string;
 	};
-	timeout?: number;
-	resTimeout?: number; // timer to measure for when to determine a request is unresolveable and should display a 404 - default 10s
-	tmpDir?: string; //the dir to write files uploaded from multipart forms from request
-	throwWarnings?: boolean; //false = print warnings true = throw them as errors (default: false)
+	ttl_default?: number;
+	local_storage_path?: string; //the dir to write files uploaded from multipart forms from request
+	throw_warnings?: boolean; //false = print warnings true = throw them as errors (default: false)
 }
 
 /**
@@ -114,14 +106,16 @@ function _applyStaticCallback(
 export function useServer(
 	conf: HTTPuppyServerOptions // user config for server
 ): HTTPuppyServer {
+	const def_event_handler = conf?.handler;
+
 	const diagnostics: DiagnosticLog[] = [];
 	const config = useConfig(conf, diagnostics);
 	const _server = conf.secure
 		? useCreateSecureServer(
-				<HTTPSOptions>conf.secureContext,
-				config?.handler
+				<HTTPSOptions>conf.secure,
+				def_event_handler
 		)
-		: useCreateServer(config?.handler);
+		: useCreateServer(def_event_handler);
 	const server = _useServer(config, <HTTPuppyServer>_server, diagnostics);
 	server._logger.info(
 		`logger online (child pid: ${process.pid}) (parent: ${process.ppid})`

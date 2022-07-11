@@ -9,17 +9,21 @@ import {
 	HTTPuppyServer,
 	shutdown,
 	useLogger,
+	ENV_DEFAULT_ERROR_FILE,
+	ENV_DEFAULT_EVENT_FILE,
+	ENV_DEFAULT_HOST,
+	ENV_TTL_DEFAULT,
+	ENV_PORT_DEFAULT
 } from '.';
 
 export const defaultHTTPConfig: HTTPuppyServerOptions = {
-	port: 80,
+	port: ENV_PORT_DEFAULT,
 	clustered: false,
 	cache: defaultCacheSettings,
 	log_level: 'base',
-	hostname: '127.0.0.1',
-	secure: false,
-	throwWarnings: false,
-	timeout: 0,
+	hostname: ENV_DEFAULT_HOST,
+	throw_warnings: false,
+	ttl_default: ENV_TTL_DEFAULT,
 };
 
 export function fromDefaultHTTPConfig(
@@ -49,11 +53,6 @@ export function useConfig(
 	}
 
 	const config = { ...defaultHTTPConfig, ...conf };
-	if (!config.port) config.port = 80; //default http port
-	config.timeout = conf.timeout || 0;
-	config.hostname = conf.hostname || '127.0.0.1'; // default lh
-	if (!config.throwWarnings || config.throwWarnings === null)
-		config.throwWarnings = false;
 	return <Required<HTTPuppyServerOptions>>config;
 }
 /**
@@ -69,16 +68,14 @@ export function _useServer(
 	server: HTTPuppyServer,
 	diagnostics: DiagnosticLog[]
 ): HTTPuppyServer {
-	if (config.onMount) server.once('listening', config.onMount);
 	const ss = <HTTPuppyServer>server;
 	ss.diagnostics = diagnostics;
-	ss.onClose = config.onClose;
 	ss.pConfig = config;
 	ss._routers = [];
 	ss._logger = useLogger(
 		config.log_level ?? 'base',
-		'log/http-error.log',
-		'log/http-event.log'
+		ENV_DEFAULT_ERROR_FILE,
+		ENV_DEFAULT_EVENT_FILE
 	);
 	// if static properties exist, mount the vfs based on them
 	ss.start = () => {

@@ -1,6 +1,9 @@
 import { Logger, format, transports, createLogger } from 'winston';
 import { useColorTag } from './include';
-
+import {
+	ENV_DEFAULT_ERROR_FILE,
+	ENV_DEFAULT_EVENT_FILE
+} from '.';
 export type LogLevel = 'silent' | 'base' | 'verbose';
 export type LogErrorFile = string;
 export type LogEventFile = string;
@@ -10,8 +13,8 @@ export function useLogger(
 	error_file?: LogErrorFile,
 	event_file?: LogEventFile
 ): Logger {
-	if (!error_file) error_file = 'log/http-error.log';
-	if (!event_file) event_file = 'log/http-event.log';
+	if (!error_file) error_file = ENV_DEFAULT_ERROR_FILE;
+	if (!event_file) event_file = ENV_DEFAULT_EVENT_FILE;
 
 	const _transports =
 		level === 'verbose'
@@ -42,7 +45,7 @@ export function useLogger(
 						filename: event_file,
 						format: format.colorize(),
 					}),
-			  ]
+			]
 			: [
 					new transports.File({
 						filename: error_file,
@@ -53,7 +56,7 @@ export function useLogger(
 						filename: event_file,
 						format: format.colorize(),
 					}),
-			  ];
+			];
 	const logger = createLogger({
 		level: 'info',
 		silent: level === 'silent',

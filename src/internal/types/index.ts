@@ -9,7 +9,7 @@ import {
 	HTTPResponse,
 } from '../../internal';
 import { HTTPuppyServerOptions } from '../../server';
-import { HTTPuppyRouter } from '../../router';
+import { HTTPRouter } from '../../router';
 /**
  * Typedefs for Server Runtiem
  */
@@ -25,7 +25,7 @@ export interface HTTPuppyServer extends stlServer {
 	stop: () => Promise<HTTPuppySleep>; // shutdown handler
 	static: (path: string, static_path: string) => void;
 	_vfs: VirtualFileSystem; // virtual filesystem to load paths from
-	_routers: HTTPuppyRouter[];
+	_routers: HTTPRouter[];
 	_logger: winston.Logger;
 }
 
@@ -42,7 +42,7 @@ export type HTTPHeader = {
  */
 export type HTTPHeaders = HTTPHeader[];
 
-export type HTTPuppyRouterOptions = {
+export type HTTPRouterOptions = {
 	baseUrl?: string; //glob or prefix
 	allowPassthrough?: boolean;
 };
@@ -74,7 +74,7 @@ export interface HTTPuppyResponse extends HTTPResponse {
  * @internal
  * @private
  */
-export type HTTPuppyRouterCallback = (
+export type HTTPRouterCallback = (
 	req: HTTPuppyRequest,
 	res: HTTPuppyResponse
 ) => Promise<any> | ((req: HTTPuppyRequest, res: HTTPuppyResponse) => any);
@@ -95,7 +95,7 @@ export type HTTPuppyRouterMiddleware = (
  * @internal
  * @private
  */
-export type HTTPuppyBindMethod = (
+export type HTTPRouterBindMethod = (
 	url: string,
-	cb: HTTPuppyRouterCallback
+	cb: HTTPRouterCallback
 ) => any;

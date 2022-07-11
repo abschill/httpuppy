@@ -6,27 +6,27 @@ import { HTTPuppyServer } from './internal/types';
 import {
 	HTTPuppyRequest,
 	HTTPuppyResponse,
-	HTTPuppyBindMethod,
-	HTTPuppyRouterCallback,
-	HTTPuppyRouterOptions,
+	HTTPRouterBindMethod,
+	HTTPRouterCallback,
+	HTTPRouterOptions,
 } from './internal/types';
 
 /**
  * @internal
  * @private
  */
-export interface HTTPuppyRouter {
+export interface HTTPRouter {
 	url: string;
-	get: HTTPuppyBindMethod;
-	head: HTTPuppyBindMethod;
-	post: HTTPuppyBindMethod;
-	put: HTTPuppyBindMethod;
-	patch: HTTPuppyBindMethod;
-	trace: HTTPuppyBindMethod;
-	connect: HTTPuppyBindMethod;
-	delete: HTTPuppyBindMethod;
-	options: HTTPuppyBindMethod;
-	_options: HTTPuppyRouterOptions;
+	get: HTTPRouterBindMethod;
+	head: HTTPRouterBindMethod;
+	post: HTTPRouterBindMethod;
+	put: HTTPRouterBindMethod;
+	patch: HTTPRouterBindMethod;
+	trace: HTTPRouterBindMethod;
+	connect: HTTPRouterBindMethod;
+	delete: HTTPRouterBindMethod;
+	options: HTTPRouterBindMethod;
+	_options: HTTPRouterOptions;
 }
 
 /**
@@ -61,7 +61,7 @@ function useHTTPHandle(
 	name: string,
 	_url: string,
 	server: HTTPuppyServer,
-	cb: HTTPuppyRouterCallback,
+	cb: HTTPRouterCallback,
 	async: boolean
 ) {
 	server.on('request', (req: HTTPuppyRequest, res: HTTPuppyResponse) => {
@@ -89,7 +89,7 @@ function useHTTPHandle(
 export function usePassthrough(
 	_url: string,
 	server: HTTPuppyServer,
-	cb: HTTPuppyRouterCallback,
+	cb: HTTPRouterCallback,
 	async: boolean
 ) {
 	if (async) {
@@ -123,15 +123,15 @@ export function usePassthrough(
  */
 export function useRouter(
 	server: HTTPuppyServer, // server to attach the router to as a handler
-	rOptions?: HTTPuppyRouterOptions
-): HTTPuppyRouter {
+	rOptions?: HTTPRouterOptions
+): HTTPRouter {
 	const wrapperUrl = rOptions?.baseUrl ?? '';
 	const opts = rOptions || {
 		baseUrl: wrapperUrl,
 		allowPassthrough: false,
 	};
 
-	function get(url: string, cb: HTTPuppyRouterCallback): void {
+	function get(url: string, cb: HTTPRouterCallback): void {
 		useHTTPHandle(
 			'GET',
 			wrapperUrl + url,
@@ -141,7 +141,7 @@ export function useRouter(
 		);
 	}
 
-	function post(url: string, cb: HTTPuppyRouterCallback): void {
+	function post(url: string, cb: HTTPRouterCallback): void {
 		useHTTPHandle(
 			'POST',
 			wrapperUrl + url,
@@ -151,7 +151,7 @@ export function useRouter(
 		);
 	}
 
-	function head(url: string, cb: HTTPuppyRouterCallback): void {
+	function head(url: string, cb: HTTPRouterCallback): void {
 		useHTTPHandle(
 			'HEAD',
 			wrapperUrl + url,
@@ -161,7 +161,7 @@ export function useRouter(
 		);
 	}
 
-	function put(url: string, cb: HTTPuppyRouterCallback): void {
+	function put(url: string, cb: HTTPRouterCallback): void {
 		useHTTPHandle(
 			'PUT',
 			wrapperUrl + url,
@@ -171,7 +171,7 @@ export function useRouter(
 		);
 	}
 
-	function patch(url: string, cb: HTTPuppyRouterCallback): void {
+	function patch(url: string, cb: HTTPRouterCallback): void {
 		useHTTPHandle(
 			'PATCH',
 			wrapperUrl + url,
@@ -181,7 +181,7 @@ export function useRouter(
 		);
 	}
 
-	function trace(url: string, cb: HTTPuppyRouterCallback): void {
+	function trace(url: string, cb: HTTPRouterCallback): void {
 		useHTTPHandle(
 			'TRACE',
 			wrapperUrl + url,
@@ -191,7 +191,7 @@ export function useRouter(
 		);
 	}
 
-	function connect(url: string, cb: HTTPuppyRouterCallback): void {
+	function connect(url: string, cb: HTTPRouterCallback): void {
 		useHTTPHandle(
 			'CONNECT',
 			wrapperUrl + url,
@@ -201,7 +201,7 @@ export function useRouter(
 		);
 	}
 
-	function options(url: string, cb: HTTPuppyRouterCallback): void {
+	function options(url: string, cb: HTTPRouterCallback): void {
 		useHTTPHandle(
 			'OPTIONS',
 			wrapperUrl + url,
@@ -211,7 +211,7 @@ export function useRouter(
 		);
 	}
 
-	function _delete(url: string, cb: HTTPuppyRouterCallback): void {
+	function _delete(url: string, cb: HTTPRouterCallback): void {
 		useHTTPHandle(
 			'DELETE',
 			wrapperUrl + url,
@@ -221,7 +221,7 @@ export function useRouter(
 		);
 	}
 
-	function use(url: string, cb: HTTPuppyRouterCallback): void {
+	function use(url: string, cb: HTTPRouterCallback): void {
 		usePassthrough(
 			wrapperUrl + url,
 			server,
@@ -230,7 +230,7 @@ export function useRouter(
 		);
 	}
 
-	const router = <HTTPuppyRouter>{
+	const router = <HTTPRouter>{
 		url: opts.baseUrl,
 		get,
 		head,

@@ -49,9 +49,7 @@ describe('basic setup', function() {
 
 describe('handle static/router base path', () => {
 	const server1 = useServer({
-		log: {
-			log_level: 'verbose'
-		},
+		log_level: 'verbose',
 		port: 3000
 	});
 	server1.static('/', mountPath);
