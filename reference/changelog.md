@@ -1,0 +1,22 @@
+# Changelog
+- [0.4.1]
+	- remove `log` config object and turn into top level
+	- change internals to be snake case instead of camel, public modules remain camel (not options tho)
+	- change up logger
+	- fixed a few hanging response cases
+- [0.4.0]
+	- remove `static` config option, make it an app method instead, and CLI flag
+- [0.3.0]
+	- add clustered mode, clean up logger
+- [0.2.14](https://github.com/abschill/httpuppy/releases/tag/v0.2.14)
+	- fix up cli file options & remove bulk from initial modules. also update documentation, remove inline config options besides custom config path.
+- [0.2.7](https://github.com/abschill/httpuppy/releases/tag/v0.2.7)
+	- fix up vfs internals to set themselves up on init and then query for the existing virtual path upon request
+- [0.2.5](https://github.com/abschill/httpuppy/releases/tag/v0.2.5)
+	- config file support / internals
+- [0.2.2](https://github.com/abschill/httpuppy/releases/tag/v0.2.2)
+	- internal updates / bugfixes
+- [0.2.1](https://github.com/abschill/httpuppy/releases/tag/v0.2.1)
+	- add color logger + update readme examples
+- [0.1.1](https://github.com/abschill/httpuppy/releases/tag/v0.1.1)
+	- initial premise
