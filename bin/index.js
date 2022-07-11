@@ -18,7 +18,7 @@ if(args.length <= serve_index) {
 }
 
 const hot_dir = args[args.indexOf('--serve')+1];
-log(useColorTag('blue', 'httpuppy: serving files at:'), hot_dir, 'on port 3000');
+log(useColorTag('blue', '[httpuppy]'), 'serving files at:', useColorTag('yellow', hot_dir), 'on port 3000');
 const server = useServer({
 	clustered: true,
 	port

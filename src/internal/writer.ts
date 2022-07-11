@@ -9,12 +9,13 @@ import { HTTPuppyServerOptions } from '..';
 import {
 	VirtualWriteableFile,
 	HTTPuppyResponse,
-	HTTPuppyWriterOptions
+	HTTPuppyWriterOptions,
 } from './types';
 /**
  * @private
  */
-export const isBufferType = (file: string) => (bufferTypes.filter((el) => file.includes(el)).length > 0);
+export const isBufferType = (file: string) =>
+	bufferTypes.filter((el) => file.includes(el)).length > 0;
 
 /**
  * @internal useVirtualStreamReader
@@ -24,14 +25,16 @@ export const isBufferType = (file: string) => (bufferTypes.filter((el) => file.i
  * @returns
  */
 export function virtualStreamReader(
-	pathData	: VirtualWriteableFile,
-	res			: HTTPuppyResponse
+	pathData: VirtualWriteableFile,
+	res: HTTPuppyResponse
 ): void {
-	if(!res.writable) {
-		res._process._logger.warn('warning: write attempt on an ended stream in virtualStreamReader');
+	if (!res.writable) {
+		res._process._logger.warn(
+			'warning: write attempt on an ended stream in virtualStreamReader'
+		);
 		return;
 	}
-	if(pathData && pathData.symLink) {
+	if (pathData && pathData.symLink) {
 		// create read stream for virtual file to read
 		const stream = createReadStream(pathData.symLink);
 		stream.on('data', (chunk) => {
@@ -54,16 +57,22 @@ export function virtualStreamReader(
  * @returns
  */
 export function useWriter(
-	res		: HTTPuppyResponse,
-	config	: HTTPuppyServerOptions,
-	options	: HTTPuppyWriterOptions
+	res: HTTPuppyResponse,
+	config: HTTPuppyServerOptions,
+	options: HTTPuppyWriterOptions
 ): void {
-	if(!res.writable) {
-		res._process._logger.warn('warning: write attempt on an ended stream in useWriter');
+	if (!res.writable) {
+		res._process._logger.warn(
+			'warning: write attempt on an ended stream in useWriter'
+		);
 		return;
 	}
-	if(options.virtualFile.symLink) {
-		res.writeHead(options.status, options.statusText, ...useHeaders(options, config));
+	if (options.virtualFile.symLink) {
+		res.writeHead(
+			options.status,
+			options.statusText,
+			...useHeaders(options, config)
+		);
 		return virtualStreamReader(options.virtualFile, res);
 	}
 }

@@ -16,7 +16,7 @@ export const bufferTypes = [
 	'webm',
 	'bmp',
 	'ico',
-	'tiff'
+	'tiff',
 ];
 
 export const Reset = '\x1b[0m';
@@ -45,13 +45,8 @@ export const BgMagenta = '\x1b[45m';
 export const BgCyan = '\x1b[46m';
 export const BgWhite = '\x1b[47m';
 
-
-
-export function useColorTag(
-	color: string,
-	val: string
-): string {
-	switch(color) {
+export function useColorTag(color: string, val: string): string {
+	switch (color) {
 		case 'yellow':
 		case 'warn':
 		case 'txt-yellow':

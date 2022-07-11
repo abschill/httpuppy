@@ -7,13 +7,10 @@ import { cpus } from 'os';
 import { HTTPuppyServerOptions } from '..';
 import { HTTPuppyServer } from './types';
 
-export default function useCluster(
-	server: HTTPuppyServer
-) {
+export default function useCluster(server: HTTPuppyServer) {
 	if (cluster.isPrimary) {
 		useMasterProcess();
-	}
-	else {
+	} else {
 		useChildProcess(server.pConfig, server);
 	}
 }

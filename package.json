@@ -1,6 +1,6 @@
 {
   "name": "httpuppy",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "speedy abstraction layer for node web servers with automatic clustering",
   "types": "lib/index.d.ts",
   "main": "lib/index.js",
@@ -18,7 +18,9 @@
     "test:coverage": "rm -rf nyc-output && nyc yarn test",
     "postinstall": "husky install",
     "prepack": "pinst --disable",
-    "postpack": "pinst --enable"
+    "postpack": "pinst --enable",
+	"lint:check": "prettier --check ./src",
+	"lint": "prettier --write ./src"
   },
   "keywords": [
     "http",
