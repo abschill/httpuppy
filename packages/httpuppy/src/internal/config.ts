@@ -1,21 +1,20 @@
 /**
  * @internal
  */
-import useCluster from './cluster';
-import { HTTPServerOptions } from '../server';
+import apply_clustered from './cluster';
 import {
 	DiagnosticLog,
 	defaultCacheSettings,
 	HTTPServer,
 	shutdown,
-	useLogger,
+	create_logger,
 	ENV_DEFAULT_ERROR_FILE,
 	ENV_DEFAULT_EVENT_FILE,
 	ENV_DEFAULT_HOST,
 	ENV_TTL_DEFAULT,
-	ENV_PORT_DEFAULT
+	ENV_PORT_DEFAULT,
+	HTTPServerOptions
 } from '.';
-
 
 export const default_http_config: HTTPServerOptions = {
 	port: ENV_PORT_DEFAULT,
@@ -65,7 +64,7 @@ export function _use_server(
 	ss.diagnostics = diagnostics;
 	ss.pConfig = config;
 	ss._routers = [];
-	ss._logger = useLogger(
+	ss._logger = create_logger(
 		config.log_level ?? 'base',
 		ENV_DEFAULT_ERROR_FILE,
 		ENV_DEFAULT_EVENT_FILE
@@ -77,7 +76,7 @@ export function _use_server(
 				ss.listen(config.port);
 				return true;
 			}
-			return useCluster(ss);
+			return apply_clustered(ss);
 		} catch (e) {
 			diagnostics.push({
 				msg: JSON.stringify(e),

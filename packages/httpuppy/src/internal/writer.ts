@@ -2,7 +2,6 @@
  * @internal
  */
 import { createReadStream } from 'fs';
-import { HTTPServerOptions } from '..';
 import {
 	apply_headers,
 	bufferTypes,
@@ -10,12 +9,13 @@ import {
 	HTTPuppyResponse,
 	HTTPWriterOptions,
 	mime_type,
-	VirtualWriteableFile
+	VirtualWriteableFile,
+	HTTPServerOptions
 } from '.';
 /**
  * @private
  */
-export const isBufferType = (file: string) =>
+export const is_buffer_type = (file: string) =>
 	bufferTypes.filter((el) => file.includes(el)).length > 0;
 
 /**

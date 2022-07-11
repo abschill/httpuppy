@@ -4,10 +4,10 @@
  */
 import cluster from 'cluster';
 import { cpus } from 'os';
-import { HTTPServerOptions } from '..';
+import { HTTPServerOptions } from '.';
 import { HTTPServer } from './types';
 
-export default function useCluster(
+export default function apply_clustered(
 	server: HTTPServer
 ): boolean {
 	if (cluster.isPrimary) {

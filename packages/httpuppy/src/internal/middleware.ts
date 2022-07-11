@@ -3,13 +3,13 @@
  * @description middleware hooks, such mime type header resolution / header setting
  */
 import { etag } from './include/etag';
-import { HTTPServerOptions } from '../';
 import {
 	ENV_DEFAULT_CONTENT_TYPE,
 	ENV_STATUS_404,
 	HTTPWriterOptions,
 	HTTPHeaders,
 	HTTPuppyResponse,
+	HTTPServerOptions
 } from '.';
 /**
  *

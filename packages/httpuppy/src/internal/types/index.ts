@@ -1,5 +1,7 @@
 export * from './middleware';
 export * from './vfs';
+export * from './server';
+
 import winston from 'winston';
 import {
 	node_http_server,
@@ -8,7 +10,7 @@ import {
 	node_http_request,
 	node_http_response
 } from '../../internal';
-import { HTTPServerOptions } from '../../server';
+import { HTTPServerOptions } from './server';
 import { HTTPRouter } from '../../';
 /**
  * Typedefs for Server Runtiem

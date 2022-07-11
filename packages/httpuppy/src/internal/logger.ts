@@ -9,7 +9,7 @@ export type LogLevel = 'silent' | 'base' | 'verbose';
 export type LogErrorFile = string;
 export type LogEventFile = string;
 
-export function useLogger(
+export function create_logger(
 	level: LogLevel,
 	error_file?: LogErrorFile,
 	event_file?: LogEventFile
