@@ -6,8 +6,8 @@ import {
 import { statSync } from 'fs';
 import { join, resolve } from 'path';
 import {
-	isValidStats,
-	useEntityTag,
+	_vstats,
+	__etag,
 	mime_type,
 	use_config,
 	default_http_config
@@ -18,14 +18,14 @@ const fixtures = join(process.cwd(), '__fixtures__');
 describe('test etag generation process', () => {
 
 	it('generates etag for a given content', () => {
-		const tag = useEntityTag('foobar');
+		const tag = __etag('foobar');
 		expect(tag).toMatch(/\//);
 		expect(tag).toBeTruthy();
 	});
 
 	it('determines a proper fs.Stat', () => {
 		const ex = statSync(resolve(process.cwd(), 'package.json'));
-		expect(isValidStats(ex)).toBeTruthy();
+		expect(_vstats(ex)).toBeTruthy();
 	});
 });
 

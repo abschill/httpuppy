@@ -1,5 +1,5 @@
 import { Logger, format, transports, createLogger } from 'winston';
-import { useColorTag } from './include';
+import { color_tag } from './include';
 import {
 	ENV_DEFAULT_ERROR_FILE,
 	ENV_DEFAULT_EVENT_FILE,
@@ -26,10 +26,10 @@ export function create_logger(
 							format.timestamp(),
 							format.printf(
 								({ level, message, label, timestamp }) => {
-									return `[${useColorTag(
+									return `[${color_tag(
 										'blue',
 										label
-									)}] ${level}: ${message} @ ${useColorTag(
+									)}] ${level}: ${message} @ ${color_tag(
 										'green',
 										timestamp
 									)}`;

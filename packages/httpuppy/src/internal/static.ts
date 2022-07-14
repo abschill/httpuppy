@@ -26,7 +26,7 @@ export type UserStaticConfig = {
  * @private
  *
  */
-export function indexPaths(file: string, _static: UserStaticConfig): string[] {
+export function index_paths(file: string, _static: UserStaticConfig): string[] {
 	const pathOptions = [`${_static.href ?? ''}${file}`];
 	if (file === ENV_DEFAULT_INDEXFILE) {
 		pathOptions.push(`${_static.href ?? ''}`);
@@ -37,7 +37,7 @@ export function indexPaths(file: string, _static: UserStaticConfig): string[] {
  * @private
  *
  */
-export function asVirtualFile(
+export function as_vfile(
 	file: string,
 	symLink: string,
 	staticConfig: UserStaticConfig
@@ -46,7 +46,7 @@ export function asVirtualFile(
 		fileName: file,
 		symLink,
 		contentType: <HTTPHeader>mime_type(symLink),
-		hrefs: indexPaths(file, staticConfig),
+		hrefs: index_paths(file, staticConfig),
 	};
 }
 
@@ -67,7 +67,7 @@ export function mount_vfs(
 	const mountedPath = normalize(staticOptions.path);
 	const mountedFiles = readdirSync(mountedPath).map((file) => {
 		const symLink = resolve(mountedPath, file);
-		return asVirtualFile(file, symLink, <UserStaticConfig>staticOptions);
+		return as_vfile(file, symLink, <UserStaticConfig>staticOptions);
 	});
 	// filesMounted is the accessible file tree that can be used against the upcoming handlers
 	return {
@@ -126,7 +126,7 @@ export function mime_type(fpath: string): HTTPHeader {
 					symLink: match.symLink,
 					fileName: match.fileName,
 					reqUrl: url,
-					hrefs: indexPaths(match.fileName, sConfig),
+					hrefs: index_paths(match.fileName, sConfig),
 				};
 				if (is_buffer_type(url)) {
 					return vfs_stream_reader(vFile, res);

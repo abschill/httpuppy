@@ -11,12 +11,12 @@ export default function apply_clustered(
 	server: HTTPServer
 ): boolean {
 	if (cluster.isPrimary) {
-		return useMasterProcess();
+		return use_main();
 	}
-	return useChildProcess(server.pConfig, server);
+	return use_child(server.pConfig, server);
 }
 
-function useMasterProcess() {
+function use_main() {
 	const numCPUs = cpus().length;
 	cluster.setMaxListeners(numCPUs);
 	for (let i = 0; i < numCPUs; i++) {
@@ -25,7 +25,7 @@ function useMasterProcess() {
 	return true;
 }
 
-function useChildProcess(
+function use_child(
 	config: HTTPServerOptions,
 	server: HTTPServer
 ): boolean {
