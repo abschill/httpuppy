@@ -5,3 +5,4 @@ __fixtures__
 docs
 .assets
 test
+bin/*.js
