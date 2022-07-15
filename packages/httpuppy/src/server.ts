@@ -4,14 +4,12 @@
  */
 import {
 	_use_server,
-	apply_404,
 	create_server,
 	create_secure_server,
 	DiagnosticLog,
 	https_options,
 	HTTPServer,
-	HTTPuppyRequest,
-	HTTPuppyResponse,
+	default_http_config,
 	HTTPServerOptions,
 	ENV_ASYNC_SIGNATURE,
 	ENV_REQUEST_SIGNATURE,
@@ -31,11 +29,13 @@ import {
  * @returns httpuppy server
  */
 export function useServer(
-	conf: HTTPServerOptions // user config for server
+	conf?: HTTPServerOptions // user config for server
 ): HTTPServer {
+	if(!conf) conf = default_http_config;
 	const def_event_handler = conf?.handler;
 	const diagnostics: DiagnosticLog[] = [];
 	const config = use_config(conf, diagnostics);
+	console.log(config);
 	const _server = conf.secure
 		? create_secure_server(
 				<https_options>conf.secure,
@@ -46,15 +46,6 @@ export function useServer(
 	server._logger.info(
 		`logger online (child pid: ${process.pid}) (parent: ${process.ppid})`
 	);
-	server.on(ENV_REQUEST_SIGNATURE, (req: HTTPuppyRequest, res: HTTPuppyResponse) => {
-		if(req.method !== 'GET' && server._routers.length === 0) {
-			apply_404(res);
-		}
-		if(req.url === '/favicon.ico') {
-			setTimeout(() => apply_404(res), 5000);
-		}
-		return;
-	});
 	server.use = (url: string, fn: any|Promise<any>) => {
 		server.on(ENV_REQUEST_SIGNATURE, async (req, res) => {
 			if(req.url === url) {
@@ -63,7 +54,6 @@ export function useServer(
 				}
 				return fn(req, res);
 			}
-			return;
 		});
 	};
 

@@ -1,10 +1,10 @@
 import { lookup } from 'mime-types';
 import { resolve, normalize } from 'path';
 import { readdirSync } from 'fs';
+import { color } from 'terminal-color';
 import {
 	ENV_DEFAULT_INDEXFILE,
 	ENV_DEFAULT_CONTENT_TYPE,
-	ENV_TTL_DEFAULT,
 	ENV_REQUEST_SIGNATURE,
 	VirtualWriteableFile,
 	HTTPuppyRequest,
@@ -109,6 +109,7 @@ export function mime_type(fpath: string): HTTPHeader {
 	server._vfs = vfs;
 	server.on(ENV_REQUEST_SIGNATURE, (req: HTTPuppyRequest, res: HTTPuppyResponse) => {
 		const url = req.url ?? '/';
+		if(process.env.log_level && process.env.log_level === 'verbose') console.log(`${color.fg.blue('GET ')} ${url}`);
 		if (url?.includes(_url)) {
 			if (vfs.mountedFiles.some((file) => file.hrefs.includes(_url))) {
 				const match = vfs.mountedFiles
@@ -138,9 +139,9 @@ export function mime_type(fpath: string): HTTPHeader {
 					virtualFile: vFile,
 				});
 			}
-			return setTimeout(() => {
-				res.end();
-			}, server.pConfig.ttl_default ?? ENV_TTL_DEFAULT * 100);
+			// return setTimeout(() => {
+			// 	res.end();
+			// }, server.pConfig.ttl_default ?? ENV_TTL_DEFAULT * 100);
 		}
 	});
 }

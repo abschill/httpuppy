@@ -16,6 +16,7 @@ export function create_logger(
 ): Logger {
 	if (!error_file) error_file = ENV_DEFAULT_ERROR_FILE;
 	if (!event_file) event_file = ENV_DEFAULT_EVENT_FILE;
+	process.env.log_level = level;
 
 	const _transports =
 		level === 'verbose'

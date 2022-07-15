@@ -5,44 +5,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
+	<link rel="stylesheet" href="/style.css">
 </head>
 <body>
-	<h1>/ post</h1>
-	<form>
-		<input name="text1" type="text" placeholder="Enter Text">
-		<button>Submit</button>
-	</form>
-
-	<script>
-		async function foo() {
-			const res = await fetch('/test', {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json'
-				},
-				body: JSON.stringify({ foo: 'bar' })
-			});
-			const json = await res.json();
-			console.log(json);
-		}
-
-		foo();
-
-		const form = document.querySelector('form');
-		form.addEventListener('submit', async (e) => {
-			e.preventDefault();
-			const { text1 = '' } = e.target;
-
-			const res = await fetch('/', {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json'
-				},
-				body: JSON.stringify({val: text1.value } )
-			});
-			const json = await res.json();
-			console.log(json);
-		});
-	</script>
+	<h1>Example HTML</h1>
 </body>
 </html>
