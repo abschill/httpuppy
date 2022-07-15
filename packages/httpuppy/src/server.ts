@@ -35,7 +35,6 @@ export function useServer(
 	const def_event_handler = conf?.handler;
 	const diagnostics: DiagnosticLog[] = [];
 	const config = use_config(conf, diagnostics);
-	console.log(config);
 	const _server = conf.secure
 		? create_secure_server(
 				<https_options>conf.secure,

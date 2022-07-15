@@ -44,6 +44,7 @@ export function use_config(
 	}
 
 	const config = { ...default_http_config, ...conf };
+	process.env.log_level = config.log_level;
 	return <Required<HTTPServerOptions>>config;
 }
 /**
