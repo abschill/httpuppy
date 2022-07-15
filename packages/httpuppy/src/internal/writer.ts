@@ -66,6 +66,7 @@ export function use_writer(
 		res._process._logger.warn(
 			'warning: write attempt on an ended stream in use_writer'
 		);
+		res.end();
 		return;
 	}
 	if (options.virtualFile.symLink) {
@@ -76,4 +77,6 @@ export function use_writer(
 		);
 		return vfs_stream_reader(options.virtualFile, res);
 	}
+	res.writeHead(404, 'not found');
+	return;
 }

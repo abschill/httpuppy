@@ -57,7 +57,7 @@ function useRouterSignatures(req: HTTPuppyRequest, res: HTTPuppyResponse) {
  * @internal
  * @private
  */
-function useHTTPHandle(
+function http_handle(
 	name: string,
 	_url: string,
 	server: HTTPServer,
@@ -86,7 +86,7 @@ function useHTTPHandle(
 	});
 }
 
-export function usePassthrough(
+export function passthrough(
 	_url: string,
 	server: HTTPServer,
 	cb: HTTPRouterCallback,
@@ -132,7 +132,7 @@ export function useRouter(
 	};
 
 	function get(url: string, cb: HTTPRouterCallback): void {
-		useHTTPHandle(
+		return http_handle(
 			'GET',
 			wrapperUrl + url,
 			server,
@@ -142,7 +142,7 @@ export function useRouter(
 	}
 
 	function post(url: string, cb: HTTPRouterCallback): void {
-		useHTTPHandle(
+		return http_handle(
 			'POST',
 			wrapperUrl + url,
 			server,
@@ -152,7 +152,7 @@ export function useRouter(
 	}
 
 	function head(url: string, cb: HTTPRouterCallback): void {
-		useHTTPHandle(
+		return http_handle(
 			'HEAD',
 			wrapperUrl + url,
 			server,
@@ -162,7 +162,7 @@ export function useRouter(
 	}
 
 	function put(url: string, cb: HTTPRouterCallback): void {
-		useHTTPHandle(
+		return http_handle(
 			'PUT',
 			wrapperUrl + url,
 			server,
@@ -172,7 +172,7 @@ export function useRouter(
 	}
 
 	function patch(url: string, cb: HTTPRouterCallback): void {
-		useHTTPHandle(
+		return http_handle(
 			'PATCH',
 			wrapperUrl + url,
 			server,
@@ -182,7 +182,7 @@ export function useRouter(
 	}
 
 	function trace(url: string, cb: HTTPRouterCallback): void {
-		useHTTPHandle(
+		return http_handle(
 			'TRACE',
 			wrapperUrl + url,
 			server,
@@ -192,7 +192,7 @@ export function useRouter(
 	}
 
 	function connect(url: string, cb: HTTPRouterCallback): void {
-		useHTTPHandle(
+		return http_handle(
 			'CONNECT',
 			wrapperUrl + url,
 			server,
@@ -202,7 +202,7 @@ export function useRouter(
 	}
 
 	function options(url: string, cb: HTTPRouterCallback): void {
-		useHTTPHandle(
+		return http_handle(
 			'OPTIONS',
 			wrapperUrl + url,
 			server,
@@ -212,7 +212,7 @@ export function useRouter(
 	}
 
 	function _delete(url: string, cb: HTTPRouterCallback): void {
-		useHTTPHandle(
+		return http_handle(
 			'DELETE',
 			wrapperUrl + url,
 			server,
@@ -222,7 +222,7 @@ export function useRouter(
 	}
 
 	function use(url: string, cb: HTTPRouterCallback): void {
-		usePassthrough(
+		return passthrough(
 			wrapperUrl + url,
 			server,
 			cb,

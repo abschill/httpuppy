@@ -45,4 +45,5 @@ export function apply_404(
 		res.end();
 		return;
 	}
+	return res.end();
 }
