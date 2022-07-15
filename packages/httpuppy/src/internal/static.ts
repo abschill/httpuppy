@@ -6,6 +6,7 @@ import {
 	ENV_DEFAULT_INDEXFILE,
 	ENV_DEFAULT_CONTENT_TYPE,
 	ENV_REQUEST_SIGNATURE,
+	ENV_TTL_DEFAULT,
 	VirtualWriteableFile,
 	HTTPuppyRequest,
 	HTTPuppyResponse,
@@ -111,7 +112,7 @@ export function mime_type(fpath: string): HTTPHeader {
 		const url = req.url ?? '/';
 		if(process.env.log_level && process.env.log_level === 'verbose') console.log(`${color.fg.blue('GET ')} ${url}`);
 		if (url?.includes(_url)) {
-			if (vfs.mountedFiles.some((file) => file.hrefs.includes(_url))) {
+			if (vfs.mountedFiles.some((file) => file.hrefs.includes(url))) {
 				const match = vfs.mountedFiles
 					.filter((f) => f.hrefs.includes(url))
 					.shift();
@@ -139,9 +140,17 @@ export function mime_type(fpath: string): HTTPHeader {
 					virtualFile: vFile,
 				});
 			}
-			// return setTimeout(() => {
-			// 	res.end();
-			// }, server.pConfig.ttl_default ?? ENV_TTL_DEFAULT * 100);
+			else {
+				res.writeHead(404, 'not found');
+				res.end();
+			}
+			return;
 		}
+		setTimeout(() => {
+			res.writeHead(404, 'not found');
+			res.end();
+		}, server.pConfig.ttl_default ?? ENV_TTL_DEFAULT * 100);
+
+		return;
 	});
 }
