@@ -11,6 +11,7 @@
 		"prepare:scripts": "chmod +x ./scripts/*",
 		"pinstall": "cd packages/httpuppy && yarn",
 		"build:core": "cd packages/httpuppy && yarn build",
+		"run:core0": "cd packages/httpuppy && node bin --serve __fixtures__",
 		"test:core": "cd packages/httpuppy && yarn test",
 		"test:workspace": "node tests/index.cjs",
 		"prepare": "husky install"

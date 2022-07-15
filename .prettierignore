@@ -1,0 +1,8 @@
+bin
+lib
+scripts
+__fixtures__
+docs
+.assets
+test
+bin/*.js
