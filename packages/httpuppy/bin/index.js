@@ -6,7 +6,7 @@ const { log } = console;
 const args = process.argv;
 
 if(!args.includes('--serve')) {
-	log(color_tag('red', 'error: must provide a directory with the --serve option'));
+	log(color.fg.red('error: must provide a directory with the --serve option'));
 	process.exit(1);
 }
 const serve_index = args.indexOf('--serve');
