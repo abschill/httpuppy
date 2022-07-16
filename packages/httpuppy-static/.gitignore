@@ -1,0 +1,14 @@
+node_modules
+*-error.log
+*.lock
+*.cert
+*.key
+lib
+*.nyc-output
+pkg-cache
+*.nyc-output
+nyc_output
+tmp
+*.log
+.DS_STORE
+log
