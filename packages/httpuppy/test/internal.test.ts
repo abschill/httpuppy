@@ -8,12 +8,9 @@ import { join, resolve } from 'path';
 import {
 	_vstats,
 	__etag,
-	mime_type,
 	use_config,
 	default_http_config
 } from '../lib/internal';
-
-const fixtures = join(process.cwd(), '__fixtures__');
 
 describe('test etag generation process', () => {
 
@@ -26,17 +23,6 @@ describe('test etag generation process', () => {
 	it('determines a proper fs.Stat', () => {
 		const ex = statSync(resolve(process.cwd(), 'package.json'));
 		expect(_vstats(ex)).toBeTruthy();
-	});
-});
-
-describe('localized mime types', () => {
-
-	it('detects the html file in fixtures', () => {
-		expect(mime_type(resolve(fixtures, 'index.html'))).toEqual({'Content-Type': 'text/html'});
-	});
-
-	it('detects css as css', () => {
-		expect(mime_type(resolve(process.cwd(), 'examples', 'style.css'))).toEqual({'Content-Type': 'text/css'});
 	});
 });
 
