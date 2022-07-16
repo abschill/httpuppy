@@ -5,6 +5,4 @@ const app = useServer({
 	port: 3000
 });
 
-app.static('/', './examples/files');
-
-app.start();
+app.static('/', './examples/files').then(_ => app.start());

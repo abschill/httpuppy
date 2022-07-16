@@ -12,5 +12,5 @@ const secureApp = useServer({
 	},
 	port: 3000
 });
-secureApp.static('/', 'examples/files');
-secureApp.start();
+secureApp.static('/', 'examples/files').then(_ => secureApp.start())
+

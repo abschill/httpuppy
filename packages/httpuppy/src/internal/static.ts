@@ -74,17 +74,13 @@ export async function mount_vfs(
 				res.writeHead(200, 'ok', [['Content-Type', match.mime_type ? match.mime_type : ENV_DEFAULT_CONTENT_TYPE]] );
 				return res.end(match.text_content);
 			}
-			else {
-				res.writeHead(404, 'not found');
-				res.end();
-			}
 			return;
 		}
-		setTimeout(() => {
-			res.writeHead(404, 'not found');
-			res.end();
-		}, server.pConfig.ttl_default ?? ENV_TTL_DEFAULT * 100);
-
-		return;
+		if(server._routers.length === 0) {
+			setTimeout(() => {
+				res.writeHead(404, 'not found');
+				res.end();
+			}, server.pConfig.ttl_default ?? ENV_TTL_DEFAULT * 100);
+		}
 	});
 }
