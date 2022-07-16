@@ -71,8 +71,10 @@ export async function mount_vfs(
 				if (!match.text_content) {
 					return vfs_stream_reader(vFile, res);
 				}
-				res.writeHead(200, 'ok', [['Content-Type', match.mime_type ? match.mime_type : ENV_DEFAULT_CONTENT_TYPE]] );
-				return res.end(match.text_content);
+				res.writeHead(200, 'ok', [['Content-Type', match.mime_type ? match.mime_type : ENV_DEFAULT_CONTENT_TYPE]]);
+				res.write(match.text_content);
+				res.end();
+				return;
 			}
 			return;
 		}

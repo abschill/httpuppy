@@ -5,6 +5,9 @@ const { resolve } = require('path');
 const cluster = require('cluster');
 const { log } = console;
 const args = process.argv;
+const VERSION = '0.4.15';
+
+log(color.fg.blue(`HTTPuppy Version: ${VERSION}`));
 
 if(!args.includes('--serve')) {
 	log(color.fg.red('error: must provide a directory with the --serve option'));
@@ -33,9 +36,9 @@ server.static('/', hot_dir).then(_ => {
 ${color.fg.green('Server Listening')}
 ${color.fg.yellow('Port:')} ${color.fg.purple(port)}
 ${color.fg.yellow('Directory:')} ${resolve(process.cwd(), hot_dir)}
-${color.fg.yellow('Base View:')} ${server._vfs.mounted_files.filter(f => f.hrefs.includes('/'))[0]._abspath}
+${color.fg.yellow('Base View:')} ${server._vfs.mounted_files.filter(f => f.hrefs.includes('/'))?.[0]?._abspath}
 ${color.fg.blue('Host:')} ${color.fg.yellow(server.pConfig.hostname ?? 'http://127.0.0.1:')}${color.fg.purple(port)}
-	`);
+`);
 	}
 });
 
