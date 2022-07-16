@@ -5,7 +5,7 @@ const { resolve } = require('path');
 const cluster = require('cluster');
 const { log } = console;
 const args = process.argv;
-const VERSION = '0.5.0';
+const { version } = require('../package.json');
 
 if(!args.includes('--serve')) {
 	log(color.fg.red('error: must provide a directory with the --serve option'));
@@ -21,16 +21,27 @@ if(args.length <= serve_index) {
 }
 const hot_dir = args[args.indexOf('--serve')+1];
 
+let log_level = 'base';
+let clustered = false;
+if(args.includes('--log')) {
+	const arg = args[args.indexOf('--log')+1];
+	if(arg) log_level = arg;
+}
+
+if(args.includes('--clustered')) {
+	clustered = true;
+}
+
 const server = useServer({
-	clustered: true,
+	clustered,
 	port,
-	log_level: 'base'
+	log_level
 });
 
 server.static('/', hot_dir).then(_ => {
 	server.start();
 	if(cluster.isPrimary) {
-		log(color.fg.blue(`HTTPuppy Version: ${VERSION}`));
+		log(color.fg.blue(`HTTPuppy Version: ${version}`));
 		log(`
 ${color.fg.green('Server Listening')}
 ${color.fg.yellow('Port:')} ${color.fg.purple(port)}

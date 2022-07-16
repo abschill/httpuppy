@@ -58,6 +58,13 @@ export function useServer(
 		});
 	};
 
-	server.static = async (_url: string, static_path: string) => await apply_static_callback(server, _url, static_path);
+	server.static = async (_url: string, static_path: string) => {
+		try {
+			await apply_static_callback(server, _url, static_path);
+		}
+		catch(e) {
+			throw e;
+		}
+	}
 	return server;
 }

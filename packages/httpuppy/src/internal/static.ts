@@ -78,6 +78,10 @@ export async function mount_vfs(
 				res.end();
 				return;
 			}
+			else {
+				res.writeHead(404, 'not found');
+				res.end();
+			}
 			return;
 		}
 		if(server._routers.length === 0) {
