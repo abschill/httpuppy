@@ -57,3 +57,14 @@ export async function create_vfs(
         mounted_files
     };
 }
+
+export function __mime_type(
+    path: string,
+    as_obj?: boolean
+) {
+    const _type = mime_type.contentType(path).toString();
+    if(as_obj) {
+        return { 'Content-Type': _type };
+    }
+    return _type
+}

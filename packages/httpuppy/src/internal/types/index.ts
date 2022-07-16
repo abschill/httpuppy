@@ -12,6 +12,7 @@ import {
 } from '../../internal';
 import { HTTPServerOptions } from './server';
 import { HTTPRouter } from '../../';
+import { MountedVFS } from 'httpuppy-vfs';
 /**
  * Typedefs for Server Runtiem
  */
@@ -26,7 +27,7 @@ export interface HTTPServer extends node_http_server {
 	start: () => boolean; //start process for server (wrapper around .listen())
 	stop: () => Promise<HTTPuppySleep>; // shutdown handler
 	static: (path: string, static_path: string) => void;
-	_vfs: VirtualFileSystem; // virtual filesystem to load paths from
+	_vfs: MountedVFS; // virtual filesystem to load paths from
 	_routers: HTTPRouter[];
 	_logger: winston.Logger;
 	use: (url: string, fn: HTTPRouterCallback) => void;

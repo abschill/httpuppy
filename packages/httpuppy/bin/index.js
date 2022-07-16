@@ -26,15 +26,16 @@ const server = useServer({
 	log_level: 'base'
 });
 
-server.static('/', hot_dir);
-server.start();
-if(cluster.isPrimary) {
-	log(`
-${color.fg.green('Server Listening')}
-${color.fg.yellow('Port:')} ${color.fg.purple(port)}
-${color.fg.yellow('Directory:')} ${resolve(process.cwd(), hot_dir)}
-${color.fg.yellow('Base View:')} ${server._vfs.mountedFiles.filter(f => f.hrefs.includes('/'))[0].symLink}
-${color.fg.blue('Host:')} ${color.fg.yellow(server.pConfig.hostname ?? 'http://127.0.0.1:')}${color.fg.purple(port)}
-`);
-}
+server.static('/', hot_dir).then(_ => {
+	server.start();
+	if(cluster.isPrimary) {
+		log(`
+	${color.fg.green('Server Listening')}
+	${color.fg.yellow('Port:')} ${color.fg.purple(port)}
+	${color.fg.yellow('Directory:')} ${resolve(process.cwd(), hot_dir)}
+	${color.fg.yellow('Base View:')} ${server._vfs.mounted_files.filter(f => f.hrefs.includes('/'))[0]._abspath}
+	${color.fg.blue('Host:')} ${color.fg.yellow(server.pConfig.hostname ?? 'http://127.0.0.1:')}${color.fg.purple(port)}
+	`);
+	}
+});
 

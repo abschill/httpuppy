@@ -8,10 +8,10 @@ import {
 	ENV_STATUS_OK,
 	HTTPuppyResponse,
 	HTTPWriterOptions,
-	mime_type,
 	VirtualWriteableFile,
 	HTTPServerOptions
 } from '.';
+import { __mime_type } from 'httpuppy-vfs';
 /**
  * @private
  */
@@ -40,7 +40,7 @@ export function vfs_stream_reader(
 		const stream = createReadStream(pathData.symLink);
 		stream.on('data', (chunk) => {
 			// type the symlink of the streamable file, write into the response stream
-			res.writeHead(200, ENV_STATUS_OK, mime_type(pathData.symLink ?? ''));
+			res.writeHead(200, ENV_STATUS_OK, [['Content-Type', <string>__mime_type(pathData.symLink ?? '')]]);
 			res.write(chunk);
 		});
 		// end response when data is done streaming from vfile
@@ -49,34 +49,34 @@ export function vfs_stream_reader(
 	return;
 }
 
-/**
- * @internal
- * @private
- * @param res the response to write to
- * @param config the config to base the write on
- * @param options the writer instance options
- * @returns
- */
-export function use_writer(
-	res: HTTPuppyResponse,
-	config: HTTPServerOptions,
-	options: HTTPWriterOptions
-): void {
-	if (!res.writable) {
-		res._process._logger.warn(
-			'warning: write attempt on an ended stream in use_writer'
-		);
-		res.end();
-		return;
-	}
-	if (options.virtualFile.symLink) {
-		res.writeHead(
-			options.status,
-			options.statusText,
-			...apply_headers(options, config)
-		);
-		return vfs_stream_reader(options.virtualFile, res);
-	}
-	res.writeHead(404, 'not found');
-	return;
-}
+// /**
+//  * @internal
+//  * @private
+//  * @param res the response to write to
+//  * @param config the config to base the write on
+//  * @param options the writer instance options
+//  * @returns
+//  */
+// export function use_writer(
+// 	res: HTTPuppyResponse,
+// 	config: HTTPServerOptions,
+// 	options: HTTPWriterOptions
+// ): void {
+// 	if (!res.writable) {
+// 		res._process._logger.warn(
+// 			'warning: write attempt on an ended stream in use_writer'
+// 		);
+// 		res.end();
+// 		return;
+// 	}
+// 	if (options.virtualFile.symLink) {
+// 		res.writeHead(
+// 			options.status,
+// 			options.statusText,
+// 			...apply_headers(options, config)
+// 		);
+// 		return vfs_stream_reader(options.virtualFile, res);
+// 	}
+// 	res.writeHead(404, 'not found');
+// 	return;
+// }

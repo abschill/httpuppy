@@ -1,23 +1,16 @@
-import { lookup } from 'mime-types';
-import { resolve, normalize } from 'path';
-import { readdirSync } from 'fs';
+import { create_vfs, MountedVFS } from 'httpuppy-vfs';
 import { color } from 'terminal-color';
 import {
-	ENV_DEFAULT_INDEXFILE,
 	ENV_DEFAULT_CONTENT_TYPE,
 	ENV_REQUEST_SIGNATURE,
 	ENV_TTL_DEFAULT,
 	VirtualWriteableFile,
 	HTTPuppyRequest,
 	HTTPuppyResponse,
-	is_buffer_type,
-	HTTPHeader,
 	HTTPServer,
-	MountedFile,
-	use_writer,
-	VirtualFileSystem,
 	vfs_stream_reader
 } from '.';
+
 export type UserStaticConfig = {
 	href?: string; // prefix path to access the directory on router
 	path?: string; // path on filesystem to reflect
@@ -27,93 +20,38 @@ export type UserStaticConfig = {
  * @private
  *
  */
-export function index_paths(file: string, _static: UserStaticConfig): string[] {
-	const pathOptions = [`${_static.href ?? ''}${file}`];
-	if (file === ENV_DEFAULT_INDEXFILE) {
-		pathOptions.push(`${_static.href ?? ''}`);
-	}
-	return pathOptions;
-}
-/**
- * @private
- *
- */
-export function as_vfile(
-	file: string,
-	symLink: string,
-	staticConfig: UserStaticConfig
-): MountedFile {
-	return <MountedFile>{
-		fileName: file,
-		symLink,
-		contentType: <HTTPHeader>mime_type(symLink),
-		hrefs: index_paths(file, staticConfig),
-	};
-}
-
-/**
- * @private
- *
- */
-export function mount_vfs(
+export async function mount_vfs(
 	server: HTTPServer,
 	staticOptions?: UserStaticConfig
-): VirtualFileSystem {
+): Promise<MountedVFS> {
 	if (!staticOptions?.path) {
 		server._logger.error(
 			'fs attempted to mount with no path set in configuration'
 		);
 		throw 'error: fs attempted to mount with no path set in configuration';
 	}
-	const mountedPath = normalize(staticOptions.path);
-	const mountedFiles = readdirSync(mountedPath).map((file) => {
-		const symLink = resolve(mountedPath, file);
-		return as_vfile(file, symLink, <UserStaticConfig>staticOptions);
-	});
-	// filesMounted is the accessible file tree that can be used against the upcoming handlers
-	return {
-		mountedPath,
-		mountedHref: staticOptions.href ?? '/',
-		mountedFiles,
-	};
-}
+	return await create_vfs(staticOptions.href ?? '/', staticOptions.path);
 
-/**
- * @internal useLocalMimeType
- * @description hook for determining content type of a virtual fpath on the system
- * @param fpath the file path of the type to resolve
- * @returns the tuple representing the content type header for the static file
- */
-export function mime_type(fpath: string): HTTPHeader {
-	if (fpath === '')
-		return {
-			'Content-Type': ENV_DEFAULT_CONTENT_TYPE,
-		};
-	const matchType = lookup(fpath);
-	return {
-		'Content-Type': matchType ? matchType : ENV_DEFAULT_CONTENT_TYPE,
-	};
 }
-
 /**
  * @private
  * @internal
  */
 
- export function apply_static_callback(
+ export async function apply_static_callback(
 	server: HTTPServer,
 	_url: string,
 	static_path: string
 ) {
 	const sConfig = { href: _url, path: static_path };
-	const vfs = mount_vfs(server, sConfig);
+	const vfs = await mount_vfs(server, sConfig);
 	server._vfs = vfs;
 	server.on(ENV_REQUEST_SIGNATURE, (req: HTTPuppyRequest, res: HTTPuppyResponse) => {
 		const url = req.url ?? '/';
 		if(process.env.log_level && process.env.log_level === 'verbose') console.log(`${color.fg.blue('GET ')} ${url}`);
 		if (url?.includes(_url)) {
-			if (vfs.mountedFiles.some((file) => file.hrefs.includes(url))) {
-				const match = vfs.mountedFiles
+			if (vfs.mounted_files.some((file) => file.hrefs.includes(url))) {
+				const match = vfs.mounted_files
 					.filter((f) => f.hrefs.includes(url))
 					.shift();
 				if (!match) {
@@ -124,21 +62,17 @@ export function mime_type(fpath: string): HTTPHeader {
 					return;
 				}
 				const vFile: VirtualWriteableFile = {
-					contentType: match.contentType,
-					symLink: match.symLink,
-					fileName: match.fileName,
+					contentType: { 'Content-Type': match.mime_type ? match.mime_type : ENV_DEFAULT_CONTENT_TYPE },
+					symLink: match._abspath,
+					fileName: match._filename,
 					reqUrl: url,
-					hrefs: index_paths(match.fileName, sConfig),
+					hrefs: match.hrefs
 				};
-				if (is_buffer_type(url)) {
+				if (!match.text_content) {
 					return vfs_stream_reader(vFile, res);
 				}
-				return use_writer(res, server.pConfig, {
-					status: 200,
-					statusText: 'ok',
-					type: mime_type(match.symLink)['Content-Type'],
-					virtualFile: vFile,
-				});
+				res.writeHead(200, 'ok', [['Content-Type', match.mime_type ? match.mime_type : ENV_DEFAULT_CONTENT_TYPE]] );
+				return res.end(match.text_content);
 			}
 			else {
 				res.writeHead(404, 'not found');
