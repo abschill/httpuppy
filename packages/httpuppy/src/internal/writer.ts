@@ -3,21 +3,11 @@
  */
 import { createReadStream } from 'fs';
 import {
-	apply_headers,
-	bufferTypes,
 	ENV_STATUS_OK,
-	HTTPuppyResponse,
-	HTTPWriterOptions,
 	VirtualWriteableFile,
-	HTTPServerOptions
 } from '.';
+import { HTTPuppyResponse } from 'httpuppy-types';
 import { __mime_type } from 'httpuppy-vfs';
-/**
- * @private
- */
-export const is_buffer_type = (file: string) =>
-	bufferTypes.filter((el) => file.includes(el)).length > 0;
-
 /**
  * @internal useVirtualStreamReader
  * @description apply virtual stream reader to the given request, and close stream on exit
@@ -48,35 +38,3 @@ export function vfs_stream_reader(
 	}
 	return;
 }
-
-// /**
-//  * @internal
-//  * @private
-//  * @param res the response to write to
-//  * @param config the config to base the write on
-//  * @param options the writer instance options
-//  * @returns
-//  */
-// export function use_writer(
-// 	res: HTTPuppyResponse,
-// 	config: HTTPServerOptions,
-// 	options: HTTPWriterOptions
-// ): void {
-// 	if (!res.writable) {
-// 		res._process._logger.warn(
-// 			'warning: write attempt on an ended stream in use_writer'
-// 		);
-// 		res.end();
-// 		return;
-// 	}
-// 	if (options.virtualFile.symLink) {
-// 		res.writeHead(
-// 			options.status,
-// 			options.statusText,
-// 			...apply_headers(options, config)
-// 		);
-// 		return vfs_stream_reader(options.virtualFile, res);
-// 	}
-// 	res.writeHead(404, 'not found');
-// 	return;
-// }

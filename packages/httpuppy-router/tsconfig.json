@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+		"allowJs": true,
+        "baseUrl": ".",
+        "rootDir": "src",
+        "outDir": "lib",
+        "declaration": true,
+        "moduleResolution": "node",
+		"esModuleInterop": true,
+		"strict": true
+    },
+	"include": [
+		"src/**/*"
+	],
+	"exclude": [
+		"test/**/*"
+	]
+}

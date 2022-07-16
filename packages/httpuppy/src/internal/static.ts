@@ -5,11 +5,13 @@ import {
 	ENV_REQUEST_SIGNATURE,
 	ENV_TTL_DEFAULT,
 	VirtualWriteableFile,
+	vfs_stream_reader
+} from '.';
+import {
 	HTTPuppyRequest,
 	HTTPuppyResponse,
 	HTTPServer,
-	vfs_stream_reader
-} from '.';
+} from 'httpuppy-types';
 
 export type UserStaticConfig = {
 	href?: string; // prefix path to access the directory on router

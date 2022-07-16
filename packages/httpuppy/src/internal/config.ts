@@ -3,9 +3,7 @@
  */
 import apply_clustered from './cluster';
 import {
-	DiagnosticLog,
 	defaultCacheSettings,
-	HTTPServer,
 	shutdown,
 	create_logger,
 	ENV_DEFAULT_ERROR_FILE,
@@ -13,8 +11,12 @@ import {
 	ENV_DEFAULT_HOST,
 	ENV_TTL_DEFAULT,
 	ENV_PORT_DEFAULT,
-	HTTPServerOptions
 } from '.';
+import {
+	DiagnosticLog,
+	HTTPServer,
+	HTTPServerOptions
+} from 'httpuppy-types'
 
 export const default_http_config: HTTPServerOptions = {
 	port: ENV_PORT_DEFAULT,

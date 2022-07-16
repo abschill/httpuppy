@@ -4,18 +4,20 @@
  */
 import {
 	_use_server,
-	create_server,
-	create_secure_server,
-	DiagnosticLog,
-	https_options,
-	HTTPServer,
 	default_http_config,
-	HTTPServerOptions,
 	ENV_ASYNC_SIGNATURE,
 	ENV_REQUEST_SIGNATURE,
 	use_config,
 	apply_static_callback
 } from './internal';
+import {
+	DiagnosticLog,
+	HTTPServer,
+	HTTPServerOptions,
+	https_options,
+	create_server,
+	create_secure_server,
+} from 'httpuppy-types';
 
 /**
  * @function useServer

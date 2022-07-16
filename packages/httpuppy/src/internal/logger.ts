@@ -1,14 +1,21 @@
-import { Logger, format, transports, createLogger } from 'winston';
-import { color_tag } from './include';
+// import { color_tag } from './include';
+import { color } from 'terminal-color';
 import {
 	ENV_DEFAULT_ERROR_FILE,
 	ENV_DEFAULT_EVENT_FILE,
 	ENV_LOG_PREFIX
 } from '.';
-export type LogLevel = 'silent' | 'base' | 'verbose';
-export type LogErrorFile = string;
-export type LogEventFile = string;
-
+import {
+	LogLevel,
+	LogEventFile,
+	LogErrorFile
+} from 'httpuppy-types';
+import {
+	Logger,
+	format,
+	transports,
+	createLogger
+} from 'winston';
 export function create_logger(
 	level: LogLevel,
 	error_file?: LogErrorFile,
@@ -27,13 +34,7 @@ export function create_logger(
 							format.timestamp(),
 							format.printf(
 								({ level, message, label, timestamp }) => {
-									return `[${color_tag(
-										'blue',
-										label
-									)}] ${level}: ${message} @ ${color_tag(
-										'green',
-										timestamp
-									)}`;
+									return `[${color.fg.blue(label)}] ${level}: ${message} @ ${color.fg.green(timestamp)}`;
 								}
 							)
 						),

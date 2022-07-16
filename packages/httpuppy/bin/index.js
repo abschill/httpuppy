@@ -5,7 +5,7 @@ const { resolve } = require('path');
 const cluster = require('cluster');
 const { log } = console;
 const args = process.argv;
-const VERSION = '0.4.16';
+const VERSION = '0.5.0';
 
 if(!args.includes('--serve')) {
 	log(color.fg.red('error: must provide a directory with the --serve option'));

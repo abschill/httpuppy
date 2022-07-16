@@ -18,5 +18,11 @@
 	},
 	"devDependencies": {
 		"husky": "^8.0.1"
-	}
+	},
+	"workspaces": [
+		"./packages/httpuppy",
+		"./packages/httpuppy-types",
+		"./packages/httpuppy-router",
+		"./packages/httpuppy-vfs"
+	]
 }

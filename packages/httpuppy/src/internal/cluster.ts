@@ -4,8 +4,10 @@
  */
 import cluster from 'cluster';
 import { cpus } from 'os';
-import { HTTPServerOptions } from '.';
-import { HTTPServer } from './types';
+import {
+	HTTPServer,
+	HTTPServerOptions
+} from 'httpuppy-types';
 
 export default function apply_clustered(
 	server: HTTPServer

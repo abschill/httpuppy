@@ -1,7 +1,7 @@
 /**
  * @internal
  */
-import { HTTPHeader } from '../types';
+import { HTTPHeader } from 'httpuppy-types';
 
 /**
  * @type MountedFile
