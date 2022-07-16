@@ -26,9 +26,14 @@ npm i httpuppy
 yarn add httpuppy
 ```
 
+## Install CLI Globally
+```
+npm i -g httpuppy
+```
+
 ## Command Line Use
 ```
-npx httpuppy --serve path/to/files
+httpuppy --serve path/to/files
 ```
 
 create static dev server which is mounted at `path/to/files` by default on port 3000
@@ -41,8 +46,8 @@ const { useServer } = require('httpuppy');
 const app = useServer({
 	port: 3000
 });
-app.static('/', 'path/to/content'); //serve arg[1] at the arg[0] href
-app.start();
+app.static('/', 'path/to/content') //serve arg[1] at the arg[0] href
+.then(_ => app.start());
 ```
 
 ## Layered Routing
@@ -54,14 +59,14 @@ const app = useServer({
 	port: 3000
 });
 
-app.static('/', 'path/to/content'); //serve arg[1] at the arg[0] href
+app.static('/', 'path/to/content') //serve arg[1] at the arg[0] href
+.then(_ => {
+	const router = useRouter(app);
 
-const router = useRouter(app);
+	router.get('/api/v1/content', (req, res) => res.json({msg: "success"}));
 
-router.get('/api/v1/content', (req, res) => res.json({msg: "success"}));
-
-app.start();
-
+	app.start();
+});
 ```
 supports middleware without a `next` method - will continue when the computation is finished, supports async scoping as well.
 ## router middleware
@@ -129,8 +134,4 @@ router.post('/api/v1/thing', async(req, res) => {
 app.start();
 
 ```
-[Examples](/examples/)
-
-[Documentation](/docs/reference/)
-
-[API Reference](/docs/typedoc/modules.md)
+[Wiki](https://github.com/webpuppy/httpuppy/wiki)
