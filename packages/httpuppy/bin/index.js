@@ -5,9 +5,7 @@ const { resolve } = require('path');
 const cluster = require('cluster');
 const { log } = console;
 const args = process.argv;
-const VERSION = '0.4.15';
-
-log(color.fg.blue(`HTTPuppy Version: ${VERSION}`));
+const VERSION = '0.4.16';
 
 if(!args.includes('--serve')) {
 	log(color.fg.red('error: must provide a directory with the --serve option'));
@@ -32,6 +30,7 @@ const server = useServer({
 server.static('/', hot_dir).then(_ => {
 	server.start();
 	if(cluster.isPrimary) {
+		log(color.fg.blue(`HTTPuppy Version: ${VERSION}`));
 		log(`
 ${color.fg.green('Server Listening')}
 ${color.fg.yellow('Port:')} ${color.fg.purple(port)}

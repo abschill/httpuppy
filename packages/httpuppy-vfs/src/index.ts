@@ -17,7 +17,7 @@ export async function* get_files(
         else {
             const hrefs = [];
             const fname = res.split('/').pop();
-            if(fname === 'index.html') hrefs.push(href);
+            if(fname?.includes('index.html')) hrefs.push(href);
             hrefs.push(`${href}${fname}`);
             const _mime_type = mime_type.contentType(<string>fname).toString();
             if(!_mime_type.includes('text')) {
