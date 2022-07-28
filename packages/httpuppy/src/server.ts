@@ -66,5 +66,10 @@ export function useServer(
 			throw e;
 		}
 	}
+
+	process.on('beforeExit', async (code) => {
+		server._logger.info(`exiting with code ${code}`);
+		await server.stop();
+	});
 	return server;
 }
