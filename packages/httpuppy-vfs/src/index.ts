@@ -1,10 +1,9 @@
-export * from './types';
 import { readdir, readFile } from 'fs/promises';
 import { resolve } from 'path';
-import { MountedVFSFile, MountedVFS } from './types';
 import mime_type from 'mime-types';
+import { MountedVFS, MountedVFSFile } from 'httpuppy-types';
 
-export async function* get_files(
+export async function* get_tree(
     href: string,
     dir: string
 ): AsyncGenerator<MountedVFSFile> {
@@ -12,7 +11,7 @@ export async function* get_files(
     for (const dirent of dirents) {
         const res = resolve(dir, dirent.name);
         if (dirent.isDirectory()) {
-            yield* get_files(href, res);
+            yield* get_tree(href, res);
         } 
         else {
             const hrefs = [];
@@ -40,17 +39,16 @@ export async function* get_files(
                     text_content
                 };
             }
-            
         }
     }
 }
 
-export async function create_vfs(
+export async function create_nested_vfs(
     href: string,
     dir: string
 ): Promise<MountedVFS> {
     const mounted_files = [];
-    for await (const f of get_files(href, dir)) mounted_files.push(f);
+    for await (const f of get_tree(href, dir)) mounted_files.push(f);
     return {
         mounted_href: href,
         mounted_path: dir,
@@ -58,7 +56,7 @@ export async function create_vfs(
     };
 }
 
-export function __mime_type(
+export function local_mime_type(
     path: string,
     as_obj?: boolean
 ) {
@@ -66,5 +64,5 @@ export function __mime_type(
     if(as_obj) {
         return { 'Content-Type': _type };
     }
-    return _type
+    return _type;
 }

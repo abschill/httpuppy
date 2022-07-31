@@ -1,4 +1,4 @@
-import { create_vfs, MountedVFS } from 'httpuppy-vfs';
+import { create_nested_vfs } from 'httpuppy-vfs';
 import { color } from 'terminal-color';
 import {
 	ENV_DEFAULT_CONTENT_TYPE,
@@ -11,6 +11,7 @@ import {
 	HTTPuppyRequest,
 	HTTPuppyResponse,
 	HTTPServer,
+	MountedVFS
 } from 'httpuppy-types';
 
 export type UserStaticConfig = {
@@ -32,7 +33,7 @@ export async function mount_vfs(
 		);
 		throw 'error: fs attempted to mount with no path set in configuration';
 	}
-	return await create_vfs(staticOptions.href ?? '/', staticOptions.path);
+	return await create_nested_vfs(staticOptions.href ?? '/', staticOptions.path);
 
 }
 /**

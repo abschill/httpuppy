@@ -1,64 +1,64 @@
 {
-  "name": "httpuppy",
-  "version": "0.5.3",
-  "description": "speedy abstraction layer for node web servers with automatic clustering",
-  "types": "lib/index.d.ts",
-  "main": "lib/index.js",
-  "bin": "bin/index.js",
-  "scripts": {
-    "setup": "chmod +x ./scripts/**/*",
-    "build": "tsc",
-    "build:watch": "tsc -w",
-    "build:docs": "typedoc --excludeInternal",
-    "dev": "make -j 2 dev-ts dev-example",
-    "test": "ts-mocha test/**/*.test.ts",
-    "test:watch": "ts-mocha -w test/**/*.test.ts",
-    "run-static": "nodemon examples/static-demo.js",
-    "test:coverage": "rm -rf nyc-output && nyc yarn test",
-    "lint:check": "prettier --check ./src",
-    "lint": "prettier --write ./src"
-  },
-  "keywords": [
-    "http",
-    "https",
-    "express",
-    "web-server",
-    "server",
-    "backend",
-    "proxy",
-    "dev-server"
-  ],
-  "files": [
-    "lib/**/*",
-	"bin/index.js"
-  ],
-  "author": "abschill",
-  "license": "AGPL-3.0",
-  "devDependencies": {
-    "@types/mocha": "^9.1.1",
-    "@types/node": "^17.0.31",
-    "@typescript-eslint/eslint-plugin": "^5.22.0",
-    "@typescript-eslint/parser": "^5.22.0",
-    "eslint": "^8.14.0",
-    "expect": "^28.1.0",
-    "mocha": "^10.0.0",
-    "nyc": "^15.1.0",
-    "ts-mocha": "^10.0.0",
-    "typedoc": "^0.22.17",
-    "typedoc-plugin-markdown": "^3.12.1",
-    "typescript": "^4.6.3"
-  },
-  "dependencies": {
-    "http-graceful-shutdown": "^3.1.7",
-    "httpuppy-router": "^0.1.1",
-    "httpuppy-types": "^0.1.0",
-    "httpuppy-vfs": "^0.1.3",
-    "terminal-color": "^0.2.0",
-    "winston": "^3.7.2"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/webpuppy/httpuppy"
-  },
-  "homepage": "https://github.com/webpuppy/httpuppy"
+	"name": "httpuppy",
+	"version": "0.5.4",
+	"description": "speedy abstraction layer for node web servers with automatic clustering",
+	"types": "lib/index.d.ts",
+	"main": "lib/index.js",
+	"bin": "bin/index.js",
+	"scripts": {
+		"setup": "chmod +x ./scripts/**/*",
+		"build": "tsc",
+		"build:watch": "tsc -w",
+		"build:docs": "typedoc --excludeInternal",
+		"dev": "make -j 2 dev-ts dev-example",
+		"test": "ts-mocha test/**/*.test.ts",
+		"test:watch": "ts-mocha -w test/**/*.test.ts",
+		"run-static": "nodemon examples/static-demo.js",
+		"test:coverage": "rm -rf nyc-output && nyc yarn test",
+		"lint:check": "prettier --check ./src",
+		"lint": "prettier --write ./src"
+	},
+	"keywords": [
+		"http",
+		"https",
+		"express",
+		"web-server",
+		"server",
+		"backend",
+		"proxy",
+		"dev-server"
+	],
+	"files": [
+		"lib/**/*",
+		"bin/index.js"
+	],
+	"author": "abschill",
+	"license": "AGPL-3.0",
+	"devDependencies": {
+		"@types/mocha": "^9.1.1",
+		"@types/node": "^17.0.31",
+		"@typescript-eslint/eslint-plugin": "^5.22.0",
+		"@typescript-eslint/parser": "^5.22.0",
+		"eslint": "^8.14.0",
+		"expect": "^28.1.0",
+		"mocha": "^10.0.0",
+		"nyc": "^15.1.0",
+		"ts-mocha": "^10.0.0",
+		"typedoc": "^0.22.17",
+		"typedoc-plugin-markdown": "^3.12.1",
+		"typescript": "^4.6.3"
+	},
+	"dependencies": {
+		"http-graceful-shutdown": "^3.1.7",
+		"httpuppy-router": "^0.1.1",
+		"httpuppy-types": "^0.1.0",
+		"httpuppy-vfs": "^0.1.4",
+		"terminal-color": "^0.2.0",
+		"winston": "^3.7.2"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/webpuppy/httpuppy"
+	},
+	"homepage": "https://github.com/webpuppy/httpuppy"
 }
