@@ -2,10 +2,7 @@
  * @module util
  * @description utility types
  */
-import {
-    HTTPuppyRequest,
-    HTTPuppyResponse
-} from '.';
+import { HTTPuppyRequest, HTTPuppyResponse } from '.';
 
 export type HTTPuppySleep = () => Promise<void>;
 export type Callable<T> = (args: T) => Promise<any> | any;
@@ -13,8 +10,8 @@ export type Callable<T> = (args: T) => Promise<any> | any;
  * @internal
  * @private
  */
- export type HTTPHeader = {
-	[key: string]: string;
+export type HTTPHeader = {
+    [key: string]: string;
 };
 /**
  * @internal
@@ -24,10 +21,10 @@ export type HTTPHeaders = HTTPHeader[];
 
 export type iExitHandler = undefined | (() => Promise<void>) | (() => void);
 export type iHandlerType = (
-	req: HTTPuppyRequest,
-	res: HTTPuppyResponse
+    req: HTTPuppyRequest,
+    res: HTTPuppyResponse
 ) => Promise<void> | ((req: HTTPuppyRequest, res: HTTPuppyResponse) => void);
 export type UserMiddlewareOption = {
-	href: string;
-	handler: iHandlerType;
+    href: string;
+    handler: iHandlerType;
 };

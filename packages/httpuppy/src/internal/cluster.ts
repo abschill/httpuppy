@@ -15,7 +15,7 @@ export default function apply_clustered(
 	if (cluster.isPrimary) {
 		return use_main();
 	}
-	return use_child(server.pConfig, server);
+	return use_child(server.config, server);
 }
 
 function use_main() {

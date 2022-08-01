@@ -20,7 +20,7 @@ export function vfs_stream_reader(
 	res: HTTPuppyResponse
 ): void {
 	if (!res.writable) {
-		res._process._logger.warn(
+		res._process.logger.warn(
 			'warning: write attempt on an ended stream in vfs_stream_reader'
 		);
 		return;

@@ -65,9 +65,9 @@ export function _use_server(
 	const ss = <HTTPServer>server;
 	ss.timeout = config.ttl_default;
 	ss.diagnostics = diagnostics;
-	ss.pConfig = config;
-	ss._routers = [];
-	ss._logger = create_logger(
+	ss.config = config;
+	ss.routers = [];
+	ss.logger = create_logger(
 		config.log_level ?? 'base',
 		ENV_DEFAULT_ERROR_FILE,
 		ENV_DEFAULT_EVENT_FILE
@@ -85,7 +85,7 @@ export function _use_server(
 				msg: JSON.stringify(e),
 				timestamp: Date.now().toLocaleString(),
 			});
-			server._logger.error(`${JSON.stringify(e)}`);
+			server.logger.error(`${JSON.stringify(e)}`);
 			return false;
 		}
 	};

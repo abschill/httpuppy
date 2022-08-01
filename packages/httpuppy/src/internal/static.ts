@@ -28,7 +28,7 @@ export async function mount_vfs(
 	staticOptions?: UserStaticConfig
 ): Promise<MountedVFS> {
 	if (!staticOptions?.path) {
-		server._logger.error(
+		server.logger.error(
 			'fs attempted to mount with no path set in configuration'
 		);
 		throw 'error: fs attempted to mount with no path set in configuration';
@@ -48,7 +48,7 @@ export async function mount_vfs(
 ) {
 	const sConfig = { href: _url, path: static_path };
 	const vfs = await mount_vfs(server, sConfig);
-	server._vfs = vfs;
+	server.vfs = vfs;
 	server.on(ENV_REQUEST_SIGNATURE, (req: HTTPuppyRequest, res: HTTPuppyResponse) => {
 		const url = req.url ?? '/';
 		if(process.env.log_level && process.env.log_level === 'verbose') console.log(`${color.fg.blue('GET ')} ${url}`);
@@ -85,11 +85,11 @@ export async function mount_vfs(
 			}
 			return;
 		}
-		if(server._routers.length === 0) {
+		if(server.routers.length === 0) {
 			setTimeout(() => {
 				res.writeHead(404, 'not found');
 				res.end();
-			}, server.pConfig.ttl_default ?? ENV_TTL_DEFAULT * 100);
+			}, server.config.ttl_default ?? ENV_TTL_DEFAULT * 100);
 		}
 	});
 }

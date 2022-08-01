@@ -44,7 +44,7 @@ export function useServer(
 		)
 		: create_server(def_event_handler);
 	const server = _use_server(config, <HTTPServer>_server, diagnostics);
-	server._logger.info(
+	server.logger.info(
 		`logger online (child pid: ${process.pid}) (parent: ${process.ppid})`
 	);
 	server.use = (url: string, fn: any|Promise<any>) => {
@@ -68,7 +68,7 @@ export function useServer(
 	}
 
 	process.on('beforeExit', async (code) => {
-		server._logger.info(`exiting with code ${code}`);
+		server.logger.info(`exiting with code ${code}`);
 		await server.stop();
 	});
 	return server;

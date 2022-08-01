@@ -1,16 +1,17 @@
-const { useServer, useRouter } = require('httpuppy');
-
+const { useServer } = require('httpuppy');
+const { useRouter } = require('httpuppy-router');
 const server = useServer({
     port: 3001,
-    log_level: 'verbose'
+    log_level: 'verbose',
+    clustered: true
 });
+
 const router = useRouter(server);
+
+server.static('/static', './static-server-test');
+
 router.get('/', (req, res) => res.json({ msg: 'hello' }));
 
-router.get('/route0', (req, res) => res.json({ msg: 'route 0' }));
+router.get('/:route', (req, res) => res.json({ msg: req.params.route }));
 
-router.get('/route1', (req, res) => res.json({ msg: 'route 1' }));
-
-
-  
 server.start();

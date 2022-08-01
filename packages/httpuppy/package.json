@@ -1,6 +1,6 @@
 {
 	"name": "httpuppy",
-	"version": "0.5.4",
+	"version": "0.5.5",
 	"description": "speedy abstraction layer for node web servers with automatic clustering",
 	"types": "lib/index.d.ts",
 	"main": "lib/index.js",
@@ -50,8 +50,8 @@
 	},
 	"dependencies": {
 		"http-graceful-shutdown": "^3.1.7",
-		"httpuppy-router": "^0.1.1",
-		"httpuppy-types": "^0.1.0",
+		"httpuppy-router": "^0.1.3",
+		"httpuppy-types": "^0.1.3",
 		"httpuppy-vfs": "^0.1.4",
 		"terminal-color": "^0.2.0",
 		"winston": "^3.7.2"
