@@ -1,28 +1,29 @@
 {
-	"name": "httpuppy-workspace",
-	"version": "0.0.0",
-	"description": "monorepo for local workspace for httpuppy",
-	"main": "index.js",
-	"repository": "https://github.com/webpuppy/httpuppy.git",
-	"author": "abschill",
-	"license": "AGPL-3.0",
-	"private": true,
+  "name": "httpuppy-workspace",
+  "version": "0.0.0",
+  "description": "monorepo for local workspace for httpuppy",
+  "main": "index.js",
+  "repository": "https://github.com/webpuppy/httpuppy.git",
+  "author": "abschill",
+  "license": "AGPL-3.0",
+  "private": true,
+  "packageManager": "yarn@3.3.0",
+  "devDependencies": {
+    "@types/eslint": "^8",
+    "@types/prettier": "^2",
+    "@webpuppy/eslint-config": "^0.2.3",
+    "@webpuppy/prettier": "^0.1.4",
+    "eslint": "^8.29.0",
+    "husky": "^8.0.1",
+    "prettier": "^2.8.0"
+  },
 	"scripts": {
-		"prepare:scripts": "chmod +x ./scripts/*",
-		"pinstall": "cd packages/httpuppy && yarn",
-		"build:core": "cd packages/httpuppy && yarn build",
-		"run:core0": "cd packages/httpuppy && node bin --serve __fixtures__",
-		"test:core": "cd packages/httpuppy && yarn test",
-		"test:workspace": "node tests/index.cjs",
-		"prepare": "husky install"
+		"build": "yarn workspaces foreach run build"
 	},
-	"devDependencies": {
-		"husky": "^8.0.1"
-	},
-	"workspaces": [
-		"./packages/httpuppy",
-		"./packages/httpuppy-types",
-		"./packages/httpuppy-router",
-		"./packages/httpuppy-vfs"
-	]
+  "workspaces": [
+    "./packages/httpuppy",
+    "./packages/httpuppy-types",
+    "./packages/httpuppy-router",
+    "./packages/httpuppy-vfs"
+  ]
 }

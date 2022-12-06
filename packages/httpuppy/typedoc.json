@@ -1,8 +1,5 @@
 {
-	"out": "docs/typedoc",
-	"entryPoints": [
-		"./src/server.ts",
-		"./src/router.ts"
-	],
-	"includeVersion": true
+    "out": "docs/typedoc",
+    "entryPoints": ["./src/server.ts", "./src/router.ts"],
+    "includeVersion": true
 }

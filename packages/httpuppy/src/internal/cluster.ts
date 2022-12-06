@@ -4,14 +4,9 @@
  */
 import cluster from 'cluster';
 import { cpus } from 'os';
-import {
-	HTTPServer,
-	HTTPServerOptions
-} from 'httpuppy-types';
+import { HTTPServer, HTTPServerOptions } from 'httpuppy-types';
 
-export default function apply_clustered(
-	server: HTTPServer
-): boolean {
+export default function apply_clustered(server: HTTPServer): boolean {
 	if (cluster.isPrimary) {
 		return use_main();
 	}
@@ -27,10 +22,7 @@ function use_main() {
 	return true;
 }
 
-function use_child(
-	config: HTTPServerOptions,
-	server: HTTPServer
-): boolean {
+function use_child(config: HTTPServerOptions, server: HTTPServer): boolean {
 	server.listen(config.port);
 	return true;
 }

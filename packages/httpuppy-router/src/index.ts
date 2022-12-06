@@ -3,12 +3,12 @@
  * @description for adding custom routing to your server
  */
 import {
-    HTTPuppyRequest,
-    HTTPuppyResponse,
-    HTTPRouter,
-    HTTPRouterCallback,
-    HTTPRouterOptions,
-    HTTPServer,
+	HTTPuppyRequest,
+	HTTPuppyResponse,
+	HTTPRouter,
+	HTTPRouterCallback,
+	HTTPRouterOptions,
+	HTTPServer,
 } from 'httpuppy-types';
 
 /**
@@ -16,99 +16,99 @@ import {
  * @private
  */
 function useRouterSignatures(req: HTTPuppyRequest, res: HTTPuppyResponse) {
-    res.send = res.end;
-    res.json = (content: object) => {
-        if (!res.writable) {
-            res._process.diagnostics.push({
-                msg: `error writing to json stream at ${res.req.url}`,
-                timestamp: Date.now().toLocaleString(),
-            });
-            res._process.logger.error(
-                `serror writing to json stream at ${res.req.url}`
-            );
-            res.end();
-        }
-        // content type is json if they are calling this method so overwrite if preset
-        if (res.hasHeader('Content-Type')) res.removeHeader('Content-Type');
-        res.writeHead(200, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify(content));
-    };
+	res.send = res.end;
+	res.json = (content: object) => {
+		if (!res.writable) {
+			res._process.diagnostics.push({
+				msg: `error writing to json stream at ${res.req.url}`,
+				timestamp: Date.now().toLocaleString(),
+			});
+			res._process.logger.error(
+				`serror writing to json stream at ${res.req.url}`
+			);
+			res.end();
+		}
+		// content type is json if they are calling this method so overwrite if preset
+		if (res.hasHeader('Content-Type')) res.removeHeader('Content-Type');
+		res.writeHead(200, { 'Content-Type': 'application/json' });
+		res.end(JSON.stringify(content));
+	};
 }
 /**
  * @internal
  * @private
  */
 function http_handle(
-    name: string,
-    url: string,
-    server: HTTPServer,
-    cb: HTTPRouterCallback,
-    async: boolean
+	name: string,
+	url: string,
+	server: HTTPServer,
+	cb: HTTPRouterCallback,
+	async: boolean
 ) {
-    server.on('request', (req: HTTPuppyRequest, res: HTTPuppyResponse) => {
-        let v_url = url;
-        if (!req.params) req.params = {};
-        if (
-            req.url !== '/' &&
-            req.url !== '' &&
-            v_url.includes(':') &&
-            res.writable
-        ) {
-            const _split = v_url.split('/');
-            const recovered_idx = _split.findIndex((i) => i.includes(':'));
-            const raw_name = _split[recovered_idx];
-            const key = <string>raw_name.replace(':', '');
-            const val = req.url?.split('/')[recovered_idx];
-            req.params[key] = val;
-            v_url = <string>`/${val}`;
-        }
-        if (req.method === name && req.url === v_url && res.writable) {
-            useRouterSignatures(req, res);
-            server.emit(`k.router${req.method}`, v_url);
-            req.on('data', (chunk) => {
-                if (typeof chunk !== 'string') chunk = chunk.toString();
-                req.body = JSON.parse(chunk);
-            });
+	server.on('request', (req: HTTPuppyRequest, res: HTTPuppyResponse) => {
+		let v_url = url;
+		if (!req.params) req.params = {};
+		if (
+			req.url !== '/' &&
+			req.url !== '' &&
+			v_url.includes(':') &&
+			res.writable
+		) {
+			const _split = v_url.split('/');
+			const recovered_idx = _split.findIndex((i) => i.includes(':'));
+			const raw_name = _split[recovered_idx];
+			const key = <string>raw_name.replace(':', '');
+			const val = req.url?.split('/')[recovered_idx];
+			req.params[key] = val;
+			v_url = <string>`/${val}`;
+		}
+		if (req.method === name && req.url === v_url && res.writable) {
+			useRouterSignatures(req, res);
+			server.emit(`k.router${req.method}`, v_url);
+			req.on('data', (chunk) => {
+				if (typeof chunk !== 'string') chunk = chunk.toString();
+				req.body = JSON.parse(chunk);
+			});
 
-            if (!async) {
-                req.on('end', () =>
-                    cb(<HTTPuppyRequest>req, <HTTPuppyResponse>res)
-                );
-            } else {
-                req.on('end', async () => await cb(req, res));
-            }
-        } else {
-            return;
-        }
-    });
+			if (!async) {
+				req.on('end', () =>
+					cb(<HTTPuppyRequest>req, <HTTPuppyResponse>res)
+				);
+			} else {
+				req.on('end', async () => await cb(req, res));
+			}
+		} else {
+			return;
+		}
+	});
 }
 
 export function passthrough(
-    _url: string,
-    server: HTTPServer,
-    cb: HTTPRouterCallback,
-    async: boolean
+	_url: string,
+	server: HTTPServer,
+	cb: HTTPRouterCallback,
+	async: boolean
 ) {
-    if (async) {
-        server.on(
-            'request',
-            async (req: HTTPuppyRequest, res: HTTPuppyResponse) => {
-                if (_url === req.url) await cb(req, res);
+	if (async) {
+		server.on(
+			'request',
+			async (req: HTTPuppyRequest, res: HTTPuppyResponse) => {
+				if (_url === req.url) await cb(req, res);
 
-                return;
-            }
-        );
-        return;
-    }
-    server.on('request', (req: HTTPuppyRequest, res: HTTPuppyResponse) => {
-        if (_url === req.url) cb(req, res);
+				return;
+			}
+		);
+		return;
+	}
+	server.on('request', (req: HTTPuppyRequest, res: HTTPuppyResponse) => {
+		if (_url === req.url) cb(req, res);
 
-        return;
-    });
+		return;
+	});
 }
 
 function _parseUrl(url: string, wrapper: string): string {
-    return wrapper + url;
+	return wrapper + url;
 }
 
 /**
@@ -123,133 +123,133 @@ function _parseUrl(url: string, wrapper: string): string {
  * @returns
  */
 export function useRouter(
-    server: HTTPServer, // server to attach the router to as a handler
-    rOptions?: HTTPRouterOptions
+	server: HTTPServer, // server to attach the router to as a handler
+	rOptions?: HTTPRouterOptions
 ): HTTPRouter {
-    if (!server) {
-        throw '[httpuppy]: error - no server to bind to';
-    }
-    const wrapperUrl = rOptions?.baseUrl ?? '';
-    if (!rOptions)
-        rOptions = {
-            baseUrl: wrapperUrl,
-            allowPassthrough: false,
-        };
-    const opts = rOptions;
+	if (!server) {
+		throw '[httpuppy]: error - no server to bind to';
+	}
+	const wrapperUrl = rOptions?.baseUrl ?? '';
+	if (!rOptions)
+		rOptions = {
+			baseUrl: wrapperUrl,
+			allowPassthrough: false,
+		};
+	const opts = rOptions;
 
-    function get(url: string, cb: HTTPRouterCallback): void {
-        return http_handle(
-            'GET',
-            _parseUrl(url, wrapperUrl),
-            server,
-            cb,
-            cb.constructor.name === 'AsyncFunction'
-        );
-    }
+	function get(url: string, cb: HTTPRouterCallback): void {
+		return http_handle(
+			'GET',
+			_parseUrl(url, wrapperUrl),
+			server,
+			cb,
+			cb.constructor.name === 'AsyncFunction'
+		);
+	}
 
-    function post(url: string, cb: HTTPRouterCallback): void {
-        return http_handle(
-            'POST',
-            _parseUrl(url, wrapperUrl),
-            server,
-            cb,
-            cb.constructor.name === 'AsyncFunction'
-        );
-    }
+	function post(url: string, cb: HTTPRouterCallback): void {
+		return http_handle(
+			'POST',
+			_parseUrl(url, wrapperUrl),
+			server,
+			cb,
+			cb.constructor.name === 'AsyncFunction'
+		);
+	}
 
-    function head(url: string, cb: HTTPRouterCallback): void {
-        return http_handle(
-            'HEAD',
-            _parseUrl(url, wrapperUrl),
-            server,
-            cb,
-            cb.constructor.name === 'AsyncFunction'
-        );
-    }
+	function head(url: string, cb: HTTPRouterCallback): void {
+		return http_handle(
+			'HEAD',
+			_parseUrl(url, wrapperUrl),
+			server,
+			cb,
+			cb.constructor.name === 'AsyncFunction'
+		);
+	}
 
-    function put(url: string, cb: HTTPRouterCallback): void {
-        return http_handle(
-            'PUT',
-            _parseUrl(url, wrapperUrl),
-            server,
-            cb,
-            cb.constructor.name === 'AsyncFunction'
-        );
-    }
+	function put(url: string, cb: HTTPRouterCallback): void {
+		return http_handle(
+			'PUT',
+			_parseUrl(url, wrapperUrl),
+			server,
+			cb,
+			cb.constructor.name === 'AsyncFunction'
+		);
+	}
 
-    function patch(url: string, cb: HTTPRouterCallback): void {
-        return http_handle(
-            'PATCH',
-            _parseUrl(url, wrapperUrl),
-            server,
-            cb,
-            cb.constructor.name === 'AsyncFunction'
-        );
-    }
+	function patch(url: string, cb: HTTPRouterCallback): void {
+		return http_handle(
+			'PATCH',
+			_parseUrl(url, wrapperUrl),
+			server,
+			cb,
+			cb.constructor.name === 'AsyncFunction'
+		);
+	}
 
-    function trace(url: string, cb: HTTPRouterCallback): void {
-        return http_handle(
-            'TRACE',
-            _parseUrl(url, wrapperUrl),
-            server,
-            cb,
-            cb.constructor.name === 'AsyncFunction'
-        );
-    }
+	function trace(url: string, cb: HTTPRouterCallback): void {
+		return http_handle(
+			'TRACE',
+			_parseUrl(url, wrapperUrl),
+			server,
+			cb,
+			cb.constructor.name === 'AsyncFunction'
+		);
+	}
 
-    function connect(url: string, cb: HTTPRouterCallback): void {
-        return http_handle(
-            'CONNECT',
-            _parseUrl(url, wrapperUrl),
-            server,
-            cb,
-            cb.constructor.name === 'AsyncFunction'
-        );
-    }
+	function connect(url: string, cb: HTTPRouterCallback): void {
+		return http_handle(
+			'CONNECT',
+			_parseUrl(url, wrapperUrl),
+			server,
+			cb,
+			cb.constructor.name === 'AsyncFunction'
+		);
+	}
 
-    function options(url: string, cb: HTTPRouterCallback): void {
-        return http_handle(
-            'OPTIONS',
-            _parseUrl(url, wrapperUrl),
-            server,
-            cb,
-            cb.constructor.name === 'AsyncFunction'
-        );
-    }
+	function options(url: string, cb: HTTPRouterCallback): void {
+		return http_handle(
+			'OPTIONS',
+			_parseUrl(url, wrapperUrl),
+			server,
+			cb,
+			cb.constructor.name === 'AsyncFunction'
+		);
+	}
 
-    function _delete(url: string, cb: HTTPRouterCallback): void {
-        return http_handle(
-            'DELETE',
-            _parseUrl(url, wrapperUrl),
-            server,
-            cb,
-            cb.constructor.name === 'AsyncFunction'
-        );
-    }
+	function _delete(url: string, cb: HTTPRouterCallback): void {
+		return http_handle(
+			'DELETE',
+			_parseUrl(url, wrapperUrl),
+			server,
+			cb,
+			cb.constructor.name === 'AsyncFunction'
+		);
+	}
 
-    function use(url: string, cb: HTTPRouterCallback): void {
-        return passthrough(
-            _parseUrl(url, wrapperUrl),
-            server,
-            cb,
-            cb.constructor.name === 'AsyncFunction'
-        );
-    }
+	function use(url: string, cb: HTTPRouterCallback): void {
+		return passthrough(
+			_parseUrl(url, wrapperUrl),
+			server,
+			cb,
+			cb.constructor.name === 'AsyncFunction'
+		);
+	}
 
-    const router = <HTTPRouter>{
-        url: opts.baseUrl,
-        get,
-        head,
-        post,
-        put,
-        patch,
-        delete: _delete,
-        trace,
-        connect,
-        options,
-        use,
-        _options: opts,
-    };
-    server.routers.push(router);
-    return router;
+	const router = <HTTPRouter>{
+		url: opts.baseUrl,
+		get,
+		head,
+		post,
+		put,
+		patch,
+		delete: _delete,
+		trace,
+		connect,
+		options,
+		use,
+		_options: opts,
+	};
+	server.routers.push(router);
+	return router;
 }

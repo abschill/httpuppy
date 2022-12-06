@@ -12,11 +12,7 @@ import {
 	ENV_TTL_DEFAULT,
 	ENV_PORT_DEFAULT,
 } from '.';
-import {
-	DiagnosticLog,
-	HTTPServer,
-	HTTPServerOptions
-} from 'httpuppy-types'
+import { DiagnosticLog, HTTPServer, HTTPServerOptions } from 'httpuppy-types';
 
 export const default_http_config: HTTPServerOptions = {
 	port: ENV_PORT_DEFAULT,

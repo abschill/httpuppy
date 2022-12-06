@@ -1,33 +1,32 @@
 * {
-	box-sizing: border-box;
-	font-family: system-ui;
-	margin: 0;
-	padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-	color: #0f0f0f;
+    color: #0f0f0f;
 }
 
 a {
-	align-items: center;
-	color: inherit;
-	display: inline-flex;
-	font-size: 24px;
-	justify-content: center;
-	text-decoration: none;
+    align-items: center;
+    color: inherit;
+    display: inline-flex;
+    font-size: 24px;
+    justify-content: center;
+    text-decoration: none;
 }
 
 .icon {
-	height: 36px;
-	width: 36px;
+    height: 36px;
+    width: 36px;
 }
 
-
 main {
-	display: grid;
-	height: 80vh;
-	justify-content: center;
-	text-align: center;
-	width: 100%;
+    display: grid;
+    height: 80vh;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
 }

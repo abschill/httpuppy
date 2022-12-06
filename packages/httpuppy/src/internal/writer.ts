@@ -2,10 +2,7 @@
  * @internal
  */
 import { createReadStream } from 'fs';
-import {
-	ENV_STATUS_OK,
-	VirtualWriteableFile,
-} from '.';
+import { ENV_STATUS_OK, VirtualWriteableFile } from '.';
 import { HTTPuppyResponse } from 'httpuppy-types';
 import { local_mime_type } from 'httpuppy-vfs';
 /**
@@ -30,7 +27,12 @@ export function vfs_stream_reader(
 		const stream = createReadStream(pathData.symLink);
 		stream.on('data', (chunk) => {
 			// type the symlink of the streamable file, write into the response stream
-			res.writeHead(200, ENV_STATUS_OK, [['Content-Type', <string>local_mime_type(pathData.symLink ?? '')]]);
+			res.writeHead(200, ENV_STATUS_OK, [
+				[
+					'Content-Type',
+					<string>local_mime_type(pathData.symLink ?? ''),
+				],
+			]);
 			res.write(chunk);
 		});
 		// end response when data is done streaming from vfile

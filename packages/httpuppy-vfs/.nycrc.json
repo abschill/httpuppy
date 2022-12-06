@@ -1,16 +1,14 @@
 {
-	"temp_dir": "nyc_output",
-	"include": [
-		"lib/**/*"
-	],
-	"exclude": [
-		"lib/internal/logger.js",
-		"lib/internal/include/_shutdown.js",
-		"lib/internal/writer.js",
-		"lib/internal/middleware.js",
-		"lib/internal/static/url.js",
-		"lib/types/server/middleware.js",
-		"lib/internal/config/cluster.js",
-		"lib/internal/config/argv.js"
-	]
+    "temp_dir": "nyc_output",
+    "include": ["lib/**/*"],
+    "exclude": [
+        "lib/internal/logger.js",
+        "lib/internal/include/_shutdown.js",
+        "lib/internal/writer.js",
+        "lib/internal/middleware.js",
+        "lib/internal/static/url.js",
+        "lib/types/server/middleware.js",
+        "lib/internal/config/cluster.js",
+        "lib/internal/config/argv.js"
+    ]
 }

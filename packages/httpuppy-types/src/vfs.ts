@@ -7,24 +7,24 @@ import { HTTPHeader } from '.';
  * @private
  */
 export type MountedFile = {
-    fileName: string;
-    symLink: string;
-    contentType: HTTPHeader;
-    content: any;
-    hrefs: string[];
+	fileName: string;
+	symLink: string;
+	contentType: HTTPHeader;
+	content: any;
+	hrefs: string[];
 };
 
 export type MountedVFSFile = {
-    _basepath: string;
-    _abspath: string;
-    _filename: string;
-    hrefs: string[];
-    mime_type: string | false;
-    text_content?: string;
+	_basepath: string;
+	_abspath: string;
+	_filename: string;
+	hrefs: string[];
+	mime_type: string | false;
+	text_content?: string;
 };
 
 export type MountedVFS = {
-    mounted_files: MountedVFSFile[];
-    mounted_path: string;
-    mounted_href: string;
+	mounted_files: MountedVFSFile[];
+	mounted_path: string;
+	mounted_href: string;
 };

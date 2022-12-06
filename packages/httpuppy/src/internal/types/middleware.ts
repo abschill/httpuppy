@@ -1,7 +1,7 @@
 import {
 	HTTPuppyRequest,
 	HTTPuppyResponse,
-	CacheSettings
+	CacheSettings,
 } from 'httpuppy-types';
 
 export const defaultCacheSettings: CacheSettings = {

@@ -10,6 +10,6 @@ export type LogEventFile = string;
  * @description Runtime Diagnostic log to store for debug purposes
  */
 export type DiagnosticLog = {
-    msg: string;
-    timestamp: string;
+	msg: string;
+	timestamp: string;
 };

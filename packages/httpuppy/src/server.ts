@@ -8,7 +8,7 @@ import {
 	ENV_ASYNC_SIGNATURE,
 	ENV_REQUEST_SIGNATURE,
 	use_config,
-	apply_static_callback
+	apply_static_callback,
 } from './internal';
 import {
 	DiagnosticLog,
@@ -33,24 +33,24 @@ import {
 export function useServer(
 	conf?: HTTPServerOptions // user config for server
 ): HTTPServer {
-	if(!conf) conf = default_http_config;
+	if (!conf) conf = default_http_config;
 	const def_event_handler = conf?.handler;
 	const diagnostics: DiagnosticLog[] = [];
 	const config = use_config(conf, diagnostics);
 	const _server = conf.secure
-		? create_secure_server(
-				<https_options>conf.secure,
-				def_event_handler
-		)
+		? create_secure_server(<https_options>conf.secure, def_event_handler)
 		: create_server(def_event_handler);
 	const server = _use_server(config, <HTTPServer>_server, diagnostics);
 	server.logger.info(
 		`logger online (child pid: ${process.pid}) (parent: ${process.ppid})`
 	);
-	server.use = (url: string, fn: any|Promise<any>) => {
+	server.use = (url: string, fn: any | Promise<any>) => {
 		server.on(ENV_REQUEST_SIGNATURE, async (req, res) => {
-			if(req.url === url) {
-				if(fn.constructor && fn.constructor.name === ENV_ASYNC_SIGNATURE) {
+			if (req.url === url) {
+				if (
+					fn.constructor &&
+					fn.constructor.name === ENV_ASYNC_SIGNATURE
+				) {
 					return await fn(req, res);
 				}
 				return fn(req, res);
@@ -58,14 +58,7 @@ export function useServer(
 		});
 	};
 
-	server.static = async (_url: string, static_path: string) => {
-		try {
-			await apply_static_callback(server, _url, static_path);
-		}
-		catch(e) {
-			throw e;
-		}
-	}
+	server.static = async (_url: string, static_path: string) => await apply_static_callback(server, _url, static_path);
 
 	process.on('beforeExit', async (code) => {
 		server.logger.info(`exiting with code ${code}`);

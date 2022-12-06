@@ -3,19 +3,10 @@ import { color } from 'terminal-color';
 import {
 	ENV_DEFAULT_ERROR_FILE,
 	ENV_DEFAULT_EVENT_FILE,
-	ENV_LOG_PREFIX
+	ENV_LOG_PREFIX,
 } from '.';
-import {
-	LogLevel,
-	LogEventFile,
-	LogErrorFile
-} from 'httpuppy-types';
-import {
-	Logger,
-	format,
-	transports,
-	createLogger
-} from 'winston';
+import { LogLevel, LogEventFile, LogErrorFile } from 'httpuppy-types';
+import { Logger, format, transports, createLogger } from 'winston';
 export function create_logger(
 	level: LogLevel,
 	error_file?: LogErrorFile,
@@ -34,7 +25,11 @@ export function create_logger(
 							format.timestamp(),
 							format.printf(
 								({ level, message, label, timestamp }) => {
-									return `[${color.fg.blue(label)}] ${level}: ${message} @ ${color.fg.green(timestamp)}`;
+									return `[${color.fg.blue(
+										label
+									)}] ${level}: ${message} @ ${color.fg.green(
+										timestamp
+									)}`;
 								}
 							)
 						),
@@ -48,7 +43,7 @@ export function create_logger(
 						filename: event_file,
 						format: format.colorize(),
 					}),
-			]
+			  ]
 			: [
 					new transports.File({
 						filename: error_file,
@@ -59,7 +54,7 @@ export function create_logger(
 						filename: event_file,
 						format: format.colorize(),
 					}),
-			];
+			  ];
 	const logger = createLogger({
 		level: 'info',
 		silent: level === 'silent',

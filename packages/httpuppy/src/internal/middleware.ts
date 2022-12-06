@@ -5,11 +5,7 @@
 import GracefulShutdown from 'http-graceful-shutdown';
 import { Stats } from 'fs';
 import { createHash } from 'crypto';
-import {
-	ENV_DEFAULT_CONTENT_TYPE,
-	ENV_STATUS_404,
-	HTTPWriterOptions
-} from '.';
+import { ENV_DEFAULT_CONTENT_TYPE, ENV_STATUS_404, HTTPWriterOptions } from '.';
 import {
 	HTTPServer,
 	HTTPuppySleep,
@@ -42,11 +38,8 @@ export function apply_headers(
 	return applyHeaders;
 }
 
-
-export function apply_404(
-	res: HTTPuppyResponse
-) {
-	if(res.writable) {
+export function apply_404(res: HTTPuppyResponse) {
+	if (res.writable) {
 		res.writeHead(404, ENV_STATUS_404);
 		res.end();
 		return;
@@ -59,7 +52,7 @@ export function apply_404(
  * @param s http server to shut down
  * @returns void promise to gracefully shut down
  */
- export async function shutdown(s: HTTPServer): Promise<HTTPuppySleep> {
+export async function shutdown(s: HTTPServer): Promise<HTTPuppySleep> {
 	try {
 		if (s.onClose) s.onClose();
 		s.removeAllListeners();
@@ -74,7 +67,7 @@ export function apply_404(
  * @private
  * create entity tag with content hash
  */
- export function __etag(entity: any) {
+export function __etag(entity: any) {
 	if (entity.length === 0) {
 		return '"0-2jmj7l5rSw0yVb/vlWAYkK/YBwk"';
 	}
