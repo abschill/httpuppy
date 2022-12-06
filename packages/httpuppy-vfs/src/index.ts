@@ -24,7 +24,7 @@ export async function* get_tree(
 					mime_type: _mime_type,
 					_filename: <string>fname,
 					_basepath: dir,
-					_abspath: res,
+					_abspath: res
 				};
 			} else {
 				const text_content = await readFile(res, { encoding: 'utf-8' });
@@ -34,23 +34,20 @@ export async function* get_tree(
 					_filename: <string>fname,
 					_basepath: dir,
 					_abspath: res,
-					text_content,
+					text_content
 				};
 			}
 		}
 	}
 }
 
-export async function create_nested_vfs(
-	href: string,
-	dir: string
-): Promise<MountedVFS> {
+export async function create_nested_vfs(href: string, dir: string): Promise<MountedVFS> {
 	const mounted_files = [];
 	for await (const f of get_tree(href, dir)) mounted_files.push(f);
 	return {
 		mounted_href: href,
 		mounted_path: dir,
-		mounted_files,
+		mounted_files
 	};
 }
 

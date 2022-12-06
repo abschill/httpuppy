@@ -10,7 +10,7 @@ import {
 	ENV_DEFAULT_EVENT_FILE,
 	ENV_DEFAULT_HOST,
 	ENV_TTL_DEFAULT,
-	ENV_PORT_DEFAULT,
+	ENV_PORT_DEFAULT
 } from '.';
 import { DiagnosticLog, HTTPServer, HTTPServerOptions } from 'httpuppy-types';
 
@@ -21,7 +21,7 @@ export const default_http_config: HTTPServerOptions = {
 	log_level: 'base',
 	hostname: ENV_DEFAULT_HOST,
 	throw_warnings: false,
-	ttl_default: ENV_TTL_DEFAULT,
+	ttl_default: ENV_TTL_DEFAULT
 };
 /**
  * @internal useConfig
@@ -79,7 +79,7 @@ export function _use_server(
 		} catch (e) {
 			diagnostics.push({
 				msg: JSON.stringify(e),
-				timestamp: Date.now().toLocaleString(),
+				timestamp: Date.now().toLocaleString()
 			});
 			server.logger.error(`${JSON.stringify(e)}`);
 			return false;

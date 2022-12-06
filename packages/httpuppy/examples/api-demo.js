@@ -2,7 +2,7 @@ const { useServer, useRouter } = require('../lib');
 
 const app = useServer({
 	port: 3000,
-	clustered: true,
+	clustered: true
 });
 app.static('/', 'examples/files').then((_) => {
 	const endpoint = useRouter(app);

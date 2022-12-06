@@ -8,7 +8,7 @@ import {
 	ENV_ASYNC_SIGNATURE,
 	ENV_REQUEST_SIGNATURE,
 	use_config,
-	apply_static_callback,
+	apply_static_callback
 } from './internal';
 import {
 	DiagnosticLog,
@@ -16,7 +16,7 @@ import {
 	HTTPServerOptions,
 	https_options,
 	create_server,
-	create_secure_server,
+	create_secure_server
 } from 'httpuppy-types';
 
 /**
@@ -47,10 +47,7 @@ export function useServer(
 	server.use = (url: string, fn: any | Promise<any>) => {
 		server.on(ENV_REQUEST_SIGNATURE, async (req, res) => {
 			if (req.url === url) {
-				if (
-					fn.constructor &&
-					fn.constructor.name === ENV_ASYNC_SIGNATURE
-				) {
+				if (fn.constructor && fn.constructor.name === ENV_ASYNC_SIGNATURE) {
 					return await fn(req, res);
 				}
 				return fn(req, res);

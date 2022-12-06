@@ -8,7 +8,7 @@ import {
 	HTTPRouter,
 	HTTPRouterCallback,
 	HTTPRouterOptions,
-	HTTPServer,
+	HTTPServer
 } from 'httpuppy-types';
 
 /**
@@ -21,11 +21,9 @@ function useRouterSignatures(req: HTTPuppyRequest, res: HTTPuppyResponse) {
 		if (!res.writable) {
 			res._process.diagnostics.push({
 				msg: `error writing to json stream at ${res.req.url}`,
-				timestamp: Date.now().toLocaleString(),
+				timestamp: Date.now().toLocaleString()
 			});
-			res._process.logger.error(
-				`serror writing to json stream at ${res.req.url}`
-			);
+			res._process.logger.error(`serror writing to json stream at ${res.req.url}`);
 			res.end();
 		}
 		// content type is json if they are calling this method so overwrite if preset
@@ -48,12 +46,7 @@ function http_handle(
 	server.on('request', (req: HTTPuppyRequest, res: HTTPuppyResponse) => {
 		let v_url = url;
 		if (!req.params) req.params = {};
-		if (
-			req.url !== '/' &&
-			req.url !== '' &&
-			v_url.includes(':') &&
-			res.writable
-		) {
+		if (req.url !== '/' && req.url !== '' && v_url.includes(':') && res.writable) {
 			const _split = v_url.split('/');
 			const recovered_idx = _split.findIndex((i) => i.includes(':'));
 			const raw_name = _split[recovered_idx];
@@ -71,9 +64,7 @@ function http_handle(
 			});
 
 			if (!async) {
-				req.on('end', () =>
-					cb(<HTTPuppyRequest>req, <HTTPuppyResponse>res)
-				);
+				req.on('end', () => cb(<HTTPuppyRequest>req, <HTTPuppyResponse>res));
 			} else {
 				req.on('end', async () => await cb(req, res));
 			}
@@ -90,14 +81,11 @@ export function passthrough(
 	async: boolean
 ) {
 	if (async) {
-		server.on(
-			'request',
-			async (req: HTTPuppyRequest, res: HTTPuppyResponse) => {
-				if (_url === req.url) await cb(req, res);
+		server.on('request', async (req: HTTPuppyRequest, res: HTTPuppyResponse) => {
+			if (_url === req.url) await cb(req, res);
 
-				return;
-			}
-		);
+			return;
+		});
 		return;
 	}
 	server.on('request', (req: HTTPuppyRequest, res: HTTPuppyResponse) => {
@@ -133,7 +121,7 @@ export function useRouter(
 	if (!rOptions)
 		rOptions = {
 			baseUrl: wrapperUrl,
-			allowPassthrough: false,
+			allowPassthrough: false
 		};
 	const opts = rOptions;
 
@@ -248,7 +236,7 @@ export function useRouter(
 		connect,
 		options,
 		use,
-		_options: opts,
+		_options: opts
 	};
 	server.routers.push(router);
 	return router;

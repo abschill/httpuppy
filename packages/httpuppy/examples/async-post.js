@@ -2,7 +2,7 @@ const { useServer, useRouter } = require('../../lib');
 
 const clusteredRouterPost = useServer({
 	clustered: true,
-	port: 3000,
+	port: 3000
 });
 clusteredRouterPost.static('/', '__fixtures__').then((_) => {
 	const router0 = useRouter(clusteredRouterPost);

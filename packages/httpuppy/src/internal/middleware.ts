@@ -11,7 +11,7 @@ import {
 	HTTPuppySleep,
 	HTTPServerOptions,
 	HTTPHeaders,
-	HTTPuppyResponse,
+	HTTPuppyResponse
 } from 'httpuppy-types';
 /**
  *
@@ -25,14 +25,14 @@ export function apply_headers(
 ): HTTPHeaders {
 	const applyHeaders: HTTPHeaders = [
 		{
-			'Content-Type': options.type ?? ENV_DEFAULT_CONTENT_TYPE,
-		},
+			'Content-Type': options.type ?? ENV_DEFAULT_CONTENT_TYPE
+		}
 	];
 
 	// set weak etag generation if applicable
 	if (config.cache) {
 		applyHeaders.push({
-			ETag: etag(options.virtualFile.fileName, { weak: true }),
+			ETag: etag(options.virtualFile.fileName, { weak: true })
 		});
 	}
 	return applyHeaders;
@@ -77,9 +77,7 @@ export function __etag(entity: any) {
 		.substring(0, 27);
 
 	const len =
-		typeof entity === 'string'
-			? Buffer.byteLength(entity, 'utf8')
-			: entity.length;
+		typeof entity === 'string' ? Buffer.byteLength(entity, 'utf8') : entity.length;
 	return '"' + len.toString(16) + '-' + hash + '"';
 }
 /**
@@ -91,16 +89,9 @@ export function etag(entity: any, options: any) {
 	}
 
 	const isFileStats = _vstats(entity);
-	const weak =
-		options && typeof options.weak === 'boolean'
-			? options.weak
-			: isFileStats;
+	const weak = options && typeof options.weak === 'boolean' ? options.weak : isFileStats;
 
-	if (
-		!isFileStats &&
-		typeof entity !== 'string' &&
-		!Buffer.isBuffer(entity)
-	) {
+	if (!isFileStats && typeof entity !== 'string' && !Buffer.isBuffer(entity)) {
 		throw new Error('etag arg must be a string, buffer or fs.Stats');
 	}
 

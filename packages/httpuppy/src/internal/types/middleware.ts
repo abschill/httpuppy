@@ -1,21 +1,15 @@
-import {
-	HTTPuppyRequest,
-	HTTPuppyResponse,
-	CacheSettings,
-} from 'httpuppy-types';
+import { HTTPuppyRequest, HTTPuppyResponse, CacheSettings } from 'httpuppy-types';
 
 export const defaultCacheSettings: CacheSettings = {
 	maxAge: 3600,
 	mustRevalidate: true,
-	public: true,
+	public: true
 };
 
-export function fromDefaultCacheSettings(
-	settings: CacheSettings
-): CacheSettings {
+export function fromDefaultCacheSettings(settings: CacheSettings): CacheSettings {
 	return {
 		...defaultCacheSettings,
-		...settings,
+		...settings
 	};
 }
 

@@ -2,7 +2,7 @@ const { useServer, useRouter } = require('httpuppy');
 
 const server = useServer({
 	port: 3001,
-	log_level: 'verbose',
+	log_level: 'verbose'
 });
 const router = useRouter(server);
 router.get('/api', (req, res) => res.json({ msg: 'hello' }));

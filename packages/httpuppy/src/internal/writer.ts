@@ -28,10 +28,7 @@ export function vfs_stream_reader(
 		stream.on('data', (chunk) => {
 			// type the symlink of the streamable file, write into the response stream
 			res.writeHead(200, ENV_STATUS_OK, [
-				[
-					'Content-Type',
-					<string>local_mime_type(pathData.symLink ?? ''),
-				],
+				['Content-Type', <string>local_mime_type(pathData.symLink ?? '')]
 			]);
 			res.write(chunk);
 		});

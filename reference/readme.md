@@ -28,7 +28,7 @@ single
 const { useServer } = require('httpuppy');
 
 const app = useServer({
-    port: 3000,
+	port: 3000
 });
 
 app.static('/', './path/to/content');
@@ -39,8 +39,8 @@ multiple
 
 ```js
 const app = useServer({
-    clustered: true,
-    port: 3000,
+	clustered: true,
+	port: 3000
 });
 app.static('/', './path/to/content');
 app.start();
