@@ -58,7 +58,8 @@ export function useServer(
 		});
 	};
 
-	server.static = async (_url: string, static_path: string) => await apply_static_callback(server, _url, static_path);
+	server.static = async (_url: string, static_path: string) =>
+		await apply_static_callback(server, _url, static_path);
 
 	process.on('beforeExit', async (code) => {
 		server.logger.info(`exiting with code ${code}`);
