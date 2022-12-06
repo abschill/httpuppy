@@ -1,0 +1,6 @@
+{
+	"extends": [
+		"@webpuppy/eslint-config",
+		"@webpuppy/eslint-config/typescript"
+	]
+}
