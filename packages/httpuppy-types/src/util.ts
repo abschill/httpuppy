@@ -1,6 +1,5 @@
 /**
- * @module util
- * @description utility types
+ * utils
  */
 import { HTTPuppyRequest, HTTPuppyResponse } from '.';
 
@@ -8,14 +7,12 @@ export type HTTPuppySleep = () => Promise<void>;
 export type Callable<T> = (args: T) => Promise<any> | any;
 /**
  * @internal
- * @private
  */
 export type HTTPHeader = {
 	[key: string]: string;
 };
 /**
  * @internal
- * @private
  */
 export type HTTPHeaders = HTTPHeader[];
 

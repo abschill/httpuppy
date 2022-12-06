@@ -1,6 +1,6 @@
 /**
  * @internal
- * @description middleware hooks, such mime type header resolution / header setting
+ * @remarks middleware hooks, such mime type header resolution / header setting
  */
 import GracefulShutdown from 'http-graceful-shutdown';
 import { Stats } from 'fs';
@@ -8,15 +8,14 @@ import { createHash } from 'crypto';
 import { ENV_DEFAULT_CONTENT_TYPE, ENV_STATUS_404, HTTPWriterOptions } from '.';
 import {
 	HTTPServer,
-	HTTPuppySleep,
 	HTTPServerOptions,
 	HTTPHeaders,
 	HTTPuppyResponse
 } from 'httpuppy-types';
 /**
  *
- * @param options the writer options to apply the headers against
- * @param config the server config to apply against
+ * @param options - the writer options to apply the headers against
+ * @param config - the server config to apply against
  * @returns default list of http headers based on given config cache settings / content type of the request options
  */
 export function apply_headers(
@@ -44,29 +43,31 @@ export function apply_404(res: HTTPuppyResponse) {
 		res.end();
 		return;
 	}
-	return res.end();
+	res.end();
 }
 
 /**
  *
- * @param s http server to shut down
+ * @param s - http server to shut down
  * @returns void promise to gracefully shut down
  */
-export async function shutdown(s: HTTPServer): Promise<HTTPuppySleep> {
+export function shutdown(s: HTTPServer): void {
 	try {
 		if (s.onClose) s.onClose();
 		s.removeAllListeners();
 		s.close();
-		return GracefulShutdown(s);
+		// eslint-disable-next-line new-cap
+		GracefulShutdown(s);
 	} catch (e) {
-		throw 'invalid shutdown, nothing submitted/already shut down';
+		throw new Error('invalid shutdown, nothing submitted/already shut down');
 	}
 }
 
 /**
- * @private
+ * @internal
  * create entity tag with content hash
  */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function __etag(entity: any) {
 	if (entity.length === 0) {
 		return '"0-2jmj7l5rSw0yVb/vlWAYkK/YBwk"';
@@ -81,8 +82,9 @@ export function __etag(entity: any) {
 	return '"' + len.toString(16) + '-' + hash + '"';
 }
 /**
- * @private
+ * @internal
  */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function etag(entity: any, options: any) {
 	if (!entity) {
 		throw new Error('etag entity is null');
@@ -100,7 +102,7 @@ export function etag(entity: any, options: any) {
 }
 
 /**
- * @private
+ * @internal
  * create file system stamp for cache
  */
 export function file_stats(stats: Stats): string {
@@ -111,9 +113,10 @@ export function file_stats(stats: Stats): string {
 
 /**
  *
- * @private
+ * @internal
  * determine if an entry is a valid fs stat
  */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function _vstats(o: any): boolean {
 	if (typeof Stats === 'function' && o instanceof Stats) {
 		return true;

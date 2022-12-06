@@ -20,7 +20,7 @@ export type UserStaticConfig = {
 };
 
 /**
- * @private
+ * @internal
  *
  */
 export async function mount_vfs(
@@ -29,12 +29,11 @@ export async function mount_vfs(
 ): Promise<MountedVFS> {
 	if (!staticOptions?.path) {
 		server.logger.error('fs attempted to mount with no path set in configuration');
-		throw 'error: fs attempted to mount with no path set in configuration';
+		throw new Error('error: fs attempted to mount with no path set in configuration');
 	}
 	return await create_nested_vfs(staticOptions.href ?? '/', staticOptions.path);
 }
 /**
- * @private
  * @internal
  */
 
@@ -70,7 +69,7 @@ export async function apply_static_callback(
 					hrefs: match.hrefs
 				};
 				if (!match.text_content) {
-					return vfs_stream_reader(vFile, res);
+					vfs_stream_reader(vFile, res);
 				}
 				res.writeHead(200, 'ok', [
 					['Content-Type', match.mime_type ? match.mime_type : ENV_DEFAULT_CONTENT_TYPE]

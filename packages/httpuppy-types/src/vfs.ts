@@ -1,10 +1,10 @@
 /**
- * @type MountedFile
- * @description A File Mounted within a virtual filesystem to be served at a given static href
+ * MountedFile
+ * @remarks A File Mounted within a virtual filesystem to be served at a given static href
  */
 import { HTTPHeader } from '.';
 /**
- * @private
+ * @internal
  */
 export type MountedFile = {
 	fileName: string;

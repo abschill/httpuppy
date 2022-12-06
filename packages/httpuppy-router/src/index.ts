@@ -1,6 +1,6 @@
 /**
- * @module useRouter
- * @description for adding custom routing to your server
+ * useRouter
+ * @remarks adds custom routing to your server
  */
 import {
 	HTTPuppyRequest,
@@ -13,7 +13,6 @@ import {
 
 /**
  * @internal
- * @private
  */
 function useRouterSignatures(req: HTTPuppyRequest, res: HTTPuppyResponse) {
 	res.send = res.end;
@@ -34,9 +33,9 @@ function useRouterSignatures(req: HTTPuppyRequest, res: HTTPuppyResponse) {
 }
 /**
  * @internal
- * @private
  */
-function http_handle(
+// eslint-disable-next-line max-params
+function $httpHandle(
 	name: string,
 	url: string,
 	server: HTTPServer,
@@ -74,6 +73,7 @@ function http_handle(
 	});
 }
 
+// eslint-disable-next-line max-params
 export function passthrough(
 	_url: string,
 	server: HTTPServer,
@@ -100,14 +100,14 @@ function _parseUrl(url: string, wrapper: string): string {
 }
 
 /**
- * @function useRouter
+ * useRouter
  * @example
  * ```javascript
  * const app = useServer({...});
  * const router = useRouter(app);
  * router.get('/test', (req, res) => res.end('hello'));
  * ```
- * @param server
+ * @param server - server to bind the router to
  * @returns
  */
 export function useRouter(
@@ -115,7 +115,7 @@ export function useRouter(
 	rOptions?: HTTPRouterOptions
 ): HTTPRouter {
 	if (!server) {
-		throw '[httpuppy]: error - no server to bind to';
+		throw new Error('[httpuppy]: error - no server to bind to');
 	}
 	const wrapperUrl = rOptions?.baseUrl ?? '';
 	if (!rOptions)
@@ -126,7 +126,7 @@ export function useRouter(
 	const opts = rOptions;
 
 	function get(url: string, cb: HTTPRouterCallback): void {
-		return http_handle(
+		return $httpHandle(
 			'GET',
 			_parseUrl(url, wrapperUrl),
 			server,
@@ -136,7 +136,7 @@ export function useRouter(
 	}
 
 	function post(url: string, cb: HTTPRouterCallback): void {
-		return http_handle(
+		return $httpHandle(
 			'POST',
 			_parseUrl(url, wrapperUrl),
 			server,
@@ -146,7 +146,7 @@ export function useRouter(
 	}
 
 	function head(url: string, cb: HTTPRouterCallback): void {
-		return http_handle(
+		return $httpHandle(
 			'HEAD',
 			_parseUrl(url, wrapperUrl),
 			server,
@@ -156,7 +156,7 @@ export function useRouter(
 	}
 
 	function put(url: string, cb: HTTPRouterCallback): void {
-		return http_handle(
+		return $httpHandle(
 			'PUT',
 			_parseUrl(url, wrapperUrl),
 			server,
@@ -166,7 +166,7 @@ export function useRouter(
 	}
 
 	function patch(url: string, cb: HTTPRouterCallback): void {
-		return http_handle(
+		return $httpHandle(
 			'PATCH',
 			_parseUrl(url, wrapperUrl),
 			server,
@@ -176,7 +176,7 @@ export function useRouter(
 	}
 
 	function trace(url: string, cb: HTTPRouterCallback): void {
-		return http_handle(
+		return $httpHandle(
 			'TRACE',
 			_parseUrl(url, wrapperUrl),
 			server,
@@ -186,7 +186,7 @@ export function useRouter(
 	}
 
 	function connect(url: string, cb: HTTPRouterCallback): void {
-		return http_handle(
+		return $httpHandle(
 			'CONNECT',
 			_parseUrl(url, wrapperUrl),
 			server,
@@ -196,7 +196,7 @@ export function useRouter(
 	}
 
 	function options(url: string, cb: HTTPRouterCallback): void {
-		return http_handle(
+		return $httpHandle(
 			'OPTIONS',
 			_parseUrl(url, wrapperUrl),
 			server,
@@ -206,7 +206,7 @@ export function useRouter(
 	}
 
 	function _delete(url: string, cb: HTTPRouterCallback): void {
-		return http_handle(
+		return $httpHandle(
 			'DELETE',
 			_parseUrl(url, wrapperUrl),
 			server,

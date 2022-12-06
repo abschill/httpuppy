@@ -30,40 +30,78 @@ export {
  * Config for useServer hook
  */
 export interface HTTPServerOptions {
-	cache?: CacheSettings; //options for caching, standard http but camelcase
-	clustered?: boolean; //automatically cluster the server process to utilize multiple core ipc it doesnt do anything in x.2.z
-	handler?: any; //default handler if you would like to override the request chain and handle each url manually thru the standard library
-	hostname?: string; //hostname for the server itself (default: 127.0.0.1)
+	/**
+	 * options for caching, standard http but camelcase
+	 */
+	cache?: CacheSettings;
+	/**
+	 * automatically cluster the server process to utilize multiple core ipc it doesnt do anything in x.2.z
+	 */
+	clustered?: boolean;
+	/**
+	 * default handler if you would like to override the request chain and handle each url manually thru the standard library
+	 */
+	handler?: any;
+	/**
+	 * hostname for the server itself (default: 127.0.0.1)
+	 */
+	hostname?: string;
 	log_level?: LogLevel;
 	log_error_file?: string;
 	log_event_file?: string;
-	port?: number; //the port number to run the configuration with (default: 80)
+	/**
+	 * the port number to run the configuration with (default: 80)
+	 */
+	port?: number;
+	/**
+	 * options for resolving the SSL cert
+	 */
 	secure?: {
-		//options for resolving the SSL cert / key
 		key: string;
 		cert: string;
 		dhparam?: string;
 	};
 	ttl_default?: number;
-	local_storage_path?: string; //the dir to write files uploaded from multipart forms from request
-	throw_warnings?: boolean; //false = print warnings true = throw them as errors (default: false)
+	/**
+	 * the dir to write files uploaded from multipart forms from request
+	 */
+	local_storage_path?: string;
+	/**
+	 * false = print warnings true = throw them as errors (default: false)
+	 */
+	throw_warnings?: boolean;
 }
 
 /**
  * Typedefs for Server Runtiem
  */
 /**
- * @interface HTTPServer
- * @description Core Module to wrap the standard http library for node
+ * HTTPServer
+ * @remarks Core Module to wrap the standard http library for node
  */
 export interface HTTPServer extends node_http_server {
-	config: HTTPServerOptions; //HTTPServerOptions - process config
-	diagnostics: DiagnosticLog[]; //diagnostic log
+	/**
+	 * HTTPServerOptions - process config
+	 */
+	config: HTTPServerOptions;
+	/**
+	 * diagnostic log
+	 */
+	diagnostics: DiagnosticLog[];
 	onClose: iExitHandler; // onclose handler
-	start: () => boolean; //start process for server (wrapper around .listen())
-	stop: () => Promise<HTTPuppySleep>; // shutdown handler
+	/**
+	 * start process for server (wrapper around .listen())
+	 */
+	start: () => boolean;
+	/**
+	 * shutdown handler
+	 */
+	stop: () => Promise<HTTPuppySleep>;
 	static: (path: string, static_path: string) => void;
-	vfs: MountedVFS; // virtual filesystem to load paths from
+	/**
+	 * virtual filesystem to load paths from
+	 */
+	vfs: MountedVFS;
 	routers: HTTPRouter[];
 	logger: winston.Logger;
 	use: (url: string, fn: HTTPRouterCallback) => void;

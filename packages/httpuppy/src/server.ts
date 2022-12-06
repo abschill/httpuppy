@@ -47,16 +47,15 @@ export function useServer(
 	server.use = (url: string, fn: any | Promise<any>) => {
 		server.on(ENV_REQUEST_SIGNATURE, async (req, res) => {
 			if (req.url === url) {
-				if (fn.constructor && fn.constructor.name === ENV_ASYNC_SIGNATURE) {
-					return await fn(req, res);
-				}
-				return fn(req, res);
+				// const matchesWithAsync = (fn.constructor && fn.constructor.name === ENV_ASYNC_SIGNATURE);
+				fn(req, res);
 			}
 		});
 	};
 
-	server.static = async (_url: string, static_path: string) =>
+	server.static = async (_url: string, static_path: string) => {
 		await apply_static_callback(server, _url, static_path);
+	}
 
 	process.on('beforeExit', async (code) => {
 		server.logger.info(`exiting with code ${code}`);
