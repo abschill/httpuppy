@@ -1,6 +1,6 @@
 import { CacheSettings } from '.';
 
-export const defaultCacheSettings: CacheSettings = {
+export const DEFAULT_HTTP_CACHE: CacheSettings = {
 	maxAge: 3600,
 	mustRevalidate: true,
 	public: true
@@ -8,7 +8,7 @@ export const defaultCacheSettings: CacheSettings = {
 
 export function fromDefaultCacheSettings(settings: CacheSettings): CacheSettings {
 	return {
-		...defaultCacheSettings,
+		...DEFAULT_HTTP_CACHE,
 		...settings
 	};
 }

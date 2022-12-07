@@ -1,10 +1,9 @@
-import { useServer } from 'httpuppy';
-import { useRouter } from 'httpuppy-router';
-
+const { useServer } = require('httpuppy');
+const { useRouter } = require('@httpuppy/router');
 const server = useServer({
-	port: 3001,
-	log_level: 'verbose',
-	clustered: true
+    port: 3000,
+    log_level: 'verbose',
+    clustered: true
 });
 
 const router = useRouter(server);

@@ -1,23 +1,24 @@
 /**
  * @internal
  */
-import apply_clustered from './cluster';
 import {
-	defaultCacheSettings,
-	$cleanShutdown,
-	useLogger,
+	DEFAULT_HTTP_CACHE,
+	$applyCluster,
+	DiagnosticLog,
+	HTTPServer,
+	HTTPServerOptions,
 	ENV_DEFAULT_ERROR_FILE,
 	ENV_DEFAULT_EVENT_FILE,
 	ENV_DEFAULT_HOST,
 	ENV_TTL_DEFAULT,
 	ENV_PORT_DEFAULT
-} from '.';
-import { DiagnosticLog, HTTPServer, HTTPServerOptions } from './types';
+} from '@httpuppy/common';
+import { $cleanShutdown, useLogger } from '.';
 
-export const default_http_config: HTTPServerOptions = {
+export const DEFAULT_HTTPUPPY_CONFIG: HTTPServerOptions = {
 	port: ENV_PORT_DEFAULT,
 	clustered: false,
-	cache: defaultCacheSettings,
+	cache: DEFAULT_HTTP_CACHE,
 	log_level: 'base',
 	hostname: ENV_DEFAULT_HOST,
 	throw_warnings: false,
@@ -36,13 +37,13 @@ export function use_config(
 	diagnostics?: DiagnosticLog[]
 ): Required<HTTPServerOptions> {
 	if (!conf) {
-		return <Required<HTTPServerOptions>>default_http_config;
+		return <Required<HTTPServerOptions>>DEFAULT_HTTPUPPY_CONFIG;
 	}
 	if (!diagnostics) {
 		diagnostics = [];
 	}
 
-	const config = { ...default_http_config, ...conf };
+	const config = { ...DEFAULT_HTTPUPPY_CONFIG, ...conf };
 	process.env.log_level = config.log_level;
 	return <Required<HTTPServerOptions>>config;
 }
@@ -54,7 +55,7 @@ export function use_config(
  * @param diagnostics - diagnostic list from the prestartup process
  * @returns the http server object
  */
-export function _use_server(
+export function $useServer(
 	config: Required<HTTPServerOptions>,
 	server: HTTPServer,
 	diagnostics: DiagnosticLog[]
@@ -76,7 +77,7 @@ export function _use_server(
 				ss.listen(config.port);
 				return true;
 			}
-			return apply_clustered(ss);
+			return $applyCluster(ss);
 		} catch (e) {
 			diagnostics.push({
 				msg: JSON.stringify(e),

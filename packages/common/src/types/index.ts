@@ -1,5 +1,4 @@
 export * from './middleware';
-// export * from './vfs';
 export * from './cache';
 export * from './server';
 export * from './router';

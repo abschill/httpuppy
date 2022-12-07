@@ -5,21 +5,23 @@
 import GracefulShutdown from 'http-graceful-shutdown';
 import { Stats } from 'fs';
 import { createHash } from 'crypto';
-import { ENV_DEFAULT_CONTENT_TYPE, ENV_STATUS_404, HTTPWriterOptions } from '.';
 import {
 	HTTPServer,
 	HTTPServerOptions,
 	HTTPHeaders,
 	HTTPuppyResponse,
-	HTTPuppySleep
-} from './types';
+	HTTPuppySleep,
+	ENV_DEFAULT_CONTENT_TYPE,
+	ENV_STATUS_404,
+	HTTPWriterOptions
+} from '@httpuppy/common';
 /**
  *
  * @param options - the writer options to apply the headers against
  * @param config - the server config to apply against
  * @returns default list of http headers based on given config cache settings / content type of the request options
  */
-export function apply_headers(
+export function $applyHeaders(
 	options: HTTPWriterOptions,
 	config: HTTPServerOptions
 ): HTTPHeaders {
@@ -38,7 +40,7 @@ export function apply_headers(
 	return applyHeaders;
 }
 
-export function apply_404(res: HTTPuppyResponse) {
+export function $apply404(res: HTTPuppyResponse) {
 	if (res.writable) {
 		res.writeHead(404, ENV_STATUS_404);
 		res.end();

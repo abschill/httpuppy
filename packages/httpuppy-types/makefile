@@ -1,7 +1,4 @@
-all: clean fmt lint build 
-
-clean:
-	yarn rimraf lib
+all: fmt lint build 
 
 lint:
 	yarn lint

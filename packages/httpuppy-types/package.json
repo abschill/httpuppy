@@ -12,7 +12,11 @@
 		"build:watch": "tsc -w",
 		"prettier": "prettier --write ./src",
 		"test": "ts-mocha test/**/*.test.ts",
-		"test:watch": "ts-mocha -w test/**/*.test.ts"
+		"test:watch": "ts-mocha -w test/**/*.test.ts",
+		"lint:check": "eslint ./src",
+		"lint": "eslint --fix ./src",
+		"fmt": "prettier --write ./src",
+		"make": "make"
 	},
 	"devDependencies": {
 		"@types/mocha": "^9.1.1",

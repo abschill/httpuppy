@@ -111,6 +111,7 @@ export interface StringMap {
 }
 
 export interface HTTPuppyRequest extends node_http_request {
+	// eslint-disable-next-line @typescript-eslint/ban-types
 	body: Object;
 	params?: StringMap;
 	query?: StringMap;

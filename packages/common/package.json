@@ -1,0 +1,43 @@
+{
+  "name": "@httpuppy/common",
+  "version": "0.6.0-alpha",
+  "description": "speedy abstraction layer for node web servers with automatic clustering",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/abschill/httpuppy"
+  },
+  "homepage": "https://github.com/abschill/httpuppy",
+  "prettier": "@webpuppy/prettier",
+  "packageManager": "yarn@3.3.0",
+  "author": {
+    "email": "dev3141592@gmail.com",
+    "name": "abschill"
+  },
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc -w",
+    "prettier": "prettier --write ./src",
+    "lint:check": "eslint ./src",
+    "lint": "eslint --fix ./src",
+    "fmt": "prettier --write ./src",
+    "make": "make"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.31",
+    "eslint": "^8.29.0",
+    "rimraf": "^3.0.2"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "main": "lib/index.js",
+  "dependencies": {
+    "winston": "^3.8.2"
+  },
+  "types": "./lib/index.d.ts",
+  "exports": {
+    ".": "./lib/index.js",
+    "./types": "./lib/types/index.d.ts",
+    "./cluster": "./lib/cluster.js"
+  }
+}

@@ -3,7 +3,7 @@
 	"version": "0.0.0",
 	"description": "monorepo for local workspace for httpuppy",
 	"main": "index.js",
-	"repository": "https://github.com/webpuppy/httpuppy.git",
+	"repository": "https://github.com/abschill/httpuppy.git",
 	"author": "abschill",
 	"license": "AGPL-3.0",
 	"private": true,
@@ -11,21 +11,28 @@
 	"packageManager": "yarn@3.3.0",
 	"devDependencies": {
 		"@types/eslint": "^8",
+		"@types/mocha": "^9.1.1",
 		"@types/prettier": "^2",
+		"@types/rimraf": "^3",
 		"@webpuppy/eslint-config": "^0.2.3",
 		"@webpuppy/prettier": "^0.1.4",
 		"eslint": "^8.29.0",
+		"expect": "^28.1.0",
 		"husky": "^8.0.1",
-		"prettier": "^2.8.0"
+		"mocha": "^10.0.0",
+		"nyc": "^15.1.0",
+		"prettier": "^2.8.0",
+		"rimraf": "^3.0.2",
+		"ts-mocha": "^10.0.0",
+		"typescript": "^4.6.3"
 	},
 	"scripts": {
 		"fmt": "prettier --write .",
-		"build": "yarn workspaces foreach run build"
+		"build": "yarn workspaces foreach run build",
+		"run:basic:cjs": "node examples/simple-static/with-require.cjs",
+		"run:basic:mod": "node examples/simple-static/with-import.mjs"
 	},
 	"workspaces": [
-		"./packages/httpuppy",
-		"./packages/httpuppy-types",
-		"./packages/httpuppy-router",
-		"./packages/httpuppy-vfs"
+		"./packages/*"
 	]
 }

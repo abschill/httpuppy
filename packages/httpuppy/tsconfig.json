@@ -1,7 +1,7 @@
 {
 	"compilerOptions": {
 		"allowJs": true,
-		"baseUrl": ".",
+		"baseUrl": "./src",
 		"rootDir": "src",
 		"outDir": "lib",
 		"declaration": true,

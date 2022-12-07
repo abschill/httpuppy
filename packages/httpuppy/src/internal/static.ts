@@ -1,13 +1,16 @@
-import { create_nested_vfs } from 'httpuppy-vfs';
+import { $useVfs } from '@httpuppy/vfs';
 import { color } from 'terminal-color';
+import { $vStreamReader } from '.';
 import {
 	ENV_DEFAULT_CONTENT_TYPE,
 	ENV_REQUEST_SIGNATURE,
 	ENV_TTL_DEFAULT,
 	VirtualWriteableFile,
-	vfs_stream_reader
-} from '.';
-import { HTTPuppyRequest, HTTPuppyResponse, HTTPServer, MountedVFS } from './types';
+	HTTPuppyRequest,
+	HTTPuppyResponse,
+	HTTPServer,
+	MountedVFS
+} from '@httpuppy/common';
 
 export type UserStaticConfig = {
 	href?: string; // prefix path to access the directory on router
@@ -28,13 +31,13 @@ export async function $$vmount(
 		server.logger.error('fs attempted to mount with no path set in configuration');
 		throw new Error('error: fs attempted to mount with no path set in configuration');
 	}
-	return await create_nested_vfs(staticOptions.href ?? '/', staticOptions.path);
+	return await $useVfs(staticOptions.href ?? '/', staticOptions.path);
 }
 /**
  * @internal
  */
 
-export async function apply_static_callback(
+export async function $applyStaticCallback(
 	server: HTTPServer,
 	_url: string,
 	static_path: string
@@ -66,7 +69,7 @@ export async function apply_static_callback(
 					hrefs: match.hrefs
 				};
 				if (!match.text_content) {
-					vfs_stream_reader(vFile, res);
+					$vStreamReader(vFile, res);
 				}
 				res.writeHead(200, 'ok', [
 					['Content-Type', match.mime_type ? match.mime_type : ENV_DEFAULT_CONTENT_TYPE]

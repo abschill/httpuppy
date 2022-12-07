@@ -9,7 +9,7 @@ import {
 	HTTPRouterCallback,
 	HTTPRouterOptions,
 	HTTPServer
-} from 'httpuppy';
+} from '@httpuppy/common';
 
 /**
  * @internal
