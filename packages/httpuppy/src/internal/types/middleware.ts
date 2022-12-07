@@ -1,4 +1,4 @@
-import { HTTPuppyRequest, HTTPuppyResponse, CacheSettings } from 'httpuppy-types';
+import { CacheSettings } from '.';
 
 export const defaultCacheSettings: CacheSettings = {
 	maxAge: 3600,
@@ -12,13 +12,3 @@ export function fromDefaultCacheSettings(settings: CacheSettings): CacheSettings
 		...settings
 	};
 }
-
-export type iExitHandler = undefined | (() => Promise<void>) | (() => void);
-export type iHandlerType = (
-	req: HTTPuppyRequest,
-	res: HTTPuppyResponse
-) => Promise<void> | ((req: HTTPuppyRequest, res: HTTPuppyResponse) => void);
-export type UserMiddlewareOption = {
-	href: string;
-	handler: iHandlerType;
-};

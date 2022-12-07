@@ -4,15 +4,15 @@
 import apply_clustered from './cluster';
 import {
 	defaultCacheSettings,
-	shutdown,
-	create_logger,
+	$cleanShutdown,
+	useLogger,
 	ENV_DEFAULT_ERROR_FILE,
 	ENV_DEFAULT_EVENT_FILE,
 	ENV_DEFAULT_HOST,
 	ENV_TTL_DEFAULT,
 	ENV_PORT_DEFAULT
 } from '.';
-import { DiagnosticLog, HTTPServer, HTTPServerOptions } from 'httpuppy-types';
+import { DiagnosticLog, HTTPServer, HTTPServerOptions } from './types';
 
 export const default_http_config: HTTPServerOptions = {
 	port: ENV_PORT_DEFAULT,
@@ -25,9 +25,10 @@ export const default_http_config: HTTPServerOptions = {
 };
 /**
  * @internal useConfig
- * @description hook for applying default config settings against given user input
- * @param conf the submitted user input
- * @param diagnostics diagnostic log of the top level
+ * @remarks
+ * hook for applying default config settings against given user input
+ * @param conf - the submitted user input
+ * @param diagnostics - diagnostic log of the top level
  * @returns cleaned user config
  */
 export function use_config(
@@ -47,10 +48,10 @@ export function use_config(
 }
 /**
  * @internal _useServer
- * @description an internal startup process for the `useServer` hook
- * @param config config from user for runtime
- * @param server server generated from node standard http library
- * @param diagnostics diagnostic list from the prestartup process
+ * @remarks an internal startup process for the `useServer` hook
+ * @param config - config from user for runtime
+ * @param server - server generated from node standard http library
+ * @param diagnostics - diagnostic list from the prestartup process
  * @returns the http server object
  */
 export function _use_server(
@@ -63,7 +64,7 @@ export function _use_server(
 	ss.diagnostics = diagnostics;
 	ss.config = config;
 	ss.routers = [];
-	ss.logger = create_logger(
+	ss.logger = useLogger(
 		config.log_level ?? 'base',
 		ENV_DEFAULT_ERROR_FILE,
 		ENV_DEFAULT_EVENT_FILE
@@ -86,6 +87,6 @@ export function _use_server(
 		}
 	};
 	// bind safe shutdown to the server for callability on the end user side
-	ss.stop = () => shutdown(server);
+	ss.stop = () => $cleanShutdown(server);
 	return ss;
 }

@@ -3,13 +3,13 @@
  */
 import { createReadStream } from 'fs';
 import { ENV_STATUS_OK, VirtualWriteableFile } from '.';
-import { HTTPuppyResponse } from 'httpuppy-types';
+import { HTTPuppyResponse } from './types';
 import { local_mime_type } from 'httpuppy-vfs';
 /**
  * @internal useVirtualStreamReader
- * @description apply virtual stream reader to the given request, and close stream on exit
- * @param pathData the resulting mount file from useStaticUrlParser call in useStaticMount
- * @param res the current response being handled by the server
+ * @remarks apply virtual stream reader to the given request, and close stream on exit
+ * @param pathData - the resulting mount file from useStaticUrlParser call in useStaticMount
+ * @param res - the current response being handled by the server
  * @returns
  */
 export function vfs_stream_reader(

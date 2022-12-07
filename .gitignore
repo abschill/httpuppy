@@ -15,3 +15,4 @@ tmp
 .DS_STORE
 log
 .yarn/cache
+.yarn/install-state.gz

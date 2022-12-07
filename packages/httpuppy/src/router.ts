@@ -1,5 +1,5 @@
 /**
  * @module useRouter
- * @description for adding custom routing to your server
+ * @remarks for adding custom routing to your server
  */
 export { useRouter } from 'httpuppy-router';

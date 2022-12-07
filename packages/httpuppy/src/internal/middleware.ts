@@ -10,8 +10,9 @@ import {
 	HTTPServer,
 	HTTPServerOptions,
 	HTTPHeaders,
-	HTTPuppyResponse
-} from 'httpuppy-types';
+	HTTPuppyResponse,
+	HTTPuppySleep
+} from './types';
 /**
  *
  * @param options - the writer options to apply the headers against
@@ -51,13 +52,13 @@ export function apply_404(res: HTTPuppyResponse) {
  * @param s - http server to shut down
  * @returns void promise to gracefully shut down
  */
-export function shutdown(s: HTTPServer): void {
+export function $cleanShutdown(s: HTTPServer): HTTPuppySleep {
 	try {
 		if (s.onClose) s.onClose();
 		s.removeAllListeners();
 		s.close();
 		// eslint-disable-next-line new-cap
-		GracefulShutdown(s);
+		return GracefulShutdown(s);
 	} catch (e) {
 		throw new Error('invalid shutdown, nothing submitted/already shut down');
 	}

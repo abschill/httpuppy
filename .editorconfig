@@ -1,6 +1,6 @@
 root = true
 
-[*{.js,.ts,.cjs,.mjs}]
+[*{.js,.ts,.cjs,.mjs, *.json}]
 tab_width = 2
 indent_size = 2
 indent_style = tab

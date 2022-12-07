@@ -12,7 +12,7 @@ import {
 	HTTPuppyResponse,
 	HTTPServer,
 	MountedVFS
-} from 'httpuppy-types';
+} from './types';
 
 export type UserStaticConfig = {
 	href?: string; // prefix path to access the directory on router
@@ -22,8 +22,10 @@ export type UserStaticConfig = {
 /**
  * @internal
  *
+ * mounts virtual file system to the server
+ *
  */
-export async function mount_vfs(
+export async function $$vmount(
 	server: HTTPServer,
 	staticOptions?: UserStaticConfig
 ): Promise<MountedVFS> {
@@ -43,7 +45,7 @@ export async function apply_static_callback(
 	static_path: string
 ) {
 	const sConfig = { href: _url, path: static_path };
-	const vfs = await mount_vfs(server, sConfig);
+	const vfs = await $$vmount(server, sConfig);
 	server.vfs = vfs;
 	server.on(ENV_REQUEST_SIGNATURE, (req: HTTPuppyRequest, res: HTTPuppyResponse) => {
 		const url = req.url ?? '/';

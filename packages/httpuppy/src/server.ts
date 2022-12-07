@@ -1,11 +1,15 @@
 /**
- * @module useServer
- * @description core server module
+ * @public
+ * useServer
+ * @remarks core server module
+ *
+ * using this hook will create a new server with the passed configuration.
+ *
+ * The server can be stopped and started at the user's discretion
  */
 import {
 	_use_server,
 	default_http_config,
-	ENV_ASYNC_SIGNATURE,
 	ENV_REQUEST_SIGNATURE,
 	use_config,
 	apply_static_callback
@@ -17,17 +21,17 @@ import {
 	https_options,
 	create_server,
 	create_secure_server
-} from 'httpuppy-types';
+} from './internal/types';
 
 /**
- * @function useServer
+ * useServer
  * @example
  * ```javascript
  * const app0 = useServer({ port: 3000, clustered: false });
  * const app1 = useServer({ port: 3001, clustered: true })
  *
  * ```
- * @param conf configuration options
+ * @param conf - configuration options
  * @returns httpuppy server
  */
 export function useServer(
