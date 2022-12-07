@@ -28,6 +28,7 @@
 	},
 	"scripts": {
 		"fmt": "prettier --write .",
+		"lint": "yarn workspaces foreach run lint",
 		"build": "yarn workspaces foreach run build",
 		"run:basic:cjs": "node examples/simple-static/with-require.cjs",
 		"run:basic:mod": "node examples/simple-static/with-import.mjs"

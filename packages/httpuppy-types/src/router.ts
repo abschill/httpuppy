@@ -15,7 +15,7 @@ export type HTTPRouterCallback = (
 ) => Promise<any> | ((req: HTTPuppyRequest, res: HTTPuppyResponse) => any);
 
 export type HTTPRouterOptions = {
-	baseUrl?: string; //glob or prefix
+	baseUrl?: string; // glob or prefix
 	allowPassthrough?: boolean;
 };
 /**
