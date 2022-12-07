@@ -7,12 +7,7 @@ import {
 	VirtualWriteableFile,
 	vfs_stream_reader
 } from '.';
-import {
-	HTTPuppyRequest,
-	HTTPuppyResponse,
-	HTTPServer,
-	MountedVFS
-} from './types';
+import { HTTPuppyRequest, HTTPuppyResponse, HTTPServer, MountedVFS } from './types';
 
 export type UserStaticConfig = {
 	href?: string; // prefix path to access the directory on router

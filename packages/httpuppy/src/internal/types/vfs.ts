@@ -48,7 +48,6 @@ export type HTTPWriterOptions = {
 	virtualFile: VirtualWriteableFile;
 };
 
-
 export type MountedVFSFile = {
 	_basepath: string;
 	_abspath: string;
